@@ -1,0 +1,108 @@
+<html><head><TITLE>UpdateNodeShapeTypeCmd</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  UpdateNodeShapeTypeCmd : public <!2><A HREF="UpdateTypeCmd.html#DOC.438.1">UpdateTypeCmd</A> </H2><BLOCKQUOTE>
+ command for changing node shape types.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=275>
+<param name=classes value="CCommand,MCommand.html,CUpdateTypeCmd,MUpdateTypeCmd.html,CUpdateNodeShapeTypeCmd,MUpdateNodeShapeTypeCmd.html,CUpdateClassBoxTypeCmd,MUpdateClassBoxTypeCmd.html,CUCUpdateActorTypeCmd,MUCUpdateActorTypeCmd.html,CSSDUpdateClassBoxTypeCmd,MSSDUpdateClassBoxTypeCmd.html,CRPUpdateNodeShapeTypeCmd,MRPUpdateNodeShapeTypeCmd.html,CGDUpdateNodeShapeTypeCmd,MGDUpdateNodeShapeTypeCmd.html,CATUpdateNodeShapeTypeCmd,MATUpdateNodeShapeTypeCmd.html">
+<param name=before value="M,M,M,M|_,MR_,MR_,MR_,MR_,Mr_">
+<param name=after value="Md_SP,Md_,M,M,M,M,M,M,M">
+<param name=indent value="0,1,2,2,2,2,2,2,2">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.431.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>UpdateNodeShapeTypeCmd</B> (<!1><A HREF="ShapeView.html">ShapeView</A> *v, <!1><A HREF="List.html">List</A><int *> *<!2><A HREF="UpdateTypeCmd.html#DOC.438.11">fromTypes</A>, int <!2><A HREF="UpdateTypeCmd.html#DOC.438.10">toType</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.431.2"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>GetName</B> () const <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.431.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Reverse</B> (<!1><A HREF="Thing.html">Thing</A> *oldThing, <!1><A HREF="Thing.html">Thing</A> *newThing)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.431.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLines</B> (<!1><A HREF="GShape.html">GShape</A> *oldShape, <!1><A HREF="GShape.html">GShape</A> *newShape)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="UpdateTypeCmd.html">UpdateTypeCmd:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>Execute</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UnExecute</B>()
+</DL><DL>
+<DT><h3>Protected Fields</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <<!1><A HREF="Thing.html">Thing</A> *> *  <B>oldThings</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <<!1><A HREF="Thing.html">Thing</A> *> *  <B>newThings</B>
+<DT><IMG SRC=icon2.gif> int  <B>toType</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <int*>   <B>fromTypes</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ShapeView.html">ShapeView</A>*  <B>view</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Diagram.html">Diagram</A>*  <B>diagram</B>
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  <!1><A HREF="Thing.html">Thing</A>*  <B>Transform</B>(<!1><A HREF="Thing.html">Thing</A> *thing)
+<DT><IMG SRC=icon2.gif> void  <B>TransformAll</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Command.html"> Command:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>TrackType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>TrackMouse</B>(<!2><A HREF="Command.html#DOC.48.3">TrackType</A>, <!1><A HREF="Point.html">Point</A>*, <!1><A HREF="Point.html">Point</A>*, <!1><A HREF="Point.html">Point</A>*)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>ReExecute</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Abort</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>CmdDone</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>ScaleCorrect</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>ScaleCorrect</B>(const <!1><A HREF="Point.html">Point</A> *pt) const 
+<DT><IMG SRC=icon2.gif> int  <B>Scale</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>Scale</B>(const <!1><A HREF="Point.html">Point</A> *pt) const 
+<DT><IMG SRC=icon2.gif> void  <B>SayAborted</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SayCommited</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SayUndone</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="DrawWindow.html">DrawWindow</A>*  <B>GetMainWindow</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Viewer.html">Viewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Document.html">Document</A>*  <B>GetDocument</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Grafport.html">Grafport</A>*  <B>GetGrafport</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetCmdDone</B>(bool b)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ command for changing node shape types.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="UpdateNodeShapeTypeCmd">
+<A NAME ="DOC.431.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  UpdateNodeShapeTypeCmd(<!1><A HREF="ShapeView.html">ShapeView</A> *v, <!1><A HREF="List.html">List</A><int *> *<!2><A HREF="UpdateTypeCmd.html#DOC.438.11">fromTypes</A>, int <!2><A HREF="UpdateTypeCmd.html#DOC.438.10">toType</A>)</B></TT>
+<DL></DL><P>
+<A NAME="GetName">
+<A NAME ="DOC.431.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  GetName() const </B></TT>
+<DL></DL><P>
+<A NAME="Reverse">
+<A NAME ="DOC.431.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Reverse(<!1><A HREF="Thing.html">Thing</A> *oldThing, <!1><A HREF="Thing.html">Thing</A> *newThing)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLines">
+<A NAME ="DOC.431.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLines(<!1><A HREF="GShape.html">GShape</A> *oldShape, <!1><A HREF="GShape.html">GShape</A> *newShape)</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="UpdateClassBoxTypeCmd.html"> UpdateClassBoxTypeCmd </A><br>
+<A HREF="UCUpdateActorTypeCmd.html"> UCUpdateActorTypeCmd </A><br>
+<A HREF="SSDUpdateClassBoxTypeCmd.html"> SSDUpdateClassBoxTypeCmd </A><br>
+<A HREF="RPUpdateNodeShapeTypeCmd.html"> RPUpdateNodeShapeTypeCmd </A><br>
+<A HREF="GDUpdateNodeShapeTypeCmd.html"> GDUpdateNodeShapeTypeCmd </A><br>
+<A HREF="ATUpdateNodeShapeTypeCmd.html"> ATUpdateNodeShapeTypeCmd </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

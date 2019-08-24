@@ -1,0 +1,100 @@
+<html><head><TITLE>CellTextBuffer</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  CellTextBuffer  </H2><BLOCKQUOTE>
+ cut-paste buffer class for cell texts.
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.39.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CellTextBuffer</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.39.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~CellTextBuffer</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.39.3"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="Point.html">Point</A> </TD><TD><B>GetRcTopLeft</B> () const <br>
+<I> topleft row-column position.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.39.4"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="Point.html">Point</A> </TD><TD><B>GetTopLeft</B> () const <br>
+<I> topleft of the paste box.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.39.5"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="Point.html">Point</A> </TD><TD><B>GetBottomRight</B> () const <br>
+<I> bottomright of the paste box.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.39.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>PutTexts</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="CellText.html">CellText</A> *> *c)<br>
+<I> put \_copy\_ of c in buffer.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.39.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>PutPositions</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Point.html">Point</A> *> *p)<br>
+<I> put row/column positions in the buffer.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.39.8"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="CellText.html">CellText</A> *> * </TD><TD><B>GetTexts</B> ()<br>
+<I> return \_copy\_ of c.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.39.9"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="Point.html">Point</A> *> * </TD><TD><B>GetPositions</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.39.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UndoPut</B> ()<br>
+<I> move prevCelltexts to cell-texts. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.39.11"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsEmpty</B> ()<br>
+<I> is buffer empty ?</I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ cut-paste buffer class for cell texts.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="CellTextBuffer">
+<A NAME ="DOC.39.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  CellTextBuffer()</B></TT>
+<DL></DL><P>
+<A NAME="~CellTextBuffer">
+<A NAME ="DOC.39.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~CellTextBuffer()</B></TT>
+<DL></DL><P>
+<A NAME="GetRcTopLeft">
+<A NAME ="DOC.39.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="Point.html">Point</A>  GetRcTopLeft() const </B></TT>
+<DD> topleft row-column position.
+<DL></DL><P>
+<A NAME="GetTopLeft">
+<A NAME ="DOC.39.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="Point.html">Point</A>  GetTopLeft() const </B></TT>
+<DD> topleft of the paste box.
+<DL></DL><P>
+<A NAME="GetBottomRight">
+<A NAME ="DOC.39.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="Point.html">Point</A>  GetBottomRight() const </B></TT>
+<DD> bottomright of the paste box.
+<DL></DL><P>
+<A NAME="PutTexts">
+<A NAME ="DOC.39.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  PutTexts(<!1><A HREF="List.html">List</A><<!1><A HREF="CellText.html">CellText</A> *> *c)</B></TT>
+<DD> put \_copy\_ of c in buffer.
+<DL></DL><P>
+<A NAME="PutPositions">
+<A NAME ="DOC.39.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  PutPositions(<!1><A HREF="List.html">List</A><<!1><A HREF="Point.html">Point</A> *> *p)</B></TT>
+<DD> put row/column positions in the buffer.
+<DL></DL><P>
+<A NAME="GetTexts">
+<A NAME ="DOC.39.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="CellText.html">CellText</A> *> *  GetTexts()</B></TT>
+<DD> return \_copy\_ of c.
+<DL></DL><P>
+<A NAME="GetPositions">
+<A NAME ="DOC.39.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="Point.html">Point</A> *> *  GetPositions() const </B></TT>
+<DL></DL><P>
+<A NAME="UndoPut">
+<A NAME ="DOC.39.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UndoPut()</B></TT>
+<DD> move prevCelltexts to cell-texts. 
+<DL></DL><P>
+<A NAME="IsEmpty">
+<A NAME ="DOC.39.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsEmpty()</B></TT>
+<DD> is buffer empty ?
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

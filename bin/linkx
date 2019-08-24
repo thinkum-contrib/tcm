@@ -1,0 +1,38 @@
+#!/bin/sh
+[ ${TCM_HOME} ] || {
+   echo TCM_HOME is not set. Bailing out.; exit 1
+}
+cd $TCM_HOME/bin
+
+DFILES="tgd terd tesd tcrd tssd tsqd tucd tatd tstd trpg tpsd tdfd tefd tsnd tgtt tfrt tcpd tdpd tcbd tscd"
+TFILES="tgt ttut ttdt tfet"
+
+# remove TCM tool executables and make softlinks
+# to the tcmd.exe and tcmt programs.
+rm -f $TFILES $DFILES
+
+## sed removes the NT-version in Cygwin
+ARCH=`uname -s | sed -e 's/_NT.*//'`
+
+for X in $DFILES ; do
+
+	if [ "x$ARCH" = "xCYGWIN" ] ; then
+		c="$TCM_HOME/bin/_cygwin_symlink.sh tcmd.exe ${X}.exe"
+		echo $c
+		sh $c
+	else
+		ln -s tcmd $X
+	fi
+done
+
+for X in $TFILES ; do
+
+	if [ "x$ARCH" = "xCYGWIN" ] ; then
+		c="$TCM_HOME/bin/_cygwin_symlink.sh tcmt.exe ${X}.exe"
+		echo $c
+		sh $c
+	else
+		ln -s tcmt $X
+	fi
+done
+

@@ -1,0 +1,72 @@
+# Configuration file for Solaris 2.x and SUNWspro C++ compiler
+include $(TCM_HOME)/src/Config.GEN
+
+# The RLIB tells where the .so files are to be found at runtime.
+# RLIB_DIR	= $(TCM_INSTALL_DIR)/lib
+RLIB_DIR	= $(TCM_HOME)/lib
+
+# RLIB_DIR	= /var/local/tcm-2.0/lib
+# RLIB_DIR	= /home/tcm/lib
+# RLIB_DIR      = /home/maicsprj/TCM_CDROM/tcmlib
+
+# 1st: 4.2 compiler. 2nd: 5.0 compiler, 3rd: 5.1 compiler.
+# CC              = /opt/SUNWspro-4.2/bin/CC
+# Cc              = /opt/SUNWspro-4.2/bin/cc -KPIC
+#CC              = /opt/SUNWspro/bin/CC
+#Cc              = /opt/SUNWspro/bin/cc -KPIC
+CC		= /opt/SUNWspro/WS6/bin/CC
+Cc		= /opt/SUNWspro/WS6/bin/cc -KPIC
+ 
+# LEX             = /usr/local/bin/flex
+# YACC            = /usr/local/bin/bison
+LEX             = /Gnu/bin/flex
+YACC            = /Gnu/bin/bison
+
+RANLIB		= /usr/ccs/bin/ranlib
+AR		= /usr/ccs/bin/ar cr
+
+# STRIP           = /usr/ccs/bin/strip
+STRIP           = @true
+
+# 1st: 4.2 compiler, 2nd: 5.x compiler, 3rd: 5.x compiler warnings suppressed
+# CFLAGS		= -pic +p +w -ptr$(SRC_DIR)/ -pta
+# CFLAGS        = -KPIC +p +w +w2 -pta   
+CFLAGS          = -KPIC +p -pta 
+
+MKDEPEND	= $(TCM_HOME)/bin/makedepend.sh 
+# MKDEPEND	= /Window/X11/bin/makedepend
+# MKDEPEND	= /usr/openwin/bin/makedepend
+# MKDEPEND      = $(HOME)/bin/sol2/makedepend
+# MKDEPENDFLAGS := $(CPPFLAGS) -I/opt/SUNWspro/SC5.0/include/CC
+MKDEPENDFLAGS := $(CPPFLAGS) -I/opt/SUNWspro/WS6/include/CC -I/opt/SUNWspro/WS6/include/CC/Cstd
+
+# 1st: 4.2 compiler, 2nd: 5.0 compiler, 3rd: 5.1 compiler
+# CC_INCLUDE      = /opt/SUNWspro-4.2/SC4.2/include/CC
+# CC_INCLUDE      = /opt/SUNWspro/SC5.0/include/CCios
+# CC_INCLUDE      = /opt/SUNWspro/WS6/include/CCios
+CC_INCLUDE      = /opt/SUNWspro/WS6/include/CC
+#CC_INCLUDE      = /opt/SUNWspro/WS6/include/CC -I/opt/SUNWspro/WS6/include/CC/Cstd
+
+# 1st: optimized, 2nd: to debugger
+CFLAGS	        += -O2
+# CFLAGS	+= -g
+
+SHAREDFLAG	= -G
+
+XWIN_HOME 	= /usr/openwin
+
+MOTIF_HOME 	= /usr/dt
+
+INCLUDEDIRS     += -I$(CC_INCLUDE)
+
+SYSFLAGS        =  -DSOLARIS -D__EXTENSIONS__ 
+# SYSFLAGS      += -DDUMPWIDGETTREE
+# SYSFLAGS	  += -DDEBUG 
+
+LDFLAGS 	+= -R$(RLIB_DIR) -R$(XWIN_LIB) -R$(MOTIF_LIB)
+
+LDLIBS 		= -liostream -lXm -lXt -lX11 -lgen -lintl -lm
+
+
+# We sometimes use purify to detect runtime errors.
+# PURIFY 		= purify -always-use-cache-dir=yes -cache-dir=/var/local/pcache

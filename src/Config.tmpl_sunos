@@ -1,0 +1,62 @@
+# Configuration file for SunOS and AT&T CC compiler.
+
+# This file is so particular that it does not use Config.GEN
+
+# make sure that TCM_HOME is set!
+SRC_DIR         = $(TCM_HOME)/src
+BIN_DIR         = $(TCM_HOME)/bin
+LIB_DIR         = $(TCM_HOME)/lib
+
+LEX		= /usr/bin/lex
+YACC		= /usr/bin/yacc
+STRIP           = /usr/bin/strip
+RANLIB		= /usr/bin/ranlib
+RM              = /bin/rm -f -r
+MV              = /bin/mv -f
+AR		= /usr/bin/ar cr
+
+XWIN_HOME        = /usr/X11
+XWIN_INCLUDE     = $(XWIN_HOME)/include
+XWIN_LIB         = $(XWIN_HOME)/lib
+
+MKDEPENDFLAGS   = $(CPPFLAGS)
+MKDEPEND	= /usr/X11/makedepend
+
+INCLUDEDIRS     = -I.\
+                -I$(SRC_DIR)/bitmaps\
+                -I$(SRC_DIR)/gl\
+                -I$(SRC_DIR)/ui\
+                -I$(SRC_DIR)/ed\
+                -I$(SRC_DIR)/dg\
+                -I$(XWIN_INCLUDE)\
+                -I$(XWIN_INCLUDE)/X11
+
+CC_INCLUDE	= /usr/local/lang/CC/include
+
+INCLUDEDIRS     += -I$(CC_INCLUDE)
+
+CPPFLAGS        = $(INCLUDEDIRS) $(SYSFLAGS)
+
+CCDIR		= /usr/local/lang/CC-3.0.1
+CCROOTDIR	= $(CCDIR)/bin
+PATH		+= $(CCROOTDIR)
+CC 		= $(CCROOTDIR)/CC
+Cc              = /usr/local/bin/gcc
+
+CFLAGS		=
+
+SYSFLAGS        = -DBSD -DSUNOS
+# -DDEBUG
+# -DDUMPWIDGETTREE
+# -DLESSTIF
+
+LDFLAGS         = -L$(LIB_DIR) -L/usr/lib
+
+LDLIBS        = /usr/lib/libXm.a -lXt -lX11 -lm
+# LDLIBS		=  -lXm -lXt -lX11 -lm
+
+xclean:
+	$(RM) *.o core $(SRC_DIR)/ptrepository/* $(SRC_DIR)/Templates.DB/*
+
+xdepend:
+	$(MKDEPEND) $(MKDEPENDFLAGS) *.*c

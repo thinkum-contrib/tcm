@@ -1,0 +1,24 @@
+# Main make targets for AIX 4.x XlC compiler (with static linking).
+
+all: allx
+
+libs: staticlibs
+
+include Config.tmpl
+
+include Makefile.GEN
+
+tcm:
+	( cd ./ed ; $(MAKE) tcm)
+
+tgd tgtt tesd tefd tstd ttut tfet tfrt tucd tssd tatd tscd tcbd\
+tsqd tcpd tdpd terd tcrd tdfd tpsd tsnd trpg:
+	( cd ./sd ; $(MAKE) $@)
+
+tgt ttdt ttut tfet:
+	( cd ./st ; $(MAKE) $@)
+
+# csod ced:
+# 	( cd ./cx ; $(MAKE) $@)
+
+# DO NOT DELETE THIS LINE -- make depend depends on it.

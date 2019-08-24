@@ -1,0 +1,133 @@
+<html><head><TITLE>SNGraph</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  SNGraph : public <!2><A HREF="Graph.html#DOC.194.1">Graph</A> </H2><BLOCKQUOTE>
+ system network graph class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CGraph,MGraph.html,CSNGraph,MSNGraph.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.306.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>SNGraph</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.306.2"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>InitConnections</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Graph.html">Graph:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>AddNode</B>(<!1><A HREF="Node.html">Node</A> *node)
+<DT><IMG SRC=icon2.gif> void  <B>AddEdge</B>(<!1><A HREF="Edge.html">Edge</A> *edge)
+<DT><IMG SRC=icon2.gif> void  <B>RemoveNode</B>(<!1><A HREF="Node.html">Node</A> *node)
+<DT><IMG SRC=icon2.gif> void  <B>RemoveEdge</B>(<!1><A HREF="Edge.html">Edge</A> *edge)
+<DT><IMG SRC=icon2.gif> bool  <B>HasNode</B>(<!1><A HREF="Node.html">Node</A> *node)
+<DT><IMG SRC=icon2.gif> bool  <B>HasEdge</B>(<!1><A HREF="Edge.html">Edge</A> *edge)
+<DT><IMG SRC=icon2.gif> void  <B>ClearNodes</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ClearEdges</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>CheckConnection</B>(int stype1, int stype2, int edgetype)
+<DT><IMG SRC=icon2.gif> bool  <B>IsConnected</B>(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)
+<DT><IMG SRC=icon2.gif> bool  <B>IsConnected</B>(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, const <!1><A HREF="string.html">string</A> *n)
+<DT><IMG SRC=icon2.gif> bool  <B>IsConnected</B>(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, int t)
+<DT><IMG SRC=icon2.gif> bool  <B>IsConnected</B>(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, const <!1><A HREF="string.html">string</A> *n, int t)
+<DT><IMG SRC=icon2.gif> int  <B>CompleteSubjects</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l)
+<DT><IMG SRC=icon2.gif> int  <B>CompleteSubject</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s)
+<DT><IMG SRC=icon2.gif> int  <B>CompleteSubject</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)
+<DT><IMG SRC=icon2.gif> int  <B>CompleteEdges</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l)
+<DT><IMG SRC=icon2.gif> int  <B>GetConnected</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s)
+<DT><IMG SRC=icon2.gif> int  <B>GetNodes</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l)
+<DT><IMG SRC=icon2.gif> int  <B>GetNodes</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, int t)
+<DT><IMG SRC=icon2.gif> int  <B>GetNodes</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, const <!1><A HREF="string.html">string</A> *n)
+<DT><IMG SRC=icon2.gif> int  <B>GetNodes</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, const <!1><A HREF="string.html">string</A> *n, int t)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdges</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdges</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, int t)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdges</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, const <!1><A HREF="string.html">string</A> *n)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdges</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, const <!1><A HREF="string.html">string</A> *n, int t)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdgesFrom</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdgesFrom</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, int t)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdgesFrom</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdgesFrom</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n, int t)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdgesTo</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdgesTo</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, int t)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdgesTo</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdgesTo</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n, int t)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdges</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *from, <!1><A HREF="Subject.html">Subject</A> *to)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdges</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *from, <!1><A HREF="Subject.html">Subject</A> *to, int t)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdges</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *from, <!1><A HREF="Subject.html">Subject</A> *to, const <!1><A HREF="string.html">string</A> *n)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdges</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *from, <!1><A HREF="Subject.html">Subject</A> *to, const <!1><A HREF="string.html">string</A> *n, int t)
+<DT><IMG SRC=icon2.gif> int  <B>CountNodes</B>()
+<DT><IMG SRC=icon2.gif> int  <B>CountNodes</B>(int t)
+<DT><IMG SRC=icon2.gif> int  <B>CountNodes</B>(const <!1><A HREF="string.html">string</A> *n)
+<DT><IMG SRC=icon2.gif> int  <B>CountNodes</B>(const <!1><A HREF="string.html">string</A> *n, int t)
+<DT><IMG SRC=icon2.gif> int  <B>CountEdges</B>()
+<DT><IMG SRC=icon2.gif> int  <B>CountEdges</B>(int t)
+<DT><IMG SRC=icon2.gif> int  <B>CountEdges</B>(const <!1><A HREF="string.html">string</A> *n)
+<DT><IMG SRC=icon2.gif> int  <B>CountEdges</B>(const <!1><A HREF="string.html">string</A> *n, int t)
+<DT><IMG SRC=icon2.gif> int  <B>CountEdgesFrom</B>(<!1><A HREF="Subject.html">Subject</A> *s)
+<DT><IMG SRC=icon2.gif> int  <B>CountEdgesFrom</B>(<!1><A HREF="Subject.html">Subject</A> *s, int t)
+<DT><IMG SRC=icon2.gif> int  <B>CountEdgesFrom</B>(<!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n)
+<DT><IMG SRC=icon2.gif> int  <B>CountEdgesFrom</B>(<!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n, int t)
+<DT><IMG SRC=icon2.gif> int  <B>CountEdgesTo</B>(<!1><A HREF="Subject.html">Subject</A> *s)
+<DT><IMG SRC=icon2.gif> int  <B>CountEdgesTo</B>(<!1><A HREF="Subject.html">Subject</A> *s, int t)
+<DT><IMG SRC=icon2.gif> int  <B>CountEdgesTo</B>(<!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n)
+<DT><IMG SRC=icon2.gif> int  <B>CountEdgesTo</B>(<!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n, int t)
+<DT><IMG SRC=icon2.gif> int  <B>CountEdges</B>(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)
+<DT><IMG SRC=icon2.gif> int  <B>CountEdges</B>(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, int t)
+<DT><IMG SRC=icon2.gif> int  <B>CountEdges</B>(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, const <!1><A HREF="string.html">string</A> *n)
+<DT><IMG SRC=icon2.gif> int  <B>CountEdges</B>(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, const <!1><A HREF="string.html">string</A> *n, int t)
+<DT><IMG SRC=icon2.gif> bool  <B>PathExists</B>(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)
+<DT><IMG SRC=icon2.gif> bool  <B>PathExists</B>(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, int t)
+<DT><IMG SRC=icon2.gif> bool  <B>UndirectedPathExists</B>(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)
+<DT><IMG SRC=icon2.gif> void  <B>WriteSubjects</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *f)
+<DT><IMG SRC=icon2.gif> void  <B>SetCounter</B>(int n)
+<DT><IMG SRC=icon2.gif> int  <B>GetCounter</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetIndexPrefix</B>(const char *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetIndexPrefix</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetIndexPrefix</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>GetIndex</B>(<!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>GetNextIndex</B>(<!1><A HREF="string.html">string</A> *index)
+<DT><IMG SRC=icon2.gif> virtual  int  <B>CountIndexes</B>(const <!1><A HREF="string.html">string</A> *index)
+</DL><DL>
+<DT><h3>Protected Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum <B></B>
+</DL><DL>
+<DT><h3>Protected Fields</h3><DD><DT><IMG SRC=icon2.gif> int*  <B>nodeTypes</B>
+<DT><IMG SRC=icon2.gif> int*  <B>edgeTypes</B>
+<DT><IMG SRC=icon2.gif> int  <B>connections</B>[MAX_TYPES][MAX_TYPES][MAX_TYPES]
+<DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <<!1><A HREF="Node.html">Node</A> *> *  <B>nodes</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <<!1><A HREF="Edge.html">Edge</A> *> *  <B>edges</B>
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>PathExists</B>(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, int edgetype, bool Directed)
+<DT><IMG SRC=icon2.gif> int  <B>CountIndex</B>(const <!1><A HREF="string.html">string</A> *index, <!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ system network graph class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="SNGraph">
+<A NAME ="DOC.306.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  SNGraph()</B></TT>
+<DL></DL><P>
+<A NAME="InitConnections">
+<A NAME ="DOC.306.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  InitConnections()</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

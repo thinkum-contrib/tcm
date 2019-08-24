@@ -1,0 +1,172 @@
+<html><head><TITLE>LineEndDialog</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  LineEndDialog : public <!2><A HREF="NToggleListDialog.html#DOC.245.1">NToggleListDialog</A> </H2><BLOCKQUOTE>
+ line end chooser dialog class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=215>
+<param name=classes value="CComponent,MComponent.html,CMWidget,MMWidget.html,CDialog,MDialog.html,CSelectionDialog,MSelectionDialog.html,CPromptDialog,MPromptDialog.html,CNToggleListDialog,MNToggleListDialog.html,CLineEndDialog,MLineEndDialog.html">
+<param name=before value="M,M,M,M,M,M,M">
+<param name=after value="Md_SPSPSPSPSP,Md_SPSPSPSP,Md_SPSPSP,Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3,4,5,6">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.208.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>LineEndDialog</B> (Widget <!2><A HREF="Dialog.html#DOC.115.36">parent</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.208.2"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>GetClassName</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="NToggleListDialog.html">NToggleListDialog:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetToggleChangedCallback</B>( unsigned n, XtCallbackProc fun, XtPointer cd)
+<DT><IMG SRC=icon2.gif> void  <B>CreateToggleLists</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="string.html">string</A> *> *labels, <!1><A HREF="List.html">List</A><<!1><A HREF="List.html">List</A><<!1><A HREF="string.html">string</A> *> *> *items, <!1><A HREF="List.html">List</A><<!1><A HREF="string.html">string</A> *> *options = 0)
+<DT><IMG SRC=icon2.gif> void  <B>SetItem</B>(unsigned n, unsigned i, const <!1><A HREF="string.html">string</A> *<!2><A HREF="SelectionDialog.html#DOC.294.32">text</A>)
+<DT><IMG SRC=icon2.gif> void  <B>SetItemBitmap</B>(unsigned n, unsigned i, <!1><A HREF="Bitmap.html">Bitmap</A> *bitmap)
+<DT><IMG SRC=icon2.gif> void  <B>GetItem</B>(unsigned n, unsigned i, <!1><A HREF="string.html">string</A> *<!2><A HREF="SelectionDialog.html#DOC.294.32">text</A>)
+<DT><IMG SRC=icon2.gif> void  <B>SetValue</B>(unsigned n, unsigned i)
+<DT><IMG SRC=icon2.gif> void  <B>SetOptionValue</B>(unsigned n, bool b)
+<DT><IMG SRC=icon2.gif> void  <B>SetValueOfText</B>(unsigned n, const <!1><A HREF="string.html">string</A> *<!2><A HREF="SelectionDialog.html#DOC.294.32">text</A>)
+<DT><IMG SRC=icon2.gif> int  <B>GetValue</B>(unsigned n)
+<DT><IMG SRC=icon2.gif> int  <B>GetOptionValue</B>(unsigned n)
+<DT><IMG SRC=icon2.gif> bool  <B>IsPromptVisible</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>IsOptionsVisible</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetPromptVisible</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>SetOptionsVisible</B>(bool b)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>CreateWidget</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Configure</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <<!1><A HREF="List.html">List</A><Widget> *> *  <B>GetToggleList</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "PromptDialog.html"> PromptDialog:</A></h3>
+
+<DL>
+</DL>
+<hr><H3>Inherited from <A HREF = "SelectionDialog.html"> SelectionDialog:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetTextString</B>(const char *v)
+<DT><IMG SRC=icon2.gif> void  <B>SetTextString</B>(const <!1><A HREF="string.html">string</A> *v)
+<DT><IMG SRC=icon2.gif> void  <B>SetEditable</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>GetTextString</B>(char *n)
+<DT><IMG SRC=icon2.gif> void  <B>GetTextString</B>(<!1><A HREF="string.html">string</A> *n)
+<DT><IMG SRC=icon2.gif> void  <B>ManageTextString</B>(bool)
+<DT><IMG SRC=icon2.gif> void  <B>SetSelectionLabel</B>(const char *l)
+<DT><IMG SRC=icon2.gif> void  <B>ManageSelectionLabel</B>(bool)
+<DT><IMG SRC=icon2.gif> void  <B>SetApplyCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> void  <B>SetApplyButtonLabel</B>(const char *txt)
+<DT><IMG SRC=icon2.gif> void  <B>ManageApplyButton</B>(bool)
+<DT><IMG SRC=icon2.gif> static  void  <B>ClearCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> static  void  <B>SetDefaultCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultValue</B>(const char *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultValue</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDefaultValue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SelectItem</B>(const <!1><A HREF="string.html">string</A> *label)
+<DT><IMG SRC=icon2.gif> void  <B>DeselectAllItems</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DeleteAllItems</B>()
+<DT><IMG SRC=icon2.gif> void  <B>AddItem</B>(const char *<!2><A HREF="SelectionDialog.html#DOC.294.32">text</A>, int pos = 0)
+<DT><IMG SRC=icon2.gif> void  <B>AddItem</B>(const <!1><A HREF="string.html">string</A> *<!2><A HREF="SelectionDialog.html#DOC.294.32">text</A>, int pos = 0)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> Widget  <B>GetText</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetText</B>(Widget w)
+<DT><IMG SRC=icon2.gif> Widget  <B>GetList</B>()
+<DT><IMG SRC=icon2.gif> Widget  <B>GetSelectionLabel</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetSelectionLabel</B>(Widget w)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Dialog.html"> Dialog:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  unsigned  <B>MAXTITLE</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>Initialize</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetOKCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetCancelCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetHelpCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> void  <B>SetOKButtonLabel</B>(const char *txt)
+<DT><IMG SRC=icon2.gif> void  <B>SetCancelButtonLabel</B>(const char *txt)
+<DT><IMG SRC=icon2.gif> void  <B>SetHelpButtonLabel</B>(const char *txt)
+<DT><IMG SRC=icon2.gif> void  <B>ManageOKButton</B>(bool)
+<DT><IMG SRC=icon2.gif> void  <B>ManageCancelButton</B>(bool)
+<DT><IMG SRC=icon2.gif> void  <B>ManageHelpButton</B>(bool)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetAutoDestroy</B>(bool b)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Popup</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Popdown</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetTitle</B>(const char *title)
+<DT><IMG SRC=icon2.gif> void  <B>SetTitle</B>(const <!1><A HREF="string.html">string</A> *title)
+<DT><IMG SRC=icon2.gif> void  <B>GetTitle</B>(char *title)
+<DT><IMG SRC=icon2.gif> void  <B>GetTitle</B>(<!1><A HREF="string.html">string</A> *title)
+<DT><IMG SRC=icon2.gif> void  <B>SetModal</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>SetAutoUnmanage</B>(bool b)
+<DT><IMG SRC=icon2.gif> bool  <B>GetAutoUnmanage</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetCenteredOnPointer</B>(bool b)
+<DT><IMG SRC=icon2.gif> static  void  <B>UnmanageCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> static  void  <B>DestroyCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> static  void  <B>DestroyWidgetCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> static  void  <B>TraverseNextCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> static  void  <B>TraverseNextGroupCB</B>(Widget, XtPointer, XtPointer)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> Widget  <B>GetParent</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ManageWidget</B>(Widget, bool)
+<DT><IMG SRC=icon2.gif> void  <B>ManageCenteredOnPointer</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "MWidget.html"> MWidget:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>Manage</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>IsRealized</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetColormap</B>(Colormap cmap)
+<DT><IMG SRC=icon2.gif> void  <B>SetDestroyCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> void  <B>AddLiteClue</B>(Widget w, const char *text)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> Widget  <B>GetLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CreateLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>InstallDestroyHandler</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Component.html"> Component:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsManaged</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Unmanage</B>()
+<DT><IMG SRC=icon2.gif> Widget  <B>GetWidget</B>()
+<DT><IMG SRC=icon2.gif> Display*  <B>GetDisplay</B>()
+<DT><IMG SRC=icon2.gif> Window  <B>GetWindow</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetWidget</B>(Widget w)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const char *s)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ line end chooser dialog class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="LineEndDialog">
+<A NAME ="DOC.208.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  LineEndDialog(Widget <!2><A HREF="Dialog.html#DOC.115.36">parent</A>)</B></TT>
+<DL></DL><P>
+<A NAME="GetClassName">
+<A NAME ="DOC.208.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  GetClassName()</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

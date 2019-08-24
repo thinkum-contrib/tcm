@@ -1,0 +1,100 @@
+<html><head><TITLE>UpdateVectorAlignmentCmd</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  UpdateVectorAlignmentCmd : public <!2><A HREF="Command.html#DOC.48.1">Command</A> </H2><BLOCKQUOTE>
+ abstract command class for updating text alignments.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CCommand,MCommand.html,CUpdateVectorAlignmentCmd,MUpdateVectorAlignmentCmd.html,CUpdateRowAlignmentCmd,MUpdateRowAlignmentCmd.html,CUpdateColumnAlignmentCmd,MUpdateColumnAlignmentCmd.html">
+<param name=before value="M,M,M|_,Mr_">
+<param name=after value="Md_,M,M,M">
+<param name=indent value="0,1,1,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.439.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>UpdateVectorAlignmentCmd</B> (<!1><A HREF="Table.html">Table</A> *t, <!1><A HREF="TableViewer.html">TableViewer</A> *v, <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.439.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~UpdateVectorAlignmentCmd</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.439.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Execute</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.439.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UnExecute</B> ()<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.439.5"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>> * </TD><TD><B>GetOldAlignments</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.439.6"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="CellVector.html">CellVector</A> *> * </TD><TD><B>GetVectors</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Command.html">Command:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>TrackType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>TrackMouse</B>(<!2><A HREF="Command.html#DOC.48.3">TrackType</A>, <!1><A HREF="Point.html">Point</A>*, <!1><A HREF="Point.html">Point</A>*, <!1><A HREF="Point.html">Point</A>*)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>ReExecute</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Abort</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>CmdDone</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  const  char*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>ScaleCorrect</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>ScaleCorrect</B>(const <!1><A HREF="Point.html">Point</A> *pt) const 
+<DT><IMG SRC=icon2.gif> int  <B>Scale</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>Scale</B>(const <!1><A HREF="Point.html">Point</A> *pt) const 
+<DT><IMG SRC=icon2.gif> void  <B>SayAborted</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SayCommited</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SayUndone</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="DrawWindow.html">DrawWindow</A>*  <B>GetMainWindow</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Viewer.html">Viewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Document.html">Document</A>*  <B>GetDocument</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Grafport.html">Grafport</A>*  <B>GetGrafport</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetCmdDone</B>(bool b)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ abstract command class for updating text alignments.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="UpdateVectorAlignmentCmd">
+<A NAME ="DOC.439.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  UpdateVectorAlignmentCmd(<!1><A HREF="Table.html">Table</A> *t, <!1><A HREF="TableViewer.html">TableViewer</A> *v, <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)</B></TT>
+<DL></DL><P>
+<A NAME="~UpdateVectorAlignmentCmd">
+<A NAME ="DOC.439.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~UpdateVectorAlignmentCmd()</B></TT>
+<DL></DL><P>
+<A NAME="Execute">
+<A NAME ="DOC.439.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Execute()</B></TT>
+<DL></DL><P>
+<A NAME="UnExecute">
+<A NAME ="DOC.439.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UnExecute()</B></TT>
+<DL></DL><P>
+<A NAME="GetOldAlignments">
+<A NAME ="DOC.439.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>> *  GetOldAlignments()</B></TT>
+<DL></DL><P>
+<A NAME="GetVectors">
+<A NAME ="DOC.439.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="CellVector.html">CellVector</A> *> *  GetVectors()</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="UpdateRowAlignmentCmd.html"> UpdateRowAlignmentCmd </A><br>
+<A HREF="UpdateColumnAlignmentCmd.html"> UpdateColumnAlignmentCmd </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

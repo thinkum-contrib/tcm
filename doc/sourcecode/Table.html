@@ -1,0 +1,664 @@
+<html><head><TITLE>Table</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Table : public <!2><A HREF="Document.html#DOC.118.1">Document</A> </H2><BLOCKQUOTE>
+ Table class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CDocument,MDocument.html,CTable,MTable.html,CMatrix,MMatrix.html">
+<param name=before value="M,M,M^_">
+<param name=after value="Md_,M,M">
+<param name=indent value="0,1,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.366.79"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MIN_ROW_HEIGHT</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.80"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MIN_COLUMN_WIDTH</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.81"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MAX_ROW_HEIGHT</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.82"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MAX_COLUMN_WIDTH</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.83"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MIN_MARGIN_WIDTH</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.84"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MIN_MARGIN_HEIGHT</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.85"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MAX_MARGIN_WIDTH</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.86"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MAX_MARGIN_HEIGHT</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.87"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MIN_NUMBER_OF_COLUMNS</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.88"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MIN_NUMBER_OF_ROWS</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.89"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MAX_NUMBER_OF_COLUMNS</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.90"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MAX_NUMBER_OF_ROWS</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.366.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Table</B> (<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="TableWindow.html">TableWindow</A> *w, <!1><A HREF="TableViewer.html">TableViewer</A> *v)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Table</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Initialize</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>LoadEntries</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SaveEntries</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>RemoveAll</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AddRows</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AddColumns</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DeleteRows</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DeleteColumns</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DeleteAll</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Purge</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CutTexts</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CopyTexts</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>PasteTexts</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SortRows</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SortColumns</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.18"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SameWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.19"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SameHeight</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.20"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Span</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.21"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UnSpan</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.22"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SelectAll</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.23"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Move</B> (<!2><A HREF="Document.html#DOC.118.42">MoveType</A> t)<br>
+<I> Move table on mainwindow according to move type.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.24"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Append</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.25"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetAppendToggle</B> (bool set)<br>
+<I> set append to bottom(Trye) or to the right(False).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.26"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsAppendBottom</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.27"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetAddRowsToggle</B> (bool set)<br>
+<I> called via add rows dialog.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.28"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetAddColumnsToggle</B> (bool set)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.29"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AddRows</B> (unsigned count)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.30"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AddColumns</B> (unsigned count)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.31"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>FindAll</B> (const <!1><A HREF="string.html">string</A> *s, bool sens, bool sub, bool)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.32"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>FindNext</B> (const <!1><A HREF="string.html">string</A> *s, bool sens, bool sub, bool)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.33"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ReplaceNext</B> (const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool sens, bool sub, bool)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.34"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ReplaceAll</B> (const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool sens, bool sub, bool)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.35"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>UpdateText</B> (<!1><A HREF="Cell.html">Cell</A> *c, const <!1><A HREF="string.html">string</A> *text)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.36"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultNumberOfRows</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.37"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultNumberOfColumns</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.38"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultRowHeight</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.39"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultColumnWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.40"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultNumberOfRows</B> (unsigned n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.41"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultNumberOfColumns</B> (unsigned n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.42"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultRowHeight</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.43"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultColumnWidth</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.44"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetMarginHeight</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.45"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetMarginWidth</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.46"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DefaultRowAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.47"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DefaultColumnAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.48"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateRowAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.49"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateColumnAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.50"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateColumnAlignment</B> (<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> type)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.51"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateRowAlignment</B> (<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> type)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.52"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateDefaultColumnAlignment</B> (<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> newType)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.53"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateDefaultRowAlignment</B> (<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> newType)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.54"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowConfigRowAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.55"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDefaultRowAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.56"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowConfigColumnAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.57"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDefaultColumnAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.58"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateTableLineStyle</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.59"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLineStyle</B> (<!2><A HREF="Side.html#DOC.299.1">Side::Type</A> side, <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> style)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.60"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowConfigLineStyle</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.61"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDefaultLineStyle</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.62"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateTableLineWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.63"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLineWidth</B> (<!2><A HREF="Side.html#DOC.299.1">Side::Type</A> side, unsigned width)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.64"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowConfigLineWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.65"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDefaultLineWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.66"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateCellTextUnderline</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.67"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowRowColumnLabels</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.68"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>PrintRowColumnLabels</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.69"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateMarginWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.70"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateMarginHeight</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.71"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AnnotateCell</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.72"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetCellAnnotation</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.73"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="ScaleDialog.html">ScaleDialog</A>* </TD><TD><B>GetScaleDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.74"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="ToggleListDialog.html">ToggleListDialog</A>* </TD><TD><B>GetPromptToggleDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.75"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="LineStyleSideDialog.html">LineStyleSideDialog</A>* </TD><TD><B>GetTableLineStyleDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.76"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="LineWidthSideDialog.html">LineWidthSideDialog</A>* </TD><TD><B>GetTableLineWidthDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.77"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="TextAlignmentDialog.html">TextAlignmentDialog</A>* </TD><TD><B>GetRowAlignmentDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.366.78"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>* </TD><TD><B>GetColumnAlignmentDialog</B> ()<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.366.91"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="TableViewer.html">TableViewer</A>* </TD><TD><B>GetTableViewer</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Document.html">Document:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>MoveType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>New</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Load</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Save</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SaveAs</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SaveSelectionAs</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Quit</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDocInfo</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowSource</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SaveSource</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>ShowSummary</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>CheckDocument</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>ModelCheckDocument</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Annotate</B>()
+<DT><IMG SRC=icon2.gif> void  <B>LoadSave</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DoLoad</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> void  <B>DoSaveAs</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> void  <B>DoSaveSelectionAs</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> double  <B>GetLoadFormat</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>NewFile</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> bool  <B>NewName</B>(const <!1><A HREF="string.html">string</A> *newname)
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *newname)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDocType</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetSuffix</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetToolName</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetAuthor</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetCreationTime</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsDefault</B>()
+<DT><IMG SRC=icon2.gif> void  <B>NewDir</B>(const <!1><A HREF="string.html">string</A> *newdir)
+<DT><IMG SRC=icon2.gif> void  <B>SetDir</B>(const <!1><A HREF="string.html">string</A> *newdir)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDir</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetFSDir</B>()
+<DT><IMG SRC=icon2.gif> void  <B>IncChanges</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DecChanges</B>()
+<DT><IMG SRC=icon2.gif> int  <B>GetChanges</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetInlineEdit</B>(bool)
+<DT><IMG SRC=icon2.gif> bool  <B>IsModified</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetModified</B>(bool set)
+<DT><IMG SRC=icon2.gif> bool  <B>IsLoaded</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>MayWrite</B>(const <!1><A HREF="string.html">string</A> *path)
+<DT><IMG SRC=icon2.gif> void  <B>SetStatus</B>(const char *msg)
+<DT><IMG SRC=icon2.gif> void  <B>SetStatus</B>(const <!1><A HREF="string.html">string</A> *msg)
+<DT><IMG SRC=icon2.gif> void  <B>SetAnnotation</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Find</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Replace</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateWindow</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="EditWindow.html">EditWindow</A>*  <B>GetMainWindow</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Config.html">Config</A>*  <B>GetConfig</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Viewer.html">Viewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="InputFile.html">InputFile</A>*  <B>GetInputFile</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="OutputFile.html">OutputFile</A>*  <B>GetOutputFile</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  <B>GetSourceEditDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  <B>GetDocAnnotationDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  <B>GetEltAnnotationDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="FileSelectionDialog.html">FileSelectionDialog</A>*  <B>GetFileSelectionDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="FindDialog.html">FindDialog</A>*  <B>GetFindDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ReplaceDialog.html">ReplaceDialog</A>*  <B>GetReplaceDialog</B>() const 
+</DL><DL>
+<DT><h3>Protected Fields</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="string.html">string</A>  <B>chkbuf</B>
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsAppending</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsSaveSelection</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateDirectory</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>ShowDialog</B>(<!2><A HREF="MessageDialog.html#DOC.225.1">MessageDialog::DialogType</A>, const char *title, const char *text)
+<DT><IMG SRC=icon2.gif> void  <B>ShowDialog</B>(<!2><A HREF="MessageDialog.html#DOC.225.1">MessageDialog::DialogType</A>, const char *title, const <!1><A HREF="string.html">string</A> *text)
+<DT><IMG SRC=icon2.gif> void  <B>ReportCheck</B>(int errors, const <!1><A HREF="string.html">string</A> *msg)
+<DT><IMG SRC=icon2.gif> bool  <B>Save</B>(const <!1><A HREF="string.html">string</A> *file)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ Table class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Table">
+<A NAME ="DOC.366.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Table(<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="TableWindow.html">TableWindow</A> *w, <!1><A HREF="TableViewer.html">TableViewer</A> *v)</B></TT>
+<DL></DL><P>
+<A NAME="~Table">
+<A NAME ="DOC.366.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Table()</B></TT>
+<DL></DL><P>
+<A NAME="Initialize">
+<A NAME ="DOC.366.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Initialize()</B></TT>
+<DL></DL><P>
+<A NAME="LoadEntries">
+<A NAME ="DOC.366.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  LoadEntries()</B></TT>
+<DL></DL><P>
+<A NAME="SaveEntries">
+<A NAME ="DOC.366.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SaveEntries()</B></TT>
+<DL></DL><P>
+<A NAME="RemoveAll">
+<A NAME ="DOC.366.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  RemoveAll()</B></TT>
+<DL></DL><P>
+<A NAME="AddRows">
+<A NAME ="DOC.366.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AddRows()</B></TT>
+<DL></DL><P>
+<A NAME="AddColumns">
+<A NAME ="DOC.366.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AddColumns()</B></TT>
+<DL></DL><P>
+<A NAME="DeleteRows">
+<A NAME ="DOC.366.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DeleteRows()</B></TT>
+<DL></DL><P>
+<A NAME="DeleteColumns">
+<A NAME ="DOC.366.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DeleteColumns()</B></TT>
+<DL></DL><P>
+<A NAME="DeleteAll">
+<A NAME ="DOC.366.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DeleteAll()</B></TT>
+<DL></DL><P>
+<A NAME="Purge">
+<A NAME ="DOC.366.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Purge()</B></TT>
+<DL></DL><P>
+<A NAME="CutTexts">
+<A NAME ="DOC.366.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CutTexts()</B></TT>
+<DL></DL><P>
+<A NAME="CopyTexts">
+<A NAME ="DOC.366.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CopyTexts()</B></TT>
+<DL></DL><P>
+<A NAME="PasteTexts">
+<A NAME ="DOC.366.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  PasteTexts()</B></TT>
+<DL></DL><P>
+<A NAME="SortRows">
+<A NAME ="DOC.366.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SortRows()</B></TT>
+<DL></DL><P>
+<A NAME="SortColumns">
+<A NAME ="DOC.366.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SortColumns()</B></TT>
+<DL></DL><P>
+<A NAME="SameWidth">
+<A NAME ="DOC.366.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SameWidth()</B></TT>
+<DL></DL><P>
+<A NAME="SameHeight">
+<A NAME ="DOC.366.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SameHeight()</B></TT>
+<DL></DL><P>
+<A NAME="Span">
+<A NAME ="DOC.366.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Span()</B></TT>
+<DL></DL><P>
+<A NAME="UnSpan">
+<A NAME ="DOC.366.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UnSpan()</B></TT>
+<DL></DL><P>
+<A NAME="SelectAll">
+<A NAME ="DOC.366.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SelectAll()</B></TT>
+<DL></DL><P>
+<A NAME="Move">
+<A NAME ="DOC.366.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Move(<!2><A HREF="Document.html#DOC.118.42">MoveType</A> t)</B></TT>
+<DD> Move table on mainwindow according to move type.
+<DL></DL><P>
+<A NAME="Append">
+<A NAME ="DOC.366.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Append()</B></TT>
+<DL></DL><P>
+<A NAME="SetAppendToggle">
+<A NAME ="DOC.366.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetAppendToggle(bool set)</B></TT>
+<DD> set append to bottom(Trye) or to the right(False).
+<DL></DL><P>
+<A NAME="IsAppendBottom">
+<A NAME ="DOC.366.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsAppendBottom()</B></TT>
+<DL></DL><P>
+<A NAME="SetAddRowsToggle">
+<A NAME ="DOC.366.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetAddRowsToggle(bool set)</B></TT>
+<DD> called via add rows dialog.
+<DL></DL><P>
+<A NAME="SetAddColumnsToggle">
+<A NAME ="DOC.366.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetAddColumnsToggle(bool set)</B></TT>
+<DL></DL><P>
+<A NAME="AddRows">
+<A NAME ="DOC.366.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AddRows(unsigned count)</B></TT>
+<DL></DL><P>
+<A NAME="AddColumns">
+<A NAME ="DOC.366.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AddColumns(unsigned count)</B></TT>
+<DL></DL><P>
+<A NAME="FindAll">
+<A NAME ="DOC.366.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  FindAll(const <!1><A HREF="string.html">string</A> *s, bool sens, bool sub, bool)</B></TT>
+<DL></DL><P>
+<A NAME="FindNext">
+<A NAME ="DOC.366.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  FindNext(const <!1><A HREF="string.html">string</A> *s, bool sens, bool sub, bool)</B></TT>
+<DL></DL><P>
+<A NAME="ReplaceNext">
+<A NAME ="DOC.366.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ReplaceNext(const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool sens, bool sub, bool)</B></TT>
+<DL></DL><P>
+<A NAME="ReplaceAll">
+<A NAME ="DOC.366.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ReplaceAll(const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool sens, bool sub, bool)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateText">
+<A NAME ="DOC.366.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  UpdateText(<!1><A HREF="Cell.html">Cell</A> *c, const <!1><A HREF="string.html">string</A> *text)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultNumberOfRows">
+<A NAME ="DOC.366.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultNumberOfRows()</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultNumberOfColumns">
+<A NAME ="DOC.366.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultNumberOfColumns()</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultRowHeight">
+<A NAME ="DOC.366.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultRowHeight()</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultColumnWidth">
+<A NAME ="DOC.366.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultColumnWidth()</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultNumberOfRows">
+<A NAME ="DOC.366.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultNumberOfRows(unsigned n)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultNumberOfColumns">
+<A NAME ="DOC.366.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultNumberOfColumns(unsigned n)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultRowHeight">
+<A NAME ="DOC.366.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultRowHeight(int n)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultColumnWidth">
+<A NAME ="DOC.366.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultColumnWidth(int n)</B></TT>
+<DL></DL><P>
+<A NAME="SetMarginHeight">
+<A NAME ="DOC.366.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetMarginHeight(int n)</B></TT>
+<DL></DL><P>
+<A NAME="SetMarginWidth">
+<A NAME ="DOC.366.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetMarginWidth(int n)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultRowAlignment">
+<A NAME ="DOC.366.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DefaultRowAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="DefaultColumnAlignment">
+<A NAME ="DOC.366.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DefaultColumnAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateRowAlignment">
+<A NAME ="DOC.366.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateRowAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateColumnAlignment">
+<A NAME ="DOC.366.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateColumnAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateColumnAlignment">
+<A NAME ="DOC.366.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateColumnAlignment(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> type)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateRowAlignment">
+<A NAME ="DOC.366.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateRowAlignment(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> type)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateDefaultColumnAlignment">
+<A NAME ="DOC.366.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateDefaultColumnAlignment(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> newType)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateDefaultRowAlignment">
+<A NAME ="DOC.366.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateDefaultRowAlignment(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> newType)</B></TT>
+<DL></DL><P>
+<A NAME="ShowConfigRowAlignment">
+<A NAME ="DOC.366.54">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowConfigRowAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="ShowDefaultRowAlignment">
+<A NAME ="DOC.366.55">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDefaultRowAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="ShowConfigColumnAlignment">
+<A NAME ="DOC.366.56">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowConfigColumnAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="ShowDefaultColumnAlignment">
+<A NAME ="DOC.366.57">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDefaultColumnAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateTableLineStyle">
+<A NAME ="DOC.366.58">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateTableLineStyle()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineStyle">
+<A NAME ="DOC.366.59">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLineStyle(<!2><A HREF="Side.html#DOC.299.1">Side::Type</A> side, <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> style)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="ShowConfigLineStyle">
+<A NAME ="DOC.366.60">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowConfigLineStyle()</B></TT>
+<DL></DL><P>
+<A NAME="ShowDefaultLineStyle">
+<A NAME ="DOC.366.61">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDefaultLineStyle()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateTableLineWidth">
+<A NAME ="DOC.366.62">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateTableLineWidth()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineWidth">
+<A NAME ="DOC.366.63">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLineWidth(<!2><A HREF="Side.html#DOC.299.1">Side::Type</A> side, unsigned width)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="ShowConfigLineWidth">
+<A NAME ="DOC.366.64">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowConfigLineWidth()</B></TT>
+<DL></DL><P>
+<A NAME="ShowDefaultLineWidth">
+<A NAME ="DOC.366.65">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDefaultLineWidth()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateCellTextUnderline">
+<A NAME ="DOC.366.66">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateCellTextUnderline()</B></TT>
+<DL></DL><P>
+<A NAME="ShowRowColumnLabels">
+<A NAME ="DOC.366.67">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowRowColumnLabels(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="PrintRowColumnLabels">
+<A NAME ="DOC.366.68">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  PrintRowColumnLabels(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateMarginWidth">
+<A NAME ="DOC.366.69">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateMarginWidth()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateMarginHeight">
+<A NAME ="DOC.366.70">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateMarginHeight()</B></TT>
+<DL></DL><P>
+<A NAME="AnnotateCell">
+<A NAME ="DOC.366.71">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AnnotateCell()</B></TT>
+<DL></DL><P>
+<A NAME="SetCellAnnotation">
+<A NAME ="DOC.366.72">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetCellAnnotation(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="GetScaleDialog">
+<A NAME ="DOC.366.73">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="ScaleDialog.html">ScaleDialog</A>*  GetScaleDialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetPromptToggleDialog">
+<A NAME ="DOC.366.74">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="ToggleListDialog.html">ToggleListDialog</A>*  GetPromptToggleDialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetTableLineStyleDialog">
+<A NAME ="DOC.366.75">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="LineStyleSideDialog.html">LineStyleSideDialog</A>*  GetTableLineStyleDialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetTableLineWidthDialog">
+<A NAME ="DOC.366.76">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="LineWidthSideDialog.html">LineWidthSideDialog</A>*  GetTableLineWidthDialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetRowAlignmentDialog">
+<A NAME ="DOC.366.77">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="TextAlignmentDialog.html">TextAlignmentDialog</A>*  GetRowAlignmentDialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetColumnAlignmentDialog">
+<A NAME ="DOC.366.78">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>*  GetColumnAlignmentDialog()</B></TT>
+<DL></DL><P>
+<A NAME="MIN_ROW_HEIGHT">
+<A NAME ="DOC.366.79">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MIN_ROW_HEIGHT</B></TT>
+<DL></DL><P>
+<A NAME="MIN_COLUMN_WIDTH">
+<A NAME ="DOC.366.80">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MIN_COLUMN_WIDTH</B></TT>
+<DL></DL><P>
+<A NAME="MAX_ROW_HEIGHT">
+<A NAME ="DOC.366.81">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MAX_ROW_HEIGHT</B></TT>
+<DL></DL><P>
+<A NAME="MAX_COLUMN_WIDTH">
+<A NAME ="DOC.366.82">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MAX_COLUMN_WIDTH</B></TT>
+<DL></DL><P>
+<A NAME="MIN_MARGIN_WIDTH">
+<A NAME ="DOC.366.83">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MIN_MARGIN_WIDTH</B></TT>
+<DL></DL><P>
+<A NAME="MIN_MARGIN_HEIGHT">
+<A NAME ="DOC.366.84">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MIN_MARGIN_HEIGHT</B></TT>
+<DL></DL><P>
+<A NAME="MAX_MARGIN_WIDTH">
+<A NAME ="DOC.366.85">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MAX_MARGIN_WIDTH</B></TT>
+<DL></DL><P>
+<A NAME="MAX_MARGIN_HEIGHT">
+<A NAME ="DOC.366.86">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MAX_MARGIN_HEIGHT</B></TT>
+<DL></DL><P>
+<A NAME="MIN_NUMBER_OF_COLUMNS">
+<A NAME ="DOC.366.87">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MIN_NUMBER_OF_COLUMNS</B></TT>
+<DL></DL><P>
+<A NAME="MIN_NUMBER_OF_ROWS">
+<A NAME ="DOC.366.88">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MIN_NUMBER_OF_ROWS</B></TT>
+<DL></DL><P>
+<A NAME="MAX_NUMBER_OF_COLUMNS">
+<A NAME ="DOC.366.89">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MAX_NUMBER_OF_COLUMNS</B></TT>
+<DL></DL><P>
+<A NAME="MAX_NUMBER_OF_ROWS">
+<A NAME ="DOC.366.90">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MAX_NUMBER_OF_ROWS</B></TT>
+<DL></DL><P>
+<A NAME="GetTableViewer">
+<A NAME ="DOC.366.91">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="TableViewer.html">TableViewer</A>*  GetTableViewer()</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="Matrix.html"> Matrix </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

@@ -1,0 +1,284 @@
+<html><head><TITLE>System</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  System  </H2><BLOCKQUOTE>
+ Encapsulates some O.S. specific functions.
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.362.30"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  char </TD><TD><B>TOOLKIT_HOME_DEFAULT</B> []<br>
+<I> default toolkit home directory.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.31"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  char </TD><TD><B>TOOLKIT_STAT_HEADER</B> []<br>
+<I> Statistics message subject for logging.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.32"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  char </TD><TD><B>TOOLKIT_BUG_HEADER</B> []<br>
+<I> Bug report message subject.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.33"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  char </TD><TD><B>TOOLKIT_HOME_VAR_NAME</B> []<br>
+<I> Variable name that contains the tool home directory.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.34"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  char* </TD><TD><B>STD_SEARCH_DIRS</B> []<br>
+<I> most common Unix directories for system wide available binaries.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.35"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>sendBugEmail</B> <br>
+<I> send an email after crash</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.36"> <IMG BORDER=0 SRC=icon1.gif></A> static  char </TD><TD><B>emailAddress</B> []<br>
+<I> email address to send to.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.37"> <IMG BORDER=0 SRC=icon1.gif></A> static  char </TD><TD><B>currentProgram</B> []<br>
+<I> the command name of the current program (argv[0]).</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.362.1"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetSignalHandler</B> ()<br>
+<I> set unix signal handler.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.2"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>GetHostName</B> (char* host)<br>
+<I> copies into host the hostname of the machine.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.3"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>GetHostName</B> (<!1><A HREF="string.html">string</A>* host)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.4"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>GetLoginName</B> (char* login)<br>
+<I> copies into login the loginname of the user.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.5"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>GetLoginName</B> (<!1><A HREF="string.html">string</A>* login)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.6"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>GetTime</B> (char* time)<br>
+<I> copies in time the current machine time as a string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.7"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>GetTime</B> (<!1><A HREF="string.html">string</A>* time)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.8"> <IMG BORDER=0 SRC=icon1.gif></A> static  unsigned  long </TD><TD><B>GenerateId</B> (unsigned long)<br>
+<I> returns a random number based on the time and the given number.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.9"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>GetPrinter</B> (char* printer)<br>
+<I> copies into printer the PRINTER environment variable.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.10"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>GetPrinter</B> (<!1><A HREF="string.html">string</A>* printer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.11"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>GetCwd</B> (char* dir)<br>
+<I> retrieve current working directory.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.12"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>GetCwd</B> (<!1><A HREF="string.html">string</A>* dir)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.13"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>GetHome</B> (char* home)<br>
+<I> retrieve home directory.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.14"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>GetHome</B> (<!1><A HREF="string.html">string</A>* home)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.15"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>GetToolkitHome</B> (char* home)<br>
+<I> copies in home the tool home directory variable.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.16"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>GetToolkitHome</B> (<!1><A HREF="string.html">string</A>* home)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.17"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>GiveFile</B> (const char* path, char* dir, char* file)<br>
+<I> copies in dir and file the directory and file in the name 'path'.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.18"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>GiveFile</B> (const <!1><A HREF="string.html">string</A>* path, <!1><A HREF="string.html">string</A>* dir, <!1><A HREF="string.html">string</A>* file)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.19"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>GiveFile</B> (const char* path, char* file)<br>
+<I> copies in file the file in the name 'path'.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.20"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>GiveFile</B> (const <!1><A HREF="string.html">string</A>* path, <!1><A HREF="string.html">string</A>* file)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.21"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>FileRegular</B> (const char* file)<br>
+<I> returns if file is regular (not directory, named pipe etc).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.22"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>FileExists</B> (const char* file)<br>
+<I> returns whether file exists</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.23"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>FileExecutable</B> (const char* file)<br>
+<I> returns whether executable file exists</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.24"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>DirExists</B> (const char* dir)<br>
+<I> returns whether directory exists</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.25"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>FindProgram</B> (char* program, const char* command)<br>
+<I> returns if there is command in a std dir, program becomes the path.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.26"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>FindProgram</B> (<!1><A HREF="string.html">string</A>* program, const char* command)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.27"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>NxnParse</B> (const char* desc, int &num1, int &num2)<br>
+<I> return true if desc is a 'num1'x'num2' string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.28"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>FindArg</B> (char** argv, int argc, const char* arg, int &index)<br>
+<I> return if argv contains arg. Index will be the position in argv.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.362.29"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SendEmail</B> (const char* recipient, const char* subject, const char* program, const char* version, const char* text)<br>
+<I> send an email message (for instance for stats or bug reports).</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.362.38"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SignalHandler</B> (int s)<br>
+<I> called when signal occurs.</I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ Encapsulates some O.S. specific functions.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="SetSignalHandler">
+<A NAME ="DOC.362.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetSignalHandler()</B></TT>
+<DD> set unix signal handler.
+<DL></DL><P>
+<A NAME="GetHostName">
+<A NAME ="DOC.362.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  GetHostName(char* host)</B></TT>
+<DD> copies into host the hostname of the machine.
+<DL></DL><P>
+<A NAME="GetHostName">
+<A NAME ="DOC.362.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  GetHostName(<!1><A HREF="string.html">string</A>* host)</B></TT>
+<DL></DL><P>
+<A NAME="GetLoginName">
+<A NAME ="DOC.362.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  GetLoginName(char* login)</B></TT>
+<DD> copies into login the loginname of the user.
+<DL></DL><P>
+<A NAME="GetLoginName">
+<A NAME ="DOC.362.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  GetLoginName(<!1><A HREF="string.html">string</A>* login)</B></TT>
+<DL></DL><P>
+<A NAME="GetTime">
+<A NAME ="DOC.362.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  GetTime(char* time)</B></TT>
+<DD> copies in time the current machine time as a string.
+<DL></DL><P>
+<A NAME="GetTime">
+<A NAME ="DOC.362.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  GetTime(<!1><A HREF="string.html">string</A>* time)</B></TT>
+<DL></DL><P>
+<A NAME="GenerateId">
+<A NAME ="DOC.362.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  unsigned  long  GenerateId(unsigned long)</B></TT>
+<DD> returns a random number based on the time and the given number.
+<DL></DL><P>
+<A NAME="GetPrinter">
+<A NAME ="DOC.362.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  GetPrinter(char* printer)</B></TT>
+<DD> copies into printer the PRINTER environment variable.
+<DL></DL><P>
+<A NAME="GetPrinter">
+<A NAME ="DOC.362.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  GetPrinter(<!1><A HREF="string.html">string</A>* printer)</B></TT>
+<DL></DL><P>
+<A NAME="GetCwd">
+<A NAME ="DOC.362.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  GetCwd(char* dir)</B></TT>
+<DD> retrieve current working directory.
+<DL></DL><P>
+<A NAME="GetCwd">
+<A NAME ="DOC.362.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  GetCwd(<!1><A HREF="string.html">string</A>* dir)</B></TT>
+<DL></DL><P>
+<A NAME="GetHome">
+<A NAME ="DOC.362.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  GetHome(char* home)</B></TT>
+<DD> retrieve home directory.
+<DL></DL><P>
+<A NAME="GetHome">
+<A NAME ="DOC.362.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  GetHome(<!1><A HREF="string.html">string</A>* home)</B></TT>
+<DL></DL><P>
+<A NAME="GetToolkitHome">
+<A NAME ="DOC.362.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  GetToolkitHome(char* home)</B></TT>
+<DD> copies in home the tool home directory variable.
+<DL></DL><P>
+<A NAME="GetToolkitHome">
+<A NAME ="DOC.362.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  GetToolkitHome(<!1><A HREF="string.html">string</A>* home)</B></TT>
+<DL></DL><P>
+<A NAME="GiveFile">
+<A NAME ="DOC.362.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  GiveFile(const char* path, char* dir, char* file)</B></TT>
+<DD> copies in dir and file the directory and file in the name 'path'.
+<DL></DL><P>
+<A NAME="GiveFile">
+<A NAME ="DOC.362.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  GiveFile(const <!1><A HREF="string.html">string</A>* path, <!1><A HREF="string.html">string</A>* dir, <!1><A HREF="string.html">string</A>* file)</B></TT>
+<DL></DL><P>
+<A NAME="GiveFile">
+<A NAME ="DOC.362.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  GiveFile(const char* path, char* file)</B></TT>
+<DD> copies in file the file in the name 'path'.
+<DL></DL><P>
+<A NAME="GiveFile">
+<A NAME ="DOC.362.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  GiveFile(const <!1><A HREF="string.html">string</A>* path, <!1><A HREF="string.html">string</A>* file)</B></TT>
+<DL></DL><P>
+<A NAME="FileRegular">
+<A NAME ="DOC.362.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  FileRegular(const char* file)</B></TT>
+<DD> returns if file is regular (not directory, named pipe etc).
+<DL></DL><P>
+<A NAME="FileExists">
+<A NAME ="DOC.362.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  FileExists(const char* file)</B></TT>
+<DD> returns whether file exists
+<DL></DL><P>
+<A NAME="FileExecutable">
+<A NAME ="DOC.362.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  FileExecutable(const char* file)</B></TT>
+<DD> returns whether executable file exists
+<DL></DL><P>
+<A NAME="DirExists">
+<A NAME ="DOC.362.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  DirExists(const char* dir)</B></TT>
+<DD> returns whether directory exists
+<DL></DL><P>
+<A NAME="FindProgram">
+<A NAME ="DOC.362.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  FindProgram(char* program, const char* command)</B></TT>
+<DD> returns if there is command in a std dir, program becomes the path.
+<DL></DL><P>
+<A NAME="FindProgram">
+<A NAME ="DOC.362.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  FindProgram(<!1><A HREF="string.html">string</A>* program, const char* command)</B></TT>
+<DL></DL><P>
+<A NAME="NxnParse">
+<A NAME ="DOC.362.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  NxnParse(const char* desc, int &num1, int &num2)</B></TT>
+<DD> return true if desc is a 'num1'x'num2' string.
+<DL></DL><P>
+<A NAME="FindArg">
+<A NAME ="DOC.362.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  FindArg(char** argv, int argc, const char* arg, int &index)</B></TT>
+<DD> return if argv contains arg. Index will be the position in argv.
+<DL></DL><P>
+<A NAME="SendEmail">
+<A NAME ="DOC.362.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SendEmail(const char* recipient, const char* subject, const char* program, const char* version, const char* text)</B></TT>
+<DD> send an email message (for instance for stats or bug reports).
+<DL></DL><P>
+<A NAME="TOOLKIT_HOME_DEFAULT">
+<A NAME ="DOC.362.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  char  TOOLKIT_HOME_DEFAULT[]</B></TT>
+<DD> default toolkit home directory.
+<DL></DL><P>
+<A NAME="TOOLKIT_STAT_HEADER">
+<A NAME ="DOC.362.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  char  TOOLKIT_STAT_HEADER[]</B></TT>
+<DD> Statistics message subject for logging.
+<DL></DL><P>
+<A NAME="TOOLKIT_BUG_HEADER">
+<A NAME ="DOC.362.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  char  TOOLKIT_BUG_HEADER[]</B></TT>
+<DD> Bug report message subject.
+<DL></DL><P>
+<A NAME="TOOLKIT_HOME_VAR_NAME">
+<A NAME ="DOC.362.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  char  TOOLKIT_HOME_VAR_NAME[]</B></TT>
+<DD> Variable name that contains the tool home directory.
+<DL></DL><P>
+<A NAME="STD_SEARCH_DIRS">
+<A NAME ="DOC.362.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  char*  STD_SEARCH_DIRS[]</B></TT>
+<DD> most common Unix directories for system wide available binaries.
+<DL></DL><P>
+<A NAME="sendBugEmail">
+<A NAME ="DOC.362.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  sendBugEmail</B></TT>
+<DD> send an email after crash
+<DL></DL><P>
+<A NAME="emailAddress">
+<A NAME ="DOC.362.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  char  emailAddress[]</B></TT>
+<DD> email address to send to.
+<DL></DL><P>
+<A NAME="currentProgram">
+<A NAME ="DOC.362.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  char  currentProgram[]</B></TT>
+<DD> the command name of the current program (argv[0]).
+<DL></DL><P>
+<A NAME="SignalHandler">
+<A NAME ="DOC.362.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SignalHandler(int s)</B></TT>
+<DD> called when signal occurs.
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

@@ -1,0 +1,135 @@
+<html><head><TITLE>Menu</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Menu : public <!2><A HREF="MWidget.html#DOC.237.1">MWidget</A> </H2><BLOCKQUOTE>
+ Class for menu manipulation.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CComponent,MComponent.html,CMWidget,MMWidget.html,CMenu,MMenu.html">
+<param name=before value="M,M,M">
+<param name=after value="Md_SP,Md_,M">
+<param name=indent value="0,1,2">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Classes</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.223.1"> <IMG BORDER=0 SRC=icon1.gif></A>  enum </TD><TD><B>MenuType</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.223.2"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Menu</B> (Widget parent, <!2><A HREF="Menu.html#DOC.223.1">MenuType</A> <!2><A HREF="Menu.html#DOC.223.12">menuType</A>, const char *<!2><A HREF="Component.html#DOC.52.13">name</A>, char mnemonic, <!1><A HREF="MenuItem.html">MenuItem</A> *items)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.223.3"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>GetClassName</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.223.4"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>GetNthMenuItem</B> (int n)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.223.5"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>GetMenuItem</B> (const char *label)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.223.6"> <IMG BORDER=0 SRC=icon1.gif></A> static  Widget </TD><TD><B>GetChild</B> (Widget menu, <!2><A HREF="Menu.html#DOC.223.1">MenuType</A> type, const char *label)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.223.7"> <IMG BORDER=0 SRC=icon1.gif></A> static  Widget </TD><TD><B>GetNthChild</B> (Widget menu, <!2><A HREF="Menu.html#DOC.223.1">MenuType</A> type, int n)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.223.8"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetChildToggleState</B> ( Widget menu, <!2><A HREF="Menu.html#DOC.223.1">MenuType</A> type, const char *label, bool state, bool notify=False)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.223.9"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetNthChildToggleState</B> ( Widget menu, <!2><A HREF="Menu.html#DOC.223.1">MenuType</A> type, int n, bool state, bool notify=False)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.223.10"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetChildSensitive</B> ( Widget menu, <!2><A HREF="Menu.html#DOC.223.1">MenuType</A> type, const char *label, bool state)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.223.11"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetNthChildSensitive</B> ( Widget menu, <!2><A HREF="Menu.html#DOC.223.1">MenuType</A> type, int n, bool state)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="MWidget.html">MWidget:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>Manage</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>IsRealized</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetColormap</B>(Colormap cmap)
+<DT><IMG SRC=icon2.gif> void  <B>SetDestroyCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> void  <B>AddLiteClue</B>(Widget w, const char *text)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> Widget  <B>GetLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CreateLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>InstallDestroyHandler</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Component.html"> Component:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsManaged</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Unmanage</B>()
+<DT><IMG SRC=icon2.gif> Widget  <B>GetWidget</B>()
+<DT><IMG SRC=icon2.gif> Display*  <B>GetDisplay</B>()
+<DT><IMG SRC=icon2.gif> Window  <B>GetWindow</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetWidget</B>(Widget w)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const char *s)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ Class for menu manipulation.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="MenuType">
+<A NAME ="DOC.223.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum  MenuType</B></TT>
+<DL></DL><P>
+<A NAME="Menu">
+<A NAME ="DOC.223.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Menu(Widget parent, <!2><A HREF="Menu.html#DOC.223.1">MenuType</A> <!2><A HREF="Menu.html#DOC.223.12">menuType</A>, const char *<!2><A HREF="Component.html#DOC.52.13">name</A>, char mnemonic, <!1><A HREF="MenuItem.html">MenuItem</A> *items)</B></TT>
+<DL></DL><P>
+<A NAME="GetClassName">
+<A NAME ="DOC.223.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  GetClassName()</B></TT>
+<DL></DL><P>
+<A NAME="GetNthMenuItem">
+<A NAME ="DOC.223.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  GetNthMenuItem(int n)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetMenuItem">
+<A NAME ="DOC.223.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  GetMenuItem(const char *label)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetChild">
+<A NAME ="DOC.223.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  Widget  GetChild(Widget menu, <!2><A HREF="Menu.html#DOC.223.1">MenuType</A> type, const char *label)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetNthChild">
+<A NAME ="DOC.223.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  Widget  GetNthChild(Widget menu, <!2><A HREF="Menu.html#DOC.223.1">MenuType</A> type, int n)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="SetChildToggleState">
+<A NAME ="DOC.223.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetChildToggleState( Widget menu, <!2><A HREF="Menu.html#DOC.223.1">MenuType</A> type, const char *label, bool state, bool notify=False)</B></TT>
+<DL></DL><P>
+<A NAME="SetNthChildToggleState">
+<A NAME ="DOC.223.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetNthChildToggleState( Widget menu, <!2><A HREF="Menu.html#DOC.223.1">MenuType</A> type, int n, bool state, bool notify=False)</B></TT>
+<DL></DL><P>
+<A NAME="SetChildSensitive">
+<A NAME ="DOC.223.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetChildSensitive( Widget menu, <!2><A HREF="Menu.html#DOC.223.1">MenuType</A> type, const char *label, bool state)</B></TT>
+<DL></DL><P>
+<A NAME="SetNthChildSensitive">
+<A NAME ="DOC.223.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetNthChildSensitive( Widget menu, <!2><A HREF="Menu.html#DOC.223.1">MenuType</A> type, int n, bool state)</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

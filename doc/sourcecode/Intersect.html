@@ -1,0 +1,115 @@
+<html><head><TITLE>Intersect</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Intersect  </H2><BLOCKQUOTE>
+ Functions for intersection point computation.
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.204.1"> <IMG BORDER=0 SRC=icon1.gif></A> static  <!1><A HREF="Point.html">Point</A> </TD><TD><B>BoxIntersects</B> (<!1><A HREF="Point.html">Point</A> from, <!1><A HREF="Point.html">Point</A> to, int width, int height)<br>
+<I> Return intersection from point 'from' to box at 'to' having width and height</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.204.2"> <IMG BORDER=0 SRC=icon1.gif></A> static  <!1><A HREF="Point.html">Point</A> </TD><TD><B>BoxIntersects</B> (<!1><A HREF="Point.html">Point</A> position, <!1><A HREF="Point.html">Point</A> to, int width, int height, int order, int count, int &code)<br>
+<I> See above, intersecting line is order-th of count lines. code is not used.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.204.3"> <IMG BORDER=0 SRC=icon1.gif></A> static  <!1><A HREF="Point.html">Point</A> </TD><TD><B>EllipseIntersects</B> (<!1><A HREF="Point.html">Point</A> from, <!1><A HREF="Point.html">Point</A> to, int width, int height)<br>
+<I> Return intersect from point 'from' to ellipse at 'to' having wd and ht.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.204.4"> <IMG BORDER=0 SRC=icon1.gif></A> static  <!1><A HREF="Point.html">Point</A> </TD><TD><B>EllipseIntersects</B> (<!1><A HREF="Point.html">Point</A> position, <!1><A HREF="Point.html">Point</A> to, int width, int height, int order, int count, int &code)<br>
+<I> See above, intersecting line is order-th of count lines. code is not used.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.204.5"> <IMG BORDER=0 SRC=icon1.gif></A> static  <!1><A HREF="Point.html">Point</A> </TD><TD><B>DiamondIntersects</B> (<!1><A HREF="Point.html">Point</A> from, <!1><A HREF="Point.html">Point</A> to, int width, int height)<br>
+<I> Return intersect from point 'from' to diamond at 'to' having wd and ht</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.204.6"> <IMG BORDER=0 SRC=icon1.gif></A> static  <!1><A HREF="Point.html">Point</A> </TD><TD><B>DiamondIntersects</B> (<!1><A HREF="Point.html">Point</A> position, <!1><A HREF="Point.html">Point</A> to, int width, int height, int order, int count, int &code)<br>
+<I> See above, intersecting line is order-th of count lines. code is not used.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.204.7"> <IMG BORDER=0 SRC=icon1.gif></A> static  <!1><A HREF="Point.html">Point</A> </TD><TD><B>TriangleIntersects</B> (<!1><A HREF="Point.html">Point</A> from, <!1><A HREF="Point.html">Point</A> to, int width, int height)<br>
+<I> Return intersect from point 'from' to triangle at 'to' having wd and ht</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.204.8"> <IMG BORDER=0 SRC=icon1.gif></A> static  <!1><A HREF="Point.html">Point</A> </TD><TD><B>TriangleIntersects</B> (<!1><A HREF="Point.html">Point</A> position, <!1><A HREF="Point.html">Point</A> to, int width, int height, int order, int count, int &code)<br>
+<I> See above, intersecting line is order-th of count lines. code is not used.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.204.9"> <IMG BORDER=0 SRC=icon1.gif></A> static  <!1><A HREF="Point.html">Point</A> </TD><TD><B>NoteBoxIntersects</B> (<!1><A HREF="Point.html">Point</A> from, <!1><A HREF="Point.html">Point</A> to, int width, int height)<br>
+<I> Return intersect from point 'from' to notebox at 'to' having wd and ht</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.204.10"> <IMG BORDER=0 SRC=icon1.gif></A> static  <!1><A HREF="Point.html">Point</A> </TD><TD><B>DiamondSnp</B> (<!1><A HREF="Point.html">Point</A> to, int dx, int dy, int x1, int y1, int x2, int y2)<br>
+<I>	 </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.204.11"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>WhichLine</B> (<!1><A HREF="Point.html">Point</A> p, int w, int h, int dx, int dy, int &x1, int &y1, int &x2, int &y2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.204.12"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>WhichLine2</B> (<!1><A HREF="Point.html">Point</A> p, int w, int h, int dx, int dy, int deltaY, int &x1, int &y1, int &x2, int &y2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.204.13"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>WhichLine3</B> (<!1><A HREF="Point.html">Point</A> p, int w, int h, int dx, int dy, int deltaY, int &x1, int &y1, int &x2, int &y2)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ Functions for intersection point computation.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="BoxIntersects">
+<A NAME ="DOC.204.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  <!1><A HREF="Point.html">Point</A>  BoxIntersects(<!1><A HREF="Point.html">Point</A> from, <!1><A HREF="Point.html">Point</A> to, int width, int height)</B></TT>
+<DD> Return intersection from point 'from' to box at 'to' having width and height
+<DL></DL><P>
+<A NAME="BoxIntersects">
+<A NAME ="DOC.204.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  <!1><A HREF="Point.html">Point</A>  BoxIntersects(<!1><A HREF="Point.html">Point</A> position, <!1><A HREF="Point.html">Point</A> to, int width, int height, int order, int count, int &code)</B></TT>
+<DD> See above, intersecting line is order-th of count lines. code is not used.
+<DL></DL><P>
+<A NAME="EllipseIntersects">
+<A NAME ="DOC.204.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  <!1><A HREF="Point.html">Point</A>  EllipseIntersects(<!1><A HREF="Point.html">Point</A> from, <!1><A HREF="Point.html">Point</A> to, int width, int height)</B></TT>
+<DD> Return intersect from point 'from' to ellipse at 'to' having wd and ht.
+<DL></DL><P>
+<A NAME="EllipseIntersects">
+<A NAME ="DOC.204.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  <!1><A HREF="Point.html">Point</A>  EllipseIntersects(<!1><A HREF="Point.html">Point</A> position, <!1><A HREF="Point.html">Point</A> to, int width, int height, int order, int count, int &code)</B></TT>
+<DD> See above, intersecting line is order-th of count lines. code is not used.
+<DL></DL><P>
+<A NAME="DiamondIntersects">
+<A NAME ="DOC.204.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  <!1><A HREF="Point.html">Point</A>  DiamondIntersects(<!1><A HREF="Point.html">Point</A> from, <!1><A HREF="Point.html">Point</A> to, int width, int height)</B></TT>
+<DD> Return intersect from point 'from' to diamond at 'to' having wd and ht
+<DL></DL><P>
+<A NAME="DiamondIntersects">
+<A NAME ="DOC.204.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  <!1><A HREF="Point.html">Point</A>  DiamondIntersects(<!1><A HREF="Point.html">Point</A> position, <!1><A HREF="Point.html">Point</A> to, int width, int height, int order, int count, int &code)</B></TT>
+<DD> See above, intersecting line is order-th of count lines. code is not used.
+<DL></DL><P>
+<A NAME="TriangleIntersects">
+<A NAME ="DOC.204.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  <!1><A HREF="Point.html">Point</A>  TriangleIntersects(<!1><A HREF="Point.html">Point</A> from, <!1><A HREF="Point.html">Point</A> to, int width, int height)</B></TT>
+<DD> Return intersect from point 'from' to triangle at 'to' having wd and ht
+<DL></DL><P>
+<A NAME="TriangleIntersects">
+<A NAME ="DOC.204.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  <!1><A HREF="Point.html">Point</A>  TriangleIntersects(<!1><A HREF="Point.html">Point</A> position, <!1><A HREF="Point.html">Point</A> to, int width, int height, int order, int count, int &code)</B></TT>
+<DD> See above, intersecting line is order-th of count lines. code is not used.
+<DL></DL><P>
+<A NAME="NoteBoxIntersects">
+<A NAME ="DOC.204.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  <!1><A HREF="Point.html">Point</A>  NoteBoxIntersects(<!1><A HREF="Point.html">Point</A> from, <!1><A HREF="Point.html">Point</A> to, int width, int height)</B></TT>
+<DD> Return intersect from point 'from' to notebox at 'to' having wd and ht
+<DL></DL><P>
+<A NAME="DiamondSnp">
+<A NAME ="DOC.204.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  <!1><A HREF="Point.html">Point</A>  DiamondSnp(<!1><A HREF="Point.html">Point</A> to, int dx, int dy, int x1, int y1, int x2, int y2)</B></TT>
+<DD>	 
+<DL></DL><P>
+<A NAME="WhichLine">
+<A NAME ="DOC.204.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  WhichLine(<!1><A HREF="Point.html">Point</A> p, int w, int h, int dx, int dy, int &x1, int &y1, int &x2, int &y2)</B></TT>
+<DL></DL><P>
+<A NAME="WhichLine2">
+<A NAME ="DOC.204.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  WhichLine2(<!1><A HREF="Point.html">Point</A> p, int w, int h, int dx, int dy, int deltaY, int &x1, int &y1, int &x2, int &y2)</B></TT>
+<DL></DL><P>
+<A NAME="WhichLine3">
+<A NAME ="DOC.204.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  WhichLine3(<!1><A HREF="Point.html">Point</A> p, int w, int h, int dx, int dy, int deltaY, int &x1, int &y1, int &x2, int &y2)</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

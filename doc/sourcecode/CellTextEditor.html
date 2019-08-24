@@ -1,0 +1,115 @@
+<html><head><TITLE>CellTextEditor</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  CellTextEditor : public <!2><A HREF="InlineEditor.html#DOC.202.1">InlineEditor</A> </H2><BLOCKQUOTE>
+ cell text editor class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CInlineEditor,MInlineEditor.html,CCellTextEditor,MCellTextEditor.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.40.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CellTextEditor</B> (<!1><A HREF="TableViewer.html">TableViewer</A> *v)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.40.2"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Start</B> (<!1><A HREF="CellText.html">CellText</A> *)<br>
+<I> start inline editing, initialized by cell text.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.40.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Stop</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.40.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Abort</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.40.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>StartWindow</B> (<!1><A HREF="CellText.html">CellText</A> *)<br>
+<I> start window editing, initialized by cell text.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.40.6"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="CellText.html">CellText</A>* </TD><TD><B>GetCellText</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.40.7"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsUnderlined</B> () const <br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="InlineEditor.html">InlineEditor:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>Draw</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Undraw</B>()
+<DT><IMG SRC=icon2.gif> void  <B>AddChar</B>(char c)
+<DT><IMG SRC=icon2.gif> void  <B>BackSpace</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Delete</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CharLeft</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CharRight</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CharUp</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CharDown</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Home</B>()
+<DT><IMG SRC=icon2.gif> void  <B>End</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Clear</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetCursor</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> void  <B>SetCursor</B>(int whichChar)
+<DT><IMG SRC=icon2.gif> void  <B>StopWindow</B>(const <!1><A HREF="string.html">string</A> *)
+<DT><IMG SRC=icon2.gif> void  <B>CancelWindow</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  <B>GetTextEditDialog</B>() const 
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsInUse</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetInUse</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>SetIgnoreWindow</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>SetText</B>(const <!1><A HREF="string.html">string</A> *t)
+<DT><IMG SRC=icon2.gif> void  <B>SetOldText</B>(const <!1><A HREF="string.html">string</A> *ot)
+<DT><IMG SRC=icon2.gif> void  <B>SetTextFont</B>(<!1><A HREF="XFont.html">XFont</A> *ft)
+<DT><IMG SRC=icon2.gif> void  <B>SetTextColor</B>(<!1><A HREF="string.html">string</A> *c)
+<DT><IMG SRC=icon2.gif> void  <B>SetAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)
+<DT><IMG SRC=icon2.gif> void  <B>SetTextPosition</B>(<!1><A HREF="Point.html">Point</A> *p)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetText</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetOldText</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Viewer.html">Viewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetUnderlined</B>(bool b)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ cell text editor class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="CellTextEditor">
+<A NAME ="DOC.40.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  CellTextEditor(<!1><A HREF="TableViewer.html">TableViewer</A> *v)</B></TT>
+<DL></DL><P>
+<A NAME="Start">
+<A NAME ="DOC.40.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Start(<!1><A HREF="CellText.html">CellText</A> *)</B></TT>
+<DD> start inline editing, initialized by cell text.
+<DL></DL><P>
+<A NAME="Stop">
+<A NAME ="DOC.40.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Stop()</B></TT>
+<DL></DL><P>
+<A NAME="Abort">
+<A NAME ="DOC.40.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Abort()</B></TT>
+<DL></DL><P>
+<A NAME="StartWindow">
+<A NAME ="DOC.40.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  StartWindow(<!1><A HREF="CellText.html">CellText</A> *)</B></TT>
+<DD> start window editing, initialized by cell text.
+<DL></DL><P>
+<A NAME="GetCellText">
+<A NAME ="DOC.40.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="CellText.html">CellText</A>*  GetCellText() const </B></TT>
+<DL></DL><P>
+<A NAME="IsUnderlined">
+<A NAME ="DOC.40.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsUnderlined() const </B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

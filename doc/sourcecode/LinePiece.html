@@ -1,0 +1,165 @@
+<html><head><TITLE>LinePiece</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  LinePiece  </H2><BLOCKQUOTE>
+ horizontal or vertical line (cell boundary).
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.211.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>LinePiece</B> (<!1><A HREF="Grafport.html">Grafport</A> *g, <!1><A HREF="Point.html">Point</A> *from, <!1><A HREF="Point.html">Point</A> *to, <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> style, unsigned width)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.2"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Draw</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Undraw</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.4"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>HitLine</B> (int x, int y)<br>
+<I> return iff (x,y) is on line piece</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetLineStyle</B> (<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.6"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> </TD><TD><B>GetLineStyle</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLineStyle</B> (<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetLineWidth</B> (unsigned n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.9"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>GetLineWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLineWidth</B> (unsigned n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetBegin</B> (const <!1><A HREF="Point.html">Point</A> *pt)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetEnd</B> (const <!1><A HREF="Point.html">Point</A> *pt)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPoints</B> (const <!1><A HREF="Point.html">Point</A> *pt1, const <!1><A HREF="Point.html">Point</A> *pt2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdatePoints</B> (const <!1><A HREF="Point.html">Point</A> *pt1, const <!1><A HREF="Point.html">Point</A> *pt2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateBegin</B> (const <!1><A HREF="Point.html">Point</A> *pt)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateEnd</B> (const <!1><A HREF="Point.html">Point</A> *pt)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetGrafport</B> (<!1><A HREF="Grafport.html">Grafport</A> *g)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.18"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Write</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.19"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Read</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, double format)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.20"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Point.html">Point</A>* </TD><TD><B>GetBegin</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.21"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Point.html">Point</A>* </TD><TD><B>GetEnd</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.22"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsVisible</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.211.23"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetVisible</B> (bool b)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ horizontal or vertical line (cell boundary).
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="LinePiece">
+<A NAME ="DOC.211.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  LinePiece(<!1><A HREF="Grafport.html">Grafport</A> *g, <!1><A HREF="Point.html">Point</A> *from, <!1><A HREF="Point.html">Point</A> *to, <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> style, unsigned width)</B></TT>
+<DL></DL><P>
+<A NAME="Draw">
+<A NAME ="DOC.211.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Draw()</B></TT>
+<DL></DL><P>
+<A NAME="Undraw">
+<A NAME ="DOC.211.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Undraw()</B></TT>
+<DL></DL><P>
+<A NAME="HitLine">
+<A NAME ="DOC.211.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  HitLine(int x, int y)</B></TT>
+<DD> return iff (x,y) is on line piece
+<DL></DL><P>
+<A NAME="SetLineStyle">
+<A NAME ="DOC.211.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetLineStyle(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> t)</B></TT>
+<DL></DL><P>
+<A NAME="GetLineStyle">
+<A NAME ="DOC.211.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  GetLineStyle()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineStyle">
+<A NAME ="DOC.211.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLineStyle(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> t)</B></TT>
+<DL></DL><P>
+<A NAME="SetLineWidth">
+<A NAME ="DOC.211.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetLineWidth(unsigned n)</B></TT>
+<DL></DL><P>
+<A NAME="GetLineWidth">
+<A NAME ="DOC.211.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  GetLineWidth()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineWidth">
+<A NAME ="DOC.211.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLineWidth(unsigned n)</B></TT>
+<DL></DL><P>
+<A NAME="SetBegin">
+<A NAME ="DOC.211.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetBegin(const <!1><A HREF="Point.html">Point</A> *pt)</B></TT>
+<DL></DL><P>
+<A NAME="SetEnd">
+<A NAME ="DOC.211.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetEnd(const <!1><A HREF="Point.html">Point</A> *pt)</B></TT>
+<DL></DL><P>
+<A NAME="SetPoints">
+<A NAME ="DOC.211.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPoints(const <!1><A HREF="Point.html">Point</A> *pt1, const <!1><A HREF="Point.html">Point</A> *pt2)</B></TT>
+<DL></DL><P>
+<A NAME="UpdatePoints">
+<A NAME ="DOC.211.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdatePoints(const <!1><A HREF="Point.html">Point</A> *pt1, const <!1><A HREF="Point.html">Point</A> *pt2)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateBegin">
+<A NAME ="DOC.211.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateBegin(const <!1><A HREF="Point.html">Point</A> *pt)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateEnd">
+<A NAME ="DOC.211.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateEnd(const <!1><A HREF="Point.html">Point</A> *pt)</B></TT>
+<DL></DL><P>
+<A NAME="SetGrafport">
+<A NAME ="DOC.211.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetGrafport(<!1><A HREF="Grafport.html">Grafport</A> *g)</B></TT>
+<DL></DL><P>
+<A NAME="Write">
+<A NAME ="DOC.211.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Write(<!1><A HREF="OutputFile.html">OutputFile</A> *f)</B></TT>
+<DL></DL><P>
+<A NAME="Read">
+<A NAME ="DOC.211.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Read(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)</B></TT>
+<DL></DL><P>
+<A NAME="GetBegin">
+<A NAME ="DOC.211.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Point.html">Point</A>*  GetBegin()</B></TT>
+<DL></DL><P>
+<A NAME="GetEnd">
+<A NAME ="DOC.211.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Point.html">Point</A>*  GetEnd()</B></TT>
+<DL></DL><P>
+<A NAME="IsVisible">
+<A NAME ="DOC.211.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsVisible()</B></TT>
+<DL></DL><P>
+<A NAME="SetVisible">
+<A NAME ="DOC.211.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetVisible(bool b)</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

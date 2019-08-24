@@ -1,0 +1,243 @@
+<html><head><TITLE>List</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A> template <class T>   class  List  </H2><BLOCKQUOTE>
+ lists of objects of arbitrary type T.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=155>
+<param name=classes value="CList,MList.html,CSubjects,MSubjects.html,CShapes,MShapes.html,CProperties,MProperties.html,CAssocList,MAssocList.html">
+<param name=before value="M,M|_,MR_,MR_,Mr_">
+<param name=after value="M,M,M,M,M">
+<param name=indent value="0,0,0,0,0">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.218.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>List</B> ()<br>
+<I> create an empty list.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~List</B> ()<br>
+<I> delete entire list (but not the elements of the list).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.3"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>List</B> (const <!2><A HREF="List.html#DOC.218.1">List</A><T> &l)<br>
+<I> create list, initialized by elements of l.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.4"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="List.html#DOC.218.1">List</A> <T> & </TD><TD><B>operator=</B> (const <!2><A HREF="List.html#DOC.218.1">List</A><T> &l)<br>
+<I> copy list into an other, elements are copied too (e.g. l2 = l1).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>add</B> (const T &e)<br>
+<I> add e to the end of the list.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>insert</B> (const T &e, const unsigned i)<br>
+<I> insert e to i+1'th position of the list. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.7"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>find</B> (const T &e) const <br>
+<I> return index of first element equal to e, if not found, return -1.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.8"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>isSet</B> () const <br>
+<I> return list is set</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.9"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>count</B> (const T &e) const <br>
+<I> count the number of times e occurs in the list</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.10"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>contains</B> (<!2><A HREF="List.html#DOC.218.1">List</A><T> *l) const <br>
+<I> return if list contains list l</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.11"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>contains</B> (const T &e) const <br>
+<I> return if list contains e.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>remove</B> (const T &e)<br>
+<I> remove all elements equal to e.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>removei</B> (const unsigned i = 0)<br>
+<I> removes i+1'th element (0 <= i <= count()-1).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.14"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>removecur</B> ()<br>
+<I> removes current element and advances the current to the next one.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>empty</B> ()<br>
+<I> removes all elements from list.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.16"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>clear</B> ()<br>
+<I> removes all elements + free elements (which should be pointers).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.17"> <IMG BORDER=0 SRC=icon1.gif></A> T& </TD><TD><B>operator[] </B> (const unsigned i) const <br>
+<I> returns ref. to i+1'th element, like array index (e.g. e = l[5]).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.18"> <IMG BORDER=0 SRC=icon1.gif></A> T& </TD><TD><B>elem</B> (const unsigned i) const <br>
+<I> same as [] (different syntax).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.19"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>count</B> () const <br>
+<I> returns number of elements in list.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.20"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>replace</B> (const T &old, const T &fresh)<br>
+<I> replaces all elements equal to old by new.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.21"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>sort</B> (int (*cmp)(T, T))<br>
+<I> sort all elements according to cmp function.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.22"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>reverse</B> ()<br>
+<I> reverse all elements in list.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.23"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>first</B> ()<br>
+<I> return if there is a first element + sets current to first element. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.24"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>last</B> ()<br>
+<I> sets current to last element + returns if there is a last element.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.25"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>next</B> ()<br>
+<I> sets current to next element + returns if there is a next element.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.26"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>prev</B> ()<br>
+<I> sets current to prev. element + returns if there is a prev. element.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.27"> <IMG BORDER=0 SRC=icon1.gif></A> T& </TD><TD><B>cur</B> () const <br>
+<I> returns current element (Check first with 'done'!)</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.28"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>done</B> () const <br>
+<I> returns if current is out of list.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.218.29"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>setcur</B> (const T &)<br>
+<I> returns if T is in list + sets current to that element. </I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ lists of objects of arbitrary type T.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="List">
+<A NAME ="DOC.218.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  List()</B></TT>
+<DD> create an empty list.
+<DL></DL><P>
+<A NAME="~List">
+<A NAME ="DOC.218.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~List()</B></TT>
+<DD> delete entire list (but not the elements of the list).
+<DL></DL><P>
+<A NAME="List">
+<A NAME ="DOC.218.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  List(const <!2><A HREF="List.html#DOC.218.1">List</A><T> &l)</B></TT>
+<DD> create list, initialized by elements of l.
+<DL></DL><P>
+<A NAME="operator=">
+<A NAME ="DOC.218.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="List.html#DOC.218.1">List</A> <T> &  operator=(const <!2><A HREF="List.html#DOC.218.1">List</A><T> &l)</B></TT>
+<DD> copy list into an other, elements are copied too (e.g. l2 = l1).
+<DL></DL><P>
+<A NAME="add">
+<A NAME ="DOC.218.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  add(const T &e)</B></TT>
+<DD> add e to the end of the list.
+<DL></DL><P>
+<A NAME="insert">
+<A NAME ="DOC.218.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  insert(const T &e, const unsigned i)</B></TT>
+<DD> insert e to i+1'th position of the list. 
+<DL></DL><P>
+<A NAME="find">
+<A NAME ="DOC.218.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  find(const T &e) const </B></TT>
+<DD> return index of first element equal to e, if not found, return -1.
+<DL></DL><P>
+<A NAME="isSet">
+<A NAME ="DOC.218.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  isSet() const </B></TT>
+<DD> return list is set
+<DL></DL><P>
+<A NAME="count">
+<A NAME ="DOC.218.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  count(const T &e) const </B></TT>
+<DD> count the number of times e occurs in the list
+<DL></DL><P>
+<A NAME="contains">
+<A NAME ="DOC.218.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  contains(<!2><A HREF="List.html#DOC.218.1">List</A><T> *l) const </B></TT>
+<DD> return if list contains list l
+<DL></DL><P>
+<A NAME="contains">
+<A NAME ="DOC.218.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  contains(const T &e) const </B></TT>
+<DD> return if list contains e.
+<DL></DL><P>
+<A NAME="remove">
+<A NAME ="DOC.218.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  remove(const T &e)</B></TT>
+<DD> remove all elements equal to e.
+<DL></DL><P>
+<A NAME="removei">
+<A NAME ="DOC.218.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  removei(const unsigned i = 0)</B></TT>
+<DD> removes i+1'th element (0 <= i <= count()-1).
+<DL></DL><P>
+<A NAME="removecur">
+<A NAME ="DOC.218.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  removecur()</B></TT>
+<DD> removes current element and advances the current to the next one.
+<DL></DL><P>
+<A NAME="empty">
+<A NAME ="DOC.218.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  empty()</B></TT>
+<DD> removes all elements from list.
+<DL></DL><P>
+<A NAME="clear">
+<A NAME ="DOC.218.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  clear()</B></TT>
+<DD> removes all elements + free elements (which should be pointers).
+<DL></DL><P>
+<A NAME="operator[] ">
+<A NAME ="DOC.218.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> T&  operator[] (const unsigned i) const </B></TT>
+<DD> returns ref. to i+1'th element, like array index (e.g. e = l[5]).
+<DL></DL><P>
+<A NAME="elem">
+<A NAME ="DOC.218.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> T&  elem(const unsigned i) const </B></TT>
+<DD> same as [] (different syntax).
+<DL></DL><P>
+<A NAME="count">
+<A NAME ="DOC.218.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  count() const </B></TT>
+<DD> returns number of elements in list.
+<DL></DL><P>
+<A NAME="replace">
+<A NAME ="DOC.218.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  replace(const T &old, const T &fresh)</B></TT>
+<DD> replaces all elements equal to old by new.
+<DL></DL><P>
+<A NAME="sort">
+<A NAME ="DOC.218.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  sort(int (*cmp)(T, T))</B></TT>
+<DD> sort all elements according to cmp function.
+<DL></DL><P>
+<A NAME="reverse">
+<A NAME ="DOC.218.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  reverse()</B></TT>
+<DD> reverse all elements in list.
+<DL></DL><P>
+<A NAME="first">
+<A NAME ="DOC.218.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  first()</B></TT>
+<DD> return if there is a first element + sets current to first element. 
+<DL></DL><P>
+<A NAME="last">
+<A NAME ="DOC.218.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  last()</B></TT>
+<DD> sets current to last element + returns if there is a last element.
+<DL></DL><P>
+<A NAME="next">
+<A NAME ="DOC.218.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  next()</B></TT>
+<DD> sets current to next element + returns if there is a next element.
+<DL></DL><P>
+<A NAME="prev">
+<A NAME ="DOC.218.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  prev()</B></TT>
+<DD> sets current to prev. element + returns if there is a prev. element.
+<DL></DL><P>
+<A NAME="cur">
+<A NAME ="DOC.218.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> T&  cur() const </B></TT>
+<DD> returns current element (Check first with 'done'!)
+<DL></DL><P>
+<A NAME="done">
+<A NAME ="DOC.218.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  done() const </B></TT>
+<DD> returns if current is out of list.
+<DL></DL><P>
+<A NAME="setcur">
+<A NAME ="DOC.218.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  setcur(const T &)</B></TT>
+<DD> returns if T is in list + sets current to that element. 
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="Subjects.html"> Subjects </A><br>
+<A HREF="Shapes.html"> Shapes </A><br>
+<A HREF="Properties.html"> Properties </A><br>
+<A HREF="AssocList.html"> AssocList </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

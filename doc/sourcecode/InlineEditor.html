@@ -1,0 +1,258 @@
+<html><head><TITLE>InlineEditor</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  InlineEditor  </H2><BLOCKQUOTE>
+ (abstract) text editor class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CInlineEditor,MInlineEditor.html,CTextShapeEditor,MTextShapeEditor.html,CCellTextEditor,MCellTextEditor.html">
+<param name=before value="M,M|_,Mr_">
+<param name=after value="M,M,M">
+<param name=indent value="0,0,0">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.202.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>InlineEditor</B> (<!1><A HREF="Viewer.html">Viewer</A> *v)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~InlineEditor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.3"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Stop</B> ()<br>
+<I> top inline editing, update text.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.4"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Abort</B> ()<br>
+<I> top inline editing, do not update text.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.5"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Draw</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Undraw</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AddChar</B> (char c)<br>
+<I> simple inline text edit functions.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>BackSpace</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Delete</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CharLeft</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CharRight</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CharUp</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CharDown</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Home</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>End</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Clear</B> ()<br>
+<I> empty text</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetCursor</B> (int x, int y)<br>
+<I> set cursor to some position.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.18"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetCursor</B> (int whichChar)<br>
+<I> set cursor on n-th char.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.19"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>StopWindow</B> (const <!1><A HREF="string.html">string</A> *)<br>
+<I> stop window editing, update text.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.20"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CancelWindow</B> ()<br>
+<I> cancel window editing.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.21"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>* </TD><TD><B>GetTextEditDialog</B> () const <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.202.22"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsInUse</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.23"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetInUse</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.24"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetIgnoreWindow</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.25"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetText</B> (const <!1><A HREF="string.html">string</A> *t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.26"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetOldText</B> (const <!1><A HREF="string.html">string</A> *ot)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.27"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTextFont</B> (<!1><A HREF="XFont.html">XFont</A> *ft)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.28"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTextColor</B> (<!1><A HREF="string.html">string</A> *c)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.29"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetAlignment</B> (<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.30"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTextPosition</B> (<!1><A HREF="Point.html">Point</A> *p)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.31"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetText</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.32"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetOldText</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.33"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Viewer.html">Viewer</A>* </TD><TD><B>GetViewer</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.34"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>IsUnderlined</B> () const <br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.202.35"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetUnderlined</B> (bool b)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ (abstract) text editor class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="InlineEditor">
+<A NAME ="DOC.202.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  InlineEditor(<!1><A HREF="Viewer.html">Viewer</A> *v)</B></TT>
+<DL></DL><P>
+<A NAME="~InlineEditor">
+<A NAME ="DOC.202.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~InlineEditor()</B></TT>
+<DL></DL><P>
+<A NAME="Stop">
+<A NAME ="DOC.202.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Stop()</B></TT>
+<DD> top inline editing, update text.
+<DL></DL><P>
+<A NAME="Abort">
+<A NAME ="DOC.202.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Abort()</B></TT>
+<DD> top inline editing, do not update text.
+<DL></DL><P>
+<A NAME="Draw">
+<A NAME ="DOC.202.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Draw()</B></TT>
+<DL></DL><P>
+<A NAME="Undraw">
+<A NAME ="DOC.202.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Undraw()</B></TT>
+<DL></DL><P>
+<A NAME="AddChar">
+<A NAME ="DOC.202.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AddChar(char c)</B></TT>
+<DD> simple inline text edit functions.
+<DL></DL><P>
+<A NAME="BackSpace">
+<A NAME ="DOC.202.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  BackSpace()</B></TT>
+<DL></DL><P>
+<A NAME="Delete">
+<A NAME ="DOC.202.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Delete()</B></TT>
+<DL></DL><P>
+<A NAME="CharLeft">
+<A NAME ="DOC.202.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CharLeft()</B></TT>
+<DL></DL><P>
+<A NAME="CharRight">
+<A NAME ="DOC.202.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CharRight()</B></TT>
+<DL></DL><P>
+<A NAME="CharUp">
+<A NAME ="DOC.202.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CharUp()</B></TT>
+<DL></DL><P>
+<A NAME="CharDown">
+<A NAME ="DOC.202.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CharDown()</B></TT>
+<DL></DL><P>
+<A NAME="Home">
+<A NAME ="DOC.202.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Home()</B></TT>
+<DL></DL><P>
+<A NAME="End">
+<A NAME ="DOC.202.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  End()</B></TT>
+<DL></DL><P>
+<A NAME="Clear">
+<A NAME ="DOC.202.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Clear()</B></TT>
+<DD> empty text
+<DL></DL><P>
+<A NAME="SetCursor">
+<A NAME ="DOC.202.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetCursor(int x, int y)</B></TT>
+<DD> set cursor to some position.
+<DL></DL><P>
+<A NAME="SetCursor">
+<A NAME ="DOC.202.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetCursor(int whichChar)</B></TT>
+<DD> set cursor on n-th char.
+<DL></DL><P>
+<A NAME="StopWindow">
+<A NAME ="DOC.202.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  StopWindow(const <!1><A HREF="string.html">string</A> *)</B></TT>
+<DD> stop window editing, update text.
+<DL></DL><P>
+<A NAME="CancelWindow">
+<A NAME ="DOC.202.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CancelWindow()</B></TT>
+<DD> cancel window editing.
+<DL></DL><P>
+<A NAME="GetTextEditDialog">
+<A NAME ="DOC.202.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  GetTextEditDialog() const </B></TT>
+<DL></DL><P>
+<A NAME="IsInUse">
+<A NAME ="DOC.202.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsInUse() const </B></TT>
+<DL></DL><P>
+<A NAME="SetInUse">
+<A NAME ="DOC.202.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetInUse(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="SetIgnoreWindow">
+<A NAME ="DOC.202.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetIgnoreWindow(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="SetText">
+<A NAME ="DOC.202.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetText(const <!1><A HREF="string.html">string</A> *t)</B></TT>
+<DL></DL><P>
+<A NAME="SetOldText">
+<A NAME ="DOC.202.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetOldText(const <!1><A HREF="string.html">string</A> *ot)</B></TT>
+<DL></DL><P>
+<A NAME="SetTextFont">
+<A NAME ="DOC.202.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTextFont(<!1><A HREF="XFont.html">XFont</A> *ft)</B></TT>
+<DL></DL><P>
+<A NAME="SetTextColor">
+<A NAME ="DOC.202.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTextColor(<!1><A HREF="string.html">string</A> *c)</B></TT>
+<DL></DL><P>
+<A NAME="SetAlignment">
+<A NAME ="DOC.202.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetAlignment(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)</B></TT>
+<DL></DL><P>
+<A NAME="SetTextPosition">
+<A NAME ="DOC.202.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTextPosition(<!1><A HREF="Point.html">Point</A> *p)</B></TT>
+<DL></DL><P>
+<A NAME="GetText">
+<A NAME ="DOC.202.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetText() const </B></TT>
+<DL></DL><P>
+<A NAME="GetOldText">
+<A NAME ="DOC.202.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetOldText() const </B></TT>
+<DL></DL><P>
+<A NAME="GetViewer">
+<A NAME ="DOC.202.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Viewer.html">Viewer</A>*  GetViewer() const </B></TT>
+<DL></DL><P>
+<A NAME="IsUnderlined">
+<A NAME ="DOC.202.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  IsUnderlined() const </B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="SetUnderlined">
+<A NAME ="DOC.202.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetUnderlined(bool b)</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="TextShapeEditor.html"> TextShapeEditor </A><br>
+<A HREF="CellTextEditor.html"> CellTextEditor </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

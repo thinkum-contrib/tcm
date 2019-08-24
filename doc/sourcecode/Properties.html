@@ -1,0 +1,91 @@
+<html><head><TITLE>Properties</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Properties : public <!2><A HREF="List.html#DOC.218.1">List</A><<!1><A HREF="Property.html">Property</A>> </H2><hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CList,MList.html,CProperties,MProperties.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.257.1"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Save</B> (<!1><A HREF="OutputFile.html">OutputFile</A>* f)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.257.2"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Save</B> (<!1><A HREF="OutputFile.html">OutputFile</A>* f, const <!1><A HREF="string.html">string</A>* header)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.257.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Load</B> (<!1><A HREF="InputFile.html">InputFile</A>* f)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.257.4"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetValue</B> (const <!1><A HREF="string.html">string</A>* key)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.257.5"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetValue</B> (const char* key)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="List.html">List:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> <!2><A HREF="List.html#DOC.218.1">List</A> <T> &  <B>operator=</B>(const <!2><A HREF="List.html#DOC.218.1">List</A><T> &l)
+<DT><IMG SRC=icon2.gif> void  <B>add</B>(const T &e)
+<DT><IMG SRC=icon2.gif> void  <B>insert</B>(const T &e, const unsigned i)
+<DT><IMG SRC=icon2.gif> int  <B>find</B>(const T &e) const 
+<DT><IMG SRC=icon2.gif> bool  <B>isSet</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>count</B>(const T &e) const 
+<DT><IMG SRC=icon2.gif> bool  <B>contains</B>(<!2><A HREF="List.html#DOC.218.1">List</A><T> *l) const 
+<DT><IMG SRC=icon2.gif> bool  <B>contains</B>(const T &e) const 
+<DT><IMG SRC=icon2.gif> void  <B>remove</B>(const T &e)
+<DT><IMG SRC=icon2.gif> void  <B>removei</B>(const unsigned i = 0)
+<DT><IMG SRC=icon2.gif> bool  <B>removecur</B>()
+<DT><IMG SRC=icon2.gif> void  <B>empty</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>clear</B>()
+<DT><IMG SRC=icon2.gif> T&  <B>operator[] </B>(const unsigned i) const 
+<DT><IMG SRC=icon2.gif> T&  <B>elem</B>(const unsigned i) const 
+<DT><IMG SRC=icon2.gif> unsigned  <B>count</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>replace</B>(const T &old, const T &fresh)
+<DT><IMG SRC=icon2.gif> void  <B>sort</B>(int (*cmp)(T, T))
+<DT><IMG SRC=icon2.gif> void  <B>reverse</B>()
+<DT><IMG SRC=icon2.gif> int  <B>first</B>()
+<DT><IMG SRC=icon2.gif> int  <B>last</B>()
+<DT><IMG SRC=icon2.gif> int  <B>next</B>()
+<DT><IMG SRC=icon2.gif> int  <B>prev</B>()
+<DT><IMG SRC=icon2.gif> T&  <B>cur</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>done</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>setcur</B>(const T &)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Save">
+<A NAME ="DOC.257.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Save(<!1><A HREF="OutputFile.html">OutputFile</A>* f)</B></TT>
+<DL></DL><P>
+<A NAME="Save">
+<A NAME ="DOC.257.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Save(<!1><A HREF="OutputFile.html">OutputFile</A>* f, const <!1><A HREF="string.html">string</A>* header)</B></TT>
+<DL></DL><P>
+<A NAME="Load">
+<A NAME ="DOC.257.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Load(<!1><A HREF="InputFile.html">InputFile</A>* f)</B></TT>
+<DL></DL><P>
+<A NAME="GetValue">
+<A NAME ="DOC.257.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetValue(const <!1><A HREF="string.html">string</A>* key)</B></TT>
+<DL></DL><P>
+<A NAME="GetValue">
+<A NAME ="DOC.257.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetValue(const char* key)</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

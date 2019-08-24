@@ -1,0 +1,127 @@
+INSTALLATION INSTRUCTIONS FOR TCM ON CYGWIN (patch version 0.7)
+===============================================================
+
+This file describes the build process when you want to compile TCM on
+Cygwin yourself. You might also want to check for a pre-compiled version
+on the web (which might be the easier way :)
+
+http://home.debitel.net/user/boesswetter/tcm_cygwin/
+
+Installing the binaries is simple: untar the archive in your Cygwin-root,
+set TCM_HOME to /opt/tcm and run /opt/tcm/bin/tcm (assuming you X-server
+is running). I did not yet make the distro "setup.exe"-aware.
+
+
+Prerequisites
+-------------
+
+For compiling you need
+
+- the TCM source code, version 2.01 (http://wwwhome.cs.utwente.nl/~tcm/)
+- the latest patch (http://home.debitel.net/user/boesswetter/tcm_cygwin/)
+- a running Cygwin environment (http://www.cygwin.com) including at least
+  * XFree86 and Lesstif
+  * gcc version 2.95.3-5 (2.95.3-10 or 3.2 do *not* work)
+- too much time
+
+
+Patching
+--------
+
+Untar the source somewhere:
+
+# tar xzf ~/tcm-2.20.src.tar.gz
+
+Unzip the patch if you obtained it as bzipped-file:
+
+# bunzip2 ~/tcm-2.20-cygwin-patch-0.7.bz2
+
+Applying the patch might be straighforward if there wasn't NTFS. The
+basic command is
+
+# patch -p0 < ~/tcm-2.20-cygwin-patch-0.7
+
+If you are lucky, it works. On my workstation (with NTFS and Cygwin's
+"ntsec" disabled) I had trouble becase patch tries to set the attributes
+of every files changed. In this case, you options are
+
+- move your build directory to a FAT filesystem
+- use a unix-box for patching the source, tar the patched source and
+  untar it on Cygwin.
+
+Do *not* use a Samba-share, because this will lead to symlinks named
+".lnk" (Cygwin maps symlinks to windows-lnks, but my Samba-server had
+problems with these).
+
+
+Building
+--------
+
+# make ; make depend ; make execs ; make install
+
+(the usual way)
+
+If you are getting errors about missing permissions from gcc, try
+something like the following in your source directory:
+
+/usr/bin/find src/ \( -name '*.c' -o -name '*.h' \) \
+	-exec setfacl -m group::r-- {} \;
+
+and type "make exec" again.
+
+
+Installing
+----------
+
+"make install" should do the job.
+
+
+Changes to the source
+---------------------
+
+If you successfully finished with "make install" in the previous step,
+you are probably not interested in these details. If you are, here's
+what I did to make TCM compile under Cygwin:
+
+- first of all, the topmost Makefile needs to now what to do when "uname"
+  returns this funny CYGWIN-string. So I added Config.tmpl_CYGWIN in the
+  src directory (as a copy of the linux version) and told the Makefile in
+  the root-directory to use this one for CYGWIN.
+
+- some .c-files did not compile because MAXINT is unknown (which is
+  supposed to be defined in values.h which is empty on Cygwin). These
+  source were changed to use limits.h on Cygwin and the constant INT_MAX
+  (which is IMHO more ANSI :)
+
+- FIONREAD is not defined in termios.h, but in asm/socket.h (for example,
+  but this one worked)
+
+- "chmod +x" did not work on my NTFS-filesystem without "ntsec", so
+  I replaced all occurences of "chmod +x" in Makefiles with a variable
+  called CHMODPLUSX that points to a script called _cygwin_chmodplux in
+  the bin-directory (or simply "chmod +x" for non-Cygwin-systems)
+
+- the linker on Cygwin produces ".exe"-files although the targets in
+  the Makefiles do not have this extensions. This leads to errors when
+  trying to move $< to the bin-directory. The Config.tmpl for CYGWIN now
+  sets a variable called EXEEXTENSION to ".exe" which is empty for all
+  other platforms. All Makefiles-targets (and dependecies) that point to
+  executable files were changed to honour this extension.
+
+- I renamed the file "INSTALL" to "INSTALL_", because "make install"
+  tried to rebuild the INSTALL-file (Windows is case-insensitive!!) Took
+  me a couple of hours to figure out.
+
+- lots of smaller changes. However, I tried to keep the source compatible
+  with the original-version, although I did not test this.
+
+
+Contact
+-------
+
+Always happy to hear from you:
+
+Daniel Boesswetter <boesswetter@peppermind.de>
+October-31-2002
+Munich, Germany
+

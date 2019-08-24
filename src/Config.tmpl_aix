@@ -1,0 +1,18 @@
+# Configuration file for AIX and xlC compiler
+
+include $(TCM_HOME)/src/Config.GEN
+
+CC              = /usr/bin/xlC
+Cc              = /usr/bin/xlc
+ 
+CFLAGS		= '-+' -qtempinc=$(SRC_DIR)/Templates.DB
+
+MOTIF_INCLUDE	= /usr/include/Motif1.2
+
+XWIN_LIB	= /usr/lib
+XWIN_INCLUDE	= /usr/include/X11
+
+MKDEPEND        = /usr/bin/X11/makedepend
+MKDEPENDFLAGS   = $(CPPFLAGS) -I/usr/include -I/usr/lpp/xlC/include
+
+SYSFLAGS        = -DAIX -D__EXTENSIONS__ -DXLC

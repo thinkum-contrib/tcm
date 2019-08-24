@@ -1,0 +1,75 @@
+# Generic part of the Make config file.
+#
+# You can override this variables or add your own variables
+# in the Config.tmpl files.
+#
+# make sure that TCM_HOME is set!
+
+SRC_DIR         = $(TCM_HOME)/src
+BIN_DIR         = $(TCM_HOME)/bin
+LIB_DIR         = $(TCM_HOME)/lib
+
+# gcc is the default compiler.
+CC              = /usr/bin/g++
+Cc              = /usr/bin/gcc
+CFLAGS		= -Wall -pedantic
+SHAREDFLAG      = -shared
+
+LEX		= /usr/bin/flex
+YACC		= /usr/bin/bison
+STRIP           = /usr/bin/strip
+RANLIB		= /usr/bin/ranlib
+AR		= /usr/bin/ar cr
+RM              = /bin/rm -f -r
+MV              = /bin/mv -f
+CHMOD		= chmod
+
+MOTIF_HOME      = /usr/X11
+MOTIF_INCLUDE   = $(MOTIF_HOME)/include
+MOTIF_LIB       = $(MOTIF_HOME)/lib
+
+XWIN_HOME        = /usr/X11
+XWIN_INCLUDE     = $(XWIN_HOME)/include
+XWIN_LIB         = $(XWIN_HOME)/lib
+
+MKDEPEND	= $(XWIN_HOME)/bin/makedepend
+MKDEPENDFLAGS   = $(CPPFLAGS)
+MKUNDEPEND	= $(BIN_DIR)/makeundepend.sh
+
+INCLUDEDIRS     = -I.\
+                -I$(SRC_DIR)/bitmaps\
+                -I$(SRC_DIR)/gl\
+                -I$(SRC_DIR)/ui\
+                -I$(SRC_DIR)/ed\
+                -I$(SRC_DIR)/dg\
+                -I$(SRC_DIR)/tb\
+                -I$(MOTIF_INCLUDE)\
+                -I$(XWIN_INCLUDE)\
+                -I$(XWIN_INCLUDE)/X11\
+		-I../dv
+
+CPPFLAGS        = $(INCLUDEDIRS) $(SYSFLAGS)
+
+LDFLAGS         = -L/lib/mingw -L$(LIB_DIR) -L$(MOTIF_LIB) -L$(XWIN_LIB)
+LDFLAGS         = -L$(LIB_DIR) -L$(MOTIF_LIB) -L$(XWIN_LIB)
+
+LDLIBS          = -lXm -lXt -lX11 -lm
+
+CHMODPLUSX	= chmod a+rx 
+EXEEXTENSION	=
+
+.c.o :
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $<
+ 
+# .cc.o :
+# 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $<
+
+xclean::
+	$(RM) *.o core $(SRC_DIR)/ptrepository/* $(SRC_DIR)/Templates.DB/*
+	$(RM) SunWS_cache
+
+xdepend:
+	$(MKDEPEND) $(MKDEPENDFLAGS) *.*c
+
+xundepend:
+	$(MKUNDEPEND)

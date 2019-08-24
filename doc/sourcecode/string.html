@@ -1,0 +1,532 @@
+<html><head><TITLE>string</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  string  </H2><BLOCKQUOTE>
+ infinite length string class.
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.219.1"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  <!2><A HREF="string.html#DOC.219.4">string</A> </TD><TD><B>EMPTY</B> <br>
+<I> the empty string</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.219.2"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>string</B> ()<br>
+<I> create empty string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.3"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>string</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &s)<br>
+<I> copy constructor. usage: string x = string</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.4"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>string</B> (const char* s)<br>
+<I> copy constructor. usage: string x = "abc" </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.5"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>string</B> (char c)<br>
+<I> copy constructor. usage: string x = 'a'</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.6"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>string</B> (int n)<br>
+<I> copy constructor (decimals). usage: string x = 12;</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.7"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>string</B> (unsigned n)<br>
+<I> copy constructor (decimals). usage: string x = 12;</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.8"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>string</B> (double d)<br>
+<I> copy constructor (doubles). usage: string x = 1.2;</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.9"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~string</B> ()<br>
+<I> delete string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.10"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="string.html#DOC.219.4">string</A>& </TD><TD><B>operator=</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &s)<br>
+<I> copy operator a la strcpy.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.11"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="string.html#DOC.219.4">string</A>& </TD><TD><B>operator=</B> (const char* s)<br>
+<I> copy operator a la strcpy.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.12"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="string.html#DOC.219.4">string</A>& </TD><TD><B>operator=</B> (char c)<br>
+<I> copy operator a la strcpy.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.13"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="string.html#DOC.219.4">string</A>& </TD><TD><B>operator=</B> (int n)<br>
+<I> copy operator a la strcpy. s = n in decimal notation.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.14"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="string.html#DOC.219.4">string</A>& </TD><TD><B>operator=</B> (unsigned n)<br>
+<I> copy operator a la strcpy. s = n in decimal notation.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.15"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="string.html#DOC.219.4">string</A>& </TD><TD><B>operator=</B> (double d)<br>
+<I> copy operator a la strcpy. s = d in floating point notation.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.16"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="string.html#DOC.219.4">string</A>& </TD><TD><B>operator+=</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &s)<br>
+<I> concat operator a la strcat.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.17"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="string.html#DOC.219.4">string</A>& </TD><TD><B>operator+=</B> (const char* s)<br>
+<I> concat operator a la strcat.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.18"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="string.html#DOC.219.4">string</A>& </TD><TD><B>operator+=</B> (int n)<br>
+<I> concat. n in decimal notation is added.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.19"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="string.html#DOC.219.4">string</A>& </TD><TD><B>operator+=</B> (unsigned n)<br>
+<I> concat. n in decimal notation is added.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.20"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="string.html#DOC.219.4">string</A>& </TD><TD><B>operator+=</B> (double d)<br>
+<I> concat. d in floating point notation is added.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.21"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="string.html#DOC.219.4">string</A>& </TD><TD><B>operator+=</B> (char c)<br>
+<I> concat operator a la strcat.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.22"> <IMG BORDER=0 SRC=icon1.gif></A> friend  <!2><A HREF="string.html#DOC.219.4">string</A> </TD><TD><B>operator+</B> (const char* s1, const <!2><A HREF="string.html#DOC.219.4">string</A> &s2)<br>
+<I> constructive concat operator.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.23"> <IMG BORDER=0 SRC=icon1.gif></A> friend  <!2><A HREF="string.html#DOC.219.4">string</A> </TD><TD><B>operator+</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &s1, const char* s2)<br>
+<I> constructive concat operator.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.24"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="string.html#DOC.219.4">string</A> </TD><TD><B>operator+</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &s)<br>
+<I> constructive concat operator.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.25"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="string.html#DOC.219.4">string</A> </TD><TD><B>operator+</B> (const char* s)<br>
+<I> constructive concat operator.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.26"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>add</B> (char c)<br>
+<I> add c at end of string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.27"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>insert</B> (char c, int pos)<br>
+<I> add character at n-th position of string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.28"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>contains</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &s) const <br>
+<I> return 1 if target is in string. 0 for failure.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.29"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>contains</B> (const char* s) const <br>
+<I> return 1 if target is in string. 0 for failure.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.30"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>contains</B> (char c) const <br>
+<I> return 1 if target is in string. 0 for failure.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.31"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>startsWith</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &s) const <br>
+<I> return 1 if string starts with target, 0 for failure.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.32"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>startsWith</B> (const char* s) const <br>
+<I> return 1 if string starts with target, 0 for failure.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.33"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>endsWith</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &s) const <br>
+<I> return 1 if string ends with target, 0 for failure.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.34"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>endsWith</B> (const char* s) const <br>
+<I> return 1 if string ends with target, 0 for failure.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.35"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>setSuffix</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &s, char delim = '.')<br>
+<I> adds suffix s. return 1 when suffix is changed, 0 when only added.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.36"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>getSuffix</B> (<!2><A HREF="string.html#DOC.219.4">string</A> &s, char delim = '.') const <br>
+<I> puts suffix in s. when there is no suffix returns 0, 1 otherwise.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.37"> <IMG BORDER=0 SRC=icon1.gif></A> char& </TD><TD><B>operator[]</B> (int i)<br>
+<I> selection of char by index a la array.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.38"> <IMG BORDER=0 SRC=icon1.gif></A> const  char& </TD><TD><B>operator[]</B> (int i) const <br>
+<I> selection of char by index a la array.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.39"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>remove</B> ()<br>
+<I> remove last character of string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.40"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>remove</B> (int pos)<br>
+<I> remove pos-th character of string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.41"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>replace</B> (char old, char nw)<br>
+<I> replace each occurence of old char by nw char .</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.42"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>replace</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &pat, const <!2><A HREF="string.html#DOC.219.4">string</A> &repl, int casesens=1)<br>
+<I> global substitution.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.43"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>replaceFirst</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &pat, const <!2><A HREF="string.html#DOC.219.4">string</A> &repl, int casesens=1)<br>
+<I> first occurrence substitution.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.44"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>addPlural</B> ()<br>
+<I> add to word an english plural ending, like horse->horses, sky->skies.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.45"> <IMG BORDER=0 SRC=icon1.gif></A> friend  <!2><A HREF="string.html#DOC.219.4">string</A> </TD><TD><B>upcase</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &s)<br>
+<I> move all chars to upper case</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.46"> <IMG BORDER=0 SRC=icon1.gif></A> friend  <!2><A HREF="string.html#DOC.219.4">string</A> </TD><TD><B>downcase</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &s)<br>
+<I> move all chars to lower case</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.47"> <IMG BORDER=0 SRC=icon1.gif></A> friend  <!2><A HREF="string.html#DOC.219.4">string</A> </TD><TD><B>stripblanks</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &s)<br>
+<I> strip all spurious blank chars.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.48"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>upcase</B> ()<br>
+<I> in-place version of the above.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.49"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>downcase</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.50"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>stripblanks</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.51"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned  long </TD><TD><B>toulong</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.52"> <IMG BORDER=0 SRC=icon1.gif></A> long </TD><TD><B>tolong</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.53"> <IMG BORDER=0 SRC=icon1.gif></A> double </TD><TD><B>todouble</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.54"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>toint</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.55"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>length</B> () const <br>
+<I> number of characters in string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.56"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>lines</B> () const <br>
+<I> the number of lines in string when printed: newlines+1.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.57"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>width</B> () const <br>
+<I> return nr. of chars of line with most chars in string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.58"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>whichline</B> (int i, int &pos) const <br>
+<I> return which line has i-th char. pos becomes position in line.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.59"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>nthInline</B> (int line, int n) const <br>
+<I> return position of n-th char in line-th line.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.60"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>letters</B> () const <br>
+<I> return number of letters (a-z,A-Z) in string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.61"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>setPrecision</B> (unsigned p)<br>
+<I> set precision when string is interpreted as double.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.62"> <IMG BORDER=0 SRC=icon1.gif></A> friend  ostream& </TD><TD><B>operator<<</B> (ostream &o, const <!2><A HREF="string.html#DOC.219.4">string</A> &s)<br>
+<I> write string to output stream.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.63"> <IMG BORDER=0 SRC=icon1.gif></A> friend  istream& </TD><TD><B>operator>></B> (istream &i, <!2><A HREF="string.html#DOC.219.4">string</A> &s)<br>
+<I> read string from input stream.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.64"> <IMG BORDER=0 SRC=icon1.gif></A> friend  int </TD><TD><B>operator==</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const char* s)<br>
+<I> comparison operator returns 1 if equal</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.65"> <IMG BORDER=0 SRC=icon1.gif></A> friend  int </TD><TD><B>operator==</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const <!2><A HREF="string.html#DOC.219.4">string</A> &y)<br>
+<I> comparison operator returns 1 if equal.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.66"> <IMG BORDER=0 SRC=icon1.gif></A> friend  int </TD><TD><B>operator%=</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const char* s)<br>
+<I> comparison operator that ignores case</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.67"> <IMG BORDER=0 SRC=icon1.gif></A> friend  int </TD><TD><B>operator%=</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const <!2><A HREF="string.html#DOC.219.4">string</A> &y)<br>
+<I> comparison operator that ignores case</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.68"> <IMG BORDER=0 SRC=icon1.gif></A> friend  int </TD><TD><B>operator!=</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const char* s)<br>
+<I> comparison operator a la !equal.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.69"> <IMG BORDER=0 SRC=icon1.gif></A> friend  int </TD><TD><B>operator!=</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const <!2><A HREF="string.html#DOC.219.4">string</A> &y)<br>
+<I> comparison operator a la !equal.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.70"> <IMG BORDER=0 SRC=icon1.gif></A> friend  int </TD><TD><B>compare</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const char* s)<br>
+<I> comparison operator a la strcmp</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.71"> <IMG BORDER=0 SRC=icon1.gif></A> friend  int </TD><TD><B>compare</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const <!2><A HREF="string.html#DOC.219.4">string</A> &y)<br>
+<I> comparison operator a la strcmp</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.219.72"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>getstr</B> () const <br>
+<I> return a const pointer to the data to do dirty stuff.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.219.73"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>doReplace</B> (const <!2><A HREF="string.html#DOC.219.4">string</A> &pat, const <!2><A HREF="string.html#DOC.219.4">string</A> &repl, int global, int casesens=1)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ infinite length string class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="EMPTY">
+<A NAME ="DOC.219.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  <!2><A HREF="string.html#DOC.219.4">string</A>  EMPTY</B></TT>
+<DD> the empty string
+<DL></DL><P>
+<A NAME="string">
+<A NAME ="DOC.219.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  string()</B></TT>
+<DD> create empty string.
+<DL></DL><P>
+<A NAME="string">
+<A NAME ="DOC.219.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  string(const <!2><A HREF="string.html#DOC.219.4">string</A> &s)</B></TT>
+<DD> copy constructor. usage: string x = string
+<DL></DL><P>
+<A NAME="string">
+<A NAME ="DOC.219.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  string(const char* s)</B></TT>
+<DD> copy constructor. usage: string x = "abc" 
+<DL></DL><P>
+<A NAME="string">
+<A NAME ="DOC.219.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  string(char c)</B></TT>
+<DD> copy constructor. usage: string x = 'a'
+<DL></DL><P>
+<A NAME="string">
+<A NAME ="DOC.219.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  string(int n)</B></TT>
+<DD> copy constructor (decimals). usage: string x = 12;
+<DL></DL><P>
+<A NAME="string">
+<A NAME ="DOC.219.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  string(unsigned n)</B></TT>
+<DD> copy constructor (decimals). usage: string x = 12;
+<DL></DL><P>
+<A NAME="string">
+<A NAME ="DOC.219.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  string(double d)</B></TT>
+<DD> copy constructor (doubles). usage: string x = 1.2;
+<DL></DL><P>
+<A NAME="~string">
+<A NAME ="DOC.219.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~string()</B></TT>
+<DD> delete string.
+<DL></DL><P>
+<A NAME="operator=">
+<A NAME ="DOC.219.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="string.html#DOC.219.4">string</A>&  operator=(const <!2><A HREF="string.html#DOC.219.4">string</A> &s)</B></TT>
+<DD> copy operator a la strcpy.
+<DL></DL><P>
+<A NAME="operator=">
+<A NAME ="DOC.219.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="string.html#DOC.219.4">string</A>&  operator=(const char* s)</B></TT>
+<DD> copy operator a la strcpy.
+<DL></DL><P>
+<A NAME="operator=">
+<A NAME ="DOC.219.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="string.html#DOC.219.4">string</A>&  operator=(char c)</B></TT>
+<DD> copy operator a la strcpy.
+<DL></DL><P>
+<A NAME="operator=">
+<A NAME ="DOC.219.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="string.html#DOC.219.4">string</A>&  operator=(int n)</B></TT>
+<DD> copy operator a la strcpy. s = n in decimal notation.
+<DL></DL><P>
+<A NAME="operator=">
+<A NAME ="DOC.219.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="string.html#DOC.219.4">string</A>&  operator=(unsigned n)</B></TT>
+<DD> copy operator a la strcpy. s = n in decimal notation.
+<DL></DL><P>
+<A NAME="operator=">
+<A NAME ="DOC.219.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="string.html#DOC.219.4">string</A>&  operator=(double d)</B></TT>
+<DD> copy operator a la strcpy. s = d in floating point notation.
+<DL></DL><P>
+<A NAME="operator+=">
+<A NAME ="DOC.219.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="string.html#DOC.219.4">string</A>&  operator+=(const <!2><A HREF="string.html#DOC.219.4">string</A> &s)</B></TT>
+<DD> concat operator a la strcat.
+<DL></DL><P>
+<A NAME="operator+=">
+<A NAME ="DOC.219.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="string.html#DOC.219.4">string</A>&  operator+=(const char* s)</B></TT>
+<DD> concat operator a la strcat.
+<DL></DL><P>
+<A NAME="operator+=">
+<A NAME ="DOC.219.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="string.html#DOC.219.4">string</A>&  operator+=(int n)</B></TT>
+<DD> concat. n in decimal notation is added.
+<DL></DL><P>
+<A NAME="operator+=">
+<A NAME ="DOC.219.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="string.html#DOC.219.4">string</A>&  operator+=(unsigned n)</B></TT>
+<DD> concat. n in decimal notation is added.
+<DL></DL><P>
+<A NAME="operator+=">
+<A NAME ="DOC.219.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="string.html#DOC.219.4">string</A>&  operator+=(double d)</B></TT>
+<DD> concat. d in floating point notation is added.
+<DL></DL><P>
+<A NAME="operator+=">
+<A NAME ="DOC.219.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="string.html#DOC.219.4">string</A>&  operator+=(char c)</B></TT>
+<DD> concat operator a la strcat.
+<DL></DL><P>
+<A NAME="operator+">
+<A NAME ="DOC.219.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  <!2><A HREF="string.html#DOC.219.4">string</A>  operator+(const char* s1, const <!2><A HREF="string.html#DOC.219.4">string</A> &s2)</B></TT>
+<DD> constructive concat operator.
+<DL></DL><P>
+<A NAME="operator+">
+<A NAME ="DOC.219.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  <!2><A HREF="string.html#DOC.219.4">string</A>  operator+(const <!2><A HREF="string.html#DOC.219.4">string</A> &s1, const char* s2)</B></TT>
+<DD> constructive concat operator.
+<DL></DL><P>
+<A NAME="operator+">
+<A NAME ="DOC.219.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="string.html#DOC.219.4">string</A>  operator+(const <!2><A HREF="string.html#DOC.219.4">string</A> &s)</B></TT>
+<DD> constructive concat operator.
+<DL></DL><P>
+<A NAME="operator+">
+<A NAME ="DOC.219.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="string.html#DOC.219.4">string</A>  operator+(const char* s)</B></TT>
+<DD> constructive concat operator.
+<DL></DL><P>
+<A NAME="add">
+<A NAME ="DOC.219.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  add(char c)</B></TT>
+<DD> add c at end of string.
+<DL></DL><P>
+<A NAME="insert">
+<A NAME ="DOC.219.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  insert(char c, int pos)</B></TT>
+<DD> add character at n-th position of string.
+<DL></DL><P>
+<A NAME="contains">
+<A NAME ="DOC.219.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  contains(const <!2><A HREF="string.html#DOC.219.4">string</A> &s) const </B></TT>
+<DD> return 1 if target is in string. 0 for failure.
+<DL></DL><P>
+<A NAME="contains">
+<A NAME ="DOC.219.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  contains(const char* s) const </B></TT>
+<DD> return 1 if target is in string. 0 for failure.
+<DL></DL><P>
+<A NAME="contains">
+<A NAME ="DOC.219.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  contains(char c) const </B></TT>
+<DD> return 1 if target is in string. 0 for failure.
+<DL></DL><P>
+<A NAME="startsWith">
+<A NAME ="DOC.219.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  startsWith(const <!2><A HREF="string.html#DOC.219.4">string</A> &s) const </B></TT>
+<DD> return 1 if string starts with target, 0 for failure.
+<DL></DL><P>
+<A NAME="startsWith">
+<A NAME ="DOC.219.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  startsWith(const char* s) const </B></TT>
+<DD> return 1 if string starts with target, 0 for failure.
+<DL></DL><P>
+<A NAME="endsWith">
+<A NAME ="DOC.219.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  endsWith(const <!2><A HREF="string.html#DOC.219.4">string</A> &s) const </B></TT>
+<DD> return 1 if string ends with target, 0 for failure.
+<DL></DL><P>
+<A NAME="endsWith">
+<A NAME ="DOC.219.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  endsWith(const char* s) const </B></TT>
+<DD> return 1 if string ends with target, 0 for failure.
+<DL></DL><P>
+<A NAME="setSuffix">
+<A NAME ="DOC.219.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  setSuffix(const <!2><A HREF="string.html#DOC.219.4">string</A> &s, char delim = '.')</B></TT>
+<DD> adds suffix s. return 1 when suffix is changed, 0 when only added.
+<DL></DL><P>
+<A NAME="getSuffix">
+<A NAME ="DOC.219.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  getSuffix(<!2><A HREF="string.html#DOC.219.4">string</A> &s, char delim = '.') const </B></TT>
+<DD> puts suffix in s. when there is no suffix returns 0, 1 otherwise.
+<DL></DL><P>
+<A NAME="operator[]">
+<A NAME ="DOC.219.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> char&  operator[](int i)</B></TT>
+<DD> selection of char by index a la array.
+<DL></DL><P>
+<A NAME="operator[]">
+<A NAME ="DOC.219.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char&  operator[](int i) const </B></TT>
+<DD> selection of char by index a la array.
+<DL></DL><P>
+<A NAME="remove">
+<A NAME ="DOC.219.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  remove()</B></TT>
+<DD> remove last character of string.
+<DL></DL><P>
+<A NAME="remove">
+<A NAME ="DOC.219.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  remove(int pos)</B></TT>
+<DD> remove pos-th character of string.
+<DL></DL><P>
+<A NAME="replace">
+<A NAME ="DOC.219.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  replace(char old, char nw)</B></TT>
+<DD> replace each occurence of old char by nw char .
+<DL></DL><P>
+<A NAME="replace">
+<A NAME ="DOC.219.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  replace(const <!2><A HREF="string.html#DOC.219.4">string</A> &pat, const <!2><A HREF="string.html#DOC.219.4">string</A> &repl, int casesens=1)</B></TT>
+<DD> global substitution.
+<DL></DL><P>
+<A NAME="replaceFirst">
+<A NAME ="DOC.219.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  replaceFirst(const <!2><A HREF="string.html#DOC.219.4">string</A> &pat, const <!2><A HREF="string.html#DOC.219.4">string</A> &repl, int casesens=1)</B></TT>
+<DD> first occurrence substitution.
+<DL></DL><P>
+<A NAME="addPlural">
+<A NAME ="DOC.219.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  addPlural()</B></TT>
+<DD> add to word an english plural ending, like horse->horses, sky->skies.
+<DL></DL><P>
+<A NAME="upcase">
+<A NAME ="DOC.219.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  <!2><A HREF="string.html#DOC.219.4">string</A>  upcase(const <!2><A HREF="string.html#DOC.219.4">string</A> &s)</B></TT>
+<DD> move all chars to upper case
+<DL></DL><P>
+<A NAME="downcase">
+<A NAME ="DOC.219.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  <!2><A HREF="string.html#DOC.219.4">string</A>  downcase(const <!2><A HREF="string.html#DOC.219.4">string</A> &s)</B></TT>
+<DD> move all chars to lower case
+<DL></DL><P>
+<A NAME="stripblanks">
+<A NAME ="DOC.219.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  <!2><A HREF="string.html#DOC.219.4">string</A>  stripblanks(const <!2><A HREF="string.html#DOC.219.4">string</A> &s)</B></TT>
+<DD> strip all spurious blank chars.
+<DL></DL><P>
+<A NAME="upcase">
+<A NAME ="DOC.219.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  upcase()</B></TT>
+<DD> in-place version of the above.
+<DL></DL><P>
+<A NAME="downcase">
+<A NAME ="DOC.219.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  downcase()</B></TT>
+<DL></DL><P>
+<A NAME="stripblanks">
+<A NAME ="DOC.219.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  stripblanks()</B></TT>
+<DL></DL><P>
+<A NAME="toulong">
+<A NAME ="DOC.219.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  long  toulong() const </B></TT>
+<DL></DL><P>
+<A NAME="tolong">
+<A NAME ="DOC.219.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> long  tolong() const </B></TT>
+<DL></DL><P>
+<A NAME="todouble">
+<A NAME ="DOC.219.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> double  todouble() const </B></TT>
+<DL></DL><P>
+<A NAME="toint">
+<A NAME ="DOC.219.54">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  toint() const </B></TT>
+<DL></DL><P>
+<A NAME="length">
+<A NAME ="DOC.219.55">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  length() const </B></TT>
+<DD> number of characters in string.
+<DL></DL><P>
+<A NAME="lines">
+<A NAME ="DOC.219.56">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  lines() const </B></TT>
+<DD> the number of lines in string when printed: newlines+1.
+<DL></DL><P>
+<A NAME="width">
+<A NAME ="DOC.219.57">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  width() const </B></TT>
+<DD> return nr. of chars of line with most chars in string.
+<DL></DL><P>
+<A NAME="whichline">
+<A NAME ="DOC.219.58">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  whichline(int i, int &pos) const </B></TT>
+<DD> return which line has i-th char. pos becomes position in line.
+<DL></DL><P>
+<A NAME="nthInline">
+<A NAME ="DOC.219.59">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  nthInline(int line, int n) const </B></TT>
+<DD> return position of n-th char in line-th line.
+<DL></DL><P>
+<A NAME="letters">
+<A NAME ="DOC.219.60">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  letters() const </B></TT>
+<DD> return number of letters (a-z,A-Z) in string.
+<DL></DL><P>
+<A NAME="setPrecision">
+<A NAME ="DOC.219.61">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  setPrecision(unsigned p)</B></TT>
+<DD> set precision when string is interpreted as double.
+<DL></DL><P>
+<A NAME="operator<<">
+<A NAME ="DOC.219.62">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  ostream&  operator<<(ostream &o, const <!2><A HREF="string.html#DOC.219.4">string</A> &s)</B></TT>
+<DD> write string to output stream.
+<DL></DL><P>
+<A NAME="operator>>">
+<A NAME ="DOC.219.63">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  istream&  operator>>(istream &i, <!2><A HREF="string.html#DOC.219.4">string</A> &s)</B></TT>
+<DD> read string from input stream.
+<DL></DL><P>
+<A NAME="operator==">
+<A NAME ="DOC.219.64">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  int  operator==(const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const char* s)</B></TT>
+<DD> comparison operator returns 1 if equal
+<DL></DL><P>
+<A NAME="operator==">
+<A NAME ="DOC.219.65">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  int  operator==(const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const <!2><A HREF="string.html#DOC.219.4">string</A> &y)</B></TT>
+<DD> comparison operator returns 1 if equal.
+<DL></DL><P>
+<A NAME="operator%=">
+<A NAME ="DOC.219.66">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  int  operator%=(const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const char* s)</B></TT>
+<DD> comparison operator that ignores case
+<DL></DL><P>
+<A NAME="operator%=">
+<A NAME ="DOC.219.67">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  int  operator%=(const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const <!2><A HREF="string.html#DOC.219.4">string</A> &y)</B></TT>
+<DD> comparison operator that ignores case
+<DL></DL><P>
+<A NAME="operator!=">
+<A NAME ="DOC.219.68">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  int  operator!=(const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const char* s)</B></TT>
+<DD> comparison operator a la !equal.
+<DL></DL><P>
+<A NAME="operator!=">
+<A NAME ="DOC.219.69">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  int  operator!=(const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const <!2><A HREF="string.html#DOC.219.4">string</A> &y)</B></TT>
+<DD> comparison operator a la !equal.
+<DL></DL><P>
+<A NAME="compare">
+<A NAME ="DOC.219.70">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  int  compare(const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const char* s)</B></TT>
+<DD> comparison operator a la strcmp
+<DL></DL><P>
+<A NAME="compare">
+<A NAME ="DOC.219.71">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  int  compare(const <!2><A HREF="string.html#DOC.219.4">string</A> &x, const <!2><A HREF="string.html#DOC.219.4">string</A> &y)</B></TT>
+<DD> comparison operator a la strcmp
+<DL></DL><P>
+<A NAME="getstr">
+<A NAME ="DOC.219.72">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  getstr() const </B></TT>
+<DD> return a const pointer to the data to do dirty stuff.
+<DL></DL><P>
+<A NAME="doReplace">
+<A NAME ="DOC.219.73">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  doReplace(const <!2><A HREF="string.html#DOC.219.4">string</A> &pat, const <!2><A HREF="string.html#DOC.219.4">string</A> &repl, int global, int casesens=1)</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

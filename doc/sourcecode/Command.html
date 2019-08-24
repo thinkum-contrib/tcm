@@ -1,0 +1,223 @@
+<html><head><TITLE>Command</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Command  </H2><BLOCKQUOTE>
+ (abstract) undo-able command class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=1415>
+<param name=classes value="CCommand,MCommand.html,CUpdateVectorAlignmentCmd,MUpdateVectorAlignmentCmd.html,CUpdateTypeCmd,MUpdateTypeCmd.html,CUpdateTextUnderlineCmd,MUpdateTextUnderlineCmd.html,CUpdateTextCmd,MUpdateTextCmd.html,CUpdateTextAlignmentCmd,MUpdateTextAlignmentCmd.html,CUpdateReadDirectionCmd,MUpdateReadDirectionCmd.html,CUpdateLineWidthCmd,MUpdateLineWidthCmd.html,CUpdateLineTableCmd,MUpdateLineTableCmd.html,CUpdateLineStyleCmd,MUpdateLineStyleCmd.html,CUpdateLineEndCmd,MUpdateLineEndCmd.html,CUpdateFontCmd,MUpdateFontCmd.html,CUpdateCurveCmd,MUpdateCurveCmd.html,CUpdateColorCmd,MUpdateColorCmd.html,CUpdateCellTextUnderlineCmd,MUpdateCellTextUnderlineCmd.html,CUpdateCellTextFontCmd,MUpdateCellTextFontCmd.html,CUpdateCellTextCmd,MUpdateCellTextCmd.html,CSortRowsCmd,MSortRowsCmd.html,CSortColumnsCmd,MSortColumnsCmd.html,CSizeShapeCmd,MSizeShapeCmd.html,CSelectCellAreaCmd,MSelectCellAreaCmd.html,CSelectAreaCmd,MSelectAreaCmd.html,CSelectAllCmd,MSelectAllCmd.html,CSelectAllCellsCmd,MSelectAllCellsCmd.html,CSameSizeCmd,MSameSizeCmd.html,CSSDUpdateClassBoxPropertyCmd,MSSDUpdateClassBoxPropertyCmd.html,CReplaceTextCmd,MReplaceTextCmd.html,CReplaceCellTextCmd,MReplaceCellTextCmd.html,CReindexCmd,MReindexCmd.html,CPasteShapesCmd,MPasteShapesCmd.html,CPasteCellTextsCmd,MPasteCellTextsCmd.html,CMoveTableCmd,MMoveTableCmd.html,CMoveShapesCmd,MMoveShapesCmd.html,CDragShapesCmd,MDragShapesCmd.html,CDragShapeCmd,MDragShapeCmd.html,CDragCmd,MDragCmd.html,CDeleteSubjectsCmd,MDeleteSubjectsCmd.html,CDeleteShapesCmd,MDeleteShapesCmd.html,CDeleteHandleCmd,MDeleteHandleCmd.html,CDeleteCellsCmd,MDeleteCellsCmd.html,CCreateNodeCmd,MCreateNodeCmd.html,CCreateEdgeCmd,MCreateEdgeCmd.html,CCopyShapesCmd,MCopyShapesCmd.html,CCopyCellTextsCmd,MCopyCellTextsCmd.html,CAppendTableCmd,MAppendTableCmd.html,CAddRowsCmd,MAddRowsCmd.html,CAddColumnsCmd,MAddColumnsCmd.html">
+<param name=before value="M,M|_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,Mr_">
+<param name=after value="M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M">
+<param name=indent value="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Classes</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.48.3"> <IMG BORDER=0 SRC=icon1.gif></A>  enum </TD><TD><B>TrackType</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.48.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Command</B> (<!1><A HREF="Document.html">Document</A> *d, <!1><A HREF="Viewer.html">Viewer</A> *v)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Command</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.4"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>TrackMouse</B> (<!2><A HREF="Command.html#DOC.48.3">TrackType</A>, <!1><A HREF="Point.html">Point</A>*, <!1><A HREF="Point.html">Point</A>*, <!1><A HREF="Point.html">Point</A>*)<br>
+<I> Called while mouse button is pressed dragged and released.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.5"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Execute</B> ()<br>
+<I> Perform the command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.6"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UnExecute</B> ()<br>
+<I> Undo the command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.7"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>ReExecute</B> ()<br>
+<I> Redo the command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.8"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Abort</B> ()<br>
+<I> Abort the command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.9"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>CmdDone</B> () const <br>
+<I> command is executed.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.10"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  const  char* </TD><TD><B>GetName</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.11"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>ScaleCorrect</B> (int x) const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.12"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Point.html">Point</A> </TD><TD><B>ScaleCorrect</B> (const <!1><A HREF="Point.html">Point</A> *pt) const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.13"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>Scale</B> (int x) const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.14"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Point.html">Point</A> </TD><TD><B>Scale</B> (const <!1><A HREF="Point.html">Point</A> *pt) const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SayAborted</B> ()<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.48.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SayCommited</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SayUndone</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.18"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="DrawWindow.html">DrawWindow</A>* </TD><TD><B>GetMainWindow</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.19"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Viewer.html">Viewer</A>* </TD><TD><B>GetViewer</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.20"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Document.html">Document</A>* </TD><TD><B>GetDocument</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.21"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Grafport.html">Grafport</A>* </TD><TD><B>GetGrafport</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.48.22"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetCmdDone</B> (bool b)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ (abstract) undo-able command class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Command">
+<A NAME ="DOC.48.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Command(<!1><A HREF="Document.html">Document</A> *d, <!1><A HREF="Viewer.html">Viewer</A> *v)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="~Command">
+<A NAME ="DOC.48.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Command()</B></TT>
+<DL></DL><P>
+<A NAME="TrackType">
+<A NAME ="DOC.48.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum  TrackType</B></TT>
+<DL></DL><P>
+<A NAME="TrackMouse">
+<A NAME ="DOC.48.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  TrackMouse(<!2><A HREF="Command.html#DOC.48.3">TrackType</A>, <!1><A HREF="Point.html">Point</A>*, <!1><A HREF="Point.html">Point</A>*, <!1><A HREF="Point.html">Point</A>*)</B></TT>
+<DD> Called while mouse button is pressed dragged and released.
+<DL></DL><P>
+<A NAME="Execute">
+<A NAME ="DOC.48.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Execute()</B></TT>
+<DD> Perform the command.
+<DL></DL><P>
+<A NAME="UnExecute">
+<A NAME ="DOC.48.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UnExecute()</B></TT>
+<DD> Undo the command.
+<DL></DL><P>
+<A NAME="ReExecute">
+<A NAME ="DOC.48.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  ReExecute()</B></TT>
+<DD> Redo the command.
+<DL></DL><P>
+<A NAME="Abort">
+<A NAME ="DOC.48.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Abort()</B></TT>
+<DD> Abort the command.
+<DL></DL><P>
+<A NAME="CmdDone">
+<A NAME ="DOC.48.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  CmdDone() const </B></TT>
+<DD> command is executed.
+<DL></DL><P>
+<A NAME="GetName">
+<A NAME ="DOC.48.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  const  char*  GetName() const </B></TT>
+<DL></DL><P>
+<A NAME="ScaleCorrect">
+<A NAME ="DOC.48.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  ScaleCorrect(int x) const </B></TT>
+<DL></DL><P>
+<A NAME="ScaleCorrect">
+<A NAME ="DOC.48.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Point.html">Point</A>  ScaleCorrect(const <!1><A HREF="Point.html">Point</A> *pt) const </B></TT>
+<DL></DL><P>
+<A NAME="Scale">
+<A NAME ="DOC.48.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  Scale(int x) const </B></TT>
+<DL></DL><P>
+<A NAME="Scale">
+<A NAME ="DOC.48.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Point.html">Point</A>  Scale(const <!1><A HREF="Point.html">Point</A> *pt) const </B></TT>
+<DL></DL><P>
+<A NAME="SayAborted">
+<A NAME ="DOC.48.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SayAborted()</B></TT>
+<DL></DL><P>
+<A NAME="SayCommited">
+<A NAME ="DOC.48.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SayCommited()</B></TT>
+<DL></DL><P>
+<A NAME="SayUndone">
+<A NAME ="DOC.48.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SayUndone()</B></TT>
+<DL></DL><P>
+<A NAME="GetMainWindow">
+<A NAME ="DOC.48.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="DrawWindow.html">DrawWindow</A>*  GetMainWindow() const </B></TT>
+<DL></DL><P>
+<A NAME="GetViewer">
+<A NAME ="DOC.48.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Viewer.html">Viewer</A>*  GetViewer() const </B></TT>
+<DL></DL><P>
+<A NAME="GetDocument">
+<A NAME ="DOC.48.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Document.html">Document</A>*  GetDocument() const </B></TT>
+<DL></DL><P>
+<A NAME="GetGrafport">
+<A NAME ="DOC.48.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Grafport.html">Grafport</A>*  GetGrafport() const </B></TT>
+<DL></DL><P>
+<A NAME="SetCmdDone">
+<A NAME ="DOC.48.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetCmdDone(bool b)</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="UpdateVectorAlignmentCmd.html"> UpdateVectorAlignmentCmd </A><br>
+<A HREF="UpdateTypeCmd.html"> UpdateTypeCmd </A><br>
+<A HREF="UpdateTextUnderlineCmd.html"> UpdateTextUnderlineCmd </A><br>
+<A HREF="UpdateTextCmd.html"> UpdateTextCmd </A><br>
+<A HREF="UpdateTextAlignmentCmd.html"> UpdateTextAlignmentCmd </A><br>
+<A HREF="UpdateReadDirectionCmd.html"> UpdateReadDirectionCmd </A><br>
+<A HREF="UpdateLineWidthCmd.html"> UpdateLineWidthCmd </A><br>
+<A HREF="UpdateLineTableCmd.html"> UpdateLineTableCmd </A><br>
+<A HREF="UpdateLineStyleCmd.html"> UpdateLineStyleCmd </A><br>
+<A HREF="UpdateLineEndCmd.html"> UpdateLineEndCmd </A><br>
+<A HREF="UpdateFontCmd.html"> UpdateFontCmd </A><br>
+<A HREF="UpdateCurveCmd.html"> UpdateCurveCmd </A><br>
+<A HREF="UpdateColorCmd.html"> UpdateColorCmd </A><br>
+<A HREF="UpdateCellTextUnderlineCmd.html"> UpdateCellTextUnderlineCmd </A><br>
+<A HREF="UpdateCellTextFontCmd.html"> UpdateCellTextFontCmd </A><br>
+<A HREF="UpdateCellTextCmd.html"> UpdateCellTextCmd </A><br>
+<A HREF="SortRowsCmd.html"> SortRowsCmd </A><br>
+<A HREF="SortColumnsCmd.html"> SortColumnsCmd </A><br>
+<A HREF="SizeShapeCmd.html"> SizeShapeCmd </A><br>
+<A HREF="SelectCellAreaCmd.html"> SelectCellAreaCmd </A><br>
+<A HREF="SelectAreaCmd.html"> SelectAreaCmd </A><br>
+<A HREF="SelectAllCmd.html"> SelectAllCmd </A><br>
+<A HREF="SelectAllCellsCmd.html"> SelectAllCellsCmd </A><br>
+<A HREF="SameSizeCmd.html"> SameSizeCmd </A><br>
+<A HREF="SSDUpdateClassBoxPropertyCmd.html"> SSDUpdateClassBoxPropertyCmd </A><br>
+<A HREF="ReplaceTextCmd.html"> ReplaceTextCmd </A><br>
+<A HREF="ReplaceCellTextCmd.html"> ReplaceCellTextCmd </A><br>
+<A HREF="ReindexCmd.html"> ReindexCmd </A><br>
+<A HREF="PasteShapesCmd.html"> PasteShapesCmd </A><br>
+<A HREF="PasteCellTextsCmd.html"> PasteCellTextsCmd </A><br>
+<A HREF="MoveTableCmd.html"> MoveTableCmd </A><br>
+<A HREF="MoveShapesCmd.html"> MoveShapesCmd </A><br>
+<A HREF="DragShapesCmd.html"> DragShapesCmd </A><br>
+<A HREF="DragShapeCmd.html"> DragShapeCmd </A><br>
+<A HREF="DragCmd.html"> DragCmd </A><br>
+<A HREF="DeleteSubjectsCmd.html"> DeleteSubjectsCmd </A><br>
+<A HREF="DeleteShapesCmd.html"> DeleteShapesCmd </A><br>
+<A HREF="DeleteHandleCmd.html"> DeleteHandleCmd </A><br>
+<A HREF="DeleteCellsCmd.html"> DeleteCellsCmd </A><br>
+<A HREF="CreateNodeCmd.html"> CreateNodeCmd </A><br>
+<A HREF="CreateEdgeCmd.html"> CreateEdgeCmd </A><br>
+<A HREF="CopyShapesCmd.html"> CopyShapesCmd </A><br>
+<A HREF="CopyCellTextsCmd.html"> CopyCellTextsCmd </A><br>
+<A HREF="AppendTableCmd.html"> AppendTableCmd </A><br>
+<A HREF="AddRowsCmd.html"> AddRowsCmd </A><br>
+<A HREF="AddColumnsCmd.html"> AddColumnsCmd </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

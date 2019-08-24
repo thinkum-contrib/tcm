@@ -1,0 +1,103 @@
+<html><head><TITLE>EventStore</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  EventStore : public <!2><A HREF="DFStore.html#DOC.106.1">DFStore</A> </H2><BLOCKQUOTE>
+ event store (EFD) node class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=185>
+<param name=classes value="CThing,MThing.html,CSubject,MSubject.html,CNode,MNode.html,CDFNode,MDFNode.html,CDFStore,MDFStore.html,CEventStore,MEventStore.html">
+<param name=before value="M,M,M,M,M,M">
+<param name=after value="Md_SPSPSPSP,Md_SPSPSP,Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3,4,5">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.163.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>EventStore</B> (<!1><A HREF="DCFGraph.html">DCFGraph</A> *g)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.163.2"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetClassType</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.163.3"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="Subject.html#DOC.360.1">Subject</A>* </TD><TD><B>Clone</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="DFStore.html">DFStore:</A></h3>
+
+<DL>
+</DL>
+<hr><H3>Inherited from <A HREF = "DFNode.html"> DFNode:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> <!2><A HREF="Subject.html#DOC.360.6">Subject::NameErrType</A>  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *s)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Node.html"> Node:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsEdge</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>InGraph</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetIndex</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  <!2><A HREF="Subject.html#DOC.360.6">Subject::NameErrType</A>  <B>SetIndex</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>WriteMembers</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *f)
+<DT><IMG SRC=icon2.gif> bool  <B>ReadMembers</B>(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)
+<DT><IMG SRC=icon2.gif> void  <B>GetParentIndex</B>(<!1><A HREF="string.html">string</A> *pindex)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Subject.html"> Subject:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>NameErrType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsSubject</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>SetReferences</B>(<!1><A HREF="AssocList.html">AssocList</A> *)
+<DT><IMG SRC=icon2.gif> bool  <B>CheckReferences</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetParent</B>(<!1><A HREF="Node.html">Node</A> *p)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Node.html">Node</A>*  <B>GetParent</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetAnnotation</B>(<!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetAnnotation</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Graph.html">Graph</A>*  <B>GetGraph</B>() const 
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Thing.html"> Thing:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>AssocType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> unsigned  long  <B>GetId</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetId</B>(unsigned long val)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsShape</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsView</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>Write</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ event store (EFD) node class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="EventStore">
+<A NAME ="DOC.163.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  EventStore(<!1><A HREF="DCFGraph.html">DCFGraph</A> *g)</B></TT>
+<DL></DL><P>
+<A NAME="GetClassType">
+<A NAME ="DOC.163.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetClassType() const </B></TT>
+<DL></DL><P>
+<A NAME="Clone">
+<A NAME ="DOC.163.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="Subject.html#DOC.360.1">Subject</A>*  Clone()</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

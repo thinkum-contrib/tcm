@@ -1,0 +1,46 @@
+#! /bin/sh
+# 
+# script to build tar.gz distribution of TCM binaries.
+
+[ ${TCM_HOME} ] || {
+   echo TCM_HOME is not set. Bailing out.; exit 1
+}
+
+if [ $# != 2 ]
+then
+        echo "Usage: `basename $0` version platform"
+        exit
+fi
+VERSION=$1
+PLATFORM=$2
+TAR=gtar
+DISTFILE=tcm-$VERSION.bin.$PLATFORM.tar.gz
+PREFIX=tcm-$VERSION
+SRC='COPYING       
+    CHANGELOG     
+    MANIFEST
+    INSTALL*
+    FILEMAP
+    README*       
+    bin/psf
+    bin/t*
+    doc/usersguide.html 
+    doc/usersguide/*.css
+    doc/usersguide/*.html
+    doc/usersguide/*.gif
+    doc/usersguide*.ps.gz
+    doc/wishlist/FutureDevelopments.html
+    doc/wishlist/WishList.html
+    lib/TCM
+    lib/banner.ps
+    lib/colorrgb.txt
+    lib/help/[D-Z]*	
+    lib/tcm.conf
+    lib/*.so
+    man/windex
+    man/man1/*.1'
+cd $TCM_HOME
+/bin/ls -d $SRC | sed -e "s:^:$PREFIX/:" > MANIFEST
+(cd ..; ln -s $TCM_HOME $PREFIX)
+(cd ..; $TAR -czvf $TCM_HOME/$DISTFILE `cat $TCM_HOME/MANIFEST`)
+(cd ..; rm $PREFIX)

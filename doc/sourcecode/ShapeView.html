@@ -1,0 +1,432 @@
+<html><head><TITLE>ShapeView</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  ShapeView : public <!2><A HREF="Thing.html#DOC.385.2">Thing</A> </H2><BLOCKQUOTE>
+ Class containing a single view (set of shapes). 
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CThing,MThing.html,CShapeView,MShapeView.html,CTRView,MTRView.html,CERView,MERView.html">
+<param name=before value="M,M,M|_,Mr_">
+<param name=after value="Md_,M,M,M">
+<param name=indent value="0,1,1,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.298.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>ShapeView</B> (<!1><A HREF="DiagramViewer.html">DiagramViewer</A> *v)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~ShapeView</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.3"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetClassType</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.4"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsView</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Draw</B> ()<br>
+<I> draw all shapes in the view.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Undraw</B> ()<br>
+<I> erase all shapes in the view.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetGrafport</B> (<!1><A HREF="Grafport.html">Grafport</A> *g)<br>
+<I> set grafport of all shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.8"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Node.html">Node</A>* </TD><TD><B>GetParent</B> () const <br>
+<I> each view has a parent node.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetParent</B> (<!1><A HREF="Node.html">Node</A> *n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.10"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetIndex</B> () const <br>
+<I> each view has a unique index.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetIndex</B> (<!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.12"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>NrOfShapes</B> () const <br>
+<I> the number of shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.13"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="GShape.html">GShape</A> *> * </TD><TD><B>GetShapes</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.14"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="GShape.html">GShape</A> *> * </TD><TD><B>GetSelection</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.15"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>HasShape</B> (<!1><A HREF="GShape.html">GShape</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Snap</B> (<!1><A HREF="Point.html">Point</A> *p)<br>
+<I> Snap point to discrete point-position.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.17"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>Snap</B> (int i)<br>
+<I> Snap int to discrete point-position.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.18"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="DiagramViewer.html">DiagramViewer</A>* </TD><TD><B>GetViewer</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.19"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>WriteShapes</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f)<br>
+<I> write all shapes to file (in separate clauses).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.20"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadMembers</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, double format)<br>
+<I> read view section.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.21"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>SetReferences</B> (<!1><A HREF="AssocList.html">AssocList</A> *)<br>
+<I> update references when view is read.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.22"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>CheckReferences</B> ()<br>
+<I> Check parent node, Check that shapes have right view reference.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.23"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CheckShapes</B> ()<br>
+<I> find all shapes with wrong references;</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.24"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>NrSelected</B> () const <br>
+<I> the number of selected shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.25"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="GShape.html">GShape</A>* </TD><TD><B>FirstSelected</B> () const <br>
+<I> return the first selected shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.26"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DeselectAll</B> ()<br>
+<I> deselect all shapes in the view.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.27"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SelectShape</B> (<!1><A HREF="GShape.html">GShape</A> *shape)<br>
+<I> add shape to selection.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.28"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>FirstSelectShape</B> (<!1><A HREF="GShape.html">GShape</A> *shape)<br>
+<I> add shape to selection as primus inter pares.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.29"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DeselectShape</B> (<!1><A HREF="GShape.html">GShape</A> *shape)<br>
+<I> remove shape to selection.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.30"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="GShape.html">GShape</A>* </TD><TD><B>HitShape</B> (int x, int y)<br>
+<I> return shape from view if (x,y) is in shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.31"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="NodeShape.html">NodeShape</A>* </TD><TD><B>HitNodeShape</B> (int x, int y)<br>
+<I> return node from view if (x,y) is in shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.32"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Line.html">Line</A>* </TD><TD><B>HitLine</B> (int x, int y, int &whichsegment)<br>
+<I> return line from view if (x,y) is in line. segment is set to which segment.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.33"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Line.html">Line</A>* </TD><TD><B>HitLineHandle</B> (int x, int y, int &which)<br>
+<I> return line from view if (x,y) hits handle.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.34"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="TextShape.html">TextShape</A>* </TD><TD><B>HitTextShape</B> (int x, int y, bool emptyallowed=True)<br>
+<I> return text-shape from view if (x,y) is in shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.35"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetCurrentShapeNr</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.36"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetCurrentShapeNr</B> (int i)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.37"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetCurrentShapeNr</B> (<!1><A HREF="GShape.html">GShape</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.38"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="GShape.html">GShape</A>* </TD><TD><B>GetNextShape</B> (const <!1><A HREF="string.html">string</A> *s, bool sens, bool substring, bool nameOnly)<br>
+<I> return the next shape containing s as name.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.39"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>GetShapes</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>, const <!1><A HREF="string.html">string</A> *s, bool sens, bool substring, bool nameOnly)<br>
+<I> get shapes containing s as name (case sensitive, substring).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.40"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CalcSizeElements</B> (<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.41"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CalcSizeSelection</B> (<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.42"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CalcSizeShapes</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>, <!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)<br>
+<I> calculate covered area of shapes in grafport.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.43"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AddShapeRaw</B> (<!1><A HREF="GShape.html">GShape</A> *shape)<br>
+<I> add to viewer and draw/redraw shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.44"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>AddShape</B> (<!1><A HREF="GShape.html">GShape</A> *shape)<br>
+<I> add to viewer and draw/redraw shape and recalc. line positions.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.45"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AddShapes</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.46"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>RemoveShapeRaw</B> (<!1><A HREF="GShape.html">GShape</A> *shape)<br>
+<I> remove from viewer and erase shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.47"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>RemoveShape</B> (<!1><A HREF="GShape.html">GShape</A> *shape)<br>
+<I> remove from viewer, and erase drawing and recalc line positions.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.48"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>RemoveShapes</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.49"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="GShape.html">GShape</A>* </TD><TD><B>GetShape</B> (<!1><A HREF="Subject.html">Subject</A> *subject)<br>
+<I> return first shape from shapes having given subject.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.50"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>GetShapes</B> (<!1><A HREF="Subject.html">Subject</A> *subject, <!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>)<br>
+<I> put in shapes all shapes from shapes having given subject.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.51"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>MultipleLinesPosUpdate</B> (<!1><A HREF="Line.html">Line</A> *line)<br>
+<I> update the positions of the lines connecting same shapes as line.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.52"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>MultipleLines</B> (<!1><A HREF="Line.html">Line</A> *line)<br>
+<I> update multiple lines between two nodes (called when line added).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.53"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CompleteShapes</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *s, <!1><A HREF="GShape.html">GShape</A> *n1, <!1><A HREF="GShape.html">GShape</A> *n2)<br>
+<I> add to s all lines that connect shapes n1 and n2.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.54"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CompleteLines</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>)<br>
+<I> add shapes which are connected by the lines in shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.55"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CompleteShapes</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>)<br>
+<I> add lines to shapes which connect the shapes in shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.56"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawNames</B> ()<br>
+<I> draw only names in view.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.298.57"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowAll</B> ()<br>
+<I> make all shapes in view visible.</I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Thing.html">Thing:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>AssocType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> unsigned  long  <B>GetId</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetId</B>(unsigned long val)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsSubject</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsShape</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>Write</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ Class containing a single view (set of shapes). 
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="ShapeView">
+<A NAME ="DOC.298.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  ShapeView(<!1><A HREF="DiagramViewer.html">DiagramViewer</A> *v)</B></TT>
+<DL></DL><P>
+<A NAME="~ShapeView">
+<A NAME ="DOC.298.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~ShapeView()</B></TT>
+<DL></DL><P>
+<A NAME="GetClassType">
+<A NAME ="DOC.298.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetClassType() const </B></TT>
+<DL></DL><P>
+<A NAME="IsView">
+<A NAME ="DOC.298.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsView() const </B></TT>
+<DL></DL><P>
+<A NAME="Draw">
+<A NAME ="DOC.298.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Draw()</B></TT>
+<DD> draw all shapes in the view.
+<DL></DL><P>
+<A NAME="Undraw">
+<A NAME ="DOC.298.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Undraw()</B></TT>
+<DD> erase all shapes in the view.
+<DL></DL><P>
+<A NAME="SetGrafport">
+<A NAME ="DOC.298.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetGrafport(<!1><A HREF="Grafport.html">Grafport</A> *g)</B></TT>
+<DD> set grafport of all shapes.
+<DL></DL><P>
+<A NAME="GetParent">
+<A NAME ="DOC.298.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Node.html">Node</A>*  GetParent() const </B></TT>
+<DD> each view has a parent node.
+<DL></DL><P>
+<A NAME="SetParent">
+<A NAME ="DOC.298.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetParent(<!1><A HREF="Node.html">Node</A> *n)</B></TT>
+<DL></DL><P>
+<A NAME="GetIndex">
+<A NAME ="DOC.298.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetIndex() const </B></TT>
+<DD> each view has a unique index.
+<DL></DL><P>
+<A NAME="SetIndex">
+<A NAME ="DOC.298.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetIndex(<!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="NrOfShapes">
+<A NAME ="DOC.298.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  NrOfShapes() const </B></TT>
+<DD> the number of shapes.
+<DL></DL><P>
+<A NAME="GetShapes">
+<A NAME ="DOC.298.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="GShape.html">GShape</A> *> *  GetShapes() const </B></TT>
+<DL></DL><P>
+<A NAME="GetSelection">
+<A NAME ="DOC.298.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="GShape.html">GShape</A> *> *  GetSelection() const </B></TT>
+<DL></DL><P>
+<A NAME="HasShape">
+<A NAME ="DOC.298.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  HasShape(<!1><A HREF="GShape.html">GShape</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="Snap">
+<A NAME ="DOC.298.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Snap(<!1><A HREF="Point.html">Point</A> *p)</B></TT>
+<DD> Snap point to discrete point-position.
+<DL></DL><P>
+<A NAME="Snap">
+<A NAME ="DOC.298.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  Snap(int i)</B></TT>
+<DD> Snap int to discrete point-position.
+<DL></DL><P>
+<A NAME="GetViewer">
+<A NAME ="DOC.298.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="DiagramViewer.html">DiagramViewer</A>*  GetViewer() const </B></TT>
+<DL></DL><P>
+<A NAME="WriteShapes">
+<A NAME ="DOC.298.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  WriteShapes(<!1><A HREF="OutputFile.html">OutputFile</A> *f)</B></TT>
+<DD> write all shapes to file (in separate clauses).
+<DL></DL><P>
+<A NAME="ReadMembers">
+<A NAME ="DOC.298.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadMembers(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)</B></TT>
+<DD> read view section.
+<DL></DL><P>
+<A NAME="SetReferences">
+<A NAME ="DOC.298.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  SetReferences(<!1><A HREF="AssocList.html">AssocList</A> *)</B></TT>
+<DD> update references when view is read.
+<DL></DL><P>
+<A NAME="CheckReferences">
+<A NAME ="DOC.298.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  CheckReferences()</B></TT>
+<DD> Check parent node, Check that shapes have right view reference.
+<DL></DL><P>
+<A NAME="CheckShapes">
+<A NAME ="DOC.298.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CheckShapes()</B></TT>
+<DD> find all shapes with wrong references;
+<DL></DL><P>
+<A NAME="NrSelected">
+<A NAME ="DOC.298.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  NrSelected() const </B></TT>
+<DD> the number of selected shapes.
+<DL></DL><P>
+<A NAME="FirstSelected">
+<A NAME ="DOC.298.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="GShape.html">GShape</A>*  FirstSelected() const </B></TT>
+<DD> return the first selected shape.
+<DL></DL><P>
+<A NAME="DeselectAll">
+<A NAME ="DOC.298.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DeselectAll()</B></TT>
+<DD> deselect all shapes in the view.
+<DL></DL><P>
+<A NAME="SelectShape">
+<A NAME ="DOC.298.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SelectShape(<!1><A HREF="GShape.html">GShape</A> *shape)</B></TT>
+<DD> add shape to selection.
+<DL></DL><P>
+<A NAME="FirstSelectShape">
+<A NAME ="DOC.298.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  FirstSelectShape(<!1><A HREF="GShape.html">GShape</A> *shape)</B></TT>
+<DD> add shape to selection as primus inter pares.
+<DL></DL><P>
+<A NAME="DeselectShape">
+<A NAME ="DOC.298.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DeselectShape(<!1><A HREF="GShape.html">GShape</A> *shape)</B></TT>
+<DD> remove shape to selection.
+<DL></DL><P>
+<A NAME="HitShape">
+<A NAME ="DOC.298.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="GShape.html">GShape</A>*  HitShape(int x, int y)</B></TT>
+<DD> return shape from view if (x,y) is in shape.
+<DL></DL><P>
+<A NAME="HitNodeShape">
+<A NAME ="DOC.298.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="NodeShape.html">NodeShape</A>*  HitNodeShape(int x, int y)</B></TT>
+<DD> return node from view if (x,y) is in shape.
+<DL></DL><P>
+<A NAME="HitLine">
+<A NAME ="DOC.298.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Line.html">Line</A>*  HitLine(int x, int y, int &whichsegment)</B></TT>
+<DD> return line from view if (x,y) is in line. segment is set to which segment.
+<DL></DL><P>
+<A NAME="HitLineHandle">
+<A NAME ="DOC.298.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Line.html">Line</A>*  HitLineHandle(int x, int y, int &which)</B></TT>
+<DD> return line from view if (x,y) hits handle.
+<DL></DL><P>
+<A NAME="HitTextShape">
+<A NAME ="DOC.298.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="TextShape.html">TextShape</A>*  HitTextShape(int x, int y, bool emptyallowed=True)</B></TT>
+<DD> return text-shape from view if (x,y) is in shape.
+<DL></DL><P>
+<A NAME="GetCurrentShapeNr">
+<A NAME ="DOC.298.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetCurrentShapeNr() const </B></TT>
+<DL></DL><P>
+<A NAME="SetCurrentShapeNr">
+<A NAME ="DOC.298.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetCurrentShapeNr(int i)</B></TT>
+<DL></DL><P>
+<A NAME="SetCurrentShapeNr">
+<A NAME ="DOC.298.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetCurrentShapeNr(<!1><A HREF="GShape.html">GShape</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="GetNextShape">
+<A NAME ="DOC.298.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="GShape.html">GShape</A>*  GetNextShape(const <!1><A HREF="string.html">string</A> *s, bool sens, bool substring, bool nameOnly)</B></TT>
+<DD> return the next shape containing s as name.
+<DL></DL><P>
+<A NAME="GetShapes">
+<A NAME ="DOC.298.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  GetShapes(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>, const <!1><A HREF="string.html">string</A> *s, bool sens, bool substring, bool nameOnly)</B></TT>
+<DD> get shapes containing s as name (case sensitive, substring).
+<DL></DL><P>
+<A NAME="CalcSizeElements">
+<A NAME ="DOC.298.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CalcSizeElements(<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)</B></TT>
+<DL></DL><P>
+<A NAME="CalcSizeSelection">
+<A NAME ="DOC.298.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CalcSizeSelection(<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)</B></TT>
+<DL></DL><P>
+<A NAME="CalcSizeShapes">
+<A NAME ="DOC.298.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CalcSizeShapes(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>, <!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)</B></TT>
+<DD> calculate covered area of shapes in grafport.
+<DL></DL><P>
+<A NAME="AddShapeRaw">
+<A NAME ="DOC.298.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AddShapeRaw(<!1><A HREF="GShape.html">GShape</A> *shape)</B></TT>
+<DD> add to viewer and draw/redraw shape.
+<DL></DL><P>
+<A NAME="AddShape">
+<A NAME ="DOC.298.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  AddShape(<!1><A HREF="GShape.html">GShape</A> *shape)</B></TT>
+<DD> add to viewer and draw/redraw shape and recalc. line positions.
+<DL></DL><P>
+<A NAME="AddShapes">
+<A NAME ="DOC.298.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AddShapes(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>)</B></TT>
+<DL></DL><P>
+<A NAME="RemoveShapeRaw">
+<A NAME ="DOC.298.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  RemoveShapeRaw(<!1><A HREF="GShape.html">GShape</A> *shape)</B></TT>
+<DD> remove from viewer and erase shape.
+<DL></DL><P>
+<A NAME="RemoveShape">
+<A NAME ="DOC.298.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  RemoveShape(<!1><A HREF="GShape.html">GShape</A> *shape)</B></TT>
+<DD> remove from viewer, and erase drawing and recalc line positions.
+<DL></DL><P>
+<A NAME="RemoveShapes">
+<A NAME ="DOC.298.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  RemoveShapes(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>)</B></TT>
+<DL></DL><P>
+<A NAME="GetShape">
+<A NAME ="DOC.298.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="GShape.html">GShape</A>*  GetShape(<!1><A HREF="Subject.html">Subject</A> *subject)</B></TT>
+<DD> return first shape from shapes having given subject.
+<DL></DL><P>
+<A NAME="GetShapes">
+<A NAME ="DOC.298.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  GetShapes(<!1><A HREF="Subject.html">Subject</A> *subject, <!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>)</B></TT>
+<DD> put in shapes all shapes from shapes having given subject.
+<DL></DL><P>
+<A NAME="MultipleLinesPosUpdate">
+<A NAME ="DOC.298.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  MultipleLinesPosUpdate(<!1><A HREF="Line.html">Line</A> *line)</B></TT>
+<DD> update the positions of the lines connecting same shapes as line.
+<DL></DL><P>
+<A NAME="MultipleLines">
+<A NAME ="DOC.298.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  MultipleLines(<!1><A HREF="Line.html">Line</A> *line)</B></TT>
+<DD> update multiple lines between two nodes (called when line added).
+<DL></DL><P>
+<A NAME="CompleteShapes">
+<A NAME ="DOC.298.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CompleteShapes(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *s, <!1><A HREF="GShape.html">GShape</A> *n1, <!1><A HREF="GShape.html">GShape</A> *n2)</B></TT>
+<DD> add to s all lines that connect shapes n1 and n2.
+<DL></DL><P>
+<A NAME="CompleteLines">
+<A NAME ="DOC.298.54">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CompleteLines(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>)</B></TT>
+<DD> add shapes which are connected by the lines in shapes.
+<DL></DL><P>
+<A NAME="CompleteShapes">
+<A NAME ="DOC.298.55">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CompleteShapes(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>)</B></TT>
+<DD> add lines to shapes which connect the shapes in shapes.
+<DL></DL><P>
+<A NAME="DrawNames">
+<A NAME ="DOC.298.56">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawNames()</B></TT>
+<DD> draw only names in view.
+<DL></DL><P>
+<A NAME="ShowAll">
+<A NAME ="DOC.298.57">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowAll()</B></TT>
+<DD> make all shapes in view visible.
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="TRView.html"> TRView </A><br>
+<A HREF="ERView.html"> ERView </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

@@ -1,0 +1,229 @@
+<html><head><TITLE>MainWindow</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  MainWindow : public <!2><A HREF="MWidget.html#DOC.237.1">MWidget</A> </H2><BLOCKQUOTE>
+ class supporting the main (toplevel) window.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=155>
+<param name=classes value="CComponent,MComponent.html,CMWidget,MMWidget.html,CMainWindow,MMainWindow.html,CStartupWindow,MStartupWindow.html,CEditWindow,MEditWindow.html">
+<param name=before value="M,M,M,M|_,Mr_">
+<param name=after value="Md_SP,Md_,M,M,M">
+<param name=indent value="0,1,2,2,2">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.220.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>MainWindow</B> (const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)<br>
+<I> Constructor requires only a name</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~MainWindow</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.3"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>GetClassName</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.4"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Initialize</B> (int argc, char** argv, <!1><A HREF="Config.html">Config</A> *<!2><A HREF="MainWindow.html#DOC.220.29">config</A>)<br>
+<I> create toplevel widget, and other class members. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.5"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Finalize</B> ()<br>
+<I> initialization to do when window is already managed.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.6"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Manage</B> ()<br>
+<I> popup the window</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.7"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Unmanage</B> ()<br>
+<I> pop down the window</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.8"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Iconify</B> ()<br>
+<I> iconify the window</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ManageUnmapped</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Close</B> ()<br>
+<I> close the window.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTitle</B> (const char *title)<br>
+<I> Set window title.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTitle</B> (const <!1><A HREF="string.html">string</A> *title)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetIconName</B> (const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)<br>
+<I> Set name of window icon.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetIconPixmap</B> (Pixmap px)<br>
+<I> Set pixmap of window icon.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetCursor</B> (int cursorNum)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetSizeCursor</B> (int cursorNum)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.17"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  int </TD><TD><B>GetTool</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.18"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetStatus</B> (const char *)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.19"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetStatus</B> (const <!1><A HREF="string.html">string</A> *)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.20"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="PrinterOptions.html">PrinterOptions</A>* </TD><TD><B>GetPrinterOptions</B> ()<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.220.21"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  Widget </TD><TD><B>CreateWorkArea</B> (Widget, int argc, char** argv)<br>
+<I> Derived classes define this to create the appl-specific work area.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.22"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>ParseUserOptions</B> (int argc, char** argv)<br>
+<I> Derived classes use this functions to parse argv.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.23"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>CreateComponents</B> (Widget window)<br>
+<I> Functions to create the constituting parts of the main window.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.24"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MouseCursor.html">MouseCursor</A>* </TD><TD><B>GetCursor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.220.25"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Config.html">Config</A>* </TD><TD><B>GetConfig</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="MWidget.html">MWidget:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsRealized</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetColormap</B>(Colormap cmap)
+<DT><IMG SRC=icon2.gif> void  <B>SetDestroyCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> void  <B>AddLiteClue</B>(Widget w, const char *text)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> Widget  <B>GetLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CreateLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>InstallDestroyHandler</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Component.html"> Component:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsManaged</B>()
+<DT><IMG SRC=icon2.gif> Widget  <B>GetWidget</B>()
+<DT><IMG SRC=icon2.gif> Display*  <B>GetDisplay</B>()
+<DT><IMG SRC=icon2.gif> Window  <B>GetWindow</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetWidget</B>(Widget w)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const char *s)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ class supporting the main (toplevel) window.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="MainWindow">
+<A NAME ="DOC.220.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  MainWindow(const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)</B></TT>
+<DD> Constructor requires only a name
+<DL></DL><P>
+<A NAME="~MainWindow">
+<A NAME ="DOC.220.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~MainWindow()</B></TT>
+<DL></DL><P>
+<A NAME="GetClassName">
+<A NAME ="DOC.220.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  GetClassName()</B></TT>
+<DL></DL><P>
+<A NAME="Initialize">
+<A NAME ="DOC.220.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Initialize(int argc, char** argv, <!1><A HREF="Config.html">Config</A> *<!2><A HREF="MainWindow.html#DOC.220.29">config</A>)</B></TT>
+<DD> create toplevel widget, and other class members. 
+<DL></DL><P>
+<A NAME="Finalize">
+<A NAME ="DOC.220.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Finalize()</B></TT>
+<DD> initialization to do when window is already managed.
+<DL></DL><P>
+<A NAME="Manage">
+<A NAME ="DOC.220.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Manage()</B></TT>
+<DD> popup the window
+<DL></DL><P>
+<A NAME="Unmanage">
+<A NAME ="DOC.220.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Unmanage()</B></TT>
+<DD> pop down the window
+<DL></DL><P>
+<A NAME="Iconify">
+<A NAME ="DOC.220.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Iconify()</B></TT>
+<DD> iconify the window
+<DL></DL><P>
+<A NAME="ManageUnmapped">
+<A NAME ="DOC.220.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ManageUnmapped()</B></TT>
+<DL></DL><P>
+<A NAME="Close">
+<A NAME ="DOC.220.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Close()</B></TT>
+<DD> close the window.
+<DL></DL><P>
+<A NAME="SetTitle">
+<A NAME ="DOC.220.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTitle(const char *title)</B></TT>
+<DD> Set window title.
+<DL></DL><P>
+<A NAME="SetTitle">
+<A NAME ="DOC.220.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTitle(const <!1><A HREF="string.html">string</A> *title)</B></TT>
+<DL></DL><P>
+<A NAME="SetIconName">
+<A NAME ="DOC.220.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetIconName(const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)</B></TT>
+<DD> Set name of window icon.
+<DL></DL><P>
+<A NAME="SetIconPixmap">
+<A NAME ="DOC.220.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetIconPixmap(Pixmap px)</B></TT>
+<DD> Set pixmap of window icon.
+<DL></DL><P>
+<A NAME="SetCursor">
+<A NAME ="DOC.220.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetCursor(int cursorNum)</B></TT>
+<DL></DL><P>
+<A NAME="SetSizeCursor">
+<A NAME ="DOC.220.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetSizeCursor(int cursorNum)</B></TT>
+<DL></DL><P>
+<A NAME="GetTool">
+<A NAME ="DOC.220.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  int  GetTool()</B></TT>
+<DL></DL><P>
+<A NAME="SetStatus">
+<A NAME ="DOC.220.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetStatus(const char *)</B></TT>
+<DL></DL><P>
+<A NAME="SetStatus">
+<A NAME ="DOC.220.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetStatus(const <!1><A HREF="string.html">string</A> *)</B></TT>
+<DL></DL><P>
+<A NAME="GetPrinterOptions">
+<A NAME ="DOC.220.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="PrinterOptions.html">PrinterOptions</A>*  GetPrinterOptions()</B></TT>
+<DL></DL><P>
+<A NAME="CreateWorkArea">
+<A NAME ="DOC.220.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  Widget  CreateWorkArea(Widget, int argc, char** argv)</B></TT>
+<DD> Derived classes define this to create the appl-specific work area.
+<DL></DL><P>
+<A NAME="ParseUserOptions">
+<A NAME ="DOC.220.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  ParseUserOptions(int argc, char** argv)</B></TT>
+<DD> Derived classes use this functions to parse argv.
+<DL></DL><P>
+<A NAME="CreateComponents">
+<A NAME ="DOC.220.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  CreateComponents(Widget window)</B></TT>
+<DD> Functions to create the constituting parts of the main window.
+<DL></DL><P>
+<A NAME="GetCursor">
+<A NAME ="DOC.220.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MouseCursor.html">MouseCursor</A>*  GetCursor()</B></TT>
+<DL></DL><P>
+<A NAME="GetConfig">
+<A NAME ="DOC.220.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Config.html">Config</A>*  GetConfig()</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="StartupWindow.html"> StartupWindow </A><br>
+<A HREF="EditWindow.html"> EditWindow </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

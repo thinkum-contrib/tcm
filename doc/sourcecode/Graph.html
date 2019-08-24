@@ -1,0 +1,603 @@
+<html><head><TITLE>Graph</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Graph  </H2><BLOCKQUOTE>
+ (abstract) graph class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=335>
+<param name=classes value="CGraph,MGraph.html,CTRGraph,MTRGraph.html,CSTGraph,MSTGraph.html,CSNGraph,MSNGraph.html,CRPGraph,MRPGraph.html,CPSGraph,MPSGraph.html,CGDGraph,MGDGraph.html,CERGraph,MERGraph.html,CDFGraph,MDFGraph.html,CCPGraph,MCPGraph.html,CATGraph,MATGraph.html">
+<param name=before value="M,M|_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,Mr_">
+<param name=after value="M,M,M,M,M,M,M,M,M,M,M">
+<param name=indent value="0,0,0,0,0,0,0,0,0,0,0">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.194.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Graph</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Graph</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AddNode</B> (<!1><A HREF="Node.html">Node</A> *node)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AddEdge</B> (<!1><A HREF="Edge.html">Edge</A> *edge)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>RemoveNode</B> (<!1><A HREF="Node.html">Node</A> *node)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>RemoveEdge</B> (<!1><A HREF="Edge.html">Edge</A> *edge)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.7"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>HasNode</B> (<!1><A HREF="Node.html">Node</A> *node)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.8"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>HasEdge</B> (<!1><A HREF="Edge.html">Edge</A> *edge)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ClearNodes</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ClearEdges</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.11"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>CheckConnection</B> (int stype1, int stype2, int edgetype)<br>
+<I> checks if edge type may connect subject types 1 and 2.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.12"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsConnected</B> (<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)<br>
+<I> checks if there is an edge in the graph that connects s1 and s2.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.13"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsConnected</B> (<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, const <!1><A HREF="string.html">string</A> *n)<br>
+<I> same as above, but edge should also have name n.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.14"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsConnected</B> (<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, int t)<br>
+<I> here edge should also be of type t.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.15"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsConnected</B> (<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, const <!1><A HREF="string.html">string</A> *n, int t)<br>
+<I> combination of the two members above.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.16"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CompleteSubjects</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l)<br>
+<I> add to l all edges which connect the subjects.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.17"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CompleteSubject</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s)<br>
+<I> add to l all edges of which subject s is part.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.18"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CompleteSubject</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)<br>
+<I> add to l all edges which connect subjects s1 and s2.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.19"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CompleteEdges</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l)<br>
+<I> add to l all subjects which are connected by edges already in l.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.20"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetConnected</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s)<br>
+<I> add to l the subjects that are directly connected to subject s.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.21"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetNodes</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l)<br>
+<I> add to l all nodes in the graph.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.22"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetNodes</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, int t)<br>
+<I> add to l all nodes of type t in the graph.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.23"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetNodes</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, const <!1><A HREF="string.html">string</A> *n)<br>
+<I> add to l all nodes having name n in the graph.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.24"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetNodes</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, const <!1><A HREF="string.html">string</A> *n, int t)<br>
+<I> combination of two above members.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.25"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdges</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l)<br>
+<I> add to l all edges in the graph.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.26"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdges</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, int t)<br>
+<I> add to l all edges of type t in the graph.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.27"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdges</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, const <!1><A HREF="string.html">string</A> *n)<br>
+<I> add to l all edges having name n in the graph.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.28"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdges</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, const <!1><A HREF="string.html">string</A> *n, int t)<br>
+<I> combination of two above members.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.29"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdgesFrom</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s)<br>
+<I> add to l all edges departing from subject s in the graph.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.30"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdgesFrom</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, int t)<br>
+<I> add to l all edges of type t departing from subject s.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.31"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdgesFrom</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n)<br>
+<I> add to l all edges having name n departing from subject s.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.32"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdgesFrom</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n, int t)<br>
+<I> combination of two above members.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.33"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdgesTo</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s)<br>
+<I> add to l all edges going to subject s.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.34"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdgesTo</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, int t)<br>
+<I> add to l all edges of type t going to subject s.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.35"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdgesTo</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n)<br>
+<I> add to l all edges having name n going to subject s.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.36"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdgesTo</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n, int t)<br>
+<I> combination of the two above members.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.37"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdges</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *from, <!1><A HREF="Subject.html">Subject</A> *to)<br>
+<I> add to l all edges between subjects from and to</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.38"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdges</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *from, <!1><A HREF="Subject.html">Subject</A> *to, int t)<br>
+<I> add to l all edges of type t between subjects from and to</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.39"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdges</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *from, <!1><A HREF="Subject.html">Subject</A> *to, const <!1><A HREF="string.html">string</A> *n)<br>
+<I> combination of the two above members.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.40"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdges</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *from, <!1><A HREF="Subject.html">Subject</A> *to, const <!1><A HREF="string.html">string</A> *n, int t)<br>
+<I> combination of two above members.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.41"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountNodes</B> ()<br>
+<I> return number of nodes in the graph</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.42"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountNodes</B> (int t)<br>
+<I> return number of nodes of type t in the graph</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.43"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountNodes</B> (const <!1><A HREF="string.html">string</A> *n)<br>
+<I> return number of nodes having name n in the graph</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.44"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountNodes</B> (const <!1><A HREF="string.html">string</A> *n, int t)<br>
+<I> return nr. of nodes of type t, having name n in the graph</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.45"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdges</B> ()<br>
+<I> return number of edges in the graph</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.46"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdges</B> (int t)<br>
+<I> return number of edges of type t in the graph</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.47"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdges</B> (const <!1><A HREF="string.html">string</A> *n)<br>
+<I> return number of edges having name n in the graph</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.48"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdges</B> (const <!1><A HREF="string.html">string</A> *n, int t)<br>
+<I> return nr. of edges of type t, having name n in the graph</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.49"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdgesFrom</B> (<!1><A HREF="Subject.html">Subject</A> *s)<br>
+<I> return nr. of edges departing from subject s</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.50"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdgesFrom</B> (<!1><A HREF="Subject.html">Subject</A> *s, int t)<br>
+<I> return nr. of edges of type t departing from subject s</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.51"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdgesFrom</B> (<!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n)<br>
+<I> return number of edges having name n departing from subject s</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.52"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdgesFrom</B> (<!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n, int t)<br>
+<I> return number of edges of type t, having name n, departing from subject s</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.53"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdgesTo</B> (<!1><A HREF="Subject.html">Subject</A> *s)<br>
+<I> return nr. of edges going to subject s</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.54"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdgesTo</B> (<!1><A HREF="Subject.html">Subject</A> *s, int t)<br>
+<I> return nr. of edges of type t going to subject s</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.55"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdgesTo</B> (<!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n)<br>
+<I> return number of edges having name n going to subject s</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.56"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdgesTo</B> (<!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n, int t)<br>
+<I> return number of edges of type t, having name n going to subject s</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.57"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdges</B> (<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)<br>
+<I> return number of edges between subjects s1 and s2</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.58"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdges</B> (<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, int t)<br>
+<I> return number of edges of type t between subjects s1 and s2</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.59"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdges</B> (<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, const <!1><A HREF="string.html">string</A> *n)<br>
+<I> return number of edges having name n between subjects s1 and s2</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.60"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountEdges</B> (<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, const <!1><A HREF="string.html">string</A> *n, int t)<br>
+<I> return number of edges of type t, having name n between subjects s1 and s2</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.61"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>PathExists</B> (<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)<br>
+<I> returns if there is some connected path of graph edges from s1 to s2.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.62"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>PathExists</B> (<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, int t)<br>
+<I> returns if there is some conn. path of graph edges of type t from s1 to s2.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.63"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>UndirectedPathExists</B> (<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)<br>
+<I> return if there's path from s1 to s2. irregardless edge direction.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.64"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>WriteSubjects</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f)<br>
+<I> Writes all nodes and edges to outputfile f.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.65"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>InitConnections</B> ()<br>
+<I> initializes the table containing all allowed connections.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.66"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetCounter</B> (int n)<br>
+<I> some counter can be used</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.67"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetCounter</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.68"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetIndexPrefix</B> (const char *s)<br>
+<I> some string can be used as index prefix.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.69"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetIndexPrefix</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.70"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetIndexPrefix</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.71"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>GetIndex</B> (<!1><A HREF="string.html">string</A> *s)<br>
+<I> index string := prefix + counter.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.72"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>GetNextIndex</B> (<!1><A HREF="string.html">string</A> *index)<br>
+<I> assign to index a new unique index</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.73"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  int </TD><TD><B>CountIndexes</B> (const <!1><A HREF="string.html">string</A> *index)<br>
+<I> return number of nodes in the graph having this index.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Classes</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.194.76"> <IMG BORDER=0 SRC=icon1.gif></A>  enum</TD><TD><B></B> <br>
+<I> Max. number of different connected types and edge types.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.194.74"> <IMG BORDER=0 SRC=icon1.gif></A> int* </TD><TD><B>nodeTypes</B> <br>
+<I> Allowed 'connected' types in graph (depends on type of editor).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.75"> <IMG BORDER=0 SRC=icon1.gif></A> int* </TD><TD><B>edgeTypes</B> <br>
+<I> Allowed edges type in graph (depends on type of editor).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.77"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>connections</B> [MAX_TYPES][MAX_TYPES][MAX_TYPES]<br>
+<I> matrix to store what types can be connected by what edge types.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.78"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="Node.html">Node</A> *> * </TD><TD><B>nodes</B> <br>
+<I> the graph nodes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.79"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="Edge.html">Edge</A> *> * </TD><TD><B>edges</B> <br>
+<I> the graph edges.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.194.80"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>PathExists</B> (<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, int edgetype, bool Directed)<br>
+<I> used by other PathExists.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.194.81"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>CountIndex</B> (const <!1><A HREF="string.html">string</A> *index, <!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l)<br>
+<I> return number of nodes in l having this index </I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ (abstract) graph class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Graph">
+<A NAME ="DOC.194.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Graph()</B></TT>
+<DL></DL><P>
+<A NAME="~Graph">
+<A NAME ="DOC.194.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Graph()</B></TT>
+<DL></DL><P>
+<A NAME="AddNode">
+<A NAME ="DOC.194.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AddNode(<!1><A HREF="Node.html">Node</A> *node)</B></TT>
+<DL></DL><P>
+<A NAME="AddEdge">
+<A NAME ="DOC.194.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AddEdge(<!1><A HREF="Edge.html">Edge</A> *edge)</B></TT>
+<DL></DL><P>
+<A NAME="RemoveNode">
+<A NAME ="DOC.194.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  RemoveNode(<!1><A HREF="Node.html">Node</A> *node)</B></TT>
+<DL></DL><P>
+<A NAME="RemoveEdge">
+<A NAME ="DOC.194.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  RemoveEdge(<!1><A HREF="Edge.html">Edge</A> *edge)</B></TT>
+<DL></DL><P>
+<A NAME="HasNode">
+<A NAME ="DOC.194.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  HasNode(<!1><A HREF="Node.html">Node</A> *node)</B></TT>
+<DL></DL><P>
+<A NAME="HasEdge">
+<A NAME ="DOC.194.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  HasEdge(<!1><A HREF="Edge.html">Edge</A> *edge)</B></TT>
+<DL></DL><P>
+<A NAME="ClearNodes">
+<A NAME ="DOC.194.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ClearNodes()</B></TT>
+<DL></DL><P>
+<A NAME="ClearEdges">
+<A NAME ="DOC.194.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ClearEdges()</B></TT>
+<DL></DL><P>
+<A NAME="CheckConnection">
+<A NAME ="DOC.194.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  CheckConnection(int stype1, int stype2, int edgetype)</B></TT>
+<DD> checks if edge type may connect subject types 1 and 2.
+<DL></DL><P>
+<A NAME="IsConnected">
+<A NAME ="DOC.194.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsConnected(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)</B></TT>
+<DD> checks if there is an edge in the graph that connects s1 and s2.
+<DL></DL><P>
+<A NAME="IsConnected">
+<A NAME ="DOC.194.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsConnected(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, const <!1><A HREF="string.html">string</A> *n)</B></TT>
+<DD> same as above, but edge should also have name n.
+<DL></DL><P>
+<A NAME="IsConnected">
+<A NAME ="DOC.194.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsConnected(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, int t)</B></TT>
+<DD> here edge should also be of type t.
+<DL></DL><P>
+<A NAME="IsConnected">
+<A NAME ="DOC.194.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsConnected(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, const <!1><A HREF="string.html">string</A> *n, int t)</B></TT>
+<DD> combination of the two members above.
+<DL></DL><P>
+<A NAME="CompleteSubjects">
+<A NAME ="DOC.194.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CompleteSubjects(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l)</B></TT>
+<DD> add to l all edges which connect the subjects.
+<DL></DL><P>
+<A NAME="CompleteSubject">
+<A NAME ="DOC.194.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CompleteSubject(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s)</B></TT>
+<DD> add to l all edges of which subject s is part.
+<DL></DL><P>
+<A NAME="CompleteSubject">
+<A NAME ="DOC.194.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CompleteSubject(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)</B></TT>
+<DD> add to l all edges which connect subjects s1 and s2.
+<DL></DL><P>
+<A NAME="CompleteEdges">
+<A NAME ="DOC.194.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CompleteEdges(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l)</B></TT>
+<DD> add to l all subjects which are connected by edges already in l.
+<DL></DL><P>
+<A NAME="GetConnected">
+<A NAME ="DOC.194.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetConnected(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s)</B></TT>
+<DD> add to l the subjects that are directly connected to subject s.
+<DL></DL><P>
+<A NAME="GetNodes">
+<A NAME ="DOC.194.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetNodes(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l)</B></TT>
+<DD> add to l all nodes in the graph.
+<DL></DL><P>
+<A NAME="GetNodes">
+<A NAME ="DOC.194.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetNodes(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, int t)</B></TT>
+<DD> add to l all nodes of type t in the graph.
+<DL></DL><P>
+<A NAME="GetNodes">
+<A NAME ="DOC.194.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetNodes(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, const <!1><A HREF="string.html">string</A> *n)</B></TT>
+<DD> add to l all nodes having name n in the graph.
+<DL></DL><P>
+<A NAME="GetNodes">
+<A NAME ="DOC.194.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetNodes(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, const <!1><A HREF="string.html">string</A> *n, int t)</B></TT>
+<DD> combination of two above members.
+<DL></DL><P>
+<A NAME="GetEdges">
+<A NAME ="DOC.194.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdges(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l)</B></TT>
+<DD> add to l all edges in the graph.
+<DL></DL><P>
+<A NAME="GetEdges">
+<A NAME ="DOC.194.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdges(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, int t)</B></TT>
+<DD> add to l all edges of type t in the graph.
+<DL></DL><P>
+<A NAME="GetEdges">
+<A NAME ="DOC.194.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdges(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, const <!1><A HREF="string.html">string</A> *n)</B></TT>
+<DD> add to l all edges having name n in the graph.
+<DL></DL><P>
+<A NAME="GetEdges">
+<A NAME ="DOC.194.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdges(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, const <!1><A HREF="string.html">string</A> *n, int t)</B></TT>
+<DD> combination of two above members.
+<DL></DL><P>
+<A NAME="GetEdgesFrom">
+<A NAME ="DOC.194.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdgesFrom(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s)</B></TT>
+<DD> add to l all edges departing from subject s in the graph.
+<DL></DL><P>
+<A NAME="GetEdgesFrom">
+<A NAME ="DOC.194.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdgesFrom(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, int t)</B></TT>
+<DD> add to l all edges of type t departing from subject s.
+<DL></DL><P>
+<A NAME="GetEdgesFrom">
+<A NAME ="DOC.194.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdgesFrom(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n)</B></TT>
+<DD> add to l all edges having name n departing from subject s.
+<DL></DL><P>
+<A NAME="GetEdgesFrom">
+<A NAME ="DOC.194.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdgesFrom(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n, int t)</B></TT>
+<DD> combination of two above members.
+<DL></DL><P>
+<A NAME="GetEdgesTo">
+<A NAME ="DOC.194.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdgesTo(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s)</B></TT>
+<DD> add to l all edges going to subject s.
+<DL></DL><P>
+<A NAME="GetEdgesTo">
+<A NAME ="DOC.194.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdgesTo(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, int t)</B></TT>
+<DD> add to l all edges of type t going to subject s.
+<DL></DL><P>
+<A NAME="GetEdgesTo">
+<A NAME ="DOC.194.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdgesTo(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n)</B></TT>
+<DD> add to l all edges having name n going to subject s.
+<DL></DL><P>
+<A NAME="GetEdgesTo">
+<A NAME ="DOC.194.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdgesTo(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n, int t)</B></TT>
+<DD> combination of the two above members.
+<DL></DL><P>
+<A NAME="GetEdges">
+<A NAME ="DOC.194.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdges(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *from, <!1><A HREF="Subject.html">Subject</A> *to)</B></TT>
+<DD> add to l all edges between subjects from and to
+<DL></DL><P>
+<A NAME="GetEdges">
+<A NAME ="DOC.194.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdges(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *from, <!1><A HREF="Subject.html">Subject</A> *to, int t)</B></TT>
+<DD> add to l all edges of type t between subjects from and to
+<DL></DL><P>
+<A NAME="GetEdges">
+<A NAME ="DOC.194.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdges(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *from, <!1><A HREF="Subject.html">Subject</A> *to, const <!1><A HREF="string.html">string</A> *n)</B></TT>
+<DD> combination of the two above members.
+<DL></DL><P>
+<A NAME="GetEdges">
+<A NAME ="DOC.194.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdges(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l, <!1><A HREF="Subject.html">Subject</A> *from, <!1><A HREF="Subject.html">Subject</A> *to, const <!1><A HREF="string.html">string</A> *n, int t)</B></TT>
+<DD> combination of two above members.
+<DL></DL><P>
+<A NAME="CountNodes">
+<A NAME ="DOC.194.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountNodes()</B></TT>
+<DD> return number of nodes in the graph
+<DL></DL><P>
+<A NAME="CountNodes">
+<A NAME ="DOC.194.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountNodes(int t)</B></TT>
+<DD> return number of nodes of type t in the graph
+<DL></DL><P>
+<A NAME="CountNodes">
+<A NAME ="DOC.194.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountNodes(const <!1><A HREF="string.html">string</A> *n)</B></TT>
+<DD> return number of nodes having name n in the graph
+<DL></DL><P>
+<A NAME="CountNodes">
+<A NAME ="DOC.194.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountNodes(const <!1><A HREF="string.html">string</A> *n, int t)</B></TT>
+<DD> return nr. of nodes of type t, having name n in the graph
+<DL></DL><P>
+<A NAME="CountEdges">
+<A NAME ="DOC.194.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdges()</B></TT>
+<DD> return number of edges in the graph
+<DL></DL><P>
+<A NAME="CountEdges">
+<A NAME ="DOC.194.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdges(int t)</B></TT>
+<DD> return number of edges of type t in the graph
+<DL></DL><P>
+<A NAME="CountEdges">
+<A NAME ="DOC.194.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdges(const <!1><A HREF="string.html">string</A> *n)</B></TT>
+<DD> return number of edges having name n in the graph
+<DL></DL><P>
+<A NAME="CountEdges">
+<A NAME ="DOC.194.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdges(const <!1><A HREF="string.html">string</A> *n, int t)</B></TT>
+<DD> return nr. of edges of type t, having name n in the graph
+<DL></DL><P>
+<A NAME="CountEdgesFrom">
+<A NAME ="DOC.194.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdgesFrom(<!1><A HREF="Subject.html">Subject</A> *s)</B></TT>
+<DD> return nr. of edges departing from subject s
+<DL></DL><P>
+<A NAME="CountEdgesFrom">
+<A NAME ="DOC.194.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdgesFrom(<!1><A HREF="Subject.html">Subject</A> *s, int t)</B></TT>
+<DD> return nr. of edges of type t departing from subject s
+<DL></DL><P>
+<A NAME="CountEdgesFrom">
+<A NAME ="DOC.194.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdgesFrom(<!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n)</B></TT>
+<DD> return number of edges having name n departing from subject s
+<DL></DL><P>
+<A NAME="CountEdgesFrom">
+<A NAME ="DOC.194.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdgesFrom(<!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n, int t)</B></TT>
+<DD> return number of edges of type t, having name n, departing from subject s
+<DL></DL><P>
+<A NAME="CountEdgesTo">
+<A NAME ="DOC.194.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdgesTo(<!1><A HREF="Subject.html">Subject</A> *s)</B></TT>
+<DD> return nr. of edges going to subject s
+<DL></DL><P>
+<A NAME="CountEdgesTo">
+<A NAME ="DOC.194.54">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdgesTo(<!1><A HREF="Subject.html">Subject</A> *s, int t)</B></TT>
+<DD> return nr. of edges of type t going to subject s
+<DL></DL><P>
+<A NAME="CountEdgesTo">
+<A NAME ="DOC.194.55">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdgesTo(<!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n)</B></TT>
+<DD> return number of edges having name n going to subject s
+<DL></DL><P>
+<A NAME="CountEdgesTo">
+<A NAME ="DOC.194.56">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdgesTo(<!1><A HREF="Subject.html">Subject</A> *s, const <!1><A HREF="string.html">string</A> *n, int t)</B></TT>
+<DD> return number of edges of type t, having name n going to subject s
+<DL></DL><P>
+<A NAME="CountEdges">
+<A NAME ="DOC.194.57">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdges(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)</B></TT>
+<DD> return number of edges between subjects s1 and s2
+<DL></DL><P>
+<A NAME="CountEdges">
+<A NAME ="DOC.194.58">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdges(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, int t)</B></TT>
+<DD> return number of edges of type t between subjects s1 and s2
+<DL></DL><P>
+<A NAME="CountEdges">
+<A NAME ="DOC.194.59">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdges(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, const <!1><A HREF="string.html">string</A> *n)</B></TT>
+<DD> return number of edges having name n between subjects s1 and s2
+<DL></DL><P>
+<A NAME="CountEdges">
+<A NAME ="DOC.194.60">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountEdges(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, const <!1><A HREF="string.html">string</A> *n, int t)</B></TT>
+<DD> return number of edges of type t, having name n between subjects s1 and s2
+<DL></DL><P>
+<A NAME="PathExists">
+<A NAME ="DOC.194.61">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  PathExists(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)</B></TT>
+<DD> returns if there is some connected path of graph edges from s1 to s2.
+<DL></DL><P>
+<A NAME="PathExists">
+<A NAME ="DOC.194.62">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  PathExists(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, int t)</B></TT>
+<DD> returns if there is some conn. path of graph edges of type t from s1 to s2.
+<DL></DL><P>
+<A NAME="UndirectedPathExists">
+<A NAME ="DOC.194.63">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  UndirectedPathExists(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)</B></TT>
+<DD> return if there's path from s1 to s2. irregardless edge direction.
+<DL></DL><P>
+<A NAME="WriteSubjects">
+<A NAME ="DOC.194.64">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  WriteSubjects(<!1><A HREF="OutputFile.html">OutputFile</A> *f)</B></TT>
+<DD> Writes all nodes and edges to outputfile f.
+<DL></DL><P>
+<A NAME="InitConnections">
+<A NAME ="DOC.194.65">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  InitConnections()</B></TT>
+<DD> initializes the table containing all allowed connections.
+<DL></DL><P>
+<A NAME="SetCounter">
+<A NAME ="DOC.194.66">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetCounter(int n)</B></TT>
+<DD> some counter can be used
+<DL></DL><P>
+<A NAME="GetCounter">
+<A NAME ="DOC.194.67">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetCounter()</B></TT>
+<DL></DL><P>
+<A NAME="SetIndexPrefix">
+<A NAME ="DOC.194.68">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetIndexPrefix(const char *s)</B></TT>
+<DD> some string can be used as index prefix.
+<DL></DL><P>
+<A NAME="SetIndexPrefix">
+<A NAME ="DOC.194.69">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetIndexPrefix(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="GetIndexPrefix">
+<A NAME ="DOC.194.70">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetIndexPrefix() const </B></TT>
+<DL></DL><P>
+<A NAME="GetIndex">
+<A NAME ="DOC.194.71">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  GetIndex(<!1><A HREF="string.html">string</A> *s)</B></TT>
+<DD> index string := prefix + counter.
+<DL></DL><P>
+<A NAME="GetNextIndex">
+<A NAME ="DOC.194.72">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  GetNextIndex(<!1><A HREF="string.html">string</A> *index)</B></TT>
+<DD> assign to index a new unique index
+<DL></DL><P>
+<A NAME="CountIndexes">
+<A NAME ="DOC.194.73">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  int  CountIndexes(const <!1><A HREF="string.html">string</A> *index)</B></TT>
+<DD> return number of nodes in the graph having this index.
+<DL></DL><P>
+<A NAME="nodeTypes">
+<A NAME ="DOC.194.74">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int*  nodeTypes</B></TT>
+<DD> Allowed 'connected' types in graph (depends on type of editor).
+<DL></DL><P>
+<A NAME="edgeTypes">
+<A NAME ="DOC.194.75">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int*  edgeTypes</B></TT>
+<DD> Allowed edges type in graph (depends on type of editor).
+<DL></DL><P>
+<A NAME="">
+<A NAME ="DOC.194.76">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum </B></TT>
+<DD> Max. number of different connected types and edge types.
+<DL></DL><P>
+<A NAME="connections">
+<A NAME ="DOC.194.77">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  connections[MAX_TYPES][MAX_TYPES][MAX_TYPES]</B></TT>
+<DD> matrix to store what types can be connected by what edge types.
+<DL></DL><P>
+<A NAME="nodes">
+<A NAME ="DOC.194.78">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="Node.html">Node</A> *> *  nodes</B></TT>
+<DD> the graph nodes.
+<DL></DL><P>
+<A NAME="edges">
+<A NAME ="DOC.194.79">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="Edge.html">Edge</A> *> *  edges</B></TT>
+<DD> the graph edges.
+<DL></DL><P>
+<A NAME="PathExists">
+<A NAME ="DOC.194.80">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  PathExists(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2, int edgetype, bool Directed)</B></TT>
+<DD> used by other PathExists.
+<DL></DL><P>
+<A NAME="CountIndex">
+<A NAME ="DOC.194.81">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  CountIndex(const <!1><A HREF="string.html">string</A> *index, <!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *l)</B></TT>
+<DD> return number of nodes in l having this index 
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="TRGraph.html"> TRGraph </A><br>
+<A HREF="STGraph.html"> STGraph </A><br>
+<A HREF="SNGraph.html"> SNGraph </A><br>
+<A HREF="RPGraph.html"> RPGraph </A><br>
+<A HREF="PSGraph.html"> PSGraph </A><br>
+<A HREF="GDGraph.html"> GDGraph </A><br>
+<A HREF="ERGraph.html"> ERGraph </A><br>
+<A HREF="DFGraph.html"> DFGraph </A><br>
+<A HREF="CPGraph.html"> CPGraph </A><br>
+<A HREF="ATGraph.html"> ATGraph </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

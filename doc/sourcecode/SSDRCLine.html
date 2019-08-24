@@ -1,0 +1,293 @@
+<html><head><TITLE>SSDRCLine</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  SSDRCLine : public <!2><A HREF="T2Line.html#DOC.364.3">T2Line</A> </H2><BLOCKQUOTE>
+ line for representing SSD participant edges.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=215>
+<param name=classes value="CThing,MThing.html,CShape,MShape.html,CGShape,MGShape.html,CLine,MLine.html,CT1Line,MT1Line.html,CT2Line,MT2Line.html,CSSDRCLine,MSSDRCLine.html">
+<param name=before value="M,M,M,M,M,M,M">
+<param name=after value="Md_SPSPSPSPSP,Md_SPSPSPSP,Md_SPSPSP,Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3,4,5,6">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.335.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>SSDRCLine</B> (<!1><A HREF="ShapeView.html">ShapeView</A> *v, <!1><A HREF="Grafport.html">Grafport</A> *g, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n1, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n2, <!1><A HREF="List.html">List</A><<!1><A HREF="Point.html">Point</A> *> *<!2><A HREF="Line.html#DOC.210.80">line</A>, bool Curved)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.335.2"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>SSDRCLine</B> (<!1><A HREF="ShapeView.html">ShapeView</A> *v, <!1><A HREF="Grafport.html">Grafport</A> *g, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n1, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n2, bool Curved)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.335.3"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetClassType</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.335.4"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="Shape.html#DOC.296.1">Shape</A>* </TD><TD><B>Clone</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.335.5"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>SetAssocSubject</B> (<!1><A HREF="AssocList.html">AssocList</A> *)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.335.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTextShape</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="T2Line.html">T2Line:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>UpdateTextShape2</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetSelect</B>(bool s)
+<DT><IMG SRC=icon2.gif> void  <B>SetFont</B>(<!1><A HREF="XFont.html">XFont</A> *ft)
+<DT><IMG SRC=icon2.gif> void  <B>SetTextColor</B>(const <!1><A HREF="string.html">string</A> *<!2><A HREF="Shape.html#DOC.296.97">color</A>)
+<DT><IMG SRC=icon2.gif> int  <B>GetLeftMost</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetTopMost</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetRightMost</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetBottomMost</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>WriteMembers</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *f)
+<DT><IMG SRC=icon2.gif> bool  <B>ReadMembers</B>(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)
+<DT><IMG SRC=icon2.gif> void  <B>SetGrafport</B>(<!1><A HREF="Grafport.html">Grafport</A> *g)
+<DT><IMG SRC=icon2.gif> void  <B>SetView</B>(<!1><A HREF="ShapeView.html">ShapeView</A> *v)
+<DT><IMG SRC=icon2.gif> bool  <B>InTextArea</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextShape.html">TextShape</A>*  <B>HitTextShape</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextShape.html">TextShape</A>*  <B>ChooseTextShape</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> bool  <B>HasTextShape</B>(<!1><A HREF="TextShape.html">TextShape</A> *t) const 
+<DT><IMG SRC=icon2.gif> bool  <B>HasString</B>(const <!1><A HREF="string.html">string</A> *s, bool sens, bool sub) const 
+<DT><IMG SRC=icon2.gif> bool  <B>HasNameString</B>(const <!1><A HREF="string.html">string</A> *, bool, bool) const 
+<DT><IMG SRC=icon2.gif> int  <B>ReplaceNameString</B>(const <!1><A HREF="string.html">string</A> *, const <!1><A HREF="string.html">string</A> *, bool, bool)
+<DT><IMG SRC=icon2.gif> void  <B>DrawShape</B>()
+<DT><IMG SRC=icon2.gif> void  <B>MoveRaw</B>(const <!1><A HREF="Point.html">Point</A> *delta)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>CalcPositionTextShapes</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextShape.html">TextShape</A>*  <B>GetTextShape2</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetTextShape2</B>(<!1><A HREF="TextShape.html">TextShape</A> *t)
+<DT><IMG SRC=icon2.gif> <!2><A HREF="T1Line.html#DOC.363.17">PositionType</A>  <B>GetT2Position</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetT2Position</B>(<!2><A HREF="T1Line.html#DOC.363.17">PositionType</A> t)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "T1Line.html"> T1Line:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>PositionType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>CalcPosition</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateTextShape1</B>(const <!1><A HREF="string.html">string</A> *s)
+</DL><DL>
+<DT><h3>Protected Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  int  <B>CL_FRACTION</B>
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>CalcPositionTextShape</B>(<!1><A HREF="TextShape.html">TextShape</A> *t, <!2><A HREF="T1Line.html#DOC.363.17">PositionType</A> tpos)
+<DT><IMG SRC=icon2.gif> bool  <B>HitTextShapeArea</B>(<!1><A HREF="TextShape.html">TextShape</A> *t, <!2><A HREF="T1Line.html#DOC.363.17">PositionType</A> tpos, int x, int y)
+<DT><IMG SRC=icon2.gif> bool  <B>HitExtraTextShapeArea</B>(int x, int y, const <!1><A HREF="Point.html">Point</A> *from, const <!1><A HREF="Point.html">Point</A> *to)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextShape.html">TextShape</A>*  <B>GetTextShape1</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetTextShape1</B>(<!1><A HREF="TextShape.html">TextShape</A> *t)
+<DT><IMG SRC=icon2.gif> <!2><A HREF="T1Line.html#DOC.363.17">PositionType</A>  <B>GetT1Position</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetT1Position</B>(<!2><A HREF="T1Line.html#DOC.363.17">PositionType</A> t)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Line.html"> Line:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsCurved</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>UpdateCurve</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>UpdatePosition</B>(const <!1><A HREF="Point.html">Point</A> *p, bool snap=True)
+<DT><IMG SRC=icon2.gif> void  <B>SetPosition</B>(const <!1><A HREF="Point.html">Point</A> *p, bool snap=True)
+<DT><IMG SRC=icon2.gif> void  <B>DrawOutLine</B>(const <!1><A HREF="Point.html">Point</A> *)
+<DT><IMG SRC=icon2.gif> bool  <B>ContainsPt</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> int  <B>HitHandles</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> bool  <B>IsLine</B>() const 
+<DT><IMG SRC=icon2.gif> unsigned  int  <B>GetCount</B>() const 
+<DT><IMG SRC=icon2.gif> unsigned  int  <B>GetOrder</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetOrder</B>(unsigned int i)
+<DT><IMG SRC=icon2.gif> void  <B>SetCount</B>(unsigned int i)
+<DT><IMG SRC=icon2.gif> <!2><A HREF="GShape.html#DOC.196.1">GShape</A>*  <B>GetFromShape</B>() const 
+<DT><IMG SRC=icon2.gif> <!2><A HREF="GShape.html#DOC.196.1">GShape</A>*  <B>GetToShape</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetFromShape</B>(<!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n)
+<DT><IMG SRC=icon2.gif> void  <B>SetToShape</B>(<!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n)
+<DT><IMG SRC=icon2.gif> unsigned  int  <B>NrPoints</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <<!1><A HREF="Point.html">Point</A> *> *  <B>GetLine</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>GetSegments</B>(<!1><A HREF="Point.html">Point</A> pt, <!1><A HREF="Point.html">Point</A> *pt1, <!1><A HREF="Point.html">Point</A> *pt2)
+<DT><IMG SRC=icon2.gif> bool  <B>GetSegment</B>(int n, <!1><A HREF="Point.html">Point</A> *pt1, <!1><A HREF="Point.html">Point</A> *pt2)
+<DT><IMG SRC=icon2.gif> void  <B>SetEnd1</B>(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)
+<DT><IMG SRC=icon2.gif> void  <B>SetEnd2</B>(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateEnd1</B>(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateEnd2</B>(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A>  <B>GetEnd1</B>()
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A>  <B>GetEnd2</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetToTop</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetFromTop</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetToBottom</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetFromBottom</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdatePosition</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>CalcEndPoints</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CalcDirection</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>CalcEndPoint</B>(const <!1><A HREF="Point.html">Point</A> *pt, unsigned which)
+<DT><IMG SRC=icon2.gif> void  <B>SetPoint</B>(const <!1><A HREF="Point.html">Point</A> *pt, unsigned int n)
+<DT><IMG SRC=icon2.gif> void  <B>AddPoint</B>(const <!1><A HREF="Point.html">Point</A> *pt, unsigned int n)
+<DT><IMG SRC=icon2.gif> void  <B>RemovePoint</B>(unsigned int n)
+<DT><IMG SRC=icon2.gif> bool  <B>SetReferences</B>(<!1><A HREF="AssocList.html">AssocList</A> *)
+<DT><IMG SRC=icon2.gif> bool  <B>CheckReferences</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>GetLine</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> unsigned  int  <B>GetLineNumber</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetLineNumber</B>(unsigned int n)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>GiveOrthoSnp</B>(<!1><A HREF="Point.html">Point</A> to) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>GiveSnp</B>(<!1><A HREF="Point.html">Point</A> to) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>GiveSnp</B>(<!1><A HREF="Point.html">Point</A> p, int <!2><A HREF="Line.html#DOC.210.88">order</A>, int <!2><A HREF="Line.html#DOC.210.87">count</A>, int &code)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateNameDirection</B>(<!2><A HREF="ReadDirection.html#DOC.269.1">ReadDirection::Type</A> nd)
+<DT><IMG SRC=icon2.gif> <!2><A HREF="ReadDirection.html#DOC.269.1">ReadDirection::Type</A>  <B>GetNameDirection</B>() const 
+</DL><DL>
+<DT><h3>Protected Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  int  <B>LINE_DIST</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>CL_DISTX</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>CL_DISTY</B>
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>CalcPositionName</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>ContainsPtLine</B>(int x, int y, const <!1><A HREF="Point.html">Point</A> *from, const <!1><A HREF="Point.html">Point</A> *to, int &cx, int &cy) const 
+<DT><IMG SRC=icon2.gif> bool  <B>BelowLine</B>(int x, int y, <!1><A HREF="Point.html">Point</A> *from, <!1><A HREF="Point.html">Point</A> *to)
+<DT><IMG SRC=icon2.gif> bool  <B>AboveLine</B>(int x, int y, <!1><A HREF="Point.html">Point</A> *from, <!1><A HREF="Point.html">Point</A> *to)
+<DT><IMG SRC=icon2.gif> void  <B>SetNameDirection</B>(<!2><A HREF="ReadDirection.html#DOC.269.1">ReadDirection::Type</A> nd)
+<DT><IMG SRC=icon2.gif> void  <B>UndrawDirection</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DrawDirection</B>()
+<DT><IMG SRC=icon2.gif> void  <B>NotifyTextMove</B>(<!1><A HREF="TextShape.html">TextShape</A> *t)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "GShape.html"> GShape:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>Draw</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Undraw</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UndrawShape</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawTextShapes</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UndrawTextShapes</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateNameString</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetNameString</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetNameString</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextShape.html">TextShape</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> unsigned  <B>GetLineWidth</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetLineWidth</B>(unsigned n)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineWidth</B>(unsigned n)
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  <B>GetLineStyle</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetLineStyle</B>(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> x)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineStyle</B>(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> x)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetTextColor</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>UpdateTextColor</B>(const <!1><A HREF="string.html">string</A> *c)
+<DT><IMG SRC=icon2.gif> bool  <B>IsFixedName</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetFixedName</B>(bool b)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateFont</B>(<!1><A HREF="XFont.html">XFont</A> *ft)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> alignment)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="XFont.html">XFont</A>*  <B>GetFont</B>() const 
+<DT><IMG SRC=icon2.gif> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>  <B>GetAlignment</B>() const 
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>WriteGraphicsPart</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)
+<DT><IMG SRC=icon2.gif> bool  <B>ReadGraphicsPart</B>(<!1><A HREF="InputFile.html">InputFile</A> *ifile, double format)
+<DT><IMG SRC=icon2.gif> void  <B>WriteTextPart</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)
+<DT><IMG SRC=icon2.gif> bool  <B>ReadTextPart</B>(<!1><A HREF="InputFile.html">InputFile</A> *ifile, double format)
+<DT><IMG SRC=icon2.gif> void  <B>SetDrawAttributes</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)
+<DT><IMG SRC=icon2.gif> void  <B>SnapPosition</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SnapTopleft</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Shape.html"> Shape:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_HEIGHT</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_WIDTH</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>HANDLE_WIDTH</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsShape</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsTextShape</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateSize</B>(int w, int h)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateMove</B>(const <!1><A HREF="Point.html">Point</A> *delta)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateSelect</B>(bool s)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateFirstSelect</B>(bool s)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateColor</B>(<!1><A HREF="string.html">string</A> *<!2><A HREF="Shape.html#DOC.296.97">color</A>)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetFirstSelect</B>(bool s)
+<DT><IMG SRC=icon2.gif> bool  <B>IsFirstSelected</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetVisible</B>(bool s)
+<DT><IMG SRC=icon2.gif> void  <B>SetSubject</B>(<!1><A HREF="Subject.html">Subject</A> *s)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Subject.html">Subject</A>*  <B>GetSubject</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ShapeView.html">ShapeView</A>*  <B>GetView</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetColor</B>(const <!1><A HREF="string.html">string</A> *c)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetColor</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Move</B>(const <!1><A HREF="Point.html">Point</A> *delta)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>AdjustSize</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetHandles</B>(int n)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="Point.html">Point</A>*  <B>GetPosition</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="Point.html">Point</A>*  <B>GetTopLeft</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsSelected</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsVisible</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsDuplicate</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetWidth</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetHeight</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawDuplicate</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UndrawDuplicate</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDuplicate</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateDuplicate</B>(bool b)
+<DT><IMG SRC=icon2.gif> bool  <B>SetAssocView</B>(<!1><A HREF="AssocList.html">AssocList</A> *)
+</DL><DL>
+<DT><h3>Protected Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_HANDLES</B>
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="Grafport.html">Grafport</A>*  <B>GetGrafport</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetOutlineAttributes</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetSize</B>(int w, int h)
+<DT><IMG SRC=icon2.gif> void  <B>SetWidth</B>(int w)
+<DT><IMG SRC=icon2.gif> void  <B>SetHeight</B>(int h)
+<DT><IMG SRC=icon2.gif> void  <B>SetNrHandles</B>(int n)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="DiagramViewer.html">DiagramViewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>PositiveCoord</B>(const <!1><A HREF="Point.html">Point</A>*)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawSelect</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawGraySelect</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UndrawSelect</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UndrawGraySelect</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetTopLeft</B>(const <!1><A HREF="Point.html">Point</A> *topLeft)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetPositionHandles</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ForcePosition</B>(const <!1><A HREF="Point.html">Point</A> *<!2><A HREF="Shape.html#DOC.296.90">position</A>)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Thing.html"> Thing:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>AssocType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> unsigned  long  <B>GetId</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetId</B>(unsigned long val)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsSubject</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsView</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>Write</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ line for representing SSD participant edges.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="SSDRCLine">
+<A NAME ="DOC.335.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  SSDRCLine(<!1><A HREF="ShapeView.html">ShapeView</A> *v, <!1><A HREF="Grafport.html">Grafport</A> *g, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n1, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n2, <!1><A HREF="List.html">List</A><<!1><A HREF="Point.html">Point</A> *> *<!2><A HREF="Line.html#DOC.210.80">line</A>, bool Curved)</B></TT>
+<DL></DL><P>
+<A NAME="SSDRCLine">
+<A NAME ="DOC.335.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  SSDRCLine(<!1><A HREF="ShapeView.html">ShapeView</A> *v, <!1><A HREF="Grafport.html">Grafport</A> *g, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n1, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n2, bool Curved)</B></TT>
+<DL></DL><P>
+<A NAME="GetClassType">
+<A NAME ="DOC.335.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetClassType() const </B></TT>
+<DL></DL><P>
+<A NAME="Clone">
+<A NAME ="DOC.335.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="Shape.html#DOC.296.1">Shape</A>*  Clone()</B></TT>
+<DL></DL><P>
+<A NAME="SetAssocSubject">
+<A NAME ="DOC.335.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  SetAssocSubject(<!1><A HREF="AssocList.html">AssocList</A> *)</B></TT>
+<DL></DL><P>
+<A NAME="SetTextShape">
+<A NAME ="DOC.335.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTextShape()</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

@@ -1,0 +1,80 @@
+#! /bin/sh
+#
+# script to build tar.gz distribution of the TCM sources.
+
+[ ${TCM_HOME} ] || {
+   echo TCM_HOME is not set. Bailing out.; exit 1
+}
+
+if [ $# != 1 ]
+then
+        echo "Usage: `basename $0` version"
+        exit
+fi
+VERSION=$1
+TAR=gtar
+DISTFILE=tcm-$VERSION.src.tar.gz
+PREFIX=tcm-$VERSION
+SRC='COPYING       
+     CHANGELOG     
+     FILEMAP
+     INSTALL*
+     MANIFEST
+     README*       
+     Makefile*
+     tcm*.spec       
+     tcm*.patch       
+     tcm.lsm
+     bin/Makefile
+     bin/_cygwin_*
+     bin/link*	
+     bin/mkbindist	
+     bin/mksrcdist	
+     bin/mkclasslist	
+     bin/makedepend.sh
+     bin/makeundepend.sh
+     bin/psf	
+     doc/Makefile
+     doc/contributions
+     doc/developersguide/*.css
+     doc/developersguide/*.html
+     doc/developersguide/*.gif
+     doc/developersguide*pdf.gz
+     doc/developersguide*ps.gz
+     doc/index.html
+     doc/sourcecode/*.html
+     doc/sourcecode/*.gif
+     doc/sourcecode*.ps.gz
+     doc/specifications/[a-z]*
+     doc/specifications/T*
+     doc/usersguide.html
+     doc/usersguide/*.css
+     doc/usersguide/*.html
+     doc/usersguide/*.gif
+     doc/usersguide*pdf.gz
+     doc/usersguide*ps.gz
+     doc/wishlist/FutureDevelopments*
+     doc/wishlist/WishList*
+     lib/Makefile
+     lib/help/[D-Z]*	
+     lib/banner.ps 
+     lib/TCM
+     lib/colorrgb.txt   
+     lib/tcm.conf  
+     man/windex
+     man/man1/*.1
+     src/Config*	
+     src/Makefile*
+     src/bitmaps/*.gif
+     src/bitmaps/*.xbm
+     src/bitmaps/*.xpm
+     src/??/Makefile 
+     src/??/README* 
+     src/??/*.[hcly] 
+     src/??/??/Makefile
+     src/??/??/*.[hcly]'
+cd $TCM_HOME
+/bin/ls -d $SRC | sed -e "s:^:$PREFIX/:" > MANIFEST
+(cd ..; ln -s $TCM_HOME $PREFIX)
+(cd ..; $TAR -czvf $TCM_HOME/$DISTFILE `cat $TCM_HOME/MANIFEST`)
+(cd ..; rm $PREFIX)

@@ -1,0 +1,865 @@
+Storage 
+{
+	{ Format 1.28 }
+	{ GeneratedFrom TSSD-version-1.89 }
+	{ WrittenBy frank }
+	{ WrittenOn "Fri Aug 27 18:50:29 1999" }
+}
+
+Document 
+{
+	{ Type "Static Structure Diagram" }
+	{ Name tssd_nodeshape.ssd }
+	{ Author frank }
+	{ CreatedOn "Wed Aug 25 19:04:03 1999" }
+	{ Annotation "" }
+}
+
+Page 
+{
+	{ PageOrientation Portrait }
+	{ ShowHeaders False }
+	{ ShowFooters False }
+	{ ShowNumbers False }
+}
+
+# GRAPH NODES
+
+ClassNode 2383264
+{
+	{ Name "DoubleClassBox" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+	{ Attributes 0 }
+	{ Operations 0 }
+	{ Stereotype "<< - >>" }
+	{ Properties "{ - }" }
+}
+
+ClassNode 2800040
+{
+	{ Name "SSDDoubleClassBox" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+	{ Attributes 2 }
+	{ Attribute "stereotypeLabel: TextShape" }
+	{ Attribute "propertiesLabel: TextShape" }
+	{ Operations 0 }
+	{ Stereotype "<< - >>" }
+	{ Properties "{ SSD_DOUBLE_CLASS_BOX }" }
+}
+
+ClassNode 2401368
+{
+	{ Name "SSDDoubleObjectBox" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+	{ Attributes 0 }
+	{ Operations 0 }
+	{ Stereotype "<< - >>" }
+	{ Properties "{ SSD_DOUBLE_OBJECT_BOX}" }
+}
+
+ClassNode 2774704
+{
+	{ Name "Box" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+	{ Attributes 0 }
+	{ Operations 0 }
+	{ Stereotype "<< - >>" }
+	{ Properties "{ BOX }" }
+}
+
+ClassNode 2779560
+{
+	{ Name "DoubleBox" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+	{ Attributes 1 }
+	{ Attribute "labels: List<TextShape>" }
+	{ Operations 0 }
+	{ Stereotype "<< - >>" }
+	{ Properties "{ DOUBLE_BOX }" }
+}
+
+ClassNode 2780256
+{
+	{ Name "SSDSingleClassBox" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+	{ Attributes 2 }
+	{ Attribute "stereotypeLabel: TextShape" }
+	{ Attribute "propertiesLabel: TextShape" }
+	{ Operations 0 }
+	{ Stereotype "<< - >>" }
+	{ Properties "{ SSD_SINGLE_CLASS_BOX }" }
+}
+
+ClassNode 2780432
+{
+	{ Name "SSDDoubleObjectBox" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+	{ Attributes 0 }
+	{ Operations 0 }
+	{ Stereotype "<< - >>" }
+	{ Properties "{ SSD_SINGLE_OBJECT_BOX}" }
+}
+
+ClassNode 2844448
+{
+	{ Name "TripleBox" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+	{ Attributes 1 }
+	{ Attribute "labels2: List<TextShape>" }
+	{ Operations 0 }
+	{ Stereotype "<< - >>" }
+	{ Properties "{ TRIPLE_BOX }" }
+}
+
+ClassNode 2774224
+{
+	{ Name "TripleClassBox" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+	{ Attributes 0 }
+	{ Operations 0 }
+	{ Stereotype "<< - >>" }
+	{ Properties "{ - }" }
+}
+
+ClassNode 2774400
+{
+	{ Name "SSDTripleClassBox" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+	{ Attributes 2 }
+	{ Attribute "stereotypeLabel: TextShape" }
+	{ Attribute "propertiesLabel: TextShape" }
+	{ Operations 0 }
+	{ Stereotype "<< - >>" }
+	{ Properties "{ SSD_TRIPLE_CLASS_BOX }" }
+}
+
+ClassNode 2427488
+{
+	{ Name "Diamond" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+	{ Attributes 0 }
+	{ Operations 0 }
+	{ Stereotype "<< - >>" }
+	{ Properties "{ DIAMOND }" }
+}
+
+ClassNode 2428704
+{
+	{ Name "NoteBox" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+	{ Attributes 0 }
+	{ Operations 0 }
+	{ Stereotype "<< - >>" }
+	{ Properties "{ NOTE_BOX}" }
+}
+
+ClassNode 2820416
+{
+	{ Name "MiniEllipse" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+	{ Attributes 0 }
+	{ Operations 0 }
+	{ Stereotype "<< - >>" }
+	{ Properties "{ MINI_ELLIPSE }" }
+}
+
+ClassNode 2428880
+{
+	{ Name "" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+	{ Attributes 0 }
+	{ Operations 0 }
+	{ Stereotype "<< - >>" }
+	{ Properties "{ - }" }
+}
+
+ClassNode 2790072
+{
+	{ Name "" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+	{ Attributes 0 }
+	{ Operations 0 }
+	{ Stereotype "<< - >>" }
+	{ Properties "{ - }" }
+}
+
+Comment 2382368
+{
+	{ Name "TSSD" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+}
+
+Comment 2243904
+{
+	{ Name "LIBDIAGRAM" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Index "" }
+}
+
+# GRAPH EDGES
+
+IsaRelationship 2382712
+{
+	{ Name "" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Subject1 2800040 }
+	{ Subject2 2383264 }
+}
+
+IsaRelationship 1655312
+{
+	{ Name "" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Subject1 2401368 }
+	{ Subject2 2383264 }
+}
+
+IsaRelationship 1144512
+{
+	{ Name "" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Subject1 2383264 }
+	{ Subject2 2779560 }
+}
+
+IsaRelationship 2844624
+{
+	{ Name "" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Subject1 2779560 }
+	{ Subject2 2774704 }
+}
+
+IsaRelationship 2800216
+{
+	{ Name "" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Subject1 2780256 }
+	{ Subject2 2774704 }
+}
+
+IsaRelationship 2792328
+{
+	{ Name "" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Subject1 2780432 }
+	{ Subject2 2774704 }
+}
+
+IsaRelationship 1872888
+{
+	{ Name "" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Subject1 2844448 }
+	{ Subject2 2779560 }
+}
+
+IsaRelationship 1736584
+{
+	{ Name "" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Subject1 2774224 }
+	{ Subject2 2844448 }
+}
+
+IsaRelationship 2810712
+{
+	{ Name "" }
+	{ Annotation "" }
+	{ Parent 0 }
+	{ Subject1 2774400 }
+	{ Subject2 2774224 }
+}
+
+# VIEWS AND GRAPHICAL SHAPES
+
+View 2379768
+{
+	{ Index "0" }
+	{ Parent 0 }
+}
+
+SSDSingleClassBox 2836320
+{
+	{ View 2379768 }
+	{ Subject 2383264 }
+	{ Position 210 410 }
+	{ Size 86 39 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Solid }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+	{ ShowStereotype False }
+	{ ShowProperties False }
+}
+
+SSDDoubleClassBox 2408448
+{
+	{ View 2379768 }
+	{ Subject 2800040 }
+	{ Position 300 570 }
+	{ Size 163 65 }
+	{ Color "black" }
+	{ LineWidth 2 }
+	{ LineStyle Solid }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+	{ ShowStereotype False }
+	{ ShowProperties True }
+}
+
+Line 2419248
+{
+	{ View 2379768 }
+	{ Subject 2382712 }
+	{ FromShape 2408448 }
+	{ ToShape 2836320 }
+	{ Curved False }
+	{ End1 Empty }
+	{ End2 WhiteTriangle }
+	{ Points 2 }
+	{ Point 282 538 }
+	{ Point 220 429 }
+	{ NamePosition 263 479 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Solid }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+}
+
+Line 2432128
+{
+	{ View 2379768 }
+	{ Subject 1655312 }
+	{ FromShape 2590168 }
+	{ ToShape 2836320 }
+	{ Curved False }
+	{ End1 Empty }
+	{ End2 WhiteTriangle }
+	{ Points 2 }
+	{ Point 438 541 }
+	{ Point 242 429 }
+	{ NamePosition 346 477 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Solid }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+}
+
+SSDSingleClassBox 2434792
+{
+	{ View 2379768 }
+	{ Subject 2774704 }
+	{ Position 370 40 }
+	{ Size 76 39 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Solid }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+	{ ShowStereotype False }
+	{ ShowProperties True }
+}
+
+SSDDoubleClassBox 2441896
+{
+	{ View 2379768 }
+	{ Subject 2779560 }
+	{ Position 210 110 }
+	{ Size 117 52 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Solid }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+	{ ShowStereotype False }
+	{ ShowProperties True }
+}
+
+Line 2847712
+{
+	{ View 2379768 }
+	{ Subject 1144512 }
+	{ FromShape 2836320 }
+	{ ToShape 2441896 }
+	{ Curved False }
+	{ End1 Empty }
+	{ End2 WhiteTriangle }
+	{ Points 2 }
+	{ Point 210 391 }
+	{ Point 210 136 }
+	{ NamePosition 196 263 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Solid }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+}
+
+Line 2852448
+{
+	{ View 2379768 }
+	{ Subject 2844624 }
+	{ FromShape 2441896 }
+	{ ToShape 2434792 }
+	{ Curved False }
+	{ End1 Empty }
+	{ End2 WhiteTriangle }
+	{ Points 2 }
+	{ Point 268 85 }
+	{ Point 332 56 }
+	{ NamePosition 295 61 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Solid }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+}
+
+SSDDoubleClassBox 2855112
+{
+	{ View 2379768 }
+	{ Subject 2780256 }
+	{ Position 370 410 }
+	{ Size 158 65 }
+	{ Color "black" }
+	{ LineWidth 2 }
+	{ LineStyle Solid }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+	{ ShowStereotype False }
+	{ ShowProperties True }
+}
+
+Line 2862536
+{
+	{ View 2379768 }
+	{ Subject 2800216 }
+	{ FromShape 2855112 }
+	{ ToShape 2434792 }
+	{ Curved False }
+	{ End1 Empty }
+	{ End2 WhiteTriangle }
+	{ Points 2 }
+	{ Point 370 378 }
+	{ Point 370 59 }
+	{ NamePosition 356 218 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Solid }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+}
+
+Line 2867272
+{
+	{ View 2379768 }
+	{ Subject 2792328 }
+	{ FromShape 2580984 }
+	{ ToShape 2434792 }
+	{ Curved False }
+	{ End1 Empty }
+	{ End2 WhiteTriangle }
+	{ Points 2 }
+	{ Point 532 421 }
+	{ Point 378 59 }
+	{ NamePosition 467 237 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Solid }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+}
+
+SSDDoubleClassBox 2869936
+{
+	{ View 2379768 }
+	{ Subject 2844448 }
+	{ Position 110 230 }
+	{ Size 125 52 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Solid }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+	{ ShowStereotype False }
+	{ ShowProperties True }
+}
+
+Line 2886056
+{
+	{ View 2379768 }
+	{ Subject 1872888 }
+	{ FromShape 2869936 }
+	{ ToShape 2441896 }
+	{ Curved False }
+	{ End1 Empty }
+	{ End2 WhiteTriangle }
+	{ Points 2 }
+	{ Point 131 204 }
+	{ Point 189 136 }
+	{ NamePosition 150 164 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Solid }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+}
+
+Line 2890792
+{
+	{ View 2379768 }
+	{ Subject 1736584 }
+	{ FromShape 2599352 }
+	{ ToShape 2869936 }
+	{ Curved False }
+	{ End1 Empty }
+	{ End2 WhiteTriangle }
+	{ Points 2 }
+	{ Point 110 391 }
+	{ Point 110 256 }
+	{ NamePosition 96 323 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Solid }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+}
+
+SSDDoubleClassBox 2893456
+{
+	{ View 2379768 }
+	{ Subject 2774400 }
+	{ Position 110 560 }
+	{ Size 163 65 }
+	{ Color "black" }
+	{ LineWidth 2 }
+	{ LineStyle Solid }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+	{ ShowStereotype False }
+	{ ShowProperties True }
+}
+
+Line 2900880
+{
+	{ View 2379768 }
+	{ Subject 2810712 }
+	{ FromShape 2893456 }
+	{ ToShape 2599352 }
+	{ Curved False }
+	{ End1 Empty }
+	{ End2 WhiteTriangle }
+	{ Points 2 }
+	{ Point 110 528 }
+	{ Point 110 429 }
+	{ NamePosition 96 478 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Solid }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+}
+
+SSDSingleClassBox 2905616
+{
+	{ View 2379768 }
+	{ Subject 2427488 }
+	{ Position 480 90 }
+	{ Size 76 39 }
+	{ Color "black" }
+	{ LineWidth 2 }
+	{ LineStyle Solid }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+	{ ShowStereotype False }
+	{ ShowProperties True }
+}
+
+SSDSingleClassBox 2912720
+{
+	{ View 2379768 }
+	{ Subject 2428704 }
+	{ Position 570 140 }
+	{ Size 76 39 }
+	{ Color "black" }
+	{ LineWidth 2 }
+	{ LineStyle Solid }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+	{ ShowStereotype False }
+	{ ShowProperties True }
+}
+
+SSDSingleClassBox 2921904
+{
+	{ View 2379768 }
+	{ Subject 2820416 }
+	{ Position 540 230 }
+	{ Size 94 39 }
+	{ Color "black" }
+	{ LineWidth 2 }
+	{ LineStyle Solid }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+	{ ShowStereotype False }
+	{ ShowProperties True }
+}
+
+SSDSingleClassBox 2931088
+{
+	{ View 2379768 }
+	{ Subject 2428880 }
+	{ Position 330 150 }
+	{ Size 638 270 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Dashed }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+	{ ShowStereotype False }
+	{ ShowProperties False }
+}
+
+SSDSingleClassBox 2937672
+{
+	{ View 2379768 }
+	{ Subject 2790072 }
+	{ Position 330 480 }
+	{ Size 638 270 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Dashed }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+	{ ShowStereotype False }
+	{ ShowProperties False }
+}
+
+TextBox 2570472
+{
+	{ View 2379768 }
+	{ Subject 2382368 }
+	{ Position 40 360 }
+	{ Size 31 20 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Invisible }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+}
+
+TextBox 2575728
+{
+	{ View 2379768 }
+	{ Subject 2243904 }
+	{ Position 60 30 }
+	{ Size 69 20 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Invisible }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+}
+
+SSDSingleClassBox 2580984
+{
+	{ View 2379768 }
+	{ Subject 2780432 }
+	{ Position 540 440 }
+	{ Size 160 39 }
+	{ Color "black" }
+	{ LineWidth 2 }
+	{ LineStyle Solid }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+	{ ShowStereotype False }
+	{ ShowProperties True }
+}
+
+SSDSingleClassBox 2590168
+{
+	{ View 2379768 }
+	{ Subject 2401368 }
+	{ Position 470 560 }
+	{ Size 165 39 }
+	{ Color "black" }
+	{ LineWidth 2 }
+	{ LineStyle Solid }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+	{ ShowStereotype False }
+	{ ShowProperties True }
+}
+
+SSDSingleClassBox 2599352
+{
+	{ View 2379768 }
+	{ Subject 2774224 }
+	{ Position 110 410 }
+	{ Size 76 39 }
+	{ Color "black" }
+	{ LineWidth 1 }
+	{ LineStyle Solid }
+	{ FillStyle Unfilled }
+	{ FillColor "white" }
+	{ FixedName False }
+	{ Font "-Adobe-helvetica-medium-r-normal--10*" }
+	{ TextAlignment Center }
+	{ TextColor "black" }
+	{ NameUnderlined False }
+	{ ShowStereotype False }
+	{ ShowProperties False }
+}
+

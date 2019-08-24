@@ -1,0 +1,414 @@
+<html><head><TITLE>DiagramWindow</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  DiagramWindow : public <!2><A HREF="DrawWindow.html#DOC.138.1">DrawWindow</A> </H2><BLOCKQUOTE>
+ edit window class that is common to all diagram editors.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=485>
+<param name=classes value="CComponent,MComponent.html,CMWidget,MMWidget.html,CMainWindow,MMainWindow.html,CEditWindow,MEditWindow.html,CDrawWindow,MDrawWindow.html,CDiagramWindow,MDiagramWindow.html,CTRWindow,MTRWindow.html,CSTWindow,MSTWindow.html,CSNWindow,MSNWindow.html,CRPWindow,MRPWindow.html,CPSWindow,MPSWindow.html,CGDWindow,MGDWindow.html,CERWindow,MERWindow.html,CDFWindow,MDFWindow.html,CCPWindow,MCPWindow.html,CATWindow,MATWindow.html">
+<param name=before value="M,M,M,M,M,M,M|_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,Mr_">
+<param name=after value="Md_SPSPSPSP,Md_SPSPSP,Md_SPSP,Md_SP,Md_,M,M,M,M,M,M,M,M,M,M,M">
+<param name=indent value="0,1,2,3,4,5,5,5,5,5,5,5,5,5,5,5">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.114.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>DiagramWindow</B> (const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~DiagramWindow</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetNodeName</B> (int n)<br>
+<I> Show in status that node type n is selected.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetEdgeName</B> (int n)<br>
+<I> Show in status that edge type n is selected.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.114.5"> <IMG BORDER=0 SRC=icon1.gif></A> const  char** </TD><TD><B>nodeNames</B> <br>
+<I> points to the names of the node shapes. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.6"> <IMG BORDER=0 SRC=icon1.gif></A> const  char** </TD><TD><B>edgeNames</B> <br>
+<I> points to the names of the edge shapes. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.7"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>nrNodes</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.8"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>nrEdges</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.9"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="Bitmap.html">Bitmap</A>* </TD><TD><B>nodeIcons</B> <br>
+<I> List of Icons for the "Nodes" tiled buttons.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.10"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="Bitmap.html">Bitmap</A>* </TD><TD><B>edgeIcons</B> <br>
+<I> List of Icons for the "Edges" tiled buttons.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.47"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>gridMenu</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.48"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>diagramAlignItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.49"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>defPropertiesItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.50"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>gridItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.51"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>nodeLineStyleItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.52"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>edgeLineStyleItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.53"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>updateNodeShapeTypeItems</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.114.11"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>CreateMenuBar</B> (Widget parent)<br>
+<I> create menu bar</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.12"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  Widget </TD><TD><B>CreateTiles</B> (Widget parent)<br>
+<I> created tiled buttons.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CreateNodeIcons</B> (Widget parent)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CreateEdgeIcons</B> (Widget parent)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CreateIndexToggle</B> (Widget parent)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.16"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="DiagramViewer.html">DiagramViewer</A>* </TD><TD><B>GetDiagramViewer</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetShowLineStyleOptionMenu</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.18"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>GetNodeIconsRC</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.19"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>GetEdgeIconsRC</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.20"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CreateLineStyleOptionMenu</B> (Widget w, bool nodes, bool minimize)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.21"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>InitMenuItems</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.44"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>ShowIndexToggle</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.45"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CalcIconColumns</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.114.46"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetIconsScrollHeight</B> (int rows)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="DrawWindow.html">DrawWindow:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> const  char*  <B>GetClassName</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetAutoResize</B>(bool set)
+<DT><IMG SRC=icon2.gif> void  <B>SetInlineEdit</B>(bool set)
+<DT><IMG SRC=icon2.gif> void  <B>SetScaleValue</B>(const char *s)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="DrawingArea.html">DrawingArea</A>*  <B>GetDrawingArea</B>()
+<DT><IMG SRC=icon2.gif> void  <B>FitDocument</B>()
+<DT><IMG SRC=icon2.gif> void  <B>FitDocument</B>(int wd, int ht)
+<DT><IMG SRC=icon2.gif> void  <B>ShowPosition</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> void  <B>SetUndoName</B>(const char *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetRedoName</B>(const char *s)
+<DT><IMG SRC=icon2.gif> void  <B>EnableUndo</B>(bool flag)
+<DT><IMG SRC=icon2.gif> void  <B>EnableRedo</B>(bool flag)
+<DT><IMG SRC=icon2.gif> void  <B>EnableDocumentSource</B>(bool flag)
+</DL><DL>
+<DT><h3>Protected Fields</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>documentMenu</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>scaleMenu</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>scaleItems</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>documentItems</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>documentInfoItems</B>
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>WriteUsage</B>(const char *s)
+<DT><IMG SRC=icon2.gif> void  <B>ParseUserOptions</B>(int argc, char **argv)
+<DT><IMG SRC=icon2.gif> Widget  <B>GetArrowButtons</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetArrowButtons</B>(Widget w)
+<DT><IMG SRC=icon2.gif> Widget  <B>GetScrolledWindow</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetScrolledWindow</B>(Widget w)
+<DT><IMG SRC=icon2.gif> Widget  <B>GetScaleValue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetScaleValue</B>(Widget w)
+<DT><IMG SRC=icon2.gif> void  <B>SetScrolledWindowWidth</B>(int n)
+<DT><IMG SRC=icon2.gif> int  <B>GetScrolledWindowWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetScrolledWindowHeight</B>(int n)
+<DT><IMG SRC=icon2.gif> int  <B>GetScrolledWindowHeight</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CreateDrawingArea</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Finalize</B>()
+<DT><IMG SRC=icon2.gif> Widget  <B>CreateControlArea</B>(Widget parent)
+<DT><IMG SRC=icon2.gif> Widget  <B>CreateScrolledWindow</B>(Widget parent)
+<DT><IMG SRC=icon2.gif> Widget  <B>CreateScaleValue</B>(Widget parent)
+<DT><IMG SRC=icon2.gif> Widget  <B>CreateArrowButtonSquare</B>(Widget parent)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "EditWindow.html"> EditWindow:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>ScreenType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>Manage</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetStatus</B>(const char *message)
+<DT><IMG SRC=icon2.gif> void  <B>SetStatus</B>(const <!1><A HREF="string.html">string</A> *message)
+<DT><IMG SRC=icon2.gif> void  <B>SetDocumentName</B>(const char *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetDocumentName</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetDocumentType</B>(const char *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetDocumentType</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetDocumentLevel</B>(const char *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetDocumentLevel</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetDirName</B>(const char *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetDirName</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetModified</B>(bool set)
+<DT><IMG SRC=icon2.gif> bool  <B>IsDoMap</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>GetFileMenu</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>GetEditMenu</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>GetPrintMenu</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>GetHelpMenu</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>GetViewMenu</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>GetSearchMenu</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>GetPropertiesMenu</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>GetPopupEditItems</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetPageSubMenuItem</B>(const char *text, int n)
+<DT><IMG SRC=icon2.gif> void  <B>SetPageMenuItem</B>(const char *text, bool b)
+</DL><DL>
+<DT><h3>Protected Fields</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>fileMenu</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>editMenu</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>printMenu</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>pageMenu</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>viewMenu</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>propertiesMenu</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>helpMenu</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Menu.html">Menu</A>*  <B>searchMenu</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>popupEditItems</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>fileItems</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>editItems</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>viewItems</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>bannerPageItems</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>printItems</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>searchItems</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>propertiesItems</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>printerOptionsItems</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>helpItems</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>pageOrientationItems</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>pageSizeItems</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MenuItem.html">MenuItem</A>*  <B>pageItems</B>
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="Document.html">Document</A>*  <B>GetDocument</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDocument</B>(<!1><A HREF="Document.html">Document</A> *d)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Printer.html">Printer</A>*  <B>GetPrinter</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Helper.html">Helper</A>*  <B>GetHelper</B>()
+<DT><IMG SRC=icon2.gif> int  <B>GetArgsLeft</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetArgsLeft</B>(int n)
+<DT><IMG SRC=icon2.gif> <!2><A HREF="EditWindow.html#DOC.143.5">ScreenType</A>  <B>GetScreenType</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>IsDoLoad</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDoLoad</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>SetLoadFile</B>(const char *s)
+<DT><IMG SRC=icon2.gif> Widget  <B>GetMenuBar</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetMenuBar</B>(Widget w)
+<DT><IMG SRC=icon2.gif> Widget  <B>GetDocumentArea</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDocumentArea</B>(Widget w)
+<DT><IMG SRC=icon2.gif> Widget  <B>GetStatusArea</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetStatusArea</B>(Widget w)
+<DT><IMG SRC=icon2.gif> Widget  <B>GetControlArea</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetControlArea</B>(Widget w)
+<DT><IMG SRC=icon2.gif> Widget  <B>GetLogo</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetLogo</B>(Widget w)
+<DT><IMG SRC=icon2.gif> Widget  <B>GetDirName</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDirName</B>(Widget w)
+<DT><IMG SRC=icon2.gif> Widget  <B>CreateWorkArea</B>(Widget parent, int argc, char **argv)
+<DT><IMG SRC=icon2.gif> virtual  Widget  <B>CreateLogo</B>(Widget parent)
+<DT><IMG SRC=icon2.gif> virtual  Widget  <B>CreateDocumentArea</B>(Widget parent)
+<DT><IMG SRC=icon2.gif> virtual  Widget  <B>CreateStatusArea</B>(Widget parent)
+<DT><IMG SRC=icon2.gif> Widget  <B>CreateToggle</B>(Widget parent, const char *label, bool Init, XtCallbackProc fun, XtPointer clientData)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "MainWindow.html"> MainWindow:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>Initialize</B>(int argc, char** argv, <!1><A HREF="Config.html">Config</A> *<!2><A HREF="MainWindow.html#DOC.220.29">config</A>)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Unmanage</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Iconify</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ManageUnmapped</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Close</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetTitle</B>(const char *title)
+<DT><IMG SRC=icon2.gif> void  <B>SetTitle</B>(const <!1><A HREF="string.html">string</A> *title)
+<DT><IMG SRC=icon2.gif> void  <B>SetIconName</B>(const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)
+<DT><IMG SRC=icon2.gif> void  <B>SetIconPixmap</B>(Pixmap px)
+<DT><IMG SRC=icon2.gif> void  <B>SetCursor</B>(int cursorNum)
+<DT><IMG SRC=icon2.gif> void  <B>SetSizeCursor</B>(int cursorNum)
+<DT><IMG SRC=icon2.gif> virtual  int  <B>GetTool</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="PrinterOptions.html">PrinterOptions</A>*  <B>GetPrinterOptions</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>CreateComponents</B>(Widget window)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MouseCursor.html">MouseCursor</A>*  <B>GetCursor</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Config.html">Config</A>*  <B>GetConfig</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "MWidget.html"> MWidget:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsRealized</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetColormap</B>(Colormap cmap)
+<DT><IMG SRC=icon2.gif> void  <B>SetDestroyCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> void  <B>AddLiteClue</B>(Widget w, const char *text)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> Widget  <B>GetLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CreateLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>InstallDestroyHandler</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Component.html"> Component:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsManaged</B>()
+<DT><IMG SRC=icon2.gif> Widget  <B>GetWidget</B>()
+<DT><IMG SRC=icon2.gif> Display*  <B>GetDisplay</B>()
+<DT><IMG SRC=icon2.gif> Window  <B>GetWindow</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetWidget</B>(Widget w)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const char *s)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ edit window class that is common to all diagram editors.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="DiagramWindow">
+<A NAME ="DOC.114.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  DiagramWindow(const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)</B></TT>
+<DL></DL><P>
+<A NAME="~DiagramWindow">
+<A NAME ="DOC.114.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~DiagramWindow()</B></TT>
+<DL></DL><P>
+<A NAME="SetNodeName">
+<A NAME ="DOC.114.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetNodeName(int n)</B></TT>
+<DD> Show in status that node type n is selected.
+<DL></DL><P>
+<A NAME="SetEdgeName">
+<A NAME ="DOC.114.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetEdgeName(int n)</B></TT>
+<DD> Show in status that edge type n is selected.
+<DL></DL><P>
+<A NAME="nodeNames">
+<A NAME ="DOC.114.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char**  nodeNames</B></TT>
+<DD> points to the names of the node shapes. 
+<DL></DL><P>
+<A NAME="edgeNames">
+<A NAME ="DOC.114.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char**  edgeNames</B></TT>
+<DD> points to the names of the edge shapes. 
+<DL></DL><P>
+<A NAME="nrNodes">
+<A NAME ="DOC.114.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  nrNodes</B></TT>
+<DL></DL><P>
+<A NAME="nrEdges">
+<A NAME ="DOC.114.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  nrEdges</B></TT>
+<DL></DL><P>
+<A NAME="nodeIcons">
+<A NAME ="DOC.114.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="Bitmap.html">Bitmap</A>*  nodeIcons</B></TT>
+<DD> List of Icons for the "Nodes" tiled buttons.
+<DL></DL><P>
+<A NAME="edgeIcons">
+<A NAME ="DOC.114.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="Bitmap.html">Bitmap</A>*  edgeIcons</B></TT>
+<DD> List of Icons for the "Edges" tiled buttons.
+<DL></DL><P>
+<A NAME="CreateMenuBar">
+<A NAME ="DOC.114.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  CreateMenuBar(Widget parent)</B></TT>
+<DD> create menu bar
+<DL></DL><P>
+<A NAME="CreateTiles">
+<A NAME ="DOC.114.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  Widget  CreateTiles(Widget parent)</B></TT>
+<DD> created tiled buttons.
+<DL></DL><P>
+<A NAME="CreateNodeIcons">
+<A NAME ="DOC.114.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CreateNodeIcons(Widget parent)</B></TT>
+<DL></DL><P>
+<A NAME="CreateEdgeIcons">
+<A NAME ="DOC.114.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CreateEdgeIcons(Widget parent)</B></TT>
+<DL></DL><P>
+<A NAME="CreateIndexToggle">
+<A NAME ="DOC.114.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CreateIndexToggle(Widget parent)</B></TT>
+<DL></DL><P>
+<A NAME="GetDiagramViewer">
+<A NAME ="DOC.114.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="DiagramViewer.html">DiagramViewer</A>*  GetDiagramViewer() const </B></TT>
+<DL></DL><P>
+<A NAME="SetShowLineStyleOptionMenu">
+<A NAME ="DOC.114.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetShowLineStyleOptionMenu(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="GetNodeIconsRC">
+<A NAME ="DOC.114.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  GetNodeIconsRC() const </B></TT>
+<DL></DL><P>
+<A NAME="GetEdgeIconsRC">
+<A NAME ="DOC.114.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  GetEdgeIconsRC() const </B></TT>
+<DL></DL><P>
+<A NAME="CreateLineStyleOptionMenu">
+<A NAME ="DOC.114.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CreateLineStyleOptionMenu(Widget w, bool nodes, bool minimize)</B></TT>
+<DL></DL><P>
+<A NAME="InitMenuItems">
+<A NAME ="DOC.114.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  InitMenuItems()</B></TT>
+<DL></DL><P>
+<A NAME="ShowIndexToggle">
+<A NAME ="DOC.114.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  ShowIndexToggle()</B></TT>
+<DL></DL><P>
+<A NAME="CalcIconColumns">
+<A NAME ="DOC.114.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CalcIconColumns()</B></TT>
+<DL></DL><P>
+<A NAME="GetIconsScrollHeight">
+<A NAME ="DOC.114.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetIconsScrollHeight(int rows)</B></TT>
+<DL></DL><P>
+<A NAME="gridMenu">
+<A NAME ="DOC.114.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  gridMenu</B></TT>
+<DL></DL><P>
+<A NAME="diagramAlignItems">
+<A NAME ="DOC.114.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  diagramAlignItems</B></TT>
+<DL></DL><P>
+<A NAME="defPropertiesItems">
+<A NAME ="DOC.114.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  defPropertiesItems</B></TT>
+<DL></DL><P>
+<A NAME="gridItems">
+<A NAME ="DOC.114.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  gridItems</B></TT>
+<DL></DL><P>
+<A NAME="nodeLineStyleItems">
+<A NAME ="DOC.114.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  nodeLineStyleItems</B></TT>
+<DL></DL><P>
+<A NAME="edgeLineStyleItems">
+<A NAME ="DOC.114.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  edgeLineStyleItems</B></TT>
+<DL></DL><P>
+<A NAME="updateNodeShapeTypeItems">
+<A NAME ="DOC.114.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  updateNodeShapeTypeItems</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="TRWindow.html"> TRWindow </A><br>
+<A HREF="STWindow.html"> STWindow </A><br>
+<A HREF="SNWindow.html"> SNWindow </A><br>
+<A HREF="RPWindow.html"> RPWindow </A><br>
+<A HREF="PSWindow.html"> PSWindow </A><br>
+<A HREF="GDWindow.html"> GDWindow </A><br>
+<A HREF="ERWindow.html"> ERWindow </A><br>
+<A HREF="DFWindow.html"> DFWindow </A><br>
+<A HREF="CPWindow.html"> CPWindow </A><br>
+<A HREF="ATWindow.html"> ATWindow </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

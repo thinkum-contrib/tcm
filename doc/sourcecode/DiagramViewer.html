@@ -1,0 +1,880 @@
+<html><head><TITLE>DiagramViewer</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  DiagramViewer : public <!2><A HREF="Viewer.html#DOC.444.1">Viewer</A> </H2><BLOCKQUOTE>
+ diagram viewer class, responsible for the contents of the drawing area.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=365>
+<param name=classes value="CViewer,MViewer.html,CDiagramViewer,MDiagramViewer.html,CTRViewer,MTRViewer.html,CSTViewer,MSTViewer.html,CSNViewer,MSNViewer.html,CRPViewer,MRPViewer.html,CPSViewer,MPSViewer.html,CGDViewer,MGDViewer.html,CERViewer,MERViewer.html,CDFViewer,MDFViewer.html,CCPViewer,MCPViewer.html,CATViewer,MATViewer.html">
+<param name=before value="M,M,M|_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,Mr_">
+<param name=after value="Md_,M,M,M,M,M,M,M,M,M,M,M">
+<param name=indent value="0,1,1,1,1,1,1,1,1,1,1,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.113.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>DiagramViewer</B> (<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="DiagramWindow.html">DiagramWindow</A> *w)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~DiagramViewer</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Initialize</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDiagram</B> (<!1><A HREF="Diagram.html">Diagram</A> *d)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.5"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Diagram.html">Diagram</A>* </TD><TD><B>GetDiagram</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetGrafport</B> (<!1><A HREF="Grafport.html">Grafport</A> *g)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.7"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Buffer.html">Buffer</A>* </TD><TD><B>GetBuffer</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.8"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Grid.html">Grid</A>* </TD><TD><B>GetGrid</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.9"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetDefaultNodeType</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.10"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetDefaultEdgeType</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.11"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetDefaultNodeShapeType</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.12"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetDefaultLineType</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.13"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsDefaultCurve</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultNodeType</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultEdgeType</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultNodeShapeType</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultLineType</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.18"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultCurve</B> (bool s)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.19"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetShowIndexes</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.20"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsShowIndexes</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.21"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> </TD><TD><B>GetDefaultNodeLineStyle</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.22"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> </TD><TD><B>GetDefaultEdgeLineStyle</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.23"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultNodeLineStyle</B> (<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> l)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.24"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultEdgeLineStyle</B> (<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> l)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.25"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> </TD><TD><B>GetDefaultLineEnd1</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.26"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> </TD><TD><B>GetDefaultLineEnd2</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.27"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultLineEnd1</B> (<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.28"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultLineEnd2</B> (<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.29"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>Snap</B> (int i) const <br>
+<I> forwarding to grid object.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.30"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Snap</B> (<!1><A HREF="Point.html">Point</A> *p)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.31"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetStatus</B> (const char *msg)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.32"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetStatus</B> (const <!1><A HREF="string.html">string</A> *msg)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.33"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetCursor</B> (int cursor)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.34"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetSizeCursor</B> (int cursor)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.35"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Draw</B> ()<br>
+<I> Draw all shapes of current view to grafport.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.36"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Undraw</B> ()<br>
+<I> Erase all shapes of current view from grafport.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.37"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Redraw</B> ()<br>
+<I> Redraw everything including grid.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.38"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="ShapeView.html">ShapeView</A>* </TD><TD><B>GetCurView</B> () const <br>
+<I> return current view.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.39"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DeleteAllViews</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.40"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned  int </TD><TD><B>NumberOfViews</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.41"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>AddView</B> (<!1><A HREF="ShapeView.html">ShapeView</A> *v)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.42"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetView</B> (<!1><A HREF="ShapeView.html">ShapeView</A> *v)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.43"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateView</B> (<!1><A HREF="ShapeView.html">ShapeView</A> *v)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.44"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>HasView</B> (const <!1><A HREF="string.html">string</A> *index)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.45"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>HasView</B> (<!1><A HREF="ShapeView.html">ShapeView</A> *v)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.46"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="ShapeView.html">ShapeView</A>* </TD><TD><B>GetView</B> (const <!1><A HREF="string.html">string</A> *index)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.47"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CheckShapes</B> ()<br>
+<I> Check all shapes in all views.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.48"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>WriteShapes</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f)<br>
+<I> write all shapes from all views to ofile.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.49"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>WriteSelection</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f)<br>
+<I> write all selected shapes from current view to ofile.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.50"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Select</B> (int x, int y)<br>
+<I> perform the button1 functions (includes creating and moving shapes).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.51"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Adjust</B> (int x, int y)<br>
+<I> Perform the 2nd button function: (de)selection.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.52"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Command.html">Command</A>* </TD><TD><B>Drag</B> (int x, int y)<br>
+<I> drag shapes and handles of line-segments.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.53"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Command.html">Command</A>* </TD><TD><B>Connect</B> (int x, int y)<br>
+<I> create an edge between nodes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.54"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>MovingPointer</B> (int x, int y)<br>
+<I> change cursor to show the possible command (resize, move or edit).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.55"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>KeyTyped</B> (int x, int y, int key)<br>
+<I> start textmode, or (if in textmode) handle key. (x,y) is position.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.56"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>TextModeOff</B> ()<br>
+<I> stop being in editing mode.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.57"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DeselectAll</B> ()<br>
+<I> deselect all shapes in all views in the viewer.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.58"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="GShape.html">GShape</A>* </TD><TD><B>GetShape</B> (<!1><A HREF="Subject.html">Subject</A> *subject)<br>
+<I> return first shape from shapes having given subject (in any view).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.59"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>GetShapes</B> (<!1><A HREF="Subject.html">Subject</A> *subject, <!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *shapes)<br>
+<I> put in shapes all shapes from all views having given subject.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.60"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Cut</B> ()<br>
+<I> Cut subjects/shapes cmd from current view to buffer.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.61"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Copy</B> ()<br>
+<I> Copy subjects/shapes cmd from current view to buffer.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.62"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Paste</B> ()<br>
+<I> Paste from buffer to current view and graph.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.63"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Duplicate</B> ()<br>
+<I> Node shapes in selection are duplicated, pasted in current view.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.64"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>AlignNodeShapes</B> ()<br>
+<I> Align selection in current view according to given align type.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.65"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>AlignNodes</B> (<!2><A HREF="NodeAlign.html#DOC.238.1">NodeAlign::Type</A> alignment)<br>
+<I> Align selection in current view according to given align type.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.66"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateCurve</B> ()<br>
+<I> Convert selected curves from/to selected segmented lines.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.67"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateTextUnderline</B> ()<br>
+<I> Set/Unset the text underlining of the names of the selected shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.68"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>FindAll</B> (const <!1><A HREF="string.html">string</A> *s, bool sens, bool substr, bool nameOnly)<br>
+<I> select all shapes having string s (sens case sensitive).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.69"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>FindNext</B> (const <!1><A HREF="string.html">string</A> *s, bool sens, bool substr, bool nameOnly)<br>
+<I> select next shape having string s, and set cursor before it.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.70"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>ReplaceNext</B> (const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool sens, bool substr, bool nameOnly)<br>
+<I> replace string in next shape in current view.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.71"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>ReplaceAll</B> (const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool sens, bool substr, bool nameOnly)<br>
+<I> replace all strings in current view.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.72"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Annotate</B> ()<br>
+<I> edit annotation of first selected subject in current view.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.73"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>DeleteShapes</B> ()<br>
+<I> Delete shapes (and event. subjects) from selection.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.74"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>DeleteAll</B> ()<br>
+<I> All shapes (and subjects) are deleted from current view.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.75"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SameSize</B> ()<br>
+<I> makes the size of selection shapes equal to size of the first.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.76"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>MoveAllShapes</B> (<!2><A HREF="Document.html#DOC.118.42">Document::MoveType</A> t)<br>
+<I> move all shapes in current view according to move type.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.77"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SelectAll</B> ()<br>
+<I> select all shapes in the current view.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.78"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateTextAlignmentSelection</B> (<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)<br>
+<I> update text alignment of selection in current view.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.79"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateText</B> (<!1><A HREF="TextShape.html">TextShape</A> *t, const <!1><A HREF="string.html">string</A> *newtext, const <!1><A HREF="string.html">string</A> *oldtext)<br>
+<I> update text of textshape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.80"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLineWidthSelection</B> (unsigned i)<br>
+<I> update line width of selected shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.81"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLineStyleSelection</B> (<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> s)<br>
+<I> update line style of selected shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.82"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateFontSelection</B> (int family, int style, int size)<br>
+<I> update the fonts of selected shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.83"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLineColorSelection</B> (const <!1><A HREF="string.html">string</A> *color)<br>
+<I> update the colors of the lines of the selected shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.84"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateTextColorSelection</B> (const <!1><A HREF="string.html">string</A> *color)<br>
+<I> update the colors of the texts of the selected shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.85"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateFillColorSelection</B> (const <!1><A HREF="string.html">string</A> *color, <!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A> f)<br>
+<I> update the fill colors of the selected shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.86"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CalcSizeElements</B> (<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)<br>
+<I> calculate size of shapes in current view.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.87"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CalcSizeSelection</B> (<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)<br>
+<I> calc size of selection in current view.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.88"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CalcSizeShapes</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *shapes, <!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)<br>
+<I> calculate covered area of shapes in grafport.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.89"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShapePositionUpdate</B> (<!1><A HREF="GShape.html">GShape</A> *shape)<br>
+<I> for each line connecting shape, position is propagated.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.90"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateDuplicationMarks</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *s)<br>
+<I> Update the duplication marks of shapes of given subjects.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.91"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateDuplicationMarks</B> (<!1><A HREF="Subject.html">Subject</A> *s)<br>
+<I> Update the duplication marks of shapes of given subject.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.92"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateMoveShapes</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *shapes, const <!1><A HREF="Point.html">Point</A> *delta)<br>
+<I> shapes are moved delta and result is propagated to drawing area.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.93"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>MoveShapes</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *shapes, const <!1><A HREF="Point.html">Point</A> *delta)<br>
+<I> all shapes are moved delta (result not propagated).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.94"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateNodeShapeType</B> (int)<br>
+<I> convert selected node shapes to given code </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.95"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ConvertNodeShapes</B> ()<br>
+<I> convert selected node shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.96"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>DeleteSubjects</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.97"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetIndexes</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.98"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Reindex</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Node.html">Node</A> *> *nodes)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.99"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>ZoomIn</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.100"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ZoomOut</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.101"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>TopLevel</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.102"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="LineEndDialog.html">LineEndDialog</A>* </TD><TD><B>GetLineEndDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.103"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLineEnd</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.104"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDefaultLineEnd</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.105"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLineEndSelection</B> (<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> e1, <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> e2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.106"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="NodeAlignmentDialog.html">NodeAlignmentDialog</A>* </TD><TD><B>GetNodeAlignmentDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.107"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDefaultNodeAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.108"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="NodeShapeDialog.html">NodeShapeDialog</A>* </TD><TD><B>GetNodeShapeDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.109"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDefaultNodeShape</B> ()<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.113.110"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="ShapeView.html">ShapeView</A> *> * </TD><TD><B>GetViews</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.111"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>EmptySelectionMessage</B> ()<br>
+<I> error message because of empty selection.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.113.112"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>EmptyShapesMessage</B> ()<br>
+<I> error message because there are no shapes.</I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Viewer.html">Viewer:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_LINE_WIDTH</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MAX_LINE_WIDTH</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="Scaler.html">Scaler</A>*  <B>GetScaler</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Command.html">Command</A>*  <B>GetLastCmd</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="DrawWindow.html">DrawWindow</A>*  <B>GetMainWindow</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Grafport.html">Grafport</A>*  <B>GetGrafport</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Printer.html">Printer</A>*  <B>GetPrinter</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetPrinter</B>(<!1><A HREF="Printer.html">Printer</A> *p)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>*  <B>GetLineWidthDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>*  <B>GetLineStyleDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>*  <B>GetTextAlignmentDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="FontChooserDialog.html">FontChooserDialog</A>*  <B>GetFontChooserDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="FileSelectionDialog.html">FileSelectionDialog</A>*  <B>GetPrintFileSelectionDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ColorChooserDialog.html">ColorChooserDialog</A>*  <B>GetColorChooserDialog</B>()
+<DT><IMG SRC=icon2.gif> int  <B>Scale</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>Scale</B>(const <!1><A HREF="Point.html">Point</A> *p) const 
+<DT><IMG SRC=icon2.gif> int  <B>ScaleCorrect</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>ScaleCorrect</B>(const <!1><A HREF="Point.html">Point</A> *p) const 
+<DT><IMG SRC=icon2.gif> void  <B>Undo</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Redo</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Refresh</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Activate</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Deactivate</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultLineWidth</B>(unsigned d)
+<DT><IMG SRC=icon2.gif> int  <B>GetDefaultLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultLineStyle</B>(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> l)
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  <B>GetDefaultLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultLineColor</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDefaultLineColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultTextColor</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDefaultTextColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultFillColor</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDefaultFillColor</B>()
+<DT><IMG SRC=icon2.gif> <!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A>  <B>GetDefaultFillStyle</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultFillStyle</B>(<!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A> l)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultLineColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultLineColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigLineColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateTextColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultTextColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultTextColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigTextColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateFillColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultFillColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultFillColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigFillColor</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="XFont.html">XFont</A>*  <B>GetDefaultFont</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultFontAttributes</B>(int f, int s, int p)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetDefaultFont</B>(<!1><A HREF="XFont.html">XFont</A> *ft)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateFont</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultFont</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultFont</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigFont</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="XFont.html">XFont</A>*  <B>GetFont</B>(int family, int style, int size)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="XFont.html">XFont</A>*  <B>GetFont</B>(const char *description)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateTextAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultTextAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultTextAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigTextAlignment</B>()
+<DT><IMG SRC=icon2.gif> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>  <B>GetDefaultTextAlignment</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultTextAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)
+<DT><IMG SRC=icon2.gif> void  <B>EditText</B>(int key)
+<DT><IMG SRC=icon2.gif> bool  <B>IsAutoResize</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetAutoResize</B>(bool s)
+<DT><IMG SRC=icon2.gif> bool  <B>IsInlineEdit</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetInlineEdit</B>(bool s)
+<DT><IMG SRC=icon2.gif> bool  <B>IsPasting</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetPasting</B>(bool b)
+<DT><IMG SRC=icon2.gif> bool  <B>IsZigZag</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetZigZag</B>(bool b)
+<DT><IMG SRC=icon2.gif> bool  <B>IsEditing</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>DoubleClick</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DoFunctionKey</B>(int)
+<DT><IMG SRC=icon2.gif> void  <B>NewCommand</B>(<!1><A HREF="Command.html">Command</A> *newCmd)
+<DT><IMG SRC=icon2.gif> void  <B>AbortCommand</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ExecuteCommand</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UndoCommand</B>()
+<DT><IMG SRC=icon2.gif> void  <B>RedoCommand</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DeleteCommands</B>()
+<DT><IMG SRC=icon2.gif> void  <B>GetPageSize</B>(double &width, double &height)
+<DT><IMG SRC=icon2.gif> void  <B>Save</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *f)
+<DT><IMG SRC=icon2.gif> bool  <B>Load</B>(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)
+<DT><IMG SRC=icon2.gif> bool  <B>Check</B>(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>ClearGrafport</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="InlineEditor.html">InlineEditor</A>*  <B>GetInlineEditor</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetInlineEditor</B>(<!1><A HREF="InlineEditor.html">InlineEditor</A> *i)
+<DT><IMG SRC=icon2.gif> void  <B>SetEditing</B>(bool b)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ diagram viewer class, responsible for the contents of the drawing area.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="DiagramViewer">
+<A NAME ="DOC.113.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  DiagramViewer(<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="DiagramWindow.html">DiagramWindow</A> *w)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="~DiagramViewer">
+<A NAME ="DOC.113.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~DiagramViewer()</B></TT>
+<DL></DL><P>
+<A NAME="Initialize">
+<A NAME ="DOC.113.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Initialize()</B></TT>
+<DL></DL><P>
+<A NAME="SetDiagram">
+<A NAME ="DOC.113.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDiagram(<!1><A HREF="Diagram.html">Diagram</A> *d)</B></TT>
+<DL></DL><P>
+<A NAME="GetDiagram">
+<A NAME ="DOC.113.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Diagram.html">Diagram</A>*  GetDiagram() const </B></TT>
+<DL></DL><P>
+<A NAME="SetGrafport">
+<A NAME ="DOC.113.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetGrafport(<!1><A HREF="Grafport.html">Grafport</A> *g)</B></TT>
+<DL></DL><P>
+<A NAME="GetBuffer">
+<A NAME ="DOC.113.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Buffer.html">Buffer</A>*  GetBuffer() const </B></TT>
+<DL></DL><P>
+<A NAME="GetGrid">
+<A NAME ="DOC.113.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Grid.html">Grid</A>*  GetGrid() const </B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultNodeType">
+<A NAME ="DOC.113.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetDefaultNodeType() const </B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultEdgeType">
+<A NAME ="DOC.113.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetDefaultEdgeType() const </B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultNodeShapeType">
+<A NAME ="DOC.113.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetDefaultNodeShapeType() const </B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultLineType">
+<A NAME ="DOC.113.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetDefaultLineType() const </B></TT>
+<DL></DL><P>
+<A NAME="IsDefaultCurve">
+<A NAME ="DOC.113.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsDefaultCurve() const </B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultNodeType">
+<A NAME ="DOC.113.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultNodeType(int n)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultEdgeType">
+<A NAME ="DOC.113.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultEdgeType(int n)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultNodeShapeType">
+<A NAME ="DOC.113.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultNodeShapeType(int n)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultLineType">
+<A NAME ="DOC.113.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultLineType(int n)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultCurve">
+<A NAME ="DOC.113.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultCurve(bool s)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="SetShowIndexes">
+<A NAME ="DOC.113.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetShowIndexes(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="IsShowIndexes">
+<A NAME ="DOC.113.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsShowIndexes()</B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultNodeLineStyle">
+<A NAME ="DOC.113.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  GetDefaultNodeLineStyle() const </B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultEdgeLineStyle">
+<A NAME ="DOC.113.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  GetDefaultEdgeLineStyle() const </B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultNodeLineStyle">
+<A NAME ="DOC.113.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultNodeLineStyle(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> l)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultEdgeLineStyle">
+<A NAME ="DOC.113.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultEdgeLineStyle(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> l)</B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultLineEnd1">
+<A NAME ="DOC.113.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A>  GetDefaultLineEnd1()</B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultLineEnd2">
+<A NAME ="DOC.113.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A>  GetDefaultLineEnd2()</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultLineEnd1">
+<A NAME ="DOC.113.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultLineEnd1(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultLineEnd2">
+<A NAME ="DOC.113.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultLineEnd2(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)</B></TT>
+<DL></DL><P>
+<A NAME="Snap">
+<A NAME ="DOC.113.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  Snap(int i) const </B></TT>
+<DD> forwarding to grid object.
+<DL></DL><P>
+<A NAME="Snap">
+<A NAME ="DOC.113.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Snap(<!1><A HREF="Point.html">Point</A> *p)</B></TT>
+<DL></DL><P>
+<A NAME="SetStatus">
+<A NAME ="DOC.113.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetStatus(const char *msg)</B></TT>
+<DL></DL><P>
+<A NAME="SetStatus">
+<A NAME ="DOC.113.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetStatus(const <!1><A HREF="string.html">string</A> *msg)</B></TT>
+<DL></DL><P>
+<A NAME="SetCursor">
+<A NAME ="DOC.113.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetCursor(int cursor)</B></TT>
+<DL></DL><P>
+<A NAME="SetSizeCursor">
+<A NAME ="DOC.113.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetSizeCursor(int cursor)</B></TT>
+<DL></DL><P>
+<A NAME="Draw">
+<A NAME ="DOC.113.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Draw()</B></TT>
+<DD> Draw all shapes of current view to grafport.
+<DL></DL><P>
+<A NAME="Undraw">
+<A NAME ="DOC.113.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Undraw()</B></TT>
+<DD> Erase all shapes of current view from grafport.
+<DL></DL><P>
+<A NAME="Redraw">
+<A NAME ="DOC.113.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Redraw()</B></TT>
+<DD> Redraw everything including grid.
+<DL></DL><P>
+<A NAME="GetCurView">
+<A NAME ="DOC.113.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="ShapeView.html">ShapeView</A>*  GetCurView() const </B></TT>
+<DD> return current view.
+<DL></DL><P>
+<A NAME="DeleteAllViews">
+<A NAME ="DOC.113.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DeleteAllViews()</B></TT>
+<DL></DL><P>
+<A NAME="NumberOfViews">
+<A NAME ="DOC.113.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  int  NumberOfViews() const </B></TT>
+<DL></DL><P>
+<A NAME="AddView">
+<A NAME ="DOC.113.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  AddView(<!1><A HREF="ShapeView.html">ShapeView</A> *v)</B></TT>
+<DL></DL><P>
+<A NAME="SetView">
+<A NAME ="DOC.113.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetView(<!1><A HREF="ShapeView.html">ShapeView</A> *v)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateView">
+<A NAME ="DOC.113.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateView(<!1><A HREF="ShapeView.html">ShapeView</A> *v)</B></TT>
+<DL></DL><P>
+<A NAME="HasView">
+<A NAME ="DOC.113.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  HasView(const <!1><A HREF="string.html">string</A> *index)</B></TT>
+<DL></DL><P>
+<A NAME="HasView">
+<A NAME ="DOC.113.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  HasView(<!1><A HREF="ShapeView.html">ShapeView</A> *v)</B></TT>
+<DL></DL><P>
+<A NAME="GetView">
+<A NAME ="DOC.113.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="ShapeView.html">ShapeView</A>*  GetView(const <!1><A HREF="string.html">string</A> *index)</B></TT>
+<DL></DL><P>
+<A NAME="CheckShapes">
+<A NAME ="DOC.113.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CheckShapes()</B></TT>
+<DD> Check all shapes in all views.
+<DL></DL><P>
+<A NAME="WriteShapes">
+<A NAME ="DOC.113.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  WriteShapes(<!1><A HREF="OutputFile.html">OutputFile</A> *f)</B></TT>
+<DD> write all shapes from all views to ofile.
+<DL></DL><P>
+<A NAME="WriteSelection">
+<A NAME ="DOC.113.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  WriteSelection(<!1><A HREF="OutputFile.html">OutputFile</A> *f)</B></TT>
+<DD> write all selected shapes from current view to ofile.
+<DL></DL><P>
+<A NAME="Select">
+<A NAME ="DOC.113.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Select(int x, int y)</B></TT>
+<DD> perform the button1 functions (includes creating and moving shapes).
+<DL></DL><P>
+<A NAME="Adjust">
+<A NAME ="DOC.113.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Adjust(int x, int y)</B></TT>
+<DD> Perform the 2nd button function: (de)selection.
+<DL></DL><P>
+<A NAME="Drag">
+<A NAME ="DOC.113.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Command.html">Command</A>*  Drag(int x, int y)</B></TT>
+<DD> drag shapes and handles of line-segments.
+<DL></DL><P>
+<A NAME="Connect">
+<A NAME ="DOC.113.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Command.html">Command</A>*  Connect(int x, int y)</B></TT>
+<DD> create an edge between nodes.
+<DL></DL><P>
+<A NAME="MovingPointer">
+<A NAME ="DOC.113.54">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  MovingPointer(int x, int y)</B></TT>
+<DD> change cursor to show the possible command (resize, move or edit).
+<DL></DL><P>
+<A NAME="KeyTyped">
+<A NAME ="DOC.113.55">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  KeyTyped(int x, int y, int key)</B></TT>
+<DD> start textmode, or (if in textmode) handle key. (x,y) is position.
+<DL></DL><P>
+<A NAME="TextModeOff">
+<A NAME ="DOC.113.56">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  TextModeOff()</B></TT>
+<DD> stop being in editing mode.
+<DL></DL><P>
+<A NAME="DeselectAll">
+<A NAME ="DOC.113.57">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DeselectAll()</B></TT>
+<DD> deselect all shapes in all views in the viewer.
+<DL></DL><P>
+<A NAME="GetShape">
+<A NAME ="DOC.113.58">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="GShape.html">GShape</A>*  GetShape(<!1><A HREF="Subject.html">Subject</A> *subject)</B></TT>
+<DD> return first shape from shapes having given subject (in any view).
+<DL></DL><P>
+<A NAME="GetShapes">
+<A NAME ="DOC.113.59">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  GetShapes(<!1><A HREF="Subject.html">Subject</A> *subject, <!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *shapes)</B></TT>
+<DD> put in shapes all shapes from all views having given subject.
+<DL></DL><P>
+<A NAME="Cut">
+<A NAME ="DOC.113.60">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Cut()</B></TT>
+<DD> Cut subjects/shapes cmd from current view to buffer.
+<DL></DL><P>
+<A NAME="Copy">
+<A NAME ="DOC.113.61">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Copy()</B></TT>
+<DD> Copy subjects/shapes cmd from current view to buffer.
+<DL></DL><P>
+<A NAME="Paste">
+<A NAME ="DOC.113.62">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Paste()</B></TT>
+<DD> Paste from buffer to current view and graph.
+<DL></DL><P>
+<A NAME="Duplicate">
+<A NAME ="DOC.113.63">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Duplicate()</B></TT>
+<DD> Node shapes in selection are duplicated, pasted in current view.
+<DL></DL><P>
+<A NAME="AlignNodeShapes">
+<A NAME ="DOC.113.64">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  AlignNodeShapes()</B></TT>
+<DD> Align selection in current view according to given align type.
+<DL></DL><P>
+<A NAME="AlignNodes">
+<A NAME ="DOC.113.65">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  AlignNodes(<!2><A HREF="NodeAlign.html#DOC.238.1">NodeAlign::Type</A> alignment)</B></TT>
+<DD> Align selection in current view according to given align type.
+<DL></DL><P>
+<A NAME="UpdateCurve">
+<A NAME ="DOC.113.66">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateCurve()</B></TT>
+<DD> Convert selected curves from/to selected segmented lines.
+<DL></DL><P>
+<A NAME="UpdateTextUnderline">
+<A NAME ="DOC.113.67">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateTextUnderline()</B></TT>
+<DD> Set/Unset the text underlining of the names of the selected shapes.
+<DL></DL><P>
+<A NAME="FindAll">
+<A NAME ="DOC.113.68">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  FindAll(const <!1><A HREF="string.html">string</A> *s, bool sens, bool substr, bool nameOnly)</B></TT>
+<DD> select all shapes having string s (sens case sensitive).
+<DL></DL><P>
+<A NAME="FindNext">
+<A NAME ="DOC.113.69">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  FindNext(const <!1><A HREF="string.html">string</A> *s, bool sens, bool substr, bool nameOnly)</B></TT>
+<DD> select next shape having string s, and set cursor before it.
+<DL></DL><P>
+<A NAME="ReplaceNext">
+<A NAME ="DOC.113.70">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  ReplaceNext(const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool sens, bool substr, bool nameOnly)</B></TT>
+<DD> replace string in next shape in current view.
+<DL></DL><P>
+<A NAME="ReplaceAll">
+<A NAME ="DOC.113.71">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  ReplaceAll(const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool sens, bool substr, bool nameOnly)</B></TT>
+<DD> replace all strings in current view.
+<DL></DL><P>
+<A NAME="Annotate">
+<A NAME ="DOC.113.72">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Annotate()</B></TT>
+<DD> edit annotation of first selected subject in current view.
+<DL></DL><P>
+<A NAME="DeleteShapes">
+<A NAME ="DOC.113.73">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  DeleteShapes()</B></TT>
+<DD> Delete shapes (and event. subjects) from selection.
+<DL></DL><P>
+<A NAME="DeleteAll">
+<A NAME ="DOC.113.74">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  DeleteAll()</B></TT>
+<DD> All shapes (and subjects) are deleted from current view.
+<DL></DL><P>
+<A NAME="SameSize">
+<A NAME ="DOC.113.75">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SameSize()</B></TT>
+<DD> makes the size of selection shapes equal to size of the first.
+<DL></DL><P>
+<A NAME="MoveAllShapes">
+<A NAME ="DOC.113.76">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  MoveAllShapes(<!2><A HREF="Document.html#DOC.118.42">Document::MoveType</A> t)</B></TT>
+<DD> move all shapes in current view according to move type.
+<DL></DL><P>
+<A NAME="SelectAll">
+<A NAME ="DOC.113.77">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SelectAll()</B></TT>
+<DD> select all shapes in the current view.
+<DL></DL><P>
+<A NAME="UpdateTextAlignmentSelection">
+<A NAME ="DOC.113.78">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateTextAlignmentSelection(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)</B></TT>
+<DD> update text alignment of selection in current view.
+<DL></DL><P>
+<A NAME="UpdateText">
+<A NAME ="DOC.113.79">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateText(<!1><A HREF="TextShape.html">TextShape</A> *t, const <!1><A HREF="string.html">string</A> *newtext, const <!1><A HREF="string.html">string</A> *oldtext)</B></TT>
+<DD> update text of textshape.
+<DL></DL><P>
+<A NAME="UpdateLineWidthSelection">
+<A NAME ="DOC.113.80">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLineWidthSelection(unsigned i)</B></TT>
+<DD> update line width of selected shapes.
+<DL></DL><P>
+<A NAME="UpdateLineStyleSelection">
+<A NAME ="DOC.113.81">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLineStyleSelection(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> s)</B></TT>
+<DD> update line style of selected shapes.
+<DL></DL><P>
+<A NAME="UpdateFontSelection">
+<A NAME ="DOC.113.82">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateFontSelection(int family, int style, int size)</B></TT>
+<DD> update the fonts of selected shapes.
+<DL></DL><P>
+<A NAME="UpdateLineColorSelection">
+<A NAME ="DOC.113.83">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLineColorSelection(const <!1><A HREF="string.html">string</A> *color)</B></TT>
+<DD> update the colors of the lines of the selected shapes.
+<DL></DL><P>
+<A NAME="UpdateTextColorSelection">
+<A NAME ="DOC.113.84">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateTextColorSelection(const <!1><A HREF="string.html">string</A> *color)</B></TT>
+<DD> update the colors of the texts of the selected shapes.
+<DL></DL><P>
+<A NAME="UpdateFillColorSelection">
+<A NAME ="DOC.113.85">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateFillColorSelection(const <!1><A HREF="string.html">string</A> *color, <!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A> f)</B></TT>
+<DD> update the fill colors of the selected shapes.
+<DL></DL><P>
+<A NAME="CalcSizeElements">
+<A NAME ="DOC.113.86">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CalcSizeElements(<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)</B></TT>
+<DD> calculate size of shapes in current view.
+<DL></DL><P>
+<A NAME="CalcSizeSelection">
+<A NAME ="DOC.113.87">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CalcSizeSelection(<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)</B></TT>
+<DD> calc size of selection in current view.
+<DL></DL><P>
+<A NAME="CalcSizeShapes">
+<A NAME ="DOC.113.88">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CalcSizeShapes(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *shapes, <!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)</B></TT>
+<DD> calculate covered area of shapes in grafport.
+<DL></DL><P>
+<A NAME="ShapePositionUpdate">
+<A NAME ="DOC.113.89">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShapePositionUpdate(<!1><A HREF="GShape.html">GShape</A> *shape)</B></TT>
+<DD> for each line connecting shape, position is propagated.
+<DL></DL><P>
+<A NAME="UpdateDuplicationMarks">
+<A NAME ="DOC.113.90">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateDuplicationMarks(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *s)</B></TT>
+<DD> Update the duplication marks of shapes of given subjects.
+<DL></DL><P>
+<A NAME="UpdateDuplicationMarks">
+<A NAME ="DOC.113.91">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateDuplicationMarks(<!1><A HREF="Subject.html">Subject</A> *s)</B></TT>
+<DD> Update the duplication marks of shapes of given subject.
+<DL></DL><P>
+<A NAME="UpdateMoveShapes">
+<A NAME ="DOC.113.92">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateMoveShapes(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *shapes, const <!1><A HREF="Point.html">Point</A> *delta)</B></TT>
+<DD> shapes are moved delta and result is propagated to drawing area.
+<DL></DL><P>
+<A NAME="MoveShapes">
+<A NAME ="DOC.113.93">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  MoveShapes(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *shapes, const <!1><A HREF="Point.html">Point</A> *delta)</B></TT>
+<DD> all shapes are moved delta (result not propagated).
+<DL></DL><P>
+<A NAME="UpdateNodeShapeType">
+<A NAME ="DOC.113.94">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateNodeShapeType(int)</B></TT>
+<DD> convert selected node shapes to given code 
+<DL></DL><P>
+<A NAME="ConvertNodeShapes">
+<A NAME ="DOC.113.95">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ConvertNodeShapes()</B></TT>
+<DD> convert selected node shapes.
+<DL></DL><P>
+<A NAME="DeleteSubjects">
+<A NAME ="DOC.113.96">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  DeleteSubjects()</B></TT>
+<DL></DL><P>
+<A NAME="SetIndexes">
+<A NAME ="DOC.113.97">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetIndexes(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="Reindex">
+<A NAME ="DOC.113.98">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Reindex(<!1><A HREF="List.html">List</A><<!1><A HREF="Node.html">Node</A> *> *nodes)</B></TT>
+<DL></DL><P>
+<A NAME="ZoomIn">
+<A NAME ="DOC.113.99">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  ZoomIn()</B></TT>
+<DL></DL><P>
+<A NAME="ZoomOut">
+<A NAME ="DOC.113.100">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ZoomOut()</B></TT>
+<DL></DL><P>
+<A NAME="TopLevel">
+<A NAME ="DOC.113.101">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  TopLevel()</B></TT>
+<DL></DL><P>
+<A NAME="GetLineEndDialog">
+<A NAME ="DOC.113.102">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="LineEndDialog.html">LineEndDialog</A>*  GetLineEndDialog()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineEnd">
+<A NAME ="DOC.113.103">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLineEnd()</B></TT>
+<DL></DL><P>
+<A NAME="ShowDefaultLineEnd">
+<A NAME ="DOC.113.104">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDefaultLineEnd()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineEndSelection">
+<A NAME ="DOC.113.105">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLineEndSelection(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> e1, <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> e2)</B></TT>
+<DL></DL><P>
+<A NAME="GetNodeAlignmentDialog">
+<A NAME ="DOC.113.106">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="NodeAlignmentDialog.html">NodeAlignmentDialog</A>*  GetNodeAlignmentDialog()</B></TT>
+<DL></DL><P>
+<A NAME="ShowDefaultNodeAlignment">
+<A NAME ="DOC.113.107">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDefaultNodeAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="GetNodeShapeDialog">
+<A NAME ="DOC.113.108">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="NodeShapeDialog.html">NodeShapeDialog</A>*  GetNodeShapeDialog()</B></TT>
+<DL></DL><P>
+<A NAME="ShowDefaultNodeShape">
+<A NAME ="DOC.113.109">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDefaultNodeShape()</B></TT>
+<DL></DL><P>
+<A NAME="GetViews">
+<A NAME ="DOC.113.110">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="ShapeView.html">ShapeView</A> *> *  GetViews() const </B></TT>
+<DL></DL><P>
+<A NAME="EmptySelectionMessage">
+<A NAME ="DOC.113.111">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  EmptySelectionMessage()</B></TT>
+<DD> error message because of empty selection.
+<DL></DL><P>
+<A NAME="EmptyShapesMessage">
+<A NAME ="DOC.113.112">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  EmptyShapesMessage()</B></TT>
+<DD> error message because there are no shapes.
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="TRViewer.html"> TRViewer </A><br>
+<A HREF="STViewer.html"> STViewer </A><br>
+<A HREF="SNViewer.html"> SNViewer </A><br>
+<A HREF="RPViewer.html"> RPViewer </A><br>
+<A HREF="PSViewer.html"> PSViewer </A><br>
+<A HREF="GDViewer.html"> GDViewer </A><br>
+<A HREF="ERViewer.html"> ERViewer </A><br>
+<A HREF="DFViewer.html"> DFViewer </A><br>
+<A HREF="CPViewer.html"> CPViewer </A><br>
+<A HREF="ATViewer.html"> ATViewer </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

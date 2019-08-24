@@ -1,0 +1,387 @@
+<html><head><TITLE>TextViewDialog</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  TextViewDialog : public <!2><A HREF="Dialog.html#DOC.115.1">Dialog</A> </H2><BLOCKQUOTE>
+ manages text editor dialogs.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=185>
+<param name=classes value="CComponent,MComponent.html,CMWidget,MMWidget.html,CDialog,MDialog.html,CTextViewDialog,MTextViewDialog.html,CTextEditDialog,MTextEditDialog.html,CMessageLogDialog,MMessageLogDialog.html">
+<param name=before value="M,M,M,M,M|_,Mr_">
+<param name=after value="Md_SPSP,Md_SP,Md_,M,M,M">
+<param name=indent value="0,1,2,3,3,3">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.384.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>TextViewDialog</B> (Widget <!2><A HREF="Dialog.html#DOC.115.36">parent</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~TextViewDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.3"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>GetClassName</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Popup</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTextSize</B> (int nrOfRows, int nrOfColumns)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTextRows</B> (int nrOfRows)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTextColumns</B> (int nrOfColumns)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTextMaxSize</B> (int nrOfRows, int nrOfColumns)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTextString</B> (const <!1><A HREF="string.html">string</A> *text)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>GetTextString</B> (<!1><A HREF="string.html">string</A> *t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetStatus</B> (const char *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetStatus</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDirectory</B> (const char *d)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDirectory</B> (const <!1><A HREF="string.html">string</A> *d)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Save</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Print</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.17"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>SaveFile</B> (const char *file)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.18"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>SaveFile</B> (const <!1><A HREF="string.html">string</A> *file)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.19"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>LoadFile</B> (const char *file)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.20"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>LoadFile</B> (const <!1><A HREF="string.html">string</A> *file)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.21"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DeleteAll</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.22"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Cut</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.23"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Copy</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.24"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Paste</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.25"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ClearSelection</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.26"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Find</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.27"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ClearFind</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.28"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DoFind</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.29"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="FileSelectionDialog.html">FileSelectionDialog</A>* </TD><TD><B>GetFileSelectionDialog</B> ()<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.384.45"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>fileItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.46"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>editItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.47"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>searchItems</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.384.30"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Configure</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.31"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CreateWidget</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.32"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>GetTextWidget</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.33"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="ReplaceDialog.html">ReplaceDialog</A>* </TD><TD><B>GetReplaceDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.34"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetReplaceDialog</B> (<!1><A HREF="ReplaceDialog.html">ReplaceDialog</A> *r)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.35"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>InitMenuItems</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.36"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>PrintCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.37"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SaveAsCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.38"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SaveOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.39"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>CopyCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.40"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>FindCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.41"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>FindNextCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.42"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>FindAllCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.43"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ClearSelectionCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.384.44"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ClearFindCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Dialog.html">Dialog:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  unsigned  <B>MAXTITLE</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>Initialize</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetOKCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetCancelCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetHelpCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> void  <B>SetOKButtonLabel</B>(const char *txt)
+<DT><IMG SRC=icon2.gif> void  <B>SetCancelButtonLabel</B>(const char *txt)
+<DT><IMG SRC=icon2.gif> void  <B>SetHelpButtonLabel</B>(const char *txt)
+<DT><IMG SRC=icon2.gif> void  <B>ManageOKButton</B>(bool)
+<DT><IMG SRC=icon2.gif> void  <B>ManageCancelButton</B>(bool)
+<DT><IMG SRC=icon2.gif> void  <B>ManageHelpButton</B>(bool)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetAutoDestroy</B>(bool b)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Popdown</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetTitle</B>(const char *title)
+<DT><IMG SRC=icon2.gif> void  <B>SetTitle</B>(const <!1><A HREF="string.html">string</A> *title)
+<DT><IMG SRC=icon2.gif> void  <B>GetTitle</B>(char *title)
+<DT><IMG SRC=icon2.gif> void  <B>GetTitle</B>(<!1><A HREF="string.html">string</A> *title)
+<DT><IMG SRC=icon2.gif> void  <B>SetModal</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>SetAutoUnmanage</B>(bool b)
+<DT><IMG SRC=icon2.gif> bool  <B>GetAutoUnmanage</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetCenteredOnPointer</B>(bool b)
+<DT><IMG SRC=icon2.gif> static  void  <B>UnmanageCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> static  void  <B>DestroyCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> static  void  <B>DestroyWidgetCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> static  void  <B>TraverseNextCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> static  void  <B>TraverseNextGroupCB</B>(Widget, XtPointer, XtPointer)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> Widget  <B>GetParent</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ManageWidget</B>(Widget, bool)
+<DT><IMG SRC=icon2.gif> void  <B>ManageCenteredOnPointer</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "MWidget.html"> MWidget:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>Manage</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>IsRealized</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetColormap</B>(Colormap cmap)
+<DT><IMG SRC=icon2.gif> void  <B>SetDestroyCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> void  <B>AddLiteClue</B>(Widget w, const char *text)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> Widget  <B>GetLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CreateLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>InstallDestroyHandler</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Component.html"> Component:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsManaged</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Unmanage</B>()
+<DT><IMG SRC=icon2.gif> Widget  <B>GetWidget</B>()
+<DT><IMG SRC=icon2.gif> Display*  <B>GetDisplay</B>()
+<DT><IMG SRC=icon2.gif> Window  <B>GetWindow</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetWidget</B>(Widget w)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const char *s)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ manages text editor dialogs.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="TextViewDialog">
+<A NAME ="DOC.384.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  TextViewDialog(Widget <!2><A HREF="Dialog.html#DOC.115.36">parent</A>)</B></TT>
+<DL></DL><P>
+<A NAME="~TextViewDialog">
+<A NAME ="DOC.384.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~TextViewDialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetClassName">
+<A NAME ="DOC.384.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  GetClassName()</B></TT>
+<DL></DL><P>
+<A NAME="Popup">
+<A NAME ="DOC.384.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Popup()</B></TT>
+<DL></DL><P>
+<A NAME="SetTextSize">
+<A NAME ="DOC.384.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTextSize(int nrOfRows, int nrOfColumns)</B></TT>
+<DL></DL><P>
+<A NAME="SetTextRows">
+<A NAME ="DOC.384.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTextRows(int nrOfRows)</B></TT>
+<DL></DL><P>
+<A NAME="SetTextColumns">
+<A NAME ="DOC.384.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTextColumns(int nrOfColumns)</B></TT>
+<DL></DL><P>
+<A NAME="SetTextMaxSize">
+<A NAME ="DOC.384.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTextMaxSize(int nrOfRows, int nrOfColumns)</B></TT>
+<DL></DL><P>
+<A NAME="SetTextString">
+<A NAME ="DOC.384.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTextString(const <!1><A HREF="string.html">string</A> *text)</B></TT>
+<DL></DL><P>
+<A NAME="GetTextString">
+<A NAME ="DOC.384.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  GetTextString(<!1><A HREF="string.html">string</A> *t)</B></TT>
+<DL></DL><P>
+<A NAME="SetStatus">
+<A NAME ="DOC.384.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetStatus(const char *s)</B></TT>
+<DL></DL><P>
+<A NAME="SetStatus">
+<A NAME ="DOC.384.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetStatus(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="SetDirectory">
+<A NAME ="DOC.384.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDirectory(const char *d)</B></TT>
+<DL></DL><P>
+<A NAME="SetDirectory">
+<A NAME ="DOC.384.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDirectory(const <!1><A HREF="string.html">string</A> *d)</B></TT>
+<DL></DL><P>
+<A NAME="Save">
+<A NAME ="DOC.384.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Save()</B></TT>
+<DL></DL><P>
+<A NAME="Print">
+<A NAME ="DOC.384.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Print()</B></TT>
+<DL></DL><P>
+<A NAME="SaveFile">
+<A NAME ="DOC.384.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  SaveFile(const char *file)</B></TT>
+<DL></DL><P>
+<A NAME="SaveFile">
+<A NAME ="DOC.384.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  SaveFile(const <!1><A HREF="string.html">string</A> *file)</B></TT>
+<DL></DL><P>
+<A NAME="LoadFile">
+<A NAME ="DOC.384.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  LoadFile(const char *file)</B></TT>
+<DL></DL><P>
+<A NAME="LoadFile">
+<A NAME ="DOC.384.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  LoadFile(const <!1><A HREF="string.html">string</A> *file)</B></TT>
+<DL></DL><P>
+<A NAME="DeleteAll">
+<A NAME ="DOC.384.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DeleteAll()</B></TT>
+<DL></DL><P>
+<A NAME="Cut">
+<A NAME ="DOC.384.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Cut()</B></TT>
+<DL></DL><P>
+<A NAME="Copy">
+<A NAME ="DOC.384.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Copy()</B></TT>
+<DL></DL><P>
+<A NAME="Paste">
+<A NAME ="DOC.384.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Paste()</B></TT>
+<DL></DL><P>
+<A NAME="ClearSelection">
+<A NAME ="DOC.384.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ClearSelection()</B></TT>
+<DL></DL><P>
+<A NAME="Find">
+<A NAME ="DOC.384.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Find()</B></TT>
+<DL></DL><P>
+<A NAME="ClearFind">
+<A NAME ="DOC.384.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ClearFind()</B></TT>
+<DL></DL><P>
+<A NAME="DoFind">
+<A NAME ="DOC.384.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DoFind(int n)</B></TT>
+<DL></DL><P>
+<A NAME="GetFileSelectionDialog">
+<A NAME ="DOC.384.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="FileSelectionDialog.html">FileSelectionDialog</A>*  GetFileSelectionDialog()</B></TT>
+<DL></DL><P>
+<A NAME="Configure">
+<A NAME ="DOC.384.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Configure()</B></TT>
+<DL></DL><P>
+<A NAME="CreateWidget">
+<A NAME ="DOC.384.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CreateWidget()</B></TT>
+<DL></DL><P>
+<A NAME="GetTextWidget">
+<A NAME ="DOC.384.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  GetTextWidget()</B></TT>
+<DL></DL><P>
+<A NAME="GetReplaceDialog">
+<A NAME ="DOC.384.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="ReplaceDialog.html">ReplaceDialog</A>*  GetReplaceDialog()</B></TT>
+<DL></DL><P>
+<A NAME="SetReplaceDialog">
+<A NAME ="DOC.384.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetReplaceDialog(<!1><A HREF="ReplaceDialog.html">ReplaceDialog</A> *r)</B></TT>
+<DL></DL><P>
+<A NAME="InitMenuItems">
+<A NAME ="DOC.384.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  InitMenuItems()</B></TT>
+<DL></DL><P>
+<A NAME="PrintCB">
+<A NAME ="DOC.384.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  PrintCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SaveAsCB">
+<A NAME ="DOC.384.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SaveAsCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SaveOKCB">
+<A NAME ="DOC.384.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SaveOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="CopyCB">
+<A NAME ="DOC.384.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  CopyCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="FindCB">
+<A NAME ="DOC.384.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  FindCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="FindNextCB">
+<A NAME ="DOC.384.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  FindNextCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="FindAllCB">
+<A NAME ="DOC.384.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  FindAllCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="ClearSelectionCB">
+<A NAME ="DOC.384.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ClearSelectionCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="ClearFindCB">
+<A NAME ="DOC.384.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ClearFindCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="fileItems">
+<A NAME ="DOC.384.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  fileItems</B></TT>
+<DL></DL><P>
+<A NAME="editItems">
+<A NAME ="DOC.384.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  editItems</B></TT>
+<DL></DL><P>
+<A NAME="searchItems">
+<A NAME ="DOC.384.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  searchItems</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="TextEditDialog.html"> TextEditDialog </A><br>
+<A HREF="MessageLogDialog.html"> MessageLogDialog </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

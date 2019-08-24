@@ -1,0 +1,29 @@
+# Configuration file for IRIX 6.x and gcc compiler
+#
+# Here gcc (and family) is installed in /usr/gnu.
+
+include $(TCM_HOME)/src/Config.GEN
+
+CC              = /usr/gnu/bin/g++
+Cc              = /usr/gnu/bin/gcc
+ 
+LEX             = /sbin/lex
+YACC            = /sbin/yacc 
+RANLIB		= true
+AR		= /usr/gnu/bin/ar cr
+
+CFLAGS          = -Wall -pedantic -O2 -funroll-loops
+
+# MOTIF_INCLUDE	= /usr/include/abi
+MOTIF_INCLUDE	= /usr/include/Xm
+
+MKDEPEND        = /usr/bin/X11/makedepend
+
+MKDEPENDFLAGS   = $(CPPFLAGS) -I/usr/gnu/lib/g++-include
+
+XWIN_INCLUDE	= /usr/include/X11
+
+SYSFLAGS        = -DIRIX -D__EXTENSIONS__ 
+# -DDEBUG
+# -DDUMPWIDGETTREE
+# -DLESSTIF

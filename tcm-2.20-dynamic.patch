@@ -1,0 +1,19 @@
+--- src/Config.tmpl_linux	Tue May 28 10:31:46 2002
++++ src/Config.tmpl_linux.dynamic	Fri Jan 17 16:04:12 2003
+@@ -50,12 +50,12 @@
+ # LDLIBS = $(MOTIF_LIB)/libXm.a $(XWIN_LIB)/libXp.a
+ 
+ # OpenMotif 2.1 (dynamic linked)
+-# MOTIF_HOME = $(XWIN_HOME)
+-# LDLIBS = -lXm -lXp
++MOTIF_HOME = $(XWIN_HOME)
++LDLIBS = -lXm -lXp
+ 
+ # OpenMotif 2.1 (static linked)
+-MOTIF_HOME  = $(XWIN_HOME)
+-LDLIBS = $(MOTIF_LIB)/libXm.a -lXp
++# MOTIF_HOME  = $(XWIN_HOME)
++# LDLIBS = $(MOTIF_LIB)/libXm.a -lXp
+ 
+ 
+ # The other libraries (don't change these)

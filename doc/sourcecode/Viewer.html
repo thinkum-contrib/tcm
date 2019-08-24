@@ -1,0 +1,794 @@
+<html><head><TITLE>Viewer</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Viewer  </H2><BLOCKQUOTE>
+ (abstract) viewer class, responsible for the contents of the drawing area.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CViewer,MViewer.html,CTableViewer,MTableViewer.html,CDiagramViewer,MDiagramViewer.html">
+<param name=before value="M,M|_,Mr_">
+<param name=after value="M,M,M">
+<param name=indent value="0,0,0">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.444.115"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MIN_LINE_WIDTH</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.116"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MAX_LINE_WIDTH</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.444.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Viewer</B> (<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="DrawWindow.html">DrawWindow</A> *d)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Viewer</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.3"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Initialize</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.4"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Scaler.html">Scaler</A>* </TD><TD><B>GetScaler</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.5"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Command.html">Command</A>* </TD><TD><B>GetLastCmd</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.6"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="DrawWindow.html">DrawWindow</A>* </TD><TD><B>GetMainWindow</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.7"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Grafport.html">Grafport</A>* </TD><TD><B>GetGrafport</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.8"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Printer.html">Printer</A>* </TD><TD><B>GetPrinter</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPrinter</B> (<!1><A HREF="Printer.html">Printer</A> *p)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.10"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetGrafport</B> (<!1><A HREF="Grafport.html">Grafport</A> *g)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.11"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>* </TD><TD><B>GetLineWidthDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.12"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>* </TD><TD><B>GetLineStyleDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.13"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>* </TD><TD><B>GetTextAlignmentDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.14"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="FontChooserDialog.html">FontChooserDialog</A>* </TD><TD><B>GetFontChooserDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.15"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="FileSelectionDialog.html">FileSelectionDialog</A>* </TD><TD><B>GetPrintFileSelectionDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.16"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="ColorChooserDialog.html">ColorChooserDialog</A>* </TD><TD><B>GetColorChooserDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.17"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>Scale</B> (int x) const <br>
+<I> forwarding to scaler object.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.18"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Point.html">Point</A> </TD><TD><B>Scale</B> (const <!1><A HREF="Point.html">Point</A> *p) const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.19"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>ScaleCorrect</B> (int x) const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.20"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Point.html">Point</A> </TD><TD><B>ScaleCorrect</B> (const <!1><A HREF="Point.html">Point</A> *p) const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.21"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Draw</B> ()<br>
+<I> Draw all elements of the viewer in grafport.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.22"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Undraw</B> ()<br>
+<I> Erase all elements from grafport.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.23"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Undo</B> ()<br>
+<I> Undo last command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.24"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Redo</B> ()<br>
+<I> Redo last command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.25"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Refresh</B> ()<br>
+<I> Clear grafport contents, and redraw all viewer elements.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.26"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Redraw</B> ()<br>
+<I> redraw contents of grafport.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.27"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>DeselectAll</B> ()<br>
+<I> deselect all elements in viewer;</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.28"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Select</B> (int x, int y)<br>
+<I> Perform the function of the 1st button function of the mouse </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.29"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Adjust</B> (int x, int y)<br>
+<I> Perform the function of the 2nd button function of the mouse.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.30"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Activate</B> ()<br>
+<I> show that viewer is active.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.31"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Deactivate</B> ()<br>
+<I> show that viewer is not active.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.32"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>TextModeOff</B> ()<br>
+<I> stop being in editing mode.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.33"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultLineWidth</B> (unsigned d)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.34"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetDefaultLineWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.35"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLineWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.36"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DefaultLineWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.37"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDefaultLineWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.38"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowConfigLineWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.39"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateLineWidthSelection</B> (unsigned i)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.40"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultLineStyle</B> (<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> l)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.41"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> </TD><TD><B>GetDefaultLineStyle</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.42"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLineStyle</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.43"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DefaultLineStyle</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.44"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDefaultLineStyle</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.45"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowConfigLineStyle</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.46"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateLineStyleSelection</B> (<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.47"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultLineColor</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.48"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetDefaultLineColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.49"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultTextColor</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.50"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetDefaultTextColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.51"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultFillColor</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.52"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetDefaultFillColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.53"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A> </TD><TD><B>GetDefaultFillStyle</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.54"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultFillStyle</B> (<!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A> l)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.55"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateLineColorSelection</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.56"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateTextColorSelection</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.57"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateFillColorSelection</B> ( const <!1><A HREF="string.html">string</A> *s, <!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A> f)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.58"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLineColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.59"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DefaultLineColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.60"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDefaultLineColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.61"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowConfigLineColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.62"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateTextColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.63"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DefaultTextColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.64"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDefaultTextColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.65"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowConfigTextColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.66"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateFillColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.67"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DefaultFillColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.68"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDefaultFillColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.69"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowConfigFillColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.70"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="XFont.html">XFont</A>* </TD><TD><B>GetDefaultFont</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.71"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultFontAttributes</B> (int f, int s, int p)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.72"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetDefaultFont</B> (<!1><A HREF="XFont.html">XFont</A> *ft)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.73"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateFont</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.74"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DefaultFont</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.75"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDefaultFont</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.76"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowConfigFont</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.77"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateFontSelection</B> (int family, int style, int size)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.78"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="XFont.html">XFont</A>* </TD><TD><B>GetFont</B> (int family, int style, int size)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.79"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="XFont.html">XFont</A>* </TD><TD><B>GetFont</B> (const char *description)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.80"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateTextAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.81"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DefaultTextAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.82"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDefaultTextAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.83"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowConfigTextAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.84"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> </TD><TD><B>GetDefaultTextAlignment</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.85"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultTextAlignment</B> (<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.86"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateTextAlignmentSelection</B> (<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.87"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>EditText</B> (int key)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.88"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsAutoResize</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.89"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetAutoResize</B> (bool s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.90"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsInlineEdit</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.91"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetInlineEdit</B> (bool s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.92"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsPasting</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.93"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPasting</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.94"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsZigZag</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.95"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetZigZag</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.96"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsEditing</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.97"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>MovingPointer</B> (int x, int y)<br>
+<I> change cursor to show which command can be performed.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.98"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DoubleClick</B> ()<br>
+<I> not yet implemented (double clicked button).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.99"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DoFunctionKey</B> (int)<br>
+<I> not yet implemented (function keys). </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.100"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>NewCommand</B> (<!1><A HREF="Command.html">Command</A> *newCmd)<br>
+<I> enable execution of last command as newCmd.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.101"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AbortCommand</B> ()<br>
+<I> abort execution of last command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.102"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ExecuteCommand</B> ()<br>
+<I> execute last command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.103"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UndoCommand</B> ()<br>
+<I> undo execution of last command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.104"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>RedoCommand</B> ()<br>
+<I> redo execution of last command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.105"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DeleteCommands</B> ()<br>
+<I> delete command history, make undo impossible.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.106"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!1><A HREF="Command.html">Command</A>* </TD><TD><B>Drag</B> (int x, int y)<br>
+<I> Perform the function of 1st button drag.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.107"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!1><A HREF="Command.html">Command</A>* </TD><TD><B>Connect</B> (int x, int y)<br>
+<I> Perform the function of 2nd button drag.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.108"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>KeyTyped</B> (int x, int y, int c)<br>
+<I> Perform the function of keypress 'c'.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.109"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>CalcSizeElements</B> (<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)<br>
+<I> calculate covered area of elements in grafport.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.110"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>CalcSizeSelection</B> (<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)<br>
+<I> calculate covered area of selected elements in grafport.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.111"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>GetPageSize</B> (double &width, double &height)<br>
+<I> return page size (pixels).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.112"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Save</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f)<br>
+<I> Save view attributes to file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.113"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Load</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, double format)<br>
+<I> Load view attributes from file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.114"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Check</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, double format)<br>
+<I> Check but not load view attributes from file.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.444.117"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ClearGrafport</B> ()<br>
+<I> Clear contents of grafport.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.118"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="InlineEditor.html">InlineEditor</A>* </TD><TD><B>GetInlineEditor</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.119"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetInlineEditor</B> (<!1><A HREF="InlineEditor.html">InlineEditor</A> *i)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.444.120"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetEditing</B> (bool b)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ (abstract) viewer class, responsible for the contents of the drawing area.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Viewer">
+<A NAME ="DOC.444.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Viewer(<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="DrawWindow.html">DrawWindow</A> *d)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="~Viewer">
+<A NAME ="DOC.444.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Viewer()</B></TT>
+<DL></DL><P>
+<A NAME="Initialize">
+<A NAME ="DOC.444.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Initialize()</B></TT>
+<DL></DL><P>
+<A NAME="GetScaler">
+<A NAME ="DOC.444.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Scaler.html">Scaler</A>*  GetScaler() const </B></TT>
+<DL></DL><P>
+<A NAME="GetLastCmd">
+<A NAME ="DOC.444.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Command.html">Command</A>*  GetLastCmd()</B></TT>
+<DL></DL><P>
+<A NAME="GetMainWindow">
+<A NAME ="DOC.444.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="DrawWindow.html">DrawWindow</A>*  GetMainWindow() const </B></TT>
+<DL></DL><P>
+<A NAME="GetGrafport">
+<A NAME ="DOC.444.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Grafport.html">Grafport</A>*  GetGrafport() const </B></TT>
+<DL></DL><P>
+<A NAME="GetPrinter">
+<A NAME ="DOC.444.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Printer.html">Printer</A>*  GetPrinter() const </B></TT>
+<DL></DL><P>
+<A NAME="SetPrinter">
+<A NAME ="DOC.444.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPrinter(<!1><A HREF="Printer.html">Printer</A> *p)</B></TT>
+<DL></DL><P>
+<A NAME="SetGrafport">
+<A NAME ="DOC.444.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetGrafport(<!1><A HREF="Grafport.html">Grafport</A> *g)</B></TT>
+<DL></DL><P>
+<A NAME="GetLineWidthDialog">
+<A NAME ="DOC.444.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>*  GetLineWidthDialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetLineStyleDialog">
+<A NAME ="DOC.444.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>*  GetLineStyleDialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetTextAlignmentDialog">
+<A NAME ="DOC.444.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>*  GetTextAlignmentDialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetFontChooserDialog">
+<A NAME ="DOC.444.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="FontChooserDialog.html">FontChooserDialog</A>*  GetFontChooserDialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetPrintFileSelectionDialog">
+<A NAME ="DOC.444.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="FileSelectionDialog.html">FileSelectionDialog</A>*  GetPrintFileSelectionDialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetColorChooserDialog">
+<A NAME ="DOC.444.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="ColorChooserDialog.html">ColorChooserDialog</A>*  GetColorChooserDialog()</B></TT>
+<DL></DL><P>
+<A NAME="Scale">
+<A NAME ="DOC.444.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  Scale(int x) const </B></TT>
+<DD> forwarding to scaler object.
+<DL></DL><P>
+<A NAME="Scale">
+<A NAME ="DOC.444.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Point.html">Point</A>  Scale(const <!1><A HREF="Point.html">Point</A> *p) const </B></TT>
+<DL></DL><P>
+<A NAME="ScaleCorrect">
+<A NAME ="DOC.444.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  ScaleCorrect(int x) const </B></TT>
+<DL></DL><P>
+<A NAME="ScaleCorrect">
+<A NAME ="DOC.444.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Point.html">Point</A>  ScaleCorrect(const <!1><A HREF="Point.html">Point</A> *p) const </B></TT>
+<DL></DL><P>
+<A NAME="Draw">
+<A NAME ="DOC.444.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Draw()</B></TT>
+<DD> Draw all elements of the viewer in grafport.
+<DL></DL><P>
+<A NAME="Undraw">
+<A NAME ="DOC.444.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Undraw()</B></TT>
+<DD> Erase all elements from grafport.
+<DL></DL><P>
+<A NAME="Undo">
+<A NAME ="DOC.444.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Undo()</B></TT>
+<DD> Undo last command.
+<DL></DL><P>
+<A NAME="Redo">
+<A NAME ="DOC.444.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Redo()</B></TT>
+<DD> Redo last command.
+<DL></DL><P>
+<A NAME="Refresh">
+<A NAME ="DOC.444.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Refresh()</B></TT>
+<DD> Clear grafport contents, and redraw all viewer elements.
+<DL></DL><P>
+<A NAME="Redraw">
+<A NAME ="DOC.444.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Redraw()</B></TT>
+<DD> redraw contents of grafport.
+<DL></DL><P>
+<A NAME="DeselectAll">
+<A NAME ="DOC.444.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  DeselectAll()</B></TT>
+<DD> deselect all elements in viewer;
+<DL></DL><P>
+<A NAME="Select">
+<A NAME ="DOC.444.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Select(int x, int y)</B></TT>
+<DD> Perform the function of the 1st button function of the mouse 
+<DL></DL><P>
+<A NAME="Adjust">
+<A NAME ="DOC.444.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Adjust(int x, int y)</B></TT>
+<DD> Perform the function of the 2nd button function of the mouse.
+<DL></DL><P>
+<A NAME="Activate">
+<A NAME ="DOC.444.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Activate()</B></TT>
+<DD> show that viewer is active.
+<DL></DL><P>
+<A NAME="Deactivate">
+<A NAME ="DOC.444.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Deactivate()</B></TT>
+<DD> show that viewer is not active.
+<DL></DL><P>
+<A NAME="TextModeOff">
+<A NAME ="DOC.444.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  TextModeOff()</B></TT>
+<DD> stop being in editing mode.
+<DL></DL><P>
+<A NAME="SetDefaultLineWidth">
+<A NAME ="DOC.444.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultLineWidth(unsigned d)</B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultLineWidth">
+<A NAME ="DOC.444.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetDefaultLineWidth()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineWidth">
+<A NAME ="DOC.444.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLineWidth()</B></TT>
+<DL></DL><P>
+<A NAME="DefaultLineWidth">
+<A NAME ="DOC.444.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DefaultLineWidth()</B></TT>
+<DL></DL><P>
+<A NAME="ShowDefaultLineWidth">
+<A NAME ="DOC.444.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDefaultLineWidth()</B></TT>
+<DL></DL><P>
+<A NAME="ShowConfigLineWidth">
+<A NAME ="DOC.444.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowConfigLineWidth()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineWidthSelection">
+<A NAME ="DOC.444.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateLineWidthSelection(unsigned i)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultLineStyle">
+<A NAME ="DOC.444.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultLineStyle(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> l)</B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultLineStyle">
+<A NAME ="DOC.444.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  GetDefaultLineStyle()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineStyle">
+<A NAME ="DOC.444.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLineStyle()</B></TT>
+<DL></DL><P>
+<A NAME="DefaultLineStyle">
+<A NAME ="DOC.444.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DefaultLineStyle()</B></TT>
+<DL></DL><P>
+<A NAME="ShowDefaultLineStyle">
+<A NAME ="DOC.444.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDefaultLineStyle()</B></TT>
+<DL></DL><P>
+<A NAME="ShowConfigLineStyle">
+<A NAME ="DOC.444.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowConfigLineStyle()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineStyleSelection">
+<A NAME ="DOC.444.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateLineStyleSelection(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> s)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultLineColor">
+<A NAME ="DOC.444.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultLineColor(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultLineColor">
+<A NAME ="DOC.444.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetDefaultLineColor()</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultTextColor">
+<A NAME ="DOC.444.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultTextColor(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultTextColor">
+<A NAME ="DOC.444.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetDefaultTextColor()</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultFillColor">
+<A NAME ="DOC.444.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultFillColor(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultFillColor">
+<A NAME ="DOC.444.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetDefaultFillColor()</B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultFillStyle">
+<A NAME ="DOC.444.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A>  GetDefaultFillStyle() const </B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultFillStyle">
+<A NAME ="DOC.444.54">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultFillStyle(<!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A> l)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineColorSelection">
+<A NAME ="DOC.444.55">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateLineColorSelection(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateTextColorSelection">
+<A NAME ="DOC.444.56">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateTextColorSelection(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateFillColorSelection">
+<A NAME ="DOC.444.57">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateFillColorSelection( const <!1><A HREF="string.html">string</A> *s, <!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A> f)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineColor">
+<A NAME ="DOC.444.58">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLineColor()</B></TT>
+<DL></DL><P>
+<A NAME="DefaultLineColor">
+<A NAME ="DOC.444.59">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DefaultLineColor()</B></TT>
+<DL></DL><P>
+<A NAME="ShowDefaultLineColor">
+<A NAME ="DOC.444.60">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDefaultLineColor()</B></TT>
+<DL></DL><P>
+<A NAME="ShowConfigLineColor">
+<A NAME ="DOC.444.61">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowConfigLineColor()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateTextColor">
+<A NAME ="DOC.444.62">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateTextColor()</B></TT>
+<DL></DL><P>
+<A NAME="DefaultTextColor">
+<A NAME ="DOC.444.63">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DefaultTextColor()</B></TT>
+<DL></DL><P>
+<A NAME="ShowDefaultTextColor">
+<A NAME ="DOC.444.64">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDefaultTextColor()</B></TT>
+<DL></DL><P>
+<A NAME="ShowConfigTextColor">
+<A NAME ="DOC.444.65">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowConfigTextColor()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateFillColor">
+<A NAME ="DOC.444.66">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateFillColor()</B></TT>
+<DL></DL><P>
+<A NAME="DefaultFillColor">
+<A NAME ="DOC.444.67">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DefaultFillColor()</B></TT>
+<DL></DL><P>
+<A NAME="ShowDefaultFillColor">
+<A NAME ="DOC.444.68">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDefaultFillColor()</B></TT>
+<DL></DL><P>
+<A NAME="ShowConfigFillColor">
+<A NAME ="DOC.444.69">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowConfigFillColor()</B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultFont">
+<A NAME ="DOC.444.70">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="XFont.html">XFont</A>*  GetDefaultFont() const </B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultFontAttributes">
+<A NAME ="DOC.444.71">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultFontAttributes(int f, int s, int p)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultFont">
+<A NAME ="DOC.444.72">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetDefaultFont(<!1><A HREF="XFont.html">XFont</A> *ft)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateFont">
+<A NAME ="DOC.444.73">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateFont()</B></TT>
+<DL></DL><P>
+<A NAME="DefaultFont">
+<A NAME ="DOC.444.74">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DefaultFont()</B></TT>
+<DL></DL><P>
+<A NAME="ShowDefaultFont">
+<A NAME ="DOC.444.75">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDefaultFont()</B></TT>
+<DL></DL><P>
+<A NAME="ShowConfigFont">
+<A NAME ="DOC.444.76">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowConfigFont()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateFontSelection">
+<A NAME ="DOC.444.77">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateFontSelection(int family, int style, int size)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetFont">
+<A NAME ="DOC.444.78">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="XFont.html">XFont</A>*  GetFont(int family, int style, int size)</B></TT>
+<DL></DL><P>
+<A NAME="GetFont">
+<A NAME ="DOC.444.79">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="XFont.html">XFont</A>*  GetFont(const char *description)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateTextAlignment">
+<A NAME ="DOC.444.80">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateTextAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="DefaultTextAlignment">
+<A NAME ="DOC.444.81">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DefaultTextAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="ShowDefaultTextAlignment">
+<A NAME ="DOC.444.82">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDefaultTextAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="ShowConfigTextAlignment">
+<A NAME ="DOC.444.83">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowConfigTextAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultTextAlignment">
+<A NAME ="DOC.444.84">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>  GetDefaultTextAlignment() const </B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultTextAlignment">
+<A NAME ="DOC.444.85">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultTextAlignment(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateTextAlignmentSelection">
+<A NAME ="DOC.444.86">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateTextAlignmentSelection(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)</B></TT>
+<DL></DL><P>
+<A NAME="EditText">
+<A NAME ="DOC.444.87">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  EditText(int key)</B></TT>
+<DL></DL><P>
+<A NAME="IsAutoResize">
+<A NAME ="DOC.444.88">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsAutoResize() const </B></TT>
+<DL></DL><P>
+<A NAME="SetAutoResize">
+<A NAME ="DOC.444.89">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetAutoResize(bool s)</B></TT>
+<DL></DL><P>
+<A NAME="IsInlineEdit">
+<A NAME ="DOC.444.90">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsInlineEdit() const </B></TT>
+<DL></DL><P>
+<A NAME="SetInlineEdit">
+<A NAME ="DOC.444.91">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetInlineEdit(bool s)</B></TT>
+<DL></DL><P>
+<A NAME="IsPasting">
+<A NAME ="DOC.444.92">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsPasting() const </B></TT>
+<DL></DL><P>
+<A NAME="SetPasting">
+<A NAME ="DOC.444.93">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPasting(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="IsZigZag">
+<A NAME ="DOC.444.94">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsZigZag() const </B></TT>
+<DL></DL><P>
+<A NAME="SetZigZag">
+<A NAME ="DOC.444.95">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetZigZag(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="IsEditing">
+<A NAME ="DOC.444.96">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsEditing() const </B></TT>
+<DL></DL><P>
+<A NAME="MovingPointer">
+<A NAME ="DOC.444.97">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  MovingPointer(int x, int y)</B></TT>
+<DD> change cursor to show which command can be performed.
+<DL></DL><P>
+<A NAME="DoubleClick">
+<A NAME ="DOC.444.98">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DoubleClick()</B></TT>
+<DD> not yet implemented (double clicked button).
+<DL></DL><P>
+<A NAME="DoFunctionKey">
+<A NAME ="DOC.444.99">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DoFunctionKey(int)</B></TT>
+<DD> not yet implemented (function keys). 
+<DL></DL><P>
+<A NAME="NewCommand">
+<A NAME ="DOC.444.100">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  NewCommand(<!1><A HREF="Command.html">Command</A> *newCmd)</B></TT>
+<DD> enable execution of last command as newCmd.
+<DL></DL><P>
+<A NAME="AbortCommand">
+<A NAME ="DOC.444.101">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AbortCommand()</B></TT>
+<DD> abort execution of last command.
+<DL></DL><P>
+<A NAME="ExecuteCommand">
+<A NAME ="DOC.444.102">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ExecuteCommand()</B></TT>
+<DD> execute last command.
+<DL></DL><P>
+<A NAME="UndoCommand">
+<A NAME ="DOC.444.103">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UndoCommand()</B></TT>
+<DD> undo execution of last command.
+<DL></DL><P>
+<A NAME="RedoCommand">
+<A NAME ="DOC.444.104">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  RedoCommand()</B></TT>
+<DD> redo execution of last command.
+<DL></DL><P>
+<A NAME="DeleteCommands">
+<A NAME ="DOC.444.105">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DeleteCommands()</B></TT>
+<DD> delete command history, make undo impossible.
+<DL></DL><P>
+<A NAME="Drag">
+<A NAME ="DOC.444.106">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!1><A HREF="Command.html">Command</A>*  Drag(int x, int y)</B></TT>
+<DD> Perform the function of 1st button drag.
+<DL></DL><P>
+<A NAME="Connect">
+<A NAME ="DOC.444.107">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!1><A HREF="Command.html">Command</A>*  Connect(int x, int y)</B></TT>
+<DD> Perform the function of 2nd button drag.
+<DL></DL><P>
+<A NAME="KeyTyped">
+<A NAME ="DOC.444.108">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  KeyTyped(int x, int y, int c)</B></TT>
+<DD> Perform the function of keypress 'c'.
+<DL></DL><P>
+<A NAME="CalcSizeElements">
+<A NAME ="DOC.444.109">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  CalcSizeElements(<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)</B></TT>
+<DD> calculate covered area of elements in grafport.
+<DL></DL><P>
+<A NAME="CalcSizeSelection">
+<A NAME ="DOC.444.110">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  CalcSizeSelection(<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)</B></TT>
+<DD> calculate covered area of selected elements in grafport.
+<DL></DL><P>
+<A NAME="GetPageSize">
+<A NAME ="DOC.444.111">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  GetPageSize(double &width, double &height)</B></TT>
+<DD> return page size (pixels).
+<DL></DL><P>
+<A NAME="Save">
+<A NAME ="DOC.444.112">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Save(<!1><A HREF="OutputFile.html">OutputFile</A> *f)</B></TT>
+<DD> Save view attributes to file.
+<DL></DL><P>
+<A NAME="Load">
+<A NAME ="DOC.444.113">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Load(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)</B></TT>
+<DD> Load view attributes from file.
+<DL></DL><P>
+<A NAME="Check">
+<A NAME ="DOC.444.114">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Check(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)</B></TT>
+<DD> Check but not load view attributes from file.
+<DL></DL><P>
+<A NAME="MIN_LINE_WIDTH">
+<A NAME ="DOC.444.115">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MIN_LINE_WIDTH</B></TT>
+<DL></DL><P>
+<A NAME="MAX_LINE_WIDTH">
+<A NAME ="DOC.444.116">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MAX_LINE_WIDTH</B></TT>
+<DL></DL><P>
+<A NAME="ClearGrafport">
+<A NAME ="DOC.444.117">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ClearGrafport()</B></TT>
+<DD> Clear contents of grafport.
+<DL></DL><P>
+<A NAME="GetInlineEditor">
+<A NAME ="DOC.444.118">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="InlineEditor.html">InlineEditor</A>*  GetInlineEditor() const </B></TT>
+<DL></DL><P>
+<A NAME="SetInlineEditor">
+<A NAME ="DOC.444.119">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetInlineEditor(<!1><A HREF="InlineEditor.html">InlineEditor</A> *i)</B></TT>
+<DL></DL><P>
+<A NAME="SetEditing">
+<A NAME ="DOC.444.120">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetEditing(bool b)</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="TableViewer.html"> TableViewer </A><br>
+<A HREF="DiagramViewer.html"> DiagramViewer </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

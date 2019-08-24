@@ -1,0 +1,114 @@
+<html><head><TITLE>Component</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Component  </H2><BLOCKQUOTE>
+ base class for all UI components.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CComponent,MComponent.html,CMWidget,MMWidget.html">
+<param name=before value="M,M^_">
+<param name=after value="M,M">
+<param name=indent value="0,0">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.52.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Component</B> (const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.52.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Component</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.52.3"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Manage</B> ()<br>
+<I> Manage widget tree</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.52.4"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsManaged</B> ()<br>
+<I> Is widget tree managed.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.52.5"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Unmanage</B> ()<br>
+<I> Unmanage widget tree</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.52.6"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>GetWidget</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.52.7"> <IMG BORDER=0 SRC=icon1.gif></A> Display* </TD><TD><B>GetDisplay</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.52.8"> <IMG BORDER=0 SRC=icon1.gif></A> Window </TD><TD><B>GetWindow</B> ()<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.52.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetWidget</B> (Widget w)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.52.10"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetName</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.52.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetName</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.52.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetName</B> (const char *s)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ base class for all UI components.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Component">
+<A NAME ="DOC.52.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Component(const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="~Component">
+<A NAME ="DOC.52.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Component()</B></TT>
+<DL></DL><P>
+<A NAME="Manage">
+<A NAME ="DOC.52.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Manage()</B></TT>
+<DD> Manage widget tree
+<DL></DL><P>
+<A NAME="IsManaged">
+<A NAME ="DOC.52.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsManaged()</B></TT>
+<DD> Is widget tree managed.
+<DL></DL><P>
+<A NAME="Unmanage">
+<A NAME ="DOC.52.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Unmanage()</B></TT>
+<DD> Unmanage widget tree
+<DL></DL><P>
+<A NAME="GetWidget">
+<A NAME ="DOC.52.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  GetWidget()</B></TT>
+<DL></DL><P>
+<A NAME="GetDisplay">
+<A NAME ="DOC.52.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Display*  GetDisplay()</B></TT>
+<DL></DL><P>
+<A NAME="GetWindow">
+<A NAME ="DOC.52.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Window  GetWindow()</B></TT>
+<DL></DL><P>
+<A NAME="SetWidget">
+<A NAME ="DOC.52.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetWidget(Widget w)</B></TT>
+<DL></DL><P>
+<A NAME="GetName">
+<A NAME ="DOC.52.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetName() const </B></TT>
+<DL></DL><P>
+<A NAME="SetName">
+<A NAME ="DOC.52.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetName(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="SetName">
+<A NAME ="DOC.52.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetName(const char *s)</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="MWidget.html"> MWidget </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

@@ -1,0 +1,161 @@
+<html><head><TITLE>ReplaceTextCmd</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  ReplaceTextCmd : public <!2><A HREF="Command.html#DOC.48.1">Command</A> </H2><BLOCKQUOTE>
+ abstract command class for replacing text of all text shapes.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CCommand,MCommand.html,CReplaceTextCmd,MReplaceTextCmd.html,CReplaceNextTextCmd,MReplaceNextTextCmd.html,CReplaceAllTextsCmd,MReplaceAllTextsCmd.html">
+<param name=before value="M,M,M|_,Mr_">
+<param name=after value="Md_,M,M,M">
+<param name=indent value="0,1,1,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.279.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>ReplaceTextCmd</B> (<!1><A HREF="ShapeView.html">ShapeView</A> *v, const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool sens, bool substr, bool <!2><A HREF="ReplaceTextCmd.html#DOC.279.16">nameOnly</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.279.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~ReplaceTextCmd</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.279.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UnExecute</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.279.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ReExecute</B> ()<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.279.6"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="ShapeView.html">ShapeView</A>* </TD><TD><B>view</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.279.7"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Diagram.html">Diagram</A>* </TD><TD><B>diagram</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.279.8"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="GShape.html">GShape</A> *> * </TD><TD><B>oldSelection</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.279.9"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="TextShape.html">TextShape</A> *> * </TD><TD><B>textShapes</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.279.10"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="string.html">string</A> *> * </TD><TD><B>oldStrings</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.279.11"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="Point.html">Point</A> *> * </TD><TD><B>oldSizes</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.279.12"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="string.html">string</A>* </TD><TD><B>pattern</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.279.13"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="string.html">string</A>* </TD><TD><B>replace</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.279.14"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>caseSensitive</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.279.15"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>substring</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.279.16"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>nameOnly</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.279.5"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Diagram.html">Diagram</A>* </TD><TD><B>GetDiagram</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Command.html">Command:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>TrackType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>TrackMouse</B>(<!2><A HREF="Command.html#DOC.48.3">TrackType</A>, <!1><A HREF="Point.html">Point</A>*, <!1><A HREF="Point.html">Point</A>*, <!1><A HREF="Point.html">Point</A>*)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Execute</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Abort</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>CmdDone</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  const  char*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>ScaleCorrect</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>ScaleCorrect</B>(const <!1><A HREF="Point.html">Point</A> *pt) const 
+<DT><IMG SRC=icon2.gif> int  <B>Scale</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>Scale</B>(const <!1><A HREF="Point.html">Point</A> *pt) const 
+<DT><IMG SRC=icon2.gif> void  <B>SayAborted</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SayCommited</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SayUndone</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="DrawWindow.html">DrawWindow</A>*  <B>GetMainWindow</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Viewer.html">Viewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Document.html">Document</A>*  <B>GetDocument</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Grafport.html">Grafport</A>*  <B>GetGrafport</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetCmdDone</B>(bool b)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ abstract command class for replacing text of all text shapes.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="ReplaceTextCmd">
+<A NAME ="DOC.279.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  ReplaceTextCmd(<!1><A HREF="ShapeView.html">ShapeView</A> *v, const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool sens, bool substr, bool <!2><A HREF="ReplaceTextCmd.html#DOC.279.16">nameOnly</A>)</B></TT>
+<DL></DL><P>
+<A NAME="~ReplaceTextCmd">
+<A NAME ="DOC.279.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~ReplaceTextCmd()</B></TT>
+<DL></DL><P>
+<A NAME="UnExecute">
+<A NAME ="DOC.279.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UnExecute()</B></TT>
+<DL></DL><P>
+<A NAME="ReExecute">
+<A NAME ="DOC.279.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ReExecute()</B></TT>
+<DL></DL><P>
+<A NAME="GetDiagram">
+<A NAME ="DOC.279.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Diagram.html">Diagram</A>*  GetDiagram()</B></TT>
+<DL></DL><P>
+<A NAME="view">
+<A NAME ="DOC.279.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="ShapeView.html">ShapeView</A>*  view</B></TT>
+<DL></DL><P>
+<A NAME="diagram">
+<A NAME ="DOC.279.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Diagram.html">Diagram</A>*  diagram</B></TT>
+<DL></DL><P>
+<A NAME="oldSelection">
+<A NAME ="DOC.279.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="GShape.html">GShape</A> *> *  oldSelection</B></TT>
+<DL></DL><P>
+<A NAME="textShapes">
+<A NAME ="DOC.279.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="TextShape.html">TextShape</A> *> *  textShapes</B></TT>
+<DL></DL><P>
+<A NAME="oldStrings">
+<A NAME ="DOC.279.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="string.html">string</A> *> *  oldStrings</B></TT>
+<DL></DL><P>
+<A NAME="oldSizes">
+<A NAME ="DOC.279.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="Point.html">Point</A> *> *  oldSizes</B></TT>
+<DL></DL><P>
+<A NAME="pattern">
+<A NAME ="DOC.279.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="string.html">string</A>*  pattern</B></TT>
+<DL></DL><P>
+<A NAME="replace">
+<A NAME ="DOC.279.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="string.html">string</A>*  replace</B></TT>
+<DL></DL><P>
+<A NAME="caseSensitive">
+<A NAME ="DOC.279.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  caseSensitive</B></TT>
+<DL></DL><P>
+<A NAME="substring">
+<A NAME ="DOC.279.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  substring</B></TT>
+<DL></DL><P>
+<A NAME="nameOnly">
+<A NAME ="DOC.279.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  nameOnly</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="ReplaceNextTextCmd.html"> ReplaceNextTextCmd </A><br>
+<A HREF="ReplaceAllTextsCmd.html"> ReplaceAllTextsCmd </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

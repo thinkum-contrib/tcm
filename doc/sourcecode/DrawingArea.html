@@ -1,0 +1,168 @@
+<html><head><TITLE>DrawingArea</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  DrawingArea : public <!2><A HREF="MWidget.html#DOC.237.1">MWidget</A> </H2><BLOCKQUOTE>
+ wrapper class around the Motif drawing area widget.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CComponent,MComponent.html,CMWidget,MMWidget.html,CDrawingArea,MDrawingArea.html">
+<param name=before value="M,M,M">
+<param name=after value="Md_SP,Md_,M">
+<param name=indent value="0,1,2">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.137.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>DrawingArea</B> (<!1><A HREF="Config.html">Config</A> *config, Widget parent, const char *<!2><A HREF="Component.html#DOC.52.13">name</A>, <!1><A HREF="DrawWindow.html">DrawWindow</A> *w)<br>
+<I> Description determines the size, if empty the screen sz is used.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.137.2"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>GetClassName</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.137.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetViewer</B> (<!1><A HREF="Viewer.html">Viewer</A> *v)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.137.4"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="XGrafport.html">XGrafport</A>* </TD><TD><B>GetGrafport</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.137.5"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetWidth</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.137.6"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetHeight</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.137.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateSize</B> (int w, int h)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.137.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>FitDocument</B> ()<br>
+<I> resize drawing area to fit the viewer's contents.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.137.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>FitDocument</B> (int wd, int ht)<br>
+<I> resize drawing area to given size.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.137.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>EnableUndo</B> (bool flag)<br>
+<I> enable/disable edit popup menu entry.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.137.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>EnableRedo</B> (bool flag)<br>
+<I> enable/disable edit popup menu entry.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.137.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Enable</B> (const char *label, bool flag)<br>
+<I> enable/disable popup menu entry.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.137.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetUndoName</B> (const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)<br>
+<I> change edit popup menu undo entry name.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.137.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetRedoName</B> (const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)<br>
+<I> change edit popup menu redo entry name.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.137.15"> <IMG BORDER=0 SRC=icon1.gif></A> Pixel </TD><TD><B>GetBackgroundColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.137.16"> <IMG BORDER=0 SRC=icon1.gif></A> Pixel </TD><TD><B>GetForegroundColor</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="MWidget.html">MWidget:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>Manage</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>IsRealized</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetColormap</B>(Colormap cmap)
+<DT><IMG SRC=icon2.gif> void  <B>SetDestroyCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> void  <B>AddLiteClue</B>(Widget w, const char *text)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> Widget  <B>GetLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CreateLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>InstallDestroyHandler</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Component.html"> Component:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsManaged</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Unmanage</B>()
+<DT><IMG SRC=icon2.gif> Widget  <B>GetWidget</B>()
+<DT><IMG SRC=icon2.gif> Display*  <B>GetDisplay</B>()
+<DT><IMG SRC=icon2.gif> Window  <B>GetWindow</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetWidget</B>(Widget w)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const char *s)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ wrapper class around the Motif drawing area widget.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="DrawingArea">
+<A NAME ="DOC.137.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  DrawingArea(<!1><A HREF="Config.html">Config</A> *config, Widget parent, const char *<!2><A HREF="Component.html#DOC.52.13">name</A>, <!1><A HREF="DrawWindow.html">DrawWindow</A> *w)</B></TT>
+<DD> Description determines the size, if empty the screen sz is used.
+<DL></DL><P>
+<A NAME="GetClassName">
+<A NAME ="DOC.137.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  GetClassName()</B></TT>
+<DL></DL><P>
+<A NAME="SetViewer">
+<A NAME ="DOC.137.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetViewer(<!1><A HREF="Viewer.html">Viewer</A> *v)</B></TT>
+<DL></DL><P>
+<A NAME="GetGrafport">
+<A NAME ="DOC.137.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="XGrafport.html">XGrafport</A>*  GetGrafport() const </B></TT>
+<DL></DL><P>
+<A NAME="GetWidth">
+<A NAME ="DOC.137.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetWidth() const </B></TT>
+<DL></DL><P>
+<A NAME="GetHeight">
+<A NAME ="DOC.137.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetHeight() const </B></TT>
+<DL></DL><P>
+<A NAME="UpdateSize">
+<A NAME ="DOC.137.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateSize(int w, int h)</B></TT>
+<DL></DL><P>
+<A NAME="FitDocument">
+<A NAME ="DOC.137.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  FitDocument()</B></TT>
+<DD> resize drawing area to fit the viewer's contents.
+<DL></DL><P>
+<A NAME="FitDocument">
+<A NAME ="DOC.137.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  FitDocument(int wd, int ht)</B></TT>
+<DD> resize drawing area to given size.
+<DL></DL><P>
+<A NAME="EnableUndo">
+<A NAME ="DOC.137.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  EnableUndo(bool flag)</B></TT>
+<DD> enable/disable edit popup menu entry.
+<DL></DL><P>
+<A NAME="EnableRedo">
+<A NAME ="DOC.137.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  EnableRedo(bool flag)</B></TT>
+<DD> enable/disable edit popup menu entry.
+<DL></DL><P>
+<A NAME="Enable">
+<A NAME ="DOC.137.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Enable(const char *label, bool flag)</B></TT>
+<DD> enable/disable popup menu entry.
+<DL></DL><P>
+<A NAME="SetUndoName">
+<A NAME ="DOC.137.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetUndoName(const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)</B></TT>
+<DD> change edit popup menu undo entry name.
+<DL></DL><P>
+<A NAME="SetRedoName">
+<A NAME ="DOC.137.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetRedoName(const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)</B></TT>
+<DD> change edit popup menu redo entry name.
+<DL></DL><P>
+<A NAME="GetBackgroundColor">
+<A NAME ="DOC.137.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Pixel  GetBackgroundColor()</B></TT>
+<DL></DL><P>
+<A NAME="GetForegroundColor">
+<A NAME ="DOC.137.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Pixel  GetForegroundColor()</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

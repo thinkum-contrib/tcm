@@ -1,0 +1,21 @@
+TCM for CYGWIN (patch-version 0.7)
+==================================
+
+Dear User,
+
+this file comes with a patched version of the "Toolkit for Conceptual
+Modelling (TCM)".  Please notice that CYGWIN is (currently) not a
+supported platform of the official release. The patch and the binaries
+worked for me (on a Win2000 box in an NT-domain), but your experience
+might be different.
+
+The patch and binaries for CYGWIN are largely untestet. If you encounter
+problems (or success :) with TCM for CYGWIN, feel free to contact me.
+
+See the file INSTALL.cygwin for more information on compiling TCM
+on Cygwin.
+
+Best Regards,
+Daniel Boeswetter <boesswetter@peppermind.de>
+
+

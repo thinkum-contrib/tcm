@@ -1,0 +1,234 @@
+<html><head><TITLE>XFont</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  XFont : public <!2><A HREF="AFont.html#DOC.4.9">AFont</A> </H2><BLOCKQUOTE>
+ A class for X fonts.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CAFont,MAFont.html,CXFont,MXFont.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.446.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>XFont</B> (const <!1><A HREF="string.html">string</A> *<!2><A HREF="AFont.html#DOC.4.24">foundry</A>, int name, int <!2><A HREF="AFont.html#DOC.4.26">style</A>, int <!2><A HREF="AFont.html#DOC.4.27">size</A>, bool <!2><A HREF="AFont.html#DOC.4.28">scalable</A>)<br>
+<I> Creates new X font with the specified name, style and point size.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.2"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>~XFont</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Scale</B> (double <!2><A HREF="AFont.html#DOC.4.23">factor</A>)<br>
+<I> scale the X font (if scalable) with factor.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.4"> <IMG BORDER=0 SRC=icon1.gif></A> static  int </TD><TD><B>FindFamily</B> (const char *desc)<br>
+<I> Gets family name from X font description.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.5"> <IMG BORDER=0 SRC=icon1.gif></A> static  int </TD><TD><B>FindStyle</B> (const char *desc)<br>
+<I> Gets font style from X font description.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.6"> <IMG BORDER=0 SRC=icon1.gif></A> static  int </TD><TD><B>FindSize</B> (const char *desc)<br>
+<I> Gets point size from X font description.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.7"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetLeading</B> ()<br>
+<I> Gets the standard leading, or line spacing, for the font.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.8"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetAscent</B> ()<br>
+<I> Gets font ascent (distance from base line to top of characters).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.9"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetDescent</B> ()<br>
+<I> Gets font descent (distance from base line to bottom of characters).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.10"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetHeight</B> ()<br>
+<I> Gets total height of font (= is leading + ascent + descent) </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.11"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetMaxAscent</B> ()<br>
+<I> Gets the maximum ascent of all characters in this Font.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.12"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetMaxDescent</B> ()<br>
+<I> Gets the maximum descent of all characters.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.13"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetMaxAdvance</B> ()<br>
+<I> Gets maximum advance width of any character (-1 if unknown).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.14"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>StringWidth</B> (const <!1><A HREF="string.html">string</A> *str)<br>
+<I> Returns width of specified String in Font.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.15"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>StringWidth</B> (const char *str)<br>
+<I> see above.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Box</B> (const <!1><A HREF="string.html">string</A> *s, int &wd, int &ht)<br>
+<I> calculates height and width of multiline string in grafport.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Box</B> (const char *s, int &wd, int &ht)<br>
+<I> see above.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.18"> <IMG BORDER=0 SRC=icon1.gif></A> long </TD><TD><B>GetXFid</B> ()<br>
+<I> Return x font id of stored X font.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.19"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>GetXLFD</B> (char *xd)<br>
+<I> Get XLFD description.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.20"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>GetXLFD</B> (<!1><A HREF="string.html">string</A> *xd)<br>
+<I> Get XLFD description.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.21"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>GetPostScript</B> (char *ps)<br>
+<I> Get PostScript name of this Font.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.22"> <IMG BORDER=0 SRC=icon1.gif></A> XFontStruct* </TD><TD><B>GetXFontStruct</B> ()<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.446.23"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CalcXLFD</B> (<!1><A HREF="string.html">string</A> *fn, bool <!2><A HREF="AFont.html#DOC.4.28">scalable</A>)<br>
+<I> Calculate X logical font description.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.24"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>IsScalableFont</B> (const <!1><A HREF="string.html">string</A> *name)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.446.25"> <IMG BORDER=0 SRC=icon1.gif></A> static  XFontStruct* </TD><TD><B>LoadQueryScalableFont</B> (Display *d, const char *name, int <!2><A HREF="AFont.html#DOC.4.27">size</A>)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="AFont.html">AFont:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  int  <B>HELVETICA</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>TIMESROMAN</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>COURIER</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>NEWCENTURYSCHLBK</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>SYMBOL</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>PLAIN</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>BOLD</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>ITALIC</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> int  <B>GetFamily</B>()
+<DT><IMG SRC=icon2.gif> int  <B>GetStyle</B>()
+<DT><IMG SRC=icon2.gif> int  <B>GetSize</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>IsScalable</B>()
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetFoundry</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetScalable</B>(bool b)
+<DT><IMG SRC=icon2.gif> bool  <B>IsUnderlined</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetUnderlined</B>(bool b)
+<DT><IMG SRC=icon2.gif> double  <B>GetFactor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetFactor</B>(double d)
+<DT><IMG SRC=icon2.gif> bool  <B>IsPlain</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>IsBold</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>IsItalic</B>()
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ A class for X fonts.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="XFont">
+<A NAME ="DOC.446.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  XFont(const <!1><A HREF="string.html">string</A> *<!2><A HREF="AFont.html#DOC.4.24">foundry</A>, int name, int <!2><A HREF="AFont.html#DOC.4.26">style</A>, int <!2><A HREF="AFont.html#DOC.4.27">size</A>, bool <!2><A HREF="AFont.html#DOC.4.28">scalable</A>)</B></TT>
+<DD> Creates new X font with the specified name, style and point size.
+<DL></DL><P>
+<A NAME="~XFont">
+<A NAME ="DOC.446.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  ~XFont()</B></TT>
+<DL></DL><P>
+<A NAME="Scale">
+<A NAME ="DOC.446.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Scale(double <!2><A HREF="AFont.html#DOC.4.23">factor</A>)</B></TT>
+<DD> scale the X font (if scalable) with factor.
+<DL></DL><P>
+<A NAME="FindFamily">
+<A NAME ="DOC.446.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  int  FindFamily(const char *desc)</B></TT>
+<DD> Gets family name from X font description.
+<DL></DL><P>
+<A NAME="FindStyle">
+<A NAME ="DOC.446.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  int  FindStyle(const char *desc)</B></TT>
+<DD> Gets font style from X font description.
+<DL></DL><P>
+<A NAME="FindSize">
+<A NAME ="DOC.446.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  int  FindSize(const char *desc)</B></TT>
+<DD> Gets point size from X font description.
+<DL></DL><P>
+<A NAME="GetLeading">
+<A NAME ="DOC.446.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetLeading()</B></TT>
+<DD> Gets the standard leading, or line spacing, for the font.
+<DL></DL><P>
+<A NAME="GetAscent">
+<A NAME ="DOC.446.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetAscent()</B></TT>
+<DD> Gets font ascent (distance from base line to top of characters).
+<DL></DL><P>
+<A NAME="GetDescent">
+<A NAME ="DOC.446.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetDescent()</B></TT>
+<DD> Gets font descent (distance from base line to bottom of characters).
+<DL></DL><P>
+<A NAME="GetHeight">
+<A NAME ="DOC.446.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetHeight()</B></TT>
+<DD> Gets total height of font (= is leading + ascent + descent) 
+<DL></DL><P>
+<A NAME="GetMaxAscent">
+<A NAME ="DOC.446.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetMaxAscent()</B></TT>
+<DD> Gets the maximum ascent of all characters in this Font.
+<DL></DL><P>
+<A NAME="GetMaxDescent">
+<A NAME ="DOC.446.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetMaxDescent()</B></TT>
+<DD> Gets the maximum descent of all characters.
+<DL></DL><P>
+<A NAME="GetMaxAdvance">
+<A NAME ="DOC.446.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetMaxAdvance()</B></TT>
+<DD> Gets maximum advance width of any character (-1 if unknown).
+<DL></DL><P>
+<A NAME="StringWidth">
+<A NAME ="DOC.446.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  StringWidth(const <!1><A HREF="string.html">string</A> *str)</B></TT>
+<DD> Returns width of specified String in Font.
+<DL></DL><P>
+<A NAME="StringWidth">
+<A NAME ="DOC.446.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  StringWidth(const char *str)</B></TT>
+<DD> see above.
+<DL></DL><P>
+<A NAME="Box">
+<A NAME ="DOC.446.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Box(const <!1><A HREF="string.html">string</A> *s, int &wd, int &ht)</B></TT>
+<DD> calculates height and width of multiline string in grafport.
+<DL></DL><P>
+<A NAME="Box">
+<A NAME ="DOC.446.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Box(const char *s, int &wd, int &ht)</B></TT>
+<DD> see above.
+<DL></DL><P>
+<A NAME="GetXFid">
+<A NAME ="DOC.446.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> long  GetXFid()</B></TT>
+<DD> Return x font id of stored X font.
+<DL></DL><P>
+<A NAME="GetXLFD">
+<A NAME ="DOC.446.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  GetXLFD(char *xd)</B></TT>
+<DD> Get XLFD description.
+<DL></DL><P>
+<A NAME="GetXLFD">
+<A NAME ="DOC.446.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  GetXLFD(<!1><A HREF="string.html">string</A> *xd)</B></TT>
+<DD> Get XLFD description.
+<DL></DL><P>
+<A NAME="GetPostScript">
+<A NAME ="DOC.446.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  GetPostScript(char *ps)</B></TT>
+<DD> Get PostScript name of this Font.
+<DL></DL><P>
+<A NAME="GetXFontStruct">
+<A NAME ="DOC.446.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> XFontStruct*  GetXFontStruct()</B></TT>
+<DL></DL><P>
+<A NAME="CalcXLFD">
+<A NAME ="DOC.446.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CalcXLFD(<!1><A HREF="string.html">string</A> *fn, bool <!2><A HREF="AFont.html#DOC.4.28">scalable</A>)</B></TT>
+<DD> Calculate X logical font description.
+<DL></DL><P>
+<A NAME="IsScalableFont">
+<A NAME ="DOC.446.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  IsScalableFont(const <!1><A HREF="string.html">string</A> *name)</B></TT>
+<DL></DL><P>
+<A NAME="LoadQueryScalableFont">
+<A NAME ="DOC.446.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  XFontStruct*  LoadQueryScalableFont(Display *d, const char *name, int <!2><A HREF="AFont.html#DOC.4.27">size</A>)</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

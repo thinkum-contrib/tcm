@@ -1,0 +1,75 @@
+<html><head><TITLE>Link</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Link  </H2><BLOCKQUOTE>
+ holds all info relevant to one link.
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.217.1"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Open</B> (const char* name, const char* param)<br>
+<I> open a link to another program named name, passing a param</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.217.2"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Close</B> ()<br>
+<I> Close the link to a program that has terminated. Use Kill</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.217.3"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>Read</B> (char* s)<br>
+<I> read from the program started with Open. Returns a 0 if</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.217.4"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>InputWaiting</B> ()<br>
+<I> Returns the number of bytes waiting in the input buffer. If</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.217.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>WriteChar</B> (char c)<br>
+<I> write a char, without a newline, to the program.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.217.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Write</B> (const char* s)<br>
+<I> write a string to the program, with a newline.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.217.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Kill</B> ()<br>
+<I> kill the program and close the link. If the program has terminated</I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ holds all info relevant to one link.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Open">
+<A NAME ="DOC.217.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Open(const char* name, const char* param)</B></TT>
+<DD> open a link to another program named name, passing a param
+<DL></DL><P>
+<A NAME="Close">
+<A NAME ="DOC.217.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Close()</B></TT>
+<DD> Close the link to a program that has terminated. Use Kill
+<DL></DL><P>
+<A NAME="Read">
+<A NAME ="DOC.217.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  Read(char* s)</B></TT>
+<DD> read from the program started with Open. Returns a 0 if
+<DL></DL><P>
+<A NAME="InputWaiting">
+<A NAME ="DOC.217.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  InputWaiting()</B></TT>
+<DD> Returns the number of bytes waiting in the input buffer. If
+<DL></DL><P>
+<A NAME="WriteChar">
+<A NAME ="DOC.217.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  WriteChar(char c)</B></TT>
+<DD> write a char, without a newline, to the program.
+<DL></DL><P>
+<A NAME="Write">
+<A NAME ="DOC.217.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Write(const char* s)</B></TT>
+<DD> write a string to the program, with a newline.
+<DL></DL><P>
+<A NAME="Kill">
+<A NAME ="DOC.217.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Kill()</B></TT>
+<DD> kill the program and close the link. If the program has terminated
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

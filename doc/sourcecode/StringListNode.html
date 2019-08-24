@@ -1,0 +1,183 @@
+<html><head><TITLE>StringListNode</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  StringListNode : public <!2><A HREF="Node.html#DOC.240.1">Node</A> </H2><BLOCKQUOTE>
+ A node that has an extra list of strings.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=185>
+<param name=classes value="CThing,MThing.html,CSubject,MSubject.html,CNode,MNode.html,CStringListNode,MStringListNode.html,CStringListNode2,MStringListNode2.html,CSSDObjectNode,MSSDObjectNode.html">
+<param name=before value="M,M,M,M,M|_,Mr_">
+<param name=after value="Md_SPSP,Md_SP,Md_,M,M,M">
+<param name=indent value="0,1,2,3,3,3">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Classes</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.356.4"> <IMG BORDER=0 SRC=icon1.gif></A>  enum </TD><TD><B>StringErrorType</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.356.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>StringListNode</B> (<!1><A HREF="Graph.html">Graph</A> *g)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.356.2"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>StringListNode</B> (const <!2><A HREF="StringListNode.html#DOC.356.2">StringListNode</A> &s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.356.3"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~StringListNode</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.356.5"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!2><A HREF="StringListNode.html#DOC.356.4">StringListNode::StringErrorType</A> </TD><TD><B>SetString</B> ( const <!1><A HREF="string.html">string</A> *s, unsigned n, bool update)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.356.6"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetString</B> (unsigned n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.356.7"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>NrStrings</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.356.8"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetStringListLabel</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.356.9"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetStringLabel</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.356.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetStringListLabel</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.356.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetStringListLabel</B> (const char *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.356.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetStringLabel</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.356.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetStringLabel</B> (const char *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.356.14"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>HasString</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.356.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>WriteMembers</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.356.16"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadMembers</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, double format)<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.356.17"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="string.html">string</A> *> * </TD><TD><B>GetStringList</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Node.html">Node:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsEdge</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>InGraph</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetIndex</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  <!2><A HREF="Subject.html#DOC.360.6">Subject::NameErrType</A>  <B>SetIndex</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>GetParentIndex</B>(<!1><A HREF="string.html">string</A> *pindex)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Subject.html"> Subject:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>NameErrType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  <!2><A HREF="Subject.html#DOC.360.1">Subject</A>*  <B>Clone</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>IsSubject</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  <!2><A HREF="Subject.html#DOC.360.6">NameErrType</A>  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> bool  <B>SetReferences</B>(<!1><A HREF="AssocList.html">AssocList</A> *)
+<DT><IMG SRC=icon2.gif> bool  <B>CheckReferences</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetParent</B>(<!1><A HREF="Node.html">Node</A> *p)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Node.html">Node</A>*  <B>GetParent</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetAnnotation</B>(<!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetAnnotation</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Graph.html">Graph</A>*  <B>GetGraph</B>() const 
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Thing.html"> Thing:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>AssocType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> unsigned  long  <B>GetId</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetId</B>(unsigned long val)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsShape</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsView</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  int  <B>GetClassType</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>Write</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ A node that has an extra list of strings.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="StringListNode">
+<A NAME ="DOC.356.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  StringListNode(<!1><A HREF="Graph.html">Graph</A> *g)</B></TT>
+<DL></DL><P>
+<A NAME="StringListNode">
+<A NAME ="DOC.356.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  StringListNode(const <!2><A HREF="StringListNode.html#DOC.356.2">StringListNode</A> &s)</B></TT>
+<DL></DL><P>
+<A NAME="~StringListNode">
+<A NAME ="DOC.356.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~StringListNode()</B></TT>
+<DL></DL><P>
+<A NAME="StringErrorType">
+<A NAME ="DOC.356.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum  StringErrorType</B></TT>
+<DL></DL><P>
+<A NAME="SetString">
+<A NAME ="DOC.356.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!2><A HREF="StringListNode.html#DOC.356.4">StringListNode::StringErrorType</A>  SetString( const <!1><A HREF="string.html">string</A> *s, unsigned n, bool update)</B></TT>
+<DL></DL><P>
+<A NAME="GetString">
+<A NAME ="DOC.356.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetString(unsigned n)</B></TT>
+<DL></DL><P>
+<A NAME="NrStrings">
+<A NAME ="DOC.356.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  NrStrings()</B></TT>
+<DL></DL><P>
+<A NAME="GetStringListLabel">
+<A NAME ="DOC.356.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetStringListLabel()</B></TT>
+<DL></DL><P>
+<A NAME="GetStringLabel">
+<A NAME ="DOC.356.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetStringLabel()</B></TT>
+<DL></DL><P>
+<A NAME="SetStringListLabel">
+<A NAME ="DOC.356.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetStringListLabel(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="SetStringListLabel">
+<A NAME ="DOC.356.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetStringListLabel(const char *s)</B></TT>
+<DL></DL><P>
+<A NAME="SetStringLabel">
+<A NAME ="DOC.356.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetStringLabel(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="SetStringLabel">
+<A NAME ="DOC.356.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetStringLabel(const char *s)</B></TT>
+<DL></DL><P>
+<A NAME="HasString">
+<A NAME ="DOC.356.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  HasString(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="WriteMembers">
+<A NAME ="DOC.356.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  WriteMembers(<!1><A HREF="OutputFile.html">OutputFile</A> *f)</B></TT>
+<DL></DL><P>
+<A NAME="ReadMembers">
+<A NAME ="DOC.356.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadMembers(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)</B></TT>
+<DL></DL><P>
+<A NAME="GetStringList">
+<A NAME ="DOC.356.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="string.html">string</A> *> *  GetStringList()</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="StringListNode2.html"> StringListNode2 </A><br>
+<A HREF="SSDObjectNode.html"> SSDObjectNode </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

@@ -1,0 +1,778 @@
+<html><head><TITLE>EditStubs</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  EditStubs  </H2><BLOCKQUOTE>
+ static member functions as interface between callback and class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CEditStubs,MEditStubs.html,CTableStubs,MTableStubs.html,CDiagramStubs,MDiagramStubs.html">
+<param name=before value="M,M|_,Mr_">
+<param name=after value="M,M,M">
+<param name=indent value="0,0,0">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.142.1"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>HelpCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> Callback for the help functions.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.2"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>LoadOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> Callbacks for load and save.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.3"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SaveAsOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.4"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>AnnotationOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.5"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>CancelFSCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.6"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>FindNextCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> Callbacks for find/replace functions.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.7"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>FindAllCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.8"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ReplaceFindCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.9"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ReplaceNextCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.10"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ReplaceAllCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.11"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ChangeNameCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> Callbacks for some editor properties.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.12"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ChangeDirCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.13"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetModifiedCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.14"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetAutoResizeCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.15"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetInlineEditCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.16"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>NewCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> Callbacks for file functions.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.17"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>LoadCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.18"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>AppendCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.19"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SaveCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.20"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SaveAsCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.21"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SaveSelectionAsCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.22"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>QuitCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.23"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>FindCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> Callbacks for search functions</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.24"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ReplaceCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.25"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DocumentInfoCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> Callbacks for document functions.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.26"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DocumentSummaryCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.27"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DocumentSourceCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.28"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DocumentSourceOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.29"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>CheckDocumentCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.30"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>AnnotateDocumentCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.31"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ModelCheckDocumentCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.32"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>MakeLargerCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> Callbacks for scale functions.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.33"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>MakeSmallerCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.34"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ScaleFactorCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.35"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>NormalScaleCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.36"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>WholeDrawingCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.37"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ScaleFactorOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.38"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>MoveCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> Callback for arrow buttons.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.39"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SaveAsPSCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> Callbacks for Printer functions.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.40"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SaveAsEPSCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.41"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SaveAsFigTexCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.42"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SaveAsFigPSCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.43"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SaveAsPNGCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.44"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetNameCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.45"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetPrintCommandCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.46"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetPreviewCommandCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.47"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetCopiesCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.48"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ExportAsCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> Callbacks for Printer functions.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.49"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ShowPrintPreviewCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.50"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>PrintCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.51"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ShowPrinterQueueCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.52"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>PrinterNameCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.53"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>PrinterCopiesCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.54"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>PrintCommandCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.55"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>PrinterQueueCommandCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.56"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>PrinterRemoveCommandCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.57"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>PreviewCommandCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.58"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetPrintColorsCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.59"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetTumbleCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.60"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetDuplexCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.61"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>BannerPageCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.62"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ShowPageBoundaryCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> Callbacks for Page functions.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.63"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>PageOrientationCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.64"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>PageSizeCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.65"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ShowPageNumbersCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.66"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ShowDocumentInfoCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.68"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultLineWidthCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.69"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultLineWidthOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.70"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultLineWidthDefaultCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.71"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateLineWidthCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.72"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateLineWidthOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.73"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateLineWidthDefaultCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.74"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateLineColorCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.75"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateLineColorOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.76"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateLineColorDefaultCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.77"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultLineColorCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.78"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultLineColorOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.79"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultLineColorDefaultCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.80"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateTextColorCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.81"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateTextColorOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.82"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateTextColorDefaultCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.83"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultTextColorCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.84"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultTextColorOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.85"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultTextColorDefaultCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.86"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateFillColorCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.87"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateFillColorOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.88"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateFillColorDefaultCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.89"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultFillColorCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.90"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultFillColorOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.91"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultFillColorDefaultCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.92"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultLineStyleCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.93"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultLineStyleOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.94"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultLineStyleDefaultCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.95"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateLineStyleCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.96"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateLineStyleOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.97"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateLineStyleDefaultCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.98"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultFontCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.99"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultFontOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.100"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultFontDefaultCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.101"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateFontCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.102"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateFontOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.103"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateFontDefaultCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.104"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultTextAlignmentCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.105"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultTextAlignmentOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.106"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DefaultTextAlignmentDefaultCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.107"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateTextAlignmentCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.108"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateTextAlignmentOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.109"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateTextAlignmentDefaultCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.110"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateFSFilesCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.111"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateTextCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.112"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>PointSnappingCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> Callbacks for the grid functions.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.113"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>ShowGridCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.114"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>GridSizeCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.115"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>PointDistanceCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.116"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>GridSizeOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.117"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>PointDistanceOKCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.118"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UndoCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> view/edit functions.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.119"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>RedoCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.142.120"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>RefreshCB</B> (Widget, XtPointer, XtPointer)<br>
+<I> </I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.142.67"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B></B> <br>
+<I> Callbacks for Properties functions.</I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ static member functions as interface between callback and class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="HelpCB">
+<A NAME ="DOC.142.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  HelpCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> Callback for the help functions.
+<DL></DL><P>
+<A NAME="LoadOKCB">
+<A NAME ="DOC.142.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  LoadOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> Callbacks for load and save.
+<DL></DL><P>
+<A NAME="SaveAsOKCB">
+<A NAME ="DOC.142.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SaveAsOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="AnnotationOKCB">
+<A NAME ="DOC.142.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  AnnotationOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="CancelFSCB">
+<A NAME ="DOC.142.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  CancelFSCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="FindNextCB">
+<A NAME ="DOC.142.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  FindNextCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> Callbacks for find/replace functions.
+<DL></DL><P>
+<A NAME="FindAllCB">
+<A NAME ="DOC.142.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  FindAllCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="ReplaceFindCB">
+<A NAME ="DOC.142.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ReplaceFindCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="ReplaceNextCB">
+<A NAME ="DOC.142.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ReplaceNextCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="ReplaceAllCB">
+<A NAME ="DOC.142.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ReplaceAllCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="ChangeNameCB">
+<A NAME ="DOC.142.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ChangeNameCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> Callbacks for some editor properties.
+<DL></DL><P>
+<A NAME="ChangeDirCB">
+<A NAME ="DOC.142.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ChangeDirCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SetModifiedCB">
+<A NAME ="DOC.142.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetModifiedCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SetAutoResizeCB">
+<A NAME ="DOC.142.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetAutoResizeCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SetInlineEditCB">
+<A NAME ="DOC.142.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetInlineEditCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="NewCB">
+<A NAME ="DOC.142.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  NewCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> Callbacks for file functions.
+<DL></DL><P>
+<A NAME="LoadCB">
+<A NAME ="DOC.142.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  LoadCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="AppendCB">
+<A NAME ="DOC.142.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  AppendCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SaveCB">
+<A NAME ="DOC.142.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SaveCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SaveAsCB">
+<A NAME ="DOC.142.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SaveAsCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SaveSelectionAsCB">
+<A NAME ="DOC.142.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SaveSelectionAsCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="QuitCB">
+<A NAME ="DOC.142.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  QuitCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="FindCB">
+<A NAME ="DOC.142.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  FindCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> Callbacks for search functions
+<DL></DL><P>
+<A NAME="ReplaceCB">
+<A NAME ="DOC.142.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ReplaceCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DocumentInfoCB">
+<A NAME ="DOC.142.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DocumentInfoCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> Callbacks for document functions.
+<DL></DL><P>
+<A NAME="DocumentSummaryCB">
+<A NAME ="DOC.142.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DocumentSummaryCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DocumentSourceCB">
+<A NAME ="DOC.142.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DocumentSourceCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DocumentSourceOKCB">
+<A NAME ="DOC.142.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DocumentSourceOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="CheckDocumentCB">
+<A NAME ="DOC.142.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  CheckDocumentCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="AnnotateDocumentCB">
+<A NAME ="DOC.142.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  AnnotateDocumentCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="ModelCheckDocumentCB">
+<A NAME ="DOC.142.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ModelCheckDocumentCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="MakeLargerCB">
+<A NAME ="DOC.142.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  MakeLargerCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> Callbacks for scale functions.
+<DL></DL><P>
+<A NAME="MakeSmallerCB">
+<A NAME ="DOC.142.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  MakeSmallerCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="ScaleFactorCB">
+<A NAME ="DOC.142.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ScaleFactorCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="NormalScaleCB">
+<A NAME ="DOC.142.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  NormalScaleCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="WholeDrawingCB">
+<A NAME ="DOC.142.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  WholeDrawingCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="ScaleFactorOKCB">
+<A NAME ="DOC.142.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ScaleFactorOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="MoveCB">
+<A NAME ="DOC.142.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  MoveCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> Callback for arrow buttons.
+<DL></DL><P>
+<A NAME="SaveAsPSCB">
+<A NAME ="DOC.142.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SaveAsPSCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> Callbacks for Printer functions.
+<DL></DL><P>
+<A NAME="SaveAsEPSCB">
+<A NAME ="DOC.142.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SaveAsEPSCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SaveAsFigTexCB">
+<A NAME ="DOC.142.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SaveAsFigTexCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SaveAsFigPSCB">
+<A NAME ="DOC.142.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SaveAsFigPSCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SaveAsPNGCB">
+<A NAME ="DOC.142.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SaveAsPNGCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SetNameCB">
+<A NAME ="DOC.142.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetNameCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SetPrintCommandCB">
+<A NAME ="DOC.142.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetPrintCommandCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SetPreviewCommandCB">
+<A NAME ="DOC.142.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetPreviewCommandCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SetCopiesCB">
+<A NAME ="DOC.142.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetCopiesCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="ExportAsCB">
+<A NAME ="DOC.142.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ExportAsCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> Callbacks for Printer functions.
+<DL></DL><P>
+<A NAME="ShowPrintPreviewCB">
+<A NAME ="DOC.142.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ShowPrintPreviewCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="PrintCB">
+<A NAME ="DOC.142.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  PrintCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="ShowPrinterQueueCB">
+<A NAME ="DOC.142.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ShowPrinterQueueCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="PrinterNameCB">
+<A NAME ="DOC.142.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  PrinterNameCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="PrinterCopiesCB">
+<A NAME ="DOC.142.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  PrinterCopiesCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="PrintCommandCB">
+<A NAME ="DOC.142.54">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  PrintCommandCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="PrinterQueueCommandCB">
+<A NAME ="DOC.142.55">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  PrinterQueueCommandCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="PrinterRemoveCommandCB">
+<A NAME ="DOC.142.56">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  PrinterRemoveCommandCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="PreviewCommandCB">
+<A NAME ="DOC.142.57">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  PreviewCommandCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SetPrintColorsCB">
+<A NAME ="DOC.142.58">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetPrintColorsCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SetTumbleCB">
+<A NAME ="DOC.142.59">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetTumbleCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SetDuplexCB">
+<A NAME ="DOC.142.60">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetDuplexCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="BannerPageCB">
+<A NAME ="DOC.142.61">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  BannerPageCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="ShowPageBoundaryCB">
+<A NAME ="DOC.142.62">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ShowPageBoundaryCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> Callbacks for Page functions.
+<DL></DL><P>
+<A NAME="PageOrientationCB">
+<A NAME ="DOC.142.63">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  PageOrientationCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="PageSizeCB">
+<A NAME ="DOC.142.64">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  PageSizeCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="ShowPageNumbersCB">
+<A NAME ="DOC.142.65">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ShowPageNumbersCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="ShowDocumentInfoCB">
+<A NAME ="DOC.142.66">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ShowDocumentInfoCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="">
+<A NAME ="DOC.142.67">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  </B></TT>
+<DD> Callbacks for Properties functions.
+<DL></DL><P>
+<A NAME="DefaultLineWidthCB">
+<A NAME ="DOC.142.68">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultLineWidthCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultLineWidthOKCB">
+<A NAME ="DOC.142.69">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultLineWidthOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultLineWidthDefaultCB">
+<A NAME ="DOC.142.70">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultLineWidthDefaultCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineWidthCB">
+<A NAME ="DOC.142.71">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateLineWidthCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineWidthOKCB">
+<A NAME ="DOC.142.72">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateLineWidthOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineWidthDefaultCB">
+<A NAME ="DOC.142.73">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateLineWidthDefaultCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineColorCB">
+<A NAME ="DOC.142.74">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateLineColorCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineColorOKCB">
+<A NAME ="DOC.142.75">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateLineColorOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineColorDefaultCB">
+<A NAME ="DOC.142.76">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateLineColorDefaultCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultLineColorCB">
+<A NAME ="DOC.142.77">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultLineColorCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultLineColorOKCB">
+<A NAME ="DOC.142.78">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultLineColorOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultLineColorDefaultCB">
+<A NAME ="DOC.142.79">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultLineColorDefaultCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateTextColorCB">
+<A NAME ="DOC.142.80">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateTextColorCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateTextColorOKCB">
+<A NAME ="DOC.142.81">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateTextColorOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateTextColorDefaultCB">
+<A NAME ="DOC.142.82">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateTextColorDefaultCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultTextColorCB">
+<A NAME ="DOC.142.83">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultTextColorCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultTextColorOKCB">
+<A NAME ="DOC.142.84">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultTextColorOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultTextColorDefaultCB">
+<A NAME ="DOC.142.85">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultTextColorDefaultCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateFillColorCB">
+<A NAME ="DOC.142.86">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateFillColorCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateFillColorOKCB">
+<A NAME ="DOC.142.87">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateFillColorOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateFillColorDefaultCB">
+<A NAME ="DOC.142.88">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateFillColorDefaultCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultFillColorCB">
+<A NAME ="DOC.142.89">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultFillColorCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultFillColorOKCB">
+<A NAME ="DOC.142.90">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultFillColorOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultFillColorDefaultCB">
+<A NAME ="DOC.142.91">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultFillColorDefaultCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultLineStyleCB">
+<A NAME ="DOC.142.92">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultLineStyleCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultLineStyleOKCB">
+<A NAME ="DOC.142.93">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultLineStyleOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultLineStyleDefaultCB">
+<A NAME ="DOC.142.94">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultLineStyleDefaultCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineStyleCB">
+<A NAME ="DOC.142.95">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateLineStyleCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineStyleOKCB">
+<A NAME ="DOC.142.96">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateLineStyleOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineStyleDefaultCB">
+<A NAME ="DOC.142.97">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateLineStyleDefaultCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultFontCB">
+<A NAME ="DOC.142.98">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultFontCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultFontOKCB">
+<A NAME ="DOC.142.99">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultFontOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultFontDefaultCB">
+<A NAME ="DOC.142.100">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultFontDefaultCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateFontCB">
+<A NAME ="DOC.142.101">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateFontCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateFontOKCB">
+<A NAME ="DOC.142.102">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateFontOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateFontDefaultCB">
+<A NAME ="DOC.142.103">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateFontDefaultCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultTextAlignmentCB">
+<A NAME ="DOC.142.104">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultTextAlignmentCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultTextAlignmentOKCB">
+<A NAME ="DOC.142.105">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultTextAlignmentOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DefaultTextAlignmentDefaultCB">
+<A NAME ="DOC.142.106">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DefaultTextAlignmentDefaultCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateTextAlignmentCB">
+<A NAME ="DOC.142.107">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateTextAlignmentCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateTextAlignmentOKCB">
+<A NAME ="DOC.142.108">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateTextAlignmentOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateTextAlignmentDefaultCB">
+<A NAME ="DOC.142.109">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateTextAlignmentDefaultCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateFSFilesCB">
+<A NAME ="DOC.142.110">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateFSFilesCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateTextCB">
+<A NAME ="DOC.142.111">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateTextCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="PointSnappingCB">
+<A NAME ="DOC.142.112">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  PointSnappingCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> Callbacks for the grid functions.
+<DL></DL><P>
+<A NAME="ShowGridCB">
+<A NAME ="DOC.142.113">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  ShowGridCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="GridSizeCB">
+<A NAME ="DOC.142.114">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  GridSizeCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="PointDistanceCB">
+<A NAME ="DOC.142.115">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  PointDistanceCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="GridSizeOKCB">
+<A NAME ="DOC.142.116">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  GridSizeOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="PointDistanceOKCB">
+<A NAME ="DOC.142.117">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  PointDistanceOKCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UndoCB">
+<A NAME ="DOC.142.118">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UndoCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> view/edit functions.
+<DL></DL><P>
+<A NAME="RedoCB">
+<A NAME ="DOC.142.119">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  RedoCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="RefreshCB">
+<A NAME ="DOC.142.120">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  RefreshCB(Widget, XtPointer, XtPointer)</B></TT>
+<DD> 
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="TableStubs.html"> TableStubs </A><br>
+<A HREF="DiagramStubs.html"> DiagramStubs </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

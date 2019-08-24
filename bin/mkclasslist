@@ -1,0 +1,8 @@
+#!/bin/sh
+# make a list of header file path names sorted on file name.
+
+[ ${TCM_HOME} ] || {
+   echo TCM_HOME is not set. Bailing out.; exit 1
+}
+
+find $TCM_HOME/src -type f -name '*.h' -print | awk -F'/' '{printf("%s %s\n", $0, $NF)}' | sort +1 -2 | awk '{print $1}'

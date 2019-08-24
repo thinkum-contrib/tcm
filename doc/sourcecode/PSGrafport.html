@@ -1,0 +1,514 @@
+<html><head><TITLE>PSGrafport</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  PSGrafport : public <!2><A HREF="Grafport.html#DOC.193.1">Grafport</A> </H2><BLOCKQUOTE>
+ PostScript(tm) grafport class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CGrafport,MGrafport.html,CPSGrafport,MPSGrafport.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.261.54"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  char </TD><TD><B>BANNER</B> []<br>
+<I> postscript file containing front page for printer.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.55"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  double </TD><TD><B>XOFF</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.56"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  double </TD><TD><B>YOFF</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.261.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>PSGrafport</B> (const char *fileName)<br>
+<I> open grafport to filename, When filename = "", stdout is used.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~PSGrafport</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.3"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsSucces</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ClearArea</B> (int, int, int, int)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetLineWidth</B> (unsigned n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetBackgroundColor</B> (const <!1><A HREF="string.html">string</A> *)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetBackgroundColor</B> (const char *)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetForegroundColor</B> (const <!1><A HREF="string.html">string</A> *)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetForegroundColor</B> (const char *)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawRectangle</B> (int x, int y, int wd, int ht)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>FillRectangle</B> (int x, int y, int wd, int ht)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawRoundedRectangle</B> (int x, int y, int wd, int ht, int rd)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>FillRoundedRectangle</B> (int x, int y, int wd, int ht, int rd)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawEllipsedRectangle</B> (int x, int y, int wd, int ht, int rd)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>FillEllipsedRectangle</B> (int x, int y, int wd, int ht, int rd)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawDisk</B> (int x, int y, int wd, int ht, int ellipse_ht)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>FillDisk</B> (int x, int y, int wd, int ht, int ellipse_ht)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.18"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawUnzoomedRectangle</B> (int x, int y, int wd, int ht)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.19"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawStringLeft</B> (int x, int y, const char *str)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.20"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawStringCentered</B> (int x, int y, const char *str)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.21"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawStringRight</B> (int x, int y, const char *str)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.22"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawUnzoomedStringLeft</B> (int x, int y, const char *str)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.23"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawUnzoomedStringCentered</B> (int x, int y, const char *str)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.24"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawStringLeftUnderlined</B> (int x, int y, const char *str)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.25"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawStringRightUnderlined</B> (int x, int y, const char *str)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.26"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawStringCenteredUnderlined</B> (int x, int y, const char *str)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.27"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawLine</B> (int x1, int y1, int x2, int y2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.28"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawLine</B> (const <!1><A HREF="Point.html">Point</A> *p1, const <!1><A HREF="Point.html">Point</A> *p2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.29"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawCurve</B> (const <!1><A HREF="Point.html">Point</A> *p1, const <!1><A HREF="Point.html">Point</A> *p2, const <!1><A HREF="Point.html">Point</A> *p3, const <!1><A HREF="Point.html">Point</A> *p4)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.30"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawUnzoomedLine</B> (int x1, int y1, int x2, int y2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.31"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawPoint</B> (int x, int y)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.32"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawPoint</B> (const <!1><A HREF="Point.html">Point</A> *p)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.33"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawEllipse</B> (int x, int y, int wd, int ht)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.34"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>FillEllipse</B> (int x, int y, int wd, int ht)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.35"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawArc</B> (int x, int y, int wd, int ht, int arc1, int arc2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.36"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>FillArc</B> (int x, int y, int wd, int ht, int arc1, int arc2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.37"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawPolygon</B> (const <!1><A HREF="Point.html">Point</A> *points, int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.38"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>FillPolygon</B> (const <!1><A HREF="Point.html">Point</A> *points, int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.39"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Header</B> (const char *title, const char *creator)<br>
+<I> generate postscript header.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.40"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>BeginDrawProc</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.41"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>EndDrawProc</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.42"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CallDrawProc</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.43"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Banner</B> (const char *title)<br>
+<I> concat banner from file with name of document.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.44"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>BeginPage</B> (int i, int j, int nx, int tot)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.45"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>EndPage</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.46"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Trailer</B> ()<br>
+<I> generate postscript trailer.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.47"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetFont</B> (<!1><A HREF="XFont.html">XFont</A> *<!2><A HREF="Grafport.html#DOC.193.82">font</A>)<br>
+<I> set grafport font.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.48"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>EPSHeader</B> (const char *title, const char *creator, int llx, int lly, int urx, int ury)<br>
+<I> header for encapsulated postscript + bounding box</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.49"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>EPSProlog</B> (int y, int dy)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.50"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPageSize</B> (double x, double y)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.51"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetFactor</B> (double f)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.52"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetISOLatin1Encoding</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.53"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetShowColors</B> (bool b)<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.261.57"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>MakePSString</B> (<!1><A HREF="string.html">string</A> *str)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.58"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>FixEscapeChar</B> (<!1><A HREF="string.html">string</A> *str, char c)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.59"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>FixNonAscii</B> (<!1><A HREF="string.html">string</A> *str)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.60"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>FontProlog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.61"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>InstallIsoLatin1Font</B> (const char *psFont)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.62"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>PageSetup</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.63"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawPSRectangle</B> (int x, int y, int wd, int ht)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.64"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawPSRoundedRectangle</B> (int x, int y, int wd, int ht, int rd)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.65"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawPSEllipsedRectangle</B> (int x, int y, int wd, int ht, int rd)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.66"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawPSArc</B> (int x, int y, int wd, int ht, int ang1, int ang2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.67"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawPSEllipse</B> (int x, int y, int wd, int ht)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.68"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawPSDisk</B> (int x, int y, int wd, int ht, int ellipse_ht)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.69"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawPSLine</B> (int x1, int y1, int x2, int y2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.261.70"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawPSPolygon</B> (const <!1><A HREF="Point.html">Point</A> *point, int nrPoints)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Grafport.html">Grafport:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  bool  <B>DrawsXor</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateSize</B>(int, int)
+<DT><IMG SRC=icon2.gif> virtual  int  <B>GetWidth</B>()
+<DT><IMG SRC=icon2.gif> virtual  int  <B>GetHeight</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Redraw</B>(int, int, int, int, int, int)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="XFont.html">XFont</A>*  <B>GetFont</B>()
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetBackgroundColor</B>()
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetForegroundColor</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <<!1><A HREF="Color.html">Color</A> *> *  <B>GetColors</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetLineStyle</B>(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> s)
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  <B>GetLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetFillStyle</B>(<!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A> s)
+<DT><IMG SRC=icon2.gif> <!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A>  <B>GetFillStyle</B>()
+<DT><IMG SRC=icon2.gif> unsigned  <B>GetLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetZoomValue</B>(double newValue)
+<DT><IMG SRC=icon2.gif> double  <B>GetZoomValue</B>()
+<DT><IMG SRC=icon2.gif> int  <B>Zoom</B>(int x)
+<DT><IMG SRC=icon2.gif> int  <B>ZoomCorrect</B>(int x)
+<DT><IMG SRC=icon2.gif> void  <B>DrawRectangles</B>(const <!1><A HREF="Rectangle.html">Rectangle</A> *rects, int n)
+<DT><IMG SRC=icon2.gif> void  <B>FillRectangles</B>(const <!1><A HREF="Rectangle.html">Rectangle</A> *rects, int n)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawEditDashedRectangle</B>(int, int, int, int)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>DrawStringsCentered</B>(int x, int y, const <!1><A HREF="string.html">string</A> *str, bool ul, int cursor=0)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>DrawStringsLeft</B>( int topLeftx, int topLefty, const <!1><A HREF="string.html">string</A> *str, bool ul, int cursor=0)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>DrawStringsRight</B>( int topRightx, int topRighty, const <!1><A HREF="string.html">string</A> *str, bool ul, int cursor=0)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CursorPosition</B>( int x, int y, const <!1><A HREF="string.html">string</A> *str, int hitX, int hitY)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawEditLine</B>(int, int, int, int)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawEditLine</B>(const <!1><A HREF="Point.html">Point</A> *, const <!1><A HREF="Point.html">Point</A> *)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawEditDottedGridLine</B>(int, int, int, int)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawEditDottedLine</B>(int, int, int, int)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawEditPoint</B>(int, int)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawEditPoint</B>(const <!1><A HREF="Point.html">Point</A> *)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawActiveCaret</B>(int, int)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawDeactiveCaret</B>(int, int)
+</DL><DL>
+<DT><h3>Public</h3><DD><DT><IMG SRC=icon2.gif>  <B></B>
+<DT><IMG SRC=icon2.gif>  <B></B>
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>CursorPosition</B>(int x, int y, const <!1><A HREF="string.html">string</A> *<!2><A HREF="Grafport.html#DOC.193.90">buf</A>, int cursor)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Color.html">Color</A>*  <B>LookupColor</B>(const <!1><A HREF="string.html">string</A> *colorName)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Color.html">Color</A>*  <B>LookupColor</B>(const char *colorName)
+<DT><IMG SRC=icon2.gif> void  <B>AddColor</B>(const <!1><A HREF="string.html">string</A> *colorName, unsigned long pixel)
+<DT><IMG SRC=icon2.gif> void  <B>AddColor</B>(const char *colorName, unsigned long pixel)
+<DT><IMG SRC=icon2.gif> void  <B>AddColor</B>(<!1><A HREF="Color.html">Color</A> *c)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>InitColors</B>()
+<DT><IMG SRC=icon2.gif> void  <B>RecalcPolygon</B>(const <!1><A HREF="Point.html">Point</A> *points, int nrPoints, <!1><A HREF="Point.html">Point</A> *newPoints, int d)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ PostScript(tm) grafport class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="PSGrafport">
+<A NAME ="DOC.261.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  PSGrafport(const char *fileName)</B></TT>
+<DD> open grafport to filename, When filename = "", stdout is used.
+<DL></DL><P>
+<A NAME="~PSGrafport">
+<A NAME ="DOC.261.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~PSGrafport()</B></TT>
+<DL></DL><P>
+<A NAME="IsSucces">
+<A NAME ="DOC.261.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsSucces()</B></TT>
+<DL></DL><P>
+<A NAME="ClearArea">
+<A NAME ="DOC.261.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ClearArea(int, int, int, int)</B></TT>
+<DL></DL><P>
+<A NAME="SetLineWidth">
+<A NAME ="DOC.261.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetLineWidth(unsigned n)</B></TT>
+<DL></DL><P>
+<A NAME="SetBackgroundColor">
+<A NAME ="DOC.261.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetBackgroundColor(const <!1><A HREF="string.html">string</A> *)</B></TT>
+<DL></DL><P>
+<A NAME="SetBackgroundColor">
+<A NAME ="DOC.261.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetBackgroundColor(const char *)</B></TT>
+<DL></DL><P>
+<A NAME="SetForegroundColor">
+<A NAME ="DOC.261.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetForegroundColor(const <!1><A HREF="string.html">string</A> *)</B></TT>
+<DL></DL><P>
+<A NAME="SetForegroundColor">
+<A NAME ="DOC.261.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetForegroundColor(const char *)</B></TT>
+<DL></DL><P>
+<A NAME="DrawRectangle">
+<A NAME ="DOC.261.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawRectangle(int x, int y, int wd, int ht)</B></TT>
+<DL></DL><P>
+<A NAME="FillRectangle">
+<A NAME ="DOC.261.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  FillRectangle(int x, int y, int wd, int ht)</B></TT>
+<DL></DL><P>
+<A NAME="DrawRoundedRectangle">
+<A NAME ="DOC.261.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawRoundedRectangle(int x, int y, int wd, int ht, int rd)</B></TT>
+<DL></DL><P>
+<A NAME="FillRoundedRectangle">
+<A NAME ="DOC.261.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  FillRoundedRectangle(int x, int y, int wd, int ht, int rd)</B></TT>
+<DL></DL><P>
+<A NAME="DrawEllipsedRectangle">
+<A NAME ="DOC.261.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawEllipsedRectangle(int x, int y, int wd, int ht, int rd)</B></TT>
+<DL></DL><P>
+<A NAME="FillEllipsedRectangle">
+<A NAME ="DOC.261.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  FillEllipsedRectangle(int x, int y, int wd, int ht, int rd)</B></TT>
+<DL></DL><P>
+<A NAME="DrawDisk">
+<A NAME ="DOC.261.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawDisk(int x, int y, int wd, int ht, int ellipse_ht)</B></TT>
+<DL></DL><P>
+<A NAME="FillDisk">
+<A NAME ="DOC.261.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  FillDisk(int x, int y, int wd, int ht, int ellipse_ht)</B></TT>
+<DL></DL><P>
+<A NAME="DrawUnzoomedRectangle">
+<A NAME ="DOC.261.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawUnzoomedRectangle(int x, int y, int wd, int ht)</B></TT>
+<DL></DL><P>
+<A NAME="DrawStringLeft">
+<A NAME ="DOC.261.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawStringLeft(int x, int y, const char *str)</B></TT>
+<DL></DL><P>
+<A NAME="DrawStringCentered">
+<A NAME ="DOC.261.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawStringCentered(int x, int y, const char *str)</B></TT>
+<DL></DL><P>
+<A NAME="DrawStringRight">
+<A NAME ="DOC.261.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawStringRight(int x, int y, const char *str)</B></TT>
+<DL></DL><P>
+<A NAME="DrawUnzoomedStringLeft">
+<A NAME ="DOC.261.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawUnzoomedStringLeft(int x, int y, const char *str)</B></TT>
+<DL></DL><P>
+<A NAME="DrawUnzoomedStringCentered">
+<A NAME ="DOC.261.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawUnzoomedStringCentered(int x, int y, const char *str)</B></TT>
+<DL></DL><P>
+<A NAME="DrawStringLeftUnderlined">
+<A NAME ="DOC.261.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawStringLeftUnderlined(int x, int y, const char *str)</B></TT>
+<DL></DL><P>
+<A NAME="DrawStringRightUnderlined">
+<A NAME ="DOC.261.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawStringRightUnderlined(int x, int y, const char *str)</B></TT>
+<DL></DL><P>
+<A NAME="DrawStringCenteredUnderlined">
+<A NAME ="DOC.261.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawStringCenteredUnderlined(int x, int y, const char *str)</B></TT>
+<DL></DL><P>
+<A NAME="DrawLine">
+<A NAME ="DOC.261.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawLine(int x1, int y1, int x2, int y2)</B></TT>
+<DL></DL><P>
+<A NAME="DrawLine">
+<A NAME ="DOC.261.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawLine(const <!1><A HREF="Point.html">Point</A> *p1, const <!1><A HREF="Point.html">Point</A> *p2)</B></TT>
+<DL></DL><P>
+<A NAME="DrawCurve">
+<A NAME ="DOC.261.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawCurve(const <!1><A HREF="Point.html">Point</A> *p1, const <!1><A HREF="Point.html">Point</A> *p2, const <!1><A HREF="Point.html">Point</A> *p3, const <!1><A HREF="Point.html">Point</A> *p4)</B></TT>
+<DL></DL><P>
+<A NAME="DrawUnzoomedLine">
+<A NAME ="DOC.261.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawUnzoomedLine(int x1, int y1, int x2, int y2)</B></TT>
+<DL></DL><P>
+<A NAME="DrawPoint">
+<A NAME ="DOC.261.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawPoint(int x, int y)</B></TT>
+<DL></DL><P>
+<A NAME="DrawPoint">
+<A NAME ="DOC.261.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawPoint(const <!1><A HREF="Point.html">Point</A> *p)</B></TT>
+<DL></DL><P>
+<A NAME="DrawEllipse">
+<A NAME ="DOC.261.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawEllipse(int x, int y, int wd, int ht)</B></TT>
+<DL></DL><P>
+<A NAME="FillEllipse">
+<A NAME ="DOC.261.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  FillEllipse(int x, int y, int wd, int ht)</B></TT>
+<DL></DL><P>
+<A NAME="DrawArc">
+<A NAME ="DOC.261.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawArc(int x, int y, int wd, int ht, int arc1, int arc2)</B></TT>
+<DL></DL><P>
+<A NAME="FillArc">
+<A NAME ="DOC.261.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  FillArc(int x, int y, int wd, int ht, int arc1, int arc2)</B></TT>
+<DL></DL><P>
+<A NAME="DrawPolygon">
+<A NAME ="DOC.261.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawPolygon(const <!1><A HREF="Point.html">Point</A> *points, int n)</B></TT>
+<DL></DL><P>
+<A NAME="FillPolygon">
+<A NAME ="DOC.261.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  FillPolygon(const <!1><A HREF="Point.html">Point</A> *points, int n)</B></TT>
+<DL></DL><P>
+<A NAME="Header">
+<A NAME ="DOC.261.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Header(const char *title, const char *creator)</B></TT>
+<DD> generate postscript header.
+<DL></DL><P>
+<A NAME="BeginDrawProc">
+<A NAME ="DOC.261.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  BeginDrawProc()</B></TT>
+<DL></DL><P>
+<A NAME="EndDrawProc">
+<A NAME ="DOC.261.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  EndDrawProc()</B></TT>
+<DL></DL><P>
+<A NAME="CallDrawProc">
+<A NAME ="DOC.261.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CallDrawProc()</B></TT>
+<DL></DL><P>
+<A NAME="Banner">
+<A NAME ="DOC.261.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Banner(const char *title)</B></TT>
+<DD> concat banner from file with name of document.
+<DL></DL><P>
+<A NAME="BeginPage">
+<A NAME ="DOC.261.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  BeginPage(int i, int j, int nx, int tot)</B></TT>
+<DL></DL><P>
+<A NAME="EndPage">
+<A NAME ="DOC.261.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  EndPage()</B></TT>
+<DL></DL><P>
+<A NAME="Trailer">
+<A NAME ="DOC.261.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Trailer()</B></TT>
+<DD> generate postscript trailer.
+<DL></DL><P>
+<A NAME="SetFont">
+<A NAME ="DOC.261.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetFont(<!1><A HREF="XFont.html">XFont</A> *<!2><A HREF="Grafport.html#DOC.193.82">font</A>)</B></TT>
+<DD> set grafport font.
+<DL></DL><P>
+<A NAME="EPSHeader">
+<A NAME ="DOC.261.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  EPSHeader(const char *title, const char *creator, int llx, int lly, int urx, int ury)</B></TT>
+<DD> header for encapsulated postscript + bounding box
+<DL></DL><P>
+<A NAME="EPSProlog">
+<A NAME ="DOC.261.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  EPSProlog(int y, int dy)</B></TT>
+<DL></DL><P>
+<A NAME="SetPageSize">
+<A NAME ="DOC.261.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPageSize(double x, double y)</B></TT>
+<DL></DL><P>
+<A NAME="SetFactor">
+<A NAME ="DOC.261.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetFactor(double f)</B></TT>
+<DL></DL><P>
+<A NAME="SetISOLatin1Encoding">
+<A NAME ="DOC.261.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetISOLatin1Encoding(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="SetShowColors">
+<A NAME ="DOC.261.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetShowColors(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="BANNER">
+<A NAME ="DOC.261.54">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  char  BANNER[]</B></TT>
+<DD> postscript file containing front page for printer.
+<DL></DL><P>
+<A NAME="XOFF">
+<A NAME ="DOC.261.55">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  double  XOFF</B></TT>
+<DL></DL><P>
+<A NAME="YOFF">
+<A NAME ="DOC.261.56">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  double  YOFF</B></TT>
+<DL></DL><P>
+<A NAME="MakePSString">
+<A NAME ="DOC.261.57">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  MakePSString(<!1><A HREF="string.html">string</A> *str)</B></TT>
+<DL></DL><P>
+<A NAME="FixEscapeChar">
+<A NAME ="DOC.261.58">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  FixEscapeChar(<!1><A HREF="string.html">string</A> *str, char c)</B></TT>
+<DL></DL><P>
+<A NAME="FixNonAscii">
+<A NAME ="DOC.261.59">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  FixNonAscii(<!1><A HREF="string.html">string</A> *str)</B></TT>
+<DL></DL><P>
+<A NAME="FontProlog">
+<A NAME ="DOC.261.60">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  FontProlog()</B></TT>
+<DL></DL><P>
+<A NAME="InstallIsoLatin1Font">
+<A NAME ="DOC.261.61">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  InstallIsoLatin1Font(const char *psFont)</B></TT>
+<DL></DL><P>
+<A NAME="PageSetup">
+<A NAME ="DOC.261.62">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  PageSetup()</B></TT>
+<DL></DL><P>
+<A NAME="DrawPSRectangle">
+<A NAME ="DOC.261.63">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawPSRectangle(int x, int y, int wd, int ht)</B></TT>
+<DL></DL><P>
+<A NAME="DrawPSRoundedRectangle">
+<A NAME ="DOC.261.64">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawPSRoundedRectangle(int x, int y, int wd, int ht, int rd)</B></TT>
+<DL></DL><P>
+<A NAME="DrawPSEllipsedRectangle">
+<A NAME ="DOC.261.65">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawPSEllipsedRectangle(int x, int y, int wd, int ht, int rd)</B></TT>
+<DL></DL><P>
+<A NAME="DrawPSArc">
+<A NAME ="DOC.261.66">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawPSArc(int x, int y, int wd, int ht, int ang1, int ang2)</B></TT>
+<DL></DL><P>
+<A NAME="DrawPSEllipse">
+<A NAME ="DOC.261.67">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawPSEllipse(int x, int y, int wd, int ht)</B></TT>
+<DL></DL><P>
+<A NAME="DrawPSDisk">
+<A NAME ="DOC.261.68">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawPSDisk(int x, int y, int wd, int ht, int ellipse_ht)</B></TT>
+<DL></DL><P>
+<A NAME="DrawPSLine">
+<A NAME ="DOC.261.69">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawPSLine(int x1, int y1, int x2, int y2)</B></TT>
+<DL></DL><P>
+<A NAME="DrawPSPolygon">
+<A NAME ="DOC.261.70">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawPSPolygon(const <!1><A HREF="Point.html">Point</A> *point, int nrPoints)</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

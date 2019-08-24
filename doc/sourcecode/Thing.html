@@ -1,0 +1,131 @@
+<html><head><TITLE>Thing</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Thing  </H2><BLOCKQUOTE>
+ superclass of all identifiable things that can be written to file.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CThing,MThing.html,CSubject,MSubject.html,CShapeView,MShapeView.html,CShape,MShape.html">
+<param name=before value="M,M|_,MR_,Mr_">
+<param name=after value="M,M,M,M">
+<param name=indent value="0,0,0,0">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Classes</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.385.13"> <IMG BORDER=0 SRC=icon1.gif></A>  enum </TD><TD><B>AssocType</B> <br>
+<I> possible types in the assoclist.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.385.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Thing</B> ()<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.385.2"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Thing</B> (const <!2><A HREF="Thing.html#DOC.385.2">Thing</A> &s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.385.3"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Thing</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.385.4"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned  long </TD><TD><B>GetId</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.385.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetId</B> (unsigned long val)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.385.6"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>IsSubject</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.385.7"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>IsShape</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.385.8"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>IsView</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.385.9"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  int </TD><TD><B>GetClassType</B> () const <br>
+<I> return code of the lowest class.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.385.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Write</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)<br>
+<I> write thing to file ofile.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.385.11"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>ReadMembers</B> (<!1><A HREF="InputFile.html">InputFile</A> *, double)<br>
+<I> read from input file. The second param is the read file format. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.385.12"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>SetReferences</B> (<!1><A HREF="AssocList.html">AssocList</A> *)<br>
+<I> update references when thing is read.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.385.14"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>CheckReferences</B> ()<br>
+<I> Check member references.</I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ superclass of all identifiable things that can be written to file.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Thing">
+<A NAME ="DOC.385.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Thing()</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="Thing">
+<A NAME ="DOC.385.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Thing(const <!2><A HREF="Thing.html#DOC.385.2">Thing</A> &s)</B></TT>
+<DL></DL><P>
+<A NAME="~Thing">
+<A NAME ="DOC.385.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Thing()</B></TT>
+<DL></DL><P>
+<A NAME="GetId">
+<A NAME ="DOC.385.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  long  GetId()</B></TT>
+<DL></DL><P>
+<A NAME="SetId">
+<A NAME ="DOC.385.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetId(unsigned long val)</B></TT>
+<DL></DL><P>
+<A NAME="IsSubject">
+<A NAME ="DOC.385.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  IsSubject() const </B></TT>
+<DL></DL><P>
+<A NAME="IsShape">
+<A NAME ="DOC.385.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  IsShape() const </B></TT>
+<DL></DL><P>
+<A NAME="IsView">
+<A NAME ="DOC.385.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  IsView() const </B></TT>
+<DL></DL><P>
+<A NAME="GetClassType">
+<A NAME ="DOC.385.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  int  GetClassType() const </B></TT>
+<DD> return code of the lowest class.
+<DL></DL><P>
+<A NAME="Write">
+<A NAME ="DOC.385.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Write(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)</B></TT>
+<DD> write thing to file ofile.
+<DL></DL><P>
+<A NAME="ReadMembers">
+<A NAME ="DOC.385.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  ReadMembers(<!1><A HREF="InputFile.html">InputFile</A> *, double)</B></TT>
+<DD> read from input file. The second param is the read file format. 
+<DL></DL><P>
+<A NAME="SetReferences">
+<A NAME ="DOC.385.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  SetReferences(<!1><A HREF="AssocList.html">AssocList</A> *)</B></TT>
+<DD> update references when thing is read.
+<DL></DL><P>
+<A NAME="AssocType">
+<A NAME ="DOC.385.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum  AssocType</B></TT>
+<DD> possible types in the assoclist.
+<DL></DL><P>
+<A NAME="CheckReferences">
+<A NAME ="DOC.385.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  CheckReferences()</B></TT>
+<DD> Check member references.
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="Subject.html"> Subject </A><br>
+<A HREF="ShapeView.html"> ShapeView </A><br>
+<A HREF="Shape.html"> Shape </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

@@ -1,0 +1,215 @@
+<html><head><TITLE>SimpleLabel</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  SimpleLabel  </H2><BLOCKQUOTE>
+ abstract (simple) text label class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CSimpleLabel,MSimpleLabel.html,CRowColumnLabel,MRowColumnLabel.html,CCellText,MCellText.html">
+<param name=before value="M,M|_,Mr_">
+<param name=after value="M,M,M">
+<param name=indent value="0,0,0">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.300.25"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MIN_TEXT_WIDTH</B> <br>
+<I> minimal width of cell text outline.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.26"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MIN_TEXT_HEIGHT</B> <br>
+<I> minimal height of cell text outline.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.300.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>SimpleLabel</B> (<!1><A HREF="Grafport.html">Grafport</A> *g, <!1><A HREF="XFont.html">XFont</A> *<!2><A HREF="SimpleLabel.html#DOC.300.34">font</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.2"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>SimpleLabel</B> (const <!2><A HREF="SimpleLabel.html#DOC.300.1">SimpleLabel</A> &<!2><A HREF="SimpleLabel.html#DOC.300.32">text</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.3"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~SimpleLabel</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.4"> <IMG BORDER=0 SRC=icon1.gif></A> friend  int </TD><TD><B>operator==</B> (const <!2><A HREF="SimpleLabel.html#DOC.300.1">SimpleLabel</A> &t1, const <!2><A HREF="SimpleLabel.html#DOC.300.1">SimpleLabel</A> &t2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.5"> <IMG BORDER=0 SRC=icon1.gif></A> friend  int </TD><TD><B>Compare</B> (<!2><A HREF="SimpleLabel.html#DOC.300.1">SimpleLabel</A> *r1, <!2><A HREF="SimpleLabel.html#DOC.300.1">SimpleLabel</A> *r2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.6"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Draw</B> ()<br>
+<I> draw label.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.7"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Undraw</B> ()<br>
+<I> erase label.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawOutLine</B> (const <!1><A HREF="Point.html">Point</A> *c)<br>
+<I> when label is dragged only a dotted box (outline) is drawn</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.9"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdatePosition</B> (const <!1><A HREF="Point.html">Point</A> *)<br>
+<I> update position and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.10"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateText</B> (const <!1><A HREF="string.html">string</A> *)<br>
+<I> update label and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPosition</B> (const <!1><A HREF="Point.html">Point</A> *pt)<br>
+<I> set position.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetText</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I> set label text</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetGrafport</B> (<!1><A HREF="Grafport.html">Grafport</A> *g)<br>
+<I> set grafport</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CalcSize</B> ()<br>
+<I> calculate text size.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.15"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>HitText</B> (int x, int y)<br>
+<I> true iff (x,y) is in text.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.16"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="Point.html">Point</A>* </TD><TD><B>GetPosition</B> () const <br>
+<I> simple 'get' actions.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.17"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="Point.html">Point</A>* </TD><TD><B>GetTopLeft</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.18"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetText</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.19"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetWidth</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.20"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetHeight</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.21"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="XFont.html">XFont</A>* </TD><TD><B>GetFont</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.22"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetFont</B> (<!1><A HREF="XFont.html">XFont</A> *f)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.23"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateFont</B> (<!1><A HREF="XFont.html">XFont</A> *<!2><A HREF="SimpleLabel.html#DOC.300.34">font</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.300.24"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>FontHeight</B> () const <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.300.27"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Grafport.html">Grafport</A>* </TD><TD><B>GetGrafport</B> () const <br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ abstract (simple) text label class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="SimpleLabel">
+<A NAME ="DOC.300.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  SimpleLabel(<!1><A HREF="Grafport.html">Grafport</A> *g, <!1><A HREF="XFont.html">XFont</A> *<!2><A HREF="SimpleLabel.html#DOC.300.34">font</A>)</B></TT>
+<DL></DL><P>
+<A NAME="SimpleLabel">
+<A NAME ="DOC.300.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  SimpleLabel(const <!2><A HREF="SimpleLabel.html#DOC.300.1">SimpleLabel</A> &<!2><A HREF="SimpleLabel.html#DOC.300.32">text</A>)</B></TT>
+<DL></DL><P>
+<A NAME="~SimpleLabel">
+<A NAME ="DOC.300.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~SimpleLabel()</B></TT>
+<DL></DL><P>
+<A NAME="operator==">
+<A NAME ="DOC.300.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  int  operator==(const <!2><A HREF="SimpleLabel.html#DOC.300.1">SimpleLabel</A> &t1, const <!2><A HREF="SimpleLabel.html#DOC.300.1">SimpleLabel</A> &t2)</B></TT>
+<DL></DL><P>
+<A NAME="Compare">
+<A NAME ="DOC.300.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  int  Compare(<!2><A HREF="SimpleLabel.html#DOC.300.1">SimpleLabel</A> *r1, <!2><A HREF="SimpleLabel.html#DOC.300.1">SimpleLabel</A> *r2)</B></TT>
+<DL></DL><P>
+<A NAME="Draw">
+<A NAME ="DOC.300.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Draw()</B></TT>
+<DD> draw label.
+<DL></DL><P>
+<A NAME="Undraw">
+<A NAME ="DOC.300.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Undraw()</B></TT>
+<DD> erase label.
+<DL></DL><P>
+<A NAME="DrawOutLine">
+<A NAME ="DOC.300.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawOutLine(const <!1><A HREF="Point.html">Point</A> *c)</B></TT>
+<DD> when label is dragged only a dotted box (outline) is drawn
+<DL></DL><P>
+<A NAME="UpdatePosition">
+<A NAME ="DOC.300.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdatePosition(const <!1><A HREF="Point.html">Point</A> *)</B></TT>
+<DD> update position and redraw.
+<DL></DL><P>
+<A NAME="UpdateText">
+<A NAME ="DOC.300.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateText(const <!1><A HREF="string.html">string</A> *)</B></TT>
+<DD> update label and redraw.
+<DL></DL><P>
+<A NAME="SetPosition">
+<A NAME ="DOC.300.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPosition(const <!1><A HREF="Point.html">Point</A> *pt)</B></TT>
+<DD> set position.
+<DL></DL><P>
+<A NAME="SetText">
+<A NAME ="DOC.300.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetText(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DD> set label text
+<DL></DL><P>
+<A NAME="SetGrafport">
+<A NAME ="DOC.300.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetGrafport(<!1><A HREF="Grafport.html">Grafport</A> *g)</B></TT>
+<DD> set grafport
+<DL></DL><P>
+<A NAME="CalcSize">
+<A NAME ="DOC.300.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CalcSize()</B></TT>
+<DD> calculate text size.
+<DL></DL><P>
+<A NAME="HitText">
+<A NAME ="DOC.300.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  HitText(int x, int y)</B></TT>
+<DD> true iff (x,y) is in text.
+<DL></DL><P>
+<A NAME="GetPosition">
+<A NAME ="DOC.300.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="Point.html">Point</A>*  GetPosition() const </B></TT>
+<DD> simple 'get' actions.
+<DL></DL><P>
+<A NAME="GetTopLeft">
+<A NAME ="DOC.300.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="Point.html">Point</A>*  GetTopLeft() const </B></TT>
+<DL></DL><P>
+<A NAME="GetText">
+<A NAME ="DOC.300.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetText() const </B></TT>
+<DL></DL><P>
+<A NAME="GetWidth">
+<A NAME ="DOC.300.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetWidth() const </B></TT>
+<DL></DL><P>
+<A NAME="GetHeight">
+<A NAME ="DOC.300.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetHeight() const </B></TT>
+<DL></DL><P>
+<A NAME="GetFont">
+<A NAME ="DOC.300.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="XFont.html">XFont</A>*  GetFont() const </B></TT>
+<DL></DL><P>
+<A NAME="SetFont">
+<A NAME ="DOC.300.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetFont(<!1><A HREF="XFont.html">XFont</A> *f)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateFont">
+<A NAME ="DOC.300.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateFont(<!1><A HREF="XFont.html">XFont</A> *<!2><A HREF="SimpleLabel.html#DOC.300.34">font</A>)</B></TT>
+<DL></DL><P>
+<A NAME="FontHeight">
+<A NAME ="DOC.300.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  FontHeight() const </B></TT>
+<DL></DL><P>
+<A NAME="MIN_TEXT_WIDTH">
+<A NAME ="DOC.300.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MIN_TEXT_WIDTH</B></TT>
+<DD> minimal width of cell text outline.
+<DL></DL><P>
+<A NAME="MIN_TEXT_HEIGHT">
+<A NAME ="DOC.300.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MIN_TEXT_HEIGHT</B></TT>
+<DD> minimal height of cell text outline.
+<DL></DL><P>
+<A NAME="GetGrafport">
+<A NAME ="DOC.300.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Grafport.html">Grafport</A>*  GetGrafport() const </B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="RowColumnLabel.html"> RowColumnLabel </A><br>
+<A HREF="CellText.html"> CellText </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

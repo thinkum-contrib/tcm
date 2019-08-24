@@ -1,0 +1,128 @@
+<html><head><TITLE>MWidget</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  MWidget : public <!2><A HREF="Component.html#DOC.52.1">Component</A> </H2><BLOCKQUOTE>
+ base class for wrapping all Motif widgets.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=215>
+<param name=classes value="CComponent,MComponent.html,CMWidget,MMWidget.html,CMenu,MMenu.html,CMainWindow,MMainWindow.html,CDrawingArea,MDrawingArea.html,CDialog,MDialog.html,CApplication,MApplication.html">
+<param name=before value="M,M,M|_,MR_,MR_,MR_,Mr_">
+<param name=after value="Md_,M,M,M,M,M,M">
+<param name=indent value="0,1,1,1,1,1,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.237.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>MWidget</B> (const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.237.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~MWidget</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.237.3"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Manage</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.237.4"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  const  char* </TD><TD><B>GetClassName</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.237.5"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsRealized</B> ()<br>
+<I> Is the widget realized ?</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.237.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetColormap</B> (Colormap cmap)<br>
+<I> Set the colormap of the window to cmap.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.237.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDestroyCallback</B> (XtCallbackProc fun, XtPointer clientData)<br>
+<I> Add a widget destroyed callback.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.237.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AddLiteClue</B> (Widget w, const char *text)<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.237.9"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>GetLiteClue</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.237.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CreateLiteClue</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.237.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>InstallDestroyHandler</B> ()<br>
+<I> Easy hook for derived classes</I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Component.html">Component:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsManaged</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Unmanage</B>()
+<DT><IMG SRC=icon2.gif> Widget  <B>GetWidget</B>()
+<DT><IMG SRC=icon2.gif> Display*  <B>GetDisplay</B>()
+<DT><IMG SRC=icon2.gif> Window  <B>GetWindow</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetWidget</B>(Widget w)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const char *s)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ base class for wrapping all Motif widgets.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="MWidget">
+<A NAME ="DOC.237.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  MWidget(const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="~MWidget">
+<A NAME ="DOC.237.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~MWidget()</B></TT>
+<DL></DL><P>
+<A NAME="Manage">
+<A NAME ="DOC.237.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Manage()</B></TT>
+<DL></DL><P>
+<A NAME="GetClassName">
+<A NAME ="DOC.237.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  const  char*  GetClassName()</B></TT>
+<DL></DL><P>
+<A NAME="IsRealized">
+<A NAME ="DOC.237.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsRealized()</B></TT>
+<DD> Is the widget realized ?
+<DL></DL><P>
+<A NAME="SetColormap">
+<A NAME ="DOC.237.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetColormap(Colormap cmap)</B></TT>
+<DD> Set the colormap of the window to cmap.
+<DL></DL><P>
+<A NAME="SetDestroyCallback">
+<A NAME ="DOC.237.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDestroyCallback(XtCallbackProc fun, XtPointer clientData)</B></TT>
+<DD> Add a widget destroyed callback.
+<DL></DL><P>
+<A NAME="AddLiteClue">
+<A NAME ="DOC.237.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AddLiteClue(Widget w, const char *text)</B></TT>
+<DL></DL><P>
+<A NAME="GetLiteClue">
+<A NAME ="DOC.237.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  GetLiteClue()</B></TT>
+<DL></DL><P>
+<A NAME="CreateLiteClue">
+<A NAME ="DOC.237.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CreateLiteClue()</B></TT>
+<DL></DL><P>
+<A NAME="InstallDestroyHandler">
+<A NAME ="DOC.237.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  InstallDestroyHandler()</B></TT>
+<DD> Easy hook for derived classes
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="Menu.html"> Menu </A><br>
+<A HREF="MainWindow.html"> MainWindow </A><br>
+<A HREF="DrawingArea.html"> DrawingArea </A><br>
+<A HREF="Dialog.html"> Dialog </A><br>
+<A HREF="Application.html"> Application </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

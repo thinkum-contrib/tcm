@@ -1,0 +1,244 @@
+<html><head><TITLE>PrinterQueueDialog</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  PrinterQueueDialog : public <!2><A HREF="SelectionDialog.html#DOC.294.1">SelectionDialog</A> </H2><BLOCKQUOTE>
+ class for showing printer queue.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=155>
+<param name=classes value="CComponent,MComponent.html,CMWidget,MMWidget.html,CDialog,MDialog.html,CSelectionDialog,MSelectionDialog.html,CPrinterQueueDialog,MPrinterQueueDialog.html">
+<param name=before value="M,M,M,M,M">
+<param name=after value="Md_SPSPSP,Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3,4">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.253.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>PrinterQueueDialog</B> (Widget <!2><A HREF="Dialog.html#DOC.115.36">parent</A>, <!1><A HREF="MainWindow.html">MainWindow</A> *)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.2"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>GetClassName</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Update</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Remove</B> (const char *str)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPrinterName</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>PrinterQueueCommand</B> ()<br>
+<I> show popup dialog to set Unix printer queue command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>PrinterRemoveCommand</B> ()<br>
+<I> ... printer remove command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPrinterQueueCommand</B> (const <!1><A HREF="string.html">string</A> *c)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPrinterRemoveCommand</B> (const <!1><A HREF="string.html">string</A> *c)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultPrinterQueueCommand</B> (const <!1><A HREF="string.html">string</A> *c)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultPrinterRemoveCommand</B> (const <!1><A HREF="string.html">string</A> *c)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.12"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="PromptDialog.html">PromptDialog</A>* </TD><TD><B>GetPromptDialog</B> ()<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.253.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CreateWidget</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Configure</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.15"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>RemoveCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.16"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UpdateCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.17"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetPrinterQueueCommandCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.253.18"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>SetPrinterRemoveCommandCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="SelectionDialog.html">SelectionDialog:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetTextString</B>(const char *v)
+<DT><IMG SRC=icon2.gif> void  <B>SetTextString</B>(const <!1><A HREF="string.html">string</A> *v)
+<DT><IMG SRC=icon2.gif> void  <B>SetEditable</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>GetTextString</B>(char *n)
+<DT><IMG SRC=icon2.gif> void  <B>GetTextString</B>(<!1><A HREF="string.html">string</A> *n)
+<DT><IMG SRC=icon2.gif> void  <B>ManageTextString</B>(bool)
+<DT><IMG SRC=icon2.gif> void  <B>SetSelectionLabel</B>(const char *l)
+<DT><IMG SRC=icon2.gif> void  <B>ManageSelectionLabel</B>(bool)
+<DT><IMG SRC=icon2.gif> void  <B>SetApplyCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> void  <B>SetApplyButtonLabel</B>(const char *txt)
+<DT><IMG SRC=icon2.gif> void  <B>ManageApplyButton</B>(bool)
+<DT><IMG SRC=icon2.gif> static  void  <B>ClearCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> static  void  <B>SetDefaultCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultValue</B>(const char *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultValue</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDefaultValue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SelectItem</B>(const <!1><A HREF="string.html">string</A> *label)
+<DT><IMG SRC=icon2.gif> void  <B>DeselectAllItems</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DeleteAllItems</B>()
+<DT><IMG SRC=icon2.gif> void  <B>AddItem</B>(const char *<!2><A HREF="SelectionDialog.html#DOC.294.32">text</A>, int pos = 0)
+<DT><IMG SRC=icon2.gif> void  <B>AddItem</B>(const <!1><A HREF="string.html">string</A> *<!2><A HREF="SelectionDialog.html#DOC.294.32">text</A>, int pos = 0)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> Widget  <B>GetText</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetText</B>(Widget w)
+<DT><IMG SRC=icon2.gif> Widget  <B>GetList</B>()
+<DT><IMG SRC=icon2.gif> Widget  <B>GetSelectionLabel</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetSelectionLabel</B>(Widget w)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Dialog.html"> Dialog:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  unsigned  <B>MAXTITLE</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>Initialize</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetOKCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetCancelCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetHelpCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> void  <B>SetOKButtonLabel</B>(const char *txt)
+<DT><IMG SRC=icon2.gif> void  <B>SetCancelButtonLabel</B>(const char *txt)
+<DT><IMG SRC=icon2.gif> void  <B>SetHelpButtonLabel</B>(const char *txt)
+<DT><IMG SRC=icon2.gif> void  <B>ManageOKButton</B>(bool)
+<DT><IMG SRC=icon2.gif> void  <B>ManageCancelButton</B>(bool)
+<DT><IMG SRC=icon2.gif> void  <B>ManageHelpButton</B>(bool)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetAutoDestroy</B>(bool b)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Popup</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Popdown</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetTitle</B>(const char *title)
+<DT><IMG SRC=icon2.gif> void  <B>SetTitle</B>(const <!1><A HREF="string.html">string</A> *title)
+<DT><IMG SRC=icon2.gif> void  <B>GetTitle</B>(char *title)
+<DT><IMG SRC=icon2.gif> void  <B>GetTitle</B>(<!1><A HREF="string.html">string</A> *title)
+<DT><IMG SRC=icon2.gif> void  <B>SetModal</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>SetAutoUnmanage</B>(bool b)
+<DT><IMG SRC=icon2.gif> bool  <B>GetAutoUnmanage</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetCenteredOnPointer</B>(bool b)
+<DT><IMG SRC=icon2.gif> static  void  <B>UnmanageCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> static  void  <B>DestroyCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> static  void  <B>DestroyWidgetCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> static  void  <B>TraverseNextCB</B>(Widget, XtPointer, XtPointer)
+<DT><IMG SRC=icon2.gif> static  void  <B>TraverseNextGroupCB</B>(Widget, XtPointer, XtPointer)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> Widget  <B>GetParent</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ManageWidget</B>(Widget, bool)
+<DT><IMG SRC=icon2.gif> void  <B>ManageCenteredOnPointer</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "MWidget.html"> MWidget:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>Manage</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>IsRealized</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetColormap</B>(Colormap cmap)
+<DT><IMG SRC=icon2.gif> void  <B>SetDestroyCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> void  <B>AddLiteClue</B>(Widget w, const char *text)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> Widget  <B>GetLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CreateLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>InstallDestroyHandler</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Component.html"> Component:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsManaged</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Unmanage</B>()
+<DT><IMG SRC=icon2.gif> Widget  <B>GetWidget</B>()
+<DT><IMG SRC=icon2.gif> Display*  <B>GetDisplay</B>()
+<DT><IMG SRC=icon2.gif> Window  <B>GetWindow</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetWidget</B>(Widget w)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const char *s)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ class for showing printer queue.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="PrinterQueueDialog">
+<A NAME ="DOC.253.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  PrinterQueueDialog(Widget <!2><A HREF="Dialog.html#DOC.115.36">parent</A>, <!1><A HREF="MainWindow.html">MainWindow</A> *)</B></TT>
+<DL></DL><P>
+<A NAME="GetClassName">
+<A NAME ="DOC.253.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  GetClassName()</B></TT>
+<DL></DL><P>
+<A NAME="Update">
+<A NAME ="DOC.253.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Update()</B></TT>
+<DL></DL><P>
+<A NAME="Remove">
+<A NAME ="DOC.253.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Remove(const char *str)</B></TT>
+<DL></DL><P>
+<A NAME="SetPrinterName">
+<A NAME ="DOC.253.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPrinterName(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="PrinterQueueCommand">
+<A NAME ="DOC.253.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  PrinterQueueCommand()</B></TT>
+<DD> show popup dialog to set Unix printer queue command.
+<DL></DL><P>
+<A NAME="PrinterRemoveCommand">
+<A NAME ="DOC.253.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  PrinterRemoveCommand()</B></TT>
+<DD> ... printer remove command.
+<DL></DL><P>
+<A NAME="SetPrinterQueueCommand">
+<A NAME ="DOC.253.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPrinterQueueCommand(const <!1><A HREF="string.html">string</A> *c)</B></TT>
+<DL></DL><P>
+<A NAME="SetPrinterRemoveCommand">
+<A NAME ="DOC.253.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPrinterRemoveCommand(const <!1><A HREF="string.html">string</A> *c)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultPrinterQueueCommand">
+<A NAME ="DOC.253.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultPrinterQueueCommand(const <!1><A HREF="string.html">string</A> *c)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultPrinterRemoveCommand">
+<A NAME ="DOC.253.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultPrinterRemoveCommand(const <!1><A HREF="string.html">string</A> *c)</B></TT>
+<DL></DL><P>
+<A NAME="GetPromptDialog">
+<A NAME ="DOC.253.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="PromptDialog.html">PromptDialog</A>*  GetPromptDialog()</B></TT>
+<DL></DL><P>
+<A NAME="CreateWidget">
+<A NAME ="DOC.253.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CreateWidget()</B></TT>
+<DL></DL><P>
+<A NAME="Configure">
+<A NAME ="DOC.253.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Configure()</B></TT>
+<DL></DL><P>
+<A NAME="RemoveCB">
+<A NAME ="DOC.253.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  RemoveCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateCB">
+<A NAME ="DOC.253.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UpdateCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SetPrinterQueueCommandCB">
+<A NAME ="DOC.253.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetPrinterQueueCommandCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="SetPrinterRemoveCommandCB">
+<A NAME ="DOC.253.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  SetPrinterRemoveCommandCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

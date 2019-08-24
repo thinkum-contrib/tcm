@@ -1,0 +1,289 @@
+<html><head><TITLE>DCFDiagram</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  DCFDiagram : public <!2><A HREF="DFDiagram.html#DOC.101.1">DFDiagram</A> </H2><BLOCKQUOTE>
+ data and event flow diagram class
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CDocument,MDocument.html,CDiagram,MDiagram.html,CDFDiagram,MDFDiagram.html,CDCFDiagram,MDCFDiagram.html">
+<param name=before value="M,M,M,M">
+<param name=after value="Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.85.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>DCFDiagram</B> (<!1><A HREF="Config.html">Config</A> *, <!1><A HREF="DCFWindow.html">DCFWindow</A> *, <!1><A HREF="DCFViewer.html">DCFViewer</A> *, <!1><A HREF="DCFGraph.html">DCFGraph</A> *)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~DCFDiagram</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.3"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Node.html">Node</A>* </TD><TD><B>CreateNode</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.4"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Edge.html">Edge</A>* </TD><TD><B>CreateEdge</B> (<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.5"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="NodeShape.html">NodeShape</A>* </TD><TD><B>CreateNodeShape</B> (<!1><A HREF="Node.html">Node</A> *node, int x, int y)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.6"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Line.html">Line</A>* </TD><TD><B>CreateLine</B> (<!1><A HREF="Edge.html">Edge</A> *edge, <!1><A HREF="GShape.html">GShape</A> *fromShape, <!1><A HREF="GShape.html">GShape</A> *toShape, <!1><A HREF="List.html">List</A><<!1><A HREF="Point.html">Point</A> *> *line)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateNodeType</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateEdgeType</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AddSubject</B> (<!1><A HREF="Subject.html">Subject</A> *)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CheckDocument</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>EditPersistence</B> (<!1><A HREF="Subject.html">Subject</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>EditActivation</B> (<!1><A HREF="Subject.html">Subject</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPersistence</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetActivation</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateActivationToggle</B> ()<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.85.16"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Thing.html">Thing</A>* </TD><TD><B>CreateThing</B> (int classNr)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.17"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>CheckEdgeConstraints</B> (<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.85.18"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateActivationDialog</B> (int n)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="DFDiagram.html">DFDiagram:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetDiagram</B>(const <!1><A HREF="string.html">string</A> *diagram)
+<DT><IMG SRC=icon2.gif> void  <B>EditMinispec</B>(<!1><A HREF="Subject.html">Subject</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetMinispec</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetEditProcess</B>(<!1><A HREF="DataProcess.html">DataProcess</A> *e)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="DataProcess.html">DataProcess</A>*  <B>GetEditProcess</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>HasIndexNode</B>(int code)
+<DT><IMG SRC=icon2.gif> bool  <B>HasIndexShape</B>(int code)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Diagram.html"> Diagram:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Fields</h3><DD><DT><IMG SRC=icon2.gif> static  <!1><A HREF="Sequence.html">Sequence</A>  <B>sequence</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>Initialize</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Graph.html">Graph</A>*  <B>GetGraph</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="AssocList.html">AssocList</A>*  <B>GetAssocList</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetCurve</B>(bool set)
+<DT><IMG SRC=icon2.gif> bool  <B>IsCurve</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>CheckConnection</B>(<!1><A HREF="Subject.html">Subject</A> *n1, <!1><A HREF="Subject.html">Subject</A> *n2)
+<DT><IMG SRC=icon2.gif> void  <B>AddSubjects</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *s)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>RemoveSubject</B>(<!1><A HREF="Subject.html">Subject</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>RemoveSubjects</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *s)
+<DT><IMG SRC=icon2.gif> void  <B>CompleteSubjects</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *subjects)
+<DT><IMG SRC=icon2.gif> void  <B>CompleteEdges</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *subjects)
+<DT><IMG SRC=icon2.gif> void  <B>CompleteSubject</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *edges, <!1><A HREF="Subject.html">Subject</A> *subject)
+<DT><IMG SRC=icon2.gif> void  <B>RemoveAll</B>()
+<DT><IMG SRC=icon2.gif> void  <B>AnnotateSubject</B>(<!1><A HREF="Subject.html">Subject</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetSubjectAnnotation</B>(<!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> bool  <B>RedirectEdge</B>(<!1><A HREF="Line.html">Line</A> *line, bool first, const <!1><A HREF="Point.html">Point</A> *pt)
+<DT><IMG SRC=icon2.gif> void  <B>Move</B>(<!2><A HREF="Document.html#DOC.118.42">MoveType</A>)
+<DT><IMG SRC=icon2.gif> void  <B>SelectSubject</B>(<!1><A HREF="Subject.html">Subject</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SelectSubjects</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *s)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>SetText</B>(<!1><A HREF="TextShape.html">TextShape</A> *t, const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>FindAll</B>(const <!1><A HREF="string.html">string</A> *s, bool send, bool substring, bool nameOnly)
+<DT><IMG SRC=icon2.gif> void  <B>FindNext</B>(const <!1><A HREF="string.html">string</A> *s, bool send, bool substring, bool nameOnly)
+<DT><IMG SRC=icon2.gif> void  <B>ReplaceAll</B>(const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool send, bool substring, bool nameOnly)
+<DT><IMG SRC=icon2.gif> void  <B>ReplaceNext</B>(const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool send, bool substring, bool nameOnly)
+<DT><IMG SRC=icon2.gif> void  <B>Reindex</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetNextIndex</B>(<!1><A HREF="Node.html">Node</A> *n)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="DiagramViewer.html">DiagramViewer</A>*  <B>GetDiagramViewer</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetNodeType</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetNodeType</B>(int n)
+<DT><IMG SRC=icon2.gif> int  <B>GetEdgeType</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetEdgeType</B>(int n)
+<DT><IMG SRC=icon2.gif> int  <B>GetNodeShapeType</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetNodeShapeType</B>(int n)
+<DT><IMG SRC=icon2.gif> void  <B>SetLineType</B>(int n)
+<DT><IMG SRC=icon2.gif> int  <B>GetLineType</B>() const 
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  <B>GetNodeLineStyle</B>()
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  <B>GetEdgeLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetNodeLineStyle</B>(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> n)
+<DT><IMG SRC=icon2.gif> void  <B>SetEdgeLineStyle</B>(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> e)
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A>  <B>GetLineEnd1</B>()
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A>  <B>GetLineEnd2</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetLineEnd1</B>(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)
+<DT><IMG SRC=icon2.gif> void  <B>SetLineEnd2</B>(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)
+<DT><IMG SRC=icon2.gif> bool  <B>SetSubjectName</B>(<!1><A HREF="Subject.html">Subject</A> *subject, const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> bool  <B>SetIndex</B>(<!1><A HREF="Node.html">Node</A> *n, const <!1><A HREF="string.html">string</A> *index)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>PlaceShapes</B>()
+<DT><IMG SRC=icon2.gif> void  <B>LoadEntries</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SaveEntries</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateNameStrings</B>(<!1><A HREF="Subject.html">Subject</A> *subject)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Document.html"> Document:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>MoveType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>New</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Load</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Append</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Save</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SaveAs</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SaveSelectionAs</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Quit</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDocInfo</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowSource</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SaveSource</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>ShowSummary</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>ModelCheckDocument</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Annotate</B>()
+<DT><IMG SRC=icon2.gif> void  <B>LoadSave</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DoLoad</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> void  <B>DoSaveAs</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> void  <B>DoSaveSelectionAs</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> double  <B>GetLoadFormat</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>NewFile</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> bool  <B>NewName</B>(const <!1><A HREF="string.html">string</A> *newname)
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *newname)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDocType</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetSuffix</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetToolName</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetAuthor</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetCreationTime</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsDefault</B>()
+<DT><IMG SRC=icon2.gif> void  <B>NewDir</B>(const <!1><A HREF="string.html">string</A> *newdir)
+<DT><IMG SRC=icon2.gif> void  <B>SetDir</B>(const <!1><A HREF="string.html">string</A> *newdir)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDir</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetFSDir</B>()
+<DT><IMG SRC=icon2.gif> void  <B>IncChanges</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DecChanges</B>()
+<DT><IMG SRC=icon2.gif> int  <B>GetChanges</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetInlineEdit</B>(bool)
+<DT><IMG SRC=icon2.gif> bool  <B>IsModified</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetModified</B>(bool set)
+<DT><IMG SRC=icon2.gif> bool  <B>IsLoaded</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>MayWrite</B>(const <!1><A HREF="string.html">string</A> *path)
+<DT><IMG SRC=icon2.gif> void  <B>SetStatus</B>(const char *msg)
+<DT><IMG SRC=icon2.gif> void  <B>SetStatus</B>(const <!1><A HREF="string.html">string</A> *msg)
+<DT><IMG SRC=icon2.gif> void  <B>SetAnnotation</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Find</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Replace</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateWindow</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="EditWindow.html">EditWindow</A>*  <B>GetMainWindow</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Config.html">Config</A>*  <B>GetConfig</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Viewer.html">Viewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="InputFile.html">InputFile</A>*  <B>GetInputFile</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="OutputFile.html">OutputFile</A>*  <B>GetOutputFile</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  <B>GetSourceEditDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  <B>GetDocAnnotationDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  <B>GetEltAnnotationDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="FileSelectionDialog.html">FileSelectionDialog</A>*  <B>GetFileSelectionDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="FindDialog.html">FindDialog</A>*  <B>GetFindDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ReplaceDialog.html">ReplaceDialog</A>*  <B>GetReplaceDialog</B>() const 
+</DL><DL>
+<DT><h3>Protected Fields</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="string.html">string</A>  <B>chkbuf</B>
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsAppending</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsSaveSelection</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateDirectory</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>ShowDialog</B>(<!2><A HREF="MessageDialog.html#DOC.225.1">MessageDialog::DialogType</A>, const char *title, const char *text)
+<DT><IMG SRC=icon2.gif> void  <B>ShowDialog</B>(<!2><A HREF="MessageDialog.html#DOC.225.1">MessageDialog::DialogType</A>, const char *title, const <!1><A HREF="string.html">string</A> *text)
+<DT><IMG SRC=icon2.gif> void  <B>ReportCheck</B>(int errors, const <!1><A HREF="string.html">string</A> *msg)
+<DT><IMG SRC=icon2.gif> bool  <B>Save</B>(const <!1><A HREF="string.html">string</A> *file)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ data and event flow diagram class
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="DCFDiagram">
+<A NAME ="DOC.85.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  DCFDiagram(<!1><A HREF="Config.html">Config</A> *, <!1><A HREF="DCFWindow.html">DCFWindow</A> *, <!1><A HREF="DCFViewer.html">DCFViewer</A> *, <!1><A HREF="DCFGraph.html">DCFGraph</A> *)</B></TT>
+<DL></DL><P>
+<A NAME="~DCFDiagram">
+<A NAME ="DOC.85.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~DCFDiagram()</B></TT>
+<DL></DL><P>
+<A NAME="CreateNode">
+<A NAME ="DOC.85.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Node.html">Node</A>*  CreateNode()</B></TT>
+<DL></DL><P>
+<A NAME="CreateEdge">
+<A NAME ="DOC.85.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Edge.html">Edge</A>*  CreateEdge(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)</B></TT>
+<DL></DL><P>
+<A NAME="CreateNodeShape">
+<A NAME ="DOC.85.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="NodeShape.html">NodeShape</A>*  CreateNodeShape(<!1><A HREF="Node.html">Node</A> *node, int x, int y)</B></TT>
+<DL></DL><P>
+<A NAME="CreateLine">
+<A NAME ="DOC.85.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Line.html">Line</A>*  CreateLine(<!1><A HREF="Edge.html">Edge</A> *edge, <!1><A HREF="GShape.html">GShape</A> *fromShape, <!1><A HREF="GShape.html">GShape</A> *toShape, <!1><A HREF="List.html">List</A><<!1><A HREF="Point.html">Point</A> *> *line)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateNodeType">
+<A NAME ="DOC.85.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateNodeType(int n)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateEdgeType">
+<A NAME ="DOC.85.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateEdgeType(int n)</B></TT>
+<DL></DL><P>
+<A NAME="AddSubject">
+<A NAME ="DOC.85.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AddSubject(<!1><A HREF="Subject.html">Subject</A> *)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="CheckDocument">
+<A NAME ="DOC.85.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CheckDocument()</B></TT>
+<DL></DL><P>
+<A NAME="EditPersistence">
+<A NAME ="DOC.85.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  EditPersistence(<!1><A HREF="Subject.html">Subject</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="EditActivation">
+<A NAME ="DOC.85.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  EditActivation(<!1><A HREF="Subject.html">Subject</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="SetPersistence">
+<A NAME ="DOC.85.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPersistence()</B></TT>
+<DL></DL><P>
+<A NAME="SetActivation">
+<A NAME ="DOC.85.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetActivation()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateActivationToggle">
+<A NAME ="DOC.85.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateActivationToggle()</B></TT>
+<DL></DL><P>
+<A NAME="CreateThing">
+<A NAME ="DOC.85.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Thing.html">Thing</A>*  CreateThing(int classNr)</B></TT>
+<DL></DL><P>
+<A NAME="CheckEdgeConstraints">
+<A NAME ="DOC.85.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  CheckEdgeConstraints(<!1><A HREF="Subject.html">Subject</A> *s1, <!1><A HREF="Subject.html">Subject</A> *s2)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateActivationDialog">
+<A NAME ="DOC.85.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateActivationDialog(int n)</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

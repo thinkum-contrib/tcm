@@ -1,0 +1,99 @@
+#!/bin/sh
+[ ${TCM_HOME} ] || {
+   echo TCM_HOME is not set. Bailing out.; exit 1
+}
+cd $TCM_HOME/bin
+
+GDFILES="tgd"
+DVFILES="terd tesd tcrd tssd tucd tcbd tsqd"
+BVFILES="tatd tstd trpg tpsd tscd"
+FVFILES="tdfd tefd tsnd"
+TRILES="tgtt tfrt"
+PVILES="tcpd tdpd "
+TFILES="tgt ttut ttdt tfet"
+
+# remove TCM tool executables and make softlinks
+# to the tcm?? executables.
+rm -f $GDFILES $DVFILES $BVFILES $FVFILES $PVILES $TRILES $TFILES
+
+
+## sed removes the NT-version in Cygwin
+ARCH=`uname -s | sed -e 's/_NT.*//'`
+
+
+for X in $GDFILES ; do
+	if [ "x$ARCH" = "xCYGWIN" ] ; then
+		c="$TCM_HOME/bin/_cygwin_symlink.sh tcmgd.exe ${X}.exe"
+		echo $c
+		$c
+	else
+		ln -s tcmgd $X
+	fi
+done
+
+
+for X in $DVFILES ; do
+	if [ "x$ARCH" = "xCYGWIN" ] ; then
+		c="$TCM_HOME/bin/_cygwin_symlink.sh tcmdv.exe ${X}.exe"
+		echo $c
+		$c
+	else
+		ln -s tcmdv $X
+	fi
+done
+
+
+for X in $BVFILES ; do
+	if [ "x$ARCH" = "xCYGWIN" ] ; then
+		c="$TCM_HOME/bin/_cygwin_symlink.sh tcmbv.exe ${X}.exe"
+		echo $c
+		$c
+	else
+		ln -s tcmbv $X
+	fi
+done
+
+
+for X in $FVFILES ; do
+	if [ "x$ARCH" = "xCYGWIN" ] ; then
+		c="$TCM_HOME/bin/_cygwin_symlink.sh tcmfv.exe ${X}.exe"
+		echo $c
+		$c
+	else
+		ln -s tcmfv $X
+	fi
+done
+
+
+for X in $TRFILES ; do
+	if [ "x$ARCH" = "xCYGWIN" ] ; then
+		c="$TCM_HOME/bin/_cygwin_symlink.sh tcmtr.exe ${X}.exe"
+		echo $c
+		$c
+	else
+		ln -s tcmtr $X
+	fi
+done
+
+
+for X in $PVFILES ; do
+	if [ "x$ARCH" = "xCYGWIN" ] ; then
+		c="$TCM_HOME/bin/_cygwin_symlink.sh tcmpv.exe ${X}.exe"
+		echo $c
+		$c
+	else
+		ln -s tcmpv $X
+	fi
+done
+
+
+for X in $TFILES ; do
+	if [ "x$ARCH" = "xCYGWIN" ] ; then
+		c="$TCM_HOME/bin/_cygwin_symlink.sh tcmt.exe ${X}.exe"
+		echo $c
+		$c
+	else
+		ln -s tcmt $X
+	fi
+done
+

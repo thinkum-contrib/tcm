@@ -1,0 +1,476 @@
+<html><head><TITLE>GShape</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  GShape : public <!2><A HREF="Shape.html#DOC.296.1">Shape</A> </H2><BLOCKQUOTE>
+ (abstract) graphical shape class, superclass of box, ellipse, line etc.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=155>
+<param name=classes value="CThing,MThing.html,CShape,MShape.html,CGShape,MGShape.html,CNodeShape,MNodeShape.html,CLine,MLine.html">
+<param name=before value="M,M,M,M|_,Mr_">
+<param name=after value="Md_SP,Md_,M,M,M">
+<param name=indent value="0,1,2,2,2">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.196.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>GShape</B> (<!1><A HREF="ShapeView.html">ShapeView</A> *v, <!1><A HREF="Grafport.html">Grafport</A> *g, int x, int y)<br>
+<I> constructor, creates shape at position (x,y).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.2"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>GShape</B> (const <!2><A HREF="GShape.html#DOC.196.1">GShape</A> &)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.3"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~GShape</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Draw</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Undraw</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.6"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>DrawShape</B> ()<br>
+<I> draw the shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.7"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UndrawShape</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.8"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>DrawTextShapes</B> ()<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.9"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UndrawTextShapes</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.10"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateNameString</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I> update string of name text shape and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetNameString</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.12"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetNameString</B> ()<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.13"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="TextShape.html">TextShape</A>* </TD><TD><B>GetName</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTextShape</B> ()<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.15"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetSelect</B> (bool s)<br>
+<I> select this shape and its text shapes are selected.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.16"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>GetLineWidth</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetLineWidth</B> (unsigned n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.18"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLineWidth</B> (unsigned n)<br>
+<I>	</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.19"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> </TD><TD><B>GetLineStyle</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.20"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetLineStyle</B> (<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> x)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.21"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLineStyle</B> (<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> x)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.22"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetTextColor</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.23"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateTextColor</B> (const <!1><A HREF="string.html">string</A> *c)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.24"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!1><A HREF="TextShape.html">TextShape</A>* </TD><TD><B>HitTextShape</B> (int x, int y)<br>
+<I> Returns if (x,y) is in name, and if so returns name.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.25"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>HasTextShape</B> (<!1><A HREF="TextShape.html">TextShape</A> *t) const <br>
+<I> return if it has t as one of the text shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.26"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  int </TD><TD><B>GetLeftMost</B> () const <br>
+<I> refinements of those shape members.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.27"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  int </TD><TD><B>GetTopMost</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.28"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  int </TD><TD><B>GetRightMost</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.29"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  int </TD><TD><B>GetBottomMost</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.30"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsFixedName</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.31"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetFixedName</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.32"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetGrafport</B> (<!1><A HREF="Grafport.html">Grafport</A> *g)<br>
+<I> set grafport of itself and its text shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.33"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetView</B> (<!1><A HREF="ShapeView.html">ShapeView</A> *v)<br>
+<I> set view of itself and its text shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.34"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateFont</B> (<!1><A HREF="XFont.html">XFont</A> *ft)<br>
+<I> update font and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.35"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateAlignment</B> (<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> alignment)<br>
+<I> update text alignments and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.36"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="TextShape.html">TextShape</A>* </TD><TD><B>ChooseTextShape</B> (int, int)<br>
+<I> return a text shape near (x,y).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.37"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>NotifyTextMove</B> (<!1><A HREF="TextShape.html">TextShape</A> *)<br>
+<I> react on movement of some text shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.38"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="XFont.html">XFont</A>* </TD><TD><B>GetFont</B> () const <br>
+<I> return font of the textshapes (all textshapes have same font).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.39"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> </TD><TD><B>GetAlignment</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.40"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>HasNameString</B> (const <!1><A HREF="string.html">string</A> *s, bool c1, bool c2) const <br>
+<I> return if name text shape contains 's'.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.41"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>HasString</B> (const <!1><A HREF="string.html">string</A> *s, bool c1, bool c2) const <br>
+<I> return if some text shape contains 's'.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.42"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>HasString</B> (const <!1><A HREF="string.html">string</A> *s, bool cI, bool aS, <!1><A HREF="List.html">List</A><<!1><A HREF="TextShape.html">TextShape</A> *> *l)<br>
+<I> put all textshapes containing 's' in the list l.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.43"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>CheckReferences</B> ()<br>
+<I> Check also that name reference is ok.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.196.44"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetFont</B> (<!1><A HREF="XFont.html">XFont</A> *ft)<br>
+<I> set fonts of text shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.45"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetTextColor</B> (const <!1><A HREF="string.html">string</A> *c)<br>
+<I> set color of text shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.46"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>WriteGraphicsPart</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)<br>
+<I> write line width and style to file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.47"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadGraphicsPart</B> (<!1><A HREF="InputFile.html">InputFile</A> *ifile, double format)<br>
+<I> read line width and style from file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.48"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>WriteTextPart</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)<br>
+<I> write font and alignment to file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.49"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadTextPart</B> (<!1><A HREF="InputFile.html">InputFile</A> *ifile, double format)<br>
+<I> read and parse font and alignment from file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.50"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDrawAttributes</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.51"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetAlignment</B> (<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)<br>
+<I> set alignments of text shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.52"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SnapPosition</B> ()<br>
+<I> snap at position and text shapes are moved with.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.196.53"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SnapTopleft</B> ()<br>
+<I> snap at topleft and text shapes are moved with.</I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Shape.html">Shape:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_HEIGHT</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_WIDTH</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>HANDLE_WIDTH</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsShape</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsTextShape</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  <!2><A HREF="Shape.html#DOC.296.1">Shape</A>*  <B>Clone</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdatePosition</B>(const <!1><A HREF="Point.html">Point</A> *<!2><A HREF="Shape.html#DOC.296.90">position</A>, bool snap=True)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateSize</B>(int w, int h)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateMove</B>(const <!1><A HREF="Point.html">Point</A> *delta)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateSelect</B>(bool s)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateFirstSelect</B>(bool s)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateColor</B>(<!1><A HREF="string.html">string</A> *<!2><A HREF="Shape.html#DOC.296.97">color</A>)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetFirstSelect</B>(bool s)
+<DT><IMG SRC=icon2.gif> bool  <B>IsFirstSelected</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetVisible</B>(bool s)
+<DT><IMG SRC=icon2.gif> void  <B>SetSubject</B>(<!1><A HREF="Subject.html">Subject</A> *s)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Subject.html">Subject</A>*  <B>GetSubject</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ShapeView.html">ShapeView</A>*  <B>GetView</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetColor</B>(const <!1><A HREF="string.html">string</A> *c)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetColor</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Move</B>(const <!1><A HREF="Point.html">Point</A> *delta)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>AdjustSize</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawOutLine</B>(const <!1><A HREF="Point.html">Point</A> *center)
+<DT><IMG SRC=icon2.gif> virtual  <!1><A HREF="Point.html">Point</A>  <B>GiveSnp</B>(<!1><A HREF="Point.html">Point</A>) const 
+<DT><IMG SRC=icon2.gif> virtual  <!1><A HREF="Point.html">Point</A>  <B>GiveSnp</B>(<!1><A HREF="Point.html">Point</A>, int, int, int &)
+<DT><IMG SRC=icon2.gif> virtual  <!1><A HREF="Point.html">Point</A>  <B>GiveOrthoSnp</B>(<!1><A HREF="Point.html">Point</A> to) const 
+<DT><IMG SRC=icon2.gif> void  <B>SetHandles</B>(int n)
+<DT><IMG SRC=icon2.gif> virtual  int  <B>HitHandles</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>ContainsPt</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="Point.html">Point</A>*  <B>GetPosition</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="Point.html">Point</A>*  <B>GetTopLeft</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsSelected</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsVisible</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsDuplicate</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetWidth</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetHeight</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawDuplicate</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UndrawDuplicate</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDuplicate</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateDuplicate</B>(bool b)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsLine</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>WriteMembers</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)
+<DT><IMG SRC=icon2.gif> bool  <B>ReadMembers</B>(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>SetAssocSubject</B>(<!1><A HREF="AssocList.html">AssocList</A> *)
+<DT><IMG SRC=icon2.gif> bool  <B>SetAssocView</B>(<!1><A HREF="AssocList.html">AssocList</A> *)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>InTextArea</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>MoveRaw</B>(const <!1><A HREF="Point.html">Point</A> *delta)
+</DL><DL>
+<DT><h3>Protected Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_HANDLES</B>
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="Grafport.html">Grafport</A>*  <B>GetGrafport</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetOutlineAttributes</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetSize</B>(int w, int h)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetPosition</B>(const <!1><A HREF="Point.html">Point</A> *<!2><A HREF="Shape.html#DOC.296.90">position</A>, bool snap=True)
+<DT><IMG SRC=icon2.gif> void  <B>SetWidth</B>(int w)
+<DT><IMG SRC=icon2.gif> void  <B>SetHeight</B>(int h)
+<DT><IMG SRC=icon2.gif> void  <B>SetNrHandles</B>(int n)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="DiagramViewer.html">DiagramViewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>PositiveCoord</B>(const <!1><A HREF="Point.html">Point</A>*)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawSelect</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawGraySelect</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UndrawSelect</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UndrawGraySelect</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetTopLeft</B>(const <!1><A HREF="Point.html">Point</A> *topLeft)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetPositionHandles</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ForcePosition</B>(const <!1><A HREF="Point.html">Point</A> *<!2><A HREF="Shape.html#DOC.296.90">position</A>)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Thing.html"> Thing:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>AssocType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> unsigned  long  <B>GetId</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetId</B>(unsigned long val)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsSubject</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsView</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  int  <B>GetClassType</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>Write</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>SetReferences</B>(<!1><A HREF="AssocList.html">AssocList</A> *)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ (abstract) graphical shape class, superclass of box, ellipse, line etc.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="GShape">
+<A NAME ="DOC.196.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  GShape(<!1><A HREF="ShapeView.html">ShapeView</A> *v, <!1><A HREF="Grafport.html">Grafport</A> *g, int x, int y)</B></TT>
+<DD> constructor, creates shape at position (x,y).
+<DL></DL><P>
+<A NAME="GShape">
+<A NAME ="DOC.196.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  GShape(const <!2><A HREF="GShape.html#DOC.196.1">GShape</A> &)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="~GShape">
+<A NAME ="DOC.196.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~GShape()</B></TT>
+<DL></DL><P>
+<A NAME="Draw">
+<A NAME ="DOC.196.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Draw()</B></TT>
+<DL></DL><P>
+<A NAME="Undraw">
+<A NAME ="DOC.196.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Undraw()</B></TT>
+<DL></DL><P>
+<A NAME="DrawShape">
+<A NAME ="DOC.196.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  DrawShape()</B></TT>
+<DD> draw the shape.
+<DL></DL><P>
+<A NAME="UndrawShape">
+<A NAME ="DOC.196.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UndrawShape()</B></TT>
+<DL></DL><P>
+<A NAME="DrawTextShapes">
+<A NAME ="DOC.196.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  DrawTextShapes()</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="UndrawTextShapes">
+<A NAME ="DOC.196.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UndrawTextShapes()</B></TT>
+<DL></DL><P>
+<A NAME="UpdateNameString">
+<A NAME ="DOC.196.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateNameString(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DD> update string of name text shape and redraw.
+<DL></DL><P>
+<A NAME="SetNameString">
+<A NAME ="DOC.196.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetNameString(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetNameString">
+<A NAME ="DOC.196.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetNameString()</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetName">
+<A NAME ="DOC.196.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="TextShape.html">TextShape</A>*  GetName() const </B></TT>
+<DL></DL><P>
+<A NAME="SetTextShape">
+<A NAME ="DOC.196.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTextShape()</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="SetSelect">
+<A NAME ="DOC.196.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetSelect(bool s)</B></TT>
+<DD> select this shape and its text shapes are selected.
+<DL></DL><P>
+<A NAME="GetLineWidth">
+<A NAME ="DOC.196.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  GetLineWidth() const </B></TT>
+<DL></DL><P>
+<A NAME="SetLineWidth">
+<A NAME ="DOC.196.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetLineWidth(unsigned n)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineWidth">
+<A NAME ="DOC.196.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLineWidth(unsigned n)</B></TT>
+<DD>	
+<DL></DL><P>
+<A NAME="GetLineStyle">
+<A NAME ="DOC.196.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  GetLineStyle() const </B></TT>
+<DL></DL><P>
+<A NAME="SetLineStyle">
+<A NAME ="DOC.196.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetLineStyle(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> x)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLineStyle">
+<A NAME ="DOC.196.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLineStyle(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> x)</B></TT>
+<DL></DL><P>
+<A NAME="GetTextColor">
+<A NAME ="DOC.196.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetTextColor() const </B></TT>
+<DL></DL><P>
+<A NAME="UpdateTextColor">
+<A NAME ="DOC.196.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateTextColor(const <!1><A HREF="string.html">string</A> *c)</B></TT>
+<DL></DL><P>
+<A NAME="HitTextShape">
+<A NAME ="DOC.196.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!1><A HREF="TextShape.html">TextShape</A>*  HitTextShape(int x, int y)</B></TT>
+<DD> Returns if (x,y) is in name, and if so returns name.
+<DL></DL><P>
+<A NAME="HasTextShape">
+<A NAME ="DOC.196.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  HasTextShape(<!1><A HREF="TextShape.html">TextShape</A> *t) const </B></TT>
+<DD> return if it has t as one of the text shapes.
+<DL></DL><P>
+<A NAME="GetLeftMost">
+<A NAME ="DOC.196.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  int  GetLeftMost() const </B></TT>
+<DD> refinements of those shape members.
+<DL></DL><P>
+<A NAME="GetTopMost">
+<A NAME ="DOC.196.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  int  GetTopMost() const </B></TT>
+<DL></DL><P>
+<A NAME="GetRightMost">
+<A NAME ="DOC.196.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  int  GetRightMost() const </B></TT>
+<DL></DL><P>
+<A NAME="GetBottomMost">
+<A NAME ="DOC.196.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  int  GetBottomMost() const </B></TT>
+<DL></DL><P>
+<A NAME="IsFixedName">
+<A NAME ="DOC.196.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsFixedName()</B></TT>
+<DL></DL><P>
+<A NAME="SetFixedName">
+<A NAME ="DOC.196.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetFixedName(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="SetGrafport">
+<A NAME ="DOC.196.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetGrafport(<!1><A HREF="Grafport.html">Grafport</A> *g)</B></TT>
+<DD> set grafport of itself and its text shapes.
+<DL></DL><P>
+<A NAME="SetView">
+<A NAME ="DOC.196.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetView(<!1><A HREF="ShapeView.html">ShapeView</A> *v)</B></TT>
+<DD> set view of itself and its text shapes.
+<DL></DL><P>
+<A NAME="UpdateFont">
+<A NAME ="DOC.196.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateFont(<!1><A HREF="XFont.html">XFont</A> *ft)</B></TT>
+<DD> update font and redraw.
+<DL></DL><P>
+<A NAME="UpdateAlignment">
+<A NAME ="DOC.196.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateAlignment(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> alignment)</B></TT>
+<DD> update text alignments and redraw.
+<DL></DL><P>
+<A NAME="ChooseTextShape">
+<A NAME ="DOC.196.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="TextShape.html">TextShape</A>*  ChooseTextShape(int, int)</B></TT>
+<DD> return a text shape near (x,y).
+<DL></DL><P>
+<A NAME="NotifyTextMove">
+<A NAME ="DOC.196.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  NotifyTextMove(<!1><A HREF="TextShape.html">TextShape</A> *)</B></TT>
+<DD> react on movement of some text shape.
+<DL></DL><P>
+<A NAME="GetFont">
+<A NAME ="DOC.196.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="XFont.html">XFont</A>*  GetFont() const </B></TT>
+<DD> return font of the textshapes (all textshapes have same font).
+<DL></DL><P>
+<A NAME="GetAlignment">
+<A NAME ="DOC.196.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>  GetAlignment() const </B></TT>
+<DL></DL><P>
+<A NAME="HasNameString">
+<A NAME ="DOC.196.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  HasNameString(const <!1><A HREF="string.html">string</A> *s, bool c1, bool c2) const </B></TT>
+<DD> return if name text shape contains 's'.
+<DL></DL><P>
+<A NAME="HasString">
+<A NAME ="DOC.196.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  HasString(const <!1><A HREF="string.html">string</A> *s, bool c1, bool c2) const </B></TT>
+<DD> return if some text shape contains 's'.
+<DL></DL><P>
+<A NAME="HasString">
+<A NAME ="DOC.196.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  HasString(const <!1><A HREF="string.html">string</A> *s, bool cI, bool aS, <!1><A HREF="List.html">List</A><<!1><A HREF="TextShape.html">TextShape</A> *> *l)</B></TT>
+<DD> put all textshapes containing 's' in the list l.
+<DL></DL><P>
+<A NAME="CheckReferences">
+<A NAME ="DOC.196.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  CheckReferences()</B></TT>
+<DD> Check also that name reference is ok.
+<DL></DL><P>
+<A NAME="SetFont">
+<A NAME ="DOC.196.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetFont(<!1><A HREF="XFont.html">XFont</A> *ft)</B></TT>
+<DD> set fonts of text shapes.
+<DL></DL><P>
+<A NAME="SetTextColor">
+<A NAME ="DOC.196.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetTextColor(const <!1><A HREF="string.html">string</A> *c)</B></TT>
+<DD> set color of text shapes.
+<DL></DL><P>
+<A NAME="WriteGraphicsPart">
+<A NAME ="DOC.196.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  WriteGraphicsPart(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)</B></TT>
+<DD> write line width and style to file.
+<DL></DL><P>
+<A NAME="ReadGraphicsPart">
+<A NAME ="DOC.196.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadGraphicsPart(<!1><A HREF="InputFile.html">InputFile</A> *ifile, double format)</B></TT>
+<DD> read line width and style from file.
+<DL></DL><P>
+<A NAME="WriteTextPart">
+<A NAME ="DOC.196.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  WriteTextPart(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)</B></TT>
+<DD> write font and alignment to file.
+<DL></DL><P>
+<A NAME="ReadTextPart">
+<A NAME ="DOC.196.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadTextPart(<!1><A HREF="InputFile.html">InputFile</A> *ifile, double format)</B></TT>
+<DD> read and parse font and alignment from file.
+<DL></DL><P>
+<A NAME="SetDrawAttributes">
+<A NAME ="DOC.196.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDrawAttributes()</B></TT>
+<DL></DL><P>
+<A NAME="SetAlignment">
+<A NAME ="DOC.196.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetAlignment(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)</B></TT>
+<DD> set alignments of text shapes.
+<DL></DL><P>
+<A NAME="SnapPosition">
+<A NAME ="DOC.196.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SnapPosition()</B></TT>
+<DD> snap at position and text shapes are moved with.
+<DL></DL><P>
+<A NAME="SnapTopleft">
+<A NAME ="DOC.196.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SnapTopleft()</B></TT>
+<DD> snap at topleft and text shapes are moved with.
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="NodeShape.html"> NodeShape </A><br>
+<A HREF="Line.html"> Line </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

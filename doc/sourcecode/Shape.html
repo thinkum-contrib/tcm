@@ -1,0 +1,618 @@
+<html><head><TITLE>Shape</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Shape : public <!2><A HREF="Thing.html#DOC.385.2">Thing</A> </H2><BLOCKQUOTE>
+ (abstract) shape class, superclass of all possible shapes (graphics + text).
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CThing,MThing.html,CShape,MShape.html,CTextShape,MTextShape.html,CGShape,MGShape.html">
+<param name=before value="M,M,M|_,Mr_">
+<param name=after value="Md_,M,M,M">
+<param name=indent value="0,1,1,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.296.40"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MIN_HEIGHT</B> <br>
+<I> minimal height of a shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.41"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MIN_WIDTH</B> <br>
+<I> minimal width of a shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.65"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>HANDLE_WIDTH</B> <br>
+<I> size of selection handle.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.296.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Shape</B> (<!1><A HREF="ShapeView.html">ShapeView</A> *s, <!1><A HREF="Grafport.html">Grafport</A> *g)<br>
+<I> creates a shape at position (0,0) and size (0,0).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.2"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsShape</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.3"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>IsTextShape</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.4"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!2><A HREF="Shape.html#DOC.296.1">Shape</A>* </TD><TD><B>Clone</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.5"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Draw</B> ()<br>
+<I> Draws the shape: shape itself and its text and selection handles.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.6"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Undraw</B> ()<br>
+<I> Erases the shape: by redrawing it in XOR mode.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.7"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdatePosition</B> (const <!1><A HREF="Point.html">Point</A> *<!2><A HREF="Shape.html#DOC.296.90">position</A>, bool snap=True)<br>
+<I> update position and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.8"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateSize</B> (int w, int h)<br>
+<I> update size and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.9"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateMove</B> (const <!1><A HREF="Point.html">Point</A> *delta)<br>
+<I> update movement and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.10"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateSelect</B> (bool s)<br>
+<I> update selection handles and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.11"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateFirstSelect</B> (bool s)<br>
+<I> update first selection handles and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.12"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateColor</B> (<!1><A HREF="string.html">string</A> *<!2><A HREF="Shape.html#DOC.296.97">color</A>)<br>
+<I> update color and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.13"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetSelect</B> (bool s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.14"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetFirstSelect</B> (bool s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.15"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsFirstSelected</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetVisible</B> (bool s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetSubject</B> (<!1><A HREF="Subject.html">Subject</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.18"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetView</B> (<!1><A HREF="ShapeView.html">ShapeView</A> *v)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.19"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Subject.html">Subject</A>* </TD><TD><B>GetSubject</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.20"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="ShapeView.html">ShapeView</A>* </TD><TD><B>GetView</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.21"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetGrafport</B> (<!1><A HREF="Grafport.html">Grafport</A> *g)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.22"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetColor</B> (const <!1><A HREF="string.html">string</A> *c)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.23"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetColor</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.24"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Move</B> (const <!1><A HREF="Point.html">Point</A> *delta)<br>
+<I> move position by delta.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.25"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>AdjustSize</B> ()<br>
+<I> update size to make the shape fit the text shape strings.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.26"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>DrawOutLine</B> (const <!1><A HREF="Point.html">Point</A> *center)<br>
+<I> Draw outline of the shape (when it is dragged).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.27"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!1><A HREF="Point.html">Point</A> </TD><TD><B>GiveSnp</B> (<!1><A HREF="Point.html">Point</A>) const <br>
+<I> intersection of boundary and line from given point to shape center.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.28"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!1><A HREF="Point.html">Point</A> </TD><TD><B>GiveSnp</B> (<!1><A HREF="Point.html">Point</A>, int, int, int &)<br>
+<I> As GiveSnp but takes into account distribution of multiple lines.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.29"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!1><A HREF="Point.html">Point</A> </TD><TD><B>GiveOrthoSnp</B> (<!1><A HREF="Point.html">Point</A> to) const <br>
+<I> Calc the intersection of an orthogonal line with shape boundary. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.30"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetHandles</B> (int n)<br>
+<I> set n handle rectangles.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.31"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  int </TD><TD><B>HitHandles</B> (int x, int y)<br>
+<I> Return (x,y) handle hit (-1 if not, 0 when shape is line).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.32"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>ContainsPt</B> (int x, int y)<br>
+<I> returns whether (x,y) is geometrically in the shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.33"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="Point.html">Point</A>* </TD><TD><B>GetPosition</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.34"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="Point.html">Point</A>* </TD><TD><B>GetTopLeft</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.35"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsSelected</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.36"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsVisible</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.37"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsDuplicate</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.38"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetWidth</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.39"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetHeight</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.42"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>DrawDuplicate</B> ()<br>
+<I> draw duplication indicator (asterisk).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.43"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UndrawDuplicate</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.44"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDuplicate</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.45"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateDuplicate</B> (bool b)<br>
+<I> set whether shape is a duplicate shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.46"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>IsLine</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.47"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  int </TD><TD><B>GetLeftMost</B> () const <br>
+<I> smallest x-coordinate in shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.48"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  int </TD><TD><B>GetTopMost</B> () const <br>
+<I> smallest y-coordinate in shape. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.49"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  int </TD><TD><B>GetRightMost</B> () const <br>
+<I> largest x-coordinate in shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.50"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  int </TD><TD><B>GetBottomMost</B> () const <br>
+<I> largest y-coordinate in shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.51"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>WriteMembers</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)<br>
+<I> write members of shape to file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.52"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadMembers</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, double format)<br>
+<I> read and parse shape members from file ofile.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.53"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>SetAssocSubject</B> (<!1><A HREF="AssocList.html">AssocList</A> *)<br>
+<I> update subject reference from assocList.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.54"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>SetAssocView</B> (<!1><A HREF="AssocList.html">AssocList</A> *)<br>
+<I> update view reference from assocList.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.55"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>CheckReferences</B> ()<br>
+<I> Check if subject exists as graph element and that view exists.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.56"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetTextShape</B> ()<br>
+<I> update the strings of text shapes with the subject strings.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.57"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!1><A HREF="TextShape.html">TextShape</A>* </TD><TD><B>ChooseTextShape</B> (int, int)<br>
+<I> return a text shape near (x,y).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.58"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!1><A HREF="TextShape.html">TextShape</A>* </TD><TD><B>HitTextShape</B> (int, int)<br>
+<I> return the text shape at (x,y).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.59"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>InTextArea</B> (int x, int y)<br>
+<I> Returns if (x,y) is in text-area.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.60"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>HasNameString</B> (const <!1><A HREF="string.html">string</A> *, bool, bool) const <br>
+<I> true if shape's name text shape contains 's'.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.61"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>HasString</B> (const <!1><A HREF="string.html">string</A> *, bool, bool) const <br>
+<I> true if some of shape's text shapes contains 's'.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.62"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>HasString</B> (const <!1><A HREF="string.html">string</A> *, bool, bool, <!1><A HREF="List.html">List</A><<!1><A HREF="TextShape.html">TextShape</A> *> *)<br>
+<I> put all text shapes containing 's' in the list l.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.63"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>HasTextShape</B> (<!1><A HREF="TextShape.html">TextShape</A> *t) const <br>
+<I> return if it has t as one of the text shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.64"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>MoveRaw</B> (const <!1><A HREF="Point.html">Point</A> *delta)<br>
+<I> move the shape over exact delta, without snap.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.296.78"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>MIN_HANDLES</B> <br>
+<I> minimal nr. of handles.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.296.66"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Grafport.html">Grafport</A>* </TD><TD><B>GetGrafport</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.67"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetDrawAttributes</B> ()<br>
+<I> set attributes of grafport before drawing.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.68"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetOutlineAttributes</B> ()<br>
+<I> set attributes of grafport for drawing outlines.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.69"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetSize</B> (int w, int h)<br>
+<I> set the size of the shape (with a minimum).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.70"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetPosition</B> (const <!1><A HREF="Point.html">Point</A> *<!2><A HREF="Shape.html#DOC.296.90">position</A>, bool snap=True)<br>
+<I> set the position (takes into account the grid when snap=True).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.71"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SnapTopleft</B> ()<br>
+<I> align the shape to the grid (by its topleft).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.72"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SnapPosition</B> ()<br>
+<I> align the shape to the grid (by its center).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.73"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetWidth</B> (int w)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.74"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetHeight</B> (int h)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.75"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetNrHandles</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.76"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="DiagramViewer.html">DiagramViewer</A>* </TD><TD><B>GetViewer</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.77"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>PositiveCoord</B> (const <!1><A HREF="Point.html">Point</A>*)<br>
+<I> change position so that shape has only positive coordinates.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.79"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>DrawSelect</B> ()<br>
+<I> Draw the handles if object is (first) selected.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.80"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>DrawGraySelect</B> ()<br>
+<I> Draw grey handles if the object is selected.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.81"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UndrawSelect</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.82"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UndrawGraySelect</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.83"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTopLeft</B> (const <!1><A HREF="Point.html">Point</A> *topLeft)<br>
+<I> set the top-left and position (take into account width and height).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.84"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetPositionHandles</B> ()<br>
+<I> set all handle rectangles. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.296.85"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ForcePosition</B> (const <!1><A HREF="Point.html">Point</A> *<!2><A HREF="Shape.html#DOC.296.90">position</A>)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Thing.html">Thing:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>AssocType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> unsigned  long  <B>GetId</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetId</B>(unsigned long val)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsSubject</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsView</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  int  <B>GetClassType</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>Write</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>SetReferences</B>(<!1><A HREF="AssocList.html">AssocList</A> *)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ (abstract) shape class, superclass of all possible shapes (graphics + text).
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Shape">
+<A NAME ="DOC.296.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Shape(<!1><A HREF="ShapeView.html">ShapeView</A> *s, <!1><A HREF="Grafport.html">Grafport</A> *g)</B></TT>
+<DD> creates a shape at position (0,0) and size (0,0).
+<DL></DL><P>
+<A NAME="IsShape">
+<A NAME ="DOC.296.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsShape() const </B></TT>
+<DL></DL><P>
+<A NAME="IsTextShape">
+<A NAME ="DOC.296.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  IsTextShape() const </B></TT>
+<DL></DL><P>
+<A NAME="Clone">
+<A NAME ="DOC.296.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!2><A HREF="Shape.html#DOC.296.1">Shape</A>*  Clone()</B></TT>
+<DL></DL><P>
+<A NAME="Draw">
+<A NAME ="DOC.296.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Draw()</B></TT>
+<DD> Draws the shape: shape itself and its text and selection handles.
+<DL></DL><P>
+<A NAME="Undraw">
+<A NAME ="DOC.296.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Undraw()</B></TT>
+<DD> Erases the shape: by redrawing it in XOR mode.
+<DL></DL><P>
+<A NAME="UpdatePosition">
+<A NAME ="DOC.296.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdatePosition(const <!1><A HREF="Point.html">Point</A> *<!2><A HREF="Shape.html#DOC.296.90">position</A>, bool snap=True)</B></TT>
+<DD> update position and redraw.
+<DL></DL><P>
+<A NAME="UpdateSize">
+<A NAME ="DOC.296.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateSize(int w, int h)</B></TT>
+<DD> update size and redraw.
+<DL></DL><P>
+<A NAME="UpdateMove">
+<A NAME ="DOC.296.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateMove(const <!1><A HREF="Point.html">Point</A> *delta)</B></TT>
+<DD> update movement and redraw.
+<DL></DL><P>
+<A NAME="UpdateSelect">
+<A NAME ="DOC.296.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateSelect(bool s)</B></TT>
+<DD> update selection handles and redraw.
+<DL></DL><P>
+<A NAME="UpdateFirstSelect">
+<A NAME ="DOC.296.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateFirstSelect(bool s)</B></TT>
+<DD> update first selection handles and redraw.
+<DL></DL><P>
+<A NAME="UpdateColor">
+<A NAME ="DOC.296.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateColor(<!1><A HREF="string.html">string</A> *<!2><A HREF="Shape.html#DOC.296.97">color</A>)</B></TT>
+<DD> update color and redraw.
+<DL></DL><P>
+<A NAME="SetSelect">
+<A NAME ="DOC.296.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetSelect(bool s)</B></TT>
+<DL></DL><P>
+<A NAME="SetFirstSelect">
+<A NAME ="DOC.296.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetFirstSelect(bool s)</B></TT>
+<DL></DL><P>
+<A NAME="IsFirstSelected">
+<A NAME ="DOC.296.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsFirstSelected() const </B></TT>
+<DL></DL><P>
+<A NAME="SetVisible">
+<A NAME ="DOC.296.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetVisible(bool s)</B></TT>
+<DL></DL><P>
+<A NAME="SetSubject">
+<A NAME ="DOC.296.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetSubject(<!1><A HREF="Subject.html">Subject</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="SetView">
+<A NAME ="DOC.296.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetView(<!1><A HREF="ShapeView.html">ShapeView</A> *v)</B></TT>
+<DL></DL><P>
+<A NAME="GetSubject">
+<A NAME ="DOC.296.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Subject.html">Subject</A>*  GetSubject() const </B></TT>
+<DL></DL><P>
+<A NAME="GetView">
+<A NAME ="DOC.296.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="ShapeView.html">ShapeView</A>*  GetView() const </B></TT>
+<DL></DL><P>
+<A NAME="SetGrafport">
+<A NAME ="DOC.296.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetGrafport(<!1><A HREF="Grafport.html">Grafport</A> *g)</B></TT>
+<DL></DL><P>
+<A NAME="SetColor">
+<A NAME ="DOC.296.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetColor(const <!1><A HREF="string.html">string</A> *c)</B></TT>
+<DL></DL><P>
+<A NAME="GetColor">
+<A NAME ="DOC.296.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetColor() const </B></TT>
+<DL></DL><P>
+<A NAME="Move">
+<A NAME ="DOC.296.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Move(const <!1><A HREF="Point.html">Point</A> *delta)</B></TT>
+<DD> move position by delta.
+<DL></DL><P>
+<A NAME="AdjustSize">
+<A NAME ="DOC.296.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  AdjustSize()</B></TT>
+<DD> update size to make the shape fit the text shape strings.
+<DL></DL><P>
+<A NAME="DrawOutLine">
+<A NAME ="DOC.296.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  DrawOutLine(const <!1><A HREF="Point.html">Point</A> *center)</B></TT>
+<DD> Draw outline of the shape (when it is dragged).
+<DL></DL><P>
+<A NAME="GiveSnp">
+<A NAME ="DOC.296.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!1><A HREF="Point.html">Point</A>  GiveSnp(<!1><A HREF="Point.html">Point</A>) const </B></TT>
+<DD> intersection of boundary and line from given point to shape center.
+<DL></DL><P>
+<A NAME="GiveSnp">
+<A NAME ="DOC.296.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!1><A HREF="Point.html">Point</A>  GiveSnp(<!1><A HREF="Point.html">Point</A>, int, int, int &)</B></TT>
+<DD> As GiveSnp but takes into account distribution of multiple lines.
+<DL></DL><P>
+<A NAME="GiveOrthoSnp">
+<A NAME ="DOC.296.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!1><A HREF="Point.html">Point</A>  GiveOrthoSnp(<!1><A HREF="Point.html">Point</A> to) const </B></TT>
+<DD> Calc the intersection of an orthogonal line with shape boundary. 
+<DL></DL><P>
+<A NAME="SetHandles">
+<A NAME ="DOC.296.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetHandles(int n)</B></TT>
+<DD> set n handle rectangles.
+<DL></DL><P>
+<A NAME="HitHandles">
+<A NAME ="DOC.296.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  int  HitHandles(int x, int y)</B></TT>
+<DD> Return (x,y) handle hit (-1 if not, 0 when shape is line).
+<DL></DL><P>
+<A NAME="ContainsPt">
+<A NAME ="DOC.296.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  ContainsPt(int x, int y)</B></TT>
+<DD> returns whether (x,y) is geometrically in the shape.
+<DL></DL><P>
+<A NAME="GetPosition">
+<A NAME ="DOC.296.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="Point.html">Point</A>*  GetPosition() const </B></TT>
+<DL></DL><P>
+<A NAME="GetTopLeft">
+<A NAME ="DOC.296.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="Point.html">Point</A>*  GetTopLeft() const </B></TT>
+<DL></DL><P>
+<A NAME="IsSelected">
+<A NAME ="DOC.296.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsSelected() const </B></TT>
+<DL></DL><P>
+<A NAME="IsVisible">
+<A NAME ="DOC.296.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsVisible() const </B></TT>
+<DL></DL><P>
+<A NAME="IsDuplicate">
+<A NAME ="DOC.296.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsDuplicate() const </B></TT>
+<DL></DL><P>
+<A NAME="GetWidth">
+<A NAME ="DOC.296.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetWidth() const </B></TT>
+<DL></DL><P>
+<A NAME="GetHeight">
+<A NAME ="DOC.296.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetHeight() const </B></TT>
+<DL></DL><P>
+<A NAME="MIN_HEIGHT">
+<A NAME ="DOC.296.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MIN_HEIGHT</B></TT>
+<DD> minimal height of a shape.
+<DL></DL><P>
+<A NAME="MIN_WIDTH">
+<A NAME ="DOC.296.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MIN_WIDTH</B></TT>
+<DD> minimal width of a shape.
+<DL></DL><P>
+<A NAME="DrawDuplicate">
+<A NAME ="DOC.296.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  DrawDuplicate()</B></TT>
+<DD> draw duplication indicator (asterisk).
+<DL></DL><P>
+<A NAME="UndrawDuplicate">
+<A NAME ="DOC.296.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UndrawDuplicate()</B></TT>
+<DL></DL><P>
+<A NAME="SetDuplicate">
+<A NAME ="DOC.296.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDuplicate(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateDuplicate">
+<A NAME ="DOC.296.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateDuplicate(bool b)</B></TT>
+<DD> set whether shape is a duplicate shape.
+<DL></DL><P>
+<A NAME="IsLine">
+<A NAME ="DOC.296.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  IsLine() const </B></TT>
+<DL></DL><P>
+<A NAME="GetLeftMost">
+<A NAME ="DOC.296.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  int  GetLeftMost() const </B></TT>
+<DD> smallest x-coordinate in shape.
+<DL></DL><P>
+<A NAME="GetTopMost">
+<A NAME ="DOC.296.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  int  GetTopMost() const </B></TT>
+<DD> smallest y-coordinate in shape. 
+<DL></DL><P>
+<A NAME="GetRightMost">
+<A NAME ="DOC.296.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  int  GetRightMost() const </B></TT>
+<DD> largest x-coordinate in shape.
+<DL></DL><P>
+<A NAME="GetBottomMost">
+<A NAME ="DOC.296.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  int  GetBottomMost() const </B></TT>
+<DD> largest y-coordinate in shape.
+<DL></DL><P>
+<A NAME="WriteMembers">
+<A NAME ="DOC.296.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  WriteMembers(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)</B></TT>
+<DD> write members of shape to file.
+<DL></DL><P>
+<A NAME="ReadMembers">
+<A NAME ="DOC.296.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadMembers(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)</B></TT>
+<DD> read and parse shape members from file ofile.
+<DL></DL><P>
+<A NAME="SetAssocSubject">
+<A NAME ="DOC.296.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  SetAssocSubject(<!1><A HREF="AssocList.html">AssocList</A> *)</B></TT>
+<DD> update subject reference from assocList.
+<DL></DL><P>
+<A NAME="SetAssocView">
+<A NAME ="DOC.296.54">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  SetAssocView(<!1><A HREF="AssocList.html">AssocList</A> *)</B></TT>
+<DD> update view reference from assocList.
+<DL></DL><P>
+<A NAME="CheckReferences">
+<A NAME ="DOC.296.55">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  CheckReferences()</B></TT>
+<DD> Check if subject exists as graph element and that view exists.
+<DL></DL><P>
+<A NAME="SetTextShape">
+<A NAME ="DOC.296.56">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetTextShape()</B></TT>
+<DD> update the strings of text shapes with the subject strings.
+<DL></DL><P>
+<A NAME="ChooseTextShape">
+<A NAME ="DOC.296.57">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!1><A HREF="TextShape.html">TextShape</A>*  ChooseTextShape(int, int)</B></TT>
+<DD> return a text shape near (x,y).
+<DL></DL><P>
+<A NAME="HitTextShape">
+<A NAME ="DOC.296.58">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!1><A HREF="TextShape.html">TextShape</A>*  HitTextShape(int, int)</B></TT>
+<DD> return the text shape at (x,y).
+<DL></DL><P>
+<A NAME="InTextArea">
+<A NAME ="DOC.296.59">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  InTextArea(int x, int y)</B></TT>
+<DD> Returns if (x,y) is in text-area.
+<DL></DL><P>
+<A NAME="HasNameString">
+<A NAME ="DOC.296.60">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  HasNameString(const <!1><A HREF="string.html">string</A> *, bool, bool) const </B></TT>
+<DD> true if shape's name text shape contains 's'.
+<DL></DL><P>
+<A NAME="HasString">
+<A NAME ="DOC.296.61">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  HasString(const <!1><A HREF="string.html">string</A> *, bool, bool) const </B></TT>
+<DD> true if some of shape's text shapes contains 's'.
+<DL></DL><P>
+<A NAME="HasString">
+<A NAME ="DOC.296.62">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  HasString(const <!1><A HREF="string.html">string</A> *, bool, bool, <!1><A HREF="List.html">List</A><<!1><A HREF="TextShape.html">TextShape</A> *> *)</B></TT>
+<DD> put all text shapes containing 's' in the list l.
+<DL></DL><P>
+<A NAME="HasTextShape">
+<A NAME ="DOC.296.63">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  HasTextShape(<!1><A HREF="TextShape.html">TextShape</A> *t) const </B></TT>
+<DD> return if it has t as one of the text shapes.
+<DL></DL><P>
+<A NAME="MoveRaw">
+<A NAME ="DOC.296.64">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  MoveRaw(const <!1><A HREF="Point.html">Point</A> *delta)</B></TT>
+<DD> move the shape over exact delta, without snap.
+<DL></DL><P>
+<A NAME="HANDLE_WIDTH">
+<A NAME ="DOC.296.65">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  HANDLE_WIDTH</B></TT>
+<DD> size of selection handle.
+<DL></DL><P>
+<A NAME="GetGrafport">
+<A NAME ="DOC.296.66">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Grafport.html">Grafport</A>*  GetGrafport() const </B></TT>
+<DL></DL><P>
+<A NAME="SetDrawAttributes">
+<A NAME ="DOC.296.67">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetDrawAttributes()</B></TT>
+<DD> set attributes of grafport before drawing.
+<DL></DL><P>
+<A NAME="SetOutlineAttributes">
+<A NAME ="DOC.296.68">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetOutlineAttributes()</B></TT>
+<DD> set attributes of grafport for drawing outlines.
+<DL></DL><P>
+<A NAME="SetSize">
+<A NAME ="DOC.296.69">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetSize(int w, int h)</B></TT>
+<DD> set the size of the shape (with a minimum).
+<DL></DL><P>
+<A NAME="SetPosition">
+<A NAME ="DOC.296.70">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetPosition(const <!1><A HREF="Point.html">Point</A> *<!2><A HREF="Shape.html#DOC.296.90">position</A>, bool snap=True)</B></TT>
+<DD> set the position (takes into account the grid when snap=True).
+<DL></DL><P>
+<A NAME="SnapTopleft">
+<A NAME ="DOC.296.71">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SnapTopleft()</B></TT>
+<DD> align the shape to the grid (by its topleft).
+<DL></DL><P>
+<A NAME="SnapPosition">
+<A NAME ="DOC.296.72">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SnapPosition()</B></TT>
+<DD> align the shape to the grid (by its center).
+<DL></DL><P>
+<A NAME="SetWidth">
+<A NAME ="DOC.296.73">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetWidth(int w)</B></TT>
+<DL></DL><P>
+<A NAME="SetHeight">
+<A NAME ="DOC.296.74">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetHeight(int h)</B></TT>
+<DL></DL><P>
+<A NAME="SetNrHandles">
+<A NAME ="DOC.296.75">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetNrHandles(int n)</B></TT>
+<DL></DL><P>
+<A NAME="GetViewer">
+<A NAME ="DOC.296.76">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="DiagramViewer.html">DiagramViewer</A>*  GetViewer() const </B></TT>
+<DL></DL><P>
+<A NAME="PositiveCoord">
+<A NAME ="DOC.296.77">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  PositiveCoord(const <!1><A HREF="Point.html">Point</A>*)</B></TT>
+<DD> change position so that shape has only positive coordinates.
+<DL></DL><P>
+<A NAME="MIN_HANDLES">
+<A NAME ="DOC.296.78">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  MIN_HANDLES</B></TT>
+<DD> minimal nr. of handles.
+<DL></DL><P>
+<A NAME="DrawSelect">
+<A NAME ="DOC.296.79">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  DrawSelect()</B></TT>
+<DD> Draw the handles if object is (first) selected.
+<DL></DL><P>
+<A NAME="DrawGraySelect">
+<A NAME ="DOC.296.80">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  DrawGraySelect()</B></TT>
+<DD> Draw grey handles if the object is selected.
+<DL></DL><P>
+<A NAME="UndrawSelect">
+<A NAME ="DOC.296.81">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UndrawSelect()</B></TT>
+<DL></DL><P>
+<A NAME="UndrawGraySelect">
+<A NAME ="DOC.296.82">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UndrawGraySelect()</B></TT>
+<DL></DL><P>
+<A NAME="SetTopLeft">
+<A NAME ="DOC.296.83">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTopLeft(const <!1><A HREF="Point.html">Point</A> *topLeft)</B></TT>
+<DD> set the top-left and position (take into account width and height).
+<DL></DL><P>
+<A NAME="SetPositionHandles">
+<A NAME ="DOC.296.84">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetPositionHandles()</B></TT>
+<DD> set all handle rectangles. 
+<DL></DL><P>
+<A NAME="ForcePosition">
+<A NAME ="DOC.296.85">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ForcePosition(const <!1><A HREF="Point.html">Point</A> *<!2><A HREF="Shape.html#DOC.296.90">position</A>)</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="TextShape.html"> TextShape </A><br>
+<A HREF="GShape.html"> GShape </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

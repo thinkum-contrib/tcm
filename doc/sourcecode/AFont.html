@@ -1,0 +1,189 @@
+<html><head><TITLE>AFont</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  AFont  </H2><BLOCKQUOTE>
+ An abstract font class. 
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CAFont,MAFont.html,CXFont,MXFont.html">
+<param name=before value="M,M^_">
+<param name=after value="M,M">
+<param name=indent value="0,0">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.4.1"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>HELVETICA</B> <br>
+<I> Helvetica font family.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.2"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>TIMESROMAN</B> <br>
+<I> Times Roman font family.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.3"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>COURIER</B> <br>
+<I> Courier (fixed width) font family.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.4"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>NEWCENTURYSCHLBK</B> <br>
+<I> New century schoolbook font family.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.5"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>SYMBOL</B> <br>
+<I> Symbol font family.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.6"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>PLAIN</B> <br>
+<I> Plain style constant. Can be mixed with other style constants.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.7"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>BOLD</B> <br>
+<I> Bold style constant. Can be mixed with other style constants.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.8"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>ITALIC</B> <br>
+<I> Italicized style constant. Can be mixed with other style constants.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.4.9"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>AFont</B> (const <!1><A HREF="string.html">string</A>* <!2><A HREF="AFont.html#DOC.4.24">foundry</A>, int name, int <!2><A HREF="AFont.html#DOC.4.26">style</A>, int <!2><A HREF="AFont.html#DOC.4.27">size</A>, bool <!2><A HREF="AFont.html#DOC.4.28">scalable</A>)<br>
+<I> Creates new font with the specified name, style and point size.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.10"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetFamily</B> ()<br>
+<I> Gets the family name of the font.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.11"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetStyle</B> ()<br>
+<I> Gets the style of the font.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.12"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetSize</B> ()<br>
+<I> Gets the point size of the font.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.13"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsScalable</B> ()<br>
+<I> Is the font scalable.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.14"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetFoundry</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetScalable</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.16"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsUnderlined</B> ()<br>
+<I> Is the font underlined.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetUnderlined</B> (bool b)<br>
+<I> Set/Unset font underlined option</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.18"> <IMG BORDER=0 SRC=icon1.gif></A> double </TD><TD><B>GetFactor</B> ()<br>
+<I> The factor with which a scalable font is scaled.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.19"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetFactor</B> (double d)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.20"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsPlain</B> ()<br>
+<I> Returns true if the font is plain.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.21"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsBold</B> ()<br>
+<I> Returns true if the font is bold.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.4.22"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsItalic</B> ()<br>
+<I> Returns true if the font is italic.</I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ An abstract font class. 
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="HELVETICA">
+<A NAME ="DOC.4.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  HELVETICA</B></TT>
+<DD> Helvetica font family.
+<DL></DL><P>
+<A NAME="TIMESROMAN">
+<A NAME ="DOC.4.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  TIMESROMAN</B></TT>
+<DD> Times Roman font family.
+<DL></DL><P>
+<A NAME="COURIER">
+<A NAME ="DOC.4.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  COURIER</B></TT>
+<DD> Courier (fixed width) font family.
+<DL></DL><P>
+<A NAME="NEWCENTURYSCHLBK">
+<A NAME ="DOC.4.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  NEWCENTURYSCHLBK</B></TT>
+<DD> New century schoolbook font family.
+<DL></DL><P>
+<A NAME="SYMBOL">
+<A NAME ="DOC.4.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  SYMBOL</B></TT>
+<DD> Symbol font family.
+<DL></DL><P>
+<A NAME="PLAIN">
+<A NAME ="DOC.4.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  PLAIN</B></TT>
+<DD> Plain style constant. Can be mixed with other style constants.
+<DL></DL><P>
+<A NAME="BOLD">
+<A NAME ="DOC.4.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  BOLD</B></TT>
+<DD> Bold style constant. Can be mixed with other style constants.
+<DL></DL><P>
+<A NAME="ITALIC">
+<A NAME ="DOC.4.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  ITALIC</B></TT>
+<DD> Italicized style constant. Can be mixed with other style constants.
+<DL></DL><P>
+<A NAME="AFont">
+<A NAME ="DOC.4.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  AFont(const <!1><A HREF="string.html">string</A>* <!2><A HREF="AFont.html#DOC.4.24">foundry</A>, int name, int <!2><A HREF="AFont.html#DOC.4.26">style</A>, int <!2><A HREF="AFont.html#DOC.4.27">size</A>, bool <!2><A HREF="AFont.html#DOC.4.28">scalable</A>)</B></TT>
+<DD> Creates new font with the specified name, style and point size.
+<DL></DL><P>
+<A NAME="GetFamily">
+<A NAME ="DOC.4.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetFamily()</B></TT>
+<DD> Gets the family name of the font.
+<DL></DL><P>
+<A NAME="GetStyle">
+<A NAME ="DOC.4.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetStyle()</B></TT>
+<DD> Gets the style of the font.
+<DL></DL><P>
+<A NAME="GetSize">
+<A NAME ="DOC.4.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetSize()</B></TT>
+<DD> Gets the point size of the font.
+<DL></DL><P>
+<A NAME="IsScalable">
+<A NAME ="DOC.4.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsScalable()</B></TT>
+<DD> Is the font scalable.
+<DL></DL><P>
+<A NAME="GetFoundry">
+<A NAME ="DOC.4.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetFoundry()</B></TT>
+<DL></DL><P>
+<A NAME="SetScalable">
+<A NAME ="DOC.4.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetScalable(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="IsUnderlined">
+<A NAME ="DOC.4.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsUnderlined()</B></TT>
+<DD> Is the font underlined.
+<DL></DL><P>
+<A NAME="SetUnderlined">
+<A NAME ="DOC.4.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetUnderlined(bool b)</B></TT>
+<DD> Set/Unset font underlined option
+<DL></DL><P>
+<A NAME="GetFactor">
+<A NAME ="DOC.4.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> double  GetFactor()</B></TT>
+<DD> The factor with which a scalable font is scaled.
+<DL></DL><P>
+<A NAME="SetFactor">
+<A NAME ="DOC.4.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetFactor(double d)</B></TT>
+<DL></DL><P>
+<A NAME="IsPlain">
+<A NAME ="DOC.4.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsPlain()</B></TT>
+<DD> Returns true if the font is plain.
+<DL></DL><P>
+<A NAME="IsBold">
+<A NAME ="DOC.4.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsBold()</B></TT>
+<DD> Returns true if the font is bold.
+<DL></DL><P>
+<A NAME="IsItalic">
+<A NAME ="DOC.4.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsItalic()</B></TT>
+<DD> Returns true if the font is italic.
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="XFont.html"> XFont </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

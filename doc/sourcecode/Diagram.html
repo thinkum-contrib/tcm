@@ -1,0 +1,527 @@
+<html><head><TITLE>Diagram</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Diagram : public <!2><A HREF="Document.html#DOC.118.1">Document</A> </H2><BLOCKQUOTE>
+ (abstract) diagram class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=365>
+<param name=classes value="CDocument,MDocument.html,CDiagram,MDiagram.html,CTRDiagram,MTRDiagram.html,CSTDiagram,MSTDiagram.html,CSNDiagram,MSNDiagram.html,CRPDiagram,MRPDiagram.html,CPSDiagram,MPSDiagram.html,CGDDiagram,MGDDiagram.html,CERDiagram,MERDiagram.html,CDFDiagram,MDFDiagram.html,CCPDiagram,MCPDiagram.html,CATDiagram,MATDiagram.html">
+<param name=before value="M,M,M|_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,Mr_">
+<param name=after value="Md_,M,M,M,M,M,M,M,M,M,M,M">
+<param name=indent value="0,1,1,1,1,1,1,1,1,1,1,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.111.38"> <IMG BORDER=0 SRC=icon1.gif></A> static  <!1><A HREF="Sequence.html">Sequence</A> </TD><TD><B>sequence</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.111.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Diagram</B> (<!1><A HREF="Config.html">Config</A> *, <!1><A HREF="DiagramWindow.html">DiagramWindow</A> *, <!1><A HREF="DiagramViewer.html">DiagramViewer</A> *, <!1><A HREF="Graph.html">Graph</A> *)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Diagram</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Initialize</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.4"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Graph.html">Graph</A>* </TD><TD><B>GetGraph</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.5"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="AssocList.html">AssocList</A>* </TD><TD><B>GetAssocList</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.6"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!1><A HREF="Node.html">Node</A>* </TD><TD><B>CreateNode</B> ()<br>
+<I> Create a new node subject. Depends on current node type.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.7"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!1><A HREF="Edge.html">Edge</A>* </TD><TD><B>CreateEdge</B> (<!1><A HREF="Subject.html">Subject</A> *n1, <!1><A HREF="Subject.html">Subject</A> *n2)<br>
+<I> Create edge, checks if connection is allowed. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.8"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!1><A HREF="NodeShape.html">NodeShape</A>* </TD><TD><B>CreateNodeShape</B> (<!1><A HREF="Node.html">Node</A> *node, int x, int y)<br>
+<I> Create a node shape at (x,y), with default size and node as subject.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.9"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!1><A HREF="Line.html">Line</A>* </TD><TD><B>CreateLine</B> (<!1><A HREF="Edge.html">Edge</A> *edge, <!1><A HREF="GShape.html">GShape</A> *fromShape, <!1><A HREF="GShape.html">GShape</A> *toShape, <!1><A HREF="List.html">List</A><<!1><A HREF="Point.html">Point</A> *> *line)<br>
+<I> Create a line of lineType from fromShape to toShape via points.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.10"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateNodeType</B> (int num)<br>
+<I> set/reset current node shape type to/from num.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.11"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateEdgeType</B> (int num)<br>
+<I> set/reset current edge shape type to/from num.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetCurve</B> (bool set)<br>
+<I> set/reset curved edge shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.13"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsCurve</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.14"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>CheckConnection</B> (<!1><A HREF="Subject.html">Subject</A> *n1, <!1><A HREF="Subject.html">Subject</A> *n2)<br>
+<I> Check if connection between those two nodes is allowed.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.15"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>AddSubject</B> (<!1><A HREF="Subject.html">Subject</A> *s)<br>
+<I> Add node/edge to graph data structure.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AddSubjects</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *s)<br>
+<I> Add nodes and edges to graph data structure.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.17"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>RemoveSubject</B> (<!1><A HREF="Subject.html">Subject</A> *s)<br>
+<I> Remove node/edge from graph data structure.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.18"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>RemoveSubjects</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *s)<br>
+<I> Remove nodes and edges from graph data structure.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.19"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CompleteSubjects</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *subjects)<br>
+<I> add edges to subjects which connect the subjects in subjects.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.20"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CompleteEdges</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *subjects)<br>
+<I> add subjects to subjects which are connected by edges in subjects.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.21"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CompleteSubject</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *edges, <!1><A HREF="Subject.html">Subject</A> *subject)<br>
+<I> add to edges all edges of which subject is part.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.22"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>RemoveAll</B> ()<br>
+<I> Remove all nodes and edges.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.23"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AnnotateSubject</B> (<!1><A HREF="Subject.html">Subject</A> *s)<br>
+<I> Annotate subject via pop-up dialog.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.24"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetSubjectAnnotation</B> (<!1><A HREF="string.html">string</A> *s)<br>
+<I> Annotate annotationSubject</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.25"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>RedirectEdge</B> (<!1><A HREF="Line.html">Line</A> *line, bool first, const <!1><A HREF="Point.html">Point</A> *pt)<br>
+<I> Redirect line from first or last subject that covers point pt.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.26"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Move</B> (<!2><A HREF="Document.html#DOC.118.42">MoveType</A>)<br>
+<I> move diagram in main window.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.27"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SelectSubject</B> (<!1><A HREF="Subject.html">Subject</A> *s)<br>
+<I> select all shapes of subject in current view. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.28"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SelectSubjects</B> (<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *s)<br>
+<I> select all shapes of subjects in list in current view.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.29"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>SetText</B> (<!1><A HREF="TextShape.html">TextShape</A> *t, const <!1><A HREF="string.html">string</A> *s)<br>
+<I> Update the text of text shape t and the corresponding subject.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.30"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>FindAll</B> (const <!1><A HREF="string.html">string</A> *s, bool send, bool substring, bool nameOnly)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.31"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>FindNext</B> (const <!1><A HREF="string.html">string</A> *s, bool send, bool substring, bool nameOnly)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.32"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ReplaceAll</B> (const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool send, bool substring, bool nameOnly)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.33"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ReplaceNext</B> (const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool send, bool substring, bool nameOnly)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.34"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>HasIndexNode</B> (int)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.35"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>HasIndexShape</B> (int)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.36"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Reindex</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.37"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetNextIndex</B> (<!1><A HREF="Node.html">Node</A> *n)<br>
+<I> Give Node next index nr. and update shapes.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.111.39"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="DiagramViewer.html">DiagramViewer</A>* </TD><TD><B>GetDiagramViewer</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.40"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetNodeType</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.41"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetNodeType</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.42"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetEdgeType</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.43"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetEdgeType</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.44"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetNodeShapeType</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.45"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetNodeShapeType</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.46"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetLineType</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.47"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetLineType</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.48"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> </TD><TD><B>GetNodeLineStyle</B> ()<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.49"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> </TD><TD><B>GetEdgeLineStyle</B> ()<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.50"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetNodeLineStyle</B> (<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> n)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.51"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetEdgeLineStyle</B> (<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> e)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.52"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> </TD><TD><B>GetLineEnd1</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.53"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> </TD><TD><B>GetLineEnd2</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.54"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetLineEnd1</B> (<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.55"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetLineEnd2</B> (<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.56"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>SetSubjectName</B> (<!1><A HREF="Subject.html">Subject</A> *subject, const <!1><A HREF="string.html">string</A> *s)<br>
+<I> Sets name of subject to s. Checks if name is allowed.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.57"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>SetIndex</B> (<!1><A HREF="Node.html">Node</A> *n, const <!1><A HREF="string.html">string</A> *index)<br>
+<I> Check and set index of a node.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.58"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>PlaceShapes</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.59"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>LoadEntries</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.60"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SaveEntries</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.61"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!1><A HREF="Thing.html">Thing</A>* </TD><TD><B>CreateThing</B> (int classNr)<br>
+<I> Creates a new shape/subject depending on classNr.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.111.62"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateNameStrings</B> (<!1><A HREF="Subject.html">Subject</A> *subject)<br>
+<I> update all name strings of shapes representing subject.</I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Document.html">Document:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>MoveType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>New</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Load</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Append</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Save</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SaveAs</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SaveSelectionAs</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Quit</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDocInfo</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowSource</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SaveSource</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>ShowSummary</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>CheckDocument</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>ModelCheckDocument</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Annotate</B>()
+<DT><IMG SRC=icon2.gif> void  <B>LoadSave</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DoLoad</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> void  <B>DoSaveAs</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> void  <B>DoSaveSelectionAs</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> double  <B>GetLoadFormat</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>NewFile</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> bool  <B>NewName</B>(const <!1><A HREF="string.html">string</A> *newname)
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *newname)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDocType</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetSuffix</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetToolName</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetAuthor</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetCreationTime</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsDefault</B>()
+<DT><IMG SRC=icon2.gif> void  <B>NewDir</B>(const <!1><A HREF="string.html">string</A> *newdir)
+<DT><IMG SRC=icon2.gif> void  <B>SetDir</B>(const <!1><A HREF="string.html">string</A> *newdir)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDir</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetFSDir</B>()
+<DT><IMG SRC=icon2.gif> void  <B>IncChanges</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DecChanges</B>()
+<DT><IMG SRC=icon2.gif> int  <B>GetChanges</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetInlineEdit</B>(bool)
+<DT><IMG SRC=icon2.gif> bool  <B>IsModified</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetModified</B>(bool set)
+<DT><IMG SRC=icon2.gif> bool  <B>IsLoaded</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>MayWrite</B>(const <!1><A HREF="string.html">string</A> *path)
+<DT><IMG SRC=icon2.gif> void  <B>SetStatus</B>(const char *msg)
+<DT><IMG SRC=icon2.gif> void  <B>SetStatus</B>(const <!1><A HREF="string.html">string</A> *msg)
+<DT><IMG SRC=icon2.gif> void  <B>SetAnnotation</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Find</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Replace</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateWindow</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="EditWindow.html">EditWindow</A>*  <B>GetMainWindow</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Config.html">Config</A>*  <B>GetConfig</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Viewer.html">Viewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="InputFile.html">InputFile</A>*  <B>GetInputFile</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="OutputFile.html">OutputFile</A>*  <B>GetOutputFile</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  <B>GetSourceEditDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  <B>GetDocAnnotationDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  <B>GetEltAnnotationDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="FileSelectionDialog.html">FileSelectionDialog</A>*  <B>GetFileSelectionDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="FindDialog.html">FindDialog</A>*  <B>GetFindDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ReplaceDialog.html">ReplaceDialog</A>*  <B>GetReplaceDialog</B>() const 
+</DL><DL>
+<DT><h3>Protected Fields</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="string.html">string</A>  <B>chkbuf</B>
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsAppending</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsSaveSelection</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateDirectory</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>ShowDialog</B>(<!2><A HREF="MessageDialog.html#DOC.225.1">MessageDialog::DialogType</A>, const char *title, const char *text)
+<DT><IMG SRC=icon2.gif> void  <B>ShowDialog</B>(<!2><A HREF="MessageDialog.html#DOC.225.1">MessageDialog::DialogType</A>, const char *title, const <!1><A HREF="string.html">string</A> *text)
+<DT><IMG SRC=icon2.gif> void  <B>ReportCheck</B>(int errors, const <!1><A HREF="string.html">string</A> *msg)
+<DT><IMG SRC=icon2.gif> bool  <B>Save</B>(const <!1><A HREF="string.html">string</A> *file)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ (abstract) diagram class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Diagram">
+<A NAME ="DOC.111.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Diagram(<!1><A HREF="Config.html">Config</A> *, <!1><A HREF="DiagramWindow.html">DiagramWindow</A> *, <!1><A HREF="DiagramViewer.html">DiagramViewer</A> *, <!1><A HREF="Graph.html">Graph</A> *)</B></TT>
+<DL></DL><P>
+<A NAME="~Diagram">
+<A NAME ="DOC.111.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Diagram()</B></TT>
+<DL></DL><P>
+<A NAME="Initialize">
+<A NAME ="DOC.111.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Initialize()</B></TT>
+<DL></DL><P>
+<A NAME="GetGraph">
+<A NAME ="DOC.111.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Graph.html">Graph</A>*  GetGraph() const </B></TT>
+<DL></DL><P>
+<A NAME="GetAssocList">
+<A NAME ="DOC.111.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="AssocList.html">AssocList</A>*  GetAssocList() const </B></TT>
+<DL></DL><P>
+<A NAME="CreateNode">
+<A NAME ="DOC.111.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!1><A HREF="Node.html">Node</A>*  CreateNode()</B></TT>
+<DD> Create a new node subject. Depends on current node type.
+<DL></DL><P>
+<A NAME="CreateEdge">
+<A NAME ="DOC.111.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!1><A HREF="Edge.html">Edge</A>*  CreateEdge(<!1><A HREF="Subject.html">Subject</A> *n1, <!1><A HREF="Subject.html">Subject</A> *n2)</B></TT>
+<DD> Create edge, checks if connection is allowed. 
+<DL></DL><P>
+<A NAME="CreateNodeShape">
+<A NAME ="DOC.111.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!1><A HREF="NodeShape.html">NodeShape</A>*  CreateNodeShape(<!1><A HREF="Node.html">Node</A> *node, int x, int y)</B></TT>
+<DD> Create a node shape at (x,y), with default size and node as subject.
+<DL></DL><P>
+<A NAME="CreateLine">
+<A NAME ="DOC.111.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!1><A HREF="Line.html">Line</A>*  CreateLine(<!1><A HREF="Edge.html">Edge</A> *edge, <!1><A HREF="GShape.html">GShape</A> *fromShape, <!1><A HREF="GShape.html">GShape</A> *toShape, <!1><A HREF="List.html">List</A><<!1><A HREF="Point.html">Point</A> *> *line)</B></TT>
+<DD> Create a line of lineType from fromShape to toShape via points.
+<DL></DL><P>
+<A NAME="UpdateNodeType">
+<A NAME ="DOC.111.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateNodeType(int num)</B></TT>
+<DD> set/reset current node shape type to/from num.
+<DL></DL><P>
+<A NAME="UpdateEdgeType">
+<A NAME ="DOC.111.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateEdgeType(int num)</B></TT>
+<DD> set/reset current edge shape type to/from num.
+<DL></DL><P>
+<A NAME="SetCurve">
+<A NAME ="DOC.111.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetCurve(bool set)</B></TT>
+<DD> set/reset curved edge shapes.
+<DL></DL><P>
+<A NAME="IsCurve">
+<A NAME ="DOC.111.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsCurve() const </B></TT>
+<DL></DL><P>
+<A NAME="CheckConnection">
+<A NAME ="DOC.111.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  CheckConnection(<!1><A HREF="Subject.html">Subject</A> *n1, <!1><A HREF="Subject.html">Subject</A> *n2)</B></TT>
+<DD> Check if connection between those two nodes is allowed.
+<DL></DL><P>
+<A NAME="AddSubject">
+<A NAME ="DOC.111.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  AddSubject(<!1><A HREF="Subject.html">Subject</A> *s)</B></TT>
+<DD> Add node/edge to graph data structure.
+<DL></DL><P>
+<A NAME="AddSubjects">
+<A NAME ="DOC.111.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AddSubjects(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *s)</B></TT>
+<DD> Add nodes and edges to graph data structure.
+<DL></DL><P>
+<A NAME="RemoveSubject">
+<A NAME ="DOC.111.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  RemoveSubject(<!1><A HREF="Subject.html">Subject</A> *s)</B></TT>
+<DD> Remove node/edge from graph data structure.
+<DL></DL><P>
+<A NAME="RemoveSubjects">
+<A NAME ="DOC.111.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  RemoveSubjects(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *s)</B></TT>
+<DD> Remove nodes and edges from graph data structure.
+<DL></DL><P>
+<A NAME="CompleteSubjects">
+<A NAME ="DOC.111.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CompleteSubjects(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *subjects)</B></TT>
+<DD> add edges to subjects which connect the subjects in subjects.
+<DL></DL><P>
+<A NAME="CompleteEdges">
+<A NAME ="DOC.111.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CompleteEdges(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *subjects)</B></TT>
+<DD> add subjects to subjects which are connected by edges in subjects.
+<DL></DL><P>
+<A NAME="CompleteSubject">
+<A NAME ="DOC.111.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CompleteSubject(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *edges, <!1><A HREF="Subject.html">Subject</A> *subject)</B></TT>
+<DD> add to edges all edges of which subject is part.
+<DL></DL><P>
+<A NAME="RemoveAll">
+<A NAME ="DOC.111.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  RemoveAll()</B></TT>
+<DD> Remove all nodes and edges.
+<DL></DL><P>
+<A NAME="AnnotateSubject">
+<A NAME ="DOC.111.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AnnotateSubject(<!1><A HREF="Subject.html">Subject</A> *s)</B></TT>
+<DD> Annotate subject via pop-up dialog.
+<DL></DL><P>
+<A NAME="SetSubjectAnnotation">
+<A NAME ="DOC.111.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetSubjectAnnotation(<!1><A HREF="string.html">string</A> *s)</B></TT>
+<DD> Annotate annotationSubject
+<DL></DL><P>
+<A NAME="RedirectEdge">
+<A NAME ="DOC.111.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  RedirectEdge(<!1><A HREF="Line.html">Line</A> *line, bool first, const <!1><A HREF="Point.html">Point</A> *pt)</B></TT>
+<DD> Redirect line from first or last subject that covers point pt.
+<DL></DL><P>
+<A NAME="Move">
+<A NAME ="DOC.111.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Move(<!2><A HREF="Document.html#DOC.118.42">MoveType</A>)</B></TT>
+<DD> move diagram in main window.
+<DL></DL><P>
+<A NAME="SelectSubject">
+<A NAME ="DOC.111.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SelectSubject(<!1><A HREF="Subject.html">Subject</A> *s)</B></TT>
+<DD> select all shapes of subject in current view. 
+<DL></DL><P>
+<A NAME="SelectSubjects">
+<A NAME ="DOC.111.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SelectSubjects(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *s)</B></TT>
+<DD> select all shapes of subjects in list in current view.
+<DL></DL><P>
+<A NAME="SetText">
+<A NAME ="DOC.111.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  SetText(<!1><A HREF="TextShape.html">TextShape</A> *t, const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DD> Update the text of text shape t and the corresponding subject.
+<DL></DL><P>
+<A NAME="FindAll">
+<A NAME ="DOC.111.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  FindAll(const <!1><A HREF="string.html">string</A> *s, bool send, bool substring, bool nameOnly)</B></TT>
+<DL></DL><P>
+<A NAME="FindNext">
+<A NAME ="DOC.111.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  FindNext(const <!1><A HREF="string.html">string</A> *s, bool send, bool substring, bool nameOnly)</B></TT>
+<DL></DL><P>
+<A NAME="ReplaceAll">
+<A NAME ="DOC.111.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ReplaceAll(const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool send, bool substring, bool nameOnly)</B></TT>
+<DL></DL><P>
+<A NAME="ReplaceNext">
+<A NAME ="DOC.111.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ReplaceNext(const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool send, bool substring, bool nameOnly)</B></TT>
+<DL></DL><P>
+<A NAME="HasIndexNode">
+<A NAME ="DOC.111.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  HasIndexNode(int)</B></TT>
+<DL></DL><P>
+<A NAME="HasIndexShape">
+<A NAME ="DOC.111.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  HasIndexShape(int)</B></TT>
+<DL></DL><P>
+<A NAME="Reindex">
+<A NAME ="DOC.111.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Reindex()</B></TT>
+<DL></DL><P>
+<A NAME="SetNextIndex">
+<A NAME ="DOC.111.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetNextIndex(<!1><A HREF="Node.html">Node</A> *n)</B></TT>
+<DD> Give Node next index nr. and update shapes.
+<DL></DL><P>
+<A NAME="sequence">
+<A NAME ="DOC.111.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  <!1><A HREF="Sequence.html">Sequence</A>  sequence</B></TT>
+<DL></DL><P>
+<A NAME="GetDiagramViewer">
+<A NAME ="DOC.111.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="DiagramViewer.html">DiagramViewer</A>*  GetDiagramViewer() const </B></TT>
+<DL></DL><P>
+<A NAME="GetNodeType">
+<A NAME ="DOC.111.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetNodeType() const </B></TT>
+<DL></DL><P>
+<A NAME="SetNodeType">
+<A NAME ="DOC.111.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetNodeType(int n)</B></TT>
+<DL></DL><P>
+<A NAME="GetEdgeType">
+<A NAME ="DOC.111.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetEdgeType() const </B></TT>
+<DL></DL><P>
+<A NAME="SetEdgeType">
+<A NAME ="DOC.111.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetEdgeType(int n)</B></TT>
+<DL></DL><P>
+<A NAME="GetNodeShapeType">
+<A NAME ="DOC.111.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetNodeShapeType() const </B></TT>
+<DL></DL><P>
+<A NAME="SetNodeShapeType">
+<A NAME ="DOC.111.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetNodeShapeType(int n)</B></TT>
+<DL></DL><P>
+<A NAME="SetLineType">
+<A NAME ="DOC.111.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetLineType(int n)</B></TT>
+<DL></DL><P>
+<A NAME="GetLineType">
+<A NAME ="DOC.111.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetLineType() const </B></TT>
+<DL></DL><P>
+<A NAME="GetNodeLineStyle">
+<A NAME ="DOC.111.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  GetNodeLineStyle()</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetEdgeLineStyle">
+<A NAME ="DOC.111.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  GetEdgeLineStyle()</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="SetNodeLineStyle">
+<A NAME ="DOC.111.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetNodeLineStyle(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> n)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="SetEdgeLineStyle">
+<A NAME ="DOC.111.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetEdgeLineStyle(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> e)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetLineEnd1">
+<A NAME ="DOC.111.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A>  GetLineEnd1()</B></TT>
+<DL></DL><P>
+<A NAME="GetLineEnd2">
+<A NAME ="DOC.111.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A>  GetLineEnd2()</B></TT>
+<DL></DL><P>
+<A NAME="SetLineEnd1">
+<A NAME ="DOC.111.54">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetLineEnd1(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)</B></TT>
+<DL></DL><P>
+<A NAME="SetLineEnd2">
+<A NAME ="DOC.111.55">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetLineEnd2(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)</B></TT>
+<DL></DL><P>
+<A NAME="SetSubjectName">
+<A NAME ="DOC.111.56">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  SetSubjectName(<!1><A HREF="Subject.html">Subject</A> *subject, const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DD> Sets name of subject to s. Checks if name is allowed.
+<DL></DL><P>
+<A NAME="SetIndex">
+<A NAME ="DOC.111.57">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  SetIndex(<!1><A HREF="Node.html">Node</A> *n, const <!1><A HREF="string.html">string</A> *index)</B></TT>
+<DD> Check and set index of a node.
+<DL></DL><P>
+<A NAME="PlaceShapes">
+<A NAME ="DOC.111.58">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  PlaceShapes()</B></TT>
+<DL></DL><P>
+<A NAME="LoadEntries">
+<A NAME ="DOC.111.59">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  LoadEntries()</B></TT>
+<DL></DL><P>
+<A NAME="SaveEntries">
+<A NAME ="DOC.111.60">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SaveEntries()</B></TT>
+<DL></DL><P>
+<A NAME="CreateThing">
+<A NAME ="DOC.111.61">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!1><A HREF="Thing.html">Thing</A>*  CreateThing(int classNr)</B></TT>
+<DD> Creates a new shape/subject depending on classNr.
+<DL></DL><P>
+<A NAME="UpdateNameStrings">
+<A NAME ="DOC.111.62">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateNameStrings(<!1><A HREF="Subject.html">Subject</A> *subject)</B></TT>
+<DD> update all name strings of shapes representing subject.
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="TRDiagram.html"> TRDiagram </A><br>
+<A HREF="STDiagram.html"> STDiagram </A><br>
+<A HREF="SNDiagram.html"> SNDiagram </A><br>
+<A HREF="RPDiagram.html"> RPDiagram </A><br>
+<A HREF="PSDiagram.html"> PSDiagram </A><br>
+<A HREF="GDDiagram.html"> GDDiagram </A><br>
+<A HREF="ERDiagram.html"> ERDiagram </A><br>
+<A HREF="DFDiagram.html"> DFDiagram </A><br>
+<A HREF="CPDiagram.html"> CPDiagram </A><br>
+<A HREF="ATDiagram.html"> ATDiagram </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

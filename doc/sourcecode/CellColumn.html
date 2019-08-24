@@ -1,0 +1,200 @@
+<html><head><TITLE>CellColumn</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  CellColumn : public <!2><A HREF="CellVector.html#DOC.42.1">CellVector</A> </H2><BLOCKQUOTE>
+ (table) column class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CCellVector,MCellVector.html,CCellColumn,MCellColumn.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.35.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CellColumn</B> (<!1><A HREF="TableViewer.html">TableViewer</A> *v, unsigned columnNumber, int <!2><A HREF="CellColumn.html#DOC.35.19">width</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.2"> <IMG BORDER=0 SRC=icon1.gif></A> friend  int </TD><TD><B>Compare</B> (<!2><A HREF="CellColumn.html#DOC.35.1">CellColumn</A> *c1, <!2><A HREF="CellColumn.html#DOC.35.1">CellColumn</A> *c2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateWidth</B> (int <!2><A HREF="CellColumn.html#DOC.35.19">width</A>)<br>
+<I> make each cell width wide.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdatePosition</B> (int delta)<br>
+<I> move each cell delta left/right.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateHeight</B> (unsigned rownr)<br>
+<I> resize all cells from index rownr and lower.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.6"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="LinePiece.html">LinePiece</A>* </TD><TD><B>HitLinePiece</B> (int x, int y)<br>
+<I> if (x,y) is on a linepiece, return it.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AddCell</B> (<!1><A HREF="Cell.html">Cell</A> *c, bool redraw=True)<br>
+<I> append cell to column.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DeleteCell</B> (<!1><A HREF="Cell.html">Cell</A> *c, bool redraw=True)<br>
+<I> delete cell from column.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>InsertCell</B> (<!1><A HREF="Cell.html">Cell</A> *c, unsigned n, bool redraw=True)<br>
+<I> insert cell in column at position n.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.10"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ContainsPt</B> (int x, int y) const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Write</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f)<br>
+<I> write attributes (but not cell contents) to file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>WritePartial</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f, int i, <!1><A HREF="List.html">List</A><int> *rowNumbers)<br>
+<I> write part of column to file (only given rows).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.13"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Read</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, unsigned fromRow, double format)<br>
+<I> read attributes back from file starting at row n.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.14"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetMinimalWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.15"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetWidth</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.16"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetMarginWidth</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateTextPositions</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.35.18"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CalcLabelPositions</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="CellVector.html">CellVector:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> friend  int  <B>operator==</B>(const <!2><A HREF="CellVector.html#DOC.42.1">CellVector</A> &c1, const <!2><A HREF="CellVector.html#DOC.42.1">CellVector</A> &c2)
+<DT><IMG SRC=icon2.gif> void  <B>Draw</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Undraw</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DrawCells</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UndrawCells</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DrawLines</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UndrawLines</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DrawLabels</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UndrawLabels</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetGrafport</B>(<!1><A HREF="Grafport.html">Grafport</A> *g)
+<DT><IMG SRC=icon2.gif> void  <B>SetVisible</B>(bool b)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TableViewer.html">TableViewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>HasCell</B>(<!1><A HREF="Cell.html">Cell</A> *c)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="RowColumnLabel.html">RowColumnLabel</A>*  <B>HitLabel</B>(int x, int y) const 
+<DT><IMG SRC=icon2.gif> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>  <B>GetAlignment</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateNumber</B>(unsigned nr)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetLabelsVisible</B>(bool s)
+<DT><IMG SRC=icon2.gif> void  <B>SetNumber</B>(unsigned nr)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Cell.html">Cell</A>*  <B>FirstCell</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Cell.html">Cell</A>*  <B>NextCell</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Cell.html">Cell</A>*  <B>NthCell</B>(unsigned n)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="LinePiece.html">LinePiece</A>*  <B>FirstLine</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="LinePiece.html">LinePiece</A>*  <B>NextLine</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="LinePiece.html">LinePiece</A>*  <B>NthLine</B>(unsigned n)
+<DT><IMG SRC=icon2.gif> unsigned  <B>GetNumber</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="RowColumnLabel.html">RowColumnLabel</A>*  <B>GetLabel1</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="RowColumnLabel.html">RowColumnLabel</A>*  <B>GetLabel2</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLabel1</B>(const <!1><A HREF="string.html">string</A> *txt)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLabel2</B>(const <!1><A HREF="string.html">string</A> *txt)
+<DT><IMG SRC=icon2.gif> unsigned  <B>NrCells</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetIndex</B>(<!1><A HREF="LinePiece.html">LinePiece</A> *l)
+<DT><IMG SRC=icon2.gif> unsigned  <B>HasEmptyText</B>()
+<DT><IMG SRC=icon2.gif> unsigned  <B>HasText</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> bool  <B>IsAllEmpty</B>()
+<DT><IMG SRC=icon2.gif> void  <B>EmptyCells</B>()
+</DL><DL>
+<DT><h3>Protected Fields</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <<!1><A HREF="Cell.html">Cell</A> *> *  <B>cells</B>
+<DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <<!1><A HREF="LinePiece.html">LinePiece</A> *> *  <B>lines</B>
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="Grafport.html">Grafport</A>*  <B>GetGrafport</B>() const 
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ (table) column class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="CellColumn">
+<A NAME ="DOC.35.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  CellColumn(<!1><A HREF="TableViewer.html">TableViewer</A> *v, unsigned columnNumber, int <!2><A HREF="CellColumn.html#DOC.35.19">width</A>)</B></TT>
+<DL></DL><P>
+<A NAME="Compare">
+<A NAME ="DOC.35.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  int  Compare(<!2><A HREF="CellColumn.html#DOC.35.1">CellColumn</A> *c1, <!2><A HREF="CellColumn.html#DOC.35.1">CellColumn</A> *c2)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateWidth">
+<A NAME ="DOC.35.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateWidth(int <!2><A HREF="CellColumn.html#DOC.35.19">width</A>)</B></TT>
+<DD> make each cell width wide.
+<DL></DL><P>
+<A NAME="UpdatePosition">
+<A NAME ="DOC.35.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdatePosition(int delta)</B></TT>
+<DD> move each cell delta left/right.
+<DL></DL><P>
+<A NAME="UpdateHeight">
+<A NAME ="DOC.35.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateHeight(unsigned rownr)</B></TT>
+<DD> resize all cells from index rownr and lower.
+<DL></DL><P>
+<A NAME="HitLinePiece">
+<A NAME ="DOC.35.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="LinePiece.html">LinePiece</A>*  HitLinePiece(int x, int y)</B></TT>
+<DD> if (x,y) is on a linepiece, return it.
+<DL></DL><P>
+<A NAME="AddCell">
+<A NAME ="DOC.35.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AddCell(<!1><A HREF="Cell.html">Cell</A> *c, bool redraw=True)</B></TT>
+<DD> append cell to column.
+<DL></DL><P>
+<A NAME="DeleteCell">
+<A NAME ="DOC.35.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DeleteCell(<!1><A HREF="Cell.html">Cell</A> *c, bool redraw=True)</B></TT>
+<DD> delete cell from column.
+<DL></DL><P>
+<A NAME="InsertCell">
+<A NAME ="DOC.35.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  InsertCell(<!1><A HREF="Cell.html">Cell</A> *c, unsigned n, bool redraw=True)</B></TT>
+<DD> insert cell in column at position n.
+<DL></DL><P>
+<A NAME="ContainsPt">
+<A NAME ="DOC.35.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ContainsPt(int x, int y) const </B></TT>
+<DL></DL><P>
+<A NAME="Write">
+<A NAME ="DOC.35.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Write(<!1><A HREF="OutputFile.html">OutputFile</A> *f)</B></TT>
+<DD> write attributes (but not cell contents) to file.
+<DL></DL><P>
+<A NAME="WritePartial">
+<A NAME ="DOC.35.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  WritePartial(<!1><A HREF="OutputFile.html">OutputFile</A> *f, int i, <!1><A HREF="List.html">List</A><int> *rowNumbers)</B></TT>
+<DD> write part of column to file (only given rows).
+<DL></DL><P>
+<A NAME="Read">
+<A NAME ="DOC.35.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Read(<!1><A HREF="InputFile.html">InputFile</A> *f, unsigned fromRow, double format)</B></TT>
+<DD> read attributes back from file starting at row n.
+<DL></DL><P>
+<A NAME="GetMinimalWidth">
+<A NAME ="DOC.35.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetMinimalWidth()</B></TT>
+<DL></DL><P>
+<A NAME="GetWidth">
+<A NAME ="DOC.35.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetWidth() const </B></TT>
+<DL></DL><P>
+<A NAME="GetMarginWidth">
+<A NAME ="DOC.35.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetMarginWidth() const </B></TT>
+<DL></DL><P>
+<A NAME="UpdateTextPositions">
+<A NAME ="DOC.35.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateTextPositions()</B></TT>
+<DL></DL><P>
+<A NAME="CalcLabelPositions">
+<A NAME ="DOC.35.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CalcLabelPositions()</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

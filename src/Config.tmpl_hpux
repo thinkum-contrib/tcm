@@ -1,0 +1,30 @@
+# Configuration file for HP-UX and gcc compiler.
+# Used at laguna@cs.utwente.nl
+
+include $(TCM_HOME)/src/Config.GEN
+
+# we need to use GNU make, the normal does not know the += construction
+MAKE 		= /usr.local/bin/gmake
+
+MKDEPEND	= /opt/imake/bin/makedepend
+
+# CC              = /usr/local/bin/g++
+# Cc              = /usr/local/bin/gcc
+CC              = /Gnu/bin/g++
+Cc              = /Gnu/bin/gcc
+
+MKDEPENDFLAGS   = $(INCLUDEDIRS) -I/usr/include -I/Gnu/lib/g++-include
+ 
+CFLAGS		= -Wall -pedantic -O2 -funroll-loops
+
+MOTIF_INCLUDE	= /usr/include/Motif1.2
+MOTIF_LIB	= /usr/lib/Motif1.2
+
+XWIN_INCLUDE	= /usr/include/X11R5
+XWIN_LIB	= /usr/lib/X11R5
+
+SYSFLAGS	= -DHPUX -D__EXTENSIONS__
+
+LDFLAGS		= -L$(LIB_DIR) -L$(MOTIF_LIB) -L$(XWIN_LIB) -L/usr/lib
+
+LDLIBS		= -lXm -lXt -lXext -lX11 -lm

@@ -1,0 +1,18 @@
+# Configuration file for OSF1 (Digital Unix) and gcc compiler.
+
+include $(TCM_HOME)/src/Config.GEN
+
+MKDEPEND	= /usr/bin/X11/makedepend
+
+CC              = /usr/local/bin/g++
+Cc              = /usr/local/bin/gcc
+
+CFLAGS          = -Wall -Wpointer-arith -Wstrict-prototypes \
+                  -Winline -pedantic -Wmissing-prototypes
+CFLAGS	       += -O3 -fomit-frame-pointer -funroll-loops
+
+SYSFLAGS        = -DOSF1 -D__EXTENSIONS__
+ 
+LDLIBS          = -lXm -lXt -lXext -lX11 -lm
+
+MKDEPENDFLAGS   = $(CPPFLAGS) -I/usr/local/lib/g++-include

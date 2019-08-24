@@ -1,0 +1,164 @@
+<html><head><TITLE>Subject</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Subject : public <!2><A HREF="Thing.html#DOC.385.2">Thing</A> </H2><BLOCKQUOTE>
+ (abstract) graph element class (is either a node or an edge).
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CThing,MThing.html,CSubject,MSubject.html,CNode,MNode.html,CEdge,MEdge.html">
+<param name=before value="M,M,M|_,Mr_">
+<param name=after value="Md_,M,M,M">
+<param name=indent value="0,1,1,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Classes</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.360.6"> <IMG BORDER=0 SRC=icon1.gif></A>  enum </TD><TD><B>NameErrType</B> <br>
+<I> The reasons why setting the subject name might fail (error codes)</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.360.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Subject</B> (<!1><A HREF="Graph.html">Graph</A> *g)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.360.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!2><A HREF="Subject.html#DOC.360.1">Subject</A>* </TD><TD><B>Clone</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.360.3"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsSubject</B> () const <br>
+<I> it is a subject</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.360.4"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>IsEdge</B> () const <br>
+<I> is it a node or an edge?</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.360.5"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>InGraph</B> () const <br>
+<I> return if subject is part of the graph.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.360.7"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetName</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.360.8"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!2><A HREF="Subject.html#DOC.360.6">NameErrType</A> </TD><TD><B>SetName</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I> set and check the name</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.360.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>WriteMembers</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f)<br>
+<I> write members of subject to file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.360.10"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadMembers</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, double format)<br>
+<I> read and parse members of subject from file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.360.11"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>SetReferences</B> (<!1><A HREF="AssocList.html">AssocList</A> *)<br>
+<I> set subject references using the assoclist.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.360.12"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>CheckReferences</B> ()<br>
+<I> Check if parent reference exists as graph node element.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.360.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetParent</B> (<!1><A HREF="Node.html">Node</A> *p)<br>
+<I> Set the parent node (parent may be 0).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.360.14"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Node.html">Node</A>* </TD><TD><B>GetParent</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.360.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetAnnotation</B> (<!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.360.16"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetAnnotation</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.360.17"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Graph.html">Graph</A>* </TD><TD><B>GetGraph</B> () const <br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Thing.html">Thing:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>AssocType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> unsigned  long  <B>GetId</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetId</B>(unsigned long val)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsShape</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsView</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  int  <B>GetClassType</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>Write</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ (abstract) graph element class (is either a node or an edge).
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Subject">
+<A NAME ="DOC.360.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Subject(<!1><A HREF="Graph.html">Graph</A> *g)</B></TT>
+<DL></DL><P>
+<A NAME="Clone">
+<A NAME ="DOC.360.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!2><A HREF="Subject.html#DOC.360.1">Subject</A>*  Clone()</B></TT>
+<DL></DL><P>
+<A NAME="IsSubject">
+<A NAME ="DOC.360.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsSubject() const </B></TT>
+<DD> it is a subject
+<DL></DL><P>
+<A NAME="IsEdge">
+<A NAME ="DOC.360.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  IsEdge() const </B></TT>
+<DD> is it a node or an edge?
+<DL></DL><P>
+<A NAME="InGraph">
+<A NAME ="DOC.360.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  InGraph() const </B></TT>
+<DD> return if subject is part of the graph.
+<DL></DL><P>
+<A NAME="NameErrType">
+<A NAME ="DOC.360.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum  NameErrType</B></TT>
+<DD> The reasons why setting the subject name might fail (error codes)
+<DL></DL><P>
+<A NAME="GetName">
+<A NAME ="DOC.360.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetName() const </B></TT>
+<DL></DL><P>
+<A NAME="SetName">
+<A NAME ="DOC.360.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!2><A HREF="Subject.html#DOC.360.6">NameErrType</A>  SetName(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DD> set and check the name
+<DL></DL><P>
+<A NAME="WriteMembers">
+<A NAME ="DOC.360.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  WriteMembers(<!1><A HREF="OutputFile.html">OutputFile</A> *f)</B></TT>
+<DD> write members of subject to file.
+<DL></DL><P>
+<A NAME="ReadMembers">
+<A NAME ="DOC.360.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadMembers(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)</B></TT>
+<DD> read and parse members of subject from file.
+<DL></DL><P>
+<A NAME="SetReferences">
+<A NAME ="DOC.360.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  SetReferences(<!1><A HREF="AssocList.html">AssocList</A> *)</B></TT>
+<DD> set subject references using the assoclist.
+<DL></DL><P>
+<A NAME="CheckReferences">
+<A NAME ="DOC.360.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  CheckReferences()</B></TT>
+<DD> Check if parent reference exists as graph node element.
+<DL></DL><P>
+<A NAME="SetParent">
+<A NAME ="DOC.360.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetParent(<!1><A HREF="Node.html">Node</A> *p)</B></TT>
+<DD> Set the parent node (parent may be 0).
+<DL></DL><P>
+<A NAME="GetParent">
+<A NAME ="DOC.360.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Node.html">Node</A>*  GetParent() const </B></TT>
+<DL></DL><P>
+<A NAME="SetAnnotation">
+<A NAME ="DOC.360.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetAnnotation(<!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="GetAnnotation">
+<A NAME ="DOC.360.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetAnnotation() const </B></TT>
+<DL></DL><P>
+<A NAME="GetGraph">
+<A NAME ="DOC.360.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Graph.html">Graph</A>*  GetGraph() const </B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="Node.html"> Node </A><br>
+<A HREF="Edge.html"> Edge </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

@@ -1,0 +1,504 @@
+<html><head><TITLE>Config</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Config  </H2><BLOCKQUOTE>
+ class for maintaining global tcm configuration.
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Classes</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.53.22"> <IMG BORDER=0 SRC=icon1.gif></A>  enum </TD><TD><B>CharacterEncodingType</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.24"> <IMG BORDER=0 SRC=icon1.gif></A>  enum </TD><TD><B>BannerPageType</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.26"> <IMG BORDER=0 SRC=icon1.gif></A>  enum </TD><TD><B>PageOrientationType</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.27"> <IMG BORDER=0 SRC=icon1.gif></A>  enum </TD><TD><B>ShowHeaderType</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.53.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Config</B> (const char* fn)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.2"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>~Config</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.3"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Load</B> (const <!1><A HREF="string.html">string</A>* file)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.4"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Save</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefault</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.6"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetExportFormat</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.7"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetPrinterName</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.8"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetPrintCommand</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.9"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetPreviewCommand</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.10"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetFig2DevCommand</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.11"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetPrinterQueueCommand</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.12"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetPrinterRemoveCommand</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.13"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetPrintColors</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.14"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetPrintDuplexPages</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.15"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetPrintTumbledPages</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.16"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetPostScriptFilterCommand</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.17"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetTmpFile</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.18"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetSendEmailOnCrash</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.19"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetSendEmailOnStartup</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.20"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetEmailAddress</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.21"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetText2PSFilterCommand</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.23"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetCharacterEncoding</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.25"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="Config.html#DOC.53.24">BannerPageType</A> </TD><TD><B>GetBannerPage</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.28"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="Config.html#DOC.53.26">PageOrientationType</A> </TD><TD><B>GetPageOrientation</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.29"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetShowPageBoundary</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.30"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="PageSize.html#DOC.247.1">PageSize::Type</A> </TD><TD><B>GetPageSize</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.31"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetIncludePageNumbers</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.32"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetShowDocumentInfoAsHeader</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.33"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetShowDocumentInfoAsFooter</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.34"> <IMG BORDER=0 SRC=icon1.gif></A> double </TD><TD><B>GetScaleFactor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.35"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetInlineEditor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.36"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetAutoResizing</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.37"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetAskBeforeQuit</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.38"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetFontFoundry</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.39"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetFontFamily</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.40"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetFontStyle</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.41"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetPointSize</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.42"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetScalableFonts</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.43"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetUnderlined</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.44"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> </TD><TD><B>GetTextAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.45"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetLineWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.46"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetLineColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.47"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetTextColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.48"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetFillColor</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.49"> <IMG BORDER=0 SRC=icon1.gif></A> ::<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> </TD><TD><B>GetLineStyle</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.50"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetDrawingBackground</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.51"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetDrawingForeground</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.52"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetDrawingScrollWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.53"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetDrawingScrollHeight</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.54"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetDrawingWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.55"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetDrawingHeight</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.56"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetDrawingMaxWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.57"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetDrawingMaxHeight</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.58"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetShowGrid</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.59"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetPointSnapping</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.60"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetGridSize</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.61"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetPointDistance</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.62"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetClassicGUIstyle</B> ()<br>
+<I> GUI style view mode</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.63"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetPrivateColormap</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.64"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetStartupSmall</B> ()<br>
+<I> startup window view mode</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.65"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetTableMarginWidth</B> ()<br>
+<I> margin width in pixels</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.66"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetTableMarginHeight</B> ()<br>
+<I> margin height in pixels</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.67"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> </TD><TD><B>GetColumnAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.68"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> </TD><TD><B>GetRowAlignment</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.69"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetDefaultRowHeight</B> ()<br>
+<I> initial/default row height in pixels</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.70"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetDefaultColumnWidth</B> ()<br>
+<I> standard/default column width in pixels</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.71"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetNumberOfRows</B> ()<br>
+<I> initial number of rows</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.72"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetNumberOfColumns</B> ()<br>
+<I> initial number of columns</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.73"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetShowRowColumnLabels</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.74"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetPrintRowColumnLabels</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.75"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Point.html">Point</A> </TD><TD><B>GetTableTopLeft</B> ()<br>
+<I> default topleft position of a table.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.76"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetFETcolumnWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.77"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetTUTcolumnWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.53.78"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetTUTnumberOfColumns</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ class for maintaining global tcm configuration.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Config">
+<A NAME ="DOC.53.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Config(const char* fn)</B></TT>
+<DL></DL><P>
+<A NAME="~Config">
+<A NAME ="DOC.53.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  ~Config()</B></TT>
+<DL></DL><P>
+<A NAME="Load">
+<A NAME ="DOC.53.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Load(const <!1><A HREF="string.html">string</A>* file)</B></TT>
+<DL></DL><P>
+<A NAME="Save">
+<A NAME ="DOC.53.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Save()</B></TT>
+<DL></DL><P>
+<A NAME="SetDefault">
+<A NAME ="DOC.53.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefault()</B></TT>
+<DL></DL><P>
+<A NAME="GetExportFormat">
+<A NAME ="DOC.53.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetExportFormat()</B></TT>
+<DL></DL><P>
+<A NAME="GetPrinterName">
+<A NAME ="DOC.53.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetPrinterName()</B></TT>
+<DL></DL><P>
+<A NAME="GetPrintCommand">
+<A NAME ="DOC.53.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetPrintCommand()</B></TT>
+<DL></DL><P>
+<A NAME="GetPreviewCommand">
+<A NAME ="DOC.53.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetPreviewCommand()</B></TT>
+<DL></DL><P>
+<A NAME="GetFig2DevCommand">
+<A NAME ="DOC.53.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetFig2DevCommand()</B></TT>
+<DL></DL><P>
+<A NAME="GetPrinterQueueCommand">
+<A NAME ="DOC.53.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetPrinterQueueCommand()</B></TT>
+<DL></DL><P>
+<A NAME="GetPrinterRemoveCommand">
+<A NAME ="DOC.53.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetPrinterRemoveCommand()</B></TT>
+<DL></DL><P>
+<A NAME="GetPrintColors">
+<A NAME ="DOC.53.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetPrintColors()</B></TT>
+<DL></DL><P>
+<A NAME="GetPrintDuplexPages">
+<A NAME ="DOC.53.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetPrintDuplexPages()</B></TT>
+<DL></DL><P>
+<A NAME="GetPrintTumbledPages">
+<A NAME ="DOC.53.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetPrintTumbledPages()</B></TT>
+<DL></DL><P>
+<A NAME="GetPostScriptFilterCommand">
+<A NAME ="DOC.53.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetPostScriptFilterCommand()</B></TT>
+<DL></DL><P>
+<A NAME="GetTmpFile">
+<A NAME ="DOC.53.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetTmpFile()</B></TT>
+<DL></DL><P>
+<A NAME="GetSendEmailOnCrash">
+<A NAME ="DOC.53.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetSendEmailOnCrash()</B></TT>
+<DL></DL><P>
+<A NAME="GetSendEmailOnStartup">
+<A NAME ="DOC.53.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetSendEmailOnStartup()</B></TT>
+<DL></DL><P>
+<A NAME="GetEmailAddress">
+<A NAME ="DOC.53.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetEmailAddress()</B></TT>
+<DL></DL><P>
+<A NAME="GetText2PSFilterCommand">
+<A NAME ="DOC.53.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetText2PSFilterCommand()</B></TT>
+<DL></DL><P>
+<A NAME="CharacterEncodingType">
+<A NAME ="DOC.53.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum  CharacterEncodingType</B></TT>
+<DL></DL><P>
+<A NAME="GetCharacterEncoding">
+<A NAME ="DOC.53.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetCharacterEncoding()</B></TT>
+<DL></DL><P>
+<A NAME="BannerPageType">
+<A NAME ="DOC.53.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum  BannerPageType</B></TT>
+<DL></DL><P>
+<A NAME="GetBannerPage">
+<A NAME ="DOC.53.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="Config.html#DOC.53.24">BannerPageType</A>  GetBannerPage()</B></TT>
+<DL></DL><P>
+<A NAME="PageOrientationType">
+<A NAME ="DOC.53.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum  PageOrientationType</B></TT>
+<DL></DL><P>
+<A NAME="ShowHeaderType">
+<A NAME ="DOC.53.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum  ShowHeaderType</B></TT>
+<DL></DL><P>
+<A NAME="GetPageOrientation">
+<A NAME ="DOC.53.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="Config.html#DOC.53.26">PageOrientationType</A>  GetPageOrientation()</B></TT>
+<DL></DL><P>
+<A NAME="GetShowPageBoundary">
+<A NAME ="DOC.53.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetShowPageBoundary()</B></TT>
+<DL></DL><P>
+<A NAME="GetPageSize">
+<A NAME ="DOC.53.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="PageSize.html#DOC.247.1">PageSize::Type</A>  GetPageSize()</B></TT>
+<DL></DL><P>
+<A NAME="GetIncludePageNumbers">
+<A NAME ="DOC.53.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetIncludePageNumbers()</B></TT>
+<DL></DL><P>
+<A NAME="GetShowDocumentInfoAsHeader">
+<A NAME ="DOC.53.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetShowDocumentInfoAsHeader()</B></TT>
+<DL></DL><P>
+<A NAME="GetShowDocumentInfoAsFooter">
+<A NAME ="DOC.53.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetShowDocumentInfoAsFooter()</B></TT>
+<DL></DL><P>
+<A NAME="GetScaleFactor">
+<A NAME ="DOC.53.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> double  GetScaleFactor()</B></TT>
+<DL></DL><P>
+<A NAME="GetInlineEditor">
+<A NAME ="DOC.53.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetInlineEditor()</B></TT>
+<DL></DL><P>
+<A NAME="GetAutoResizing">
+<A NAME ="DOC.53.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetAutoResizing()</B></TT>
+<DL></DL><P>
+<A NAME="GetAskBeforeQuit">
+<A NAME ="DOC.53.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetAskBeforeQuit()</B></TT>
+<DL></DL><P>
+<A NAME="GetFontFoundry">
+<A NAME ="DOC.53.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetFontFoundry()</B></TT>
+<DL></DL><P>
+<A NAME="GetFontFamily">
+<A NAME ="DOC.53.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetFontFamily()</B></TT>
+<DL></DL><P>
+<A NAME="GetFontStyle">
+<A NAME ="DOC.53.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetFontStyle()</B></TT>
+<DL></DL><P>
+<A NAME="GetPointSize">
+<A NAME ="DOC.53.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetPointSize()</B></TT>
+<DL></DL><P>
+<A NAME="GetScalableFonts">
+<A NAME ="DOC.53.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetScalableFonts()</B></TT>
+<DL></DL><P>
+<A NAME="GetUnderlined">
+<A NAME ="DOC.53.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetUnderlined()</B></TT>
+<DL></DL><P>
+<A NAME="GetTextAlignment">
+<A NAME ="DOC.53.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>  GetTextAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="GetLineWidth">
+<A NAME ="DOC.53.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetLineWidth()</B></TT>
+<DL></DL><P>
+<A NAME="GetLineColor">
+<A NAME ="DOC.53.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetLineColor()</B></TT>
+<DL></DL><P>
+<A NAME="GetTextColor">
+<A NAME ="DOC.53.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetTextColor()</B></TT>
+<DL></DL><P>
+<A NAME="GetFillColor">
+<A NAME ="DOC.53.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetFillColor()</B></TT>
+<DL></DL><P>
+<A NAME="GetLineStyle">
+<A NAME ="DOC.53.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> ::<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  GetLineStyle()</B></TT>
+<DL></DL><P>
+<A NAME="GetDrawingBackground">
+<A NAME ="DOC.53.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetDrawingBackground()</B></TT>
+<DL></DL><P>
+<A NAME="GetDrawingForeground">
+<A NAME ="DOC.53.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetDrawingForeground()</B></TT>
+<DL></DL><P>
+<A NAME="GetDrawingScrollWidth">
+<A NAME ="DOC.53.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetDrawingScrollWidth()</B></TT>
+<DL></DL><P>
+<A NAME="GetDrawingScrollHeight">
+<A NAME ="DOC.53.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetDrawingScrollHeight()</B></TT>
+<DL></DL><P>
+<A NAME="GetDrawingWidth">
+<A NAME ="DOC.53.54">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetDrawingWidth()</B></TT>
+<DL></DL><P>
+<A NAME="GetDrawingHeight">
+<A NAME ="DOC.53.55">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetDrawingHeight()</B></TT>
+<DL></DL><P>
+<A NAME="GetDrawingMaxWidth">
+<A NAME ="DOC.53.56">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetDrawingMaxWidth()</B></TT>
+<DL></DL><P>
+<A NAME="GetDrawingMaxHeight">
+<A NAME ="DOC.53.57">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetDrawingMaxHeight()</B></TT>
+<DL></DL><P>
+<A NAME="GetShowGrid">
+<A NAME ="DOC.53.58">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetShowGrid()</B></TT>
+<DL></DL><P>
+<A NAME="GetPointSnapping">
+<A NAME ="DOC.53.59">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetPointSnapping()</B></TT>
+<DL></DL><P>
+<A NAME="GetGridSize">
+<A NAME ="DOC.53.60">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetGridSize()</B></TT>
+<DL></DL><P>
+<A NAME="GetPointDistance">
+<A NAME ="DOC.53.61">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetPointDistance()</B></TT>
+<DL></DL><P>
+<A NAME="GetClassicGUIstyle">
+<A NAME ="DOC.53.62">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetClassicGUIstyle()</B></TT>
+<DD> GUI style view mode
+<DL></DL><P>
+<A NAME="GetPrivateColormap">
+<A NAME ="DOC.53.63">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetPrivateColormap()</B></TT>
+<DL></DL><P>
+<A NAME="GetStartupSmall">
+<A NAME ="DOC.53.64">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetStartupSmall()</B></TT>
+<DD> startup window view mode
+<DL></DL><P>
+<A NAME="GetTableMarginWidth">
+<A NAME ="DOC.53.65">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetTableMarginWidth()</B></TT>
+<DD> margin width in pixels
+<DL></DL><P>
+<A NAME="GetTableMarginHeight">
+<A NAME ="DOC.53.66">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetTableMarginHeight()</B></TT>
+<DD> margin height in pixels
+<DL></DL><P>
+<A NAME="GetColumnAlignment">
+<A NAME ="DOC.53.67">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>  GetColumnAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="GetRowAlignment">
+<A NAME ="DOC.53.68">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>  GetRowAlignment()</B></TT>
+<DL></DL><P>
+<A NAME="GetDefaultRowHeight">
+<A NAME ="DOC.53.69">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetDefaultRowHeight()</B></TT>
+<DD> initial/default row height in pixels
+<DL></DL><P>
+<A NAME="GetDefaultColumnWidth">
+<A NAME ="DOC.53.70">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetDefaultColumnWidth()</B></TT>
+<DD> standard/default column width in pixels
+<DL></DL><P>
+<A NAME="GetNumberOfRows">
+<A NAME ="DOC.53.71">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetNumberOfRows()</B></TT>
+<DD> initial number of rows
+<DL></DL><P>
+<A NAME="GetNumberOfColumns">
+<A NAME ="DOC.53.72">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetNumberOfColumns()</B></TT>
+<DD> initial number of columns
+<DL></DL><P>
+<A NAME="GetShowRowColumnLabels">
+<A NAME ="DOC.53.73">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetShowRowColumnLabels()</B></TT>
+<DL></DL><P>
+<A NAME="GetPrintRowColumnLabels">
+<A NAME ="DOC.53.74">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetPrintRowColumnLabels()</B></TT>
+<DL></DL><P>
+<A NAME="GetTableTopLeft">
+<A NAME ="DOC.53.75">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Point.html">Point</A>  GetTableTopLeft()</B></TT>
+<DD> default topleft position of a table.
+<DL></DL><P>
+<A NAME="GetFETcolumnWidth">
+<A NAME ="DOC.53.76">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetFETcolumnWidth()</B></TT>
+<DL></DL><P>
+<A NAME="GetTUTcolumnWidth">
+<A NAME ="DOC.53.77">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetTUTcolumnWidth()</B></TT>
+<DL></DL><P>
+<A NAME="GetTUTnumberOfColumns">
+<A NAME ="DOC.53.78">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetTUTnumberOfColumns()</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

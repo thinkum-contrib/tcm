@@ -1,0 +1,296 @@
+<html><head><TITLE>SSDViewer</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  SSDViewer : public <!2><A HREF="ERViewer.html#DOC.156.1">ERViewer</A> </H2><BLOCKQUOTE>
+ class-relationship viewer class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CViewer,MViewer.html,CDiagramViewer,MDiagramViewer.html,CERViewer,MERViewer.html,CSSDViewer,MSSDViewer.html">
+<param name=before value="M,M,M,M">
+<param name=after value="Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.342.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>SSDViewer</B> (<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="SSDWindow.html">SSDWindow</A> * w)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.342.2"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>SSDViewer</B> (<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="ESDWindow.html">ESDWindow</A> * w)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.342.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateNodeShapeType</B> (int)<br>
+<I> change box type of selected object types.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.342.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateShowStereotypes</B> (bool)<br>
+<I> update show stereotypes type of selected object types.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.342.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateShowProperties</B> (bool)<br>
+<I> update show properties type of selected object types.</I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="ERViewer.html">ERViewer:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>Initialize</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>IsIsaOnly</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>IsValueTypesHidden</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetHideValueTypes</B>(bool set)
+<DT><IMG SRC=icon2.gif> void  <B>SetShowISA</B>(bool set)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateReadDirection</B>(<!2><A HREF="ReadDirection.html#DOC.269.1">ReadDirection::Type</A> dir)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "DiagramViewer.html"> DiagramViewer:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetDiagram</B>(<!1><A HREF="Diagram.html">Diagram</A> *d)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Diagram.html">Diagram</A>*  <B>GetDiagram</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetGrafport</B>(<!1><A HREF="Grafport.html">Grafport</A> *g)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Buffer.html">Buffer</A>*  <B>GetBuffer</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Grid.html">Grid</A>*  <B>GetGrid</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetDefaultNodeType</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetDefaultEdgeType</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetDefaultNodeShapeType</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetDefaultLineType</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsDefaultCurve</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultNodeType</B>(int n)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultEdgeType</B>(int n)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultNodeShapeType</B>(int n)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultLineType</B>(int n)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultCurve</B>(bool s)
+<DT><IMG SRC=icon2.gif> void  <B>SetShowIndexes</B>(bool b)
+<DT><IMG SRC=icon2.gif> bool  <B>IsShowIndexes</B>()
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  <B>GetDefaultNodeLineStyle</B>() const 
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  <B>GetDefaultEdgeLineStyle</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultNodeLineStyle</B>(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> l)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultEdgeLineStyle</B>(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> l)
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A>  <B>GetDefaultLineEnd1</B>()
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A>  <B>GetDefaultLineEnd2</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultLineEnd1</B>(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultLineEnd2</B>(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)
+<DT><IMG SRC=icon2.gif> int  <B>Snap</B>(int i) const 
+<DT><IMG SRC=icon2.gif> void  <B>Snap</B>(<!1><A HREF="Point.html">Point</A> *p)
+<DT><IMG SRC=icon2.gif> void  <B>SetStatus</B>(const char *msg)
+<DT><IMG SRC=icon2.gif> void  <B>SetStatus</B>(const <!1><A HREF="string.html">string</A> *msg)
+<DT><IMG SRC=icon2.gif> void  <B>SetCursor</B>(int cursor)
+<DT><IMG SRC=icon2.gif> void  <B>SetSizeCursor</B>(int cursor)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Draw</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Undraw</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Redraw</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ShapeView.html">ShapeView</A>*  <B>GetCurView</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>DeleteAllViews</B>()
+<DT><IMG SRC=icon2.gif> unsigned  int  <B>NumberOfViews</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>AddView</B>(<!1><A HREF="ShapeView.html">ShapeView</A> *v)
+<DT><IMG SRC=icon2.gif> void  <B>SetView</B>(<!1><A HREF="ShapeView.html">ShapeView</A> *v)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateView</B>(<!1><A HREF="ShapeView.html">ShapeView</A> *v)
+<DT><IMG SRC=icon2.gif> bool  <B>HasView</B>(const <!1><A HREF="string.html">string</A> *index)
+<DT><IMG SRC=icon2.gif> bool  <B>HasView</B>(<!1><A HREF="ShapeView.html">ShapeView</A> *v)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ShapeView.html">ShapeView</A>*  <B>GetView</B>(const <!1><A HREF="string.html">string</A> *index)
+<DT><IMG SRC=icon2.gif> void  <B>CheckShapes</B>()
+<DT><IMG SRC=icon2.gif> void  <B>WriteShapes</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *f)
+<DT><IMG SRC=icon2.gif> void  <B>WriteSelection</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *f)
+<DT><IMG SRC=icon2.gif> void  <B>Select</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> void  <B>Adjust</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Command.html">Command</A>*  <B>Drag</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Command.html">Command</A>*  <B>Connect</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> void  <B>MovingPointer</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> void  <B>KeyTyped</B>(int x, int y, int key)
+<DT><IMG SRC=icon2.gif> void  <B>TextModeOff</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DeselectAll</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="GShape.html">GShape</A>*  <B>GetShape</B>(<!1><A HREF="Subject.html">Subject</A> *subject)
+<DT><IMG SRC=icon2.gif> void  <B>GetShapes</B>(<!1><A HREF="Subject.html">Subject</A> *subject, <!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *shapes)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Cut</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Copy</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Paste</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Duplicate</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>AlignNodeShapes</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>AlignNodes</B>(<!2><A HREF="NodeAlign.html#DOC.238.1">NodeAlign::Type</A> alignment)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateCurve</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateTextUnderline</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>FindAll</B>(const <!1><A HREF="string.html">string</A> *s, bool sens, bool substr, bool nameOnly)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>FindNext</B>(const <!1><A HREF="string.html">string</A> *s, bool sens, bool substr, bool nameOnly)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>ReplaceNext</B>(const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool sens, bool substr, bool nameOnly)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>ReplaceAll</B>(const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool sens, bool substr, bool nameOnly)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Annotate</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DeleteShapes</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DeleteAll</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SameSize</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>MoveAllShapes</B>(<!2><A HREF="Document.html#DOC.118.42">Document::MoveType</A> t)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SelectAll</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateTextAlignmentSelection</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateText</B>(<!1><A HREF="TextShape.html">TextShape</A> *t, const <!1><A HREF="string.html">string</A> *newtext, const <!1><A HREF="string.html">string</A> *oldtext)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineWidthSelection</B>(unsigned i)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineStyleSelection</B>(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> s)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateFontSelection</B>(int family, int style, int size)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineColorSelection</B>(const <!1><A HREF="string.html">string</A> *color)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateTextColorSelection</B>(const <!1><A HREF="string.html">string</A> *color)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateFillColorSelection</B>(const <!1><A HREF="string.html">string</A> *color, <!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A> f)
+<DT><IMG SRC=icon2.gif> void  <B>CalcSizeElements</B>(<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)
+<DT><IMG SRC=icon2.gif> void  <B>CalcSizeSelection</B>(<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)
+<DT><IMG SRC=icon2.gif> void  <B>CalcSizeShapes</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *shapes, <!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)
+<DT><IMG SRC=icon2.gif> void  <B>ShapePositionUpdate</B>(<!1><A HREF="GShape.html">GShape</A> *shape)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateDuplicationMarks</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Subject.html">Subject</A> *> *s)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateDuplicationMarks</B>(<!1><A HREF="Subject.html">Subject</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateMoveShapes</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *shapes, const <!1><A HREF="Point.html">Point</A> *delta)
+<DT><IMG SRC=icon2.gif> void  <B>MoveShapes</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *shapes, const <!1><A HREF="Point.html">Point</A> *delta)
+<DT><IMG SRC=icon2.gif> void  <B>ConvertNodeShapes</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DeleteSubjects</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetIndexes</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>Reindex</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Node.html">Node</A> *> *nodes)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>ZoomIn</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ZoomOut</B>()
+<DT><IMG SRC=icon2.gif> void  <B>TopLevel</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="LineEndDialog.html">LineEndDialog</A>*  <B>GetLineEndDialog</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineEnd</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultLineEnd</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineEndSelection</B>(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> e1, <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> e2)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="NodeAlignmentDialog.html">NodeAlignmentDialog</A>*  <B>GetNodeAlignmentDialog</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultNodeAlignment</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="NodeShapeDialog.html">NodeShapeDialog</A>*  <B>GetNodeShapeDialog</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultNodeShape</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <<!1><A HREF="ShapeView.html">ShapeView</A> *> *  <B>GetViews</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>EmptySelectionMessage</B>()
+<DT><IMG SRC=icon2.gif> void  <B>EmptyShapesMessage</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Viewer.html"> Viewer:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_LINE_WIDTH</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MAX_LINE_WIDTH</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="Scaler.html">Scaler</A>*  <B>GetScaler</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Command.html">Command</A>*  <B>GetLastCmd</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="DrawWindow.html">DrawWindow</A>*  <B>GetMainWindow</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Grafport.html">Grafport</A>*  <B>GetGrafport</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Printer.html">Printer</A>*  <B>GetPrinter</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetPrinter</B>(<!1><A HREF="Printer.html">Printer</A> *p)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>*  <B>GetLineWidthDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>*  <B>GetLineStyleDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>*  <B>GetTextAlignmentDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="FontChooserDialog.html">FontChooserDialog</A>*  <B>GetFontChooserDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="FileSelectionDialog.html">FileSelectionDialog</A>*  <B>GetPrintFileSelectionDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ColorChooserDialog.html">ColorChooserDialog</A>*  <B>GetColorChooserDialog</B>()
+<DT><IMG SRC=icon2.gif> int  <B>Scale</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>Scale</B>(const <!1><A HREF="Point.html">Point</A> *p) const 
+<DT><IMG SRC=icon2.gif> int  <B>ScaleCorrect</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>ScaleCorrect</B>(const <!1><A HREF="Point.html">Point</A> *p) const 
+<DT><IMG SRC=icon2.gif> void  <B>Undo</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Redo</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Refresh</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Activate</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Deactivate</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultLineWidth</B>(unsigned d)
+<DT><IMG SRC=icon2.gif> int  <B>GetDefaultLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultLineStyle</B>(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> l)
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  <B>GetDefaultLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultLineColor</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDefaultLineColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultTextColor</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDefaultTextColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultFillColor</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDefaultFillColor</B>()
+<DT><IMG SRC=icon2.gif> <!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A>  <B>GetDefaultFillStyle</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultFillStyle</B>(<!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A> l)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultLineColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultLineColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigLineColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateTextColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultTextColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultTextColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigTextColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateFillColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultFillColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultFillColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigFillColor</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="XFont.html">XFont</A>*  <B>GetDefaultFont</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultFontAttributes</B>(int f, int s, int p)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetDefaultFont</B>(<!1><A HREF="XFont.html">XFont</A> *ft)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateFont</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultFont</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultFont</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigFont</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="XFont.html">XFont</A>*  <B>GetFont</B>(int family, int style, int size)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="XFont.html">XFont</A>*  <B>GetFont</B>(const char *description)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateTextAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultTextAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultTextAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigTextAlignment</B>()
+<DT><IMG SRC=icon2.gif> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>  <B>GetDefaultTextAlignment</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultTextAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)
+<DT><IMG SRC=icon2.gif> void  <B>EditText</B>(int key)
+<DT><IMG SRC=icon2.gif> bool  <B>IsAutoResize</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetAutoResize</B>(bool s)
+<DT><IMG SRC=icon2.gif> bool  <B>IsInlineEdit</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetInlineEdit</B>(bool s)
+<DT><IMG SRC=icon2.gif> bool  <B>IsPasting</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetPasting</B>(bool b)
+<DT><IMG SRC=icon2.gif> bool  <B>IsZigZag</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetZigZag</B>(bool b)
+<DT><IMG SRC=icon2.gif> bool  <B>IsEditing</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>DoubleClick</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DoFunctionKey</B>(int)
+<DT><IMG SRC=icon2.gif> void  <B>NewCommand</B>(<!1><A HREF="Command.html">Command</A> *newCmd)
+<DT><IMG SRC=icon2.gif> void  <B>AbortCommand</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ExecuteCommand</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UndoCommand</B>()
+<DT><IMG SRC=icon2.gif> void  <B>RedoCommand</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DeleteCommands</B>()
+<DT><IMG SRC=icon2.gif> void  <B>GetPageSize</B>(double &width, double &height)
+<DT><IMG SRC=icon2.gif> void  <B>Save</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *f)
+<DT><IMG SRC=icon2.gif> bool  <B>Load</B>(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)
+<DT><IMG SRC=icon2.gif> bool  <B>Check</B>(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>ClearGrafport</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="InlineEditor.html">InlineEditor</A>*  <B>GetInlineEditor</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetInlineEditor</B>(<!1><A HREF="InlineEditor.html">InlineEditor</A> *i)
+<DT><IMG SRC=icon2.gif> void  <B>SetEditing</B>(bool b)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ class-relationship viewer class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="SSDViewer">
+<A NAME ="DOC.342.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  SSDViewer(<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="SSDWindow.html">SSDWindow</A> * w)</B></TT>
+<DL></DL><P>
+<A NAME="SSDViewer">
+<A NAME ="DOC.342.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  SSDViewer(<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="ESDWindow.html">ESDWindow</A> * w)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateNodeShapeType">
+<A NAME ="DOC.342.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateNodeShapeType(int)</B></TT>
+<DD> change box type of selected object types.
+<DL></DL><P>
+<A NAME="UpdateShowStereotypes">
+<A NAME ="DOC.342.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateShowStereotypes(bool)</B></TT>
+<DD> update show stereotypes type of selected object types.
+<DL></DL><P>
+<A NAME="UpdateShowProperties">
+<A NAME ="DOC.342.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateShowProperties(bool)</B></TT>
+<DD> update show properties type of selected object types.
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

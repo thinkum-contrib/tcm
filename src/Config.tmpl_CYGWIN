@@ -1,0 +1,81 @@
+# Configuration file for CYGWIN/XFree86/MinGW under Windows:
+
+include $(TCM_HOME)/src/Config.GEN
+
+STRIP           = $(TCM_HOME)/bin/_cygwin_stripfile.sh
+
+CFLAGS          = -Wall -pedantic
+CFLAGS      	+= -O3 -fomit-frame-pointer
+# CFLAGS      	+= -g
+
+LEX		= flex
+YACC		= bison
+
+XWIN_HOME	= /usr/X11R6
+
+SYSFLAGS        = -DCYGWIN
+# SYSFLAGS += -DDEBUG
+
+INCLUDEDIRS += -I/usr/include/mingw/g++-3
+
+# Uncomment one of the following Motif/Lesstif segments or
+# add your own.
+
+# Lesstif 1.2 (dynamic linked)
+MOTIF_HOME = /usr/X11R6/LessTif/Motif1.2
+LDLIBS = -lXm -lstdc++ -L/lib/mingw -lcrtdll -lmingwthrd -L/lib/gcc-lib/i686-pc-mingw32/3.2 -lgcc 
+LDLIBS = -lXm
+
+# Lesstif 1.2 (static linked)
+# MOTIF_HOME = /usr/X11R6/LessTif/Motif1.2
+# LDLIBS = $(MOTIF_LIB)/libXm.a
+
+# OSF/Motif 1.2 (dynamic linked)
+# MOTIF_HOME = /local/opt/motif12
+# LDLIBS = -lXm
+
+# OSF/Motif 1.2 (static linked)
+# MOTIF_HOME = /local/opt/motif12
+# LDLIBS = $(MOTIF_LIB)/libXm.a
+
+# OSF/Motif 2.0 (dynamic linked)
+# MOTIF_HOME = /local/opt/motif20
+# LDLIBS = -lXpm -lXm
+
+# OSF/Motif 2.0 (static linked)
+# MOTIF_HOME = /local/opt/motif20
+# LDLIBS = $(MOTIF_LIB)/libXpm.a $(MOTIF_LIB)/libXm.a
+
+# OSF/Motif 2.1 (dynamic linked)
+# MOTIF_HOME = /local/opt/motif21
+# LDLIBS = -lXp -lXm
+
+# OSF/Motif 2.1 (static linked)
+# MOTIF_HOME = /local/opt/motif21
+# LDLIBS = $(MOTIF_LIB)/libXm.a $(XWIN_LIB)/libXp.a
+
+# OpenMotif 2.1 (dynamic linked)
+# MOTIF_HOME = $(XWIN_HOME)
+# LDLIBS = -lXm -lXp
+
+# OpenMotif 2.1 (static linked)
+# MOTIF_HOME  = $(XWIN_HOME)
+# LDLIBS = $(MOTIF_LIB)/libXm.a -lXp
+
+# The other libraries (don't change these)
+LDLIBS += -lXt -lSM -lICE -lXext -lX11 -lm
+
+# 'make depend' and its flags
+MKDEPEND=$(TCM_HOME)/bin/makedepend.sh
+MKDEPENDFLAGS := $(CPPFLAGS) -D__i386__ -I/usr/include/g++-3 \
+                -I/usr/include/g++-2 \
+                -I/usr/include/g++ \
+		-I/usr/include/mingw
+
+ADDLIBS=-I/usr/include/mingw -I/usr/include/g++-3 
+
+# no chmod on cygnus
+CHMOD		= true chmod
+CHMODPLUSX	= $(TCM_HOME)/bin/_cygwin_chmodplusx.sh
+
+EXEEXTENSION	= .exe

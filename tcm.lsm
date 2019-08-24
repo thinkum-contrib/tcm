@@ -1,0 +1,49 @@
+Begin4
+Title: 		TCM - Toolkit for Conceptual Modeling          
+Version: 	2.20
+Entered-date: 	2003-01-10
+Description:    TCM is a collection of graphical editors for different software
+		specification methods. It contains a.o.  generic editors (for 
+		generic diagrams, tables and trees), editors for Structured Analysis
+		(entity-relationship diagrams, data and event flow diagrams, 
+		state-transition diagrams, function refinement trees etc.) and 
+		editors for UML (static-structure diagrams, use-case diagrams, 
+		activity diagrams etc.).   
+
+		TCM supports constraint checking for single documents (e.g. name 
+		duplication and cycles in is-a relationships). TCM distinguishes
+		built-in constraints (of which a violation cannot even be attempted) 
+		from immediate constraints (of which an attempted violation is 
+		immediately prevented) and soft constraints (against which the
+		editor provides a warning when it checks the drawing). As of version
+		2.10 TCM supports hierarchic graphs, so that it can handle for 
+		example hierarchic statecharts. Features to be added later include
+		constraint checking across documents and executable models. 
+
+		In addition to the TCM file format, TCM outputs Plain PostScript, 
+		Encapsulated PostScript, PNG and the XFig file format. The TCM file
+		format is simple to read and parse so other forms of output can be
+		generated easily. 
+Keywords:	editor diagram table CASE UML DFD ER STD dataflow graphics CYGWIN
+Author: 	frank@cs.vu.nl (Frank Dehne)
+                henkz@cs.utwente.nl (Henk van de Zandschulp)
+		roelw@cs.utwente.nl (Roel Wieringa)
+Maintained-by:  tcm@cs.utwente.nl (Henk van de Zandschulp)
+Primary-site:   ftp.cs.utwente.nl /pub/tcm
+		4.1M tcm.src.tar.gz
+		2.8M tcm.bin.linux.dynmotif.1.2.tar.gz
+		2.8M tcm.bin.linux.dynmotif.2.1.tar.gz
+		4.6M tcm.bin.linux.statmotif.tar.gz
+Alternate-site: ftp.cs.vu.nl /pub/tcm
+Platforms:      Binaries exist for Linux 2.x (x86), Solaris 2.x (Sparc, x86), 
+		IRIX 6.x, AIX 4.x, HP-UX 10.x, SunOS 4.1.x, OSF\1 and Windows/CYGWIN.
+		TCM binaries for Linux use X11R6 and Motif 2.1 or Motif 1.2.
+		(Lesstif or OpenMotif is Ok). For each Linux and SunOS distribution 
+		there is an alternative distribution with 'statmotif' in the tar.gz file 
+		name that has the Motif library statically linked into the 
+        executables. For more information see 
+        	ftp.cs.utwente.nl/pub/tcm/README
+Copying-policy: GPL
+End
+
+

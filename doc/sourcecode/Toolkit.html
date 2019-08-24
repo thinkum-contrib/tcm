@@ -1,0 +1,168 @@
+<html><head><TITLE>Toolkit</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Toolkit  </H2><BLOCKQUOTE>
+ information about the different tools.
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Classes</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.387.2"> <IMG BORDER=0 SRC=icon1.gif></A>  enum </TD><TD><B>ToolType</B> <br>
+<I> Definitions of the different editors (tools) that are implemented.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.387.1"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  char </TD><TD><B>TOOLKIT_NAME</B> []<br>
+<I> The application (toolkit) name.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.13"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  char </TD><TD><B>STARTUP_TOOL_NAME</B> []<br>
+<I> The name (in upper case) of the startup tool.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.14"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  char* </TD><TD><B>TOOL_TITLES</B> []<br>
+<I> Window titles for the different tools.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.15"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  char* </TD><TD><B>TOOL_NAMES</B> []<br>
+<I> Short names (in upper case) of the editing tools.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.16"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  char* </TD><TD><B>EXECUTABLE_NAMES</B> []<br>
+<I> Names of the tool executables.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.17"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  char* </TD><TD><B>DOCUMENT_TYPES</B> []<br>
+<I> The full names of the document types.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.18"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  char* </TD><TD><B>DOCUMENT_SUFFIXES</B> []<br>
+<I> Document name suffixes. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.19"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  char </TD><TD><B>DOCUMENT_DEFAULT</B> []<br>
+<I> Default document name.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.20"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  char* </TD><TD><B>DOCUMENT_TYPES_INFO</B> []<br>
+<I> The help info of the document types.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.387.3"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>TableEditor</B> (int tool)<br>
+<I> is tool table editor.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.4"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>DiagramEditor</B> (int tool)<br>
+<I> is tool diagram editor.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.5"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>TreeEditor</B> (int tool)<br>
+<I> is tool tree editor.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.6"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>TextEditor</B> (int tool)<br>
+<I> is tool text editor.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.7"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>EditorWithoutCurves</B> (int tool)<br>
+<I> tool can not have curved edges.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.8"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>EditorWithoutDuplicates</B> (int tool)<br>
+<I> tool can not have duplicate shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.9"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>HierarchicEditor</B> (int tool)<br>
+<I> tool can edit hierarchic documents.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.10"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>GenericEditor</B> (int tool)<br>
+<I> tool has no soft constraints</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.11"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>EditorWithInterEdgeConnections</B> (int tool)<br>
+<I> tool is diagram editor in which edges can connect to edges</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.387.12"> <IMG BORDER=0 SRC=icon1.gif></A> static  bool </TD><TD><B>EditorWithModelChecker</B> (int tool)<br>
+<I> tool is diagram editor with model checking facilities   </I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ information about the different tools.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="TOOLKIT_NAME">
+<A NAME ="DOC.387.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  char  TOOLKIT_NAME[]</B></TT>
+<DD> The application (toolkit) name.
+<DL></DL><P>
+<A NAME="ToolType">
+<A NAME ="DOC.387.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum  ToolType</B></TT>
+<DD> Definitions of the different editors (tools) that are implemented.
+<DL></DL><P>
+<A NAME="TableEditor">
+<A NAME ="DOC.387.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  TableEditor(int tool)</B></TT>
+<DD> is tool table editor.
+<DL></DL><P>
+<A NAME="DiagramEditor">
+<A NAME ="DOC.387.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  DiagramEditor(int tool)</B></TT>
+<DD> is tool diagram editor.
+<DL></DL><P>
+<A NAME="TreeEditor">
+<A NAME ="DOC.387.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  TreeEditor(int tool)</B></TT>
+<DD> is tool tree editor.
+<DL></DL><P>
+<A NAME="TextEditor">
+<A NAME ="DOC.387.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  TextEditor(int tool)</B></TT>
+<DD> is tool text editor.
+<DL></DL><P>
+<A NAME="EditorWithoutCurves">
+<A NAME ="DOC.387.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  EditorWithoutCurves(int tool)</B></TT>
+<DD> tool can not have curved edges.
+<DL></DL><P>
+<A NAME="EditorWithoutDuplicates">
+<A NAME ="DOC.387.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  EditorWithoutDuplicates(int tool)</B></TT>
+<DD> tool can not have duplicate shapes.
+<DL></DL><P>
+<A NAME="HierarchicEditor">
+<A NAME ="DOC.387.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  HierarchicEditor(int tool)</B></TT>
+<DD> tool can edit hierarchic documents.
+<DL></DL><P>
+<A NAME="GenericEditor">
+<A NAME ="DOC.387.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  GenericEditor(int tool)</B></TT>
+<DD> tool has no soft constraints
+<DL></DL><P>
+<A NAME="EditorWithInterEdgeConnections">
+<A NAME ="DOC.387.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  EditorWithInterEdgeConnections(int tool)</B></TT>
+<DD> tool is diagram editor in which edges can connect to edges
+<DL></DL><P>
+<A NAME="EditorWithModelChecker">
+<A NAME ="DOC.387.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  bool  EditorWithModelChecker(int tool)</B></TT>
+<DD> tool is diagram editor with model checking facilities   
+<DL></DL><P>
+<A NAME="STARTUP_TOOL_NAME">
+<A NAME ="DOC.387.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  char  STARTUP_TOOL_NAME[]</B></TT>
+<DD> The name (in upper case) of the startup tool.
+<DL></DL><P>
+<A NAME="TOOL_TITLES">
+<A NAME ="DOC.387.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  char*  TOOL_TITLES[]</B></TT>
+<DD> Window titles for the different tools.
+<DL></DL><P>
+<A NAME="TOOL_NAMES">
+<A NAME ="DOC.387.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  char*  TOOL_NAMES[]</B></TT>
+<DD> Short names (in upper case) of the editing tools.
+<DL></DL><P>
+<A NAME="EXECUTABLE_NAMES">
+<A NAME ="DOC.387.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  char*  EXECUTABLE_NAMES[]</B></TT>
+<DD> Names of the tool executables.
+<DL></DL><P>
+<A NAME="DOCUMENT_TYPES">
+<A NAME ="DOC.387.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  char*  DOCUMENT_TYPES[]</B></TT>
+<DD> The full names of the document types.
+<DL></DL><P>
+<A NAME="DOCUMENT_SUFFIXES">
+<A NAME ="DOC.387.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  char*  DOCUMENT_SUFFIXES[]</B></TT>
+<DD> Document name suffixes. 
+<DL></DL><P>
+<A NAME="DOCUMENT_DEFAULT">
+<A NAME ="DOC.387.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  char  DOCUMENT_DEFAULT[]</B></TT>
+<DD> Default document name.
+<DL></DL><P>
+<A NAME="DOCUMENT_TYPES_INFO">
+<A NAME ="DOC.387.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  char*  DOCUMENT_TYPES_INFO[]</B></TT>
+<DD> The help info of the document types.
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

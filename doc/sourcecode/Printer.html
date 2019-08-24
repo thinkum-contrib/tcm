@@ -1,0 +1,380 @@
+<html><head><TITLE>Printer</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Printer  </H2><BLOCKQUOTE>
+ class for printing and postscript generation.
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Classes</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.251.3"> <IMG BORDER=0 SRC=icon1.gif></A>  enum </TD><TD><B>OutputType</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.251.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Printer</B> (<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="Document.html">Document</A> *d)<br>
+<I> constructor.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Printer</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Print</B> ()<br>
+<I> print document as postscript to current printer.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowPrintPreview</B> ()<br>
+<I> show print preview in separate window.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ExportAs</B> ()<br>
+<I> show popup dialog for exporting to file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowPrinterQueue</B> ()<br>
+<I> show dialog containing printer queue incl.'lprm' option.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Name</B> ()<br>
+<I> popup dialog for new printer name.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Copies</B> ()<br>
+<I> popup dialog for new number of copies.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>PrintCommand</B> ()<br>
+<I> popup dialog for setting printer command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>PrinterQueueCommand</B> ()<br>
+<I> popup dialog for setting printer queue command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>PrinterRemoveCommand</B> ()<br>
+<I> popup dialog for setting printer remove command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>PreviewCommand</B> ()<br>
+<I> popup dialog for setting preview command.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetName</B> (const <!1><A HREF="string.html">string</A> *name)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetCopies</B> (int copies)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPrintCommand</B> (const <!1><A HREF="string.html">string</A> *command)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPageOrientation</B> (int num)<br>
+<I> set page orientation to portrait or landscape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.18"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPageNumbering</B> (bool b)<br>
+<I> set page numbering on/off.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.19"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetPageOrientation</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.20"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetShowPageBoundary</B> (bool set)<br>
+<I> set showing of page boundary.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.21"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowInfo</B> (int type)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.22"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPageSize</B> (<!2><A HREF="PageSize.html#DOC.247.1">PageSize::Type</A> ps)<br>
+<I> set pagesize to num.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.23"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="PageSize.html#DOC.247.1">PageSize::Type</A> </TD><TD><B>GetPageSize</B> ()<br>
+<I> return page-size (A4 etc).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.24"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>GetPageSize</B> (double &width, double &height)<br>
+<I> return page size (pixels).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.25"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>GetSizePages</B> (<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)<br>
+<I> get area of used pages.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.26"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetBannerPage</B> (int num)<br>
+<I> set bannerpage to num.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.27"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetBannerPage</B> ()<br>
+<I> return page-size (DEF\_BANNER etc).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.28"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>SavePostScript</B> (const <!1><A HREF="string.html">string</A> *file, bool TcmBanner)<br>
+<I> actually save as postscript to the file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.29"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>SaveEPS</B> (const <!1><A HREF="string.html">string</A> *file)<br>
+<I> actually save as encapsulated postscript to the file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.30"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>SaveFig</B> (const <!1><A HREF="string.html">string</A> *file, bool latexfonts=False)<br>
+<I> actually save as Fig format to the file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.31"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>SavePNG</B> (const <!1><A HREF="string.html">string</A> *file)<br>
+<I> actually save as PNG format to the file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.32"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DoSaveAsPS</B> (const <!1><A HREF="string.html">string</A> *file)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.33"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DoSaveAsEPS</B> (const <!1><A HREF="string.html">string</A> *file)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.34"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DoSaveAsFigTex</B> (const <!1><A HREF="string.html">string</A> *file)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.35"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DoSaveAsFigPS</B> (const <!1><A HREF="string.html">string</A> *file)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.36"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DoSaveAsPNG</B> (const <!1><A HREF="string.html">string</A> *file)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.37"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateFSFiles</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.38"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPreviewCommand</B> (const <!1><A HREF="string.html">string</A> *newCommand)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.39"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDefaultFont</B> (int f, int s, int p)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.40"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPrintColors</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.41"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDuplex</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.42"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTumble</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.43"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Draw</B> ()<br>
+<I> draw page boundaries, page numbers, header and footer.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.44"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Undraw</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.45"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="FileSelectionDialog.html">FileSelectionDialog</A>* </TD><TD><B>GetFileSelectionDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.46"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="PromptDialog.html">PromptDialog</A>* </TD><TD><B>GetPromptDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.47"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="ScaleDialog.html">ScaleDialog</A>* </TD><TD><B>GetScaleDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.48"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Config.html">Config</A>* </TD><TD><B>GetConfig</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.49"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetStatus</B> (const <!1><A HREF="string.html">string</A> *msg)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.50"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetStatus</B> (const char *msg)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.51"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetViewer</B> (<!1><A HREF="Viewer.html">Viewer</A> *v)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.52"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Save</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f)<br>
+<I> Save page attributes to file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.53"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Load</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, double format)<br>
+<I> Load page attributes from file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.251.54"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Check</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, double format)<br>
+<I> Check but not load page attributes from file.</I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ class for printing and postscript generation.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Printer">
+<A NAME ="DOC.251.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Printer(<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="Document.html">Document</A> *d)</B></TT>
+<DD> constructor.
+<DL></DL><P>
+<A NAME="~Printer">
+<A NAME ="DOC.251.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Printer()</B></TT>
+<DL></DL><P>
+<A NAME="OutputType">
+<A NAME ="DOC.251.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum  OutputType</B></TT>
+<DL></DL><P>
+<A NAME="Print">
+<A NAME ="DOC.251.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Print()</B></TT>
+<DD> print document as postscript to current printer.
+<DL></DL><P>
+<A NAME="ShowPrintPreview">
+<A NAME ="DOC.251.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowPrintPreview()</B></TT>
+<DD> show print preview in separate window.
+<DL></DL><P>
+<A NAME="ExportAs">
+<A NAME ="DOC.251.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ExportAs()</B></TT>
+<DD> show popup dialog for exporting to file.
+<DL></DL><P>
+<A NAME="ShowPrinterQueue">
+<A NAME ="DOC.251.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowPrinterQueue()</B></TT>
+<DD> show dialog containing printer queue incl.'lprm' option.
+<DL></DL><P>
+<A NAME="Name">
+<A NAME ="DOC.251.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Name()</B></TT>
+<DD> popup dialog for new printer name.
+<DL></DL><P>
+<A NAME="Copies">
+<A NAME ="DOC.251.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Copies()</B></TT>
+<DD> popup dialog for new number of copies.
+<DL></DL><P>
+<A NAME="PrintCommand">
+<A NAME ="DOC.251.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  PrintCommand()</B></TT>
+<DD> popup dialog for setting printer command.
+<DL></DL><P>
+<A NAME="PrinterQueueCommand">
+<A NAME ="DOC.251.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  PrinterQueueCommand()</B></TT>
+<DD> popup dialog for setting printer queue command.
+<DL></DL><P>
+<A NAME="PrinterRemoveCommand">
+<A NAME ="DOC.251.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  PrinterRemoveCommand()</B></TT>
+<DD> popup dialog for setting printer remove command.
+<DL></DL><P>
+<A NAME="PreviewCommand">
+<A NAME ="DOC.251.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  PreviewCommand()</B></TT>
+<DD> popup dialog for setting preview command.
+<DL></DL><P>
+<A NAME="SetName">
+<A NAME ="DOC.251.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetName(const <!1><A HREF="string.html">string</A> *name)</B></TT>
+<DL></DL><P>
+<A NAME="SetCopies">
+<A NAME ="DOC.251.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetCopies(int copies)</B></TT>
+<DL></DL><P>
+<A NAME="SetPrintCommand">
+<A NAME ="DOC.251.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPrintCommand(const <!1><A HREF="string.html">string</A> *command)</B></TT>
+<DL></DL><P>
+<A NAME="SetPageOrientation">
+<A NAME ="DOC.251.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPageOrientation(int num)</B></TT>
+<DD> set page orientation to portrait or landscape.
+<DL></DL><P>
+<A NAME="SetPageNumbering">
+<A NAME ="DOC.251.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPageNumbering(bool b)</B></TT>
+<DD> set page numbering on/off.
+<DL></DL><P>
+<A NAME="GetPageOrientation">
+<A NAME ="DOC.251.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetPageOrientation()</B></TT>
+<DL></DL><P>
+<A NAME="SetShowPageBoundary">
+<A NAME ="DOC.251.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetShowPageBoundary(bool set)</B></TT>
+<DD> set showing of page boundary.
+<DL></DL><P>
+<A NAME="ShowInfo">
+<A NAME ="DOC.251.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowInfo(int type)</B></TT>
+<DL></DL><P>
+<A NAME="SetPageSize">
+<A NAME ="DOC.251.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPageSize(<!2><A HREF="PageSize.html#DOC.247.1">PageSize::Type</A> ps)</B></TT>
+<DD> set pagesize to num.
+<DL></DL><P>
+<A NAME="GetPageSize">
+<A NAME ="DOC.251.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="PageSize.html#DOC.247.1">PageSize::Type</A>  GetPageSize()</B></TT>
+<DD> return page-size (A4 etc).
+<DL></DL><P>
+<A NAME="GetPageSize">
+<A NAME ="DOC.251.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  GetPageSize(double &width, double &height)</B></TT>
+<DD> return page size (pixels).
+<DL></DL><P>
+<A NAME="GetSizePages">
+<A NAME ="DOC.251.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  GetSizePages(<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)</B></TT>
+<DD> get area of used pages.
+<DL></DL><P>
+<A NAME="SetBannerPage">
+<A NAME ="DOC.251.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetBannerPage(int num)</B></TT>
+<DD> set bannerpage to num.
+<DL></DL><P>
+<A NAME="GetBannerPage">
+<A NAME ="DOC.251.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetBannerPage()</B></TT>
+<DD> return page-size (DEF\_BANNER etc).
+<DL></DL><P>
+<A NAME="SavePostScript">
+<A NAME ="DOC.251.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  SavePostScript(const <!1><A HREF="string.html">string</A> *file, bool TcmBanner)</B></TT>
+<DD> actually save as postscript to the file.
+<DL></DL><P>
+<A NAME="SaveEPS">
+<A NAME ="DOC.251.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  SaveEPS(const <!1><A HREF="string.html">string</A> *file)</B></TT>
+<DD> actually save as encapsulated postscript to the file.
+<DL></DL><P>
+<A NAME="SaveFig">
+<A NAME ="DOC.251.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  SaveFig(const <!1><A HREF="string.html">string</A> *file, bool latexfonts=False)</B></TT>
+<DD> actually save as Fig format to the file.
+<DL></DL><P>
+<A NAME="SavePNG">
+<A NAME ="DOC.251.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  SavePNG(const <!1><A HREF="string.html">string</A> *file)</B></TT>
+<DD> actually save as PNG format to the file.
+<DL></DL><P>
+<A NAME="DoSaveAsPS">
+<A NAME ="DOC.251.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DoSaveAsPS(const <!1><A HREF="string.html">string</A> *file)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="DoSaveAsEPS">
+<A NAME ="DOC.251.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DoSaveAsEPS(const <!1><A HREF="string.html">string</A> *file)</B></TT>
+<DL></DL><P>
+<A NAME="DoSaveAsFigTex">
+<A NAME ="DOC.251.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DoSaveAsFigTex(const <!1><A HREF="string.html">string</A> *file)</B></TT>
+<DL></DL><P>
+<A NAME="DoSaveAsFigPS">
+<A NAME ="DOC.251.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DoSaveAsFigPS(const <!1><A HREF="string.html">string</A> *file)</B></TT>
+<DL></DL><P>
+<A NAME="DoSaveAsPNG">
+<A NAME ="DOC.251.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DoSaveAsPNG(const <!1><A HREF="string.html">string</A> *file)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateFSFiles">
+<A NAME ="DOC.251.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateFSFiles()</B></TT>
+<DL></DL><P>
+<A NAME="SetPreviewCommand">
+<A NAME ="DOC.251.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPreviewCommand(const <!1><A HREF="string.html">string</A> *newCommand)</B></TT>
+<DL></DL><P>
+<A NAME="SetDefaultFont">
+<A NAME ="DOC.251.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDefaultFont(int f, int s, int p)</B></TT>
+<DL></DL><P>
+<A NAME="SetPrintColors">
+<A NAME ="DOC.251.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPrintColors(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="SetDuplex">
+<A NAME ="DOC.251.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDuplex(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="SetTumble">
+<A NAME ="DOC.251.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTumble(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="Draw">
+<A NAME ="DOC.251.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Draw()</B></TT>
+<DD> draw page boundaries, page numbers, header and footer.
+<DL></DL><P>
+<A NAME="Undraw">
+<A NAME ="DOC.251.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Undraw()</B></TT>
+<DL></DL><P>
+<A NAME="GetFileSelectionDialog">
+<A NAME ="DOC.251.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="FileSelectionDialog.html">FileSelectionDialog</A>*  GetFileSelectionDialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetPromptDialog">
+<A NAME ="DOC.251.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="PromptDialog.html">PromptDialog</A>*  GetPromptDialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetScaleDialog">
+<A NAME ="DOC.251.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="ScaleDialog.html">ScaleDialog</A>*  GetScaleDialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetConfig">
+<A NAME ="DOC.251.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Config.html">Config</A>*  GetConfig()</B></TT>
+<DL></DL><P>
+<A NAME="SetStatus">
+<A NAME ="DOC.251.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetStatus(const <!1><A HREF="string.html">string</A> *msg)</B></TT>
+<DL></DL><P>
+<A NAME="SetStatus">
+<A NAME ="DOC.251.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetStatus(const char *msg)</B></TT>
+<DL></DL><P>
+<A NAME="SetViewer">
+<A NAME ="DOC.251.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetViewer(<!1><A HREF="Viewer.html">Viewer</A> *v)</B></TT>
+<DL></DL><P>
+<A NAME="Save">
+<A NAME ="DOC.251.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Save(<!1><A HREF="OutputFile.html">OutputFile</A> *f)</B></TT>
+<DD> Save page attributes to file.
+<DL></DL><P>
+<A NAME="Load">
+<A NAME ="DOC.251.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Load(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)</B></TT>
+<DD> Load page attributes from file.
+<DL></DL><P>
+<A NAME="Check">
+<A NAME ="DOC.251.54">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Check(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)</B></TT>
+<DD> Check but not load page attributes from file.
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

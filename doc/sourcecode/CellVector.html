@@ -1,0 +1,371 @@
+<html><head><TITLE>CellVector</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  CellVector  </H2><BLOCKQUOTE>
+ abstract base class of table rows and columns.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CCellVector,MCellVector.html,CCellRow,MCellRow.html,CCellColumn,MCellColumn.html">
+<param name=before value="M,M|_,Mr_">
+<param name=after value="M,M,M">
+<param name=indent value="0,0,0">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.42.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CellVector</B> (<!1><A HREF="TableViewer.html">TableViewer</A> *v, unsigned <!2><A HREF="CellVector.html#DOC.42.55">number</A>)<br>
+<I> creation.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.2"> <IMG BORDER=0 SRC=icon1.gif></A> friend  int </TD><TD><B>operator==</B> (const <!2><A HREF="CellVector.html#DOC.42.1">CellVector</A> &c1, const <!2><A HREF="CellVector.html#DOC.42.1">CellVector</A> &c2)<br>
+<I> -1,0,1 iff c1.number ==,<,> c2.number</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.3"> <IMG BORDER=0 SRC=icon1.gif></A> friend  int </TD><TD><B>Compare</B> (<!2><A HREF="CellVector.html#DOC.42.1">CellVector</A> *c1, <!2><A HREF="CellVector.html#DOC.42.1">CellVector</A> *c2)<br>
+<I> -1,0,1 iff c1.number ==,<,> c2.number</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Draw</B> ()<br>
+<I> draw cell vector.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Undraw</B> ()<br>
+<I> erase cell vector.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawCells</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UndrawCells</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawLines</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UndrawLines</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawLabels</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UndrawLabels</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetGrafport</B> (<!1><A HREF="Grafport.html">Grafport</A> *g)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetVisible</B> (bool b)<br>
+<I> Make all cells and lines (in)visible.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.14"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="TableViewer.html">TableViewer</A>* </TD><TD><B>GetViewer</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.15"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdatePosition</B> (int delta)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.16"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  <!1><A HREF="LinePiece.html">LinePiece</A>* </TD><TD><B>HitLinePiece</B> (int x, int y)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.17"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>HasCell</B> (<!1><A HREF="Cell.html">Cell</A> *c)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.18"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="RowColumnLabel.html">RowColumnLabel</A>* </TD><TD><B>HitLabel</B> (int x, int y) const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.19"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>AddCell</B> (<!1><A HREF="Cell.html">Cell</A> *c, bool redraw=False)<br>
+<I> append cell to column.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.20"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>DeleteCell</B> (<!1><A HREF="Cell.html">Cell</A> *c, bool redraw=False)<br>
+<I> delete cell from column.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.21"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>InsertCell</B> (<!1><A HREF="Cell.html">Cell</A> *c, unsigned n, bool redraw=False)<br>
+<I> insert cell in column.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.22"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>ContainsPt</B> (int x, int y) const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.23"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Write</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.24"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>WritePartial</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f, int i, <!1><A HREF="List.html">List</A><int> *nrs)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.25"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>Read</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, unsigned from = 0, double format = 1.0)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.26"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> </TD><TD><B>GetAlignment</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.27"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetAlignment</B> (<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.28"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateAlignment</B> (<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.29"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateNumber</B> (unsigned nr)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.30"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetLabelsVisible</B> (bool s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.31"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetNumber</B> (unsigned nr)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.32"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Cell.html">Cell</A>* </TD><TD><B>FirstCell</B> ()<br>
+<I> return first cell, 0 if cells is empty.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.33"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Cell.html">Cell</A>* </TD><TD><B>NextCell</B> ()<br>
+<I> return next cell, 0 if cells is empty.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.34"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Cell.html">Cell</A>* </TD><TD><B>NthCell</B> (unsigned n)<br>
+<I> return n-th cell, 0 if n-th cell does not exist.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.35"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="LinePiece.html">LinePiece</A>* </TD><TD><B>FirstLine</B> ()<br>
+<I> return first line, 0 if lines is empty.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.36"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="LinePiece.html">LinePiece</A>* </TD><TD><B>NextLine</B> ()<br>
+<I> return next line, 0 if lines is empty.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.37"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="LinePiece.html">LinePiece</A>* </TD><TD><B>NthLine</B> (unsigned n)<br>
+<I> return n-th line, 0 if n-th line does not exist.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.38"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>GetNumber</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.39"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="RowColumnLabel.html">RowColumnLabel</A>* </TD><TD><B>GetLabel1</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.40"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="RowColumnLabel.html">RowColumnLabel</A>* </TD><TD><B>GetLabel2</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.41"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLabel1</B> (const <!1><A HREF="string.html">string</A> *txt)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.42"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateLabel2</B> (const <!1><A HREF="string.html">string</A> *txt)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.43"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>NrCells</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.44"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetIndex</B> (<!1><A HREF="LinePiece.html">LinePiece</A> *l)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.45"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>HasEmptyText</B> ()<br>
+<I> return nr of cells having empty texts.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.46"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>HasText</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I> return nr of cells having this text.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.47"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsAllEmpty</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.48"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>EmptyCells</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.49"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>CalcLabelPositions</B> ()<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.42.50"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="Cell.html">Cell</A> *> * </TD><TD><B>cells</B> <br>
+<I> the cells in the vector.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.42.51"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="LinePiece.html">LinePiece</A> *> * </TD><TD><B>lines</B> <br>
+<I> cell boundaries between the cells in the vector. </I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.42.52"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Grafport.html">Grafport</A>* </TD><TD><B>GetGrafport</B> () const <br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ abstract base class of table rows and columns.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="CellVector">
+<A NAME ="DOC.42.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  CellVector(<!1><A HREF="TableViewer.html">TableViewer</A> *v, unsigned <!2><A HREF="CellVector.html#DOC.42.55">number</A>)</B></TT>
+<DD> creation.
+<DL></DL><P>
+<A NAME="operator==">
+<A NAME ="DOC.42.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  int  operator==(const <!2><A HREF="CellVector.html#DOC.42.1">CellVector</A> &c1, const <!2><A HREF="CellVector.html#DOC.42.1">CellVector</A> &c2)</B></TT>
+<DD> -1,0,1 iff c1.number ==,<,> c2.number
+<DL></DL><P>
+<A NAME="Compare">
+<A NAME ="DOC.42.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  int  Compare(<!2><A HREF="CellVector.html#DOC.42.1">CellVector</A> *c1, <!2><A HREF="CellVector.html#DOC.42.1">CellVector</A> *c2)</B></TT>
+<DD> -1,0,1 iff c1.number ==,<,> c2.number
+<DL></DL><P>
+<A NAME="Draw">
+<A NAME ="DOC.42.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Draw()</B></TT>
+<DD> draw cell vector.
+<DL></DL><P>
+<A NAME="Undraw">
+<A NAME ="DOC.42.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Undraw()</B></TT>
+<DD> erase cell vector.
+<DL></DL><P>
+<A NAME="DrawCells">
+<A NAME ="DOC.42.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawCells()</B></TT>
+<DL></DL><P>
+<A NAME="UndrawCells">
+<A NAME ="DOC.42.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UndrawCells()</B></TT>
+<DL></DL><P>
+<A NAME="DrawLines">
+<A NAME ="DOC.42.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawLines()</B></TT>
+<DL></DL><P>
+<A NAME="UndrawLines">
+<A NAME ="DOC.42.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UndrawLines()</B></TT>
+<DL></DL><P>
+<A NAME="DrawLabels">
+<A NAME ="DOC.42.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawLabels()</B></TT>
+<DL></DL><P>
+<A NAME="UndrawLabels">
+<A NAME ="DOC.42.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UndrawLabels()</B></TT>
+<DL></DL><P>
+<A NAME="SetGrafport">
+<A NAME ="DOC.42.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetGrafport(<!1><A HREF="Grafport.html">Grafport</A> *g)</B></TT>
+<DL></DL><P>
+<A NAME="SetVisible">
+<A NAME ="DOC.42.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetVisible(bool b)</B></TT>
+<DD> Make all cells and lines (in)visible.
+<DL></DL><P>
+<A NAME="GetViewer">
+<A NAME ="DOC.42.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="TableViewer.html">TableViewer</A>*  GetViewer() const </B></TT>
+<DL></DL><P>
+<A NAME="UpdatePosition">
+<A NAME ="DOC.42.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdatePosition(int delta)</B></TT>
+<DL></DL><P>
+<A NAME="HitLinePiece">
+<A NAME ="DOC.42.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  <!1><A HREF="LinePiece.html">LinePiece</A>*  HitLinePiece(int x, int y)</B></TT>
+<DL></DL><P>
+<A NAME="HasCell">
+<A NAME ="DOC.42.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  HasCell(<!1><A HREF="Cell.html">Cell</A> *c)</B></TT>
+<DL></DL><P>
+<A NAME="HitLabel">
+<A NAME ="DOC.42.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="RowColumnLabel.html">RowColumnLabel</A>*  HitLabel(int x, int y) const </B></TT>
+<DL></DL><P>
+<A NAME="AddCell">
+<A NAME ="DOC.42.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  AddCell(<!1><A HREF="Cell.html">Cell</A> *c, bool redraw=False)</B></TT>
+<DD> append cell to column.
+<DL></DL><P>
+<A NAME="DeleteCell">
+<A NAME ="DOC.42.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  DeleteCell(<!1><A HREF="Cell.html">Cell</A> *c, bool redraw=False)</B></TT>
+<DD> delete cell from column.
+<DL></DL><P>
+<A NAME="InsertCell">
+<A NAME ="DOC.42.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  InsertCell(<!1><A HREF="Cell.html">Cell</A> *c, unsigned n, bool redraw=False)</B></TT>
+<DD> insert cell in column.
+<DL></DL><P>
+<A NAME="ContainsPt">
+<A NAME ="DOC.42.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  ContainsPt(int x, int y) const </B></TT>
+<DL></DL><P>
+<A NAME="Write">
+<A NAME ="DOC.42.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Write(<!1><A HREF="OutputFile.html">OutputFile</A> *f)</B></TT>
+<DL></DL><P>
+<A NAME="WritePartial">
+<A NAME ="DOC.42.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  WritePartial(<!1><A HREF="OutputFile.html">OutputFile</A> *f, int i, <!1><A HREF="List.html">List</A><int> *nrs)</B></TT>
+<DL></DL><P>
+<A NAME="Read">
+<A NAME ="DOC.42.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  Read(<!1><A HREF="InputFile.html">InputFile</A> *f, unsigned from = 0, double format = 1.0)</B></TT>
+<DL></DL><P>
+<A NAME="GetAlignment">
+<A NAME ="DOC.42.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>  GetAlignment() const </B></TT>
+<DL></DL><P>
+<A NAME="SetAlignment">
+<A NAME ="DOC.42.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetAlignment(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateAlignment">
+<A NAME ="DOC.42.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateAlignment(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateNumber">
+<A NAME ="DOC.42.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateNumber(unsigned nr)</B></TT>
+<DL></DL><P>
+<A NAME="SetLabelsVisible">
+<A NAME ="DOC.42.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetLabelsVisible(bool s)</B></TT>
+<DL></DL><P>
+<A NAME="SetNumber">
+<A NAME ="DOC.42.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetNumber(unsigned nr)</B></TT>
+<DL></DL><P>
+<A NAME="FirstCell">
+<A NAME ="DOC.42.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Cell.html">Cell</A>*  FirstCell()</B></TT>
+<DD> return first cell, 0 if cells is empty.
+<DL></DL><P>
+<A NAME="NextCell">
+<A NAME ="DOC.42.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Cell.html">Cell</A>*  NextCell()</B></TT>
+<DD> return next cell, 0 if cells is empty.
+<DL></DL><P>
+<A NAME="NthCell">
+<A NAME ="DOC.42.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Cell.html">Cell</A>*  NthCell(unsigned n)</B></TT>
+<DD> return n-th cell, 0 if n-th cell does not exist.
+<DL></DL><P>
+<A NAME="FirstLine">
+<A NAME ="DOC.42.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="LinePiece.html">LinePiece</A>*  FirstLine()</B></TT>
+<DD> return first line, 0 if lines is empty.
+<DL></DL><P>
+<A NAME="NextLine">
+<A NAME ="DOC.42.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="LinePiece.html">LinePiece</A>*  NextLine()</B></TT>
+<DD> return next line, 0 if lines is empty.
+<DL></DL><P>
+<A NAME="NthLine">
+<A NAME ="DOC.42.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="LinePiece.html">LinePiece</A>*  NthLine(unsigned n)</B></TT>
+<DD> return n-th line, 0 if n-th line does not exist.
+<DL></DL><P>
+<A NAME="GetNumber">
+<A NAME ="DOC.42.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  GetNumber() const </B></TT>
+<DL></DL><P>
+<A NAME="GetLabel1">
+<A NAME ="DOC.42.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="RowColumnLabel.html">RowColumnLabel</A>*  GetLabel1() const </B></TT>
+<DL></DL><P>
+<A NAME="GetLabel2">
+<A NAME ="DOC.42.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="RowColumnLabel.html">RowColumnLabel</A>*  GetLabel2() const </B></TT>
+<DL></DL><P>
+<A NAME="UpdateLabel1">
+<A NAME ="DOC.42.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLabel1(const <!1><A HREF="string.html">string</A> *txt)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateLabel2">
+<A NAME ="DOC.42.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateLabel2(const <!1><A HREF="string.html">string</A> *txt)</B></TT>
+<DL></DL><P>
+<A NAME="NrCells">
+<A NAME ="DOC.42.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  NrCells() const </B></TT>
+<DL></DL><P>
+<A NAME="GetIndex">
+<A NAME ="DOC.42.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetIndex(<!1><A HREF="LinePiece.html">LinePiece</A> *l)</B></TT>
+<DL></DL><P>
+<A NAME="HasEmptyText">
+<A NAME ="DOC.42.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  HasEmptyText()</B></TT>
+<DD> return nr of cells having empty texts.
+<DL></DL><P>
+<A NAME="HasText">
+<A NAME ="DOC.42.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  HasText(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DD> return nr of cells having this text.
+<DL></DL><P>
+<A NAME="IsAllEmpty">
+<A NAME ="DOC.42.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsAllEmpty()</B></TT>
+<DL></DL><P>
+<A NAME="EmptyCells">
+<A NAME ="DOC.42.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  EmptyCells()</B></TT>
+<DL></DL><P>
+<A NAME="CalcLabelPositions">
+<A NAME ="DOC.42.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  CalcLabelPositions()</B></TT>
+<DL></DL><P>
+<A NAME="cells">
+<A NAME ="DOC.42.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="Cell.html">Cell</A> *> *  cells</B></TT>
+<DD> the cells in the vector.
+<DL></DL><P>
+<A NAME="lines">
+<A NAME ="DOC.42.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="LinePiece.html">LinePiece</A> *> *  lines</B></TT>
+<DD> cell boundaries between the cells in the vector. 
+<DL></DL><P>
+<A NAME="GetGrafport">
+<A NAME ="DOC.42.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Grafport.html">Grafport</A>*  GetGrafport() const </B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="CellRow.html"> CellRow </A><br>
+<A HREF="CellColumn.html"> CellColumn </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

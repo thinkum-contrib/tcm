@@ -1,0 +1,176 @@
+<html><head><TITLE>InputFile</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  InputFile : public <!2><A HREF="File.html#DOC.173.1">File</A> </H2><BLOCKQUOTE>
+ Input file class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CFile,MFile.html,CInputFile,MInputFile.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.203.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>InputFile</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~InputFile</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Open</B> (const <!1><A HREF="string.html">string</A>* file)<br>
+<I> open a file for reading.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Close</B> ()<br>
+<I> close current the file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.5"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Good</B> ()<br>
+<I> is it a correct file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.6"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Eof</B> ()<br>
+<I> is end of file reached?</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.7"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>LineNumber</B> ()<br>
+<I> return line number.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.8"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>ReadChar</B> ()<br>
+<I> return next non-white-space char from input. Return -1 on eof.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.9"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>LookupWord</B> (const char* s)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.10"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>LookupString</B> (const char* s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.11"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadAttribute</B> (const <!1><A HREF="string.html">string</A>* name, <!1><A HREF="string.html">string</A>* value)<br>
+<I> a shorthand to lookup a name and read a value from the input file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.12"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadAttribute</B> (const char* name, <!1><A HREF="string.html">string</A>* value)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.13"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadAttribute2</B> ( const <!1><A HREF="string.html">string</A>* name, <!1><A HREF="string.html">string</A>* value1, <!1><A HREF="string.html">string</A>* value2)<br>
+<I> another shorthand to look up a word and read two word values.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.14"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadAttribute2</B> (const char* name, <!1><A HREF="string.html">string</A>* value1, <!1><A HREF="string.html">string</A>* value2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.15"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadAttribute3</B> (const <!1><A HREF="string.html">string</A>* name, <!1><A HREF="string.html">string</A>* v1, <!1><A HREF="string.html">string</A>* v2, <!1><A HREF="string.html">string</A>* v3)<br>
+<I> another shorthand to look up a word and read three word values.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.16"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadAttribute3</B> (const char* name, <!1><A HREF="string.html">string</A>* v1, <!1><A HREF="string.html">string</A>* v2, <!1><A HREF="string.html">string</A>* v3)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.17"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadStringAttribute</B> (const <!1><A HREF="string.html">string</A>* name, <!1><A HREF="string.html">string</A>* value)<br>
+<I> another shorthand to look up a word and read a string value.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.18"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadStringAttribute</B> (const char* name, <!1><A HREF="string.html">string</A>* value)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.203.19"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadPair</B> (<!1><A HREF="string.html">string</A>* value1, <!1><A HREF="string.html">string</A>* value2)<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.203.20"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SkipLine</B> ()<br>
+<I> skip rest of line.</I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="File.html">File:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetFileName</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsOpened</B>()
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ Input file class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="InputFile">
+<A NAME ="DOC.203.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  InputFile()</B></TT>
+<DL></DL><P>
+<A NAME="~InputFile">
+<A NAME ="DOC.203.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~InputFile()</B></TT>
+<DL></DL><P>
+<A NAME="Open">
+<A NAME ="DOC.203.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Open(const <!1><A HREF="string.html">string</A>* file)</B></TT>
+<DD> open a file for reading.
+<DL></DL><P>
+<A NAME="Close">
+<A NAME ="DOC.203.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Close()</B></TT>
+<DD> close current the file.
+<DL></DL><P>
+<A NAME="Good">
+<A NAME ="DOC.203.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Good()</B></TT>
+<DD> is it a correct file.
+<DL></DL><P>
+<A NAME="Eof">
+<A NAME ="DOC.203.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Eof()</B></TT>
+<DD> is end of file reached?
+<DL></DL><P>
+<A NAME="LineNumber">
+<A NAME ="DOC.203.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  LineNumber()</B></TT>
+<DD> return line number.
+<DL></DL><P>
+<A NAME="ReadChar">
+<A NAME ="DOC.203.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  ReadChar()</B></TT>
+<DD> return next non-white-space char from input. Return -1 on eof.
+<DL></DL><P>
+<A NAME="LookupWord">
+<A NAME ="DOC.203.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  LookupWord(const char* s)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="LookupString">
+<A NAME ="DOC.203.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  LookupString(const char* s)</B></TT>
+<DL></DL><P>
+<A NAME="ReadAttribute">
+<A NAME ="DOC.203.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadAttribute(const <!1><A HREF="string.html">string</A>* name, <!1><A HREF="string.html">string</A>* value)</B></TT>
+<DD> a shorthand to lookup a name and read a value from the input file.
+<DL></DL><P>
+<A NAME="ReadAttribute">
+<A NAME ="DOC.203.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadAttribute(const char* name, <!1><A HREF="string.html">string</A>* value)</B></TT>
+<DL></DL><P>
+<A NAME="ReadAttribute2">
+<A NAME ="DOC.203.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadAttribute2( const <!1><A HREF="string.html">string</A>* name, <!1><A HREF="string.html">string</A>* value1, <!1><A HREF="string.html">string</A>* value2)</B></TT>
+<DD> another shorthand to look up a word and read two word values.
+<DL></DL><P>
+<A NAME="ReadAttribute2">
+<A NAME ="DOC.203.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadAttribute2(const char* name, <!1><A HREF="string.html">string</A>* value1, <!1><A HREF="string.html">string</A>* value2)</B></TT>
+<DL></DL><P>
+<A NAME="ReadAttribute3">
+<A NAME ="DOC.203.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadAttribute3(const <!1><A HREF="string.html">string</A>* name, <!1><A HREF="string.html">string</A>* v1, <!1><A HREF="string.html">string</A>* v2, <!1><A HREF="string.html">string</A>* v3)</B></TT>
+<DD> another shorthand to look up a word and read three word values.
+<DL></DL><P>
+<A NAME="ReadAttribute3">
+<A NAME ="DOC.203.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadAttribute3(const char* name, <!1><A HREF="string.html">string</A>* v1, <!1><A HREF="string.html">string</A>* v2, <!1><A HREF="string.html">string</A>* v3)</B></TT>
+<DL></DL><P>
+<A NAME="ReadStringAttribute">
+<A NAME ="DOC.203.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadStringAttribute(const <!1><A HREF="string.html">string</A>* name, <!1><A HREF="string.html">string</A>* value)</B></TT>
+<DD> another shorthand to look up a word and read a string value.
+<DL></DL><P>
+<A NAME="ReadStringAttribute">
+<A NAME ="DOC.203.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadStringAttribute(const char* name, <!1><A HREF="string.html">string</A>* value)</B></TT>
+<DL></DL><P>
+<A NAME="ReadPair">
+<A NAME ="DOC.203.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadPair(<!1><A HREF="string.html">string</A>* value1, <!1><A HREF="string.html">string</A>* value2)</B></TT>
+<DL></DL><P>
+<A NAME="SkipLine">
+<A NAME ="DOC.203.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SkipLine()</B></TT>
+<DD> skip rest of line.
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

@@ -1,0 +1,94 @@
+<html><head><TITLE>DragTextShapeCmd</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  DragTextShapeCmd : public <!2><A HREF="DragShapeCmd.html#DOC.133.1">DragShapeCmd</A> </H2><BLOCKQUOTE>
+ command class for dragging text shapes.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CCommand,MCommand.html,CDragShapeCmd,MDragShapeCmd.html,CDragTextShapeCmd,MDragTextShapeCmd.html,CDragSTLabelCmd,MDragSTLabelCmd.html">
+<param name=before value="M,M,M,M^_">
+<param name=after value="Md_SP,Md_,M,M">
+<param name=indent value="0,1,2,2">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.136.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>DragTextShapeCmd</B> (<!1><A HREF="TextShape.html">TextShape</A> *<!2><A HREF="DragShapeCmd.html#DOC.133.15">shape</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.136.2"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Executable</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.136.3"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>GetName</B> () const <br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="DragShapeCmd.html">DragShapeCmd:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>TrackMouse</B>(<!2><A HREF="Command.html#DOC.48.3">TrackType</A> aPhase, <!1><A HREF="Point.html">Point</A> *anchorPoint, <!1><A HREF="Point.html">Point</A> *previousPoint, <!1><A HREF="Point.html">Point</A> *nextPoint)
+<DT><IMG SRC=icon2.gif> void  <B>Execute</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UnExecute</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ReExecute</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>DrawOutLine</B>(const <!1><A HREF="Point.html">Point</A> *<!2><A HREF="DragShapeCmd.html#DOC.133.18">delta</A>)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Shape.html">Shape</A>*  <B>GetShape</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ShapeView.html">ShapeView</A>*  <B>GetView</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="Point.html">Point</A>*  <B>GetDelta</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetDelta</B>(const <!1><A HREF="Point.html">Point</A> *p)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="Point.html">Point</A>*  <B>GetOldPosition</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetOldPosition</B>(const <!1><A HREF="Point.html">Point</A> *p)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Command.html"> Command:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>TrackType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>Abort</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>CmdDone</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>ScaleCorrect</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>ScaleCorrect</B>(const <!1><A HREF="Point.html">Point</A> *pt) const 
+<DT><IMG SRC=icon2.gif> int  <B>Scale</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>Scale</B>(const <!1><A HREF="Point.html">Point</A> *pt) const 
+<DT><IMG SRC=icon2.gif> void  <B>SayAborted</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SayCommited</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SayUndone</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="DrawWindow.html">DrawWindow</A>*  <B>GetMainWindow</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Viewer.html">Viewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Document.html">Document</A>*  <B>GetDocument</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Grafport.html">Grafport</A>*  <B>GetGrafport</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetCmdDone</B>(bool b)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ command class for dragging text shapes.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="DragTextShapeCmd">
+<A NAME ="DOC.136.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  DragTextShapeCmd(<!1><A HREF="TextShape.html">TextShape</A> *<!2><A HREF="DragShapeCmd.html#DOC.133.15">shape</A>)</B></TT>
+<DL></DL><P>
+<A NAME="Executable">
+<A NAME ="DOC.136.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Executable()</B></TT>
+<DL></DL><P>
+<A NAME="GetName">
+<A NAME ="DOC.136.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  GetName() const </B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="DragSTLabelCmd.html"> DragSTLabelCmd </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

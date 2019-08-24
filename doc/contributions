@@ -1,0 +1,8 @@
+tcm   date        author              contribution
+----  ----------  -----------------   ----------------------------------------
+1.99  2000/05/23  Reinhard Max        Page size support for A3 Paper. 
+2.01  2000/12/04  Gilles J.Seguin     Fix for #include <string[s].h>
+2.01  2000/12/06  Alan Eldridge       Fixing Makefiles etc. for Redhat 7 build
+2.10  2002/04/16  Otavio Salvador     Packaging tcm for Debian
+2.10  2002/07/07  Jose Canete Valdeon Generating SQDs from NuSMV counterexamples
+2.20  2002/10/23  Daniel Boesswetter  "Porting" TCM to Windows :-) (CYGWIN)

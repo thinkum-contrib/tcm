@@ -1,0 +1,192 @@
+<html><head><TITLE>DiagramChecks</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  DiagramChecks  </H2><BLOCKQUOTE>
+ implements generic checks for soft constraints on diagrams.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=215>
+<param name=classes value="CDiagramChecks,MDiagramChecks.html,CSTChecks,MSTChecks.html,CSNChecks,MSNChecks.html,CPSChecks,MPSChecks.html,CERChecks,MERChecks.html,CDFChecks,MDFChecks.html,CATChecks,MATChecks.html">
+<param name=before value="M,M|_,MR_,MR_,MR_,MR_,Mr_">
+<param name=after value="M,M,M,M,M,M,M">
+<param name=indent value="0,0,0,0,0,0,0">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.110.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>DiagramChecks</B> (<!1><A HREF="Diagram.html">Diagram</A> *d, <!1><A HREF="Graph.html">Graph</A> *g)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.2"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckNodeCount</B> (unsigned count, int nodeType, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> diagram should have count nodes of nodeType.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.3"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckNodeCount</B> (unsigned min, unsigned max, int nodeType, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> diagram should have min <= count <= max nodes of nodeType.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.4"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckEdgeCount</B> (unsigned count, int edgeType, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> diagram should have count edges of edgeType</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.5"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckEdgeCount</B> (unsigned min, unsigned max, int edgeType, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> diagram should have min <= count <= max edges of edgeType.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.6"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckDoubleIndexes</B> (<!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> check that nodes unique indexes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.7"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckNamelessNodes</B> (int nodeType, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> diagram should have no nameless nodes of nodeType</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.8"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckNamelessEdges</B> (int edgeType, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> diagram should have no nameless edges of edgeType</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.9"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckIllegalNodeNames</B> (int nodeType, const <!1><A HREF="string.html">string</A> *name, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> diagram should have no nodes of nodeType named 'name'. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.10"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckIllegalEdgeNames</B> (int edgeType, const <!1><A HREF="string.html">string</A> *name, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> diagram should have no edges of edgeType named 'name'.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.11"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckNamelessEdges</B> ( int edgeType, int type1, int type2, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> diagram should have no nameless edges of edgeType between types. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.12"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckDoubleNamelessEdges</B> (int edgeType, int type1, int type2, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> diagram shouldn't have double nameless edges between these types. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.13"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckDoubleNodes</B> (int nodeType, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> diagram should not have multiple nodes of nodeType with same name.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.14"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckConnected</B> (int nodeType, bool index, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> nodeType nodes should be connected (index: name or index in msg)</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.15"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckConnected</B> (int nodeType, int toNode, int min, int max, bool index, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> nodeType nodes should be connected (index: name or index in msg)</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.16"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckJunctionCoherence</B> (int nodeType, int parenttype, int childtype, unsigned minChildren, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> nodes of nodeType connected by 1 parent edge and minChildren edges.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.17"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckCountEdgesFrom</B> (int nodeType, int edgeType, unsigned min, unsigned max, bool zeroAllowed, bool index, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> nodes of nodeType should have min/max departing edges of edgeType.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.18"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckReachability</B> (int rootType, int nodeType, bool index, <!1><A HREF="string.html">string</A> &chkbuf)<br>
+<I> nodes of nodeType are reachable from >= 1 nodes of rootType.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.110.19"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Graph.html">Graph</A>* </TD><TD><B>GetGraph</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.20"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Diagram.html">Diagram</A>* </TD><TD><B>GetDiagram</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.21"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckCount</B> (unsigned min, unsigned max, int type, <!1><A HREF="string.html">string</A> &chkbuf, bool node)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.110.22"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckIllegalNames</B> (int type, const <!1><A HREF="string.html">string</A> *name, <!1><A HREF="string.html">string</A> &chkbuf, bool node)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ implements generic checks for soft constraints on diagrams.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="DiagramChecks">
+<A NAME ="DOC.110.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  DiagramChecks(<!1><A HREF="Diagram.html">Diagram</A> *d, <!1><A HREF="Graph.html">Graph</A> *g)</B></TT>
+<DL></DL><P>
+<A NAME="CheckNodeCount">
+<A NAME ="DOC.110.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckNodeCount(unsigned count, int nodeType, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> diagram should have count nodes of nodeType.
+<DL></DL><P>
+<A NAME="CheckNodeCount">
+<A NAME ="DOC.110.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckNodeCount(unsigned min, unsigned max, int nodeType, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> diagram should have min <= count <= max nodes of nodeType.
+<DL></DL><P>
+<A NAME="CheckEdgeCount">
+<A NAME ="DOC.110.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckEdgeCount(unsigned count, int edgeType, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> diagram should have count edges of edgeType
+<DL></DL><P>
+<A NAME="CheckEdgeCount">
+<A NAME ="DOC.110.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckEdgeCount(unsigned min, unsigned max, int edgeType, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> diagram should have min <= count <= max edges of edgeType.
+<DL></DL><P>
+<A NAME="CheckDoubleIndexes">
+<A NAME ="DOC.110.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckDoubleIndexes(<!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> check that nodes unique indexes.
+<DL></DL><P>
+<A NAME="CheckNamelessNodes">
+<A NAME ="DOC.110.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckNamelessNodes(int nodeType, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> diagram should have no nameless nodes of nodeType
+<DL></DL><P>
+<A NAME="CheckNamelessEdges">
+<A NAME ="DOC.110.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckNamelessEdges(int edgeType, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> diagram should have no nameless edges of edgeType
+<DL></DL><P>
+<A NAME="CheckIllegalNodeNames">
+<A NAME ="DOC.110.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckIllegalNodeNames(int nodeType, const <!1><A HREF="string.html">string</A> *name, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> diagram should have no nodes of nodeType named 'name'. 
+<DL></DL><P>
+<A NAME="CheckIllegalEdgeNames">
+<A NAME ="DOC.110.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckIllegalEdgeNames(int edgeType, const <!1><A HREF="string.html">string</A> *name, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> diagram should have no edges of edgeType named 'name'.
+<DL></DL><P>
+<A NAME="CheckNamelessEdges">
+<A NAME ="DOC.110.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckNamelessEdges( int edgeType, int type1, int type2, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> diagram should have no nameless edges of edgeType between types. 
+<DL></DL><P>
+<A NAME="CheckDoubleNamelessEdges">
+<A NAME ="DOC.110.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckDoubleNamelessEdges(int edgeType, int type1, int type2, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> diagram shouldn't have double nameless edges between these types. 
+<DL></DL><P>
+<A NAME="CheckDoubleNodes">
+<A NAME ="DOC.110.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckDoubleNodes(int nodeType, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> diagram should not have multiple nodes of nodeType with same name.
+<DL></DL><P>
+<A NAME="CheckConnected">
+<A NAME ="DOC.110.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckConnected(int nodeType, bool index, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> nodeType nodes should be connected (index: name or index in msg)
+<DL></DL><P>
+<A NAME="CheckConnected">
+<A NAME ="DOC.110.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckConnected(int nodeType, int toNode, int min, int max, bool index, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> nodeType nodes should be connected (index: name or index in msg)
+<DL></DL><P>
+<A NAME="CheckJunctionCoherence">
+<A NAME ="DOC.110.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckJunctionCoherence(int nodeType, int parenttype, int childtype, unsigned minChildren, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> nodes of nodeType connected by 1 parent edge and minChildren edges.
+<DL></DL><P>
+<A NAME="CheckCountEdgesFrom">
+<A NAME ="DOC.110.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckCountEdgesFrom(int nodeType, int edgeType, unsigned min, unsigned max, bool zeroAllowed, bool index, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> nodes of nodeType should have min/max departing edges of edgeType.
+<DL></DL><P>
+<A NAME="CheckReachability">
+<A NAME ="DOC.110.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckReachability(int rootType, int nodeType, bool index, <!1><A HREF="string.html">string</A> &chkbuf)</B></TT>
+<DD> nodes of nodeType are reachable from >= 1 nodes of rootType.
+<DL></DL><P>
+<A NAME="GetGraph">
+<A NAME ="DOC.110.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Graph.html">Graph</A>*  GetGraph() const </B></TT>
+<DL></DL><P>
+<A NAME="GetDiagram">
+<A NAME ="DOC.110.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Diagram.html">Diagram</A>*  GetDiagram() const </B></TT>
+<DL></DL><P>
+<A NAME="CheckCount">
+<A NAME ="DOC.110.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckCount(unsigned min, unsigned max, int type, <!1><A HREF="string.html">string</A> &chkbuf, bool node)</B></TT>
+<DL></DL><P>
+<A NAME="CheckIllegalNames">
+<A NAME ="DOC.110.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckIllegalNames(int type, const <!1><A HREF="string.html">string</A> *name, <!1><A HREF="string.html">string</A> &chkbuf, bool node)</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="STChecks.html"> STChecks </A><br>
+<A HREF="SNChecks.html"> SNChecks </A><br>
+<A HREF="PSChecks.html"> PSChecks </A><br>
+<A HREF="ERChecks.html"> ERChecks </A><br>
+<A HREF="DFChecks.html"> DFChecks </A><br>
+<A HREF="ATChecks.html"> ATChecks </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

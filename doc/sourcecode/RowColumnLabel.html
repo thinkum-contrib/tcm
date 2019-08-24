@@ -1,0 +1,84 @@
+<html><head><TITLE>RowColumnLabel</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  RowColumnLabel : public <!2><A HREF="SimpleLabel.html#DOC.300.1">SimpleLabel</A> </H2><BLOCKQUOTE>
+ row/column label class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CSimpleLabel,MSimpleLabel.html,CRowColumnLabel,MRowColumnLabel.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.281.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>RowColumnLabel</B> (<!1><A HREF="Grafport.html">Grafport</A> *g, <!1><A HREF="CellVector.html">CellVector</A> *<!2><A HREF="RowColumnLabel.html#DOC.281.4">vector</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.281.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Draw</B> ()<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.281.3"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="CellVector.html">CellVector</A>* </TD><TD><B>GetVector</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="SimpleLabel.html">SimpleLabel:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_TEXT_WIDTH</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_TEXT_HEIGHT</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> friend  int  <B>operator==</B>(const <!2><A HREF="SimpleLabel.html#DOC.300.1">SimpleLabel</A> &t1, const <!2><A HREF="SimpleLabel.html#DOC.300.1">SimpleLabel</A> &t2)
+<DT><IMG SRC=icon2.gif> friend  int  <B>Compare</B>(<!2><A HREF="SimpleLabel.html#DOC.300.1">SimpleLabel</A> *r1, <!2><A HREF="SimpleLabel.html#DOC.300.1">SimpleLabel</A> *r2)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Undraw</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DrawOutLine</B>(const <!1><A HREF="Point.html">Point</A> *c)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdatePosition</B>(const <!1><A HREF="Point.html">Point</A> *)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateText</B>(const <!1><A HREF="string.html">string</A> *)
+<DT><IMG SRC=icon2.gif> void  <B>SetPosition</B>(const <!1><A HREF="Point.html">Point</A> *pt)
+<DT><IMG SRC=icon2.gif> void  <B>SetText</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetGrafport</B>(<!1><A HREF="Grafport.html">Grafport</A> *g)
+<DT><IMG SRC=icon2.gif> void  <B>CalcSize</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>HitText</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="Point.html">Point</A>*  <B>GetPosition</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="Point.html">Point</A>*  <B>GetTopLeft</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetText</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetWidth</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetHeight</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="XFont.html">XFont</A>*  <B>GetFont</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetFont</B>(<!1><A HREF="XFont.html">XFont</A> *f)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateFont</B>(<!1><A HREF="XFont.html">XFont</A> *<!2><A HREF="SimpleLabel.html#DOC.300.34">font</A>)
+<DT><IMG SRC=icon2.gif> int  <B>FontHeight</B>() const 
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="Grafport.html">Grafport</A>*  <B>GetGrafport</B>() const 
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ row/column label class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="RowColumnLabel">
+<A NAME ="DOC.281.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  RowColumnLabel(<!1><A HREF="Grafport.html">Grafport</A> *g, <!1><A HREF="CellVector.html">CellVector</A> *<!2><A HREF="RowColumnLabel.html#DOC.281.4">vector</A>)</B></TT>
+<DL></DL><P>
+<A NAME="Draw">
+<A NAME ="DOC.281.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Draw()</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetVector">
+<A NAME ="DOC.281.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="CellVector.html">CellVector</A>*  GetVector()</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

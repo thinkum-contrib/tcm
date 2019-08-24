@@ -1,0 +1,580 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4. TCM User Interface</TITLE>
+<META NAME="description" CONTENT="4. TCM User Interface">
+<META NAME="keywords" CONTENT="TechDoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="TechDoc.css">
+<LINK REL="next" HREF="developersguidenode6.html">
+<LINK REL="previous" HREF="developersguidenode4.html">
+<LINK REL="up" HREF="TechDoc.html">
+<LINK REL="next" HREF="developersguidenode6.html">
+</HEAD>
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html314"
+ HREF="developersguidenode6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html311"
+ HREF="TechDoc.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html305"
+ HREF="developersguidenode4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A> 
+<A NAME="tex2html313"
+ HREF="developersguidenode1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents_motif.gif"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html315"
+ HREF="developersguidenode6.html">5. TCM Class Hierarchy</A>
+<B> Up:</B> <A NAME="tex2html312"
+ HREF="TechDoc.html">Toolkit for Conceptual Modeling</A>
+<B> Previous:</B> <A NAME="tex2html306"
+ HREF="developersguidenode4.html">3. Source Code Organization</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><strong>Subsections</strong></A>
+<UL>
+<LI><A NAME="tex2html316"
+ HREF="developersguidenode5.html#SECTION00510000000000000000">4.1 X/Motif user interface</A>
+<LI><A NAME="tex2html317"
+ HREF="developersguidenode5.html#SECTION00520000000000000000">4.2 User interface implementation</A>
+<UL>
+<LI><A NAME="tex2html318"
+ HREF="developersguidenode5.html#SECTION00521000000000000000">4.2.1 Overview</A>
+<LI><A NAME="tex2html319"
+ HREF="developersguidenode5.html#SECTION00522000000000000000">4.2.2 Application startup</A>
+<LI><A NAME="tex2html320"
+ HREF="developersguidenode5.html#SECTION00523000000000000000">4.2.3 Main window structure</A>
+<LI><A NAME="tex2html321"
+ HREF="developersguidenode5.html#SECTION00524000000000000000">4.2.4 Calling functions from the user interface</A>
+</UL>
+<LI><A NAME="tex2html322"
+ HREF="developersguidenode5.html#SECTION00530000000000000000">4.3 Xlib drawing</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00500000000000000000">
+4. TCM User Interface</A>
+</H1>
+
+<P>
+
+<H1><A NAME="SECTION00510000000000000000">
+4.1 X/Motif user interface</A>
+</H1>
+
+<P>
+<BR>
+<DIV ALIGN="CENTER"><A NAME="fig:gui_libs">&#160;</A><A NAME="387">&#160;</A>
+<TABLE WIDTH="50%">
+<CAPTION><STRONG>Figure 4.1:</STRONG>
+typical X/Motif application structure.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<!-- MATH: $\includegraphics[width=4in]{p/gui.eps}$ -->
+<IMG
+ WIDTH="458" HEIGHT="377" ALIGN="BOTTOM" BORDER="0"
+ SRC="developersguideimg14.gif"
+ ALT="\includegraphics[width=4in]{p/gui.eps}"></DIV></TD></TR>
+</TABLE>
+</DIV>
+<BR>
+<P>
+Figure&nbsp;<A HREF="developersguidenode5.html#fig:gui_libs">4.1</A> shows the relationships between the
+built-in X, Motif and Unix libraries and an arbitrary X/Motif 
+application.  All X, Motif and Unix libraries have a C interface 
+(functions, defines, typedefs, structs, enums, unions and variables).
+When a library is depicted on top of another library, this means 
+that a library is implemented by means of the interface provided
+by the underlying layer. You are referred to the X and Motif
+books and manuals in the list of references at the end of this text.
+
+<P>
+The TCM X/Motif user interface is restricted to that part of the source
+(classes and functions) that directly uses the Motif, Xt and Xlib 
+libraries. That part consists of most of the classes in the <TT>src/ui</TT> 
+directory and <I>some</I> of the classes in the other editor libraries.
+The names of the editor specific user interface classes all 
+end on <TT>Window</TT> or <TT>Stubs</TT>, such as <A NAME="tex2html113"
+ HREF="../sourcecode/ERWindow.html"><TT>ERWindow</TT></A>, 
+<A NAME="tex2html114"
+ HREF="../sourcecode/DFWindow.html"><TT>DFWindow</TT></A>
+and 
+<A NAME="tex2html115"
+ HREF="../sourcecode/DiagramStubs.html"><TT>DiagramStubs</TT></A>, 
+<A NAME="tex2html116"
+ HREF="../sourcecode/TableStubs.html"><TT>TableStubs</TT></A>
+etc. 
+The window classes are all specializations of the abstract class 
+<A NAME="tex2html117"
+ HREF="../sourcecode/MainWindow.html"><TT>ui/MainWindow</TT></A>.
+The stub classes contain functions that are called from the user interface 
+widgets (menus, push buttons, text fields etc.) and these functions in turn 
+call application specific functions of non-GUI objects.
+
+<P>
+The <A NAME="tex2html118"
+ HREF="../sourcecode/DrawingArea.html"><TT>ed/DrawingArea</TT></A>
+class 
+is not part of libgui but of libeditor because it also has application specific 
+behavior (albeit at a high level). The drawing area needs a viewer class (a 
+descendent of class <A NAME="tex2html119"
+ HREF="../sourcecode/Viewer.html"><TT>ed/Viewer</TT></A>).
+The viewer class should provide functions that are called when mouse
+buttons are pressed or dragged in the drawing area, when the mouse pointer
+is moved or when a characters are typed in while the mouse pointer is
+in the drawing area.
+
+<P>
+When asked what code contains X/Motif calls (and forms the GUI) then 
+the answer is: almost all code of <A NAME="tex2html120"
+ HREF="../../src/ui">src/ui</A>, 
+all classes that end on <TT>Window</TT> or end on <TT>Stubs</TT> and the 
+DrawingArea class.
+
+<P>
+The entire TCM distribution of the current version consists of about 450 
+classes and about 83000 lines of code (source and headers files, 
+including white spaces and comments, but excluding the 20-line header 
+part of the GNU General Public License).
+The X/Motif dependent part is about 19000 lines of code.
+This is the part that should be rewritten when TCM is translated to
+a non-X Windows environment.
+
+<P>
+The TCM user interface is more or less insulated into a restricted 
+part of the source code, put in a number of C++ classes that are
+clearly distinguishable from the rest. But 
+the user interface code is spread over all the TCM libraries 
+(except libglobal). The reason for this organization is that factoring 
+out the commonalities between all different tools was for us more
+important than a complete separation of the entire application code on 
+one hand and the entire user interface code on the other. This means that 
+each diagram editor has its own specific node and edge buttons. The code 
+for creating tiled buttons in general is part of libgui but the specific 
+initialization is done in the code of a specific diagram editor.
+
+<P>
+The approach of factoring out commonalities was a design for <B>evolution</B>
+and that has proved to work for TCM. It makes it
+relatively easy to add new tools or modify individual existing tools 
+while maintaining a stable core of libraries and unrelated tools. When 
+features are added to some library or to some tool, all tools that are 
+included in the area of that library or tool (see figure&nbsp;<A HREF="developersguidenode4.html#fig:src_organization">3.1</A>) 
+are also updated minimizing the risk of code redundancy or inconsistencies.
+
+<P>
+
+<H1><A NAME="SECTION00520000000000000000">
+4.2 User interface implementation</A>
+</H1> 
+
+<P>
+
+<H2><A NAME="SECTION00521000000000000000">
+4.2.1 Overview</A>
+</H2>
+
+<P>
+Like all X11 applications, the TCM tools are event driven. This means they
+have the following basic structure:
+<DL COMPACT>
+<DT>1.
+<DD>Create the widgets.
+<DT>2.
+<DD>Register the event handlers for these widgets.
+<DT>3.
+<DD>Go into the main event loop.
+<DT>4.
+<DD>Activate the appropriate event handler when a specific event
+occurs on a specific widget.
+<DT>5.
+<DD>Return to the main event loop when done.
+</DL>
+<P>
+When a TCM tool is started the widgets that form the main window are created. 
+The class <A NAME="tex2html121"
+ HREF="../sourcecode/EditWindow.html"><TT>ed/EditWindow</TT></A>
+and its specializations contain the functions to create the 
+constituent parts of the main window. These widgets have one or more so-called 
+<B>call-back functions</B>: the widget reacts to a certain set of X events 
+(that set is built-in) and when such an event occurs a user-supplied action,
+in the form of ordinary C functions, will be called. In our implementation we do not
+use ordinary C functions but instead we provide C++ static member functions.
+
+<P>
+An exception to this use of callbacks, is the drawing area widget 
+which, by default, does not react on the events that are needed to 
+draw pictures as we like to 
+do in TCM. Therefore, so-called <I>translations</I> are used, an X-Toolkit data 
+structure to define some specified mapping of X events to user 
+supplied actions. All details of translations and drawing area events
+are hidden in the <A NAME="tex2html122"
+ HREF="../sourcecode/DrawingArea.html"><TT>ed/DrawingArea</TT></A>
+class.
+
+<P>
+Most pop-up window <A NAME="tex2html123"
+ HREF="../sourcecode/Dialog.html">dialog widgets</A>
+are created during initialization. 
+When they are popped up they do not have to be created (which is much
+faster) and when these dialogs are dismissed they are not destroyed, 
+but they are simply kept unmanaged (invisible).
+An exception to this are so-called <A NAME="tex2html124"
+ HREF="../sourcecode/MessageDialog.html">message dialogs</A>, for error and warning 
+messages etc. These are created on the fly because we can not determine
+in advance how many of which kind will be necessary.
+
+<P>
+A special kind of message dialog is the <A NAME="tex2html125"
+ HREF="../sourcecode/QuestionDialog.html">question dialog</A>
+which is application 
+modal. This means that the user can only respond to this dialog and other 
+user actions in the applications are prohibited. This is necessary when the 
+application has to have an answer before it can proceed (e.g. 
+the `save before quit?' dialog).
+
+<P>
+The main event loop is built-in in Motif, as well as the calling
+of the event handlers (via callback or translation).
+
+<P>
+
+<H2><A NAME="SECTION00522000000000000000">
+4.2.2 Application startup</A>
+</H2>
+
+<P>
+In contrast with an ordinary C program the editors don't start by directly 
+entering the <TT>main()</TT> function. Instead, each editor is compiled with 
+a distinct file <TT>??editor.c</TT>, e.g. <A NAME="tex2html126"
+ HREF="../../src/sd/gd/gdeditor.c"><TT>gdeditor.c</TT></A>
+for TGD. In that 
+file two global objects are created (but the two instance variables are 
+not visible outside this file). For example:
+<PRE>
+ 
+Application *app = new Application("Tcm");
+MainWindow *mw = new GDWindow("Tcm");
+</PRE> 
+This means that the very first thing that is done on start-up is
+calling the constructor <BR> <TT>Application::Application</TT>
+and then the constructor <TT>GDWindow::GDWindow</TT>.
+So, for each editor first an instance of class <A NAME="tex2html127"
+ HREF="../sourcecode/Application.html"><TT>ui/Application</TT></A>
+is created and then an instance of an editor specific 
+main window class is created (but both are not initialized yet).
+<A NAME="tex2html128"
+ HREF="../sourcecode/MainWindow.html">MainWindow</A>
+and Application are 
+both part of libgui. Specific main window classes such as 
+<A NAME="tex2html129"
+ HREF="../sourcecode/GDWindow.html">GDWindow</A>
+are specializations of 
+MainWindow and are included in the specific diagram editor sources.
+
+<P>
+There should be just one instance of class Application per editor instance, 
+which can be accessed via the global variable named <TT>theApplication</TT>.
+The application opens the X display, sets the color map and 
+does some other things that are applicable for the entire application. 
+Furthermore, the application class keeps track of a list of 
+the application (main) 
+windows. The current TCM implementation is limited to a single main 
+window (the other windows are made as pop-up dialog windows) but in principle 
+the framework of libgui can be utilized in programs that have
+multiple main windows. 
+
+<P>
+After the creation of both class instances, the function
+<TT>main(argc, argv)</TT> is entered in which 
+<TT>theApplication-&gt;Initialize(argc, argv)</TT> is called. 
+The <TT>main</TT> function is generic and is part of libgui.
+The application then creates an object config of type <A NAME="tex2html130"
+ HREF="../sourcecode/Config.html">Config</A>, which reads in the configuration file and keeps 
+tracks of various editor defaults. Then the application 
+initializes the Xt application context and subsequently
+calls the main window initialization functions. 
+
+<P>
+The main window initialization consists of the
+creation of the main window widgets. 
+After the main window widgets are created, some other important
+objects are created (in the <A NAME="tex2html131"
+ HREF="../sourcecode/DiagramWindow.html">DiagramWindow</A>
+or <A NAME="tex2html132"
+ HREF="../sourcecode/TableWindow.html">TableWindow</A>
+class), 
+notably:
+
+<P>
+<UL>
+<LI><TT>printer</TT> of class <A NAME="tex2html133"
+ HREF="../sourcecode/Printer.html"><TT>ed/Printer</TT></A>. This object keeps
+track of all page and print options and takes care of printing
+and generating PostScript.
+<LI><TT>helper</TT> of class <A NAME="tex2html134"
+ HREF="../sourcecode/Helper.html"><TT>ed/Helper</TT></A>. This object shows
+the on-line help messages. It reads the help messages from file.
+<LI><TT>document</TT> of an editor specific specialization of the
+abstract class <A NAME="tex2html135"
+ HREF="../sourcecode/Document.html"><TT>ed/Document</TT></A>, depending on the base class of the 
+main window. E.g. <A NAME="tex2html136"
+ HREF="../sourcecode/GDWindow.html">GDWindow</A>
+creates 
+<A NAME="tex2html137"
+ HREF="../sourcecode/GDDiagram.html">GDDiagram</A>, 
+<A NAME="tex2html138"
+ HREF="../sourcecode/DFWindow.html">DFWindow</A>
+creates
+<A NAME="tex2html139"
+ HREF="../sourcecode/DFDiagram.html">DFDiagram</A>
+etc. The document 
+object keeps track of the document information (like document name, author etc.) 
+and takes amongst others care of loading documents from file and saving them 
+to file.
+<LI>Depending on the kind of document that is created some
+extra objects are created such as a <A NAME="tex2html140"
+ HREF="../sourcecode/Graph.html">graph object</A>
+for diagram
+editors (a <A NAME="tex2html141"
+ HREF="../sourcecode/GDGraph.html">GDGraph</A>
+in the case of TGD), 
+that manages the nodes and edges of the document and a 
+<A NAME="tex2html142"
+ HREF="../sourcecode/DiagramViewer.html">viewer object</A>
+(<A NAME="tex2html143"
+ HREF="../sourcecode/GDViewer.html">GDViewer</A>
+in the case of TGD) 
+that manages in the case of a diagram editor one or more views containing a set of 
+graphical shapes. In the case of a table editor the
+<A NAME="tex2html144"
+ HREF="../sourcecode/TableViewer.html">viewer object</A>
+manages 
+the rows and columns of the table.
+</UL>
+<P>
+These objects (of which exactly one instance exist per 
+main window), will be supplied as parameter to the Motif 
+callback functions&nbsp;<A NAME="tex2html145"
+ HREF="#foot486"><SUP>4.1</SUP></A>. The callback function are 
+static member functions of one of the stub classes. When the 
+stub is called then the object is casted to the right type 
+(because the parameters to stubs are simply pointers)
+and the appropriate class member of this object is called 
+possibly with some other parameters that are supplied to
+the stub.
+
+<P>
+And finally, after the creation of the main window, the application 
+object and the other main editor objects, the X main 
+event loop is entered, giving X the control.
+
+<P>
+
+<H2><A NAME="SECTION00523000000000000000">
+4.2.3 Main window structure</A>
+</H2>
+
+<P>
+<BR>
+<DIV ALIGN="CENTER"><A NAME="fig:mainwindow">&#160;</A><A NAME="491">&#160;</A>
+<TABLE WIDTH="50%">
+<CAPTION><STRONG>Figure 4.2:</STRONG>
+Main window of the generic diagram editor.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<!-- MATH: $\includegraphics[width=6in]{p/mainwin.eps}$ -->
+<IMG
+ WIDTH="687" HEIGHT="465" ALIGN="BOTTOM" BORDER="0"
+ SRC="developersguideimg15.gif"
+ ALT="\includegraphics[width=6in]{p/mainwin.eps}"></DIV></TD></TR>
+</TABLE>
+</DIV>
+<BR>
+<P>
+See figure&nbsp;<A HREF="developersguidenode5.html#fig:mainwindow">4.2</A> for the basic main window's widget structure.
+The boxes are Motif widgets (widget type and name between parentheses). 
+The arrows connect widgets with their parents. The root is the top-level
+shell (TCM). To be more exact: the figure shows the main window of the 
+generic diagram editor, TGD. The other diagram editors look almost
+the same, the main difference are their node and edge buttons.
+The table editors are almost similar too but they do not have 
+node and edge buttons of course.
+
+<P>
+When libeditor.so is compiled with the option <TT>-DDUMPWIDGETTREE</TT>, 
+a textual representation of the widget structure will be written to standard output
+when the editor is started (its output is also used for making 
+this figure).
+
+<P>
+The details about creation of the widgets can be found in the classes 
+<A NAME="tex2html147"
+ HREF="../sourcecode/MainWindow.html"><TT>ui/MainWindow</TT></A>,
+<A NAME="tex2html148"
+ HREF="../sourcecode/EditWindow.html"><TT>ed/EditWindow</TT></A>, 
+<A NAME="tex2html149"
+ HREF="../sourcecode/DrawWindow.html"><TT>ed/DrawWindow</TT></A>, 
+<A NAME="tex2html150"
+ HREF="../sourcecode/DiagramWindow.html"><TT>dg/DiagramWindow</TT></A>, 
+<A NAME="tex2html151"
+ HREF="../sourcecode/TableWindow.html"><TT>tb/TableWindow</TT></A>
+etc. 
+See the class hierarchy of chapter&nbsp;<A HREF="developersguidenode6.html#chap:class_hierarchy">5</A> for the relationships and 
+all the members of these classes.
+
+<P>
+
+<H2><A NAME="SECTION00524000000000000000">
+4.2.4 Calling functions from the user interface</A>
+</H2>
+
+<P>
+Menus are created by the constructor function of class 
+<A NAME="tex2html152"
+ HREF="../sourcecode/Menu.html"><TT>ui/Menu</TT></A>.
+For an example for how to create a menu see <TT>dg/DiagramWindow::CreateMenuBar</TT>.
+
+<P>
+The items of a menu are specified by means of the 
+<A NAME="tex2html153"
+ HREF="../sourcecode/MenuItem.html"><TT>ui/MenuItem</TT></A>
+class.
+A menu contains a list of menu items, which can be supplied to the menu
+constructor function. The menus common to all drawing editors are made in 
+<A NAME="tex2html154"
+ HREF="../sourcecode/DrawWindow.html"><TT>ed/DrawWindow</TT></A>, the
+menus common to all diagram editors are made in 
+<A NAME="tex2html155"
+ HREF="../sourcecode/DiagramWindow.html"><TT>dg/DiagramWindow</TT></A>
+and the menus common to all table editors are made in 
+<A NAME="tex2html156"
+ HREF="../sourcecode/TableWindow.html"><TT>tb/TableWindow</TT></A>.
+Likewise, menus that are specific for a single editor, are made 
+in the corresponding main window class.
+
+<P>
+One of the fields of a MenuItem is the function that will be called when
+the menu item is selected. These functions are called stubs and have to 
+be static C++ class members. The functions that are supplied are all part of a 
+<TT>...Stubs</TT> class which consist entirely of these static functions.
+Menu items also have a so-called callback data.
+The callback data is always used to pass a pointer to the object
+whose class member should be called. For example, the Print menu item
+has as callback function the Print function of 
+<A NAME="tex2html157"
+ HREF="../sourcecode/EditStubs.html"><TT>ed/Editstubs</TT></A>
+and as callback data a pointer to a printer of class 
+<A NAME="tex2html158"
+ HREF="../sourcecode/Printer.html"><TT>ed/Printer</TT></A>.
+In the stubs function <TT>Printer::Print</TT> is called.
+
+<P>
+You can also call functions via the other main window widgets, for instance
+the diagram name text field or the node and edge toggle buttons.
+This works similar as with menus. You have to supply a callback function 
+(<TT>XtCallBack</TT>) after the widget creation. These callbacks are also 
+listed in the stub classes.
+
+<P>
+
+<H1><A NAME="SECTION00530000000000000000">
+4.3 Xlib drawing</A>
+</H1> 
+
+<P>
+This is a very short introduction to drawing lines etc. in Xlib. For the 
+rest you are referred to the documentation mentioned in the references.
+
+<P>
+X has 16 drawing modes (so called raster operations). A technique for
+simulating graphical objects moving or stretching (like resizing a box
+or a ``rubber band'' line), is to set the Graphics Context
+to the eXclusive-OR raster operation mode. The Graphics Context 
+is an Xlib data structure which determines how an object will be drawn
+when a drawing routine is called (XDrawLine, XDrawRectangle etc.).
+In XOR mode, the new destination pixel is produced by the exclusive 
+or of the old destination pixel with the source pixel.
+In this mode, you can easily draw and erase a figure. You draw a figure
+to let it appear, and when you redraw it, you erase it. By sequencing
+drawing and redrawing you can simulating an object being moved or
+dragged. Furthermore, in XOR mode, objects can overlap each other
+without damaging each other. The overlapping part is then white, and
+when one of the objects is moved or removed it will be redrawn, so
+that the overlapping part will appear black again. 
+All details of drawing graphics with Xlib is hidden in 
+the <A NAME="tex2html159"
+ HREF="../sourcecode/XGrafport.html"><TT>XGrafport</TT></A>
+class. 
+An XGrafport has as attributes some GCs.
+
+<P>
+Note that each Xlib drawing operation is performed twice: one on the 
+drawing area (window) and one on a Pixmap that serves as a backup 
+store. This is needed because X does not automatically save the window 
+contents when the window is overlapped or resized.
+
+<P>
+All the entire Xlib drawing functionality is hidden in the
+<TT>ui/XGrafport</TT> class which is a descendant of the abstract
+<A NAME="tex2html160"
+ HREF="../sourcecode/Grafport.html"><TT>ui/Grafport</TT></A>
+class. 
+Because XGrafport only uses a reference to the X Display and an X Window it 
+can be used rather easily in any 2D drawing program under X (it uses Xlib 
+but it does not use Motif nor the other classes of libgui that use Motif).
+
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot486">... functions&nbsp;</A><A NAME="foot486"
+ HREF="developersguidenode5.html#tex2html145"><SUP>4.1</SUP></A>
+<DD>`callback' is Motif-speak. `stub' is
+TCM-speak and means in this context the kind of callback 
+function that is used in TCM and it forms an intermediate between
+the GUI (which uses X/Motif) and the other classes which do 
+not depend on X/Motif.
+
+</DL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html314"
+ HREF="developersguidenode6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html311"
+ HREF="TechDoc.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html305"
+ HREF="developersguidenode4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A> 
+<A NAME="tex2html313"
+ HREF="developersguidenode1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents_motif.gif"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html315"
+ HREF="developersguidenode6.html">5. TCM Class Hierarchy</A>
+<B> Up:</B> <A NAME="tex2html312"
+ HREF="TechDoc.html">Toolkit for Conceptual Modeling</A>
+<B> Previous:</B> <A NAME="tex2html306"
+ HREF="developersguidenode4.html">3. Source Code Organization</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Henk van de Zandschulp</I>
+<BR><I>2003-01-07</I>
+</ADDRESS>
+</BODY>
+</HTML>

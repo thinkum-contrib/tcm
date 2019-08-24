@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2. System Architecture</TITLE>
+<META NAME="description" CONTENT="2. System Architecture">
+<META NAME="keywords" CONTENT="TechDoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="TechDoc.css">
+<LINK REL="next" HREF="developersguidenode4.html">
+<LINK REL="previous" HREF="developersguidenode2.html">
+<LINK REL="up" HREF="TechDoc.html">
+<LINK REL="next" HREF="developersguidenode4.html">
+</HEAD>
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html289"
+ HREF="developersguidenode4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html286"
+ HREF="TechDoc.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html280"
+ HREF="developersguidenode2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A> 
+<A NAME="tex2html288"
+ HREF="developersguidenode1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents_motif.gif"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html290"
+ HREF="developersguidenode4.html">3. Source Code Organization</A>
+<B> Up:</B> <A NAME="tex2html287"
+ HREF="TechDoc.html">Toolkit for Conceptual Modeling</A>
+<B> Previous:</B> <A NAME="tex2html281"
+ HREF="developersguidenode2.html">1. Introduction</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00300000000000000000">
+2. System Architecture</A>
+</H1>
+
+<P>
+In this chapter a high level overview of the TCM software system is presented.
+In figure&nbsp;<A HREF="developersguidenode3.html#fig:subsystems">2.1</A> TCM is logically decomposed into a number of 
+subsystems. Each subsystem is then worked out further as an UML static 
+structure diagram (SSD) in subsequent figures. 
+All classes in these SSDs also exist in the source code, but not every 
+source code class is mentioned in these SSDs. The classes that are not
+mentioned are either implementation classes (data structures, user 
+interface widgets etc.)
+or they are specializations of the classes that are mentioned for specific editors. 
+The same applies to the relationships between the classes. Note also that we do not 
+show the attributes and operations of the classes because that would clutter up the
+diagrams too much. But a complete and accurate 
+overview of all classes of the source code and their attributes, operations 
+and specialization relationships has been 
+generated automatically and is described in chapter&nbsp;<A HREF="developersguidenode6.html#chap:class_hierarchy">5</A>.
+
+<P>
+This system architecture is rather conceptual, it does not say exactly how 
+the source code is organized physically. In chapter&nbsp;<A HREF="developersguidenode4.html#chap:src_organization">3</A>
+the physical source code structure is presented. 
+
+<P>
+<BR>
+<DIV ALIGN="CENTER"><A NAME="fig:subsystems">&#160;</A><A NAME="53">&#160;</A>
+<TABLE WIDTH="50%">
+<CAPTION><STRONG>Figure 2.1:</STRONG>
+Subsystems.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<!-- MATH: $\includegraphics[angle=90,height=6in]{p/FSubsystems.eps}$ -->
+<IMG
+ WIDTH="369" HEIGHT="679" ALIGN="BOTTOM" BORDER="0"
+ SRC="developersguideimg3.gif"
+ ALT="\includegraphics[angle=90,height=6in]{p/FSubsystems.eps}"></DIV></TD></TR>
+</TABLE>
+</DIV>
+<BR>
+<P>
+<BR>
+<DIV ALIGN="CENTER"><A NAME="fig:editors">&#160;</A><A NAME="60">&#160;</A>
+<TABLE WIDTH="50%">
+<CAPTION><STRONG>Figure 2.2:</STRONG>
+Editor subject areas.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<!-- MATH: $\includegraphics[angle=90,height=7.5in]{p/FEditorsSA.eps}$ -->
+<IMG
+ WIDTH="582" HEIGHT="858" ALIGN="BOTTOM" BORDER="0"
+ SRC="developersguideimg4.gif"
+ ALT="\includegraphics[angle=90,height=7.5in]{p/FEditorsSA.eps}"></DIV></TD></TR>
+</TABLE>
+</DIV>
+<BR>
+<P>
+<BR>
+<DIV ALIGN="CENTER"><A NAME="fig:shapes">&#160;</A><A NAME="67">&#160;</A>
+<TABLE WIDTH="50%">
+<CAPTION><STRONG>Figure 2.3:</STRONG>
+Shapes and Graph subject areas.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<!-- MATH: $\includegraphics[angle=90,height=7.5in]{p/FShapeSA.eps}$ -->
+<IMG
+ WIDTH="640" HEIGHT="857" ALIGN="BOTTOM" BORDER="0"
+ SRC="developersguideimg5.gif"
+ ALT="\includegraphics[angle=90,height=7.5in]{p/FShapeSA.eps}"></DIV></TD></TR>
+</TABLE>
+</DIV>
+<BR>
+<P>
+<BR>
+<DIV ALIGN="CENTER"><A NAME="fig:table">&#160;</A><A NAME="74">&#160;</A>
+<TABLE WIDTH="50%">
+<CAPTION><STRONG>Figure 2.4:</STRONG>
+Table subject area.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<!-- MATH: $\includegraphics[angle=90,width=\textwidth]{p/FTableSA.eps}$ -->
+<IMG
+ WIDTH="551" HEIGHT="589" ALIGN="BOTTOM" BORDER="0"
+ SRC="developersguideimg6.gif"
+ ALT="\includegraphics[angle=90,width=\textwidth]{p/FTableSA.eps}"></DIV></TD></TR>
+</TABLE>
+</DIV>
+<BR>
+<P>
+<BR>
+<DIV ALIGN="CENTER"><A NAME="fig:viewer">&#160;</A><A NAME="81">&#160;</A>
+<TABLE WIDTH="50%">
+<CAPTION><STRONG>Figure 2.5:</STRONG>
+Viewer subject area.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<!-- MATH: $\includegraphics[angle=90,height=7.5in]{p/FViewerSA.eps}$ -->
+<IMG
+ WIDTH="585" HEIGHT="858" ALIGN="BOTTOM" BORDER="0"
+ SRC="developersguideimg7.gif"
+ ALT="\includegraphics[angle=90,height=7.5in]{p/FViewerSA.eps}"></DIV></TD></TR>
+</TABLE>
+</DIV>
+<BR>
+<P>
+<BR>
+<DIV ALIGN="CENTER"><A NAME="fig:printer">&#160;</A><A NAME="88">&#160;</A>
+<TABLE WIDTH="50%">
+<CAPTION><STRONG>Figure 2.6:</STRONG>
+Printer subject area.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<!-- MATH: $\includegraphics[angle=90,height=4in]{p/FPrinterSA.eps}$ -->
+<IMG
+ WIDTH="259" HEIGHT="456" ALIGN="BOTTOM" BORDER="0"
+ SRC="developersguideimg8.gif"
+ ALT="\includegraphics[angle=90,height=4in]{p/FPrinterSA.eps}"></DIV></TD></TR>
+</TABLE>
+</DIV>
+<BR>
+<P>
+<BR>
+<DIV ALIGN="CENTER"><A NAME="fig:windows">&#160;</A><A NAME="95">&#160;</A>
+<TABLE WIDTH="50%">
+<CAPTION><STRONG>Figure 2.7:</STRONG>
+Window subject area.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<!-- MATH: $\includegraphics[angle=90,height=7.5in]{p/FWindowSA.eps}$ -->
+<IMG
+ WIDTH="654" HEIGHT="857" ALIGN="BOTTOM" BORDER="0"
+ SRC="developersguideimg9.gif"
+ ALT="\includegraphics[angle=90,height=7.5in]{p/FWindowSA.eps}"></DIV></TD></TR>
+</TABLE>
+</DIV>
+<BR>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html289"
+ HREF="developersguidenode4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html286"
+ HREF="TechDoc.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html280"
+ HREF="developersguidenode2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A> 
+<A NAME="tex2html288"
+ HREF="developersguidenode1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents_motif.gif"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html290"
+ HREF="developersguidenode4.html">3. Source Code Organization</A>
+<B> Up:</B> <A NAME="tex2html287"
+ HREF="TechDoc.html">Toolkit for Conceptual Modeling</A>
+<B> Previous:</B> <A NAME="tex2html281"
+ HREF="developersguidenode2.html">1. Introduction</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Henk van de Zandschulp</I>
+<BR><I>2003-01-07</I>
+</ADDRESS>
+</BODY>
+</HTML>

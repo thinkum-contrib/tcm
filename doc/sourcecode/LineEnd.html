@@ -1,0 +1,203 @@
+<html><head><TITLE>LineEnd</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  LineEnd  </H2><BLOCKQUOTE>
+ different line ending of a line
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Classes</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.209.1"> <IMG BORDER=0 SRC=icon1.gif></A>  enum </TD><TD><B>Type</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.2"> <IMG BORDER=0 SRC=icon1.gif></A>  enum</TD><TD><B></B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.209.11"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>CIRCLE_WIDTH</B> <br>
+<I> the default width of a circle line end.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.12"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>OPEN_ARROW_LENGTH</B> <br>
+<I> default length of open arrow.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.13"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>OPEN_ARROW_WIDTH</B> <br>
+<I> default width of open arrow.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.14"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>FILLED_ARROW_LENGTH</B> <br>
+<I> default length of the sides of the arrow head</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.15"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>FILLED_ARROW_ANGLE</B> <br>
+<I> angle between each side and the line in degrees</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.16"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  double </TD><TD><B>FILLED_ARROW_INSET</B> <br>
+<I> percentage inset for base of arrow [0..1] (values +- 0.60 work well).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.17"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>TRIANGLE_WIDTH</B> <br>
+<I> default width of a triangle</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.18"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>TRIANGLE_LENGTH</B> <br>
+<I> default length of a side of a triangle.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.19"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>DIAMOND_WIDTH</B> <br>
+<I> default width of a diamond.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.20"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>DIAMOND_LENGTH</B> <br>
+<I> default length of a side of a diamond.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.21"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  <!1><A HREF="TypeName.html">TypeName</A> </TD><TD><B>typeNames</B> []<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.209.3"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>LineEnd</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.4"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>LineEnd</B> (<!2><A HREF="LineEnd.html#DOC.209.1">Type</A> t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetType</B> (<!2><A HREF="LineEnd.html#DOC.209.1">Type</A> t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.6"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> </TD><TD><B>GetType</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetLength</B> (int l)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.8"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetLength</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetWidth</B> (int w)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.10"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetWidth</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.22"> <IMG BORDER=0 SRC=icon1.gif></A> static  <!2><A HREF="LineEnd.html#DOC.209.1">Type</A> </TD><TD><B>String2Type</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I> e.g. convert "OpenArrow" to OPEN\_ARROW.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.23"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>Type2String</B> (<!2><A HREF="LineEnd.html#DOC.209.1">Type</A> t, <!1><A HREF="string.html">string</A> *s)<br>
+<I> e.g. convert OPEN\_ARROW to "OpenArrow".</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.24"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Draw</B> (<!1><A HREF="Grafport.html">Grafport</A> *g, const <!1><A HREF="Point.html">Point</A> *from, const <!1><A HREF="Point.html">Point</A> *to, <!1><A HREF="Point.html">Point</A> *newEnd)<br>
+<I> draw the given line ending in the grafport.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.25"> <IMG BORDER=0 SRC=icon1.gif></A> void  static </TD><TD><B>CalcDiamond</B> (const <!1><A HREF="Point.html">Point</A> *from, const <!1><A HREF="Point.html">Point</A> *to, int len, int wd, <!1><A HREF="Point.html">Point</A> *points)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.26"> <IMG BORDER=0 SRC=icon1.gif></A> void  static </TD><TD><B>CalcDirectionDiamond</B> (const <!1><A HREF="Point.html">Point</A> *from, const <!1><A HREF="Point.html">Point</A> *to, const <!1><A HREF="Point.html">Point</A> *apos, int len, int wd, <!1><A HREF="Point.html">Point</A> *points)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.209.27"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>CalcFilledArrowHead</B> (const <!1><A HREF="Point.html">Point</A> *from, const <!1><A HREF="Point.html">Point</A> *to, int len, <!1><A HREF="Point.html">Point</A> *points)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ different line ending of a line
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Type">
+<A NAME ="DOC.209.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum  Type</B></TT>
+<DL></DL><P>
+<A NAME="">
+<A NAME ="DOC.209.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum </B></TT>
+<DL></DL><P>
+<A NAME="LineEnd">
+<A NAME ="DOC.209.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  LineEnd()</B></TT>
+<DL></DL><P>
+<A NAME="LineEnd">
+<A NAME ="DOC.209.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  LineEnd(<!2><A HREF="LineEnd.html#DOC.209.1">Type</A> t)</B></TT>
+<DL></DL><P>
+<A NAME="SetType">
+<A NAME ="DOC.209.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetType(<!2><A HREF="LineEnd.html#DOC.209.1">Type</A> t)</B></TT>
+<DL></DL><P>
+<A NAME="GetType">
+<A NAME ="DOC.209.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A>  GetType()</B></TT>
+<DL></DL><P>
+<A NAME="SetLength">
+<A NAME ="DOC.209.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetLength(int l)</B></TT>
+<DL></DL><P>
+<A NAME="GetLength">
+<A NAME ="DOC.209.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetLength()</B></TT>
+<DL></DL><P>
+<A NAME="SetWidth">
+<A NAME ="DOC.209.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetWidth(int w)</B></TT>
+<DL></DL><P>
+<A NAME="GetWidth">
+<A NAME ="DOC.209.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetWidth()</B></TT>
+<DL></DL><P>
+<A NAME="CIRCLE_WIDTH">
+<A NAME ="DOC.209.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  CIRCLE_WIDTH</B></TT>
+<DD> the default width of a circle line end.
+<DL></DL><P>
+<A NAME="OPEN_ARROW_LENGTH">
+<A NAME ="DOC.209.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  OPEN_ARROW_LENGTH</B></TT>
+<DD> default length of open arrow.
+<DL></DL><P>
+<A NAME="OPEN_ARROW_WIDTH">
+<A NAME ="DOC.209.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  OPEN_ARROW_WIDTH</B></TT>
+<DD> default width of open arrow.
+<DL></DL><P>
+<A NAME="FILLED_ARROW_LENGTH">
+<A NAME ="DOC.209.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  FILLED_ARROW_LENGTH</B></TT>
+<DD> default length of the sides of the arrow head
+<DL></DL><P>
+<A NAME="FILLED_ARROW_ANGLE">
+<A NAME ="DOC.209.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  FILLED_ARROW_ANGLE</B></TT>
+<DD> angle between each side and the line in degrees
+<DL></DL><P>
+<A NAME="FILLED_ARROW_INSET">
+<A NAME ="DOC.209.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  double  FILLED_ARROW_INSET</B></TT>
+<DD> percentage inset for base of arrow [0..1] (values +- 0.60 work well).
+<DL></DL><P>
+<A NAME="TRIANGLE_WIDTH">
+<A NAME ="DOC.209.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  TRIANGLE_WIDTH</B></TT>
+<DD> default width of a triangle
+<DL></DL><P>
+<A NAME="TRIANGLE_LENGTH">
+<A NAME ="DOC.209.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  TRIANGLE_LENGTH</B></TT>
+<DD> default length of a side of a triangle.
+<DL></DL><P>
+<A NAME="DIAMOND_WIDTH">
+<A NAME ="DOC.209.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  DIAMOND_WIDTH</B></TT>
+<DD> default width of a diamond.
+<DL></DL><P>
+<A NAME="DIAMOND_LENGTH">
+<A NAME ="DOC.209.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  DIAMOND_LENGTH</B></TT>
+<DD> default length of a side of a diamond.
+<DL></DL><P>
+<A NAME="typeNames">
+<A NAME ="DOC.209.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  <!1><A HREF="TypeName.html">TypeName</A>  typeNames[]</B></TT>
+<DL></DL><P>
+<A NAME="String2Type">
+<A NAME ="DOC.209.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  <!2><A HREF="LineEnd.html#DOC.209.1">Type</A>  String2Type(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DD> e.g. convert "OpenArrow" to OPEN\_ARROW.
+<DL></DL><P>
+<A NAME="Type2String">
+<A NAME ="DOC.209.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  Type2String(<!2><A HREF="LineEnd.html#DOC.209.1">Type</A> t, <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DD> e.g. convert OPEN\_ARROW to "OpenArrow".
+<DL></DL><P>
+<A NAME="Draw">
+<A NAME ="DOC.209.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Draw(<!1><A HREF="Grafport.html">Grafport</A> *g, const <!1><A HREF="Point.html">Point</A> *from, const <!1><A HREF="Point.html">Point</A> *to, <!1><A HREF="Point.html">Point</A> *newEnd)</B></TT>
+<DD> draw the given line ending in the grafport.
+<DL></DL><P>
+<A NAME="CalcDiamond">
+<A NAME ="DOC.209.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  static  CalcDiamond(const <!1><A HREF="Point.html">Point</A> *from, const <!1><A HREF="Point.html">Point</A> *to, int len, int wd, <!1><A HREF="Point.html">Point</A> *points)</B></TT>
+<DL></DL><P>
+<A NAME="CalcDirectionDiamond">
+<A NAME ="DOC.209.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  static  CalcDirectionDiamond(const <!1><A HREF="Point.html">Point</A> *from, const <!1><A HREF="Point.html">Point</A> *to, const <!1><A HREF="Point.html">Point</A> *apos, int len, int wd, <!1><A HREF="Point.html">Point</A> *points)</B></TT>
+<DL></DL><P>
+<A NAME="CalcFilledArrowHead">
+<A NAME ="DOC.209.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  CalcFilledArrowHead(const <!1><A HREF="Point.html">Point</A> *from, const <!1><A HREF="Point.html">Point</A> *to, int len, <!1><A HREF="Point.html">Point</A> *points)</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

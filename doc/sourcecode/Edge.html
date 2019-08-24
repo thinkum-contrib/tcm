@@ -1,0 +1,188 @@
+<html><head><TITLE>Edge</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Edge : public <!2><A HREF="Subject.html#DOC.360.1">Subject</A> </H2><BLOCKQUOTE>
+ Graph edge class, base class of all edges. An edge connects two subjects.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=575>
+<param name=classes value="CThing,MThing.html,CSubject,MSubject.html,CEdge,MEdge.html,CTransition,MTransition.html,CTextEdge,MTextEdge.html,CStringListEdge,MStringListEdge.html,CSSDObjectLinkEdge,MSSDObjectLinkEdge.html,CSSDAssociationLinkEdge,MSSDAssociationLinkEdge.html,CIsaRelationship,MIsaRelationship.html,CGenericEdge,MGenericEdge.html,CEvent,MEvent.html,CEmptyEdge,MEmptyEdge.html,CDPDCommunicationEdge,MDPDCommunicationEdge.html,CDFEdge,MDFEdge.html,CCPDRealizationEdge,MCPDRealizationEdge.html,CCPDDependencyEdge,MCPDDependencyEdge.html,CC1Edge,MC1Edge.html,CBinaryRelationship,MBinaryRelationship.html,CATDTransitionEdge,MATDTransitionEdge.html">
+<param name=before value="M,M,M,M|_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,Mr_">
+<param name=after value="Md_SP,Md_,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M">
+<param name=indent value="0,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.141.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Edge</B> (<!1><A HREF="Graph.html">Graph</A> *g, <!2><A HREF="Subject.html#DOC.360.1">Subject</A> *n1, <!2><A HREF="Subject.html#DOC.360.1">Subject</A> *n2)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.141.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Edge</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.141.3"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="Subject.html#DOC.360.1">Subject</A>* </TD><TD><B>GetSubject1</B> () const <br>
+<I> edge connects subject1 and subject2.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.141.4"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="Subject.html#DOC.360.1">Subject</A>* </TD><TD><B>GetSubject2</B> () const <br>
+<I> when edge is directed then subject1 is 'from' and subject2 'to'.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.141.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetSubject1</B> (<!2><A HREF="Subject.html#DOC.360.1">Subject</A> *n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.141.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetSubject2</B> (<!2><A HREF="Subject.html#DOC.360.1">Subject</A> *n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.141.7"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsDirected</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.141.8"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>InGraph</B> () const <br>
+<I> is edge part of the graph?</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.141.9"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsEdge</B> () const <br>
+<I> yes of course it is</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.141.10"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>PartOf</B> (<!2><A HREF="Subject.html#DOC.360.1">Subject</A> *subject) const <br>
+<I> is subject one of the two subjects that edge connects?</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.141.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetSubjects</B> (<!2><A HREF="Subject.html#DOC.360.1">Subject</A> *n1, <!2><A HREF="Subject.html#DOC.360.1">Subject</A> *n2, bool d = 0)<br>
+<I> set it all</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.141.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>WriteMembers</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f)<br>
+<I> write attributes to file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.141.13"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadMembers</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, double format)<br>
+<I> read and check attributes from file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.141.14"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>SetReferences</B> (<!1><A HREF="AssocList.html">AssocList</A> *)<br>
+<I> set and check references to subjects after reading.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.141.15"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>CheckReferences</B> ()<br>
+<I> check whether subject references exist.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.141.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDirected</B> (bool b)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Subject.html">Subject:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>NameErrType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  <!2><A HREF="Subject.html#DOC.360.1">Subject</A>*  <B>Clone</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>IsSubject</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  <!2><A HREF="Subject.html#DOC.360.6">NameErrType</A>  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetParent</B>(<!1><A HREF="Node.html">Node</A> *p)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Node.html">Node</A>*  <B>GetParent</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetAnnotation</B>(<!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetAnnotation</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Graph.html">Graph</A>*  <B>GetGraph</B>() const 
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Thing.html"> Thing:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>AssocType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> unsigned  long  <B>GetId</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetId</B>(unsigned long val)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsShape</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsView</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  int  <B>GetClassType</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>Write</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ Graph edge class, base class of all edges. An edge connects two subjects.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Edge">
+<A NAME ="DOC.141.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Edge(<!1><A HREF="Graph.html">Graph</A> *g, <!2><A HREF="Subject.html#DOC.360.1">Subject</A> *n1, <!2><A HREF="Subject.html#DOC.360.1">Subject</A> *n2)</B></TT>
+<DL></DL><P>
+<A NAME="~Edge">
+<A NAME ="DOC.141.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Edge()</B></TT>
+<DL></DL><P>
+<A NAME="GetSubject1">
+<A NAME ="DOC.141.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="Subject.html#DOC.360.1">Subject</A>*  GetSubject1() const </B></TT>
+<DD> edge connects subject1 and subject2.
+<DL></DL><P>
+<A NAME="GetSubject2">
+<A NAME ="DOC.141.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="Subject.html#DOC.360.1">Subject</A>*  GetSubject2() const </B></TT>
+<DD> when edge is directed then subject1 is 'from' and subject2 'to'.
+<DL></DL><P>
+<A NAME="SetSubject1">
+<A NAME ="DOC.141.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetSubject1(<!2><A HREF="Subject.html#DOC.360.1">Subject</A> *n)</B></TT>
+<DL></DL><P>
+<A NAME="SetSubject2">
+<A NAME ="DOC.141.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetSubject2(<!2><A HREF="Subject.html#DOC.360.1">Subject</A> *n)</B></TT>
+<DL></DL><P>
+<A NAME="IsDirected">
+<A NAME ="DOC.141.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsDirected() const </B></TT>
+<DL></DL><P>
+<A NAME="InGraph">
+<A NAME ="DOC.141.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  InGraph() const </B></TT>
+<DD> is edge part of the graph?
+<DL></DL><P>
+<A NAME="IsEdge">
+<A NAME ="DOC.141.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsEdge() const </B></TT>
+<DD> yes of course it is
+<DL></DL><P>
+<A NAME="PartOf">
+<A NAME ="DOC.141.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  PartOf(<!2><A HREF="Subject.html#DOC.360.1">Subject</A> *subject) const </B></TT>
+<DD> is subject one of the two subjects that edge connects?
+<DL></DL><P>
+<A NAME="SetSubjects">
+<A NAME ="DOC.141.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetSubjects(<!2><A HREF="Subject.html#DOC.360.1">Subject</A> *n1, <!2><A HREF="Subject.html#DOC.360.1">Subject</A> *n2, bool d = 0)</B></TT>
+<DD> set it all
+<DL></DL><P>
+<A NAME="WriteMembers">
+<A NAME ="DOC.141.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  WriteMembers(<!1><A HREF="OutputFile.html">OutputFile</A> *f)</B></TT>
+<DD> write attributes to file.
+<DL></DL><P>
+<A NAME="ReadMembers">
+<A NAME ="DOC.141.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadMembers(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)</B></TT>
+<DD> read and check attributes from file.
+<DL></DL><P>
+<A NAME="SetReferences">
+<A NAME ="DOC.141.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  SetReferences(<!1><A HREF="AssocList.html">AssocList</A> *)</B></TT>
+<DD> set and check references to subjects after reading.
+<DL></DL><P>
+<A NAME="CheckReferences">
+<A NAME ="DOC.141.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  CheckReferences()</B></TT>
+<DD> check whether subject references exist.
+<DL></DL><P>
+<A NAME="SetDirected">
+<A NAME ="DOC.141.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDirected(bool b)</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="Transition.html"> Transition </A><br>
+<A HREF="TextEdge.html"> TextEdge </A><br>
+<A HREF="StringListEdge.html"> StringListEdge </A><br>
+<A HREF="SSDObjectLinkEdge.html"> SSDObjectLinkEdge </A><br>
+<A HREF="SSDAssociationLinkEdge.html"> SSDAssociationLinkEdge </A><br>
+<A HREF="IsaRelationship.html"> IsaRelationship </A><br>
+<A HREF="GenericEdge.html"> GenericEdge </A><br>
+<A HREF="Event.html"> Event </A><br>
+<A HREF="EmptyEdge.html"> EmptyEdge </A><br>
+<A HREF="DPDCommunicationEdge.html"> DPDCommunicationEdge </A><br>
+<A HREF="DFEdge.html"> DFEdge </A><br>
+<A HREF="CPDRealizationEdge.html"> CPDRealizationEdge </A><br>
+<A HREF="CPDDependencyEdge.html"> CPDDependencyEdge </A><br>
+<A HREF="C1Edge.html"> C1Edge </A><br>
+<A HREF="BinaryRelationship.html"> BinaryRelationship </A><br>
+<A HREF="ATDTransitionEdge.html"> ATDTransitionEdge </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

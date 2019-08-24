@@ -1,0 +1,95 @@
+#
+# Makefile targets that are relevant for all compilers.
+#
+
+# make just a few executables. The tools have to be softlinks.
+allx: libs text2ps$(EXEEXTENSION) \
+		tcmd$(EXEEXTENSION) tcmt$(EXEEXTENSION) tcm$(EXEEXTENSION)
+	(cd ../bin ; ./linkx )
+
+# make some more executables. The tools have to be softlinks.
+ally: libs libguix.a text2ps$(EXEEXTENSION) \
+		tcmgd$(EXEEXTENSION) tcmtr$(EXEEXTENSION) tcmdv$(EXEEXTENSION) \
+		tcmbv$(EXEEXTENSION) tcmfv$(EXEEXTENSION) tcmt$(EXEEXTENSION)  \
+		tcm$(EXEEXTENSION)
+	(cd ../bin ; ./linky )
+
+# make an executable for each tool.
+allz: libs text2ps$(EXEEXTENSION) tgd$(EXEEXTENSION) tgtt$(EXEEXTENSION) \
+		tfrt$(EXEEXTENSION) trpg$(EXEEXTENSION) terd$(EXEEXTENSION) \
+		tesd$(EXEEXTENSION) tpsd$(EXEEXTENSION) tsnd$(EXEEXTENSION) \
+		tdfd$(EXEEXTENSION) tefd$(EXEEXTENSION) tstd$(EXEEXTENSION) \
+		tcrd$(EXEEXTENSION) tssd$(EXEEXTENSION) tucd$(EXEEXTENSION) \
+		tatd$(EXEEXTENSION) tscd$(EXEEXTENSION) tsqd$(EXEEXTENSION) \
+		tcbd$(EXEEXTENSION) tcpd$(EXEEXTENSION) tdpd$(EXEEXTENSION) \
+		tgt$(EXEEXTENSION) ttdt$(EXEEXTENSION) ttut$(EXEEXTENSION) \
+		tfet$(EXEEXTENSION) tcm$(EXEEXTENSION)
+
+# make color-x tools.
+# colorx: libs text2ps$(EXEEXTENSION) csod$(EXEEXTENSION) ced$(EXEEXTENSION)
+
+# make static libs.
+staticlibs: libglobal.a libgui.a libeditor.a libdiagram.a libtable.a
+
+# make dynamic libs.
+dynamiclibs: libglobal.so libgui.so libeditor.so libdiagram.so libtable.so
+
+text2ps$(EXEEXTENSION):
+	( cd ./gl ; $(MAKE) text2ps$(EXEEXTENSION))
+
+libglobal.so:
+	( cd ./gl ; $(MAKE) libglobal.so)
+
+libgui.so:
+	( cd ./ui ; $(MAKE) libgui.so)
+
+libeditor.so:
+	( cd ./ed ; $(MAKE) libeditor.so)
+
+libdiagram.so:
+	( cd ./dg ; $(MAKE) libdiagram.so)
+
+libtable.so:
+	( cd ./tb ; $(MAKE) libtable.so)
+
+
+libglobal.a: 
+	( cd ./gl ; $(MAKE) libglobal.a)
+	( cd $(LIB_DIR) ; $(RANLIB) libglobal.a)
+
+libgui.a:
+	( cd ./ui ; $(MAKE) libgui.a)
+	( cd $(LIB_DIR) ; $(RANLIB) libgui.a)
+
+libguix.a:
+	( cd ./ui ; $(MAKE) libguix.a)
+	( cd $(LIB_DIR) ; $(RANLIB) libguix.a)
+
+libeditor.a:
+	( cd ./ed ; $(MAKE) libeditor.a)
+	( cd $(LIB_DIR) ; $(RANLIB) libeditor.a)
+
+# the touchy thing is necessary that the right template
+# instances are linked in the static lib.
+libdiagram.a:
+	( cp dg/dginstances.h gl/instances.h )
+	( cd ./gl ; touch llist.c )
+	( $(MAKE) libglobal.a )
+	( cd ./dg ; $(MAKE) libdiagram.a)
+	( cd $(LIB_DIR) ; $(RANLIB) libdiagram.a)
+
+libtable.a:
+	( cp tb/tbinstances.h gl/instances.h )
+	( cd ./gl ; touch llist.c )
+	( $(MAKE) libglobal.a )
+	( cd ./tb ; $(MAKE) libtable.a)
+	( cd $(LIB_DIR) ; $(RANLIB) libtable.a)
+
+
+SUBDIRS = gl ui ed dg tb sd st
+
+clean depend undepend config:
+	for dir in $(SUBDIRS); do \
+                (cd $${dir}; ${MAKE} $@); done
+
+install:

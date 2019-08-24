@@ -1,0 +1,660 @@
+<html><head><TITLE>Line</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Line : public <!2><A HREF="GShape.html#DOC.196.1">GShape</A> </H2><BLOCKQUOTE>
+ line shape class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=215>
+<param name=classes value="CThing,MThing.html,CShape,MShape.html,CGShape,MGShape.html,CLine,MLine.html,CTransitionArrow,MTransitionArrow.html,CT1Line,MT1Line.html,CFlashArrow,MFlashArrow.html">
+<param name=before value="M,M,M,M,M|_,MR_,Mr_">
+<param name=after value="Md_SPSP,Md_SP,Md_,M,M,M,M">
+<param name=indent value="0,1,2,3,3,3,3">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.210.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Line</B> (<!1><A HREF="ShapeView.html">ShapeView</A> *v, <!1><A HREF="Grafport.html">Grafport</A> *g, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n1, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n2, <!1><A HREF="List.html">List</A><<!1><A HREF="Point.html">Point</A> *> *<!2><A HREF="Line.html#DOC.210.80">line</A>, bool Curved)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.2"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Line</B> (<!1><A HREF="ShapeView.html">ShapeView</A> *v, <!1><A HREF="Grafport.html">Grafport</A> *g, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n1, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n2, bool Curved)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.3"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Line</B> (const <!2><A HREF="Line.html#DOC.210.3">Line</A> &s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.4"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="Shape.html#DOC.296.1">Shape</A>* </TD><TD><B>Clone</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.5"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Line</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.6"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsCurved</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateCurve</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdatePosition</B> (const <!1><A HREF="Point.html">Point</A> *p, bool snap=True)<br>
+<I> empty (line has no independent position).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPosition</B> (const <!1><A HREF="Point.html">Point</A> *p, bool snap=True)<br>
+<I> empty (line has no independent position).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawOutLine</B> (const <!1><A HREF="Point.html">Point</A> *)<br>
+<I> empty, because line has no outline.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.11"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ContainsPt</B> (int x, int y)<br>
+<I> returns if (x,y) is on one of the segments of line.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.12"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>HitHandles</B> (int x, int y)<br>
+<I> returns handle-nr if (x,y) hits a handle, otherwise -1.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.13"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsLine</B> () const <br>
+<I> yep.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.14"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned  int </TD><TD><B>GetCount</B> () const <br>
+<I> count and order are used to determine whether</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.15"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned  int </TD><TD><B>GetOrder</B> () const <br>
+<I> more than one line connect the same pair of shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetOrder</B> (unsigned int i)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetCount</B> (unsigned int i)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.18"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="GShape.html#DOC.196.1">GShape</A>* </TD><TD><B>GetFromShape</B> () const <br>
+<I> fromShape and toShape are the connected shapes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.19"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="GShape.html#DOC.196.1">GShape</A>* </TD><TD><B>GetToShape</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.20"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetFromShape</B> (<!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.21"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetToShape</B> (<!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.22"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned  int </TD><TD><B>NrPoints</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.23"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="Point.html">Point</A> *> * </TD><TD><B>GetLine</B> () const <br>
+<I> 'line' is a list of points.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.24"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetSegments</B> (<!1><A HREF="Point.html">Point</A> pt, <!1><A HREF="Point.html">Point</A> *pt1, <!1><A HREF="Point.html">Point</A> *pt2)<br>
+<I> get left and rigth line segments of point pt (if they exist).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.25"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetSegment</B> (int n, <!1><A HREF="Point.html">Point</A> *pt1, <!1><A HREF="Point.html">Point</A> *pt2)<br>
+<I> get line segment n (if it exists).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.26"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  bool </TD><TD><B>InTextArea</B> (int x, int y)<br>
+<I> returns if (x,y) is in text area (used for edit cursor).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.27"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetEnd1</B> (<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.28"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetEnd2</B> (<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.29"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateEnd1</B> (<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.30"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateEnd2</B> (<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.31"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> </TD><TD><B>GetEnd1</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.32"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> </TD><TD><B>GetEnd2</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.33"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetLeftMost</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.34"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetTopMost</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.35"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetRightMost</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.36"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetBottomMost</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.37"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetToTop</B> ()<br>
+<I> set last point of line to top of toShape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.38"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetFromTop</B> ()<br>
+<I> set first point of line to top of fromShape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.39"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetToBottom</B> ()<br>
+<I> set last point of line to bottom of toShape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.40"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetFromBottom</B> ()<br>
+<I> set first point of line to bottom of fromShape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.41"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdatePosition</B> ()<br>
+<I> recalculates position and redraws the line.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.42"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>CalcPosition</B> ()<br>
+<I> Define a position for the line (the center of the name of the line).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.43"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>CalcEndPoints</B> ()<br>
+<I> Calculate begin and end-points (intersections with the shapes).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.44"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CalcDirection</B> ()<br>
+<I> Calculate direction arrow</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.45"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>CalcEndPoint</B> (const <!1><A HREF="Point.html">Point</A> *pt, unsigned which)<br>
+<I> ReCalculate when first or last point of line is moved to pt.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.46"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPoint</B> (const <!1><A HREF="Point.html">Point</A> *pt, unsigned int n)<br>
+<I> Update point of given position n.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.47"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AddPoint</B> (const <!1><A HREF="Point.html">Point</A> *pt, unsigned int n)<br>
+<I> Add a point after given position n.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.48"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>RemovePoint</B> (unsigned int n)<br>
+<I> Remove the point at given position n.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.49"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetClassType</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.50"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>WriteMembers</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f)<br>
+<I> See shape. Reads/writes also the points.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.51"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ReadMembers</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, double format)<br>
+<I> See shape. Reads/writes also the points.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.52"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>SetAssocSubject</B> (<!1><A HREF="AssocList.html">AssocList</A> *)<br>
+<I> Set subject (edge) reference,</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.53"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>SetReferences</B> (<!1><A HREF="AssocList.html">AssocList</A> *)<br>
+<I> Set also fromShape and toShape references.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.54"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>CheckReferences</B> ()<br>
+<I> Check also fromShape and toShape shape references.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.55"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTextShape</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.56"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetLine</B> (int x, int y)<br>
+<I> return if segment has (x,y). if so, lineNumber set to segment nr.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.57"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned  int </TD><TD><B>GetLineNumber</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.58"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetLineNumber</B> (unsigned int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.59"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="TextShape.html">TextShape</A>* </TD><TD><B>ChooseTextShape</B> (int x, int y)<br>
+<I> choose text shape near (x,y).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.60"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>MoveRaw</B> (const <!1><A HREF="Point.html">Point</A> *delta)<br>
+<I> move all points and text shapes with delta.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.61"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Point.html">Point</A> </TD><TD><B>GiveOrthoSnp</B> (<!1><A HREF="Point.html">Point</A> to) const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.62"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Point.html">Point</A> </TD><TD><B>GiveSnp</B> (<!1><A HREF="Point.html">Point</A> to) const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.63"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Point.html">Point</A> </TD><TD><B>GiveSnp</B> (<!1><A HREF="Point.html">Point</A> p, int <!2><A HREF="Line.html#DOC.210.88">order</A>, int <!2><A HREF="Line.html#DOC.210.87">count</A>, int &code)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.64"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateNameDirection</B> (<!2><A HREF="ReadDirection.html#DOC.269.1">ReadDirection::Type</A> nd)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.65"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="ReadDirection.html#DOC.269.1">ReadDirection::Type</A> </TD><TD><B>GetNameDirection</B> () const <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.210.68"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>LINE_DIST</B> <br>
+<I> max distance (x,y) where point belongs to line.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.69"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>CL_DISTX</B> <br>
+<I> default x distance between textshapes to line.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.70"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  int </TD><TD><B>CL_DISTY</B> <br>
+<I> default y distance between textshapes to line.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.210.66"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawShape</B> ()<br>
+<I> draws a line.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.67"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CalcPositionName</B> ()<br>
+<I> recalculate the position of the name text shape.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.71"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ContainsPtLine</B> (int x, int y, const <!1><A HREF="Point.html">Point</A> *from, const <!1><A HREF="Point.html">Point</A> *to, int &cx, int &cy) const <br>
+<I> returns (x,y) is near line from-to, cx and cy are points on line.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.72"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>BelowLine</B> (int x, int y, <!1><A HREF="Point.html">Point</A> *from, <!1><A HREF="Point.html">Point</A> *to)<br>
+<I> return if (x,y) is down to line from->to.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.73"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>AboveLine</B> (int x, int y, <!1><A HREF="Point.html">Point</A> *from, <!1><A HREF="Point.html">Point</A> *to)<br>
+<I> return if (x,y) is above line from->to.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.74"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetNameDirection</B> (<!2><A HREF="ReadDirection.html#DOC.269.1">ReadDirection::Type</A> nd)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.75"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UndrawDirection</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.76"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawDirection</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.210.77"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>NotifyTextMove</B> (<!1><A HREF="TextShape.html">TextShape</A> *t)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="GShape.html">GShape:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>Draw</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Undraw</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UndrawShape</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawTextShapes</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UndrawTextShapes</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateNameString</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetNameString</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetNameString</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextShape.html">TextShape</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetSelect</B>(bool s)
+<DT><IMG SRC=icon2.gif> unsigned  <B>GetLineWidth</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetLineWidth</B>(unsigned n)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineWidth</B>(unsigned n)
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  <B>GetLineStyle</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetLineStyle</B>(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> x)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineStyle</B>(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> x)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetTextColor</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>UpdateTextColor</B>(const <!1><A HREF="string.html">string</A> *c)
+<DT><IMG SRC=icon2.gif> virtual  <!1><A HREF="TextShape.html">TextShape</A>*  <B>HitTextShape</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> bool  <B>HasTextShape</B>(<!1><A HREF="TextShape.html">TextShape</A> *t) const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsFixedName</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetFixedName</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>SetGrafport</B>(<!1><A HREF="Grafport.html">Grafport</A> *g)
+<DT><IMG SRC=icon2.gif> void  <B>SetView</B>(<!1><A HREF="ShapeView.html">ShapeView</A> *v)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateFont</B>(<!1><A HREF="XFont.html">XFont</A> *ft)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> alignment)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="XFont.html">XFont</A>*  <B>GetFont</B>() const 
+<DT><IMG SRC=icon2.gif> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>  <B>GetAlignment</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>HasNameString</B>(const <!1><A HREF="string.html">string</A> *s, bool c1, bool c2) const 
+<DT><IMG SRC=icon2.gif> bool  <B>HasString</B>(const <!1><A HREF="string.html">string</A> *s, bool c1, bool c2) const 
+<DT><IMG SRC=icon2.gif> bool  <B>HasString</B>(const <!1><A HREF="string.html">string</A> *s, bool cI, bool aS, <!1><A HREF="List.html">List</A><<!1><A HREF="TextShape.html">TextShape</A> *> *l)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>SetFont</B>(<!1><A HREF="XFont.html">XFont</A> *ft)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetTextColor</B>(const <!1><A HREF="string.html">string</A> *c)
+<DT><IMG SRC=icon2.gif> void  <B>WriteGraphicsPart</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)
+<DT><IMG SRC=icon2.gif> bool  <B>ReadGraphicsPart</B>(<!1><A HREF="InputFile.html">InputFile</A> *ifile, double format)
+<DT><IMG SRC=icon2.gif> void  <B>WriteTextPart</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)
+<DT><IMG SRC=icon2.gif> bool  <B>ReadTextPart</B>(<!1><A HREF="InputFile.html">InputFile</A> *ifile, double format)
+<DT><IMG SRC=icon2.gif> void  <B>SetDrawAttributes</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)
+<DT><IMG SRC=icon2.gif> void  <B>SnapPosition</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SnapTopleft</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Shape.html"> Shape:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_HEIGHT</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_WIDTH</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>HANDLE_WIDTH</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsShape</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsTextShape</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateSize</B>(int w, int h)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateMove</B>(const <!1><A HREF="Point.html">Point</A> *delta)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateSelect</B>(bool s)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateFirstSelect</B>(bool s)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateColor</B>(<!1><A HREF="string.html">string</A> *<!2><A HREF="Shape.html#DOC.296.97">color</A>)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetFirstSelect</B>(bool s)
+<DT><IMG SRC=icon2.gif> bool  <B>IsFirstSelected</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetVisible</B>(bool s)
+<DT><IMG SRC=icon2.gif> void  <B>SetSubject</B>(<!1><A HREF="Subject.html">Subject</A> *s)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Subject.html">Subject</A>*  <B>GetSubject</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ShapeView.html">ShapeView</A>*  <B>GetView</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetColor</B>(const <!1><A HREF="string.html">string</A> *c)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetColor</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Move</B>(const <!1><A HREF="Point.html">Point</A> *delta)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>AdjustSize</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetHandles</B>(int n)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="Point.html">Point</A>*  <B>GetPosition</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="Point.html">Point</A>*  <B>GetTopLeft</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsSelected</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsVisible</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsDuplicate</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetWidth</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetHeight</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawDuplicate</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UndrawDuplicate</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDuplicate</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateDuplicate</B>(bool b)
+<DT><IMG SRC=icon2.gif> bool  <B>SetAssocView</B>(<!1><A HREF="AssocList.html">AssocList</A> *)
+</DL><DL>
+<DT><h3>Protected Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_HANDLES</B>
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="Grafport.html">Grafport</A>*  <B>GetGrafport</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetOutlineAttributes</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetSize</B>(int w, int h)
+<DT><IMG SRC=icon2.gif> void  <B>SetWidth</B>(int w)
+<DT><IMG SRC=icon2.gif> void  <B>SetHeight</B>(int h)
+<DT><IMG SRC=icon2.gif> void  <B>SetNrHandles</B>(int n)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="DiagramViewer.html">DiagramViewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>PositiveCoord</B>(const <!1><A HREF="Point.html">Point</A>*)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawSelect</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DrawGraySelect</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UndrawSelect</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UndrawGraySelect</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetTopLeft</B>(const <!1><A HREF="Point.html">Point</A> *topLeft)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetPositionHandles</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ForcePosition</B>(const <!1><A HREF="Point.html">Point</A> *<!2><A HREF="Shape.html#DOC.296.90">position</A>)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Thing.html"> Thing:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>AssocType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> unsigned  long  <B>GetId</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetId</B>(unsigned long val)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsSubject</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsView</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>Write</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ line shape class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Line">
+<A NAME ="DOC.210.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Line(<!1><A HREF="ShapeView.html">ShapeView</A> *v, <!1><A HREF="Grafport.html">Grafport</A> *g, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n1, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n2, <!1><A HREF="List.html">List</A><<!1><A HREF="Point.html">Point</A> *> *<!2><A HREF="Line.html#DOC.210.80">line</A>, bool Curved)</B></TT>
+<DL></DL><P>
+<A NAME="Line">
+<A NAME ="DOC.210.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Line(<!1><A HREF="ShapeView.html">ShapeView</A> *v, <!1><A HREF="Grafport.html">Grafport</A> *g, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n1, <!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n2, bool Curved)</B></TT>
+<DL></DL><P>
+<A NAME="Line">
+<A NAME ="DOC.210.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Line(const <!2><A HREF="Line.html#DOC.210.3">Line</A> &s)</B></TT>
+<DL></DL><P>
+<A NAME="Clone">
+<A NAME ="DOC.210.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="Shape.html#DOC.296.1">Shape</A>*  Clone()</B></TT>
+<DL></DL><P>
+<A NAME="~Line">
+<A NAME ="DOC.210.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Line()</B></TT>
+<DL></DL><P>
+<A NAME="IsCurved">
+<A NAME ="DOC.210.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsCurved() const </B></TT>
+<DL></DL><P>
+<A NAME="UpdateCurve">
+<A NAME ="DOC.210.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateCurve(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="UpdatePosition">
+<A NAME ="DOC.210.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdatePosition(const <!1><A HREF="Point.html">Point</A> *p, bool snap=True)</B></TT>
+<DD> empty (line has no independent position).
+<DL></DL><P>
+<A NAME="SetPosition">
+<A NAME ="DOC.210.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPosition(const <!1><A HREF="Point.html">Point</A> *p, bool snap=True)</B></TT>
+<DD> empty (line has no independent position).
+<DL></DL><P>
+<A NAME="DrawOutLine">
+<A NAME ="DOC.210.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawOutLine(const <!1><A HREF="Point.html">Point</A> *)</B></TT>
+<DD> empty, because line has no outline.
+<DL></DL><P>
+<A NAME="ContainsPt">
+<A NAME ="DOC.210.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ContainsPt(int x, int y)</B></TT>
+<DD> returns if (x,y) is on one of the segments of line.
+<DL></DL><P>
+<A NAME="HitHandles">
+<A NAME ="DOC.210.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  HitHandles(int x, int y)</B></TT>
+<DD> returns handle-nr if (x,y) hits a handle, otherwise -1.
+<DL></DL><P>
+<A NAME="IsLine">
+<A NAME ="DOC.210.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsLine() const </B></TT>
+<DD> yep.
+<DL></DL><P>
+<A NAME="GetCount">
+<A NAME ="DOC.210.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  int  GetCount() const </B></TT>
+<DD> count and order are used to determine whether
+<DL></DL><P>
+<A NAME="GetOrder">
+<A NAME ="DOC.210.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  int  GetOrder() const </B></TT>
+<DD> more than one line connect the same pair of shapes.
+<DL></DL><P>
+<A NAME="SetOrder">
+<A NAME ="DOC.210.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetOrder(unsigned int i)</B></TT>
+<DL></DL><P>
+<A NAME="SetCount">
+<A NAME ="DOC.210.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetCount(unsigned int i)</B></TT>
+<DL></DL><P>
+<A NAME="GetFromShape">
+<A NAME ="DOC.210.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="GShape.html#DOC.196.1">GShape</A>*  GetFromShape() const </B></TT>
+<DD> fromShape and toShape are the connected shapes.
+<DL></DL><P>
+<A NAME="GetToShape">
+<A NAME ="DOC.210.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="GShape.html#DOC.196.1">GShape</A>*  GetToShape() const </B></TT>
+<DL></DL><P>
+<A NAME="SetFromShape">
+<A NAME ="DOC.210.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetFromShape(<!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n)</B></TT>
+<DL></DL><P>
+<A NAME="SetToShape">
+<A NAME ="DOC.210.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetToShape(<!2><A HREF="GShape.html#DOC.196.1">GShape</A> *n)</B></TT>
+<DL></DL><P>
+<A NAME="NrPoints">
+<A NAME ="DOC.210.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  int  NrPoints() const </B></TT>
+<DL></DL><P>
+<A NAME="GetLine">
+<A NAME ="DOC.210.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="Point.html">Point</A> *> *  GetLine() const </B></TT>
+<DD> 'line' is a list of points.
+<DL></DL><P>
+<A NAME="GetSegments">
+<A NAME ="DOC.210.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetSegments(<!1><A HREF="Point.html">Point</A> pt, <!1><A HREF="Point.html">Point</A> *pt1, <!1><A HREF="Point.html">Point</A> *pt2)</B></TT>
+<DD> get left and rigth line segments of point pt (if they exist).
+<DL></DL><P>
+<A NAME="GetSegment">
+<A NAME ="DOC.210.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetSegment(int n, <!1><A HREF="Point.html">Point</A> *pt1, <!1><A HREF="Point.html">Point</A> *pt2)</B></TT>
+<DD> get line segment n (if it exists).
+<DL></DL><P>
+<A NAME="InTextArea">
+<A NAME ="DOC.210.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  bool  InTextArea(int x, int y)</B></TT>
+<DD> returns if (x,y) is in text area (used for edit cursor).
+<DL></DL><P>
+<A NAME="SetEnd1">
+<A NAME ="DOC.210.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetEnd1(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)</B></TT>
+<DL></DL><P>
+<A NAME="SetEnd2">
+<A NAME ="DOC.210.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetEnd2(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateEnd1">
+<A NAME ="DOC.210.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateEnd1(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateEnd2">
+<A NAME ="DOC.210.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateEnd2(<!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A> t)</B></TT>
+<DL></DL><P>
+<A NAME="GetEnd1">
+<A NAME ="DOC.210.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A>  GetEnd1()</B></TT>
+<DL></DL><P>
+<A NAME="GetEnd2">
+<A NAME ="DOC.210.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="LineEnd.html#DOC.209.1">LineEnd::Type</A>  GetEnd2()</B></TT>
+<DL></DL><P>
+<A NAME="GetLeftMost">
+<A NAME ="DOC.210.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetLeftMost() const </B></TT>
+<DL></DL><P>
+<A NAME="GetTopMost">
+<A NAME ="DOC.210.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetTopMost() const </B></TT>
+<DL></DL><P>
+<A NAME="GetRightMost">
+<A NAME ="DOC.210.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetRightMost() const </B></TT>
+<DL></DL><P>
+<A NAME="GetBottomMost">
+<A NAME ="DOC.210.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetBottomMost() const </B></TT>
+<DL></DL><P>
+<A NAME="SetToTop">
+<A NAME ="DOC.210.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetToTop()</B></TT>
+<DD> set last point of line to top of toShape.
+<DL></DL><P>
+<A NAME="SetFromTop">
+<A NAME ="DOC.210.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetFromTop()</B></TT>
+<DD> set first point of line to top of fromShape.
+<DL></DL><P>
+<A NAME="SetToBottom">
+<A NAME ="DOC.210.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetToBottom()</B></TT>
+<DD> set last point of line to bottom of toShape.
+<DL></DL><P>
+<A NAME="SetFromBottom">
+<A NAME ="DOC.210.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetFromBottom()</B></TT>
+<DD> set first point of line to bottom of fromShape.
+<DL></DL><P>
+<A NAME="UpdatePosition">
+<A NAME ="DOC.210.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdatePosition()</B></TT>
+<DD> recalculates position and redraws the line.
+<DL></DL><P>
+<A NAME="CalcPosition">
+<A NAME ="DOC.210.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  CalcPosition()</B></TT>
+<DD> Define a position for the line (the center of the name of the line).
+<DL></DL><P>
+<A NAME="CalcEndPoints">
+<A NAME ="DOC.210.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  CalcEndPoints()</B></TT>
+<DD> Calculate begin and end-points (intersections with the shapes).
+<DL></DL><P>
+<A NAME="CalcDirection">
+<A NAME ="DOC.210.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CalcDirection()</B></TT>
+<DD> Calculate direction arrow
+<DL></DL><P>
+<A NAME="CalcEndPoint">
+<A NAME ="DOC.210.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  CalcEndPoint(const <!1><A HREF="Point.html">Point</A> *pt, unsigned which)</B></TT>
+<DD> ReCalculate when first or last point of line is moved to pt.
+<DL></DL><P>
+<A NAME="SetPoint">
+<A NAME ="DOC.210.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPoint(const <!1><A HREF="Point.html">Point</A> *pt, unsigned int n)</B></TT>
+<DD> Update point of given position n.
+<DL></DL><P>
+<A NAME="AddPoint">
+<A NAME ="DOC.210.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AddPoint(const <!1><A HREF="Point.html">Point</A> *pt, unsigned int n)</B></TT>
+<DD> Add a point after given position n.
+<DL></DL><P>
+<A NAME="RemovePoint">
+<A NAME ="DOC.210.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  RemovePoint(unsigned int n)</B></TT>
+<DD> Remove the point at given position n.
+<DL></DL><P>
+<A NAME="GetClassType">
+<A NAME ="DOC.210.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetClassType() const </B></TT>
+<DL></DL><P>
+<A NAME="WriteMembers">
+<A NAME ="DOC.210.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  WriteMembers(<!1><A HREF="OutputFile.html">OutputFile</A> *f)</B></TT>
+<DD> See shape. Reads/writes also the points.
+<DL></DL><P>
+<A NAME="ReadMembers">
+<A NAME ="DOC.210.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ReadMembers(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)</B></TT>
+<DD> See shape. Reads/writes also the points.
+<DL></DL><P>
+<A NAME="SetAssocSubject">
+<A NAME ="DOC.210.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  SetAssocSubject(<!1><A HREF="AssocList.html">AssocList</A> *)</B></TT>
+<DD> Set subject (edge) reference,
+<DL></DL><P>
+<A NAME="SetReferences">
+<A NAME ="DOC.210.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  SetReferences(<!1><A HREF="AssocList.html">AssocList</A> *)</B></TT>
+<DD> Set also fromShape and toShape references.
+<DL></DL><P>
+<A NAME="CheckReferences">
+<A NAME ="DOC.210.54">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  CheckReferences()</B></TT>
+<DD> Check also fromShape and toShape shape references.
+<DL></DL><P>
+<A NAME="SetTextShape">
+<A NAME ="DOC.210.55">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTextShape()</B></TT>
+<DL></DL><P>
+<A NAME="GetLine">
+<A NAME ="DOC.210.56">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetLine(int x, int y)</B></TT>
+<DD> return if segment has (x,y). if so, lineNumber set to segment nr.
+<DL></DL><P>
+<A NAME="GetLineNumber">
+<A NAME ="DOC.210.57">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  int  GetLineNumber()</B></TT>
+<DL></DL><P>
+<A NAME="SetLineNumber">
+<A NAME ="DOC.210.58">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetLineNumber(unsigned int n)</B></TT>
+<DL></DL><P>
+<A NAME="ChooseTextShape">
+<A NAME ="DOC.210.59">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="TextShape.html">TextShape</A>*  ChooseTextShape(int x, int y)</B></TT>
+<DD> choose text shape near (x,y).
+<DL></DL><P>
+<A NAME="MoveRaw">
+<A NAME ="DOC.210.60">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  MoveRaw(const <!1><A HREF="Point.html">Point</A> *delta)</B></TT>
+<DD> move all points and text shapes with delta.
+<DL></DL><P>
+<A NAME="GiveOrthoSnp">
+<A NAME ="DOC.210.61">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Point.html">Point</A>  GiveOrthoSnp(<!1><A HREF="Point.html">Point</A> to) const </B></TT>
+<DL></DL><P>
+<A NAME="GiveSnp">
+<A NAME ="DOC.210.62">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Point.html">Point</A>  GiveSnp(<!1><A HREF="Point.html">Point</A> to) const </B></TT>
+<DL></DL><P>
+<A NAME="GiveSnp">
+<A NAME ="DOC.210.63">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Point.html">Point</A>  GiveSnp(<!1><A HREF="Point.html">Point</A> p, int <!2><A HREF="Line.html#DOC.210.88">order</A>, int <!2><A HREF="Line.html#DOC.210.87">count</A>, int &code)</B></TT>
+<DL></DL><P>
+<A NAME="UpdateNameDirection">
+<A NAME ="DOC.210.64">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateNameDirection(<!2><A HREF="ReadDirection.html#DOC.269.1">ReadDirection::Type</A> nd)</B></TT>
+<DL></DL><P>
+<A NAME="GetNameDirection">
+<A NAME ="DOC.210.65">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="ReadDirection.html#DOC.269.1">ReadDirection::Type</A>  GetNameDirection() const </B></TT>
+<DL></DL><P>
+<A NAME="DrawShape">
+<A NAME ="DOC.210.66">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawShape()</B></TT>
+<DD> draws a line.
+<DL></DL><P>
+<A NAME="CalcPositionName">
+<A NAME ="DOC.210.67">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CalcPositionName()</B></TT>
+<DD> recalculate the position of the name text shape.
+<DL></DL><P>
+<A NAME="LINE_DIST">
+<A NAME ="DOC.210.68">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  LINE_DIST</B></TT>
+<DD> max distance (x,y) where point belongs to line.
+<DL></DL><P>
+<A NAME="CL_DISTX">
+<A NAME ="DOC.210.69">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  CL_DISTX</B></TT>
+<DD> default x distance between textshapes to line.
+<DL></DL><P>
+<A NAME="CL_DISTY">
+<A NAME ="DOC.210.70">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  int  CL_DISTY</B></TT>
+<DD> default y distance between textshapes to line.
+<DL></DL><P>
+<A NAME="ContainsPtLine">
+<A NAME ="DOC.210.71">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ContainsPtLine(int x, int y, const <!1><A HREF="Point.html">Point</A> *from, const <!1><A HREF="Point.html">Point</A> *to, int &cx, int &cy) const </B></TT>
+<DD> returns (x,y) is near line from-to, cx and cy are points on line.
+<DL></DL><P>
+<A NAME="BelowLine">
+<A NAME ="DOC.210.72">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  BelowLine(int x, int y, <!1><A HREF="Point.html">Point</A> *from, <!1><A HREF="Point.html">Point</A> *to)</B></TT>
+<DD> return if (x,y) is down to line from->to.
+<DL></DL><P>
+<A NAME="AboveLine">
+<A NAME ="DOC.210.73">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  AboveLine(int x, int y, <!1><A HREF="Point.html">Point</A> *from, <!1><A HREF="Point.html">Point</A> *to)</B></TT>
+<DD> return if (x,y) is above line from->to.
+<DL></DL><P>
+<A NAME="SetNameDirection">
+<A NAME ="DOC.210.74">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetNameDirection(<!2><A HREF="ReadDirection.html#DOC.269.1">ReadDirection::Type</A> nd)</B></TT>
+<DL></DL><P>
+<A NAME="UndrawDirection">
+<A NAME ="DOC.210.75">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UndrawDirection()</B></TT>
+<DL></DL><P>
+<A NAME="DrawDirection">
+<A NAME ="DOC.210.76">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawDirection()</B></TT>
+<DL></DL><P>
+<A NAME="NotifyTextMove">
+<A NAME ="DOC.210.77">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  NotifyTextMove(<!1><A HREF="TextShape.html">TextShape</A> *t)</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="TransitionArrow.html"> TransitionArrow </A><br>
+<A HREF="T1Line.html"> T1Line </A><br>
+<A HREF="FlashArrow.html"> FlashArrow </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

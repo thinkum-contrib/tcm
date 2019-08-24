@@ -1,0 +1,28 @@
+# Main make targets for Sun SUNWspro compiler and also for the Delta
+# C++ compiler under IRIX.
+#
+# Dynamic linking of the libraries works best here.
+
+all: allz
+
+libs: dynamiclibs
+
+include Config.tmpl
+
+include Makefile.GEN
+
+tcm:
+	( cd ./ed ; $(MAKE) tcm)
+
+tgd tgtt tesd tefd tstd tfrt tucd tssd tatd tscd tcbd\
+tsqd tcpd tdpd terd tcrd tdfd tpsd tsnd trpg:
+	( cd ./sd ; $(MAKE) $@)
+
+tgt ttdt ttut tfet:
+	( cd ./st ; $(MAKE) $@)
+
+# csod ced:
+# 	( cd ./cx ; $(MAKE) $@)
+
+
+# DO NOT DELETE THIS LINE -- make depend depends on it.

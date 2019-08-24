@@ -1,0 +1,564 @@
+<html><head><TITLE>Document</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Document  </H2><BLOCKQUOTE>
+ (abstract) document class; generalization of diagram, tree, table, etc.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CDocument,MDocument.html,CTable,MTable.html,CDiagram,MDiagram.html">
+<param name=before value="M,M|_,Mr_">
+<param name=after value="M,M,M">
+<param name=indent value="0,0,0">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Classes</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.118.42"> <IMG BORDER=0 SRC=icon1.gif></A>  enum </TD><TD><B>MoveType</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.118.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Document</B> (<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="EditWindow.html">EditWindow</A> *d, <!1><A HREF="Viewer.html">Viewer</A> *v)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Document</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>New</B> ()<br>
+<I> opens new document called untitled.'suffix'.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.4"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Load</B> ()<br>
+<I> popup file selector dialog for loading a file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.5"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Append</B> ()<br>
+<I> same as load but old document remains unchanged.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Save</B> ()<br>
+<I> save document to file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SaveAs</B> ()<br>
+<I> popup file selector dialog for saving to a file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SaveSelectionAs</B> ()<br>
+<I> popup file selector dialog for saving selection to a file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Quit</B> ()<br>
+<I> closes document (asks confirmation) and quits application.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDocInfo</B> ()<br>
+<I> popup info dialog containing information about this document.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowSource</B> ()<br>
+<I> popup text edit dialog with document source from file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SaveSource</B> ()<br>
+<I> save edited source back to file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.13"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>ShowSummary</B> ()<br>
+<I> popup info dialog containing summary of contents of this document.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.14"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>CheckDocument</B> ()<br>
+<I> popup warning dialog containing soft constraint violations (syntactic)</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.15"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>ModelCheckDocument</B> ()<br>
+<I> popup dialog to model check the document (semantic check)</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Annotate</B> ()<br>
+<I> popup text edit dialog in which doc. annotation can be given.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>LoadSave</B> (const <!1><A HREF="string.html">string</A> *file)<br>
+<I> called from file selector dialog callbacks.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.18"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>DoLoad</B> (const <!1><A HREF="string.html">string</A> *file)<br>
+<I> load document from file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.19"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DoSaveAs</B> (const <!1><A HREF="string.html">string</A> *file)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.20"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DoSaveSelectionAs</B> (const <!1><A HREF="string.html">string</A> *file)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.21"> <IMG BORDER=0 SRC=icon1.gif></A> double </TD><TD><B>GetLoadFormat</B> () const <br>
+<I> return format that was found in file that is read in.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.22"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Initialize</B> ()<br>
+<I> perform some document type specific initialization.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.23"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>NewFile</B> (const <!1><A HREF="string.html">string</A> *file)<br>
+<I> Checks if file is legal and opens new document with file as name.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.24"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>RemoveAll</B> ()<br>
+<I> Delete contents of the document.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.25"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>NewName</B> (const <!1><A HREF="string.html">string</A> *newname)<br>
+<I> Checks if newname is legal, and if so, changes name of document.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.26"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetName</B> (const <!1><A HREF="string.html">string</A> *newname)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.27"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetName</B> () const <br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.28"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetDocType</B> () const <br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.29"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetSuffix</B> () const <br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.30"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetToolName</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.31"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetAuthor</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.32"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetCreationTime</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.33"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsDefault</B> ()<br>
+<I> return whether doc.name is the default name.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.34"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>NewDir</B> (const <!1><A HREF="string.html">string</A> *newdir)<br>
+<I> Checks if newdir is legal, and if so, changes current directory.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.35"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDir</B> (const <!1><A HREF="string.html">string</A> *newdir)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.36"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetDir</B> () const <br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.37"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetFSDir</B> ()<br>
+<I> Set dir from file selector.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.38"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>IncChanges</B> ()<br>
+<I> increases number of changes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.39"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DecChanges</B> ()<br>
+<I> decrease number of changes.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.40"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetChanges</B> () const <br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.41"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetInlineEdit</B> (bool)<br>
+<I> set inline edit (doc. type specific).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.43"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Move</B> (<!2><A HREF="Document.html#DOC.118.42">MoveType</A>)<br>
+<I> move document in mainwindow.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.44"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsModified</B> () const <br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.45"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetModified</B> (bool set)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.46"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsLoaded</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.47"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>MayWrite</B> (const <!1><A HREF="string.html">string</A> *path)<br>
+<I> ask user to confirm that a file may be overwritten</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.48"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetStatus</B> (const char *msg)<br>
+<I> set main window status message to msg.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.49"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetStatus</B> (const <!1><A HREF="string.html">string</A> *msg)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.50"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetAnnotation</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I> set document annotation text to s.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.51"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>FindAll</B> (const <!1><A HREF="string.html">string</A> *, bool, bool, bool)<br>
+<I> find all strings.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.52"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>FindNext</B> (const <!1><A HREF="string.html">string</A> *, bool, bool, bool)<br>
+<I> find next string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.53"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>ReplaceAll</B> (const <!1><A HREF="string.html">string</A> *, const <!1><A HREF="string.html">string</A> *, bool, bool, bool)<br>
+<I> replace all strings.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.54"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>ReplaceNext</B> (const <!1><A HREF="string.html">string</A> *, const <!1><A HREF="string.html">string</A> *, bool, bool, bool)<br>
+<I> replace next string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.55"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Find</B> ()<br>
+<I> issue a popup dialog for getting a search string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.56"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Replace</B> ()<br>
+<I> issue a popup dialog for search and replace strings.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.57"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateWindow</B> ()<br>
+<I> update main window document text fields</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.58"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="EditWindow.html">EditWindow</A>* </TD><TD><B>GetMainWindow</B> () const <br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.59"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Config.html">Config</A>* </TD><TD><B>GetConfig</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.60"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Viewer.html">Viewer</A>* </TD><TD><B>GetViewer</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.61"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="InputFile.html">InputFile</A>* </TD><TD><B>GetInputFile</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.62"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="OutputFile.html">OutputFile</A>* </TD><TD><B>GetOutputFile</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.63"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>* </TD><TD><B>GetSourceEditDialog</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.64"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>* </TD><TD><B>GetDocAnnotationDialog</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.65"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>* </TD><TD><B>GetEltAnnotationDialog</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.66"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="FileSelectionDialog.html">FileSelectionDialog</A>* </TD><TD><B>GetFileSelectionDialog</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.67"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="FindDialog.html">FindDialog</A>* </TD><TD><B>GetFindDialog</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.68"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="ReplaceDialog.html">ReplaceDialog</A>* </TD><TD><B>GetReplaceDialog</B> () const <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.118.77"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="string.html">string</A> </TD><TD><B>chkbuf</B> <br>
+<I> message string filled by Check Document.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.118.69"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>LoadEntries</B> ()<br>
+<I> ...</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.70"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SaveEntries</B> ()<br>
+<I> ...</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.71"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsAppending</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.72"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsSaveSelection</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.73"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>UpdateDirectory</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I> Set directory in all dialogs.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.74"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDialog</B> (<!2><A HREF="MessageDialog.html#DOC.225.1">MessageDialog::DialogType</A>, const char *title, const char *text)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.75"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ShowDialog</B> (<!2><A HREF="MessageDialog.html#DOC.225.1">MessageDialog::DialogType</A>, const char *title, const <!1><A HREF="string.html">string</A> *text)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.76"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ReportCheck</B> (int errors, const <!1><A HREF="string.html">string</A> *msg)<br>
+<I> Give results of Check Document in popup dialog.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.118.123"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Save</B> (const <!1><A HREF="string.html">string</A> *file)<br>
+<I> function needed for saving to file.</I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ (abstract) document class; generalization of diagram, tree, table, etc.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Document">
+<A NAME ="DOC.118.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Document(<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="EditWindow.html">EditWindow</A> *d, <!1><A HREF="Viewer.html">Viewer</A> *v)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="~Document">
+<A NAME ="DOC.118.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Document()</B></TT>
+<DL></DL><P>
+<A NAME="New">
+<A NAME ="DOC.118.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  New()</B></TT>
+<DD> opens new document called untitled.'suffix'.
+<DL></DL><P>
+<A NAME="Load">
+<A NAME ="DOC.118.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Load()</B></TT>
+<DD> popup file selector dialog for loading a file.
+<DL></DL><P>
+<A NAME="Append">
+<A NAME ="DOC.118.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Append()</B></TT>
+<DD> same as load but old document remains unchanged.
+<DL></DL><P>
+<A NAME="Save">
+<A NAME ="DOC.118.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Save()</B></TT>
+<DD> save document to file.
+<DL></DL><P>
+<A NAME="SaveAs">
+<A NAME ="DOC.118.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SaveAs()</B></TT>
+<DD> popup file selector dialog for saving to a file.
+<DL></DL><P>
+<A NAME="SaveSelectionAs">
+<A NAME ="DOC.118.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SaveSelectionAs()</B></TT>
+<DD> popup file selector dialog for saving selection to a file.
+<DL></DL><P>
+<A NAME="Quit">
+<A NAME ="DOC.118.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Quit()</B></TT>
+<DD> closes document (asks confirmation) and quits application.
+<DL></DL><P>
+<A NAME="ShowDocInfo">
+<A NAME ="DOC.118.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDocInfo()</B></TT>
+<DD> popup info dialog containing information about this document.
+<DL></DL><P>
+<A NAME="ShowSource">
+<A NAME ="DOC.118.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowSource()</B></TT>
+<DD> popup text edit dialog with document source from file.
+<DL></DL><P>
+<A NAME="SaveSource">
+<A NAME ="DOC.118.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SaveSource()</B></TT>
+<DD> save edited source back to file.
+<DL></DL><P>
+<A NAME="ShowSummary">
+<A NAME ="DOC.118.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  ShowSummary()</B></TT>
+<DD> popup info dialog containing summary of contents of this document.
+<DL></DL><P>
+<A NAME="CheckDocument">
+<A NAME ="DOC.118.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  CheckDocument()</B></TT>
+<DD> popup warning dialog containing soft constraint violations (syntactic)
+<DL></DL><P>
+<A NAME="ModelCheckDocument">
+<A NAME ="DOC.118.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  ModelCheckDocument()</B></TT>
+<DD> popup dialog to model check the document (semantic check)
+<DL></DL><P>
+<A NAME="Annotate">
+<A NAME ="DOC.118.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Annotate()</B></TT>
+<DD> popup text edit dialog in which doc. annotation can be given.
+<DL></DL><P>
+<A NAME="LoadSave">
+<A NAME ="DOC.118.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  LoadSave(const <!1><A HREF="string.html">string</A> *file)</B></TT>
+<DD> called from file selector dialog callbacks.
+<DL></DL><P>
+<A NAME="DoLoad">
+<A NAME ="DOC.118.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  DoLoad(const <!1><A HREF="string.html">string</A> *file)</B></TT>
+<DD> load document from file.
+<DL></DL><P>
+<A NAME="DoSaveAs">
+<A NAME ="DOC.118.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DoSaveAs(const <!1><A HREF="string.html">string</A> *file)</B></TT>
+<DL></DL><P>
+<A NAME="DoSaveSelectionAs">
+<A NAME ="DOC.118.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DoSaveSelectionAs(const <!1><A HREF="string.html">string</A> *file)</B></TT>
+<DL></DL><P>
+<A NAME="GetLoadFormat">
+<A NAME ="DOC.118.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> double  GetLoadFormat() const </B></TT>
+<DD> return format that was found in file that is read in.
+<DL></DL><P>
+<A NAME="Initialize">
+<A NAME ="DOC.118.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Initialize()</B></TT>
+<DD> perform some document type specific initialization.
+<DL></DL><P>
+<A NAME="NewFile">
+<A NAME ="DOC.118.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  NewFile(const <!1><A HREF="string.html">string</A> *file)</B></TT>
+<DD> Checks if file is legal and opens new document with file as name.
+<DL></DL><P>
+<A NAME="RemoveAll">
+<A NAME ="DOC.118.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  RemoveAll()</B></TT>
+<DD> Delete contents of the document.
+<DL></DL><P>
+<A NAME="NewName">
+<A NAME ="DOC.118.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  NewName(const <!1><A HREF="string.html">string</A> *newname)</B></TT>
+<DD> Checks if newname is legal, and if so, changes name of document.
+<DL></DL><P>
+<A NAME="SetName">
+<A NAME ="DOC.118.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetName(const <!1><A HREF="string.html">string</A> *newname)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetName">
+<A NAME ="DOC.118.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetName() const </B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetDocType">
+<A NAME ="DOC.118.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetDocType() const </B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetSuffix">
+<A NAME ="DOC.118.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetSuffix() const </B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetToolName">
+<A NAME ="DOC.118.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetToolName() const </B></TT>
+<DL></DL><P>
+<A NAME="GetAuthor">
+<A NAME ="DOC.118.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetAuthor() const </B></TT>
+<DL></DL><P>
+<A NAME="GetCreationTime">
+<A NAME ="DOC.118.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetCreationTime() const </B></TT>
+<DL></DL><P>
+<A NAME="IsDefault">
+<A NAME ="DOC.118.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsDefault()</B></TT>
+<DD> return whether doc.name is the default name.
+<DL></DL><P>
+<A NAME="NewDir">
+<A NAME ="DOC.118.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  NewDir(const <!1><A HREF="string.html">string</A> *newdir)</B></TT>
+<DD> Checks if newdir is legal, and if so, changes current directory.
+<DL></DL><P>
+<A NAME="SetDir">
+<A NAME ="DOC.118.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDir(const <!1><A HREF="string.html">string</A> *newdir)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetDir">
+<A NAME ="DOC.118.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetDir() const </B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="SetFSDir">
+<A NAME ="DOC.118.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetFSDir()</B></TT>
+<DD> Set dir from file selector.
+<DL></DL><P>
+<A NAME="IncChanges">
+<A NAME ="DOC.118.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  IncChanges()</B></TT>
+<DD> increases number of changes.
+<DL></DL><P>
+<A NAME="DecChanges">
+<A NAME ="DOC.118.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DecChanges()</B></TT>
+<DD> decrease number of changes.
+<DL></DL><P>
+<A NAME="GetChanges">
+<A NAME ="DOC.118.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetChanges() const </B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="SetInlineEdit">
+<A NAME ="DOC.118.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetInlineEdit(bool)</B></TT>
+<DD> set inline edit (doc. type specific).
+<DL></DL><P>
+<A NAME="MoveType">
+<A NAME ="DOC.118.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum  MoveType</B></TT>
+<DL></DL><P>
+<A NAME="Move">
+<A NAME ="DOC.118.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Move(<!2><A HREF="Document.html#DOC.118.42">MoveType</A>)</B></TT>
+<DD> move document in mainwindow.
+<DL></DL><P>
+<A NAME="IsModified">
+<A NAME ="DOC.118.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsModified() const </B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="SetModified">
+<A NAME ="DOC.118.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetModified(bool set)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="IsLoaded">
+<A NAME ="DOC.118.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsLoaded() const </B></TT>
+<DL></DL><P>
+<A NAME="MayWrite">
+<A NAME ="DOC.118.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  MayWrite(const <!1><A HREF="string.html">string</A> *path)</B></TT>
+<DD> ask user to confirm that a file may be overwritten
+<DL></DL><P>
+<A NAME="SetStatus">
+<A NAME ="DOC.118.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetStatus(const char *msg)</B></TT>
+<DD> set main window status message to msg.
+<DL></DL><P>
+<A NAME="SetStatus">
+<A NAME ="DOC.118.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetStatus(const <!1><A HREF="string.html">string</A> *msg)</B></TT>
+<DL></DL><P>
+<A NAME="SetAnnotation">
+<A NAME ="DOC.118.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetAnnotation(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DD> set document annotation text to s.
+<DL></DL><P>
+<A NAME="FindAll">
+<A NAME ="DOC.118.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  FindAll(const <!1><A HREF="string.html">string</A> *, bool, bool, bool)</B></TT>
+<DD> find all strings.
+<DL></DL><P>
+<A NAME="FindNext">
+<A NAME ="DOC.118.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  FindNext(const <!1><A HREF="string.html">string</A> *, bool, bool, bool)</B></TT>
+<DD> find next string.
+<DL></DL><P>
+<A NAME="ReplaceAll">
+<A NAME ="DOC.118.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  ReplaceAll(const <!1><A HREF="string.html">string</A> *, const <!1><A HREF="string.html">string</A> *, bool, bool, bool)</B></TT>
+<DD> replace all strings.
+<DL></DL><P>
+<A NAME="ReplaceNext">
+<A NAME ="DOC.118.54">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  ReplaceNext(const <!1><A HREF="string.html">string</A> *, const <!1><A HREF="string.html">string</A> *, bool, bool, bool)</B></TT>
+<DD> replace next string.
+<DL></DL><P>
+<A NAME="Find">
+<A NAME ="DOC.118.55">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Find()</B></TT>
+<DD> issue a popup dialog for getting a search string.
+<DL></DL><P>
+<A NAME="Replace">
+<A NAME ="DOC.118.56">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Replace()</B></TT>
+<DD> issue a popup dialog for search and replace strings.
+<DL></DL><P>
+<A NAME="UpdateWindow">
+<A NAME ="DOC.118.57">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateWindow()</B></TT>
+<DD> update main window document text fields
+<DL></DL><P>
+<A NAME="GetMainWindow">
+<A NAME ="DOC.118.58">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="EditWindow.html">EditWindow</A>*  GetMainWindow() const </B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetConfig">
+<A NAME ="DOC.118.59">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Config.html">Config</A>*  GetConfig() const </B></TT>
+<DL></DL><P>
+<A NAME="GetViewer">
+<A NAME ="DOC.118.60">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Viewer.html">Viewer</A>*  GetViewer() const </B></TT>
+<DL></DL><P>
+<A NAME="GetInputFile">
+<A NAME ="DOC.118.61">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="InputFile.html">InputFile</A>*  GetInputFile() const </B></TT>
+<DL></DL><P>
+<A NAME="GetOutputFile">
+<A NAME ="DOC.118.62">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="OutputFile.html">OutputFile</A>*  GetOutputFile() const </B></TT>
+<DL></DL><P>
+<A NAME="GetSourceEditDialog">
+<A NAME ="DOC.118.63">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  GetSourceEditDialog() const </B></TT>
+<DL></DL><P>
+<A NAME="GetDocAnnotationDialog">
+<A NAME ="DOC.118.64">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  GetDocAnnotationDialog() const </B></TT>
+<DL></DL><P>
+<A NAME="GetEltAnnotationDialog">
+<A NAME ="DOC.118.65">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  GetEltAnnotationDialog() const </B></TT>
+<DL></DL><P>
+<A NAME="GetFileSelectionDialog">
+<A NAME ="DOC.118.66">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="FileSelectionDialog.html">FileSelectionDialog</A>*  GetFileSelectionDialog() const </B></TT>
+<DL></DL><P>
+<A NAME="GetFindDialog">
+<A NAME ="DOC.118.67">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="FindDialog.html">FindDialog</A>*  GetFindDialog() const </B></TT>
+<DL></DL><P>
+<A NAME="GetReplaceDialog">
+<A NAME ="DOC.118.68">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="ReplaceDialog.html">ReplaceDialog</A>*  GetReplaceDialog() const </B></TT>
+<DL></DL><P>
+<A NAME="LoadEntries">
+<A NAME ="DOC.118.69">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  LoadEntries()</B></TT>
+<DD> ...
+<DL></DL><P>
+<A NAME="SaveEntries">
+<A NAME ="DOC.118.70">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SaveEntries()</B></TT>
+<DD> ...
+<DL></DL><P>
+<A NAME="IsAppending">
+<A NAME ="DOC.118.71">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsAppending() const </B></TT>
+<DL></DL><P>
+<A NAME="IsSaveSelection">
+<A NAME ="DOC.118.72">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsSaveSelection() const </B></TT>
+<DL></DL><P>
+<A NAME="UpdateDirectory">
+<A NAME ="DOC.118.73">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  UpdateDirectory(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DD> Set directory in all dialogs.
+<DL></DL><P>
+<A NAME="ShowDialog">
+<A NAME ="DOC.118.74">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDialog(<!2><A HREF="MessageDialog.html#DOC.225.1">MessageDialog::DialogType</A>, const char *title, const char *text)</B></TT>
+<DL></DL><P>
+<A NAME="ShowDialog">
+<A NAME ="DOC.118.75">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ShowDialog(<!2><A HREF="MessageDialog.html#DOC.225.1">MessageDialog::DialogType</A>, const char *title, const <!1><A HREF="string.html">string</A> *text)</B></TT>
+<DL></DL><P>
+<A NAME="ReportCheck">
+<A NAME ="DOC.118.76">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ReportCheck(int errors, const <!1><A HREF="string.html">string</A> *msg)</B></TT>
+<DD> Give results of Check Document in popup dialog.
+<DL></DL><P>
+<A NAME="chkbuf">
+<A NAME ="DOC.118.77">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="string.html">string</A>  chkbuf</B></TT>
+<DD> message string filled by Check Document.
+<DL></DL><P>
+<A NAME="Save">
+<A NAME ="DOC.118.123">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Save(const <!1><A HREF="string.html">string</A> *file)</B></TT>
+<DD> function needed for saving to file.
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="Table.html"> Table </A><br>
+<A HREF="Diagram.html"> Diagram </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

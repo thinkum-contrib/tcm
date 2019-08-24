@@ -1,0 +1,152 @@
+<html><head><TITLE>MenuItem</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  MenuItem  </H2><BLOCKQUOTE>
+ data structure that comprises all the important aspects of a menu item.
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Classes</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.224.1"> <IMG BORDER=0 SRC=icon1.gif></A>  enum </TD><TD><B>ItemType</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.224.2"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>label</B> <br>
+<I> the label for the item </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.3"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Bitmap.html">Bitmap</A> </TD><TD><B>bitmap</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.4"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>showBitmap</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.5"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="MenuItem.html#DOC.224.1">ItemType</A> </TD><TD><B>itemType</B> <br>
+<I> pushbutton, submenu, checkbox, radiobox, separator .. </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.6"> <IMG BORDER=0 SRC=icon1.gif></A> char </TD><TD><B>mnemonic</B> <br>
+<I> mnemonic; 0 character if none </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.7"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>accelerator</B> <br>
+<I> accelerator; 0 if none </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.8"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>accelText</B> <br>
+<I> to be converted to compound string </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.9"> <IMG BORDER=0 SRC=icon1.gif></A> XtCallbackProc </TD><TD><B>callback</B> <br>
+<I> routine to call; 0 if none </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.10"> <IMG BORDER=0 SRC=icon1.gif></A> XtPointer </TD><TD><B>callbackData</B> <br>
+<I> client data for callback() </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.11"> <IMG BORDER=0 SRC=icon1.gif></A> XtPointer </TD><TD><B>userData</B> <br>
+<I> user data for callback.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.12"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="MenuItem.html#DOC.224.17">MenuItem</A>* </TD><TD><B>subitems</B> <br>
+<I> pullright menu items, if not: 0 </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.13"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>sensitive</B> <br>
+<I> 0: insensitive, 1: sensitive </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.18"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  <!2><A HREF="MenuItem.html#DOC.224.17">MenuItem</A> </TD><TD><B>NUL</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.19"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  <!2><A HREF="MenuItem.html#DOC.224.17">MenuItem</A> </TD><TD><B>SEP</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.224.14"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>MenuItem</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.15"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>MenuItem</B> (const char *l, <!2><A HREF="MenuItem.html#DOC.224.1">ItemType</A> i)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.16"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>MenuItem</B> (const char *l, <!2><A HREF="MenuItem.html#DOC.224.1">ItemType</A> i, char m, const char *a, const char *t, XtCallbackProc c, XtPointer d, XtPointer u, <!2><A HREF="MenuItem.html#DOC.224.17">MenuItem</A> *si, int s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.224.17"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>MenuItem</B> (const char *l, const <!1><A HREF="Bitmap.html">Bitmap</A> *b, <!2><A HREF="MenuItem.html#DOC.224.1">ItemType</A> i, char m, const char *a, const char *t, XtCallbackProc c, XtPointer d, XtPointer u, <!2><A HREF="MenuItem.html#DOC.224.17">MenuItem</A> *si, int s)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ data structure that comprises all the important aspects of a menu item.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="ItemType">
+<A NAME ="DOC.224.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum  ItemType</B></TT>
+<DL></DL><P>
+<A NAME="label">
+<A NAME ="DOC.224.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  label</B></TT>
+<DD> the label for the item 
+<DL></DL><P>
+<A NAME="bitmap">
+<A NAME ="DOC.224.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Bitmap.html">Bitmap</A>  bitmap</B></TT>
+<DL></DL><P>
+<A NAME="showBitmap">
+<A NAME ="DOC.224.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  showBitmap</B></TT>
+<DL></DL><P>
+<A NAME="itemType">
+<A NAME ="DOC.224.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="MenuItem.html#DOC.224.1">ItemType</A>  itemType</B></TT>
+<DD> pushbutton, submenu, checkbox, radiobox, separator .. 
+<DL></DL><P>
+<A NAME="mnemonic">
+<A NAME ="DOC.224.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> char  mnemonic</B></TT>
+<DD> mnemonic; 0 character if none 
+<DL></DL><P>
+<A NAME="accelerator">
+<A NAME ="DOC.224.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  accelerator</B></TT>
+<DD> accelerator; 0 if none 
+<DL></DL><P>
+<A NAME="accelText">
+<A NAME ="DOC.224.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  accelText</B></TT>
+<DD> to be converted to compound string 
+<DL></DL><P>
+<A NAME="callback">
+<A NAME ="DOC.224.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> XtCallbackProc  callback</B></TT>
+<DD> routine to call; 0 if none 
+<DL></DL><P>
+<A NAME="callbackData">
+<A NAME ="DOC.224.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> XtPointer  callbackData</B></TT>
+<DD> client data for callback() 
+<DL></DL><P>
+<A NAME="userData">
+<A NAME ="DOC.224.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> XtPointer  userData</B></TT>
+<DD> user data for callback.
+<DL></DL><P>
+<A NAME="subitems">
+<A NAME ="DOC.224.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="MenuItem.html#DOC.224.17">MenuItem</A>*  subitems</B></TT>
+<DD> pullright menu items, if not: 0 
+<DL></DL><P>
+<A NAME="sensitive">
+<A NAME ="DOC.224.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  sensitive</B></TT>
+<DD> 0: insensitive, 1: sensitive 
+<DL></DL><P>
+<A NAME="MenuItem">
+<A NAME ="DOC.224.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  MenuItem()</B></TT>
+<DL></DL><P>
+<A NAME="MenuItem">
+<A NAME ="DOC.224.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  MenuItem(const char *l, <!2><A HREF="MenuItem.html#DOC.224.1">ItemType</A> i)</B></TT>
+<DL></DL><P>
+<A NAME="MenuItem">
+<A NAME ="DOC.224.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  MenuItem(const char *l, <!2><A HREF="MenuItem.html#DOC.224.1">ItemType</A> i, char m, const char *a, const char *t, XtCallbackProc c, XtPointer d, XtPointer u, <!2><A HREF="MenuItem.html#DOC.224.17">MenuItem</A> *si, int s)</B></TT>
+<DL></DL><P>
+<A NAME="MenuItem">
+<A NAME ="DOC.224.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  MenuItem(const char *l, const <!1><A HREF="Bitmap.html">Bitmap</A> *b, <!2><A HREF="MenuItem.html#DOC.224.1">ItemType</A> i, char m, const char *a, const char *t, XtCallbackProc c, XtPointer d, XtPointer u, <!2><A HREF="MenuItem.html#DOC.224.17">MenuItem</A> *si, int s)</B></TT>
+<DL></DL><P>
+<A NAME="NUL">
+<A NAME ="DOC.224.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  <!2><A HREF="MenuItem.html#DOC.224.17">MenuItem</A>  NUL</B></TT>
+<DL></DL><P>
+<A NAME="SEP">
+<A NAME ="DOC.224.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  <!2><A HREF="MenuItem.html#DOC.224.17">MenuItem</A>  SEP</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

@@ -1,0 +1,159 @@
+<html><head><TITLE>Rectangle</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Rectangle  </H2><BLOCKQUOTE>
+ rectangle ADT, defined by x, y, width and height.
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.270.1"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  <!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A> </TD><TD><B>ZERO</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.16"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>x</B> <br>
+<I> the left x-coordinate of the rectangle</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.17"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>y</B> <br>
+<I> the top y coordinate of the rectangle</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.18"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>width</B> <br>
+<I> the width of the rectangle</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.19"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>height</B> <br>
+<I> the height of the rectangle</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.270.2"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Rectangle</B> (int a = 0, int b = 0, int w = 0, int h=0)<br>
+<I> Construct and initialize new rectangle.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.3"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Rectangle</B> (int w, int h)<br>
+<I> Construct and initialize new rectangle.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.4"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Rectangle</B> (int d)<br>
+<I> Construct and initialize new rectangle.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.5"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Rectangle</B> (<!1><A HREF="Point.html">Point</A> origin, <!1><A HREF="Point.html">Point</A> extent)<br>
+<I> Construct and initialize new rectangle.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Set</B> (int a, int b, int w, int h)<br>
+<I> Reshape rectangle.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPosition</B> (int a, int b)<br>
+<I> Set rectangle position.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Move</B> (int a, int b)<br>
+<I> Move rectangle position.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.9"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Inside</B> (<!1><A HREF="Point.html">Point</A> p) const <br>
+<I> Return if point (a,b) is inside rectangle.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.10"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Inside</B> (int a, int b) const <br>
+<I> Return if point (a,b) is inside rectangle.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.11"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Intersects</B> (<!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A>* r) const <br>
+<I> Return if rectangle r intersects with 'this'.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.12"> <IMG BORDER=0 SRC=icon1.gif></A> friend  bool </TD><TD><B>operator==</B> (const <!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A> &<!2><A HREF="Rectangle.html#DOC.270.16">x</A>, const <!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A> &<!2><A HREF="Rectangle.html#DOC.270.17">y</A>)<br>
+<I> Return whether rectangles are equal.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.13"> <IMG BORDER=0 SRC=icon1.gif></A> friend  bool </TD><TD><B>operator!=</B> (const <!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A> &<!2><A HREF="Rectangle.html#DOC.270.16">x</A>, const <!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A> &<!2><A HREF="Rectangle.html#DOC.270.17">y</A>)<br>
+<I> Return whether rectangles are unequal.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.14"> <IMG BORDER=0 SRC=icon1.gif></A> friend  ostream& </TD><TD><B>operator<<</B> (ostream &s, const <!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A> r)<br>
+<I> Write string representation to ostream.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.270.15"> <IMG BORDER=0 SRC=icon1.gif></A> friend  istream& </TD><TD><B>operator>></B> (istream &s, <!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A> &r)<br>
+<I> Read string representation from istream.</I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ rectangle ADT, defined by x, y, width and height.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="ZERO">
+<A NAME ="DOC.270.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  <!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A>  ZERO</B></TT>
+<DL></DL><P>
+<A NAME="Rectangle">
+<A NAME ="DOC.270.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Rectangle(int a = 0, int b = 0, int w = 0, int h=0)</B></TT>
+<DD> Construct and initialize new rectangle.
+<DL></DL><P>
+<A NAME="Rectangle">
+<A NAME ="DOC.270.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Rectangle(int w, int h)</B></TT>
+<DD> Construct and initialize new rectangle.
+<DL></DL><P>
+<A NAME="Rectangle">
+<A NAME ="DOC.270.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Rectangle(int d)</B></TT>
+<DD> Construct and initialize new rectangle.
+<DL></DL><P>
+<A NAME="Rectangle">
+<A NAME ="DOC.270.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Rectangle(<!1><A HREF="Point.html">Point</A> origin, <!1><A HREF="Point.html">Point</A> extent)</B></TT>
+<DD> Construct and initialize new rectangle.
+<DL></DL><P>
+<A NAME="Set">
+<A NAME ="DOC.270.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Set(int a, int b, int w, int h)</B></TT>
+<DD> Reshape rectangle.
+<DL></DL><P>
+<A NAME="SetPosition">
+<A NAME ="DOC.270.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPosition(int a, int b)</B></TT>
+<DD> Set rectangle position.
+<DL></DL><P>
+<A NAME="Move">
+<A NAME ="DOC.270.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Move(int a, int b)</B></TT>
+<DD> Move rectangle position.
+<DL></DL><P>
+<A NAME="Inside">
+<A NAME ="DOC.270.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Inside(<!1><A HREF="Point.html">Point</A> p) const </B></TT>
+<DD> Return if point (a,b) is inside rectangle.
+<DL></DL><P>
+<A NAME="Inside">
+<A NAME ="DOC.270.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Inside(int a, int b) const </B></TT>
+<DD> Return if point (a,b) is inside rectangle.
+<DL></DL><P>
+<A NAME="Intersects">
+<A NAME ="DOC.270.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Intersects(<!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A>* r) const </B></TT>
+<DD> Return if rectangle r intersects with 'this'.
+<DL></DL><P>
+<A NAME="operator==">
+<A NAME ="DOC.270.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  bool  operator==(const <!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A> &<!2><A HREF="Rectangle.html#DOC.270.16">x</A>, const <!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A> &<!2><A HREF="Rectangle.html#DOC.270.17">y</A>)</B></TT>
+<DD> Return whether rectangles are equal.
+<DL></DL><P>
+<A NAME="operator!=">
+<A NAME ="DOC.270.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  bool  operator!=(const <!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A> &<!2><A HREF="Rectangle.html#DOC.270.16">x</A>, const <!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A> &<!2><A HREF="Rectangle.html#DOC.270.17">y</A>)</B></TT>
+<DD> Return whether rectangles are unequal.
+<DL></DL><P>
+<A NAME="operator<<">
+<A NAME ="DOC.270.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  ostream&  operator<<(ostream &s, const <!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A> r)</B></TT>
+<DD> Write string representation to ostream.
+<DL></DL><P>
+<A NAME="operator>>">
+<A NAME ="DOC.270.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  istream&  operator>>(istream &s, <!2><A HREF="Rectangle.html#DOC.270.2">Rectangle</A> &r)</B></TT>
+<DD> Read string representation from istream.
+<DL></DL><P>
+<A NAME="x">
+<A NAME ="DOC.270.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  x</B></TT>
+<DD> the left x-coordinate of the rectangle
+<DL></DL><P>
+<A NAME="y">
+<A NAME ="DOC.270.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  y</B></TT>
+<DD> the top y coordinate of the rectangle
+<DL></DL><P>
+<A NAME="width">
+<A NAME ="DOC.270.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  width</B></TT>
+<DD> the width of the rectangle
+<DL></DL><P>
+<A NAME="height">
+<A NAME ="DOC.270.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  height</B></TT>
+<DD> the height of the rectangle
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

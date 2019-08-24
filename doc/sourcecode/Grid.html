@@ -1,0 +1,125 @@
+<html><head><TITLE>Grid</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Grid  </H2><BLOCKQUOTE>
+ class for showing the grid and snapping points to discrete point positions.
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.195.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Grid</B> (<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="DrawWindow.html">DrawWindow</A> *d, <!1><A HREF="Viewer.html">Viewer</A> *v)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.195.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Grid</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.195.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetSnap</B> (bool set)<br>
+<I> set snapping to continuous or discrete.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.195.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>PointDistance</B> ()<br>
+<I> make popup for asking the point distance.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.195.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>GridSize</B> ()<br>
+<I> make popup for asking the grid size.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.195.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetShowGrid</B> (bool set)<br>
+<I> set showing of grid.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.195.7"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsShowGrid</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.195.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Snap</B> (<!1><A HREF="Point.html">Point</A> *)<br>
+<I> Snap point to point-position.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.195.9"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>Snap</B> (int)<br>
+<I> Snap int to point-position.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.195.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>DrawGrid</B> ()<br>
+<I> draw grid.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.195.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPointDistance</B> (int i)<br>
+<I> set point distance to i.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.195.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetGridSize</B> (int i)<br>
+<I> set grid size to i.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.195.13"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="DrawWindow.html">DrawWindow</A>* </TD><TD><B>GetMainWindow</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.195.14"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Config.html">Config</A>* </TD><TD><B>GetConfig</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.195.15"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="ScaleDialog.html">ScaleDialog</A>* </TD><TD><B>GetScaleDialog</B> () const <br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ class for showing the grid and snapping points to discrete point positions.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Grid">
+<A NAME ="DOC.195.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Grid(<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="DrawWindow.html">DrawWindow</A> *d, <!1><A HREF="Viewer.html">Viewer</A> *v)</B></TT>
+<DL></DL><P>
+<A NAME="~Grid">
+<A NAME ="DOC.195.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Grid()</B></TT>
+<DL></DL><P>
+<A NAME="SetSnap">
+<A NAME ="DOC.195.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetSnap(bool set)</B></TT>
+<DD> set snapping to continuous or discrete.
+<DL></DL><P>
+<A NAME="PointDistance">
+<A NAME ="DOC.195.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  PointDistance()</B></TT>
+<DD> make popup for asking the point distance.
+<DL></DL><P>
+<A NAME="GridSize">
+<A NAME ="DOC.195.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  GridSize()</B></TT>
+<DD> make popup for asking the grid size.
+<DL></DL><P>
+<A NAME="SetShowGrid">
+<A NAME ="DOC.195.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetShowGrid(bool set)</B></TT>
+<DD> set showing of grid.
+<DL></DL><P>
+<A NAME="IsShowGrid">
+<A NAME ="DOC.195.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsShowGrid() const </B></TT>
+<DL></DL><P>
+<A NAME="Snap">
+<A NAME ="DOC.195.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Snap(<!1><A HREF="Point.html">Point</A> *)</B></TT>
+<DD> Snap point to point-position.
+<DL></DL><P>
+<A NAME="Snap">
+<A NAME ="DOC.195.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  Snap(int)</B></TT>
+<DD> Snap int to point-position.
+<DL></DL><P>
+<A NAME="DrawGrid">
+<A NAME ="DOC.195.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  DrawGrid()</B></TT>
+<DD> draw grid.
+<DL></DL><P>
+<A NAME="SetPointDistance">
+<A NAME ="DOC.195.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPointDistance(int i)</B></TT>
+<DD> set point distance to i.
+<DL></DL><P>
+<A NAME="SetGridSize">
+<A NAME ="DOC.195.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetGridSize(int i)</B></TT>
+<DD> set grid size to i.
+<DL></DL><P>
+<A NAME="GetMainWindow">
+<A NAME ="DOC.195.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="DrawWindow.html">DrawWindow</A>*  GetMainWindow() const </B></TT>
+<DL></DL><P>
+<A NAME="GetConfig">
+<A NAME ="DOC.195.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Config.html">Config</A>*  GetConfig() const </B></TT>
+<DL></DL><P>
+<A NAME="GetScaleDialog">
+<A NAME ="DOC.195.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="ScaleDialog.html">ScaleDialog</A>*  GetScaleDialog() const </B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

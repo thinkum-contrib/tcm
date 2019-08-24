@@ -1,0 +1,595 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3. Source Code Organization</TITLE>
+<META NAME="description" CONTENT="3. Source Code Organization">
+<META NAME="keywords" CONTENT="TechDoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="TechDoc.css">
+<LINK REL="next" HREF="developersguidenode5.html">
+<LINK REL="previous" HREF="developersguidenode3.html">
+<LINK REL="up" HREF="TechDoc.html">
+<LINK REL="next" HREF="developersguidenode5.html">
+</HEAD>
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html300"
+ HREF="developersguidenode5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html297"
+ HREF="TechDoc.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html291"
+ HREF="developersguidenode3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A> 
+<A NAME="tex2html299"
+ HREF="developersguidenode1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents_motif.gif"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html301"
+ HREF="developersguidenode5.html">4. TCM User Interface</A>
+<B> Up:</B> <A NAME="tex2html298"
+ HREF="TechDoc.html">Toolkit for Conceptual Modeling</A>
+<B> Previous:</B> <A NAME="tex2html292"
+ HREF="developersguidenode3.html">2. System Architecture</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><strong>Subsections</strong></A>
+<UL>
+<LI><A NAME="tex2html302"
+ HREF="developersguidenode4.html#SECTION00410000000000000000">3.1 Source code versus design criteria</A>
+<LI><A NAME="tex2html303"
+ HREF="developersguidenode4.html#SECTION00420000000000000000">3.2 Individual files and directories</A>
+<LI><A NAME="tex2html304"
+ HREF="developersguidenode4.html#SECTION00430000000000000000">3.3 Object libraries</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00400000000000000000">&#160;</A> <A NAME="chap:src_organization">&#160;</A>
+<BR>
+3. Source Code Organization
+</H1>
+
+<P>
+
+<H1><A NAME="SECTION00410000000000000000">
+3.1 Source code versus design criteria</A>
+</H1>
+
+<P>
+<BR>
+<DIV ALIGN="CENTER"><A NAME="fig:src_organization">&#160;</A><A NAME="105">&#160;</A>
+<TABLE WIDTH="50%">
+<CAPTION><STRONG>Figure 3.1:</STRONG>
+Logical source code organization.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<!-- MATH: $\includegraphics[width=5in]{p/src-organization.eps}$ -->
+<IMG
+ WIDTH="571" HEIGHT="608" ALIGN="BOTTOM" BORDER="0"
+ SRC="developersguideimg10.gif"
+ ALT="\includegraphics[width=5in]{p/src-organization.eps}"></DIV></TD></TR>
+</TABLE>
+</DIV>
+<BR>
+In this chapter we explain how the source code of TCM
+is organized. TCM basically consists of about two dozen graphical editors 
+and a startup program. The source code can be found in the directory
+<A NAME="tex2html14"
+ HREF="../../src"><TT>$TCM_HOME/src</TT></A>. The TCM source 
+code is physically split over several subdirectories. The sources can 
+be compiled into a number of object libraries 
+and executables. The source code is split in order to factor out commonalities 
+between the programs. See figure&nbsp;<A HREF="developersguidenode4.html#fig:src_organization">3.1</A> for a 
+Venn-diagram like overview of the commonalities of the source code. 
+The entire TCM source is called <I>Global</I>, the sources of the
+programs that have an X/Motif GUI, are called <I>GUI</I>. The sources
+that are used in all editors, are called <I>Editor</I>. The sources that 
+are used in all diagram editors, are called <I>Diagram</I>. 
+The sources that are used in all table editors are called <I>Table</I>.
+The sources that are used in the editor TERD are called <I>TERD</I> etc. 
+For instance, the editor TSSD uses the sources of the TSSD area, the TERD 
+area, Diagram, Editor and Global, but it does not use Table or TCRD.
+See figure&nbsp;<A HREF="developersguidenode4.html#fig:directory_tree">3.2</A> for an overview of 
+the current TCM development directory structure.
+The sources are physically split over several 
+subdirectories of the src directory. This is done according to the 
+following criteria:
+<UL>
+<LI>All code that is global and that is not part of the other areas is 
+collected in the directory <A NAME="tex2html15"
+ HREF="../../src/gl"><TT>src/gl</TT></A>. 
+This code is compiled into a library called <TT>libglobal</TT>. This includes 
+common classes for <A NAME="tex2html16"
+ HREF="../sourcecode/List.html">lists</A>, 
+<A NAME="tex2html17"
+ HREF="../sourcecode/string.html">strings</A>, 
+<A NAME="tex2html18"
+ HREF="../sourcecode/System.html">Unix utilities</A>
+etc. that can be 
+used in any program, not necessarily a TCM tool.
+
+<P>
+<LI>All code that comprises the graphical user interface but which is not
+specific for any TCM program is collected in the directory 
+<A NAME="tex2html19"
+ HREF="../../src/ui"><TT>src/ui</TT></A>.
+This code is compiled into a library called <TT>libgui</TT>. This includes a
+generic application framework for Motif based C++ programs, classes for
+drawing lines and other shapes under X, classes for building all kinds of 
+pop-up dialog windows, classes for making various pop-up and pull-down 
+menus etc.
+
+<P>
+<LI>All code that lies in the editor area (and in the TCM area) but not 
+in one of the subareas, is collected in the directory <A NAME="tex2html20"
+ HREF="../../src/ed"><TT>src/ed</TT></A>. This code 
+is compiled into a library called <TT>libeditor</TT> and in the executable <TT>tcm</TT>,
+the startup program. The libeditor library includes things that are applicable to 
+all TCM editors such as saving and loading documents (the generic part of it), 
+printing documents, the on-line help and it contains a number of abstract classes
+like <A NAME="tex2html21"
+ HREF="../sourcecode/Document.html">Document</A>, 
+<A NAME="tex2html22"
+ HREF="../sourcecode/Viewer.html">Viewer</A>
+and 
+<A NAME="tex2html23"
+ HREF="../sourcecode/Command.html">Command</A>
+on which specific editor 
+classes are based.  
+
+<P>
+<LI>All code that lies in the diagram area and that is not part of one
+of the diagram subareas, is collected in directory <A NAME="tex2html24"
+ HREF="../../src/dg"><TT>src/dg</TT></A>. This code is compiled into a library called <TT>libdiagram</TT>. This 
+includes classes for (abstract) 
+<A NAME="tex2html25"
+ HREF="../sourcecode/Graph.html">graphs</A>
+(and classes for 
+<A NAME="tex2html26"
+ HREF="../sourcecode/Node.html">nodes</A>
+and 
+<A NAME="tex2html27"
+ HREF="../sourcecode/Edge.html">edges</A>), classes for
+<A NAME="tex2html28"
+ HREF="../sourcecode/GShape.html">graphical shapes</A>
+(<A NAME="tex2html29"
+ HREF="../sourcecode/Box.html">boxes</A>, 
+<A NAME="tex2html30"
+ HREF="../sourcecode/Line.html">lines</A>, 
+<A NAME="tex2html31"
+ HREF="../sourcecode/Ellipse.html">ellipses</A>) and 
+classes for most diagram edit commands (<A NAME="tex2html32"
+ HREF="../sourcecode/CreateNodeCmd.html">CreateNodeCmd</A>,
+<A NAME="tex2html33"
+ HREF="../sourcecode/CreateEdgeCmd.html">CreateEdgeCmd</A>, 
+<A NAME="tex2html34"
+ HREF="../sourcecode/DeleteShapesCmd.html">DeleteShapesCmd</A>,...). 
+This library is used by every specific diagram editor.
+
+<P>
+<LI>All code that lies in the table area is collected in directory 
+<A NAME="tex2html35"
+ HREF="../../src/tb"><TT>src/tb</TT></A>. This code is compiled into 
+a library called <TT>libtable</TT>. This includes classes for (abstract) 
+<A NAME="tex2html36"
+ HREF="../sourcecode/Table.html">tables</A>
+having <A NAME="tex2html37"
+ HREF="../sourcecode/CellRow.html">rows</A>
+and 
+<A NAME="tex2html38"
+ HREF="../sourcecode/CellColumn.html">columns</A>
+of 
+<A NAME="tex2html39"
+ HREF="../sourcecode/Cell.html">cells</A>
+and it includes all the 
+table edit commands. This library is used by each table editor.
+
+<P>
+<LI>All code that is specific one or more (but not all) of the diagram editors, is 
+collected in the directory <A NAME="tex2html40"
+ HREF="../../src/sd"><TT>src/sd</TT></A>
+(specific 
+diagram). Each specific diagram editor can be compiled into a distinct executable 
+(at least in principle, it is also possible to compile more editors into one 
+executable). As you can see in the picture, the code of some editors 
+includes the code of others (e.g. TSSD code includes TERD specific code).
+The specific diagram editor code consists of C++ classes derived from 
+(possibly abstract) classes in libdiagram or from other specific diagram editor
+classes. These classes are (indirectly) derived of the libdiagram classes 
+<A NAME="tex2html41"
+ HREF="../sourcecode/Graph.html">Graph</A>, 
+<A NAME="tex2html42"
+ HREF="../sourcecode/DiagramWindow.html">DiagramWindow</A>, 
+<A NAME="tex2html43"
+ HREF="../sourcecode/DiagramChecks.html">DiagramChecks</A>, 
+<A NAME="tex2html44"
+ HREF="../sourcecode/DiagramViewer.html">DiagramViewer</A>, 
+<A NAME="tex2html45"
+ HREF="../sourcecode/Diagram.html">Diagram</A>, 
+<A NAME="tex2html46"
+ HREF="../sourcecode/Shape.html">Shape</A>, 
+<A NAME="tex2html47"
+ HREF="../sourcecode/ShapeView.html">ShapeView</A>,
+<A NAME="tex2html48"
+ HREF="../sourcecode/Node.html">Node</A>
+and 
+<A NAME="tex2html49"
+ HREF="../sourcecode/Edge.html">Edge</A>. The tool specific constraints are 
+all implemented in the classes derived from <A NAME="tex2html50"
+ HREF="../sourcecode/Graph.html">Graph</A>, <A NAME="tex2html51"
+ HREF="../sourcecode/DiagramChecks.html">DiagramChecks</A>, <A NAME="tex2html52"
+ HREF="../sourcecode/Node.html">Node</A>
+and <A NAME="tex2html53"
+ HREF="../sourcecode/Edge.html">Edge</A>. Because the 
+specific diagram editor code is so diverse it is subdivided further into 
+separate subdirectories:
+<UL>
+<LI><A NAME="tex2html54"
+ HREF="../../src/sd/bv"><TT>src/sd/bv</TT></A>
+is for the behavior view editors (TSTD, TATD, TRPG, TPSD),
+<LI><A NAME="tex2html55"
+ HREF="../../src/sd/dv"><TT>src/sd/dv</TT></A>
+is for the data view editors (TERD, TESD, TSSD, TCRD, TUCD),
+<LI><A NAME="tex2html56"
+ HREF="../../src/sd/fv"><TT>src/sd/fv</TT></A>
+is for the function view editors (TDFD, TEFD, TSND),
+<LI><A NAME="tex2html57"
+ HREF="../../src/sd/pv"><TT>src/sd/pv</TT></A>
+is for the physical view editors (TCPD, TDPD),
+<LI><A NAME="tex2html58"
+ HREF="../../src/sd/gd"><TT>src/sd/gd</TT></A>
+is for TGD and
+<LI><A NAME="tex2html59"
+ HREF="../../src/sd/tr"><TT>src/sd/tr</TT></A>
+is for the tree editors (TGTT, TFRT).
+</UL>The TGD sources form the most simple diagram editor and it can be used 
+as a basis for developing your own diagram editors. Specific editors that
+reside in the same directory can share one or more classes (for instance,
+the class <A NAME="tex2html60"
+ HREF="../sourcecode/BinaryRelationship.html">BinaryRelationship</A>
+is used both by TSSD and TUCD), or, one editor shares/extends all classes of 
+another editor (for instance, the classes of TFRT are all specializations of 
+the classes of TGTT).
+
+<P>
+<LI>All code that is specific for the different table editors, is collected
+in the directory <A NAME="tex2html61"
+ HREF="../../src/st"><TT>src/st</TT></A>. The amount of 
+specific table code is rather
+small. The specific code consists entirely of specializations of
+the following classes in libtable: 
+<A NAME="tex2html62"
+ HREF="../sourcecode/TableWindow.html">TableWindow</A>, 
+<A NAME="tex2html63"
+ HREF="../sourcecode/TableViewer.html">TableViewer</A>
+and 
+<A NAME="tex2html64"
+ HREF="../sourcecode/Table.html">Table</A>. 
+Also, most of the tool specific constraints are implemented in these 
+specializations of class Table.
+
+<P>
+</UL>
+<P>
+In principle each C++ class is declared in a distinct header file
+and has a distinct source file for the implementation. The files
+names are equal to the class name except that file names are in
+lower case letters by convention. Header files have suffix '.h' and 
+source file have suffix '.c'. The reason that C++ source files have 
+suffix '.c', which is originally used only for C programs, is that 
+some C++ compilers require a suffix '.C', and some require '.cc' or 
+'.cpp'. There is no C++ file name suffix that is accepted 
+by <I>all</I> compilers that we have used except the '.c' suffix. 
+
+<P>
+<BR>
+<DIV ALIGN="CENTER"><A NAME="fig:directory_tree">&#160;</A><A NAME="233">&#160;</A>
+<TABLE WIDTH="50%">
+<CAPTION><STRONG>Figure 3.2:</STRONG>
+TCM directory tree.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+<!-- MATH: $\includegraphics[width=4.5in]{p/tcm-distribution.eps}$ -->
+<IMG
+ WIDTH="504" HEIGHT="766" ALIGN="BOTTOM" BORDER="0"
+ SRC="developersguideimg12.gif"
+ ALT="\includegraphics[width=4.5in]{p/tcm-distribution.eps}"></DIV></TD></TR>
+</TABLE>
+</DIV>
+<BR>
+<P>
+
+<H1><A NAME="SECTION00420000000000000000">&#160;</A><A NAME="sec:files_and_dirs">&#160;</A>
+<BR>
+3.2 Individual files and directories
+</H1>
+
+<P>
+In the previous section we described the contents of the 
+<A NAME="tex2html65"
+ HREF="../../src"><TT>src</TT></A>
+subdirectory.
+Here we will describe the individual files and directories that are included in 
+the source code distributions of TCM. The TCM distribution top-level directory 
+contains the following files:
+<UL>
+<LI><A NAME="tex2html66"
+ HREF="../../CHANGELOG"><TT>CHANGELOG</TT></A>, which contains 
+the differences between the consecutive TCM versions.
+<LI><A NAME="tex2html67"
+ HREF="../../COPYING"><TT>COPYING</TT></A>, which is the GNU public license.
+<LI><A NAME="tex2html68"
+ HREF="../../FILEMAP"><TT>FILEMAP</TT></A>, which lists and describes 
+the files and directories in the TCM executable distributions.
+<LI><A NAME="tex2html69"
+ HREF="../../INSTALL"><TT>INSTALL</TT></A>, which tells how to install 
+the binary and source code distributions.
+<LI><A NAME="tex2html70"
+ HREF="../../MANIFEST"><TT>MANIFEST</TT></A>, which lists all files 
+and directories in the TCM distribution.
+<LI><A NAME="tex2html71"
+ HREF="../../Makefile"><TT>Makefile</TT></A>, which is the top-level 
+Makefile. Most sub(sub)directories contain a Makefile too. See 
+chapter&nbsp;<A HREF="developersguidenode8.html#chap:compiling">7</A> for what to do with these Makefiles.
+<LI><A NAME="tex2html72"
+ HREF="../../README"><TT>README</TT></A>, which is the README file 
+about the TCM project, the software, manuals, distributions etc.
+<LI><A NAME="tex2html73"
+ HREF="../../tcm.lsm"><TT>tcm.lsm</TT></A>
+is a file that describes 
+TCM in the format that is required by the Linux software map. TCM is registered in 
+the LSM (<A NAME="tex2html74"
+ HREF="http://www.execpc.com/lsm/"><TT>http://www.execpc.com/lsm/</TT></A>).
+<LI><A NAME="tex2html75"
+ HREF="../../tcm-dynmotif-2.0.spec"><TT>tcm-dynmotif-2.0.spec</TT></A>. RPM spec file for building
+a TCM RPM distribution that links dynamically with the Motif/LessTif library.
+You can use (a modified copy of) this spec-file to build your own TCM
+RPMs. See <A NAME="tex2html76"
+ HREF="http://www.rpm.org"><TT>http://www.rpg.org</TT></A>
+for 
+more information about RPMs.
+<LI><A NAME="tex2html77"
+ HREF="../../tcm-statmotif-2.0.spec"><TT>tcm-statmotif-2.0.spec</TT></A>. RPM spec file for building
+a TCM RPM distribution that is statically linked with a Motif library.
+</UL>
+<P>
+The top-level directory contains the following directories:
+<UL>
+<LI><A NAME="tex2html78"
+ HREF="../../bin"><TT>bin/</TT></A>. Here the TCM editors and other 
+binaries are put after compilation. Also this directory contains a number of 
+utility programs:
+<UL>
+<LI><A NAME="tex2html79"
+ HREF="../../bin/mkbindist"><TT>bin/mkbindist</TT></A>. This is a 
+shell script that makes a tar.gz file of a binary distribution of the compiled 
+source code. The script needs two arguments
+for the version number and the platform, e.g. <TT>mkbindist 2.0 solaris.sparc</TT>.
+This will create the file <TT>tcm-2.0.bin.solaris.sparc.tar.gz</TT> in <TT>$TCM_HOME</TT>.
+The files that will be included are listed in the code of the script itself.
+<LI><A NAME="tex2html80"
+ HREF="../../bin/mksrcdist"><TT>bin/mksrcdist</TT></A>. This is a 
+shell script that makes a tar.gz file of the source code. It needs one argument 
+for the version number, e.g. <TT>mksrcdist 2.0</TT>.
+This will create the file <TT>tcm-2.0.src.tar.gz</TT> in <TT>$TCM_HOME</TT>.
+The files that will be included are listed in the code of the script itself.
+<LI><A NAME="tex2html81"
+ HREF="../../bin/mkclasslist"><TT>bin/mkclasslist</TT></A>. This is a 
+shell script that writes the names of all header files of the source code to 
+standard output in alphabetical order.
+<LI><A NAME="tex2html82"
+ HREF="../../bin/psf"><TT>bin/psf</TT></A>. This is a Perl script
+that is used to filter PostScript output (see <TT>man psf</TT>).
+</UL>
+<P>
+<LI><A NAME="tex2html83"
+ HREF="../../doc"><TT>doc/</TT></A>. Here all technical and user 
+documentation can be found. The documentation is in HTML-format and possibly in PostScript
+and/or PDF format. The file <A NAME="tex2html84"
+ HREF="../../doc/index.html"><TT>doc/index.html</TT></A>
+links to all the different HTML documents. The documentation includes:
+
+<P>
+<UL>
+<LI><B>User's guide</B>. 
+In <A NAME="tex2html85"
+ HREF="../usersguide/index.html"><TT>usersguide/index.html</TT></A>
+you can 
+find an HTML version. A  PostScript version can be found in 
+<A NAME="tex2html86"
+ HREF="../usersguide-2.0.ps.gz"><TT>usersguide-2.0.ps.gz</TT></A>
+(large PostScript files in TCM are always gzipped to save disk space).
+Optionally a PDF copy is put in
+<A NAME="tex2html87"
+ HREF="../usersguide-2.0.pdf"><TT>doc/usersguide-2.0.pdf</TT></A>
+<LI><B>Developer's guide</B>, which is the document that you are reading now.
+In <BR> <A NAME="tex2html88"
+ HREF="index.html"><TT>developersguide/index.html</TT></A>
+you can find 
+an HTML version. A gzipped PostScript version can be found in 
+<A NAME="tex2html89"
+ HREF="../developersguide-2.0.ps.gz"><TT>developersguide-2.0.ps.gz</TT></A>. Optionally a PDF copy is found in 
+<A NAME="tex2html90"
+ HREF="../developersguide-2.0.pdf"><TT>developersguide-2.0.pdf</TT></A>
+<LI><B>Source code documentation</B>. For each C++ class an HTML page is generated
+by the program DOC++ (see chapter&nbsp;<A HREF="developersguidenode6.html#chap:class_hierarchy">5</A>). The HTML index is in 
+<A NAME="tex2html91"
+ HREF="../sourcecode/index.html"><TT>sourcecode/index.html</TT></A>. Also a 
+PostScript document with all the source code documentation can be found in 
+<A NAME="tex2html92"
+ HREF="../sourcecode-2.0.ps.gz"><TT>sourcecode-2.0.ps.gz</TT></A>
+<LI><B>Specifications</B>. The directory <A NAME="tex2html93"
+ HREF="../specifications"><TT>specifications</TT></A>
+contains a number of specifications (made with TCM) of some 
+individual editors.
+<LI><B>Wish lists</B>. The directory <A NAME="tex2html94"
+ HREF="../wishlist"><TT>wishlist</TT></A>
+contains: 
+
+<UL>
+<LI><A NAME="tex2html95"
+ HREF="../wishlist/FutureDevelopments.html"><TT>FutureDevelopments.html</TT></A>. An overview of major TCM 
+
+extensions that we have in mind.
+<LI><A NAME="tex2html96"
+ HREF="../wishlist/WishList.html"><TT>WishList.html</TT></A>.
+
+A list with unfulfilled wishes for TCM.
+<LI><A NAME="tex2html97"
+ HREF="../wishlist/WishListDone.html"><TT>WishListDone.html</TT></A>. 
+
+A list with fulfilled wishes for TCM.
+	</UL>
+<LI><B>Document sources</B>. In the directory <A NAME="tex2html98"
+ HREF="../docsrc"><TT>docsrc</TT></A>
+you can find the L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X, EPS and TCM files that comprise the sources of the documentation. 
+These files are not included in the source code distribution itself. The sources can be 
+downloaded separately from our FTP-site, from a file 
+<A NAME="tex2html99"
+ HREF="ftp://ftp.cs.utwente.nl/pub/tcm/tcm-2.0.docsrc.tar.gz"><TT>tcm-2.0.docsrc.tar.gz</TT></A>
+The sources contain a number of Makefiles to generate a number of documents automatically. 
+The program DOC++ is used to generate HTML and L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X from the C++ source code, 
+L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X2<TT>HTML</TT> is used to generate the HTML versions of the user's and developer's guide. 
+We have included the sources of DOC++, so that it will be compiled and installed before 
+you build the documentation. L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X2<TT>HTML</TT> can be downloaded from 
+<A NAME="tex2html100"
+ HREF="ftp://ftp.tex.ac.uk/tex-archive/support/latex2html"><TT>ftp.tex.ac.uk/tex-archive/support/latex2html</TT></A>
+L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X2<TT>HTML</TT> is written in Perl and you have to configure it yourself
+before you can use it on your system. This is all explained in the README 
+file of L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X2<TT>HTML</TT>.
+</UL>
+<P>
+<LI><A NAME="tex2html101"
+ HREF="../../lib"><TT>lib/</TT></A>. Here the object libraries 
+(libglobal, libgui, libeditor, libdiagram and libtable) are stored after compilation. 
+Furthermore this directory contains:
+<UL>
+<LI><A NAME="tex2html102"
+ HREF="../../lib/TCM"><TT>lib/TCM</TT></A>
+is the X Resources file. 
+This file is not directly used by TCM (the default X resources of TCM are included 
+in the source code), but it serves as a basis of your own modifications. 
+You can load X resources with the <TT>xrdb</TT> command or by including them in some 
+X-startup file like <TT>$HOME/.Xdefaults</TT>.
+<LI><A NAME="tex2html103"
+ HREF="../../lib/banner.ps"><TT>lib/banner.ps</TT></A>
+is a PostScript 
+banner page. Normally this page is not printed but when you wish to print this 
+banner page in front of your TCM documents, you can indicate this via the Printer 
+Options sub-menu of in your editor or you can make this option the default by updating the 
+<A NAME="tex2html104"
+ HREF="../../lib/tcm.conf"><TT>tcm.conf</TT></A>
+file.
+<LI><A NAME="tex2html105"
+ HREF="../../lib/colorrgb.txt"><TT>lib/colorrgb.txt</TT></A>
+is an ASCII 
+file that maps TCM color names to red-green-blue (rgb) values.
+<LI><A NAME="tex2html106"
+ HREF="../../lib/help/"><TT>lib/help/</TT></A>
+is a directory with the 
+on-line help text files. The help files are all in ASCII format. These help texts are 
+shown by the commands of the help-menu in the editors.
+<LI><A NAME="tex2html107"
+ HREF="../../lib/tcm.conf"><TT>lib/tcm.conf</TT></A>
+is the TCM configuration 
+file that is read upon start-up. It contains also some platform specific configuration 
+options, like the name of the printer and the command to print or preview files.
+This file is intended to be human-readable and self-documenting. In stead of 
+editing this file (which will affect all users of this TCM installation), you 
+can also decide to override one or more options in a personal configuration file
+<TT>$HOME/.tcmrc</TT>. <TT>.tcmrc</TT> has the same syntax as 
+<TT>tcm.conf</TT>. Note that some system specific configuration options such as the command 
+to print or preview a document is commented out in 
+<A NAME="tex2html108"
+ HREF="../../lib/tcm.conf"><TT>tcm.conf</TT></A>. That is because TCM 
+itself tries to determine these commands. Only if TCM can't find these commands 
+or it chooses the wrong ones, you should set these as options explicitly by 
+modifying <TT>tcm.conf</TT>.
+</UL>
+<P>
+<LI><A NAME="tex2html109"
+ HREF="../../man"><TT>man/</TT></A>
+contains Unix man pages for TCM.
+<UL>
+<LI><A NAME="tex2html110"
+ HREF="../../man/man1"><TT>man/man1/</TT></A>
+contains short manual pages 
+in nroff-format for each of the editors.
+<LI><A NAME="tex2html111"
+ HREF="../../man/windex"><TT>man/windex</TT></A>
+contains a simple index 
+file that is used by <TT>whatis</TT> and <TT>man -k</TT>.
+</UL>
+<P>
+</UL>
+<P>
+
+<H1><A NAME="SECTION00430000000000000000">
+3.3 Object libraries</A>
+</H1>
+
+<P>
+Depending on the operating system and the way 
+TCM is compiled, object libraries are either <B>shared object libraries</B>,
+ending on <TT>.so</TT> or <B>object archive libraries</B> ending on <TT>.a</TT>.
+In the first case, the object code in the library is kept separated from 
+the tool executables (they are dynamically linked), which makes 
+executables smaller and run faster. For the Sun CC compiler (the default 
+Solaris compiler) shared object libraries are made by default. For the
+other compilers such as <TT>gcc</TT> archive libraries are made by default.
+The contents of archive libraries are physically made part of the tool 
+executables (they are statically linked); the libraries could be removed 
+when compilation is completed.
+
+<P>
+Executables using object archive libraries tend to be much larger than
+with shared object libraries.  Because of that, distributions that have 
+to use archive libraries are in general compiled into only a few different
+executables, e.g.  one for the tcm startup tool, one for all the diagram 
+editors and one for all the table editors. The individual editors are then 
+<I>symbolic links</I> to the collective diagram or table editor. The collective 
+editor will see in its <TT>argv[0]</TT> argument which of the tools has to be 
+launched.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html300"
+ HREF="developersguidenode5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html297"
+ HREF="TechDoc.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html291"
+ HREF="developersguidenode3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A> 
+<A NAME="tex2html299"
+ HREF="developersguidenode1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents_motif.gif"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html301"
+ HREF="developersguidenode5.html">4. TCM User Interface</A>
+<B> Up:</B> <A NAME="tex2html298"
+ HREF="TechDoc.html">Toolkit for Conceptual Modeling</A>
+<B> Previous:</B> <A NAME="tex2html292"
+ HREF="developersguidenode3.html">2. System Architecture</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Henk van de Zandschulp</I>
+<BR><I>2003-01-07</I>
+</ADDRESS>
+</BODY>
+</HTML>

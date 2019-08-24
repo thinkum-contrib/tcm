@@ -1,0 +1,225 @@
+<html><head><TITLE>FETable</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  FETable : public <!2><A HREF="Matrix.html#DOC.221.1">Matrix</A> </H2><BLOCKQUOTE>
+ function entity type table class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CDocument,MDocument.html,CTable,MTable.html,CMatrix,MMatrix.html,CFETable,MFETable.html">
+<param name=before value="M,M,M,M">
+<param name=after value="Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.169.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>FETable</B> (<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="FEWindow.html">FEWindow</A> *t, <!1><A HREF="FEViewer.html">FEViewer</A> *v)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.169.2"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CheckDocument</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Matrix.html">Matrix:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>UpdateText</B>(<!1><A HREF="Cell.html">Cell</A> *c, const <!1><A HREF="string.html">string</A> *text)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  bool  <B>CheckTextString</B>(<!1><A HREF="Cell.html">Cell</A> *c, const <!1><A HREF="string.html">string</A> *text)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckEmptyColumnEntries</B>(unsigned row)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckEmptyRowEntries</B>(unsigned column)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Table.html"> Table:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_ROW_HEIGHT</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_COLUMN_WIDTH</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MAX_ROW_HEIGHT</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MAX_COLUMN_WIDTH</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_MARGIN_WIDTH</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_MARGIN_HEIGHT</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MAX_MARGIN_WIDTH</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MAX_MARGIN_HEIGHT</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_NUMBER_OF_COLUMNS</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_NUMBER_OF_ROWS</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MAX_NUMBER_OF_COLUMNS</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MAX_NUMBER_OF_ROWS</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>Initialize</B>()
+<DT><IMG SRC=icon2.gif> void  <B>LoadEntries</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SaveEntries</B>()
+<DT><IMG SRC=icon2.gif> void  <B>RemoveAll</B>()
+<DT><IMG SRC=icon2.gif> void  <B>AddRows</B>()
+<DT><IMG SRC=icon2.gif> void  <B>AddColumns</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DeleteRows</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DeleteColumns</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DeleteAll</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Purge</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CutTexts</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CopyTexts</B>()
+<DT><IMG SRC=icon2.gif> void  <B>PasteTexts</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SortRows</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SortColumns</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SameWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SameHeight</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Span</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UnSpan</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SelectAll</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Move</B>(<!2><A HREF="Document.html#DOC.118.42">MoveType</A> t)
+<DT><IMG SRC=icon2.gif> void  <B>Append</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetAppendToggle</B>(bool set)
+<DT><IMG SRC=icon2.gif> bool  <B>IsAppendBottom</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetAddRowsToggle</B>(bool set)
+<DT><IMG SRC=icon2.gif> void  <B>SetAddColumnsToggle</B>(bool set)
+<DT><IMG SRC=icon2.gif> void  <B>AddRows</B>(unsigned count)
+<DT><IMG SRC=icon2.gif> void  <B>AddColumns</B>(unsigned count)
+<DT><IMG SRC=icon2.gif> void  <B>FindAll</B>(const <!1><A HREF="string.html">string</A> *s, bool sens, bool sub, bool)
+<DT><IMG SRC=icon2.gif> void  <B>FindNext</B>(const <!1><A HREF="string.html">string</A> *s, bool sens, bool sub, bool)
+<DT><IMG SRC=icon2.gif> void  <B>ReplaceNext</B>(const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool sens, bool sub, bool)
+<DT><IMG SRC=icon2.gif> void  <B>ReplaceAll</B>(const <!1><A HREF="string.html">string</A> *s1, const <!1><A HREF="string.html">string</A> *s2, bool sens, bool sub, bool)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultNumberOfRows</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultNumberOfColumns</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultRowHeight</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultColumnWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultNumberOfRows</B>(unsigned n)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultNumberOfColumns</B>(unsigned n)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultRowHeight</B>(int n)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultColumnWidth</B>(int n)
+<DT><IMG SRC=icon2.gif> void  <B>SetMarginHeight</B>(int n)
+<DT><IMG SRC=icon2.gif> void  <B>SetMarginWidth</B>(int n)
+<DT><IMG SRC=icon2.gif> void  <B>DefaultRowAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultColumnAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateRowAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateColumnAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateColumnAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> type)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateRowAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> type)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateDefaultColumnAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> newType)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateDefaultRowAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> newType)
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigRowAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultRowAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigColumnAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultColumnAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateTableLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineStyle</B>(<!2><A HREF="Side.html#DOC.299.1">Side::Type</A> side, <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> style)
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateTableLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineWidth</B>(<!2><A HREF="Side.html#DOC.299.1">Side::Type</A> side, unsigned width)
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateCellTextUnderline</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowRowColumnLabels</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>PrintRowColumnLabels</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateMarginWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateMarginHeight</B>()
+<DT><IMG SRC=icon2.gif> void  <B>AnnotateCell</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetCellAnnotation</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ScaleDialog.html">ScaleDialog</A>*  <B>GetScaleDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ToggleListDialog.html">ToggleListDialog</A>*  <B>GetPromptToggleDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="LineStyleSideDialog.html">LineStyleSideDialog</A>*  <B>GetTableLineStyleDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="LineWidthSideDialog.html">LineWidthSideDialog</A>*  <B>GetTableLineWidthDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextAlignmentDialog.html">TextAlignmentDialog</A>*  <B>GetRowAlignmentDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>*  <B>GetColumnAlignmentDialog</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="TableViewer.html">TableViewer</A>*  <B>GetTableViewer</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Document.html"> Document:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>MoveType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>New</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Load</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Save</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SaveAs</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SaveSelectionAs</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Quit</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDocInfo</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowSource</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SaveSource</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>ShowSummary</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>ModelCheckDocument</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Annotate</B>()
+<DT><IMG SRC=icon2.gif> void  <B>LoadSave</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DoLoad</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> void  <B>DoSaveAs</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> void  <B>DoSaveSelectionAs</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> double  <B>GetLoadFormat</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>NewFile</B>(const <!1><A HREF="string.html">string</A> *file)
+<DT><IMG SRC=icon2.gif> bool  <B>NewName</B>(const <!1><A HREF="string.html">string</A> *newname)
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *newname)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDocType</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetSuffix</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetToolName</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetAuthor</B>() const 
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetCreationTime</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsDefault</B>()
+<DT><IMG SRC=icon2.gif> void  <B>NewDir</B>(const <!1><A HREF="string.html">string</A> *newdir)
+<DT><IMG SRC=icon2.gif> void  <B>SetDir</B>(const <!1><A HREF="string.html">string</A> *newdir)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDir</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetFSDir</B>()
+<DT><IMG SRC=icon2.gif> void  <B>IncChanges</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DecChanges</B>()
+<DT><IMG SRC=icon2.gif> int  <B>GetChanges</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SetInlineEdit</B>(bool)
+<DT><IMG SRC=icon2.gif> bool  <B>IsModified</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetModified</B>(bool set)
+<DT><IMG SRC=icon2.gif> bool  <B>IsLoaded</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>MayWrite</B>(const <!1><A HREF="string.html">string</A> *path)
+<DT><IMG SRC=icon2.gif> void  <B>SetStatus</B>(const char *msg)
+<DT><IMG SRC=icon2.gif> void  <B>SetStatus</B>(const <!1><A HREF="string.html">string</A> *msg)
+<DT><IMG SRC=icon2.gif> void  <B>SetAnnotation</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Find</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Replace</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateWindow</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="EditWindow.html">EditWindow</A>*  <B>GetMainWindow</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Config.html">Config</A>*  <B>GetConfig</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Viewer.html">Viewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="InputFile.html">InputFile</A>*  <B>GetInputFile</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="OutputFile.html">OutputFile</A>*  <B>GetOutputFile</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  <B>GetSourceEditDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  <B>GetDocAnnotationDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextEditDialog.html">TextEditDialog</A>*  <B>GetEltAnnotationDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="FileSelectionDialog.html">FileSelectionDialog</A>*  <B>GetFileSelectionDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="FindDialog.html">FindDialog</A>*  <B>GetFindDialog</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ReplaceDialog.html">ReplaceDialog</A>*  <B>GetReplaceDialog</B>() const 
+</DL><DL>
+<DT><h3>Protected Fields</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="string.html">string</A>  <B>chkbuf</B>
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsAppending</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsSaveSelection</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UpdateDirectory</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>ShowDialog</B>(<!2><A HREF="MessageDialog.html#DOC.225.1">MessageDialog::DialogType</A>, const char *title, const char *text)
+<DT><IMG SRC=icon2.gif> void  <B>ShowDialog</B>(<!2><A HREF="MessageDialog.html#DOC.225.1">MessageDialog::DialogType</A>, const char *title, const <!1><A HREF="string.html">string</A> *text)
+<DT><IMG SRC=icon2.gif> void  <B>ReportCheck</B>(int errors, const <!1><A HREF="string.html">string</A> *msg)
+<DT><IMG SRC=icon2.gif> bool  <B>Save</B>(const <!1><A HREF="string.html">string</A> *file)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ function entity type table class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="FETable">
+<A NAME ="DOC.169.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  FETable(<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="FEWindow.html">FEWindow</A> *t, <!1><A HREF="FEViewer.html">FEViewer</A> *v)</B></TT>
+<DL></DL><P>
+<A NAME="CheckDocument">
+<A NAME ="DOC.169.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CheckDocument()</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

@@ -1,0 +1,132 @@
+<html><head><TITLE>SizeShapeCmd</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  SizeShapeCmd : public <!2><A HREF="Command.html#DOC.48.1">Command</A> </H2><BLOCKQUOTE>
+ abstract command class for resizing a shape.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CCommand,MCommand.html,CSizeShapeCmd,MSizeShapeCmd.html,CSizeShapeCenterCmd,MSizeShapeCenterCmd.html,CSizeShapeBorderCmd,MSizeShapeBorderCmd.html">
+<param name=before value="M,M,M|_,Mr_">
+<param name=after value="Md_,M,M,M">
+<param name=indent value="0,1,1,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.303.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>SizeShapeCmd</B> (<!1><A HREF="GShape.html">GShape</A> *<!2><A HREF="SizeShapeCmd.html#DOC.303.3">shape</A>, int <!2><A HREF="SizeShapeCmd.html#DOC.303.8">direction</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.303.2"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>TrackMouse</B> (<!2><A HREF="Command.html#DOC.48.3">TrackType</A> aPhase, <!1><A HREF="Point.html">Point</A> *anchorPoint, <!1><A HREF="Point.html">Point</A> *previousPoint, <!1><A HREF="Point.html">Point</A> *nextPoint)<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.303.3"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="GShape.html">GShape</A>* </TD><TD><B>shape</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.303.4"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>newWidth</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.303.5"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>newHeight</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.303.6"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>oldWidth</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.303.7"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>oldHeight</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.303.8"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>direction</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.303.9"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>constrainX</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.303.10"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>constrainY</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.303.11"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>DrawOutline</B> (const <!1><A HREF="Point.html">Point</A> *pt)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Command.html">Command:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>TrackType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>Execute</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>UnExecute</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>ReExecute</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Abort</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>CmdDone</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  const  char*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>ScaleCorrect</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>ScaleCorrect</B>(const <!1><A HREF="Point.html">Point</A> *pt) const 
+<DT><IMG SRC=icon2.gif> int  <B>Scale</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>Scale</B>(const <!1><A HREF="Point.html">Point</A> *pt) const 
+<DT><IMG SRC=icon2.gif> void  <B>SayAborted</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SayCommited</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SayUndone</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="DrawWindow.html">DrawWindow</A>*  <B>GetMainWindow</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Viewer.html">Viewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Document.html">Document</A>*  <B>GetDocument</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Grafport.html">Grafport</A>*  <B>GetGrafport</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetCmdDone</B>(bool b)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ abstract command class for resizing a shape.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="SizeShapeCmd">
+<A NAME ="DOC.303.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  SizeShapeCmd(<!1><A HREF="GShape.html">GShape</A> *<!2><A HREF="SizeShapeCmd.html#DOC.303.3">shape</A>, int <!2><A HREF="SizeShapeCmd.html#DOC.303.8">direction</A>)</B></TT>
+<DL></DL><P>
+<A NAME="TrackMouse">
+<A NAME ="DOC.303.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  TrackMouse(<!2><A HREF="Command.html#DOC.48.3">TrackType</A> aPhase, <!1><A HREF="Point.html">Point</A> *anchorPoint, <!1><A HREF="Point.html">Point</A> *previousPoint, <!1><A HREF="Point.html">Point</A> *nextPoint)</B></TT>
+<DL></DL><P>
+<A NAME="shape">
+<A NAME ="DOC.303.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="GShape.html">GShape</A>*  shape</B></TT>
+<DL></DL><P>
+<A NAME="newWidth">
+<A NAME ="DOC.303.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  newWidth</B></TT>
+<DL></DL><P>
+<A NAME="newHeight">
+<A NAME ="DOC.303.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  newHeight</B></TT>
+<DL></DL><P>
+<A NAME="oldWidth">
+<A NAME ="DOC.303.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  oldWidth</B></TT>
+<DL></DL><P>
+<A NAME="oldHeight">
+<A NAME ="DOC.303.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  oldHeight</B></TT>
+<DL></DL><P>
+<A NAME="direction">
+<A NAME ="DOC.303.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  direction</B></TT>
+<DL></DL><P>
+<A NAME="constrainX">
+<A NAME ="DOC.303.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  constrainX</B></TT>
+<DL></DL><P>
+<A NAME="constrainY">
+<A NAME ="DOC.303.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  constrainY</B></TT>
+<DL></DL><P>
+<A NAME="DrawOutline">
+<A NAME ="DOC.303.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  DrawOutline(const <!1><A HREF="Point.html">Point</A> *pt)</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="SizeShapeCenterCmd.html"> SizeShapeCenterCmd </A><br>
+<A HREF="SizeShapeBorderCmd.html"> SizeShapeBorderCmd </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

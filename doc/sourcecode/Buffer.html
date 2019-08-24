@@ -1,0 +1,91 @@
+<html><head><TITLE>Buffer</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Buffer  </H2><BLOCKQUOTE>
+ shape and subject cut-paste buffer class.
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.29.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Buffer</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.29.2"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>~Buffer</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.29.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Put</B> (<!1><A HREF="Subjects.html">Subjects</A> *, <!1><A HREF="Shapes.html">Shapes</A> *)<br>
+<I> Copy lists of subjects and shapes and hold them in the buffer.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.29.4"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Subjects.html">Subjects</A>* </TD><TD><B>GetSubjectsCopy</B> ()<br>
+<I> Copy subjects in the buffer and return them in a list.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.29.5"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Shapes.html">Shapes</A>* </TD><TD><B>GetShapesCopy</B> ()<br>
+<I> Copy shapes in the buffer and return them in a list.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.29.6"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Subjects.html">Subjects</A>* </TD><TD><B>GetSubjects</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.29.7"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Shapes.html">Shapes</A>* </TD><TD><B>GetShapes</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.29.8"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsEmpty</B> () const <br>
+<I> Returns if buffer is empty.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.29.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetUser</B> (<!1><A HREF="Command.html">Command</A> *c)<br>
+<I> Which command uses this buffer.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.29.10"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Command.html">Command</A>* </TD><TD><B>GetUser</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ shape and subject cut-paste buffer class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Buffer">
+<A NAME ="DOC.29.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Buffer()</B></TT>
+<DL></DL><P>
+<A NAME="~Buffer">
+<A NAME ="DOC.29.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  ~Buffer()</B></TT>
+<DL></DL><P>
+<A NAME="Put">
+<A NAME ="DOC.29.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Put(<!1><A HREF="Subjects.html">Subjects</A> *, <!1><A HREF="Shapes.html">Shapes</A> *)</B></TT>
+<DD> Copy lists of subjects and shapes and hold them in the buffer.
+<DL></DL><P>
+<A NAME="GetSubjectsCopy">
+<A NAME ="DOC.29.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Subjects.html">Subjects</A>*  GetSubjectsCopy()</B></TT>
+<DD> Copy subjects in the buffer and return them in a list.
+<DL></DL><P>
+<A NAME="GetShapesCopy">
+<A NAME ="DOC.29.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Shapes.html">Shapes</A>*  GetShapesCopy()</B></TT>
+<DD> Copy shapes in the buffer and return them in a list.
+<DL></DL><P>
+<A NAME="GetSubjects">
+<A NAME ="DOC.29.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Subjects.html">Subjects</A>*  GetSubjects() const </B></TT>
+<DL></DL><P>
+<A NAME="GetShapes">
+<A NAME ="DOC.29.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Shapes.html">Shapes</A>*  GetShapes() const </B></TT>
+<DL></DL><P>
+<A NAME="IsEmpty">
+<A NAME ="DOC.29.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsEmpty() const </B></TT>
+<DD> Returns if buffer is empty.
+<DL></DL><P>
+<A NAME="SetUser">
+<A NAME ="DOC.29.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetUser(<!1><A HREF="Command.html">Command</A> *c)</B></TT>
+<DD> Which command uses this buffer.
+<DL></DL><P>
+<A NAME="GetUser">
+<A NAME ="DOC.29.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Command.html">Command</A>*  GetUser()</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

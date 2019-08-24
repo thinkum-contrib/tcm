@@ -1,0 +1,49 @@
+# Configuration file for Solaris 2.x and GNU gcc compiler.
+
+include $(TCM_HOME)/src/Config.GEN
+
+INCLUDEDIRS	+= -I/Gnu/include/g++/
+
+# The RLIB tells where the .so files are to be found at runtime.
+# RLIB_DIR	= $(TCM_HOME)/lib
+# RLIB_DIR	= /home/tcm/lib
+
+# CC              = /opt/gnu/gcc/bin/g++
+# Cc              = /opt/gnu/gcc/bin/gcc
+CC              = /Gnu/bin/g++
+Cc              = /Gnu/bin/gcc
+
+ 
+# CFLAGS          = -pedantic
+# CFLAGS          += -O3 -fomit-frame-pointer -funroll-loops
+# CFLAGS       += -static
+CFLAGS         += -g
+ 
+LEX             = /usr/ccs/bin/lex
+YACC            = /usr/ccs/bin/yacc 
+RANLIB		= /usr/ccs/bin/ranlib
+AR		= /usr/ccs/bin/ar cr
+
+# We sometimes use purify to detect runtime errors.
+# PURIFY 		= purify -always-use-cache-dir=yes -cache-dir=/var/local/pcache
+
+# STRIP           = /usr/ccs/bin/strip
+STRIP           = true
+
+XWIN_HOME 	= /usr/openwin
+
+MOTIF_HOME 	= /usr/dt
+
+# MKDEPENDFLAGS	  = $(INCLUDEDIRS) -I/net/gcc-2.95.2/include/g++-3 -I/net/gcc-2.95.2/sparc-sun-solaris2.5.1/include
+# MKDEPENDFLAGS   = $(INCLUDEDIRS) -I/opt/gnu/gcc/include/g++-3
+MKDEPENDFLAGS   = $(INCLUDEDIRS) -I/net/gcc-2.7.2/lib/g++-include
+# MKDEPENDFLAGS   = $(INCLUDEDIRS) -I/usr/local/public/packages/egcs/include/g++
+
+SYSFLAGS        = -DSOLARIS -D__EXTENSIONS__
+# -DLESSTIF
+# -DDEBUG
+# -DDUMPWIDGETTREE
+
+LDFLAGS 	+= -R$(XWIN_LIB) -R$(MOTIF_LIB)
+
+LDLIBS 		= -lXm -lXt -lX11 -lgen -lintl -lm

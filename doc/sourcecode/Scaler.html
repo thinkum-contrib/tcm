@@ -1,0 +1,157 @@
+<html><head><TITLE>Scaler</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Scaler  </H2><BLOCKQUOTE>
+ class for scaling coordinates
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.289.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Scaler</B> (<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="Viewer.html">Viewer</A> *v, <!1><A HREF="DrawWindow.html">DrawWindow</A> *d)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Scaler</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>MakeLarger</B> ()<br>
+<I> Make larger. Change scale value.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>MakeSmaller</B> ()<br>
+<I> Make smaller. Change scale value.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ScaleFactor</B> ()<br>
+<I> Popup scale factor dialog.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>NormalScale</B> ()<br>
+<I> Return to normal scaling.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>WholeDrawing</B> ()<br>
+<I> Calculate scale value such that whole document fits to one page.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ScreenFit</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.9"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>Scale</B> (int x) const <br>
+<I> scale coordinate x.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.10"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Point.html">Point</A> </TD><TD><B>Scale</B> (const <!1><A HREF="Point.html">Point</A> *p) const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.11"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>ScaleCorrect</B> (int x) const <br>
+<I> Correct X-window coordinate to the right scaled coordinate.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.12"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Point.html">Point</A> </TD><TD><B>ScaleCorrect</B> (const <!1><A HREF="Point.html">Point</A> *p) const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetScaleValue</B> (double newValue)<br>
+<I> Really do the scaling. Redraws the contents of the viewer.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.14"> <IMG BORDER=0 SRC=icon1.gif></A> double </TD><TD><B>GetScaleValue</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetScaleFactor</B> (double d)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.16"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="DrawWindow.html">DrawWindow</A>* </TD><TD><B>GetMainWindow</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.17"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="ScaleDialog.html">ScaleDialog</A>* </TD><TD><B>GetScaleDialog</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.18"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Save</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f)<br>
+<I> Save scale value to file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.19"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Load</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, double format)<br>
+<I> Load scale value from file.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.289.20"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Check</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, double format)<br>
+<I> Check (but not load) scale value from file.</I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ class for scaling coordinates
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Scaler">
+<A NAME ="DOC.289.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Scaler(<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="Viewer.html">Viewer</A> *v, <!1><A HREF="DrawWindow.html">DrawWindow</A> *d)</B></TT>
+<DL></DL><P>
+<A NAME="~Scaler">
+<A NAME ="DOC.289.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Scaler()</B></TT>
+<DL></DL><P>
+<A NAME="MakeLarger">
+<A NAME ="DOC.289.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  MakeLarger()</B></TT>
+<DD> Make larger. Change scale value.
+<DL></DL><P>
+<A NAME="MakeSmaller">
+<A NAME ="DOC.289.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  MakeSmaller()</B></TT>
+<DD> Make smaller. Change scale value.
+<DL></DL><P>
+<A NAME="ScaleFactor">
+<A NAME ="DOC.289.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ScaleFactor()</B></TT>
+<DD> Popup scale factor dialog.
+<DL></DL><P>
+<A NAME="NormalScale">
+<A NAME ="DOC.289.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  NormalScale()</B></TT>
+<DD> Return to normal scaling.
+<DL></DL><P>
+<A NAME="WholeDrawing">
+<A NAME ="DOC.289.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  WholeDrawing()</B></TT>
+<DD> Calculate scale value such that whole document fits to one page.
+<DL></DL><P>
+<A NAME="ScreenFit">
+<A NAME ="DOC.289.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ScreenFit()</B></TT>
+<DL></DL><P>
+<A NAME="Scale">
+<A NAME ="DOC.289.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  Scale(int x) const </B></TT>
+<DD> scale coordinate x.
+<DL></DL><P>
+<A NAME="Scale">
+<A NAME ="DOC.289.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Point.html">Point</A>  Scale(const <!1><A HREF="Point.html">Point</A> *p) const </B></TT>
+<DL></DL><P>
+<A NAME="ScaleCorrect">
+<A NAME ="DOC.289.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  ScaleCorrect(int x) const </B></TT>
+<DD> Correct X-window coordinate to the right scaled coordinate.
+<DL></DL><P>
+<A NAME="ScaleCorrect">
+<A NAME ="DOC.289.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Point.html">Point</A>  ScaleCorrect(const <!1><A HREF="Point.html">Point</A> *p) const </B></TT>
+<DL></DL><P>
+<A NAME="SetScaleValue">
+<A NAME ="DOC.289.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetScaleValue(double newValue)</B></TT>
+<DD> Really do the scaling. Redraws the contents of the viewer.
+<DL></DL><P>
+<A NAME="GetScaleValue">
+<A NAME ="DOC.289.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> double  GetScaleValue() const </B></TT>
+<DL></DL><P>
+<A NAME="SetScaleFactor">
+<A NAME ="DOC.289.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetScaleFactor(double d)</B></TT>
+<DL></DL><P>
+<A NAME="GetMainWindow">
+<A NAME ="DOC.289.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="DrawWindow.html">DrawWindow</A>*  GetMainWindow() const </B></TT>
+<DL></DL><P>
+<A NAME="GetScaleDialog">
+<A NAME ="DOC.289.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="ScaleDialog.html">ScaleDialog</A>*  GetScaleDialog() const </B></TT>
+<DL></DL><P>
+<A NAME="Save">
+<A NAME ="DOC.289.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Save(<!1><A HREF="OutputFile.html">OutputFile</A> *f)</B></TT>
+<DD> Save scale value to file.
+<DL></DL><P>
+<A NAME="Load">
+<A NAME ="DOC.289.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Load(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)</B></TT>
+<DD> Load scale value from file.
+<DL></DL><P>
+<A NAME="Check">
+<A NAME ="DOC.289.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Check(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)</B></TT>
+<DD> Check (but not load) scale value from file.
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

@@ -1,0 +1,290 @@
+<html><head><TITLE>Dialog</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Dialog : public <!2><A HREF="MWidget.html#DOC.237.1">MWidget</A> </H2><BLOCKQUOTE>
+ abstract dialog class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=215>
+<param name=classes value="CComponent,MComponent.html,CMWidget,MMWidget.html,CDialog,MDialog.html,CTextViewDialog,MTextViewDialog.html,CTextFieldListDialog,MTextFieldListDialog.html,CSelectionDialog,MSelectionDialog.html,CMessageDialog,MMessageDialog.html">
+<param name=before value="M,M,M,M|_,MR_,MR_,Mr_">
+<param name=after value="Md_SP,Md_,M,M,M,M,M">
+<param name=indent value="0,1,2,2,2,2,2">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.115.30"> <IMG BORDER=0 SRC=icon1.gif></A> static  const  unsigned </TD><TD><B>MAXTITLE</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.115.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Dialog</B> (Widget <!2><A HREF="Dialog.html#DOC.115.36">parent</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Dialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.3"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>GetClassName</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Initialize</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.5"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetOKCallback</B> (XtCallbackProc fun, XtPointer clientData)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.6"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetCancelCallback</B> (XtCallbackProc fun, XtPointer clientData)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.7"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetHelpCallback</B> (XtCallbackProc fun, XtPointer clientData)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetOKButtonLabel</B> (const char *txt)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetCancelButtonLabel</B> (const char *txt)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetHelpButtonLabel</B> (const char *txt)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ManageOKButton</B> (bool)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ManageCancelButton</B> (bool)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ManageHelpButton</B> (bool)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.14"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetAutoDestroy</B> (bool b)<br>
+<I> delete itself when unmapped.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.15"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Popup</B> ()<br>
+<I> pop up dialog.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.16"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Popdown</B> ()<br>
+<I> pop down dialog.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.17"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTitle</B> (const char *title)<br>
+<I> set title string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.18"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTitle</B> (const <!1><A HREF="string.html">string</A> *title)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.19"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>GetTitle</B> (char *title)<br>
+<I> get title string.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.20"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>GetTitle</B> (<!1><A HREF="string.html">string</A> *title)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.21"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetModal</B> (bool b)<br>
+<I> make dialog application modal.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.22"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetAutoUnmanage</B> (bool b)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.23"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>GetAutoUnmanage</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.24"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetCenteredOnPointer</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.25"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>UnmanageCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.26"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DestroyCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.27"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>DestroyWidgetCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.28"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>TraverseNextCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.29"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>TraverseNextGroupCB</B> (Widget, XtPointer, XtPointer)<br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.115.31"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>GetParent</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.32"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ManageWidget</B> (Widget, bool)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.33"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>CreateWidget</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.34"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Configure</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.115.35"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ManageCenteredOnPointer</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="MWidget.html">MWidget:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>Manage</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>IsRealized</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetColormap</B>(Colormap cmap)
+<DT><IMG SRC=icon2.gif> void  <B>SetDestroyCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> void  <B>AddLiteClue</B>(Widget w, const char *text)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> Widget  <B>GetLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CreateLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>InstallDestroyHandler</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Component.html"> Component:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsManaged</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Unmanage</B>()
+<DT><IMG SRC=icon2.gif> Widget  <B>GetWidget</B>()
+<DT><IMG SRC=icon2.gif> Display*  <B>GetDisplay</B>()
+<DT><IMG SRC=icon2.gif> Window  <B>GetWindow</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetWidget</B>(Widget w)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const char *s)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ abstract dialog class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Dialog">
+<A NAME ="DOC.115.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Dialog(Widget <!2><A HREF="Dialog.html#DOC.115.36">parent</A>)</B></TT>
+<DL></DL><P>
+<A NAME="~Dialog">
+<A NAME ="DOC.115.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Dialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetClassName">
+<A NAME ="DOC.115.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  GetClassName()</B></TT>
+<DL></DL><P>
+<A NAME="Initialize">
+<A NAME ="DOC.115.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Initialize()</B></TT>
+<DL></DL><P>
+<A NAME="SetOKCallback">
+<A NAME ="DOC.115.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetOKCallback(XtCallbackProc fun, XtPointer clientData)</B></TT>
+<DL></DL><P>
+<A NAME="SetCancelCallback">
+<A NAME ="DOC.115.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetCancelCallback(XtCallbackProc fun, XtPointer clientData)</B></TT>
+<DL></DL><P>
+<A NAME="SetHelpCallback">
+<A NAME ="DOC.115.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetHelpCallback(XtCallbackProc fun, XtPointer clientData)</B></TT>
+<DL></DL><P>
+<A NAME="SetOKButtonLabel">
+<A NAME ="DOC.115.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetOKButtonLabel(const char *txt)</B></TT>
+<DL></DL><P>
+<A NAME="SetCancelButtonLabel">
+<A NAME ="DOC.115.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetCancelButtonLabel(const char *txt)</B></TT>
+<DL></DL><P>
+<A NAME="SetHelpButtonLabel">
+<A NAME ="DOC.115.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetHelpButtonLabel(const char *txt)</B></TT>
+<DL></DL><P>
+<A NAME="ManageOKButton">
+<A NAME ="DOC.115.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ManageOKButton(bool)</B></TT>
+<DL></DL><P>
+<A NAME="ManageCancelButton">
+<A NAME ="DOC.115.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ManageCancelButton(bool)</B></TT>
+<DL></DL><P>
+<A NAME="ManageHelpButton">
+<A NAME ="DOC.115.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ManageHelpButton(bool)</B></TT>
+<DL></DL><P>
+<A NAME="SetAutoDestroy">
+<A NAME ="DOC.115.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetAutoDestroy(bool b)</B></TT>
+<DD> delete itself when unmapped.
+<DL></DL><P>
+<A NAME="Popup">
+<A NAME ="DOC.115.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Popup()</B></TT>
+<DD> pop up dialog.
+<DL></DL><P>
+<A NAME="Popdown">
+<A NAME ="DOC.115.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Popdown()</B></TT>
+<DD> pop down dialog.
+<DL></DL><P>
+<A NAME="SetTitle">
+<A NAME ="DOC.115.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTitle(const char *title)</B></TT>
+<DD> set title string.
+<DL></DL><P>
+<A NAME="SetTitle">
+<A NAME ="DOC.115.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTitle(const <!1><A HREF="string.html">string</A> *title)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetTitle">
+<A NAME ="DOC.115.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  GetTitle(char *title)</B></TT>
+<DD> get title string.
+<DL></DL><P>
+<A NAME="GetTitle">
+<A NAME ="DOC.115.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  GetTitle(<!1><A HREF="string.html">string</A> *title)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="SetModal">
+<A NAME ="DOC.115.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetModal(bool b)</B></TT>
+<DD> make dialog application modal.
+<DL></DL><P>
+<A NAME="SetAutoUnmanage">
+<A NAME ="DOC.115.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetAutoUnmanage(bool b)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="GetAutoUnmanage">
+<A NAME ="DOC.115.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  GetAutoUnmanage()</B></TT>
+<DL></DL><P>
+<A NAME="SetCenteredOnPointer">
+<A NAME ="DOC.115.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetCenteredOnPointer(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="UnmanageCB">
+<A NAME ="DOC.115.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  UnmanageCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DestroyCB">
+<A NAME ="DOC.115.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DestroyCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="DestroyWidgetCB">
+<A NAME ="DOC.115.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  DestroyWidgetCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="TraverseNextCB">
+<A NAME ="DOC.115.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  TraverseNextCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="TraverseNextGroupCB">
+<A NAME ="DOC.115.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  TraverseNextGroupCB(Widget, XtPointer, XtPointer)</B></TT>
+<DL></DL><P>
+<A NAME="MAXTITLE">
+<A NAME ="DOC.115.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  const  unsigned  MAXTITLE</B></TT>
+<DL></DL><P>
+<A NAME="GetParent">
+<A NAME ="DOC.115.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  GetParent()</B></TT>
+<DL></DL><P>
+<A NAME="ManageWidget">
+<A NAME ="DOC.115.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ManageWidget(Widget, bool)</B></TT>
+<DL></DL><P>
+<A NAME="CreateWidget">
+<A NAME ="DOC.115.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  CreateWidget()</B></TT>
+<DL></DL><P>
+<A NAME="Configure">
+<A NAME ="DOC.115.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Configure()</B></TT>
+<DL></DL><P>
+<A NAME="ManageCenteredOnPointer">
+<A NAME ="DOC.115.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ManageCenteredOnPointer()</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="TextViewDialog.html"> TextViewDialog </A><br>
+<A HREF="TextFieldListDialog.html"> TextFieldListDialog </A><br>
+<A HREF="SelectionDialog.html"> SelectionDialog </A><br>
+<A HREF="MessageDialog.html"> MessageDialog </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

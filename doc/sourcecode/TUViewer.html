@@ -1,0 +1,274 @@
+<html><head><TITLE>TUViewer</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  TUViewer : public <!2><A HREF="MatrixViewer.html#DOC.222.1">MatrixViewer</A> </H2><BLOCKQUOTE>
+ transaction use table viewer class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CViewer,MViewer.html,CTableViewer,MTableViewer.html,CMatrixViewer,MMatrixViewer.html,CTUViewer,MTUViewer.html">
+<param name=before value="M,M,M,M">
+<param name=after value="Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.399.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>TUViewer</B> (<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="TableWindow.html">TableWindow</A> *t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.399.2"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Initialize</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="MatrixViewer.html">MatrixViewer:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>AddRow</B>(<!1><A HREF="CellRow.html">CellRow</A> *c)
+<DT><IMG SRC=icon2.gif> void  <B>AddColumn</B>(<!1><A HREF="CellColumn.html">CellColumn</A> *c)
+<DT><IMG SRC=icon2.gif> void  <B>InsertRow</B>(<!1><A HREF="CellRow.html">CellRow</A> *c)
+<DT><IMG SRC=icon2.gif> void  <B>InsertColumn</B>(<!1><A HREF="CellColumn.html">CellColumn</A> *c)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "TableViewer.html"> TableViewer:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetTable</B>(<!1><A HREF="Table.html">Table</A> *t)
+<DT><IMG SRC=icon2.gif> void  <B>InitTable</B>(unsigned <!2><A HREF="TableViewer.html#DOC.368.121">rows</A>, unsigned <!2><A HREF="TableViewer.html#DOC.368.122">columns</A>)
+<DT><IMG SRC=icon2.gif> void  <B>SetVisible</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>Draw</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Undraw</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>TextMode</B>(<!1><A HREF="CellText.html">CellText</A> *c)
+<DT><IMG SRC=icon2.gif> void  <B>TextModeOff</B>()
+<DT><IMG SRC=icon2.gif> void  <B>KeyTyped</B>(int x, int y, int key)
+<DT><IMG SRC=icon2.gif> void  <B>Select</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> void  <B>Adjust</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> void  <B>MovingPointer</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Command.html">Command</A>*  <B>Drag</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Command.html">Command</A>*  <B>Connect</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Cell.html">Cell</A>*  <B>HitCell</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="CellText.html">CellText</A>*  <B>HitCellText</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="LinePiece.html">LinePiece</A>*  <B>HitVLinePiece</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="LinePiece.html">LinePiece</A>*  <B>HitHLinePiece</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="RowColumnLabel.html">RowColumnLabel</A>*  <B>HitRowLabel</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="RowColumnLabel.html">RowColumnLabel</A>*  <B>HitColumnLabel</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> int  <B>HitRow</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> int  <B>HitColumn</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> void  <B>ShowRowColumnLabels</B>(bool b)
+<DT><IMG SRC=icon2.gif> void  <B>PrintRowColumnLabels</B>(bool b)
+<DT><IMG SRC=icon2.gif> bool  <B>IsShowRowColumnLabels</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsPrintRowColumnLabels</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>RecomputeSizeCell</B>(<!1><A HREF="Cell.html">Cell</A> *c)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateText</B>(<!1><A HREF="Cell.html">Cell</A> *c, const <!1><A HREF="string.html">string</A> *newtext)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>MoveRow</B>(<!1><A HREF="CellRow.html">CellRow</A> *r, unsigned newpos)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>MoveColumn</B>(<!1><A HREF="CellColumn.html">CellColumn</A> *c, unsigned newpos)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DeleteRow</B>(<!1><A HREF="CellRow.html">CellRow</A> *c)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>DeleteColumn</B>(<!1><A HREF="CellColumn.html">CellColumn</A> *c)
+<DT><IMG SRC=icon2.gif> void  <B>ResizeRow</B>(<!1><A HREF="CellRow.html">CellRow</A> *r, int newSize)
+<DT><IMG SRC=icon2.gif> void  <B>ResizeColumn</B>(<!1><A HREF="CellColumn.html">CellColumn</A> *c, int newSize)
+<DT><IMG SRC=icon2.gif> void  <B>Move</B>(const <!1><A HREF="Point.html">Point</A> *delta)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="CellRow.html">CellRow</A>*  <B>GiveRow</B>(unsigned r)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="CellColumn.html">CellColumn</A>*  <B>GiveColumn</B>(unsigned c)
+<DT><IMG SRC=icon2.gif> void  <B>GetSelectedRows</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="CellRow.html">CellRow</A> *> *r)
+<DT><IMG SRC=icon2.gif> void  <B>GetSelectedColumns</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="CellColumn.html">CellColumn</A> *> *c)
+<DT><IMG SRC=icon2.gif> void  <B>GetEmptyRows</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="CellRow.html">CellRow</A> *> *r)
+<DT><IMG SRC=icon2.gif> void  <B>GetEmptyColumns</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="CellColumn.html">CellColumn</A> *> *c)
+<DT><IMG SRC=icon2.gif> void  <B>DeselectAll</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SelectAll</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SelectCell</B>(<!1><A HREF="Cell.html">Cell</A> *c)
+<DT><IMG SRC=icon2.gif> void  <B>DeselectCell</B>(<!1><A HREF="Cell.html">Cell</A> *c)
+<DT><IMG SRC=icon2.gif> void  <B>SelectVector</B>(<!1><A HREF="CellVector.html">CellVector</A> *v)
+<DT><IMG SRC=icon2.gif> void  <B>DeselectVector</B>(<!1><A HREF="CellVector.html">CellVector</A> *v)
+<DT><IMG SRC=icon2.gif> bool  <B>IsAllSelected</B>(<!1><A HREF="CellVector.html">CellVector</A> *v)
+<DT><IMG SRC=icon2.gif> void  <B>MoveSelection</B>(int key)
+<DT><IMG SRC=icon2.gif> void  <B>CalcSizeElements</B>(<!1><A HREF="Point.html">Point</A> &<!2><A HREF="TableViewer.html#DOC.368.118">topLeft</A>, <!1><A HREF="Point.html">Point</A> &bottomRight)
+<DT><IMG SRC=icon2.gif> void  <B>CalcSizeSelection</B>(<!1><A HREF="Point.html">Point</A> &<!2><A HREF="TableViewer.html#DOC.368.118">topLeft</A>, <!1><A HREF="Point.html">Point</A> &bottomRight)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateMarginWidth</B>(int newWidth)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateMarginHeight</B>(int newHeight)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateDefaultRowHeight</B>(int n)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateDefaultColumnWidth</B>(int n)
+<DT><IMG SRC=icon2.gif> int  <B>GetDefaultRowHeight</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetDefaultColumnWidth</B>() const 
+<DT><IMG SRC=icon2.gif> unsigned  <B>GetNumberOfColumns</B>() const 
+<DT><IMG SRC=icon2.gif> unsigned  <B>GetNumberOfRows</B>() const 
+<DT><IMG SRC=icon2.gif> unsigned  <B>GetDefaultNumberOfColumns</B>() const 
+<DT><IMG SRC=icon2.gif> unsigned  <B>GetDefaultNumberOfRows</B>() const 
+<DT><IMG SRC=icon2.gif> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>  <B>GetDefaultRowAlignment</B>() const 
+<DT><IMG SRC=icon2.gif> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>  <B>GetDefaultColumnAlignment</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetRowHeight</B>(unsigned row)
+<DT><IMG SRC=icon2.gif> int  <B>GetColumnWidth</B>(unsigned column)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="Point.html">Point</A>*  <B>GetTopLeft</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetWidth</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetHeight</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetMarginWidth</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetMarginHeight</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>GetRowTopLeft</B>(unsigned row)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>GetColumnTopLeft</B>(unsigned column)
+<DT><IMG SRC=icon2.gif> void  <B>SetGrafport</B>(<!1><A HREF="Grafport.html">Grafport</A> *g)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="CellTextBuffer.html">CellTextBuffer</A>*  <B>GetBuffer</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>GetTopSelectionRow</B>()
+<DT><IMG SRC=icon2.gif> int  <B>GetLeftSelectionColumn</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <<!1><A HREF="Cell.html">Cell</A> *> *  <B>GetSelection</B>() const 
+<DT><IMG SRC=icon2.gif> unsigned  <B>NrSelected</B>() const 
+<DT><IMG SRC=icon2.gif> unsigned  <B>GetCurrentRow</B>() const 
+<DT><IMG SRC=icon2.gif> unsigned  <B>GetCurrentColumn</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetCurrentRow</B>(unsigned n)
+<DT><IMG SRC=icon2.gif> void  <B>SetCurrentColumn</B>(unsigned n)
+<DT><IMG SRC=icon2.gif> void  <B>GetCells</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="Cell.html">Cell</A> *> *cell, const <!1><A HREF="string.html">string</A> *s, bool sens, bool substring)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Cell.html">Cell</A>*  <B>GetNextCell</B>(const <!1><A HREF="string.html">string</A> *s, bool sens, bool substring)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultColumnAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultRowAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)
+<DT><IMG SRC=icon2.gif> void  <B>SetLineStyle</B>(<!2><A HREF="Side.html#DOC.299.1">Side::Type</A> side, <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> style)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultNumberOfRows</B>(unsigned)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultNumberOfColumns</B>(unsigned)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineWidthSelection</B>(unsigned wd)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineStyleSelection</B>(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> l)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateTextAlignmentSelection</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineColorSelection</B>(const <!1><A HREF="string.html">string</A> *color)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateTextColorSelection</B>(const <!1><A HREF="string.html">string</A> *color)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateFillColorSelection</B>(const <!1><A HREF="string.html">string</A> *color, <!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A> f)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultFont</B>(<!1><A HREF="XFont.html">XFont</A> *ft)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateFontSelection</B>(int f, int s, int p)
+<DT><IMG SRC=icon2.gif> bool  <B>ReadAttributes</B>(<!1><A HREF="InputFile.html">InputFile</A> *f, bool appending, unsigned &rowsToAdd, unsigned &columnsToAdd, double format)
+<DT><IMG SRC=icon2.gif> bool  <B>ReadColumns</B>(<!1><A HREF="InputFile.html">InputFile</A> *f, unsigned nr, unsigned fromRow, unsigned fromColumn, double format)
+<DT><IMG SRC=icon2.gif> bool  <B>ReadRows</B>(<!1><A HREF="InputFile.html">InputFile</A> *f, unsigned nr, unsigned fromRow, unsigned fromColumn, double format)
+<DT><IMG SRC=icon2.gif> void  <B>WriteAttributes</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *f)
+<DT><IMG SRC=icon2.gif> void  <B>WriteColumns</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *f)
+<DT><IMG SRC=icon2.gif> void  <B>WriteRows</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *f)
+<DT><IMG SRC=icon2.gif> void  <B>WriteSelection</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *f)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <<!1><A HREF="CellRow.html">CellRow</A> *> *  <B>GetRows</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <<!1><A HREF="CellColumn.html">CellColumn</A> *> *  <B>GetColumns</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultColumnWidth</B>(int w)
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultRowHeight</B>(int h)
+<DT><IMG SRC=icon2.gif> void  <B>SetMarginWidth</B>(int w)
+<DT><IMG SRC=icon2.gif> void  <B>SetMarginHeight</B>(int h)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Viewer.html"> Viewer:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Fields</h3><DD><DT><IMG SRC=icon2.gif> static  const  int  <B>MIN_LINE_WIDTH</B>
+<DT><IMG SRC=icon2.gif> static  const  int  <B>MAX_LINE_WIDTH</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="Scaler.html">Scaler</A>*  <B>GetScaler</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Command.html">Command</A>*  <B>GetLastCmd</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="DrawWindow.html">DrawWindow</A>*  <B>GetMainWindow</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Grafport.html">Grafport</A>*  <B>GetGrafport</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Printer.html">Printer</A>*  <B>GetPrinter</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetPrinter</B>(<!1><A HREF="Printer.html">Printer</A> *p)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>*  <B>GetLineWidthDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>*  <B>GetLineStyleDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="NToggleListDialog.html">NToggleListDialog</A>*  <B>GetTextAlignmentDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="FontChooserDialog.html">FontChooserDialog</A>*  <B>GetFontChooserDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="FileSelectionDialog.html">FileSelectionDialog</A>*  <B>GetPrintFileSelectionDialog</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="ColorChooserDialog.html">ColorChooserDialog</A>*  <B>GetColorChooserDialog</B>()
+<DT><IMG SRC=icon2.gif> int  <B>Scale</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>Scale</B>(const <!1><A HREF="Point.html">Point</A> *p) const 
+<DT><IMG SRC=icon2.gif> int  <B>ScaleCorrect</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>ScaleCorrect</B>(const <!1><A HREF="Point.html">Point</A> *p) const 
+<DT><IMG SRC=icon2.gif> void  <B>Undo</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Redo</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Refresh</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Redraw</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Activate</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Deactivate</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultLineWidth</B>(unsigned d)
+<DT><IMG SRC=icon2.gif> int  <B>GetDefaultLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigLineWidth</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultLineStyle</B>(<!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A> l)
+<DT><IMG SRC=icon2.gif> <!2><A HREF="LineStyle.html#DOC.213.1">LineStyle::Type</A>  <B>GetDefaultLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigLineStyle</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultLineColor</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDefaultLineColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultTextColor</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDefaultTextColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultFillColor</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetDefaultFillColor</B>()
+<DT><IMG SRC=icon2.gif> <!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A>  <B>GetDefaultFillStyle</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultFillStyle</B>(<!2><A HREF="FillStyle.html#DOC.176.1">FillStyle::Type</A> l)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateLineColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultLineColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultLineColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigLineColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateTextColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultTextColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultTextColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigTextColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UpdateFillColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultFillColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultFillColor</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigFillColor</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="XFont.html">XFont</A>*  <B>GetDefaultFont</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultFontAttributes</B>(int f, int s, int p)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateFont</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultFont</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultFont</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigFont</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="XFont.html">XFont</A>*  <B>GetFont</B>(int family, int style, int size)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="XFont.html">XFont</A>*  <B>GetFont</B>(const char *description)
+<DT><IMG SRC=icon2.gif> void  <B>UpdateTextAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DefaultTextAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowDefaultTextAlignment</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowConfigTextAlignment</B>()
+<DT><IMG SRC=icon2.gif> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>  <B>GetDefaultTextAlignment</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetDefaultTextAlignment</B>(<!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> a)
+<DT><IMG SRC=icon2.gif> void  <B>EditText</B>(int key)
+<DT><IMG SRC=icon2.gif> bool  <B>IsAutoResize</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetAutoResize</B>(bool s)
+<DT><IMG SRC=icon2.gif> bool  <B>IsInlineEdit</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetInlineEdit</B>(bool s)
+<DT><IMG SRC=icon2.gif> bool  <B>IsPasting</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetPasting</B>(bool b)
+<DT><IMG SRC=icon2.gif> bool  <B>IsZigZag</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetZigZag</B>(bool b)
+<DT><IMG SRC=icon2.gif> bool  <B>IsEditing</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>DoubleClick</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DoFunctionKey</B>(int)
+<DT><IMG SRC=icon2.gif> void  <B>NewCommand</B>(<!1><A HREF="Command.html">Command</A> *newCmd)
+<DT><IMG SRC=icon2.gif> void  <B>AbortCommand</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ExecuteCommand</B>()
+<DT><IMG SRC=icon2.gif> void  <B>UndoCommand</B>()
+<DT><IMG SRC=icon2.gif> void  <B>RedoCommand</B>()
+<DT><IMG SRC=icon2.gif> void  <B>DeleteCommands</B>()
+<DT><IMG SRC=icon2.gif> void  <B>GetPageSize</B>(double &width, double &height)
+<DT><IMG SRC=icon2.gif> void  <B>Save</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *f)
+<DT><IMG SRC=icon2.gif> bool  <B>Load</B>(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)
+<DT><IMG SRC=icon2.gif> bool  <B>Check</B>(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>ClearGrafport</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="InlineEditor.html">InlineEditor</A>*  <B>GetInlineEditor</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetInlineEditor</B>(<!1><A HREF="InlineEditor.html">InlineEditor</A> *i)
+<DT><IMG SRC=icon2.gif> void  <B>SetEditing</B>(bool b)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ transaction use table viewer class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="TUViewer">
+<A NAME ="DOC.399.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  TUViewer(<!1><A HREF="Config.html">Config</A> *c, <!1><A HREF="TableWindow.html">TableWindow</A> *t)</B></TT>
+<DL></DL><P>
+<A NAME="Initialize">
+<A NAME ="DOC.399.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Initialize()</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

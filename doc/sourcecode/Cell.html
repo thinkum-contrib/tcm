@@ -1,0 +1,316 @@
+<html><head><TITLE>Cell</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Cell  </H2><BLOCKQUOTE>
+ (table) cell class.
+</BLOCKQUOTE>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.36.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Cell</B> (<!1><A HREF="Grafport.html">Grafport</A> *g, <!1><A HREF="XFont.html">XFont</A> *ft, <!1><A HREF="CellRow.html">CellRow</A> *<!2><A HREF="Cell.html#DOC.36.46">row</A>, <!1><A HREF="CellColumn.html">CellColumn</A> *<!2><A HREF="Cell.html#DOC.36.47">column</A>, int x, int y, int wd, int ht)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Cell</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.3"> <IMG BORDER=0 SRC=icon1.gif></A> friend  int </TD><TD><B>operator==</B> (const <!2><A HREF="Cell.html#DOC.36.1">Cell</A> &c1, const <!2><A HREF="Cell.html#DOC.36.1">Cell</A> &c2)<br>
+<I> alphabetical text comparison.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Draw</B> ()<br>
+<I> draw the cell.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Undraw</B> ()<br>
+<I> erase the cell.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdatePosition</B> (const <!1><A HREF="Point.html">Point</A> *pt)<br>
+<I> reposition and redraw </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateSize</B> (int wd, int ht)<br>
+<I> resize and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateSelect</B> (bool)<br>
+<I> (de)select and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateFont</B> (<!1><A HREF="XFont.html">XFont</A> *ft)<br>
+<I> update text font and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateTextPosition</B> ()<br>
+<I> recalculate text position and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetTextSize</B> ()<br>
+<I> recalculate text size.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPosition</B> (const <!1><A HREF="Point.html">Point</A> *pt)<br>
+<I> reposition cell + text</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetSize</B> (int wd, int ht)<br>
+<I> resize cell.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetGrafport</B> (<!1><A HREF="Grafport.html">Grafport</A> *g)<br>
+<I> change grafport</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.15"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>ContainsPt</B> (int x, int y) const <br>
+<I> true iff (x,y) is inside cell.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Write</B> (<!1><A HREF="OutputFile.html">OutputFile</A> *f)<br>
+<I> write cell attributes to output stream (file).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.17"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Read</B> (<!1><A HREF="InputFile.html">InputFile</A> *f, double format)<br>
+<I> read cell attributes from input stream (file).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.18"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UpdateText</B> (const <!1><A HREF="string.html">string</A> *)<br>
+<I> update cell text and redraw.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.19"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ClearText</B> ()<br>
+<I> make cell text empty.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.20"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>HasText</B> (const <!1><A HREF="string.html">string</A> *s) const <br>
+<I> true iff celltext is 's'.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.21"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>HasText</B> (const <!1><A HREF="string.html">string</A> *s, bool c1, bool c2)<br>
+<I> true iff celltext contains 's' (c1: case sensitive).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.22"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetRow</B> (<!1><A HREF="CellRow.html">CellRow</A> *r)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.23"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetColumn</B> (<!1><A HREF="CellColumn.html">CellColumn</A> *c)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.24"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="CellRow.html">CellRow</A>* </TD><TD><B>GetRow</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.25"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="CellColumn.html">CellColumn</A>* </TD><TD><B>GetColumn</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.26"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="Point.html">Point</A>* </TD><TD><B>GetPosition</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.27"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="Point.html">Point</A>* </TD><TD><B>GetTopLeft</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.28"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetWidth</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.29"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetHeight</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.30"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsSelected</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.31"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsEditable</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.32"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetEditable</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.33"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsVisible</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.34"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetVisible</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.35"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="CellText.html">CellText</A>* </TD><TD><B>GetCellText</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.36"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetText</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.37"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetFont</B> (<!1><A HREF="XFont.html">XFont</A> *ft)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.38"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="XFont.html">XFont</A>* </TD><TD><B>GetFont</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.39"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetXLFD</B> (const char *descr)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.40"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetTextWidth</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.41"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetTextHeight</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.42"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A> </TD><TD><B>GetColumnAlignment</B> () const <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.43"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CalcCellTextPosition</B> ()<br>
+<I> set cell text pos. given row/column alignment + margin width/height.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.44"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetAnnotation</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.36.45"> <IMG BORDER=0 SRC=icon1.gif></A> const  <!1><A HREF="string.html">string</A>* </TD><TD><B>GetAnnotation</B> () const <br>
+<I></I>
+</TD></TR></TABLE></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ (table) cell class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Cell">
+<A NAME ="DOC.36.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Cell(<!1><A HREF="Grafport.html">Grafport</A> *g, <!1><A HREF="XFont.html">XFont</A> *ft, <!1><A HREF="CellRow.html">CellRow</A> *<!2><A HREF="Cell.html#DOC.36.46">row</A>, <!1><A HREF="CellColumn.html">CellColumn</A> *<!2><A HREF="Cell.html#DOC.36.47">column</A>, int x, int y, int wd, int ht)</B></TT>
+<DL></DL><P>
+<A NAME="~Cell">
+<A NAME ="DOC.36.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Cell()</B></TT>
+<DL></DL><P>
+<A NAME="operator==">
+<A NAME ="DOC.36.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  int  operator==(const <!2><A HREF="Cell.html#DOC.36.1">Cell</A> &c1, const <!2><A HREF="Cell.html#DOC.36.1">Cell</A> &c2)</B></TT>
+<DD> alphabetical text comparison.
+<DL></DL><P>
+<A NAME="Draw">
+<A NAME ="DOC.36.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Draw()</B></TT>
+<DD> draw the cell.
+<DL></DL><P>
+<A NAME="Undraw">
+<A NAME ="DOC.36.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Undraw()</B></TT>
+<DD> erase the cell.
+<DL></DL><P>
+<A NAME="UpdatePosition">
+<A NAME ="DOC.36.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdatePosition(const <!1><A HREF="Point.html">Point</A> *pt)</B></TT>
+<DD> reposition and redraw 
+<DL></DL><P>
+<A NAME="UpdateSize">
+<A NAME ="DOC.36.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateSize(int wd, int ht)</B></TT>
+<DD> resize and redraw.
+<DL></DL><P>
+<A NAME="UpdateSelect">
+<A NAME ="DOC.36.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateSelect(bool)</B></TT>
+<DD> (de)select and redraw.
+<DL></DL><P>
+<A NAME="UpdateFont">
+<A NAME ="DOC.36.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateFont(<!1><A HREF="XFont.html">XFont</A> *ft)</B></TT>
+<DD> update text font and redraw.
+<DL></DL><P>
+<A NAME="UpdateTextPosition">
+<A NAME ="DOC.36.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateTextPosition()</B></TT>
+<DD> recalculate text position and redraw.
+<DL></DL><P>
+<A NAME="SetTextSize">
+<A NAME ="DOC.36.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetTextSize()</B></TT>
+<DD> recalculate text size.
+<DL></DL><P>
+<A NAME="SetPosition">
+<A NAME ="DOC.36.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPosition(const <!1><A HREF="Point.html">Point</A> *pt)</B></TT>
+<DD> reposition cell + text
+<DL></DL><P>
+<A NAME="SetSize">
+<A NAME ="DOC.36.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetSize(int wd, int ht)</B></TT>
+<DD> resize cell.
+<DL></DL><P>
+<A NAME="SetGrafport">
+<A NAME ="DOC.36.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetGrafport(<!1><A HREF="Grafport.html">Grafport</A> *g)</B></TT>
+<DD> change grafport
+<DL></DL><P>
+<A NAME="ContainsPt">
+<A NAME ="DOC.36.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  ContainsPt(int x, int y) const </B></TT>
+<DD> true iff (x,y) is inside cell.
+<DL></DL><P>
+<A NAME="Write">
+<A NAME ="DOC.36.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Write(<!1><A HREF="OutputFile.html">OutputFile</A> *f)</B></TT>
+<DD> write cell attributes to output stream (file).
+<DL></DL><P>
+<A NAME="Read">
+<A NAME ="DOC.36.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Read(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)</B></TT>
+<DD> read cell attributes from input stream (file).
+<DL></DL><P>
+<A NAME="UpdateText">
+<A NAME ="DOC.36.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UpdateText(const <!1><A HREF="string.html">string</A> *)</B></TT>
+<DD> update cell text and redraw.
+<DL></DL><P>
+<A NAME="ClearText">
+<A NAME ="DOC.36.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ClearText()</B></TT>
+<DD> make cell text empty.
+<DL></DL><P>
+<A NAME="HasText">
+<A NAME ="DOC.36.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  HasText(const <!1><A HREF="string.html">string</A> *s) const </B></TT>
+<DD> true iff celltext is 's'.
+<DL></DL><P>
+<A NAME="HasText">
+<A NAME ="DOC.36.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  HasText(const <!1><A HREF="string.html">string</A> *s, bool c1, bool c2)</B></TT>
+<DD> true iff celltext contains 's' (c1: case sensitive).
+<DL></DL><P>
+<A NAME="SetRow">
+<A NAME ="DOC.36.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetRow(<!1><A HREF="CellRow.html">CellRow</A> *r)</B></TT>
+<DL></DL><P>
+<A NAME="SetColumn">
+<A NAME ="DOC.36.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetColumn(<!1><A HREF="CellColumn.html">CellColumn</A> *c)</B></TT>
+<DL></DL><P>
+<A NAME="GetRow">
+<A NAME ="DOC.36.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="CellRow.html">CellRow</A>*  GetRow() const </B></TT>
+<DL></DL><P>
+<A NAME="GetColumn">
+<A NAME ="DOC.36.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="CellColumn.html">CellColumn</A>*  GetColumn() const </B></TT>
+<DL></DL><P>
+<A NAME="GetPosition">
+<A NAME ="DOC.36.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="Point.html">Point</A>*  GetPosition() const </B></TT>
+<DL></DL><P>
+<A NAME="GetTopLeft">
+<A NAME ="DOC.36.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="Point.html">Point</A>*  GetTopLeft() const </B></TT>
+<DL></DL><P>
+<A NAME="GetWidth">
+<A NAME ="DOC.36.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetWidth() const </B></TT>
+<DL></DL><P>
+<A NAME="GetHeight">
+<A NAME ="DOC.36.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetHeight() const </B></TT>
+<DL></DL><P>
+<A NAME="IsSelected">
+<A NAME ="DOC.36.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsSelected() const </B></TT>
+<DL></DL><P>
+<A NAME="IsEditable">
+<A NAME ="DOC.36.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsEditable() const </B></TT>
+<DL></DL><P>
+<A NAME="SetEditable">
+<A NAME ="DOC.36.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetEditable(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="IsVisible">
+<A NAME ="DOC.36.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsVisible() const </B></TT>
+<DL></DL><P>
+<A NAME="SetVisible">
+<A NAME ="DOC.36.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetVisible(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="GetCellText">
+<A NAME ="DOC.36.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="CellText.html">CellText</A>*  GetCellText() const </B></TT>
+<DL></DL><P>
+<A NAME="GetText">
+<A NAME ="DOC.36.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetText() const </B></TT>
+<DL></DL><P>
+<A NAME="SetFont">
+<A NAME ="DOC.36.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetFont(<!1><A HREF="XFont.html">XFont</A> *ft)</B></TT>
+<DL></DL><P>
+<A NAME="GetFont">
+<A NAME ="DOC.36.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="XFont.html">XFont</A>*  GetFont() const </B></TT>
+<DL></DL><P>
+<A NAME="SetXLFD">
+<A NAME ="DOC.36.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetXLFD(const char *descr)</B></TT>
+<DL></DL><P>
+<A NAME="GetTextWidth">
+<A NAME ="DOC.36.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetTextWidth() const </B></TT>
+<DL></DL><P>
+<A NAME="GetTextHeight">
+<A NAME ="DOC.36.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetTextHeight() const </B></TT>
+<DL></DL><P>
+<A NAME="GetColumnAlignment">
+<A NAME ="DOC.36.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="TextAlign.html#DOC.374.1">TextAlign::Type</A>  GetColumnAlignment() const </B></TT>
+<DL></DL><P>
+<A NAME="CalcCellTextPosition">
+<A NAME ="DOC.36.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CalcCellTextPosition()</B></TT>
+<DD> set cell text pos. given row/column alignment + margin width/height.
+<DL></DL><P>
+<A NAME="SetAnnotation">
+<A NAME ="DOC.36.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetAnnotation(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="GetAnnotation">
+<A NAME ="DOC.36.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  <!1><A HREF="string.html">string</A>*  GetAnnotation() const </B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

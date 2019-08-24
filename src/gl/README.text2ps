@@ -1,0 +1,10 @@
+This program converts text files into PostScript.
+There are lots of options, but there are special options for the two most
+common uses:
+	-1	one column, portrait mode
+	-2	two columns, landscape mode
+
+Just type `make' to compile.
+If you don't use A4 paper you may want to change the defines for PAGE_HEIGHT
+and PAGE_WIDTH.  These are in 10ths of inches.  If you do that, it may be that
+you don't get 66 lines on a page anymore.

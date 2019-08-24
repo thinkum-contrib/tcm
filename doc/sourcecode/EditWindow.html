@@ -1,0 +1,621 @@
+<html><head><TITLE>EditWindow</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  EditWindow : public <!2><A HREF="MainWindow.html#DOC.220.1">MainWindow</A> </H2><BLOCKQUOTE>
+ (abstract) main window class common to all editors.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=155>
+<param name=classes value="CComponent,MComponent.html,CMWidget,MMWidget.html,CMainWindow,MMainWindow.html,CEditWindow,MEditWindow.html,CDrawWindow,MDrawWindow.html">
+<param name=before value="M,M,M,M,M^_">
+<param name=after value="Md_SPSP,Md_SP,Md_,M,M">
+<param name=indent value="0,1,2,3,3">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Classes</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.143.5"> <IMG BORDER=0 SRC=icon1.gif></A>  enum </TD><TD><B>ScreenType</B> <br>
+<I> most common screen sizes.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.143.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>EditWindow</B> (const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~EditWindow</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.3"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>GetClassName</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Manage</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetStatus</B> (const char *message)<br>
+<I> set text field of status area to message</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetStatus</B> (const <!1><A HREF="string.html">string</A> *message)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.8"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDocumentName</B> (const char *s)<br>
+<I> set text field of document name to s</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.9"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDocumentName</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.10"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDocumentType</B> (const char *s)<br>
+<I> set text field of document type to s</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.11"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDocumentType</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.12"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDocumentLevel</B> (const char *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.13"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDocumentLevel</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.14"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDirName</B> (const char *s)<br>
+<I> set text field of directory name to s</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.15"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDirName</B> (const <!1><A HREF="string.html">string</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetModified</B> (bool set)<br>
+<I> set/reset modified toggle</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.17"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetUndoName</B> (const char *s)<br>
+<I> sets name of edit undo menu item.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.18"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>SetRedoName</B> (const char *s)<br>
+<I> sets name of edit redo menu item.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.19"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>EnableUndo</B> (bool flag)<br>
+<I> enables edit undo menu item.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.20"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>EnableRedo</B> (bool flag)<br>
+<I> enables edit redo menu item.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.21"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>EnableDocumentSource</B> (bool)<br>
+<I> enable show document source menu item.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.22"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsDoMap</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.23"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>GetFileMenu</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.24"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>GetEditMenu</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.25"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>GetPrintMenu</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.26"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>GetHelpMenu</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.27"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>GetViewMenu</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.28"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>GetSearchMenu</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.29"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>GetPropertiesMenu</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.30"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>GetPopupEditItems</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.31"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPageSubMenuItem</B> (const char *text, int n)<br>
+<I> set toggles in submenu of page menu.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.32"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetPageMenuItem</B> (const char *text, bool b)<br>
+<I> set toggle in page menu.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Fields</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.143.65"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>fileMenu</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.66"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>editMenu</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.67"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>printMenu</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.68"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>pageMenu</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.69"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>viewMenu</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.70"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>propertiesMenu</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.71"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>helpMenu</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.72"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Menu.html">Menu</A>* </TD><TD><B>searchMenu</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.73"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>popupEditItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.74"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>fileItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.75"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>editItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.76"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>viewItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.77"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>bannerPageItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.78"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>printItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.79"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>searchItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.80"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>propertiesItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.81"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>printerOptionsItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.82"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>helpItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.83"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>pageOrientationItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.84"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>pageSizeItems</B> <br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.85"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MenuItem.html">MenuItem</A>* </TD><TD><B>pageItems</B> <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.143.33"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Document.html">Document</A>* </TD><TD><B>GetDocument</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.34"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDocument</B> (<!1><A HREF="Document.html">Document</A> *d)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.35"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Printer.html">Printer</A>* </TD><TD><B>GetPrinter</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.36"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Helper.html">Helper</A>* </TD><TD><B>GetHelper</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.37"> <IMG BORDER=0 SRC=icon1.gif></A> int </TD><TD><B>GetArgsLeft</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.38"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetArgsLeft</B> (int n)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.39"> <IMG BORDER=0 SRC=icon1.gif></A> <!2><A HREF="EditWindow.html#DOC.143.5">ScreenType</A> </TD><TD><B>GetScreenType</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.40"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>IsDoLoad</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.41"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDoLoad</B> (bool b)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.42"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetLoadFile</B> (const char *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.43"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>GetMenuBar</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.44"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetMenuBar</B> (Widget w)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.45"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>GetDocumentArea</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.46"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDocumentArea</B> (Widget w)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.47"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>GetStatusArea</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.48"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetStatusArea</B> (Widget w)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.49"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>GetControlArea</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.50"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetControlArea</B> (Widget w)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.51"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>GetLogo</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.52"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetLogo</B> (Widget w)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.53"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>GetDirName</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.54"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SetDirName</B> (Widget w)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.55"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>ParseUserOptions</B> (int argc, char **argv)<br>
+<I> parse user options.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.56"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>CreateWorkArea</B> (Widget parent, int argc, char **argv)<br>
+<I> create the work area of a document window widget (a frame).</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.57"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  Widget </TD><TD><B>CreateMenuBar</B> (Widget parent)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.58"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  Widget </TD><TD><B>CreateLogo</B> (Widget parent)<br>
+<I> </I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.59"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  Widget </TD><TD><B>CreateDocumentArea</B> (Widget parent)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.60"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  Widget </TD><TD><B>CreateStatusArea</B> (Widget parent)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.61"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  Widget </TD><TD><B>CreateControlArea</B> (Widget parent)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.62"> <IMG BORDER=0 SRC=icon1.gif></A> Widget </TD><TD><B>CreateToggle</B> (Widget parent, const char *label, bool Init, XtCallbackProc fun, XtPointer clientData)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.63"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Finalize</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.64"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>InitMenuItems</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.143.86"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>WriteUsage</B> (const char *s)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="MainWindow.html">MainWindow:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>Initialize</B>(int argc, char** argv, <!1><A HREF="Config.html">Config</A> *<!2><A HREF="MainWindow.html#DOC.220.29">config</A>)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Unmanage</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Iconify</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ManageUnmapped</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Close</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetTitle</B>(const char *title)
+<DT><IMG SRC=icon2.gif> void  <B>SetTitle</B>(const <!1><A HREF="string.html">string</A> *title)
+<DT><IMG SRC=icon2.gif> void  <B>SetIconName</B>(const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)
+<DT><IMG SRC=icon2.gif> void  <B>SetIconPixmap</B>(Pixmap px)
+<DT><IMG SRC=icon2.gif> void  <B>SetCursor</B>(int cursorNum)
+<DT><IMG SRC=icon2.gif> void  <B>SetSizeCursor</B>(int cursorNum)
+<DT><IMG SRC=icon2.gif> virtual  int  <B>GetTool</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="PrinterOptions.html">PrinterOptions</A>*  <B>GetPrinterOptions</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>CreateComponents</B>(Widget window)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="MouseCursor.html">MouseCursor</A>*  <B>GetCursor</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Config.html">Config</A>*  <B>GetConfig</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "MWidget.html"> MWidget:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsRealized</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetColormap</B>(Colormap cmap)
+<DT><IMG SRC=icon2.gif> void  <B>SetDestroyCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> void  <B>AddLiteClue</B>(Widget w, const char *text)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> Widget  <B>GetLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CreateLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>InstallDestroyHandler</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Component.html"> Component:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsManaged</B>()
+<DT><IMG SRC=icon2.gif> Widget  <B>GetWidget</B>()
+<DT><IMG SRC=icon2.gif> Display*  <B>GetDisplay</B>()
+<DT><IMG SRC=icon2.gif> Window  <B>GetWindow</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetWidget</B>(Widget w)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const char *s)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ (abstract) main window class common to all editors.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="EditWindow">
+<A NAME ="DOC.143.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  EditWindow(const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)</B></TT>
+<DL></DL><P>
+<A NAME="~EditWindow">
+<A NAME ="DOC.143.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~EditWindow()</B></TT>
+<DL></DL><P>
+<A NAME="GetClassName">
+<A NAME ="DOC.143.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  GetClassName()</B></TT>
+<DL></DL><P>
+<A NAME="Manage">
+<A NAME ="DOC.143.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Manage()</B></TT>
+<DL></DL><P>
+<A NAME="ScreenType">
+<A NAME ="DOC.143.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  enum  ScreenType</B></TT>
+<DD> most common screen sizes.
+<DL></DL><P>
+<A NAME="SetStatus">
+<A NAME ="DOC.143.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetStatus(const char *message)</B></TT>
+<DD> set text field of status area to message
+<DL></DL><P>
+<A NAME="SetStatus">
+<A NAME ="DOC.143.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetStatus(const <!1><A HREF="string.html">string</A> *message)</B></TT>
+<DL></DL><P>
+<A NAME="SetDocumentName">
+<A NAME ="DOC.143.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDocumentName(const char *s)</B></TT>
+<DD> set text field of document name to s
+<DL></DL><P>
+<A NAME="SetDocumentName">
+<A NAME ="DOC.143.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDocumentName(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="SetDocumentType">
+<A NAME ="DOC.143.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDocumentType(const char *s)</B></TT>
+<DD> set text field of document type to s
+<DL></DL><P>
+<A NAME="SetDocumentType">
+<A NAME ="DOC.143.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDocumentType(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="SetDocumentLevel">
+<A NAME ="DOC.143.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDocumentLevel(const char *s)</B></TT>
+<DL></DL><P>
+<A NAME="SetDocumentLevel">
+<A NAME ="DOC.143.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDocumentLevel(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="SetDirName">
+<A NAME ="DOC.143.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDirName(const char *s)</B></TT>
+<DD> set text field of directory name to s
+<DL></DL><P>
+<A NAME="SetDirName">
+<A NAME ="DOC.143.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDirName(const <!1><A HREF="string.html">string</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="SetModified">
+<A NAME ="DOC.143.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetModified(bool set)</B></TT>
+<DD> set/reset modified toggle
+<DL></DL><P>
+<A NAME="SetUndoName">
+<A NAME ="DOC.143.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetUndoName(const char *s)</B></TT>
+<DD> sets name of edit undo menu item.
+<DL></DL><P>
+<A NAME="SetRedoName">
+<A NAME ="DOC.143.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  SetRedoName(const char *s)</B></TT>
+<DD> sets name of edit redo menu item.
+<DL></DL><P>
+<A NAME="EnableUndo">
+<A NAME ="DOC.143.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  EnableUndo(bool flag)</B></TT>
+<DD> enables edit undo menu item.
+<DL></DL><P>
+<A NAME="EnableRedo">
+<A NAME ="DOC.143.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  EnableRedo(bool flag)</B></TT>
+<DD> enables edit redo menu item.
+<DL></DL><P>
+<A NAME="EnableDocumentSource">
+<A NAME ="DOC.143.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  EnableDocumentSource(bool)</B></TT>
+<DD> enable show document source menu item.
+<DL></DL><P>
+<A NAME="IsDoMap">
+<A NAME ="DOC.143.22">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsDoMap()</B></TT>
+<DL></DL><P>
+<A NAME="GetFileMenu">
+<A NAME ="DOC.143.23">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  GetFileMenu()</B></TT>
+<DL></DL><P>
+<A NAME="GetEditMenu">
+<A NAME ="DOC.143.24">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  GetEditMenu()</B></TT>
+<DL></DL><P>
+<A NAME="GetPrintMenu">
+<A NAME ="DOC.143.25">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  GetPrintMenu()</B></TT>
+<DL></DL><P>
+<A NAME="GetHelpMenu">
+<A NAME ="DOC.143.26">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  GetHelpMenu()</B></TT>
+<DL></DL><P>
+<A NAME="GetViewMenu">
+<A NAME ="DOC.143.27">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  GetViewMenu()</B></TT>
+<DL></DL><P>
+<A NAME="GetSearchMenu">
+<A NAME ="DOC.143.28">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  GetSearchMenu()</B></TT>
+<DL></DL><P>
+<A NAME="GetPropertiesMenu">
+<A NAME ="DOC.143.29">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  GetPropertiesMenu()</B></TT>
+<DL></DL><P>
+<A NAME="GetPopupEditItems">
+<A NAME ="DOC.143.30">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  GetPopupEditItems()</B></TT>
+<DL></DL><P>
+<A NAME="SetPageSubMenuItem">
+<A NAME ="DOC.143.31">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPageSubMenuItem(const char *text, int n)</B></TT>
+<DD> set toggles in submenu of page menu.
+<DL></DL><P>
+<A NAME="SetPageMenuItem">
+<A NAME ="DOC.143.32">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetPageMenuItem(const char *text, bool b)</B></TT>
+<DD> set toggle in page menu.
+<DL></DL><P>
+<A NAME="GetDocument">
+<A NAME ="DOC.143.33">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Document.html">Document</A>*  GetDocument()</B></TT>
+<DL></DL><P>
+<A NAME="SetDocument">
+<A NAME ="DOC.143.34">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDocument(<!1><A HREF="Document.html">Document</A> *d)</B></TT>
+<DL></DL><P>
+<A NAME="GetPrinter">
+<A NAME ="DOC.143.35">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Printer.html">Printer</A>*  GetPrinter()</B></TT>
+<DL></DL><P>
+<A NAME="GetHelper">
+<A NAME ="DOC.143.36">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Helper.html">Helper</A>*  GetHelper()</B></TT>
+<DL></DL><P>
+<A NAME="GetArgsLeft">
+<A NAME ="DOC.143.37">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> int  GetArgsLeft()</B></TT>
+<DL></DL><P>
+<A NAME="SetArgsLeft">
+<A NAME ="DOC.143.38">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetArgsLeft(int n)</B></TT>
+<DL></DL><P>
+<A NAME="GetScreenType">
+<A NAME ="DOC.143.39">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!2><A HREF="EditWindow.html#DOC.143.5">ScreenType</A>  GetScreenType()</B></TT>
+<DL></DL><P>
+<A NAME="IsDoLoad">
+<A NAME ="DOC.143.40">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  IsDoLoad()</B></TT>
+<DL></DL><P>
+<A NAME="SetDoLoad">
+<A NAME ="DOC.143.41">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDoLoad(bool b)</B></TT>
+<DL></DL><P>
+<A NAME="SetLoadFile">
+<A NAME ="DOC.143.42">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetLoadFile(const char *s)</B></TT>
+<DL></DL><P>
+<A NAME="GetMenuBar">
+<A NAME ="DOC.143.43">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  GetMenuBar()</B></TT>
+<DL></DL><P>
+<A NAME="SetMenuBar">
+<A NAME ="DOC.143.44">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetMenuBar(Widget w)</B></TT>
+<DL></DL><P>
+<A NAME="GetDocumentArea">
+<A NAME ="DOC.143.45">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  GetDocumentArea()</B></TT>
+<DL></DL><P>
+<A NAME="SetDocumentArea">
+<A NAME ="DOC.143.46">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDocumentArea(Widget w)</B></TT>
+<DL></DL><P>
+<A NAME="GetStatusArea">
+<A NAME ="DOC.143.47">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  GetStatusArea()</B></TT>
+<DL></DL><P>
+<A NAME="SetStatusArea">
+<A NAME ="DOC.143.48">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetStatusArea(Widget w)</B></TT>
+<DL></DL><P>
+<A NAME="GetControlArea">
+<A NAME ="DOC.143.49">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  GetControlArea()</B></TT>
+<DL></DL><P>
+<A NAME="SetControlArea">
+<A NAME ="DOC.143.50">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetControlArea(Widget w)</B></TT>
+<DL></DL><P>
+<A NAME="GetLogo">
+<A NAME ="DOC.143.51">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  GetLogo()</B></TT>
+<DL></DL><P>
+<A NAME="SetLogo">
+<A NAME ="DOC.143.52">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetLogo(Widget w)</B></TT>
+<DL></DL><P>
+<A NAME="GetDirName">
+<A NAME ="DOC.143.53">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  GetDirName()</B></TT>
+<DL></DL><P>
+<A NAME="SetDirName">
+<A NAME ="DOC.143.54">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SetDirName(Widget w)</B></TT>
+<DL></DL><P>
+<A NAME="ParseUserOptions">
+<A NAME ="DOC.143.55">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  ParseUserOptions(int argc, char **argv)</B></TT>
+<DD> parse user options.
+<DL></DL><P>
+<A NAME="CreateWorkArea">
+<A NAME ="DOC.143.56">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  CreateWorkArea(Widget parent, int argc, char **argv)</B></TT>
+<DD> create the work area of a document window widget (a frame).
+<DL></DL><P>
+<A NAME="CreateMenuBar">
+<A NAME ="DOC.143.57">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  Widget  CreateMenuBar(Widget parent)</B></TT>
+<DL></DL><P>
+<A NAME="CreateLogo">
+<A NAME ="DOC.143.58">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  Widget  CreateLogo(Widget parent)</B></TT>
+<DD> 
+<DL></DL><P>
+<A NAME="CreateDocumentArea">
+<A NAME ="DOC.143.59">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  Widget  CreateDocumentArea(Widget parent)</B></TT>
+<DL></DL><P>
+<A NAME="CreateStatusArea">
+<A NAME ="DOC.143.60">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  Widget  CreateStatusArea(Widget parent)</B></TT>
+<DL></DL><P>
+<A NAME="CreateControlArea">
+<A NAME ="DOC.143.61">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  Widget  CreateControlArea(Widget parent)</B></TT>
+<DL></DL><P>
+<A NAME="CreateToggle">
+<A NAME ="DOC.143.62">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Widget  CreateToggle(Widget parent, const char *label, bool Init, XtCallbackProc fun, XtPointer clientData)</B></TT>
+<DL></DL><P>
+<A NAME="Finalize">
+<A NAME ="DOC.143.63">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Finalize()</B></TT>
+<DL></DL><P>
+<A NAME="InitMenuItems">
+<A NAME ="DOC.143.64">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  InitMenuItems()</B></TT>
+<DL></DL><P>
+<A NAME="fileMenu">
+<A NAME ="DOC.143.65">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  fileMenu</B></TT>
+<DL></DL><P>
+<A NAME="editMenu">
+<A NAME ="DOC.143.66">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  editMenu</B></TT>
+<DL></DL><P>
+<A NAME="printMenu">
+<A NAME ="DOC.143.67">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  printMenu</B></TT>
+<DL></DL><P>
+<A NAME="pageMenu">
+<A NAME ="DOC.143.68">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  pageMenu</B></TT>
+<DL></DL><P>
+<A NAME="viewMenu">
+<A NAME ="DOC.143.69">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  viewMenu</B></TT>
+<DL></DL><P>
+<A NAME="propertiesMenu">
+<A NAME ="DOC.143.70">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  propertiesMenu</B></TT>
+<DL></DL><P>
+<A NAME="helpMenu">
+<A NAME ="DOC.143.71">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  helpMenu</B></TT>
+<DL></DL><P>
+<A NAME="searchMenu">
+<A NAME ="DOC.143.72">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Menu.html">Menu</A>*  searchMenu</B></TT>
+<DL></DL><P>
+<A NAME="popupEditItems">
+<A NAME ="DOC.143.73">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  popupEditItems</B></TT>
+<DL></DL><P>
+<A NAME="fileItems">
+<A NAME ="DOC.143.74">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  fileItems</B></TT>
+<DL></DL><P>
+<A NAME="editItems">
+<A NAME ="DOC.143.75">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  editItems</B></TT>
+<DL></DL><P>
+<A NAME="viewItems">
+<A NAME ="DOC.143.76">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  viewItems</B></TT>
+<DL></DL><P>
+<A NAME="bannerPageItems">
+<A NAME ="DOC.143.77">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  bannerPageItems</B></TT>
+<DL></DL><P>
+<A NAME="printItems">
+<A NAME ="DOC.143.78">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  printItems</B></TT>
+<DL></DL><P>
+<A NAME="searchItems">
+<A NAME ="DOC.143.79">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  searchItems</B></TT>
+<DL></DL><P>
+<A NAME="propertiesItems">
+<A NAME ="DOC.143.80">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  propertiesItems</B></TT>
+<DL></DL><P>
+<A NAME="printerOptionsItems">
+<A NAME ="DOC.143.81">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  printerOptionsItems</B></TT>
+<DL></DL><P>
+<A NAME="helpItems">
+<A NAME ="DOC.143.82">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  helpItems</B></TT>
+<DL></DL><P>
+<A NAME="pageOrientationItems">
+<A NAME ="DOC.143.83">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  pageOrientationItems</B></TT>
+<DL></DL><P>
+<A NAME="pageSizeItems">
+<A NAME ="DOC.143.84">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  pageSizeItems</B></TT>
+<DL></DL><P>
+<A NAME="pageItems">
+<A NAME ="DOC.143.85">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MenuItem.html">MenuItem</A>*  pageItems</B></TT>
+<DL></DL><P>
+<A NAME="WriteUsage">
+<A NAME ="DOC.143.86">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  WriteUsage(const char *s)</B></TT>
+<DL></DL><P></DL>
+<hr>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="DrawWindow.html"> DrawWindow </A><br>
+</DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

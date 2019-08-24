@@ -1,0 +1,82 @@
+<html><head><TITLE>CRChecks</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  CRChecks : public <!2><A HREF="ERChecks.html#DOC.152.1">ERChecks</A> </H2><BLOCKQUOTE>
+ implements checks for soft constraints on CR diagrams.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CDiagramChecks,MDiagramChecks.html,CERChecks,MERChecks.html,CCRChecks,MCRChecks.html">
+<param name=before value="M,M,M">
+<param name=after value="Md_SP,Md_,M">
+<param name=indent value="0,1,2">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.70.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>CRChecks</B> (<!1><A HREF="Diagram.html">Diagram</A> *d, <!1><A HREF="Graph.html">Graph</A> *g)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.70.2"> <IMG BORDER=0 SRC=icon1.gif></A> unsigned </TD><TD><B>CheckDoubleNamelessFunctions</B> ( int nodetype1, int nodetype2, <!1><A HREF="string.html">string</A> &buf)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="ERChecks.html">ERChecks:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  unsigned  <B>CheckRelationshipCoherence</B>(<!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckDoubleRelationships</B>(<!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckNamelessBinaryRelationships</B>(<!1><A HREF="string.html">string</A> &chkbuf)
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "DiagramChecks.html"> DiagramChecks:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> unsigned  <B>CheckNodeCount</B>(unsigned count, int nodeType, <!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckNodeCount</B>(unsigned min, unsigned max, int nodeType, <!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckEdgeCount</B>(unsigned count, int edgeType, <!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckEdgeCount</B>(unsigned min, unsigned max, int edgeType, <!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckDoubleIndexes</B>(<!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckNamelessNodes</B>(int nodeType, <!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckNamelessEdges</B>(int edgeType, <!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckIllegalNodeNames</B>(int nodeType, const <!1><A HREF="string.html">string</A> *name, <!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckIllegalEdgeNames</B>(int edgeType, const <!1><A HREF="string.html">string</A> *name, <!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckNamelessEdges</B>( int edgeType, int type1, int type2, <!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckDoubleNamelessEdges</B>(int edgeType, int type1, int type2, <!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckDoubleNodes</B>(int nodeType, <!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckConnected</B>(int nodeType, bool index, <!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckConnected</B>(int nodeType, int toNode, int min, int max, bool index, <!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckJunctionCoherence</B>(int nodeType, int parenttype, int childtype, unsigned minChildren, <!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckCountEdgesFrom</B>(int nodeType, int edgeType, unsigned min, unsigned max, bool zeroAllowed, bool index, <!1><A HREF="string.html">string</A> &chkbuf)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckReachability</B>(int rootType, int nodeType, bool index, <!1><A HREF="string.html">string</A> &chkbuf)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> <!1><A HREF="Graph.html">Graph</A>*  <B>GetGraph</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Diagram.html">Diagram</A>*  <B>GetDiagram</B>() const 
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckCount</B>(unsigned min, unsigned max, int type, <!1><A HREF="string.html">string</A> &chkbuf, bool node)
+<DT><IMG SRC=icon2.gif> unsigned  <B>CheckIllegalNames</B>(int type, const <!1><A HREF="string.html">string</A> *name, <!1><A HREF="string.html">string</A> &chkbuf, bool node)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ implements checks for soft constraints on CR diagrams.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="CRChecks">
+<A NAME ="DOC.70.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  CRChecks(<!1><A HREF="Diagram.html">Diagram</A> *d, <!1><A HREF="Graph.html">Graph</A> *g)</B></TT>
+<DL></DL><P>
+<A NAME="CheckDoubleNamelessFunctions">
+<A NAME ="DOC.70.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> unsigned  CheckDoubleNamelessFunctions( int nodetype1, int nodetype2, <!1><A HREF="string.html">string</A> &buf)</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

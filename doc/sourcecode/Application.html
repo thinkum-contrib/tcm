@@ -1,0 +1,195 @@
+<html><head><TITLE>Application</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  Application : public <!2><A HREF="MWidget.html#DOC.237.1">MWidget</A> </H2><BLOCKQUOTE>
+ generic window-based application class. See: MWidget.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CComponent,MComponent.html,CMWidget,MMWidget.html,CApplication,MApplication.html">
+<param name=before value="M,M,M">
+<param name=after value="Md_SP,Md_,M">
+<param name=indent value="0,1,2">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.7.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>Application</B> (const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~Application</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Manage</B> ()<br>
+<I> manage application's top-level windows</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Unmanage</B> ()<br>
+<I> unmanage application's top-level windows</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.5"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Iconify</B> ()<br>
+<I> iconify application's top-level windows</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Quit</B> ()<br>
+<I> close all top-level windows and quit application.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CloseWindow</B> (<!1><A HREF="MainWindow.html">MainWindow</A> *m)<br>
+<I> close window and quit application when it is the last.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.8"> <IMG BORDER=0 SRC=icon1.gif></A> Display* </TD><TD><B>GetDisplay</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.9"> <IMG BORDER=0 SRC=icon1.gif></A> XtAppContext </TD><TD><B>GetAppContext</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.10"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>GetAppClass</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.11"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>GetClassName</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.12"> <IMG BORDER=0 SRC=icon1.gif></A> bool </TD><TD><B>Initialized</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.13"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="MessageLogDialog.html">MessageLogDialog</A>* </TD><TD><B>GetMessageLogDialog</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.14"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="PrinterOptions.html">PrinterOptions</A>* </TD><TD><B>GetPrinterOptions</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.15"> <IMG BORDER=0 SRC=icon1.gif></A> friend  int </TD><TD><B>main</B> (int argc, char** argv)<br>
+<I> Allow main and MainWindow to access protected member functions</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.16"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>CreatePrivateColormap</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.17"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="List.html">List</A> <<!1><A HREF="Color.html">Color</A> *> * </TD><TD><B>GetColors</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.18"> <IMG BORDER=0 SRC=icon1.gif></A> static  void </TD><TD><B>XtErrorHandler</B> (char *msg)<br>
+<I> Show Xt and X error in error message log.</I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.7.19"> <IMG BORDER=0 SRC=icon1.gif></A> <!1><A HREF="Config.html">Config</A>* </TD><TD><B>GetConfig</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.20"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>Initialize</B> (int argc, char** argv)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.7.21"> <IMG BORDER=0 SRC=icon1.gif></A> virtual  void </TD><TD><B>HandleEvents</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="MWidget.html">MWidget:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsRealized</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetColormap</B>(Colormap cmap)
+<DT><IMG SRC=icon2.gif> void  <B>SetDestroyCallback</B>(XtCallbackProc fun, XtPointer clientData)
+<DT><IMG SRC=icon2.gif> void  <B>AddLiteClue</B>(Widget w, const char *text)
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> Widget  <B>GetLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CreateLiteClue</B>()
+<DT><IMG SRC=icon2.gif> void  <B>InstallDestroyHandler</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Component.html"> Component:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> bool  <B>IsManaged</B>()
+<DT><IMG SRC=icon2.gif> Widget  <B>GetWidget</B>()
+<DT><IMG SRC=icon2.gif> Window  <B>GetWindow</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SetWidget</B>(Widget w)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetName</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const <!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>SetName</B>(const char *s)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ generic window-based application class. See: MWidget.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="Application">
+<A NAME ="DOC.7.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  Application(const char *<!2><A HREF="Component.html#DOC.52.13">name</A>)</B></TT>
+<DL></DL><P>
+<A NAME="~Application">
+<A NAME ="DOC.7.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~Application()</B></TT>
+<DL></DL><P>
+<A NAME="Manage">
+<A NAME ="DOC.7.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Manage()</B></TT>
+<DD> manage application's top-level windows
+<DL></DL><P>
+<A NAME="Unmanage">
+<A NAME ="DOC.7.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Unmanage()</B></TT>
+<DD> unmanage application's top-level windows
+<DL></DL><P>
+<A NAME="Iconify">
+<A NAME ="DOC.7.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Iconify()</B></TT>
+<DD> iconify application's top-level windows
+<DL></DL><P>
+<A NAME="Quit">
+<A NAME ="DOC.7.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Quit()</B></TT>
+<DD> close all top-level windows and quit application.
+<DL></DL><P>
+<A NAME="CloseWindow">
+<A NAME ="DOC.7.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CloseWindow(<!1><A HREF="MainWindow.html">MainWindow</A> *m)</B></TT>
+<DD> close window and quit application when it is the last.
+<DL></DL><P>
+<A NAME="GetDisplay">
+<A NAME ="DOC.7.8">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> Display*  GetDisplay()</B></TT>
+<DL></DL><P>
+<A NAME="GetAppContext">
+<A NAME ="DOC.7.9">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> XtAppContext  GetAppContext()</B></TT>
+<DL></DL><P>
+<A NAME="GetAppClass">
+<A NAME ="DOC.7.10">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  GetAppClass()</B></TT>
+<DL></DL><P>
+<A NAME="GetClassName">
+<A NAME ="DOC.7.11">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  GetClassName()</B></TT>
+<DL></DL><P>
+<A NAME="Initialized">
+<A NAME ="DOC.7.12">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> bool  Initialized()</B></TT>
+<DL></DL><P>
+<A NAME="GetMessageLogDialog">
+<A NAME ="DOC.7.13">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="MessageLogDialog.html">MessageLogDialog</A>*  GetMessageLogDialog()</B></TT>
+<DL></DL><P>
+<A NAME="GetPrinterOptions">
+<A NAME ="DOC.7.14">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="PrinterOptions.html">PrinterOptions</A>*  GetPrinterOptions()</B></TT>
+<DL></DL><P>
+<A NAME="main">
+<A NAME ="DOC.7.15">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> friend  int  main(int argc, char** argv)</B></TT>
+<DD> Allow main and MainWindow to access protected member functions
+<DL></DL><P>
+<A NAME="CreatePrivateColormap">
+<A NAME ="DOC.7.16">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  CreatePrivateColormap()</B></TT>
+<DL></DL><P>
+<A NAME="GetColors">
+<A NAME ="DOC.7.17">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="List.html">List</A> <<!1><A HREF="Color.html">Color</A> *> *  GetColors()</B></TT>
+<DL></DL><P>
+<A NAME="XtErrorHandler">
+<A NAME ="DOC.7.18">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> static  void  XtErrorHandler(char *msg)</B></TT>
+<DD> Show Xt and X error in error message log.
+<DL></DL><P>
+<A NAME="GetConfig">
+<A NAME ="DOC.7.19">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> <!1><A HREF="Config.html">Config</A>*  GetConfig()</B></TT>
+<DL></DL><P>
+<A NAME="Initialize">
+<A NAME ="DOC.7.20">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  Initialize(int argc, char** argv)</B></TT>
+<DL></DL><P>
+<A NAME="HandleEvents">
+<A NAME ="DOC.7.21">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  void  HandleEvents()</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

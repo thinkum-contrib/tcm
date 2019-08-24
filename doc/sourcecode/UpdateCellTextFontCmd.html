@@ -1,0 +1,103 @@
+<html><head><TITLE>UpdateCellTextFontCmd</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  UpdateCellTextFontCmd : public <!2><A HREF="Command.html#DOC.48.1">Command</A> </H2><BLOCKQUOTE>
+ abstract command class for updating cell text fonts.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CCommand,MCommand.html,CUpdateCellTextFontCmd,MUpdateCellTextFontCmd.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.416.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>UpdateCellTextFontCmd</B> (<!1><A HREF="Table.html">Table</A> *, <!1><A HREF="TableViewer.html">TableViewer</A> *v, int f, int s, int p)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.416.2"> <IMG BORDER=0 SRC=icon1.gif></A> virtual </TD><TD><B>~UpdateCellTextFontCmd</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.416.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>UnExecute</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.416.4"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>Execute</B> ()<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.416.5"> <IMG BORDER=0 SRC=icon1.gif></A> const  char* </TD><TD><B>GetName</B> () const <br>
+<I></I>
+</TD></TR></TABLE><TABLE>
+<DT><h3>Protected Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.416.6"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>SaveCell</B> (<!1><A HREF="Cell.html">Cell</A> *c)<br>
+<I> save cell and its old font.</I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.416.7"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>GetUpdateCells</B> ()<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="Command.html">Command:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>TrackType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> virtual  void  <B>TrackMouse</B>(<!2><A HREF="Command.html#DOC.48.3">TrackType</A>, <!1><A HREF="Point.html">Point</A>*, <!1><A HREF="Point.html">Point</A>*, <!1><A HREF="Point.html">Point</A>*)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>ReExecute</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>Abort</B>()
+<DT><IMG SRC=icon2.gif> bool  <B>CmdDone</B>() const 
+<DT><IMG SRC=icon2.gif> int  <B>ScaleCorrect</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>ScaleCorrect</B>(const <!1><A HREF="Point.html">Point</A> *pt) const 
+<DT><IMG SRC=icon2.gif> int  <B>Scale</B>(int x) const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Point.html">Point</A>  <B>Scale</B>(const <!1><A HREF="Point.html">Point</A> *pt) const 
+<DT><IMG SRC=icon2.gif> void  <B>SayAborted</B>()
+</DL><DL>
+<DT><h3>Protected Methods</h3><DD><DT><IMG SRC=icon2.gif> void  <B>SayCommited</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SayUndone</B>()
+<DT><IMG SRC=icon2.gif> <!1><A HREF="DrawWindow.html">DrawWindow</A>*  <B>GetMainWindow</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Viewer.html">Viewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Document.html">Document</A>*  <B>GetDocument</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Grafport.html">Grafport</A>*  <B>GetGrafport</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetCmdDone</B>(bool b)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ abstract command class for updating cell text fonts.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="UpdateCellTextFontCmd">
+<A NAME ="DOC.416.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  UpdateCellTextFontCmd(<!1><A HREF="Table.html">Table</A> *, <!1><A HREF="TableViewer.html">TableViewer</A> *v, int f, int s, int p)</B></TT>
+<DL></DL><P>
+<A NAME="~UpdateCellTextFontCmd">
+<A NAME ="DOC.416.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> virtual  ~UpdateCellTextFontCmd()</B></TT>
+<DL></DL><P>
+<A NAME="UnExecute">
+<A NAME ="DOC.416.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  UnExecute()</B></TT>
+<DL></DL><P>
+<A NAME="Execute">
+<A NAME ="DOC.416.4">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  Execute()</B></TT>
+<DL></DL><P>
+<A NAME="GetName">
+<A NAME ="DOC.416.5">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> const  char*  GetName() const </B></TT>
+<DL></DL><P>
+<A NAME="SaveCell">
+<A NAME ="DOC.416.6">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  SaveCell(<!1><A HREF="Cell.html">Cell</A> *c)</B></TT>
+<DD> save cell and its old font.
+<DL></DL><P>
+<A NAME="GetUpdateCells">
+<A NAME ="DOC.416.7">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  GetUpdateCells()</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

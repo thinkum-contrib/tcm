@@ -1,0 +1,123 @@
+<html><head><TITLE>TRView</TITLE></head>
+<body>
+<H2><A HREF ="#DOC.DOCU" > <IMG BORDER=0 SRC=down.gif></A>  class  TRView : public <!2><A HREF="ShapeView.html#DOC.298.1">ShapeView</A> </H2><BLOCKQUOTE>
+ generic textual tree shape view class.
+</BLOCKQUOTE>
+<hr>
+ <h2> Inheritance:</h2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CThing,MThing.html,CShapeView,MShapeView.html,CTRView,MTRView.html">
+<param name=before value="M,M,M">
+<param name=after value="Md_SP,Md_,M">
+<param name=indent value="0,1,2">
+<param name=arrowdir value="down">
+</APPLET>
+<hr>
+
+<DL>
+<TABLE>
+<DT><h3>Public Methods</h3><DD><TR><TD VALIGN=top><A HREF="#DOC.396.1"> <IMG BORDER=0 SRC=icon1.gif></A> </TD><TD><B>TRView</B> (<!1><A HREF="TRViewer.html">TRViewer</A> *t)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.396.2"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>AddShape</B> (<!1><A HREF="GShape.html">GShape</A> *s)<br>
+<I></I>
+</TD></TR><TR><TD VALIGN=top><A HREF="#DOC.396.3"> <IMG BORDER=0 SRC=icon1.gif></A> void </TD><TD><B>RemoveShape</B> (<!1><A HREF="GShape.html">GShape</A> *s)<br>
+<I></I>
+</TD></TR></TABLE></DL>
+<hr><H3>Inherited from <A HREF="ShapeView.html">ShapeView:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> int  <B>GetClassType</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>IsView</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>Draw</B>()
+<DT><IMG SRC=icon2.gif> void  <B>Undraw</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetGrafport</B>(<!1><A HREF="Grafport.html">Grafport</A> *g)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Node.html">Node</A>*  <B>GetParent</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetParent</B>(<!1><A HREF="Node.html">Node</A> *n)
+<DT><IMG SRC=icon2.gif> const  <!1><A HREF="string.html">string</A>*  <B>GetIndex</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetIndex</B>(<!1><A HREF="string.html">string</A> *s)
+<DT><IMG SRC=icon2.gif> unsigned  <B>NrOfShapes</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <<!1><A HREF="GShape.html">GShape</A> *> *  <B>GetShapes</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="List.html">List</A> <<!1><A HREF="GShape.html">GShape</A> *> *  <B>GetSelection</B>() const 
+<DT><IMG SRC=icon2.gif> bool  <B>HasShape</B>(<!1><A HREF="GShape.html">GShape</A> *s)
+<DT><IMG SRC=icon2.gif> void  <B>Snap</B>(<!1><A HREF="Point.html">Point</A> *p)
+<DT><IMG SRC=icon2.gif> int  <B>Snap</B>(int i)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="DiagramViewer.html">DiagramViewer</A>*  <B>GetViewer</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>WriteShapes</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *f)
+<DT><IMG SRC=icon2.gif> bool  <B>ReadMembers</B>(<!1><A HREF="InputFile.html">InputFile</A> *f, double format)
+<DT><IMG SRC=icon2.gif> bool  <B>SetReferences</B>(<!1><A HREF="AssocList.html">AssocList</A> *)
+<DT><IMG SRC=icon2.gif> bool  <B>CheckReferences</B>()
+<DT><IMG SRC=icon2.gif> void  <B>CheckShapes</B>()
+<DT><IMG SRC=icon2.gif> unsigned  <B>NrSelected</B>() const 
+<DT><IMG SRC=icon2.gif> <!1><A HREF="GShape.html">GShape</A>*  <B>FirstSelected</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>DeselectAll</B>()
+<DT><IMG SRC=icon2.gif> virtual  void  <B>SelectShape</B>(<!1><A HREF="GShape.html">GShape</A> *shape)
+<DT><IMG SRC=icon2.gif> virtual  void  <B>FirstSelectShape</B>(<!1><A HREF="GShape.html">GShape</A> *shape)
+<DT><IMG SRC=icon2.gif> void  <B>DeselectShape</B>(<!1><A HREF="GShape.html">GShape</A> *shape)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="GShape.html">GShape</A>*  <B>HitShape</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="NodeShape.html">NodeShape</A>*  <B>HitNodeShape</B>(int x, int y)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Line.html">Line</A>*  <B>HitLine</B>(int x, int y, int &whichsegment)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="Line.html">Line</A>*  <B>HitLineHandle</B>(int x, int y, int &which)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="TextShape.html">TextShape</A>*  <B>HitTextShape</B>(int x, int y, bool emptyallowed=True)
+<DT><IMG SRC=icon2.gif> int  <B>GetCurrentShapeNr</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>SetCurrentShapeNr</B>(int i)
+<DT><IMG SRC=icon2.gif> void  <B>SetCurrentShapeNr</B>(<!1><A HREF="GShape.html">GShape</A> *s)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="GShape.html">GShape</A>*  <B>GetNextShape</B>(const <!1><A HREF="string.html">string</A> *s, bool sens, bool substring, bool nameOnly)
+<DT><IMG SRC=icon2.gif> void  <B>GetShapes</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>, const <!1><A HREF="string.html">string</A> *s, bool sens, bool substring, bool nameOnly)
+<DT><IMG SRC=icon2.gif> void  <B>CalcSizeElements</B>(<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)
+<DT><IMG SRC=icon2.gif> void  <B>CalcSizeSelection</B>(<!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)
+<DT><IMG SRC=icon2.gif> void  <B>CalcSizeShapes</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>, <!1><A HREF="Point.html">Point</A> &topLeft, <!1><A HREF="Point.html">Point</A> &bottomRight)
+<DT><IMG SRC=icon2.gif> void  <B>AddShapeRaw</B>(<!1><A HREF="GShape.html">GShape</A> *shape)
+<DT><IMG SRC=icon2.gif> void  <B>AddShapes</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>)
+<DT><IMG SRC=icon2.gif> void  <B>RemoveShapeRaw</B>(<!1><A HREF="GShape.html">GShape</A> *shape)
+<DT><IMG SRC=icon2.gif> void  <B>RemoveShapes</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>)
+<DT><IMG SRC=icon2.gif> <!1><A HREF="GShape.html">GShape</A>*  <B>GetShape</B>(<!1><A HREF="Subject.html">Subject</A> *subject)
+<DT><IMG SRC=icon2.gif> void  <B>GetShapes</B>(<!1><A HREF="Subject.html">Subject</A> *subject, <!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>)
+<DT><IMG SRC=icon2.gif> void  <B>MultipleLinesPosUpdate</B>(<!1><A HREF="Line.html">Line</A> *line)
+<DT><IMG SRC=icon2.gif> void  <B>MultipleLines</B>(<!1><A HREF="Line.html">Line</A> *line)
+<DT><IMG SRC=icon2.gif> void  <B>CompleteShapes</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *s, <!1><A HREF="GShape.html">GShape</A> *n1, <!1><A HREF="GShape.html">GShape</A> *n2)
+<DT><IMG SRC=icon2.gif> void  <B>CompleteLines</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>)
+<DT><IMG SRC=icon2.gif> void  <B>CompleteShapes</B>(<!1><A HREF="List.html">List</A><<!1><A HREF="GShape.html">GShape</A> *> *<!2><A HREF="ShapeView.html#DOC.298.62">shapes</A>)
+<DT><IMG SRC=icon2.gif> void  <B>DrawNames</B>()
+<DT><IMG SRC=icon2.gif> void  <B>ShowAll</B>()
+</DL></DL>
+<hr><H3>Inherited from <A HREF = "Thing.html"> Thing:</A></h3>
+
+<DL>
+<DL>
+<DT><h3>Public Classes</h3><DD><DT><IMG SRC=icon2.gif>  enum  <B>AssocType</B>
+</DL><DL>
+<DT><h3>Public Methods</h3><DD><DT><IMG SRC=icon2.gif> unsigned  long  <B>GetId</B>()
+<DT><IMG SRC=icon2.gif> void  <B>SetId</B>(unsigned long val)
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsSubject</B>() const 
+<DT><IMG SRC=icon2.gif> virtual  bool  <B>IsShape</B>() const 
+<DT><IMG SRC=icon2.gif> void  <B>Write</B>(<!1><A HREF="OutputFile.html">OutputFile</A> *ofile)
+</DL></DL>
+<A NAME="DOC.DOCU">
+<hr>
+ <h2> Documentation </h2>
+<BLOCKQUOTE>
+ generic textual tree shape view class.
+
+</BLOCKQUOTE>
+<DL>
+
+<A NAME="TRView">
+<A NAME ="DOC.396.1">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B>  TRView(<!1><A HREF="TRViewer.html">TRViewer</A> *t)</B></TT>
+<DL></DL><P>
+<A NAME="AddShape">
+<A NAME ="DOC.396.2">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  AddShape(<!1><A HREF="GShape.html">GShape</A> *s)</B></TT>
+<DL></DL><P>
+<A NAME="RemoveShape">
+<A NAME ="DOC.396.3">
+<DT><IMG BORDER=0 SRC=icon2.gif><TT><B> void  RemoveShape(<!1><A HREF="GShape.html">GShape</A> *s)</B></TT>
+<DL></DL><P></DL>
+<hr>
+ <DL><DT><B>This class has no child classes.</B></DL>
+<DL></DL><P><I><A HREF="aindex.html"> alphabetic index</A></I>  <I><A HREF="HIER.html"> hierarchy of classes</A></I><P><hr>
+<A HREF="http://www.zib.de/Visual/software/doc++/index.html"><IMG BORDER=0 ALIGN=RIGHT SRC=logo.gif></A>
+<P Align=Center><I>this page has been generated automatically by doc++</I>
+<P Align=Center><I>(c)opyright by <A HREF="http://www.zib.de/zoeckler/"> Malte  Z&ouml;ckler</A>, <A HREF="mailto:wunderling@zib.de"> Roland Wunderling </A><br>contact: <A HREF="mailto:doc++@zib.de"> doc++@zib.de</a></I>
+</BODY>

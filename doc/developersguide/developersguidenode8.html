@@ -1,0 +1,400 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>7. Compiling and Porting TCM</TITLE>
+<META NAME="description" CONTENT="7. Compiling and Porting TCM">
+<META NAME="keywords" CONTENT="TechDoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="TechDoc.css">
+<LINK REL="next" HREF="developersguidenode9.html">
+<LINK REL="previous" HREF="developersguidenode7.html">
+<LINK REL="up" HREF="TechDoc.html">
+<LINK REL="next" HREF="developersguidenode9.html">
+</HEAD>
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html361"
+ HREF="developersguidenode9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html358"
+ HREF="TechDoc.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html352"
+ HREF="developersguidenode7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A> 
+<A NAME="tex2html360"
+ HREF="developersguidenode1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents_motif.gif"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html362"
+ HREF="developersguidenode9.html">8. Wish List and</A>
+<B> Up:</B> <A NAME="tex2html359"
+ HREF="TechDoc.html">Toolkit for Conceptual Modeling</A>
+<B> Previous:</B> <A NAME="tex2html353"
+ HREF="developersguidenode7.html">6. Output Files</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><strong>Subsections</strong></A>
+<UL>
+<LI><A NAME="tex2html363"
+ HREF="developersguidenode8.html#SECTION00810000000000000000">7.1 Compiling TCM</A>
+<UL>
+<LI><A NAME="tex2html364"
+ HREF="developersguidenode8.html#SECTION00811000000000000000">7.1.1 Compilation configuration files</A>
+<LI><A NAME="tex2html365"
+ HREF="developersguidenode8.html#SECTION00812000000000000000">7.1.2 Makefiles</A>
+</UL>
+<LI><A NAME="tex2html366"
+ HREF="developersguidenode8.html#SECTION00820000000000000000">7.2 Porting TCM</A>
+<LI><A NAME="tex2html367"
+ HREF="developersguidenode8.html#SECTION00830000000000000000">7.3 G++ specific problems</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00800000000000000000">&#160;</A> <A NAME="chap:compiling">&#160;</A>
+<BR>
+7. Compiling and Porting TCM
+</H1>
+
+<P>
+Before you start compiling or porting TCM you first have to unzip
+and untar the source code distribution in the same manner as
+the executable distribution. See then the file 
+<A NAME="tex2html169"
+ HREF="../../INSTALL"><TT>$TCM_HOME/INSTALL</TT></A>
+which contains the most up-to-date installation instructions.
+See chapter&nbsp;<A HREF="developersguidenode4.html#chap:src_organization">3</A> for what files are included. Make 
+sure that before compilation the <TT>TCM_HOME</TT> environment variable is 
+set to the directory where the distribution resides (the ``root'' directory 
+of the entire distribution, not the src directory!).
+
+<P>
+The TCM directory tree contains a set of Makefiles and configuration files. 
+The <A NAME="tex2html170"
+ HREF="../../src/Makefile"><TT>Makefile</TT></A>
+in the src directory 
+should be a symbolic link to <TT>Makefile.<I>compiler</I></TT>. 
+<A NAME="tex2html171"
+ HREF="../../src/Config.tmpl"><TT>Config.tmpl</TT></A>
+should be a link to 
+<TT>Config.tmpl_<I>platform</I></TT>. <TT>src/Makefile</TT> contains
+the targets specific for some compiler (g++, Sun CC, etc.) and <TT>Config.tmpl</TT>
+contains settings for the system. For each operating system to which
+TCM has been ported (Linux, Solaris, HP-UX, etc.) a distinct Config.tmpl 
+file is supplied. The default make targets are in 
+<A NAME="tex2html172"
+ HREF="../../src/Makefile.GEN"><TT>src/Makefile.GEN</TT></A>
+and the default settings of the various Config.tmpl files 
+are in <A NAME="tex2html173"
+ HREF="../../src/Config.GEN"><TT>src/Config.GEN</TT></A>.
+
+<P>
+
+<H1><A NAME="SECTION00810000000000000000">
+7.1 Compiling TCM</A>
+</H1>
+
+<P>
+The most simple way to compile and install TCM is to type <TT>make</TT> 
+for the <A NAME="tex2html174"
+ HREF="../../Makefile">Makefile</A>
+in <TT>$TCM_HOME</TT>. 
+This default target will set the right links for the
+<A NAME="tex2html175"
+ HREF="../../src/Makefile"><TT>src/Makefile</TT></A>
+and 
+<A NAME="tex2html176"
+ HREF="../../src/Config.tmpl"><TT>src/Config.tmpl</TT></A>
+and then 
+it will write to standard output what are the following targets that you 
+can build. Of course it wise to check the setting
+of <TT>src/Config.tmpl</TT> yourself first before you continue.
+The next possible targets are:
+<UL>
+<LI><TT>make depend</TT>, for making file dependencies.
+<LI><TT>make execs</TT>, for making the object libraries and binaries and then
+move them in the <TT>lib</TT> and <TT>bin</TT> directories respectively.
+<LI><TT>make install</TT>, for copying the binaries and all the other files 
+of a binary distribution to the directory where you would like to install TCM. 
+<TT>/opt/tcm</TT> is the default directory but that can be changed in the Makefile 
+by setting <TT>TCM_INSTALL_DIR</TT>.
+<LI><TT>make all</TT>, which is the same as <TT>make depend execs install</TT>.
+<LI><TT>make docs</TT>, which tries to (re)generate all documentation in
+HTML, PostScript and PDF format in the <TT>doc</TT> subdirectory. This works only of
+course if you have installed the document sources in <TT>docsrc</TT>.
+<LI><TT>make clean</TT>, which removes all binaries, object and temporary files.
+</UL>
+<P>
+Instead of <TT>make install</TT> you can also call the scripts
+<TT>mkbindist</TT> or <TT>mksrcdist</TT> to build a tar.gz file with
+the binaries and the source code respectively. They were treated 
+in chapter&nbsp;<A HREF="developersguidenode4.html#sec:files_and_dirs">3.2</A>.
+
+<P>
+For compiling TCM you can also go directly into the src directory.
+There you are able to build individual editors and individual 
+libraries. As usual, compilation is controlled by a set of Makefiles. 
+In the src directory there are a number of configuration files and 
+Makefiles.
+
+<P>
+
+<H2><A NAME="SECTION00811000000000000000">
+7.1.1 Compilation configuration files</A>
+</H2>
+The configuration files in the <TT>src</TT> directory are called 
+<TT>Config.tmpl<I>_suffix</I></TT>, one for each of the different platforms 
+(platform as file name suffix). There is a file called 
+<A NAME="tex2html177"
+ HREF="../../src/Config.GEN"><TT>Config.GEN</TT></A>
+which 
+contains reasonable default values and is included in the Config.tmpl files.
+The configuration file defines which compiler is used, the compiler flags, 
+the location of the Unix and X include files, the needed Unix and X libraries and 
+their locations. Ideally, this is the only file you need to tailor for compiling 
+TCM on a Unix system. To compile TCM you also need <TT>lex</TT> and <TT>yacc</TT> 
+(or the GNU variants <TT>flex</TT> and <TT>bison</TT>). The files that are generated 
+have to be compiled by an ordinary C compiler. Therefore, define in 
+Config.tmpl, <TT>LEX</TT>, <TT>YACC</TT> and <TT>Cc</TT>.
+Before compiling TCM, make a symbolic link called <TT>Config.tmpl</TT> to the 
+configuration file of the desired platform. The declarations in
+the <TT>Config.tmpl</TT> will be included in the Makefiles.
+
+<P>
+Configuration options consist of <TT><I>Variable name</I> = <I>Value</I></TT>.
+To append a value to a variable name you can use <TT>+=</TT> instead of <TT>=</TT>.
+A value can contain the contents of a variable that was defined before,
+by using the notation <TT>$(<I>variable name</I>)</TT>.
+The following configuration options can be set:
+<UL>
+<LI><TT>CC</TT>. This is the C++ compiler. This is <TT>/usr/bin/g++</TT> by default.
+<LI><TT>Cc</TT>. This is the C compiler. This is <TT>/usr/bin/gcc</TT> by default.
+<LI><TT>CFLAGS</TT>. These are the flags given to the C++ compiler. By default these
+are <TT>-Wall -pedantic</TT>. You can add compiler-specific options for C++ 
+templates, optimizing options or add the option <TT>-g</TT> to add debugging 
+information.
+<LI><TT>INCLUDEDIRS</TT>, the system include directories (-I flags) for the compiler.
+<LI><TT>LD_FLAGS</TT>, the library flags (-L and -R flags) for linking.
+<LI><TT>LD_LIBS</TT>, the libraries against which TCM is linked.
+<LI><TT>LEX</TT>, the (f)lex lexical analyzer.
+<LI><TT>MKDEPEND</TT>, the command that is called for <TT>make depend</TT>.
+<LI><TT>MKDEPENDFLAGS</TT>, the flags for <TT>make depend</TT>.
+<LI><TT>MOTIF_HOME</TT>, the directory where Motif or LessTif is installed.
+<LI><TT>STRIP</TT>, the Unix command to strip binaries. When you don't want to
+strip (because debugging information would be lost), set it to <TT>/bin/echo</TT>.
+<LI><TT>SHAREDFLAG</TT>, special compiler flag, such as <TT>-shared</TT> or <TT>-G</TT>,
+to generate shared object libraries.
+<LI><TT>SYSFLAGS</TT>, a number of TCM-specific flags for the compiler:
+<UL>
+<LI><TT>-DLINUX</TT>, <TT>-DSOLARIS</TT>, <TT>-DIRIX</TT>, etc. Set this to the 
+target operating system.
+<LI><TT>-DLESSTIF</TT>. Set this if you compile with LessTif, don't set it if 
+you use Motif.
+<LI><TT>-DDEBUG</TT>, <TT>-DDUMPWINDOWTREE</TT>, output some debugging information.
+</UL>
+<LI><TT>XWIN_HOME</TT>, the directory where X windows is installed.
+<LI><TT>YACC</TT>, the yacc, compiler compiler.
+
+<P>
+</UL>
+<P>
+
+<H2><A NAME="SECTION00812000000000000000">
+7.1.2 Makefiles</A>
+</H2>
+
+<P>
+The main Makefile contains the rules for how to build the libraries 
+and the executables in the subdirectories. Per type of compiler there 
+is a distinct Makefile. They are called <TT>Makefile<I>.suffix</I></TT>.
+The default make targets are in the file 
+<A NAME="tex2html178"
+ HREF="../../src/Makefile.GEN"><TT>Makefile.GEN</TT></A>
+and 
+it's included in the other Makefiles.
+Before compiling TCM, make a symbolic link called <TT>Makefile</TT> to 
+the Makefile of the desired compiler.
+Each src-subdirectory has its own Makefile which is platform- and 
+compiler-independent. If everything goes normal they need not
+be changed when TCM is recompiled or ported.
+
+<P>
+The Makefile in the src directory has the following top-level targets:
+<UL>
+<LI><TT>make</TT> or <TT>make all</TT>. Compiles the entire distribution (default
+compilation).
+<LI><TT>make allx</TT>. Force compilation into a few executables (i.e. 
+all diagram editors and all table editors are each compiled into a single 
+executable). This is the default for <TT>g++</TT>. You can create the
+needed symbolic links for the different editors with the 
+script <A NAME="tex2html179"
+ HREF="../../bin/linkx"><TT>$TCM_HOME/bin/linkx</TT></A>
+<LI><TT>make ally</TT>. Force compilation into some more executables than
+<TT>allx</TT>. Related tools such as all data view editors are compiled into 
+one executable. The individual tools have to be soft links, that can be
+made with the script <A NAME="tex2html180"
+ HREF="../../bin/linky"><TT>$TCM_HOME/bin/linky</TT></A>
+<LI><TT>make allz</TT>. Force compilation in which each editor is compiled
+in a separate executable. This is the default for the Solaris CC compiler.
+<LI><TT>make libs</TT>. Compiles all object libraries. These libraries
+can be static or dynamic, depending on the compiler that is used.
+<LI><TT>make staticlibs</TT>: make all static object libraries 
+(the libXXX.a versions).
+<LI><TT>make dynamiclibs</TT>: make all dynamic object libraries
+(the libXXX.so versions).
+<LI><TT>make clean</TT>. All object files in the source directories are removed.
+<LI><TT>make depend</TT>. Create dependencies in the Makefiles.
+You are advised to do a <TT>make depend</TT> for a <TT>make all</TT> when you 
+compile TCM for the first time.
+<LI><TT>make <I>library</I></TT>. Compile given library.
+<LI><TT>make <I>tool</I></TT>. Compile given tool (only tool specific part,
+not the libraries that it needs). So you have to type in
+<TT>make dynamiclibs tgd</TT> when
+you want to make TGD and the dynamic libraries that it needs.
+</UL>
+<P>
+When a library is compiled, it will be moved to <TT>$TCM_HOME/lib</TT>
+and when an executable is compiled it will be moved to <TT>$TCM_HOME/bin</TT>.
+This means it will overwrite the old version.
+
+<P>
+Which default compilation is performed, depends on the kind of compiler that
+is used. The Sun CC compiler, whose Makefile is <A NAME="tex2html181"
+ HREF="../../src/Makefile.suncc">Makefile.suncc</A>, has <TT>make dynamiclibs allz</TT> as default and 
+the GNU g++, whose Makefile is <A NAME="tex2html182"
+ HREF="../../src/Makefile.gcc">Makefile.gcc</A>,
+has <TT>make staticlibs allx</TT> as default.
+
+<P>
+
+<H1><A NAME="SECTION00820000000000000000">
+7.2 Porting TCM</A>
+</H1>
+
+<P>
+In principle, TCM can be ported to any Unix system that has X Windows, Motif 
+and a C++ compiler that can handle templates. The easiest way is to copy 
+and adapt an existing Makefile and Configuration file and then try 
+to do a <TT>make clean</TT>, a <TT>make depend</TT> and then a <TT>make all</TT>.
+
+<P>
+Most of the source code is platform independent. Only at a few places
+there are some Unix specific parts which are compiled conditionally. This is
+indicated in the source code by for instance '#ifdef LINUX'. The Makefile 
+compiles its targets with the <TT>-D</TT> flag (see the Config.tmpl file) for 
+instance <TT>-DLINUX</TT>. The files that probably need some modification, 
+because they use conditional compilation are: 
+<A NAME="tex2html183"
+ HREF="../../src/gl/system.c"><TT>gl/system.c</TT></A>, 
+<A NAME="tex2html184"
+ HREF="../../src/gl/link.c"><TT>gl/link.c</TT></A>, 
+<A NAME="tex2html185"
+ HREF="../../src/gl/util.h"><TT>gl/util.h</TT></A>
+and 
+<A NAME="tex2html186"
+ HREF="../../src/ed/document.c"><TT>ed/document.c</TT></A>. The best thing 
+to do before you port is to do some 
+<TT>grep</TT>s on the sources to see what sources should maybe be changed when ported. 
+For instance: <TT>grep SOLARIS ??/*[hc] ??/??/*[hc] ; grep LINUX ??/*[hc] ??/??/*[hc]</TT>
+(do this in <TT>$TCM_HOME/src</TT>), will show what part of the sources
+have things specific for Solaris and Linux.
+
+<P>
+Likewise, a few lines of code could be different for Motif and LessTif.
+When TCM is compiled with LessTif then the compiler should be supplied with
+the <TT>-DLESSTIF</TT> flag. In the source code you will find some <TT>#ifdef LESSTIF</TT>s.
+
+<P>
+
+<H1><A NAME="SECTION00830000000000000000">
+7.3 G++ specific problems</A>
+</H1>
+
+<P>
+The GNU C++ compiler g++ is somewhat limited in handling template classes.
+GNU g++ does not implement a separate pass to instantiate template
+functions and classes at this point; for this reason, it will not work,
+for the most part, to declare your template functions in one file and
+define them in another. The compiler will need to see the entire
+definition of the function, and will generate a static copy of the
+function in each file in which it is used.
+G++ does not automatically instantiate templates defined in other
+files. Because of this, code written for cfront will often produce
+undefined symbol errors when compiled with g++. You need to tell g++
+the file where they are defined. 
+
+<P>
+The solution for TCM was, when <TT>__GNUC__</TT> is defined, to include 
+in <A NAME="tex2html187"
+ HREF="../../src/gl/llist.c"><TT>gl/llist.c</TT></A>
+the template 
+declarations that you need from the
+file <A NAME="tex2html188"
+ HREF="../../src/gl/instances.h"><TT>gl/instances.h</TT></A>. u
+Because different groups of editors need
+different declarations, several files with instances are created in 
+different source code directories and during compilation the needed 
+file is copied to <TT>gl/instances.h</TT> and <TT>gl/llist.c</TT> is compiled 
+and <TT>libglobal.a</TT> is generated again. The instance files contain not 
+much more than declarations of template instances. This process is
+controlled by the Makefiles. This solution only works with static linking 
+of libglobal (because different libglobal libraries are needed by the 
+executables). In principle the other libraries can be linked dynamically 
+by <TT>g++</TT> This can be achieved by issuing the 
+target: <TT>make semistaticlibs</TT>.
+
+<P>
+By the way, the List class is in the file <TT>gl/llist.[hc]</TT> because
+the file name <TT>list.[hc]</TT> caused some strange name clashes while
+using Sun CC compilers.
+
+<P>
+When you want to compile TCM with g++ on another system
+(use version 2.7.2 or higher), then take 
+<A NAME="tex2html189"
+ HREF="../../src/Makefile.gcc"><TT>Makefile.gcc</TT></A>
+as a 
+basis for your Makefile and take a look in 
+<A NAME="tex2html190"
+ HREF="../../src/Config.tmpl_linux"><TT>Config.tmpl_linux</TT></A>
+because on Linux the g++ compiler is used by default.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html361"
+ HREF="developersguidenode9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html358"
+ HREF="TechDoc.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html352"
+ HREF="developersguidenode7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A> 
+<A NAME="tex2html360"
+ HREF="developersguidenode1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents_motif.gif"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html362"
+ HREF="developersguidenode9.html">8. Wish List and</A>
+<B> Up:</B> <A NAME="tex2html359"
+ HREF="TechDoc.html">Toolkit for Conceptual Modeling</A>
+<B> Previous:</B> <A NAME="tex2html353"
+ HREF="developersguidenode7.html">6. Output Files</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Henk van de Zandschulp</I>
+<BR><I>2003-01-07</I>
+</ADDRESS>
+</BODY>
+</HTML>

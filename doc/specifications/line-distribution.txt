@@ -1,0 +1,76 @@
+From henkz@cs.utwente.nl Thu Mar  9 09:24:21 2000
+Date: Wed, 23 Feb 2000 09:51:10 +0100 (MET)
+From: Henk van de Zandschulp <henkz@cs.utwente.nl>
+To: frank@cs.vu.nl
+Subject: Fwd: goochelen met TCM
+
+Frank, 
+
+TCM kan zelfs gebruikt worden om kunst te maken :)
+Bijgaande het probleem, en gelijk maar een mogelijke oplossing erbij?
+
+--- 8< --- 8< ----
+> 
+> Als er tussen twee verschillend grote elementen meerdere lijnen getekend
+> worden kunnen deze nog wel eens op de foute plaats terechtkomen. Zie
+> bijgaand voorbeeld.
+> 
+> Hieronder zet ik ook maar een alogritme neer dat dit probleem kan
+> corrigeren, maar dat ook voor een mooie verdeling van meerdere edges
+> tussen nodes zorgt die niet precies naast of boven elkaar getekend zijn.
+> 
+> David.
+> 
+> ----------
+> 
+> Een algoritme om edges tussen twee nodes te verdelen (ik weet niet of
+> ik het al eens heb verteld):
+> 
+> Vooronderstellingen:
+> a) Elke node type heeft een beschrijving van de omtrek, samengesteld uit
+>    polygonale stukken en 1/4-cirkels. Deze beschrijving wordt gebruikt
+>    om te berekenen waar een edge de rand van een node treft; zij kan
+>    ook gebruikt worden om de node te tekenen. (Let op bij nodes met
+>    lijnen die niet aan de buitenkant liggen, zoals notes).
+> b) Elke node type heeft een ,,zwaartepunt''. Dit kan eventueel uit de
+>    gegevens a) berekend worden. (behalve bij notes). Bij driehoeken is
+>    te overwegen of je het grafische middenpunt wilt gebruiken of het
+>    echte zwaartepunt (dat er iets onder ligt); als je namelijk met het
+>    onderstaande algoritme één horizontale lijn tussen twee driehoeken
+>    berekent verbindt deze de grafische middenpunten, niet de zwaarte-
+>    punten.
+> 
+> Gegeven twee nodes, a en b; te tekenen n edges tussen de nodes.
+> 
+> 1. Bereken de zwaartepunten Z(a) en Z(b). Bepaal de richting van het
+>    lijnstuk Z(a)--Z(b).
+> 
+> 2. Bepaal de tangenten in richting Z(a)--Z(b) aan a en b. Dit levert
+>    de raakpunten R1(a), R2(a), R1(b) en R2(b) op. (Dus een lijn door
+>    R1(a) in de richting van Z(a)--Z(b) is een tangent aan a, en R1(a)
+>    ligt op de rand van a.) Als een randpunt, b. v. R1(a), niet
+>    eenduidig vastligt, kies R1(a) zo dicht mogelijk bij Z(b).
+> 
+> 3. Verdeel het lijnstuk R1(a)--R2(a) in n+1 gelijke delen. Dit levert
+>    de punten O(a,0)=R1(a), O(a,1), O(a,2), ..., O(a,n), O(a,n+1)=R2(a)
+>    op; deze punten liggen alle op één lijn en twee opeenvolgende punten
+>    hebben steeds dezelfde afstand.
+> 
+> 4. Doe hetzelfde met het lijnstuk R1(b)--R2(b). Dit levert de punten
+>    O(b,0)=R1(b), O(b,1), ..., O(b,n+1)=R2(b) op.
+> 
+> 5. De edges komen te liggen op de lijnen O(a,1)--O(b,1), O(a,2)--O(b,2),
+>    ..., O(a,n)--O(b,n).
+> 
+> 6. Om het exacte begin- en eindpunt van de edges te bepalen gebruik de
+>    gegevens van vooronderstelling a) om het snijpunt van elk
+>    polygoonstuk of 1/4-cirkel met de lijn te berekenen.
+> 
+> Als je meer uitleg wilt kan ik tekeningen maken, maar liever niet per
+> e-mail.
+
+
+Ik zal je de betreffend file zo separaat sturen.
+Is wel een leuke testcase :)
+
+Henk

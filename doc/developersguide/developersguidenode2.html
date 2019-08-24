@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>1. Introduction</TITLE>
+<META NAME="description" CONTENT="1. Introduction">
+<META NAME="keywords" CONTENT="TechDoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="TechDoc.css">
+<LINK REL="next" HREF="developersguidenode3.html">
+<LINK REL="previous" HREF="developersguidenode1.html">
+<LINK REL="up" HREF="TechDoc.html">
+<LINK REL="next" HREF="developersguidenode3.html">
+</HEAD>
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html278"
+ HREF="developersguidenode3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html275"
+ HREF="TechDoc.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html269"
+ HREF="developersguidenode1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A> 
+<A NAME="tex2html277"
+ HREF="developersguidenode1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents_motif.gif"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html279"
+ HREF="developersguidenode3.html">2. System Architecture</A>
+<B> Up:</B> <A NAME="tex2html276"
+ HREF="TechDoc.html">Toolkit for Conceptual Modeling</A>
+<B> Previous:</B> <A NAME="tex2html270"
+ HREF="developersguidenode1.html">Contents</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00200000000000000000">
+1. Introduction</A>
+</H1>
+
+<P>
+This report describes the design and implementation of the 
+<A NAME="tex2html1"
+ HREF="http://www.cs.utwente.nl/~tcm">Toolkit for Conceptual Modeling</A>.
+This is a working document, supplied together with the source code. It is not 
+intended for separate publication.
+
+<P>
+TCM consists of a number of X/Motif-based diagram and table drawing 
+tools. This document tries to give insight into <I>how</I> TCM is accomplished 
+from the designer/programmer's point of view. The 
+<A NAME="tex2html2"
+ HREF="../usersguide/index.html">user guide and reference manual</A>&nbsp;[<A
+ HREF="developersguidenode10.html#Dehne99b">2</A>] 
+describes <I>what</I> TCM does from the user's point of view.
+
+<P>
+TCM is implemented in C++&nbsp;[<A
+ HREF="developersguidenode10.html#Strous91">13</A>] and it uses the standard X Windows
+libraries Xlib&nbsp;[<A
+ HREF="developersguidenode10.html#Xlib96">3</A>] and Xt (X toolkit intrinsics)&nbsp;[<A
+ HREF="developersguidenode10.html#Xt96">7</A>] and it 
+uses the OSF/Motif widget set&nbsp;[<A
+ HREF="developersguidenode10.html#MotifProgGuide1.2">12</A>]. TCM can be used under 
+any X11 window manager. TCM has been ported by us to SunOS 4.1.x, Sun 
+Solaris 2.x, Linux 2.x, IRIX 6.x, AIX 4.x, HP-UX 10.x and OSF/1, But TCM is 
+portable to any Unix system that has a C++ compiler and has the development 
+libraries for X Windows and Motif (or <A NAME="tex2html3"
+ HREF="http://www.lesstif.org">LessTif</A>, 
+the free Motif clone).  
+TCM uses the Motif widget library together with the Xlib and Xt libraries 
+for its graphical user interface. These libraries have a C API.
+Books on Motif programming which have had influence on TCM 
+are&nbsp;[<A
+ HREF="developersguidenode10.html#Brain92">1</A>,<A
+ HREF="developersguidenode10.html#Oreilly6-91">4</A>,<A
+ HREF="developersguidenode10.html#Young94">15</A>,<A
+ HREF="developersguidenode10.html#Young92">14</A>].
+Books on Xlib and Xt programming which are used while writing TCM
+are&nbsp;[<A
+ HREF="developersguidenode10.html#Oreilly1">8</A>,<A
+ HREF="developersguidenode10.html#Oreilly2">9</A>,<A
+ HREF="developersguidenode10.html#Oreilly4">10</A>,<A
+ HREF="developersguidenode10.html#Oreilly5">11</A>].
+
+<P>
+This document is a stepping stone for a designer/programmer who has access 
+to the TCM source code. It expects that you have knowledge about C++, 
+X/Motif and Unix. This document tries to offer:
+<UL>
+<LI>An aid for compiling and porting TCM.
+<LI>An overview of the system architecture and the source code 
+organization. This should make it easier to understand the software
+and to make it easier to write additions and modifications.
+</UL>
+<P>
+This document is kept rather short intentionally, because it is not 
+possible to anticipate on every possible question or problem. Furthermore, 
+TCM is rapidly evolving so that many things would be quickly outdated
+and each new release would be slowed down by a documentation update. 
+When you have any questions or comments about this document you are 
+advised to e-mail them to 
+<A NAME="tex2html4"
+ HREF="mailto:tcm@cs.utwente.nl"><TT>tcm@cs.utwente.nl</TT></A>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html278"
+ HREF="developersguidenode3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html275"
+ HREF="TechDoc.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html269"
+ HREF="developersguidenode1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A> 
+<A NAME="tex2html277"
+ HREF="developersguidenode1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents_motif.gif"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html279"
+ HREF="developersguidenode3.html">2. System Architecture</A>
+<B> Up:</B> <A NAME="tex2html276"
+ HREF="TechDoc.html">Toolkit for Conceptual Modeling</A>
+<B> Previous:</B> <A NAME="tex2html270"
+ HREF="developersguidenode1.html">Contents</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Henk van de Zandschulp</I>
+<BR><I>2003-01-07</I>
+</ADDRESS>
+</BODY>
+</HTML>
