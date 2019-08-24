@@ -1,0 +1,52 @@
+#! /bin/sh -e
+## 16_gv_preview.dpatch by Otavio Salvador <otavio@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Fix gv preview params
+
+if [ $# -lt 1 ]; then
+    echo "`basename $0`: script expects -patch|-unpatch as argument" >&2
+    exit 1
+fi
+
+[ -f debian/patches/00patch-opts ] && . debian/patches/00patch-opts
+patch_opts="${patch_opts:--f --no-backup-if-mismatch} ${2:+-d $2}"
+
+case "$1" in
+    -patch) patch -p1 ${patch_opts} < $0;;
+    -unpatch) patch -R -p1 ${patch_opts} < $0;;
+    *)
+        echo "`basename $0`: script expects -patch|-unpatch as argument" >&2
+        exit 1;;
+esac
+
+exit 0
+
+@DPATCH@
+--- tcm-2.20+TSQD.orig/src/ed/printer.c
++++ tcm-2.20+TSQD/src/ed/printer.c
+@@ -170,7 +170,7 @@
+ 	char tmp[MAXNAME];
+ 	System::GiveFile(previewCommand.getstr(), tmp);
+ 	string command = tmp;
+-	if (command == "ghostview" || command == "gv") {
++	if (command == "ghostview") {
+ 		string pgs = "-";
+ 		string sz;
+ 		PageSize::Type2String(pageSize, &sz);
+@@ -181,6 +181,15 @@
+ 					"-portrait":"-landscape", 
+ 				psFileName.getstr());
+ 	}
++	else if (command == "gv") {
++		string sz;
++		PageSize::Type2String(pageSize, &sz);
++		sprintf(tmp, "%s --media=%s --orientation=%s %s 2>&1\n",
++				previewCommand.getstr(), sz.getstr(),
++				pageOrientation==Config::PORTRAIT?
++					"portrait":"landscape", 
++				psFileName.getstr());
++	}
+ 	else	// simplistic previewing ...
+ 		sprintf(tmp, "%s %s 2>&1\n", previewCommand.getstr(), 
+ 					     psFileName.getstr());

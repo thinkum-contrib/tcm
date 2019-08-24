@@ -1,0 +1,2392 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 30_amd64_null.dpatch by Adrian Knoth <adi@drcomp.erfurt.thur.de>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -Nur tcm-2.20+TSQD.orig/src/dg/diagramstubs.c tcm-2.20+TSQD/src/dg/diagramstubs.c
+--- tcm-2.20+TSQD.orig/src/dg/diagramstubs.c	2004-07-21 19:47:43.000000000 +0200
++++ tcm-2.20+TSQD/src/dg/diagramstubs.c	2006-04-02 15:13:09.000000000 +0200
+@@ -35,7 +35,7 @@
+ 	// 'unset' event of a toggle button should be discarded.
+ 	if (XmToggleButtonGetState(w)) {
+ 		int num;
+-		XtVaGetValues(w, XmNuserData, &num, 0);
++		XtVaGetValues(w, XmNuserData, &num, NULL);
+ 		((Diagram *)cd)->UpdateNodeType((int)num);
+ 	}
+ }
+@@ -44,7 +44,7 @@
+ 	// 'unset' event of a toggle button should be discarded.
+ 	if (XmToggleButtonGetState(w)) {
+ 		int num;
+-		XtVaGetValues(w, XmNuserData, &num, 0);
++		XtVaGetValues(w, XmNuserData, &num, NULL);
+ 		((Diagram *)cd)->UpdateEdgeType((int)num);
+ 	}
+ }
+@@ -131,7 +131,7 @@
+ void DiagramStubs::DefaultNodeLineStyleCB(Widget w, XtPointer cd, XtPointer) {
+ 	if (XmToggleButtonGetState(w)) {
+ 		int n;
+-		XtVaGetValues(w, XmNuserData, &n, 0);
++		XtVaGetValues(w, XmNuserData, &n, NULL);
+ 		n = n/2;
+ 		LineStyle::Type i = LineStyle::SOLID;
+ 		if (n == 1)
+@@ -147,7 +147,7 @@
+ void DiagramStubs::DefaultEdgeLineStyleCB(Widget w, XtPointer cd, XtPointer) {
+ 	if (XmToggleButtonGetState(w)) {
+ 		int n;
+-		XtVaGetValues(w, XmNuserData, &n, 0);
++		XtVaGetValues(w, XmNuserData, &n, NULL);
+ 		n = n/2;
+ 		LineStyle::Type i = LineStyle::SOLID;
+ 		if (n == 1)
+@@ -170,7 +170,7 @@
+ 
+ void DiagramStubs::UpdateNodeShapeTypeCB(Widget w, XtPointer cd, XtPointer) {
+         int num;
+-        XtVaGetValues(w, XmNuserData, &num, 0);
++        XtVaGetValues(w, XmNuserData, &num, NULL);
+         ((DiagramViewer *)cd)->UpdateNodeShapeType(num);
+ }
+ 
+diff -Nur tcm-2.20+TSQD.orig/src/dg/diagramwindow.c tcm-2.20+TSQD/src/dg/diagramwindow.c
+--- tcm-2.20+TSQD.orig/src/dg/diagramwindow.c	2004-07-21 19:46:02.000000000 +0200
++++ tcm-2.20+TSQD/src/dg/diagramwindow.c	2006-04-02 15:13:09.000000000 +0200
+@@ -135,15 +135,15 @@
+ 	SetScaleValue(CreateScaleValue(parent));
+ 	XtVaSetValues(GetStatusArea(),
+ 		XmNleftAttachment, XmATTACH_OPPOSITE_WIDGET,
+-		XmNleftWidget, GetScrolledWindow(), 0);
++		XmNleftWidget, GetScrolledWindow(), NULL);
+ 	XtVaSetValues(GetScrolledWindow(),
+ 		XmNleftAttachment, XmATTACH_WIDGET,
+ 		XmNleftWidget, tiles,
+ 		XmNbottomAttachment, XmATTACH_WIDGET,
+-		XmNbottomWidget, GetArrowButtons(), 0);
++		XmNbottomWidget, GetArrowButtons(), NULL);
+ 	// XtVaSetValues(tiles,
+ 	// 	XmNbottomAttachment, XmATTACH_WIDGET,
+-	// 	XmNbottomWidget, GetArrowButtons(), 0);
++	// 	XmNbottomWidget, GetArrowButtons(), NULL);
+ }
+ 
+ Widget DiagramWindow::CreateTiles(Widget parent) {
+@@ -157,7 +157,7 @@
+ 		XmNtopWidget, GetDocumentArea(),
+ 		XmNleftAttachment, XmATTACH_FORM,
+ 		XmNadjustLast, True,
+-		0);
++		NULL);
+ 	CalcIconColumns();
+ 	CreateNodeIcons(t);
+ 	CreateEdgeIcons(t);
+@@ -202,12 +202,12 @@
+ 	// create a frame: for nodes
+ 	Widget frame = XtVaCreateWidget("TilesFrame1",
+ 		xmFrameWidgetClass, t,
+-		XmNshadowType, XmSHADOW_ETCHED_IN, 0);
++		XmNshadowType, XmSHADOW_ETCHED_IN, NULL);
+ 
+ 	// create a rowcolumn for nodes
+ 	nodeIconsRC = XtVaCreateWidget("NodeIconsRC", xmRowColumnWidgetClass, 
+ 		frame, XmNentryAlignment, 
+-		XmALIGNMENT_CENTER, 0);
++		XmALIGNMENT_CENTER, NULL);
+ 
+ 	// make scrollbars when there are many icons.
+ 	if (iconColumns > 2) {
+@@ -220,16 +220,16 @@
+                 	XmNheight, 
+ 				GetIconsScrollHeight((nrNodes-1)/iconColumns + 1),
+                 	XmNscrollingPolicy, XmAUTOMATIC,
+-                	XmNscrollBarDisplayPolicy, XmAS_NEEDED, 0);
++                	XmNscrollBarDisplayPolicy, XmAS_NEEDED, NULL);
+ 
+ 		Widget clipWindow;
+-		XtVaGetValues(scrolledWin, XmNclipWindow, &clipWindow, 0);
+-		XtVaSetValues(clipWindow, XmNborderWidth, 0, 0);
++		XtVaGetValues(scrolledWin, XmNclipWindow, &clipWindow, NULL);
++		XtVaSetValues(clipWindow, XmNborderWidth, NULL, NULL);
+ 	}
+ 
+         XtVaCreateManagedWidget("nodes",
+                         xmLabelWidgetClass, frame,
+-                        XmNchildType, XmFRAME_TITLE_CHILD, 0);
++                        XmNchildType, XmFRAME_TITLE_CHILD, NULL);
+ 	XtSetArg(args[i], XmNradioAlwaysOne, True); i++;
+ 	XtSetArg(args[i], XmNnumColumns, iconColumns); i++;
+         XtSetArg(args[i], XmNadjustLast, False); i++;
+@@ -246,7 +246,7 @@
+ 			   // the first button is set by default
+ 			XmNset, i == 0? True: False, 
+ 			XmNhighlightThickness, 0,
+-			XmNalignment, XmALIGNMENT_CENTER, 0);
++			XmNalignment, XmALIGNMENT_CENTER, NULL);
+ 		pixmap = nodeIcons[i].CreatePixmap(pb, GetDisplay());
+ 		XtVaSetValues(pb,
+ 			XmNlabelType, XmPIXMAP,
+@@ -254,7 +254,7 @@
+ 			XmNuserData, (XtPointer)(i+1),
+ 					// determines widget for which the
+ 					// callback is involved.
+-			0);
++			NULL);
+ 		XtAddCallback(pb, XmNvalueChangedCallback, 
+ 			DiagramStubs::SetNodeCB, (XtPointer)GetDocument());
+ 		AddLiteClue(pb, (char *)nodeNames[i]);
+@@ -275,15 +275,15 @@
+ 	// create a frame: for edges
+ 	Widget frame = XtVaCreateWidget("TilesFrame2",
+ 		xmFrameWidgetClass, t,
+-		XmNshadowType, XmSHADOW_ETCHED_IN, 0);
++		XmNshadowType, XmSHADOW_ETCHED_IN, NULL);
+ 	// create a rowcolumn of edges
+ 	edgeIconsRC = XtVaCreateWidget("EdgeIconsRC", xmRowColumnWidgetClass, 
+ 		frame, XmNentryAlignment, XmALIGNMENT_CENTER,
+-		0);
++		NULL);
+ 	// create a label for edges
+         XtVaCreateManagedWidget("edges",
+                         xmLabelWidgetClass, frame,
+-                        XmNchildType, XmFRAME_TITLE_CHILD, 0);
++                        XmNchildType, XmFRAME_TITLE_CHILD, NULL);
+ 	
+ 	XtSetArg(args[i], XmNradioAlwaysOne, True); i++;
+ 	XtSetArg(args[i], XmNnumColumns, iconColumns); i++;
+@@ -298,13 +298,13 @@
+ 			xmToggleButtonWidgetClass, rb,
+ 			XmNset, i == 0? True: False,
+ 			XmNhighlightThickness, 0,
+-			XmNalignment, XmALIGNMENT_CENTER, 0);
++			XmNalignment, XmALIGNMENT_CENTER, NULL);
+ 		pixmap = edgeIcons[i].CreatePixmap(pb, GetDisplay());
+ 		XtVaSetValues(pb,
+ 			XmNlabelType, XmPIXMAP,
+ 			XmNlabelPixmap, pixmap, 
+ 			XmNuserData, (XtPointer)(i+1),
+-			0);
++			NULL);
+ 		XtAddCallback(pb, XmNvalueChangedCallback, 
+ 			DiagramStubs::SetEdgeCB, (XtPointer)GetDocument());
+ 		AddLiteClue(pb, (char *)edgeNames[i]);
+@@ -318,7 +318,7 @@
+ 		// create a button for the curve toggle
+ 		pb = XtVaCreateWidget("create curve", xmToggleButtonWidgetClass, rb,
+ 			XmNhighlightThickness, 0,
+-			XmNalignment, XmALIGNMENT_CENTER, 0);
++			XmNalignment, XmALIGNMENT_CENTER, NULL);
+ 		XtAddCallback(pb, XmNvalueChangedCallback, 
+ 			DiagramStubs::SetCurveCB, (XtPointer)GetDocument());
+ 		AddLiteClue(pb, "When on, curved edges are created");
+@@ -333,7 +333,7 @@
+ void DiagramWindow::CreateLineStyleOptionMenu(Widget w, bool nodes, 
+ 						bool minimize) {
+ 	Widget frame1 = XtVaCreateManagedWidget("LineStyleFrame",
+-                        xmFrameWidgetClass, w, 0);
++                        xmFrameWidgetClass, w, NULL);
+ 	Menu *menu;
+ 	string label;
+ 
+@@ -348,7 +348,7 @@
+ 			label = "line style";
+ 			XtVaCreateManagedWidget(label.getstr(),
+ 				xmLabelWidgetClass, frame1,
+-				XmNchildType, XmFRAME_TITLE_CHILD, 0);
++				XmNchildType, XmFRAME_TITLE_CHILD, NULL);
+ 		}
+ 	}
+ 	else {	// edges
+@@ -362,7 +362,7 @@
+ 			label = "line style";
+ 			XtVaCreateManagedWidget(label.getstr(),
+ 				xmLabelWidgetClass, frame1,
+-				XmNchildType, XmFRAME_TITLE_CHILD, 0);
++				XmNchildType, XmFRAME_TITLE_CHILD, NULL);
+ 		}
+ 	}
+ 	XtManageChild(menu->GetWidget());
+@@ -399,7 +399,7 @@
+ 		documentItems);
+ 	helpMenu = new Menu(bar, Menu::PULLDOWN, "Help", 0, helpItems);
+ 	// tell bar which bar which button is the help menu
+-	XtVaSetValues(bar, XmNmenuHelpWidget, helpMenu->GetWidget(), 0);
++	XtVaSetValues(bar, XmNmenuHelpWidget, helpMenu->GetWidget(), NULL);
+ 	// Bar is done -- manage it
+ 	XtManageChild(bar);
+ 	return bar;
+@@ -760,7 +760,7 @@
+ 					xmToggleButtonWidgetClass, rb,
+ 		XmNhighlightThickness, 0,
+ 		XmNset, viewer->IsShowIndexes(),
+-		XmNalignment, XmALIGNMENT_CENTER, 0);
++		XmNalignment, XmALIGNMENT_CENTER, NULL);
+ 	XtAddCallback(pb, XmNvalueChangedCallback,
+ 			DiagramStubs::ShowIndexesCB, (XtPointer)viewer);
+ 	AddLiteClue(pb, "When on, new nodes get an index");
+@@ -795,6 +795,6 @@
+ 	DrawWindow::SetHierarchic(s);
+ 	Widget w1 = editMenu->GetMenuItem("Duplicate");
+ 	if ( w1 )
+-		XtVaSetValues(w1, XmNsensitive, ! s, 0);
++		XtVaSetValues(w1, XmNsensitive, ! s, NULL);
+ 	GetDrawingArea()->Enable("Duplicate", ! s);
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/ed/drawingarea.c tcm-2.20+TSQD/src/ed/drawingarea.c
+--- tcm-2.20+TSQD.orig/src/ed/drawingarea.c	2004-07-21 19:51:35.000000000 +0200
++++ tcm-2.20+TSQD/src/ed/drawingarea.c	2006-04-02 15:13:09.000000000 +0200
+@@ -75,11 +75,11 @@
+ 		XmNheight, height,
+ 		XmNwidth, width,
+ 		XmNresizePolicy, XmNONE, // remain this a fixed size
+-		0));
++		NULL));
+ 	// set up destruction handler.
+ 	InstallDestroyHandler();
+ 	// convert drawing area back to pixels to get its width and height
+-	XtVaSetValues(GetWidget(), XmNunitType, XmPIXELS, 0);
++	XtVaSetValues(GetWidget(), XmNunitType, XmPIXELS, NULL);
+ 	XtAddCallback(GetWidget(), XmNexposeCallback, DrawCB, this);
+ 	XtAddCallback(GetWidget(), XmNresizeCallback, DrawCB, this);
+ 	XtAddCallback(GetWidget(), XmNinputCallback, DrawCB, this);
+@@ -107,13 +107,13 @@
+ 
+ Pixel DrawingArea::GetBackgroundColor() {
+ 	Pixel p;
+-	XtVaGetValues(GetWidget(), XmNbackground, &p, 0);
++	XtVaGetValues(GetWidget(), XmNbackground, &p, NULL);
+ 	return p;
+ }
+ 
+ Pixel DrawingArea::GetForegroundColor() {
+ 	Pixel p;
+-	XtVaGetValues(GetWidget(), XmNforeground, &p, 0);
++	XtVaGetValues(GetWidget(), XmNforeground, &p, NULL);
+ 	return p;
+ }
+ 
+@@ -162,7 +162,7 @@
+ //		// make "Duplicate" command insensitive.
+ //		Widget w1 = popupMenu->GetMenuItem("Duplicate");
+ //		if (w1)
+-//			XtVaSetValues(w1, XmNsensitive, False, 0);
++//			XtVaSetValues(w1, XmNsensitive, False, NULL);
+ //	}
+ }
+ 
+@@ -374,26 +374,26 @@
+ void DrawingArea::EnableUndo(bool flag) {
+ 	Widget undoMenuItem = popupMenu->GetMenuItem("Undo");
+ 	if (undoMenuItem)
+-		XtVaSetValues(undoMenuItem, XmNsensitive, flag, 0);
++		XtVaSetValues(undoMenuItem, XmNsensitive, flag, NULL);
+ }
+ 
+ void DrawingArea::EnableRedo(bool flag) {
+ 	Widget redoMenuItem = popupMenu->GetMenuItem("Redo");
+ 	if (redoMenuItem)
+-		XtVaSetValues(redoMenuItem, XmNsensitive, flag, 0);
++		XtVaSetValues(redoMenuItem, XmNsensitive, flag, NULL);
+ }
+ 
+ void DrawingArea::Enable(const char *label, bool flag) {
+ 	Widget menuItem = popupMenu->GetMenuItem(label);
+ 	if (menuItem)
+-		XtVaSetValues(menuItem, XmNsensitive, flag, 0);
++		XtVaSetValues(menuItem, XmNsensitive, flag, NULL);
+ }
+ 
+ void DrawingArea::SetUndoName(const char *undoname) {
+ 	XmString s = CreateXmString(undoname);
+ 	Widget undoMenuItem = popupMenu->GetMenuItem("Undo");
+ 	if (undoMenuItem)
+-		XtVaSetValues(undoMenuItem, XmNlabelString, s, 0);
++		XtVaSetValues(undoMenuItem, XmNlabelString, s, NULL);
+ 	XmStringFree(s);
+ }
+ 
+@@ -401,7 +401,7 @@
+ 	XmString s = CreateXmString(redoname);
+ 	Widget redoMenuItem = popupMenu->GetMenuItem("Redo");
+ 	if (redoMenuItem)
+-		XtVaSetValues(redoMenuItem, XmNlabelString, s, 0);
++		XtVaSetValues(redoMenuItem, XmNlabelString, s, NULL);
+ 	XmStringFree(s);
+ }
+ 
+diff -Nur tcm-2.20+TSQD.orig/src/ed/drawwindow.c tcm-2.20+TSQD/src/ed/drawwindow.c
+--- tcm-2.20+TSQD.orig/src/ed/drawwindow.c	2004-07-21 19:51:36.000000000 +0200
++++ tcm-2.20+TSQD/src/ed/drawwindow.c	2006-04-02 15:13:09.000000000 +0200
+@@ -118,28 +118,28 @@
+ 		XmNwidth, scrollWidth,
+ 		XmNscrollingPolicy, XmAUTOMATIC,
+ 		XmNscrollBarDisplayPolicy, XmAS_NEEDED,
+-		XmNrightAttachment, XmATTACH_FORM, 0);
++		XmNrightAttachment, XmATTACH_FORM, NULL);
+ 	if (GetDocumentArea())
+ 		XtVaSetValues(sw, 
+ 			XmNtopAttachment, XmATTACH_WIDGET,
+-			XmNtopWidget, GetDocumentArea(), 0);
++			XmNtopWidget, GetDocumentArea(), NULL);
+ 	if (GetLogo())
+ 		XtVaSetValues(sw, 
+ 			XmNtopAttachment, XmATTACH_WIDGET,
+-			XmNtopWidget, GetLogo(), 0);
++			XmNtopWidget, GetLogo(), NULL);
+ 	if (GetStatusArea())
+ 		XtVaSetValues(GetStatusArea(),
+ 			XmNtopAttachment, XmATTACH_WIDGET,
+-			XmNtopWidget, sw, 0);
++			XmNtopWidget, sw, NULL);
+ 	else if (GetControlArea())
+ 		XtVaSetValues(sw, 
+ 			XmNbottomAttachment, XmATTACH_WIDGET,
+-			XmNbottomWidget, GetControlArea(), 0);
++			XmNbottomWidget, GetControlArea(), NULL);
+ 	else
+ 		XtVaSetValues(sw, 
+-			XmNbottomAttachment, XmATTACH_FORM, 0);
+-	XtVaGetValues(sw, XmNverticalScrollBar, &verticalScrollBar, 0);
+-	XtVaGetValues(sw, XmNhorizontalScrollBar, &horizontalScrollBar, 0);
++			XmNbottomAttachment, XmATTACH_FORM, NULL);
++	XtVaGetValues(sw, XmNverticalScrollBar, &verticalScrollBar, NULL);
++	XtVaGetValues(sw, XmNhorizontalScrollBar, &horizontalScrollBar, NULL);
+ 	return sw;
+ }
+ 
+@@ -156,14 +156,14 @@
+ 		XmNminimum, &vminimum,
+ 		XmNpageIncrement, &vpage_incr,
+ 		XmNsliderSize, &vslider_size,
+-		XmNvalue, &vvalue, 0);
++		XmNvalue, &vvalue, NULL);
+ 	XtVaGetValues(horizontalScrollBar,
+ 		XmNincrement, &hincrement,
+ 		XmNmaximum, &hmaximum,
+ 		XmNminimum, &hminimum,
+ 		XmNpageIncrement, &hpage_incr,
+ 		XmNsliderSize, &hslider_size,
+-		XmNvalue, &hvalue, 0);
++		XmNvalue, &hvalue, NULL);
+ 	hvalue = min(hmaximum-hslider_size, max(0, (x - hslider_size/2)));
+ 	XmScrollBarSetValues(horizontalScrollBar, hvalue, hslider_size,
+ 			hincrement, hpage_incr, True);
+@@ -182,7 +182,7 @@
+ //		XmNminimum, &minimum,
+ //		XmNpageIncrement, &page_incr,
+ //		XmNsliderSize, &slider_size,
+-//		XmNvalue, &value, 0);
++//		XmNvalue, &value, NULL);
+ //}
+ //
+ 
+@@ -193,7 +193,7 @@
+ 		xmLabelWidgetClass, parent,
+ 		XmNtopAttachment, XmATTACH_WIDGET,
+ 		XmNtopWidget, scrolledWindow,
+-		XmNrightAttachment, XmATTACH_FORM, 0);
++		XmNrightAttachment, XmATTACH_FORM, NULL);
+ 	// XtAddCallback(z, XmNactivateCallback, get_sb, verticalScrollBar);
+ 	AddLiteClue(z, 
+ 		"Current scale percentage (Alt+L = larger, Alt+S = smaller)");
+@@ -205,7 +205,7 @@
+ 		string text = "Scale: ";
+ 		text += s;
+ 		XmString label = CreateXmString(text.getstr());
+-		XtVaSetValues(scaleValue, XmNlabelString, label, 0);
++		XtVaSetValues(scaleValue, XmNlabelString, label, NULL);
+ 		XmStringFree(label);
+ 	}
+ }
+@@ -217,7 +217,7 @@
+ 	if (arrowButtons)
+ 		XtVaSetValues(rc, XmNleftAttachment, XmATTACH_WIDGET,
+ 			XmNleftOffset, 20,
+-			XmNleftWidget, arrowButtons, 0);
++			XmNleftWidget, arrowButtons, NULL);
+ 	autoResizeToggle = CreateToggle(rc, "autoresizing", 
+ 			GetConfig()->GetAutoResizing(), 
+ 			EditStubs::SetAutoResizeCB, 
+@@ -241,20 +241,20 @@
+ 		hierarchicToggle = 0;
+ 	XtVaCreateManagedWidget("   Directory: ",
+ 		xmLabelWidgetClass, rc,
+-		XmNalignment, XmALIGNMENT_BEGINNING, 0);
++		XmNalignment, XmALIGNMENT_BEGINNING, NULL);
+ 	Widget dn = XtVaCreateManagedWidget("DirectoryName",
+ 		xmTextFieldWidgetClass, rc,
+ 		XmNeditable, True,
+-		XmNcursorPositionVisible, True, 0);
++		XmNcursorPositionVisible, True, NULL);
+ 	SetDirName(dn);
+ 	AddLiteClue(dn, "Current project directory. Can be changed "
+ 		"(apply with <enter>)");
+ 	if (GetScreenType() <= SVGA)
+-		XtVaSetValues(dn, XmNcolumns, 28, 0);
++		XtVaSetValues(dn, XmNcolumns, 28, NULL);
+ 	else if (GetScreenType() == XVGA)
+-		XtVaSetValues(dn, XmNcolumns, 34, 0);
++		XtVaSetValues(dn, XmNcolumns, 34, NULL);
+ 	else
+-		XtVaSetValues(dn, XmNcolumns, 40, 0);
++		XtVaSetValues(dn, XmNcolumns, 40, NULL);
+ 	XtAddCallback(dn, XmNactivateCallback,
+ 		EditStubs::ChangeDirCB, (XtPointer)GetDocument());
+ 	XtManageChild(rc);
+@@ -265,10 +265,10 @@
+ 	Widget frame = XtVaCreateManagedWidget("ArrowsFrame",
+ 		xmFrameWidgetClass, parent, 
+ 		XmNbottomAttachment, XmATTACH_FORM,
+-		XmNleftAttachment, XmATTACH_FORM, 0);
++		XmNleftAttachment, XmATTACH_FORM, NULL);
+ 	Widget form = XtVaCreateManagedWidget("ArrowsForm", 
+ 		xmFormWidgetClass, frame, 
+-		XmNfractionBase, 3, 0);
++		XmNfractionBase, 3, NULL);
+ 	Widget a1 = XtVaCreateManagedWidget(
+ 		"arrow1", xmArrowButtonWidgetClass, form,
+ 		XmNtopPosition, 0,
+@@ -280,7 +280,7 @@
+ 		XmNrightAttachment, XmATTACH_POSITION,
+ 		XmNleftAttachment, XmATTACH_POSITION,
+ 		XmNarrowDirection, XmARROW_UP,
+-		XmNuserData, Document::UP, 0);
++		XmNuserData, Document::UP, NULL);
+ 	Widget a2 = XtVaCreateManagedWidget(
+ 		"arrow2", xmArrowButtonWidgetClass, form,
+ 		XmNtopPosition, 1,
+@@ -292,7 +292,7 @@
+ 		XmNrightAttachment, XmATTACH_POSITION,
+ 		XmNleftAttachment, XmATTACH_POSITION,
+ 		XmNarrowDirection, XmARROW_LEFT,
+-		XmNuserData, (XtPointer)Document::LEFT, 0);
++		XmNuserData, (XtPointer)Document::LEFT, NULL);
+ 	Widget a3 = XtVaCreateManagedWidget(
+ 		"arrow3", xmArrowButtonWidgetClass, form,
+ 		XmNtopPosition, 1,
+@@ -304,7 +304,7 @@
+ 		XmNrightAttachment, XmATTACH_POSITION,
+ 		XmNleftAttachment, XmATTACH_POSITION,
+ 		XmNarrowDirection, XmARROW_RIGHT,
+-		XmNuserData, (XtPointer)Document::RIGHT, 0);
++		XmNuserData, (XtPointer)Document::RIGHT, NULL);
+ 	Widget a4 = XtVaCreateManagedWidget(
+ 		"arrow4", xmArrowButtonWidgetClass, form,
+ 		XmNtopPosition, 2,
+@@ -316,7 +316,7 @@
+ 		XmNrightAttachment, XmATTACH_POSITION,
+ 		XmNleftAttachment, XmATTACH_POSITION,
+ 		XmNarrowDirection, XmARROW_DOWN,
+-		XmNuserData, (XtPointer)Document::DOWN, 0);
++		XmNuserData, (XtPointer)Document::DOWN, NULL);
+ 	XmString c = CreateXmString("C");
+ 	Widget a5 = XtVaCreateManagedWidget(
+ 		"arrow5", xmPushButtonWidgetClass, form,
+@@ -329,7 +329,7 @@
+ 		XmNbottomAttachment, XmATTACH_POSITION,
+ 		XmNrightAttachment, XmATTACH_POSITION,
+ 		XmNleftAttachment, XmATTACH_POSITION,
+-		XmNuserData, (XtPointer)Document::CENTER, 0);
++		XmNuserData, (XtPointer)Document::CENTER, NULL);
+ 	XmStringFree(c);
+ 	AddLiteClue(a1, "Move the document one step up");
+ 	AddLiteClue(a2, "Move the document one step left");
+@@ -415,18 +415,18 @@
+ 
+ void DrawWindow::SetAutoResize(bool set) {
+ 	if (autoResizeToggle)
+-		XtVaSetValues(autoResizeToggle, XmNset, set, 0);
++		XtVaSetValues(autoResizeToggle, XmNset, set, NULL);
+ }
+ 
+ void DrawWindow::SetInlineEdit(bool set) {
+ 	if (inlineEditToggle)
+-		XtVaSetValues(inlineEditToggle, XmNset, set, 0); 
++		XtVaSetValues(inlineEditToggle, XmNset, set, NULL); 
+ }
+ 
+ 
+ /* virtual */ void DrawWindow::SetHierarchic(bool set) {
+ 	if ( hierarchicToggle )
+-		XtVaSetValues(hierarchicToggle, XmNset, set, 0);
++		XtVaSetValues(hierarchicToggle, XmNset, set, NULL);
+ }
+ 
+ 
+@@ -771,5 +771,5 @@
+                 return;
+         Widget docMenuItem = documentMenu->GetMenuItem("Document Source...");
+         if (docMenuItem)
+-                XtVaSetValues(docMenuItem, XmNsensitive, flag, 0);
++                XtVaSetValues(docMenuItem, XmNsensitive, flag, NULL);
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/ed/editstubs.c tcm-2.20+TSQD/src/ed/editstubs.c
+--- tcm-2.20+TSQD.orig/src/ed/editstubs.c	2004-07-21 19:51:38.000000000 +0200
++++ tcm-2.20+TSQD/src/ed/editstubs.c	2006-04-02 15:13:09.000000000 +0200
+@@ -41,7 +41,7 @@
+ 
+ void EditStubs::HelpCB(Widget w, XtPointer cd, XtPointer) {
+ 	Helper::HelpTopicType tp;
+-	XtVaGetValues(w, XmNuserData, &tp, 0);
++	XtVaGetValues(w, XmNuserData, &tp, NULL);
+ 	((Helper *)cd)->Help(tp);
+ }
+ 
+@@ -207,7 +207,7 @@
+ 
+ void EditStubs::MoveCB(Widget w, XtPointer cd, XtPointer) {
+ 	int num;
+-	XtVaGetValues(w, XmNuserData, &num, 0);
++	XtVaGetValues(w, XmNuserData, &num, NULL);
+ 	((Document *)cd)->Move((Document::MoveType)num);
+ }
+ 
+@@ -351,7 +351,7 @@
+ void EditStubs::PageOrientationCB(Widget w, XtPointer cd, XtPointer) {
+ 	if (XmToggleButtonGetState(w)) {
+ 		int num;
+-		XtVaGetValues(w, XmNuserData, &num, 0);
++		XtVaGetValues(w, XmNuserData, &num, NULL);
+ 		((Printer *)cd)->SetPageOrientation(num/2);
+ 	}
+ }
+@@ -359,7 +359,7 @@
+ void EditStubs::ShowDocumentInfoCB(Widget w, XtPointer cd, XtPointer) {
+ 	if (XmToggleButtonGetState(w)) {
+ 		int num;
+-		XtVaGetValues(w, XmNuserData, &num, 0);
++		XtVaGetValues(w, XmNuserData, &num, NULL);
+ 		((Printer *)cd)->ShowInfo(num/2);
+ 	}
+ }
+@@ -423,7 +423,7 @@
+ void EditStubs::BannerPageCB(Widget w, XtPointer cd, XtPointer) {
+ 	if (XmToggleButtonGetState(w)) {
+ 		int num;
+-		XtVaGetValues(w, XmNuserData, &num, 0);
++		XtVaGetValues(w, XmNuserData, &num, NULL);
+ 		((Printer *)cd)->SetBannerPage(num/2);
+ 	}
+ }
+@@ -434,7 +434,7 @@
+ 		// it corresponds
+ 		XmString xms;
+                 xms = CreateXmString("");
+-                XtVaGetValues(w, XmNlabelString, &xms, 0);
++                XtVaGetValues(w, XmNlabelString, &xms, NULL);
+                 char *txt;
+                 if (XmStringGetLtoR(xms, XmFONTLIST_DEFAULT_TAG, &txt)) {
+ 			string s = txt;
+diff -Nur tcm-2.20+TSQD.orig/src/ed/editwindow.c tcm-2.20+TSQD/src/ed/editwindow.c
+--- tcm-2.20+TSQD.orig/src/ed/editwindow.c	2004-07-21 19:51:37.000000000 +0200
++++ tcm-2.20+TSQD/src/ed/editwindow.c	2006-04-02 15:13:09.000000000 +0200
+@@ -125,7 +125,7 @@
+ 	logoBitmap.xbm_bits = (unsigned char *)Teapot2a_bits;
+ 	logoPixmap = logoBitmap.CreatePixmap(parent, GetDisplay());
+ 	Widget form = XtVaCreateManagedWidget(GetName()->getstr(), 
+-		xmFormWidgetClass, parent, 0);
++		xmFormWidgetClass, parent, NULL);
+ 	// find type of document tool 
+ 	int tool = GetTool();
+ 	// parse command line options
+@@ -275,7 +275,7 @@
+ 	Pixel fg, bg;
+ 	// get the foreground and background colors of the parent
+ 	// to make the pixmaps appear using a consistent color
+-	XtVaGetValues(parent, XmNforeground, &fg, XmNbackground, &bg, 0);
++	XtVaGetValues(parent, XmNforeground, &fg, XmNbackground, &bg, NULL);
+ 	// the pixmap is loaded from a X11 bitmap, called DEFAULT_ICON.
+ 	Pixmap px = logoBitmap.CreatePixmap(parent, GetDisplay()); 
+ 	Widget button = XtVaCreateManagedWidget(
+@@ -283,7 +283,7 @@
+ 			XmNlabelPixmap, px,
+ 			XmNlabelType, XmPIXMAP,
+ 			XmNtopAttachment, XmATTACH_FORM,
+-			XmNrightAttachment, XmATTACH_FORM, 0);
++			XmNrightAttachment, XmATTACH_FORM, NULL);
+ 	XtAddCallback(button, XmNactivateCallback, AboutCB, (XtPointer)this);
+ 	AddLiteClue(button, "TCM logo");
+ 	return button;
+@@ -298,31 +298,31 @@
+ 		xmRowColumnWidgetClass, parent, 
+ 		XmNadjustLast, True,
+ 		XmNorientation, XmHORIZONTAL,
+-		XmNleftAttachment, XmATTACH_FORM, 0);
++		XmNleftAttachment, XmATTACH_FORM, NULL);
+ 	if (menubar)
+ 		XtVaSetValues(rc, XmNtopAttachment, XmATTACH_WIDGET,
+-			XmNtopWidget, menubar, 0);
++			XmNtopWidget, menubar, NULL);
+ 	if (logo)
+ 		XtVaSetValues(rc, XmNrightAttachment, XmATTACH_WIDGET,
+-			XmNrightWidget, logo, 0);
++			XmNrightWidget, logo, NULL);
+ 	XtVaCreateManagedWidget("Document Type: ",
+ 		xmLabelWidgetClass, rc,
+-		XmNalignment, XmALIGNMENT_BEGINNING, 0);
++		XmNalignment, XmALIGNMENT_BEGINNING, NULL);
+ 	documentType = XtVaCreateManagedWidget("DocumentType",
+ 		xmTextFieldWidgetClass, rc, 
+ 		XmNcolumns, 15,
+ 		XmNeditable, False,
+-		XmNcursorPositionVisible, False, 0);
++		XmNcursorPositionVisible, False, NULL);
+ 	AddLiteClue(documentType, 
+ 		"The type of document that is edited by this editor (fixed)");
+ 	XtVaCreateManagedWidget("Name: ",
+ 		xmLabelWidgetClass, rc, 
+-		XmNalignment, XmALIGNMENT_BEGINNING, 0);
++		XmNalignment, XmALIGNMENT_BEGINNING, NULL);
+ 	documentName = XtVaCreateManagedWidget("DocumentName",
+ 		xmTextFieldWidgetClass, rc, 
+ 		XmNeditable, True,
+ 		XmNcolumns, 10,
+-		XmNcursorPositionVisible, True, 0);
++		XmNcursorPositionVisible, True, NULL);
+ 	AddLiteClue(documentName, 
+ 	 	"The document name. Can be changed (apply with <enter>)");
+ 	if (check(document))
+@@ -331,11 +331,11 @@
+ 	if (Toolkit::HierarchicEditor(GetTool())) {
+ //		XtVaCreateManagedWidget("Level: ",
+ //			xmLabelWidgetClass, rc,
+-//			XmNalignment, XmALIGNMENT_BEGINNING, 0);
++//			XmNalignment, XmALIGNMENT_BEGINNING, NULL);
+ //		documentLevel = XtVaCreateManagedWidget("DocumentLevel",
+ //			xmTextFieldWidgetClass, rc,
+ //			XmNeditable, False,
+-//			XmNcursorPositionVisible, False, 0);
++//			XmNcursorPositionVisible, False, NULL);
+ //		AddLiteClue(documentLevel,
+ //			"The current level in the document (fixed)");
+ 	}
+@@ -352,11 +352,11 @@
+ 		return 0;
+ 	Widget rc = XtVaCreateWidget("ControlArea", 
+ 		xmRowColumnWidgetClass, parent, 
+-		XmNorientation, XmHORIZONTAL, 0);
++		XmNorientation, XmHORIZONTAL, NULL);
+ 	if (statusArea) 
+ 		XtVaSetValues(rc, XmNtopWidget, statusArea, 
+-			XmNtopAttachment, XmATTACH_WIDGET, 0);
+-	XtVaSetValues(rc, XmNbottomAttachment, XmATTACH_FORM, 0);
++			XmNtopAttachment, XmATTACH_WIDGET, NULL);
++	XtVaSetValues(rc, XmNbottomAttachment, XmATTACH_FORM, NULL);
+ 	XtManageChild(rc);
+ 	return rc;
+ }
+@@ -368,20 +368,20 @@
+ 		return 0;
+ 	Widget rc = XtVaCreateWidget("StatusArea", 
+ 		xmRowColumnWidgetClass, parent, 
+-		XmNorientation, XmHORIZONTAL, 0);
++		XmNorientation, XmHORIZONTAL, NULL);
+ 	if (controlArea) 
+ 		XtVaSetValues(rc, XmNbottomWidget, controlArea, 
+-			XmNbottomAttachment, XmATTACH_WIDGET, 0);
++			XmNbottomAttachment, XmATTACH_WIDGET, NULL);
+ 	statusText = XtVaCreateManagedWidget("StatusText",
+ 		xmTextFieldWidgetClass, rc, 
+ 		XmNeditable, False,
+ 		XmNcursorPositionVisible, False,
+ 		XmNshadowThickness, 0,
+-		XmNvalue, "...", 0);
++		XmNvalue, "...", NULL);
+ 	if (screenType <= SVGA)
+-		XtVaSetValues(statusText, XmNcolumns, 40, 0);
++		XtVaSetValues(statusText, XmNcolumns, 40, NULL);
+ 	else
+-		XtVaSetValues(statusText, XmNcolumns, 50, 0);
++		XtVaSetValues(statusText, XmNcolumns, 50, NULL);
+ 	XtManageChild(rc);
+ 	return rc;
+ }
+@@ -394,7 +394,7 @@
+ 	Widget toggle = XtVaCreateManagedWidget(label, 
+ 		xmToggleButtonWidgetClass, parent,
+ 		XmNlabelString, text,
+-		XmNset, Init, 0);
++		XmNset, Init, NULL);
+ 	XtAddCallback(toggle, XmNvalueChangedCallback, fun, clientData);
+ 	XmStringFree(text);
+ 	return toggle;
+@@ -406,7 +406,7 @@
+ 		return;
+ 	Widget undoMenuItem = editMenu->GetMenuItem("Undo");
+ 	if (undoMenuItem) {
+-		XtVaSetValues(undoMenuItem, XmNsensitive, flag, 0);
++		XtVaSetValues(undoMenuItem, XmNsensitive, flag, NULL);
+ 	}
+ }
+ 
+@@ -416,7 +416,7 @@
+ 		return;
+ 	Widget redoMenuItem = editMenu->GetMenuItem("Redo");
+ 	if (redoMenuItem)
+-		XtVaSetValues(redoMenuItem, XmNsensitive, flag, 0);
++		XtVaSetValues(redoMenuItem, XmNsensitive, flag, NULL);
+ }
+ 
+ void EditWindow::SetUndoName(const char *uname) {
+@@ -426,7 +426,7 @@
+ 	XmString s = CreateXmString(uname);
+ 	Widget undoMenuItem = editMenu->GetMenuItem("Undo");
+ 	if (undoMenuItem)
+-		XtVaSetValues(undoMenuItem, XmNlabelString, s, 0);
++		XtVaSetValues(undoMenuItem, XmNlabelString, s, NULL);
+ 	XmStringFree(s);
+ }
+ 
+@@ -437,7 +437,7 @@
+ 	XmString s = CreateXmString(uname);
+ 	Widget redoMenuItem = editMenu->GetMenuItem("Redo");
+ 	if (redoMenuItem)
+-		XtVaSetValues(redoMenuItem, XmNlabelString, s, 0);
++		XtVaSetValues(redoMenuItem, XmNlabelString, s, NULL);
+ 	XmStringFree(s);
+ }
+ 
+@@ -523,7 +523,7 @@
+ 
+ void EditWindow::SetStatus(const char *message) {
+ 	if (statusText)
+-		XtVaSetValues(statusText, XmNvalue, message, 0); 
++		XtVaSetValues(statusText, XmNvalue, message, NULL); 
+ }
+ 
+ void EditWindow::SetStatus(const string *message) {
+@@ -534,7 +534,7 @@
+ 	if (documentName) {
+ 		int columns = min(30, max(10, strlen(s)+2));
+ 		XtVaSetValues(documentName, XmNvalue, s, 
+-                              XmNcolumns, columns, 0); 
++                              XmNcolumns, columns, NULL); 
+ 		// show document name also in the icon.
+ 		SetIconName(s); 
+ 	}
+@@ -548,7 +548,7 @@
+ 	if (documentType) {
+ 		int columns = min(30, max(10, strlen(s)+2));
+ 		XtVaSetValues(documentType, XmNvalue, s,
+-				    XmNcolumns, columns, 0); 
++				    XmNcolumns, columns, NULL); 
+ 	}
+ }
+ 
+@@ -560,7 +560,7 @@
+ 	if (dirName) {
+ 		int columns = min(30, max(10, strlen(s)+4));
+ 		XtVaSetValues(dirName, XmNvalue, s,
+-				XmNcolumns, columns, 0); 
++				XmNcolumns, columns, NULL); 
+ 	}
+ }
+ 
+@@ -570,7 +570,7 @@
+ 
+ void EditWindow::SetModified(bool set) {
+ 	if (modifiedToggle)
+-		XtVaSetValues(modifiedToggle, XmNset, set, 0); 
++		XtVaSetValues(modifiedToggle, XmNset, set, NULL); 
+ }
+ 
+ void EditWindow::AboutCB(Widget w, XtPointer, XtPointer) {
+@@ -581,7 +581,7 @@
+ void EditWindow::SetDocumentLevel(const char *s) {
+ 	if (documentLevel)
+ 		XtVaSetValues(documentLevel, XmNvalue, s,
+-					    XmNcolumns, strlen(s)+1, 0);
++					    XmNcolumns, strlen(s)+1, NULL);
+ }
+ 
+ void EditWindow::SetDocumentLevel(const string *s) {
+diff -Nur tcm-2.20+TSQD.orig/src/ed/startupwindow.c tcm-2.20+TSQD/src/ed/startupwindow.c
+--- tcm-2.20+TSQD.orig/src/ed/startupwindow.c	2006-04-02 15:12:45.000000000 +0200
++++ tcm-2.20+TSQD/src/ed/startupwindow.c	2006-04-02 15:13:09.000000000 +0200
+@@ -91,7 +91,7 @@
+ 	if (!check(parent))
+ 		return 0;
+ 	Widget startupForm = XtVaCreateWidget("StartupWindow", xmFormWidgetClass,
+-		parent, 0);
++		parent, NULL);
+ 	initDrawingWidth = config->GetDrawingWidth();
+ 	initDrawingHeight = config->GetDrawingHeight();
+ 	maxDrawingWidth = max(initDrawingWidth, config->GetDrawingMaxWidth());
+@@ -188,27 +188,27 @@
+ 		XmNtopWidget, menuBar,
+ 		XmNleftAttachment, XmATTACH_FORM, 
+ 		XmNbottomAttachment, XmATTACH_FORM, 
+-		XmNrightAttachment, XmATTACH_FORM, 0);
++		XmNrightAttachment, XmATTACH_FORM, NULL);
+ 	mainForm = XtVaCreateWidget("form",
+-		xmFormWidgetClass, scrolledWindow, 0);
++		xmFormWidgetClass, scrolledWindow, NULL);
+ 	// *** GEN *** //
+ 	Widget frameGEN = XtVaCreateManagedWidget("frameGEN", 
+ 				xmFrameWidgetClass, mainForm,
+ 				XmNleftAttachment, XmATTACH_FORM, 
+ 				XmNrightAttachment, XmATTACH_FORM,
+-				0);
++				NULL);
+ 	XtVaCreateManagedWidget("Generic Editors", 
+ 			xmLabelWidgetClass, frameGEN,
+-			XmNchildType, XmFRAME_TITLE_CHILD, 0);
++			XmNchildType, XmFRAME_TITLE_CHILD, NULL);
+ 	Widget rowcolGEN = XtVaCreateManagedWidget("rowcolGEN", 
+-				xmRowColumnWidgetClass, frameGEN, 0);
++				xmRowColumnWidgetClass, frameGEN, NULL);
+ 	AddToolEntry(rowcolGEN, 0); // TGD. 
+ 	AddToolEntry(rowcolGEN, 9); // TGT. 
+ 	AddToolEntry(rowcolGEN, 13); // TGTT. 
+ 	XtVaCreateManagedWidget("separator", 
+ 			xmSeparatorWidgetClass, mainForm,
+ 			XmNmargin, 8, 
+-			XmNseparatorType, XmNO_LINE, 0);
++			XmNseparatorType, XmNO_LINE, NULL);
+ 	// *** SA (YSM) *** //
+ 	Widget frameSA = XtVaCreateManagedWidget("frameSA", 
+ 				xmFrameWidgetClass, mainForm,
+@@ -216,13 +216,13 @@
+ 				XmNtopWidget, frameGEN,
+ 				XmNleftAttachment, XmATTACH_FORM, 
+ 				XmNrightAttachment, XmATTACH_FORM,
+-				0);
++				NULL);
+ 	XtVaCreateManagedWidget("Structured Analysis Editors", 
+ 			xmLabelWidgetClass, frameSA, 
+-			XmNchildType, XmFRAME_TITLE_CHILD, 0);
++			XmNchildType, XmFRAME_TITLE_CHILD, NULL);
+ 	Widget rowcolSA = XtVaCreateManagedWidget("rowcolSA", 
+ 			xmRowColumnWidgetClass, frameSA, 
+-			XmNspacing, 4, 0);
++			XmNspacing, 4, NULL);
+ 	AddToolEntry(rowcolSA, 26);	// ERD. 
+ 	AddToolEntry(rowcolSA, 7);	// EFD
+ 	AddToolEntry(rowcolSA, 3);	// MST. 
+@@ -232,7 +232,7 @@
+ 	XtVaCreateManagedWidget("separator", 
+ 			xmSeparatorWidgetClass, mainForm,
+  			XmNmargin, 8, 
+-			XmNseparatorType, XmNO_LINE, 0);
++			XmNseparatorType, XmNO_LINE, NULL);
+ 	// *** UML *** //
+ 	Widget frameUML = XtVaCreateManagedWidget("frameUML", 
+ 				xmFrameWidgetClass, mainForm,
+@@ -240,13 +240,13 @@
+ 				XmNtopWidget, frameSA,
+ 				XmNleftAttachment, XmATTACH_FORM, 
+ 				XmNrightAttachment, XmATTACH_FORM,
+-				0);
++				NULL);
+ 	XtVaCreateManagedWidget("UML Editors", 
+ 			xmLabelWidgetClass, frameUML, 
+-			XmNchildType, XmFRAME_TITLE_CHILD, 0);
++			XmNchildType, XmFRAME_TITLE_CHILD, NULL);
+ 	Widget rowcolUML = XtVaCreateManagedWidget("rowcolUML", 
+ 			xmRowColumnWidgetClass, frameUML, 
+-			XmNspacing, 4, 0);
++			XmNspacing, 4, NULL);
+ 	AddToolEntry(rowcolUML, 23);	// TUCD. 
+ 	AddToolEntry(rowcolUML, 18);	// TSSD. 
+ 	AddToolEntry(rowcolUML, 25);	// TATD. 
+@@ -258,7 +258,7 @@
+ 	XtVaCreateManagedWidget("separator", 
+ 			xmSeparatorWidgetClass, mainForm,
+ 			XmNmargin, 8, 
+-			XmNseparatorType, XmNO_LINE, 0);
++			XmNseparatorType, XmNO_LINE, NULL);
+ 	// *** MISC *** //
+ 	Widget frameMISC = XtVaCreateManagedWidget("frameMISC", 
+ 				xmFrameWidgetClass, mainForm,
+@@ -266,12 +266,12 @@
+ 				XmNtopWidget, frameUML,
+ 				XmNleftAttachment, XmATTACH_FORM, 
+ 				XmNrightAttachment, XmATTACH_FORM,
+-				0);
++				NULL);
+ 	XtVaCreateManagedWidget("Miscellaneous Editors", 
+ 			xmLabelWidgetClass, frameMISC,
+-			XmNchildType, XmFRAME_TITLE_CHILD, 0);
++			XmNchildType, XmFRAME_TITLE_CHILD, NULL);
+ 	Widget rowcolMISC = XtVaCreateManagedWidget("rowcolMISC", 
+-			xmRowColumnWidgetClass, frameMISC, 0);
++			xmRowColumnWidgetClass, frameMISC, NULL);
+ 	AddToolEntry(rowcolMISC, 1);	// ERD 
+ 	AddToolEntry(rowcolMISC, 2);	// CRD 
+ 	AddToolEntry(rowcolMISC, 6);	// DFD
+@@ -282,14 +282,14 @@
+ 	XtVaCreateManagedWidget("separator", 
+ 			xmSeparatorWidgetClass, mainForm,
+ 			XmNmargin, 8, 
+-			XmNseparatorType, XmNO_LINE, 0);
++			XmNseparatorType, XmNO_LINE, NULL);
+ 	Widget formSTATUS =  XtVaCreateManagedWidget("formSTATUS",
+ 				xmFormWidgetClass, mainForm,
+ 				XmNtopAttachment, XmATTACH_WIDGET,
+ 				XmNtopWidget, frameMISC,
+ 				XmNleftAttachment, XmATTACH_FORM,
+ 				XmNrightAttachment, XmATTACH_FORM,
+-				0);
++				NULL);
+ 	int stColumns = 42;
+ 	if (WidthOfScreen(XtScreen(parent)) <= 1024)
+ 		// <= SVGA
+@@ -302,7 +302,7 @@
+ 			XmNcolumns, stColumns, 
+ 			XmNtopAttachment, XmATTACH_FORM,
+ 			XmNrightAttachment, XmATTACH_FORM,
+-			XmNleftAttachment, XmATTACH_FORM, 0);
++			XmNleftAttachment, XmATTACH_FORM, NULL);
+ 	XtManageChild(mainForm);
+ 	XtManageChild(scrolledWindow);
+ 	XtManageChild(parent);
+@@ -357,7 +357,7 @@
+ 	viewMenu = new Menu(bar, Menu::PULLDOWN, "View", 0, viewItems);
+ 	helpMenu = new Menu(bar, Menu::PULLDOWN, "Help", 0, helpItems);
+ 	// tell bar which bar which button is the help menu
+-	XtVaSetValues(bar, XmNmenuHelpWidget, helpMenu->GetWidget(), 0);
++	XtVaSetValues(bar, XmNmenuHelpWidget, helpMenu->GetWidget(), NULL);
+ 	// Bar is done -- manage it
+ 	XtManageChild(bar);
+ 	return bar;
+@@ -366,7 +366,7 @@
+ void StartupWindow::AddToolEntry(Widget parent, int i) {
+ 	XmString xmtt; char tt[MAXNAME]; char ttinfo[MAXNAME];
+ 	Widget form = XtVaCreateWidget("form", 
+-		xmFormWidgetClass, parent, 0);
++		xmFormWidgetClass, parent, NULL);
+ 	Widget button = XtVaCreateManagedWidget(Toolkit::TOOL_NAMES[i], 
+ 		xmPushButtonWidgetClass, form, XmNwidth, 50, 
+ 		XmNheight, 22,
+@@ -374,7 +374,7 @@
+ 		XmNbottomAttachment, XmATTACH_FORM,
+ 		XmNleftAttachment, XmATTACH_FORM, 
+ 		XmNuserData, i,
+-		0);
++		NULL);
+ 	strcpy(tt, Toolkit::DOCUMENT_TYPES[i]);
+ 	xmtt = CreateXmString(tt);
+ 	strcpy(ttinfo, Toolkit::DOCUMENT_TYPES_INFO[i]);
+@@ -386,7 +386,7 @@
+ 		XmNtopAttachment, XmATTACH_FORM,
+ 		XmNbottomAttachment, XmATTACH_FORM,
+ 		XmNleftOffset, 6,
+-		0);
++		NULL);
+ 	XtAddCallback(button, XmNactivateCallback, StartEditorCB, 
+ 			(XtPointer *)this);
+ 	XmStringFree(xmtt);
+@@ -600,7 +600,7 @@
+ 
+ void StartupWindow::SetStatus(const char *s) {
+ 	if (statusBar)
+-		XtVaSetValues(statusBar, XmNvalue, s, 0);
++		XtVaSetValues(statusBar, XmNvalue, s, NULL);
+ }
+ 
+ void StartupWindow::SetStatus(const string *s) {
+@@ -661,7 +661,7 @@
+ void StartupWindow::StartEditorCB(Widget w, XtPointer clientData, XtPointer) {
+ 	StartupWindow *s = (StartupWindow *)clientData;
+ 	int num;
+-	XtVaGetValues(w, XmNuserData, &num, 0);
++	XtVaGetValues(w, XmNuserData, &num, NULL);
+ 	s->StartEditor(num);
+ }
+ 
+@@ -735,13 +735,13 @@
+ 	Helper *hp = (Helper *)cd;
+ 	hp->SetStatus("action: help");
+ 	Helper::HelpTopicType tp;
+-	XtVaGetValues(w, XmNuserData, &tp, 0);
++	XtVaGetValues(w, XmNuserData, &tp, NULL);
+ 	hp->Help(tp);
+ }
+ 
+ void StartupWindow::Finalize() {
+ 	Dimension fwd, fht;
+-	XtVaGetValues(mainForm, XmNwidth, &fwd, XmNheight, &fht, 0);
++	XtVaGetValues(mainForm, XmNwidth, &fwd, XmNheight, &fht, NULL);
+ 	// std::cout << "mainForm width = " << fwd << std::endl;
+ 	// std::cout << "mainForm height = " << fht << std::endl;
+ 	Screen *screen = XtScreen(GetWidget());
+@@ -752,6 +752,6 @@
+ 	Dimension ht = min(sht*9/10, fht+39);  // experimentally
+ 	// std::cout << "win width = " << wd << std::endl;
+ 	// std::cout << "win height = " << ht << std::endl;
+-	XtVaSetValues(GetWidget(), XmNwidth, wd, 0);
+-	XtVaSetValues(GetWidget(), XmNheight, ht, 0);
++	XtVaSetValues(GetWidget(), XmNwidth, wd, NULL);
++	XtVaSetValues(GetWidget(), XmNheight, ht, NULL);
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/sd/bv/psstubs.c tcm-2.20+TSQD/src/sd/bv/psstubs.c
+--- tcm-2.20+TSQD.orig/src/sd/bv/psstubs.c	2004-07-21 19:54:14.000000000 +0200
++++ tcm-2.20+TSQD/src/sd/bv/psstubs.c	2006-04-02 15:13:09.000000000 +0200
+@@ -25,6 +25,6 @@
+ 
+ void PSStubs::ShowSequenceCB(Widget w, XtPointer cd, XtPointer) {
+ 	int num;
+-	XtVaGetValues(w, XmNuserData, &num, 0);
++	XtVaGetValues(w, XmNuserData, &num, NULL);
+ 	((PSViewer *)cd)->SetShowSequences(num);
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/sd/bv/pswindow.c tcm-2.20+TSQD/src/sd/bv/pswindow.c
+--- tcm-2.20+TSQD.orig/src/sd/bv/pswindow.c	2004-07-21 19:54:20.000000000 +0200
++++ tcm-2.20+TSQD/src/sd/bv/pswindow.c	2006-04-02 15:13:09.000000000 +0200
+@@ -75,7 +75,7 @@
+ //	// make the duplicate item insensitive.
+ //	Widget w1 = editMenu->GetMenuItem("Duplicate");
+ //	if (w1)
+-//		XtVaSetValues(w1, XmNsensitive, False, 0);
++//		XtVaSetValues(w1, XmNsensitive, False, NULL);
+ //	return bar;
+ //}
+ 
+diff -Nur tcm-2.20+TSQD.orig/src/sd/dv/erstubs.c tcm-2.20+TSQD/src/sd/dv/erstubs.c
+--- tcm-2.20+TSQD.orig/src/sd/dv/erstubs.c	2004-07-21 19:53:12.000000000 +0200
++++ tcm-2.20+TSQD/src/sd/dv/erstubs.c	2006-04-02 15:13:09.000000000 +0200
+@@ -36,7 +36,7 @@
+         // get menu item label and look to which dir it corresponds
+         XmString xms;
+         xms = CreateXmString("");
+-        XtVaGetValues(w, XmNlabelString, &xms, 0);
++        XtVaGetValues(w, XmNlabelString, &xms, NULL);
+         char *txt;
+         ReadDirection::Type dir;
+         if (XmStringGetLtoR(xms, XmFONTLIST_DEFAULT_TAG, &txt)) {
+diff -Nur tcm-2.20+TSQD.orig/src/sd/fv/dfwindow.c tcm-2.20+TSQD/src/sd/fv/dfwindow.c
+--- tcm-2.20+TSQD.orig/src/sd/fv/dfwindow.c	2004-07-21 19:56:20.000000000 +0200
++++ tcm-2.20+TSQD/src/sd/fv/dfwindow.c	2006-04-02 15:13:09.000000000 +0200
+@@ -87,7 +87,7 @@
+ 
+ void DFWindow::SetDiagram(const char *s) {
+ 	if (dfDiagram)
+-		XtVaSetValues(dfDiagram, XmNvalue, s, 0); 
++		XtVaSetValues(dfDiagram, XmNvalue, s, NULL); 
+ }
+  
+ void DFWindow::SetDiagram(const string *s) {
+@@ -108,9 +108,9 @@
+ 		XmNtopAttachment, XmATTACH_WIDGET,
+ 		XmNtopWidget, GetDocumentArea(),
+ 		XmNleftAttachment, XmATTACH_FORM,
+-		XmNorientation, XmVERTICAL, 0);
+-	Widget t1 = XtVaCreateWidget("tiles1", xmRowColumnWidgetClass, t, 0);
+-	Widget t2 = XtVaCreateWidget("tiles2", xmRowColumnWidgetClass, t, 0);
++		XmNorientation, XmVERTICAL, NULL);
++	Widget t1 = XtVaCreateWidget("tiles1", xmRowColumnWidgetClass, t, NULL);
++	Widget t2 = XtVaCreateWidget("tiles2", xmRowColumnWidgetClass, t, NULL);
+ 	CreateNodeIcons(t1);
+ 	CreateEdgeIcons(t1);
+ 	CreateDiagramField(t2);
+@@ -124,15 +124,15 @@
+ void DFWindow::CreateDiagramField(Widget parent) {
+ 	Widget frame = XtVaCreateManagedWidget("tiles_frame3",
+ 		xmFrameWidgetClass, parent,
+-		XmNshadowType, XmSHADOW_ETCHED_IN, 0);
++		XmNshadowType, XmSHADOW_ETCHED_IN, NULL);
+ 	Widget rc = XtVaCreateWidget("rc3", xmRowColumnWidgetClass, frame,
+-			XmNentryAlignment, XmALIGNMENT_CENTER, 0);
+-	XtVaCreateManagedWidget("Diagram", xmLabelWidgetClass, rc, 0);
++			XmNentryAlignment, XmALIGNMENT_CENTER, NULL);
++	XtVaCreateManagedWidget("Diagram", xmLabelWidgetClass, rc, NULL);
+ 	dfDiagram = XtVaCreateManagedWidget("DFDiagram",
+ 			xmTextFieldWidgetClass, rc,
+ 			XmNcolumns, 5,
+ 			XmNeditable, True,
+-			XmNcursorPositionVisible, True, 0);
++			XmNcursorPositionVisible, True, NULL);
+ 	XtAddCallback(dfDiagram, XmNactivateCallback, 
+ 	 		DFStubs::ChangeDiagramCB, (XtPointer)GetDocument());
+ 	AddLiteClue(dfDiagram, "Set diagram index (apply with <return>)");
+diff -Nur tcm-2.20+TSQD.orig/src/sd/tr/trwindow.c tcm-2.20+TSQD/src/sd/tr/trwindow.c
+--- tcm-2.20+TSQD.orig/src/sd/tr/trwindow.c	2004-07-21 19:55:43.000000000 +0200
++++ tcm-2.20+TSQD/src/sd/tr/trwindow.c	2006-04-02 15:13:09.000000000 +0200
+@@ -72,7 +72,7 @@
+ 	// make the duplicate item insensitive.
+ 	Widget w1 = editMenu->GetMenuItem("Duplicate");
+ 	if (w1)
+-		XtVaSetValues(w1, XmNsensitive, False, 0);
++		XtVaSetValues(w1, XmNsensitive, False, NULL);
+ 	return bar;
+ }
+ 
+@@ -89,14 +89,14 @@
+ 	// create a frame
+ 	Widget frame = XtVaCreateManagedWidget("layout_tiles_frame1",
+ 		xmFrameWidgetClass, parent,
+-		XmNshadowType, XmSHADOW_ETCHED_IN, 0);
++		XmNshadowType, XmSHADOW_ETCHED_IN, NULL);
+ 	// create the label
+ 	XtVaCreateManagedWidget("Layout",
+                         xmLabelWidgetClass, frame,
+-                        XmNchildType, XmFRAME_TITLE_CHILD, 0);
++                        XmNchildType, XmFRAME_TITLE_CHILD, NULL);
+ 	// create a rowcolumn
+ 	Widget rc = XtVaCreateWidget("rc1", xmRowColumnWidgetClass, frame,
+-		XmNentryAlignment, XmALIGNMENT_CENTER, 0);
++		XmNentryAlignment, XmALIGNMENT_CENTER, NULL);
+ 	// create a radiobox for the tiles
+ 	XtSetArg(args[i], XmNradioAlwaysOne, True); i++;
+ 	char wname[8] = "Layout";
+@@ -112,7 +112,7 @@
+ 			XmNlabelType, XmSTRING,
+ 			XmNlabelString, lb1,
+ 			XmNuserData, (XtPointer)0,
+-			XmNalignment, XmALIGNMENT_CENTER, 0);
++			XmNalignment, XmALIGNMENT_CENTER, NULL);
+ 	XtAddCallback(editButton, XmNvalueChangedCallback,
+ 			TRWindow::LayoutCB, (XtPointer)this);
+ 	AddLiteClue(editButton, "Edit mode in which document is drawn as a graph");
+@@ -123,7 +123,7 @@
+ 			XmNlabelType, XmSTRING,
+ 			XmNhighlightThickness, 0,
+ 			XmNuserData, (XtPointer)1,
+-			XmNalignment, XmALIGNMENT_CENTER, 0);
++			XmNalignment, XmALIGNMENT_CENTER, NULL);
+ 	XtAddCallback(treeButton, XmNvalueChangedCallback,
+ 			TRWindow::LayoutCB, (XtPointer)this);
+ 	AddLiteClue(treeButton, "View mode in which document has a forked tree layout");
+@@ -179,13 +179,13 @@
+ void TRWindow::SetSensitive(Menu *menu, const char *label, bool b) {
+ 	Widget w = menu->GetMenuItem(label);
+ 	if (w)
+-		XtVaSetValues(w, XmNsensitive, b, 0);
++		XtVaSetValues(w, XmNsensitive, b, NULL);
+ }
+ 
+ void TRWindow::LayoutCB(Widget w, XtPointer cd, XtPointer) {
+ 	if (XmToggleButtonGetState(w)) {
+ 		int num;
+-		XtVaGetValues(w, XmNuserData, &num, 0);
++		XtVaGetValues(w, XmNuserData, &num, NULL);
+ 		((TRWindow *)cd)->SetLayout(num);
+ 	}
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/tb/tablewindow.c tcm-2.20+TSQD/src/tb/tablewindow.c
+--- tcm-2.20+TSQD.orig/src/tb/tablewindow.c	2004-07-21 19:51:26.000000000 +0200
++++ tcm-2.20+TSQD/src/tb/tablewindow.c	2006-04-02 15:13:09.000000000 +0200
+@@ -169,11 +169,11 @@
+ 	SetScaleValue(CreateScaleValue(parent));
+ 	XtVaSetValues(GetStatusArea(), XmNleftAttachment, XmATTACH_WIDGET,
+ 		XmNleftOffset, 20,
+-		XmNleftWidget, GetArrowButtons(), 0);
++		XmNleftWidget, GetArrowButtons(), NULL);
+ 	XtVaSetValues(GetScrolledWindow(), XmNleftAttachment, XmATTACH_FORM,
+ 		XmNleftOffset, 20,
+ 		XmNbottomAttachment, XmATTACH_WIDGET,
+-		XmNbottomWidget, GetArrowButtons(), 0);
++		XmNbottomWidget, GetArrowButtons(), NULL);
+ }
+ 
+ Widget TableWindow::CreateMenuBar(Widget parent) {
+@@ -206,7 +206,7 @@
+ 				 documentItems);
+ 	helpMenu = new Menu(bar, Menu::PULLDOWN, "Help", 0, helpItems);
+ 	// tell bar which bar which button is the help menu
+-	XtVaSetValues(bar, XmNmenuHelpWidget, helpMenu->GetWidget(), 0);
++	XtVaSetValues(bar, XmNmenuHelpWidget, helpMenu->GetWidget(), NULL);
+ 	// Bar is done -- manage it
+ 	XtManageChild(bar);
+ 	return bar;
+diff -Nur tcm-2.20+TSQD.orig/src/ui/application.c tcm-2.20+TSQD/src/ui/application.c
+--- tcm-2.20+TSQD.orig/src/ui/application.c	2004-07-21 19:48:37.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/application.c	2006-04-02 15:13:09.000000000 +0200
+@@ -109,7 +109,7 @@
+ 				(char **)XResources::classicColorResources :
+ 		 		(char **)XResources::modernColorResources) :
+ 		 		(char **)XResources::monoResources,
+-		    XmNmappedWhenManaged, False, 0));
++		    XmNmappedWhenManaged, False, NULL));
+ 	// The Application class is less likely to need to handle
+ 	// "surprise" widget destruction than other classes, but
+ 	// we might as well install a callback to be safe and consistent
+@@ -132,7 +132,7 @@
+ 	LoadColorFile();
+ 
+ 	// lesstif cannot accept a window of 0 width and height.
+-	XtVaSetValues(GetWidget(), XmNwidth, 10, XmNheight, 10, 0);
++	XtVaSetValues(GetWidget(), XmNwidth, 10, XmNheight, 10, NULL);
+ 
+ 	// Force the shell window to exist so dialogs popped up from
+ 	// this shell behave correctly
+@@ -179,7 +179,7 @@
+ 	if (!privateCmap) {
+ 		Colormap cmap = DefaultColormapOfScreen(XtScreen(GetWidget()));
+ 		cmap = XCopyColormapAndFree(display, cmap);
+-		XtVaSetValues(GetWidget(), XmNcolormap, cmap, 0);
++		XtVaSetValues(GetWidget(), XmNcolormap, cmap, NULL);
+ 	}
+ 	privateCmap = True;
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/ui/bitmap.c tcm-2.20+TSQD/src/ui/bitmap.c
+--- tcm-2.20+TSQD.orig/src/ui/bitmap.c	2004-07-21 19:48:36.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/bitmap.c	2006-04-02 15:13:09.000000000 +0200
+@@ -37,7 +37,7 @@
+ 
+ Pixmap Bitmap::CreatePixmap(Widget w, Display *display) const {
+ 	Pixel fg, bg;
+-	XtVaGetValues(w, XmNforeground, &fg, XmNbackground, &bg, 0);
++	XtVaGetValues(w, XmNforeground, &fg, XmNbackground, &bg, NULL);
+ 	Screen *screen = XtScreen(w);
+ 	return XCreatePixmapFromBitmapData(display,
+ 			RootWindowOfScreen(screen),
+diff -Nur tcm-2.20+TSQD.orig/src/ui/colorchooserdialog.c tcm-2.20+TSQD/src/ui/colorchooserdialog.c
+--- tcm-2.20+TSQD.orig/src/ui/colorchooserdialog.c	2004-07-21 19:48:29.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/colorchooserdialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -60,19 +60,19 @@
+ 	XtAddCallback(GetList(), XmNbrowseSelectionCallback, 
+ 		      UpdateColorCB, this);
+ 	Widget rc = XtVaCreateManagedWidget("rc", 
+-		xmRowColumnWidgetClass, GetWidget(), 0);
++		xmRowColumnWidgetClass, GetWidget(), NULL);
+ 	fillToggle = XtVaCreateManagedWidget("fill them",
+                 xmToggleButtonWidgetClass, rc,
+-                XmNset, True, 0);
++                XmNset, True, NULL);
+ 	Widget rc2 = XtVaCreateManagedWidget("rc2",
+                 xmRowColumnWidgetClass, rc,
+-                XmNorientation, XmHORIZONTAL, 0);
+-	XtVaCreateManagedWidget("preview: ", xmLabelWidgetClass, rc2, 0);
++                XmNorientation, XmHORIZONTAL, NULL);
++	XtVaCreateManagedWidget("preview: ", xmLabelWidgetClass, rc2, NULL);
+ 	colorLabel = XtVaCreateManagedWidget(
+ 		"", xmTextFieldWidgetClass, rc2, 
+ 		XmNeditable, False, 
+-		XmNcursorPositionVisible, False, 0);
+-	XtVaGetValues(GetWidget(), XmNcolormap, &colormap, 0);
++		XmNcursorPositionVisible, False, NULL);
++	XtVaGetValues(GetWidget(), XmNcolormap, &colormap, NULL);
+ }
+ 
+ void ColorChooserDialog::UpdateColorCB(Widget, XtPointer p, XtPointer cbs) {
+@@ -113,7 +113,7 @@
+ 				return;
+ 			}
+                 }
+-		XtVaSetValues(colorLabel, XmNbackground, pixel, 0);
++		XtVaSetValues(colorLabel, XmNbackground, pixel, NULL);
+ 	}
+ }
+ 
+@@ -145,7 +145,7 @@
+         if (!check(fillToggle))
+                 return;
+         XmString text_string = CreateXmString(txt);
+-        XtVaSetValues(fillToggle, XmNlabelString, text_string, 0);
++        XtVaSetValues(fillToggle, XmNlabelString, text_string, NULL);
+         XmStringFree(text_string);
+ }
+ 
+diff -Nur tcm-2.20+TSQD.orig/src/ui/dialog.c tcm-2.20+TSQD/src/ui/dialog.c
+--- tcm-2.20+TSQD.orig/src/ui/dialog.c	2004-07-21 19:48:24.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/dialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -49,7 +49,7 @@
+ 	strncpy(t, title, MAXTITLE-1);
+ 	t[MAXTITLE-1] = '\0';
+ 	XmString s = CreateXmString(t);
+-	XtVaSetValues(GetWidget(), XmNdialogTitle, s, 0);
++	XtVaSetValues(GetWidget(), XmNdialogTitle, s, NULL);
+ 	XmStringFree(s);
+ }
+ 
+@@ -61,7 +61,7 @@
+ 	if (!check(GetWidget()))
+ 		return;
+ 	XmString s = CreateXmString("");
+-	XtVaGetValues(GetWidget(), XmNdialogTitle, &s, 0);
++	XtVaGetValues(GetWidget(), XmNdialogTitle, &s, NULL);
+ 	char *str;
+ 	if (XmStringGetLtoR(s, XmFONTLIST_DEFAULT_TAG, &str)) {
+ 		strncpy(title, str, MAXTITLE-1);
+@@ -84,13 +84,13 @@
+ 	XtVaSetValues(GetWidget(), 
+ 		XmNdialogStyle, 
+ 		(b?XmDIALOG_FULL_APPLICATION_MODAL:XmDIALOG_MODELESS), 
+-		0);
++		NULL);
+ }
+ 
+ void Dialog::SetAutoUnmanage(bool b) {
+ 	autoUnmanage = b;
+ 	if (GetWidget())
+-		XtVaSetValues(GetWidget(), XmNautoUnmanage, b, 0);
++		XtVaSetValues(GetWidget(), XmNautoUnmanage, b, NULL);
+ }
+ 
+ void Dialog::SetOKCallback(XtCallbackProc fun, XtPointer clientData) {
+@@ -127,7 +127,7 @@
+ 	if (!check(GetWidget()))
+ 		return;
+ 	XmString t = CreateXmString(txt);
+-	XtVaSetValues(GetWidget(), XmNokLabelString, t, 0);
++	XtVaSetValues(GetWidget(), XmNokLabelString, t, NULL);
+ 	XmStringFree(t);
+ }
+ 
+@@ -135,7 +135,7 @@
+ 	if (!check(GetWidget()))
+ 		return;
+ 	XmString t = CreateXmString(txt);
+-	XtVaSetValues(GetWidget(), XmNcancelLabelString, t, 0);
++	XtVaSetValues(GetWidget(), XmNcancelLabelString, t, NULL);
+ 	XmStringFree(t);
+ }
+ 
+@@ -143,7 +143,7 @@
+ 	if (!check(GetWidget()))
+ 		return;
+ 	XmString t = CreateXmString(txt);
+-	XtVaSetValues(GetWidget(), XmNhelpLabelString, t, 0);
++	XtVaSetValues(GetWidget(), XmNhelpLabelString, t, NULL);
+ 	XmStringFree(t);
+ }
+ 
+@@ -214,7 +214,7 @@
+ 			&Dialog::DestroyWidgetCB, 0);
+ 		XtAddCallback(GetWidget(), XmNdestroyCallback,
+ 			&Dialog::DestroyCB, (XtPointer)this);
+-		XtVaSetValues(GetWidget(), XmNdeleteResponse, XmDESTROY, 0);
++		XtVaSetValues(GetWidget(), XmNdeleteResponse, XmDESTROY, NULL);
+ 	}
+ 	else {
+ 		XtRemoveCallback(GetWidget(), XmNokCallback,
+@@ -223,7 +223,7 @@
+ 			&Dialog::DestroyWidgetCB, 0);
+ 		XtRemoveCallback(GetWidget(), XmNdestroyCallback,
+ 			&Dialog::DestroyCB, (XtPointer)this);
+-		XtVaSetValues(GetWidget(), XmNdeleteResponse, XmUNMAP, 0);
++		XtVaSetValues(GetWidget(), XmNdeleteResponse, XmUNMAP, NULL);
+ 	}
+ }
+ 
+@@ -269,8 +269,8 @@
+ 	// Temporarily set value of XmNmappedWhenManaged
+ 	//   to stop the dialog from popping up right away
+ 	bool mappedWhenManaged = False;
+-	XtVaGetValues(shell, XmNmappedWhenManaged, &mappedWhenManaged, 0);
+-	XtVaSetValues(shell, XmNmappedWhenManaged, False, 0);
++	XtVaGetValues(shell, XmNmappedWhenManaged, &mappedWhenManaged, NULL);
++	XtVaSetValues(shell, XmNmappedWhenManaged, False, NULL);
+ 	// Manage the dialog
+ 	XtManageChild(GetWidget());
+ 	// Get the pointer position (x, y)
+@@ -300,9 +300,9 @@
+ 	if (y > maxY) 
+ 		y = maxY;
+ 	// Set desired window position in the DialogShell.
+-	XtVaSetValues(shell, XmNx, x, XmNy, y, 0);
++	XtVaSetValues(shell, XmNx, x, XmNy, y, NULL);
+ 	// Map the widget
+ 	XtMapWidget(shell);
+ 	// Restore the value of XmNmappedWhenManaged
+-	XtVaSetValues(shell, XmNmappedWhenManaged, mappedWhenManaged, 0);
++	XtVaSetValues(shell, XmNmappedWhenManaged, mappedWhenManaged, NULL);
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/ui/dumpwidgettree.c tcm-2.20+TSQD/src/ui/dumpwidgettree.c
+--- tcm-2.20+TSQD.orig/src/ui/dumpwidgettree.c	2004-07-21 19:48:33.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/dumpwidgettree.c	2006-04-02 15:13:09.000000000 +0200
+@@ -51,7 +51,7 @@
+ 	}
+ 	XtVaGetValues(w,
+ 		XmNchildren, &list,
+-		XmNnumChildren, &num_children, 0);
++		XmNnumChildren, &num_children, NULL);
+ 	printf("%s> %s has %d %s:\n", tmp,
+ 			XtName(w), num_children, 
+ 			num_children == 1 ? "child" : "children");
+diff -Nur tcm-2.20+TSQD.orig/src/ui/fileselectiondialog.c tcm-2.20+TSQD/src/ui/fileselectiondialog.c
+--- tcm-2.20+TSQD.orig/src/ui/fileselectiondialog.c	2004-07-21 19:48:01.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/fileselectiondialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -71,7 +71,7 @@
+ 		XmNfileTypeMask, fileTypeMask,
+ 		XmNdirListLabelString, dirLabel,
+ 		XmNfileListLabelString, fileLabel,
+-		XmNpattern, pattern, 0);
++		XmNpattern, pattern, NULL);
+ 	if (fileLabel)
+ 		XmStringFree(fileLabel);
+ 	if (dirLabel)
+@@ -87,7 +87,7 @@
+ 	if (!check(GetWidget()))
+ 		return;
+ 	XmString dir = CreateXmString(d);
+-	XtVaSetValues(GetWidget(), XmNdirectory, dir, 0);
++	XtVaSetValues(GetWidget(), XmNdirectory, dir, NULL);
+ 	XmStringFree(dir);
+ }
+ 
+@@ -102,8 +102,8 @@
+ 	// Update the file list in the dialog
+ 	XmString pattern = CreateXmString("");
+ 	XmString dir = CreateXmString("");
+-	XtVaGetValues(GetWidget(), XmNpattern, &pattern, 0);
+-	XtVaGetValues(GetWidget(), XmNdirectory, &dir, 0);
++	XtVaGetValues(GetWidget(), XmNpattern, &pattern, NULL);
++	XtVaGetValues(GetWidget(), XmNdirectory, &dir, NULL);
+ 	char *str1, *str2;
+ 	XmStringGetLtoR(dir, XmFONTLIST_DEFAULT_TAG, &str1);
+ 	XmStringGetLtoR(pattern, XmFONTLIST_DEFAULT_TAG, &str2);
+@@ -129,7 +129,7 @@
+ 
+ 	// Force the default name in the text entry field.
+ 	dirSpec = CreateXmString(f);
+-	XtVaSetValues(GetWidget(), XmNtextString, dirSpec, 0);
++	XtVaSetValues(GetWidget(), XmNtextString, dirSpec, NULL);
+ 	string f1 = f;
+ 	System::GiveFile(&f1, &defaultFile);
+ 	if (dirSpec)
+@@ -145,9 +145,9 @@
+ 	DeselectAllItems();
+ 	// make sure file selection box has an acceptable minimal width.
+ 	short w;
+-	XtVaGetValues(GetText(), XmNcolumns, &w, 0);
++	XtVaGetValues(GetText(), XmNcolumns, &w, NULL);
+ 	if (w < 40)
+-		XtVaSetValues(GetText(), XmNcolumns, 40, 0);
++		XtVaSetValues(GetText(), XmNcolumns, 40, NULL);
+ 	Dialog::Popup();
+ }
+ 
+@@ -170,7 +170,7 @@
+ 		return;
+ 	XmString d = CreateXmString("");
+ 	char *str;
+-	XtVaGetValues(GetWidget(), XmNdirectory, &d, 0);
++	XtVaGetValues(GetWidget(), XmNdirectory, &d, NULL);
+ 	if (XmStringGetLtoR(d, XmFONTLIST_DEFAULT_TAG, &str)) {
+ 		strcpy(dir, str);
+ 		XtFree(str);
+@@ -201,14 +201,14 @@
+ 	char wname[MAXNAME] = "frame";
+ 	menuFrame = XmCreateFrame(GetWidget(), wname, args, i);
+ 	Widget rc = XtVaCreateWidget("rc", xmRowColumnWidgetClass, menuFrame, 
+-			XmNorientation, XmHORIZONTAL, 0);
++			XmNorientation, XmHORIZONTAL, NULL);
+ 	XtVaCreateManagedWidget("label", xmLabelWidgetClass, 
+-		rc, XmNlabelString, ls, 0);
++		rc, XmNlabelString, ls, NULL);
+ 	strcpy(wname, "menu");
+ 	menu = XmCreateOptionMenu(rc, wname, 0, 0);
+ 	strcpy(wname, "pane");
+ 	pane = XmCreatePulldownMenu(rc, wname, 0, 0);
+-	XtVaSetValues(menu, XmNsubMenuId, pane, 0);
++	XtVaSetValues(menu, XmNsubMenuId, pane, NULL);
+ 	XtAddCallback(pane, XmNentryCallback, OptionChangedCB, this);
+ 	for (items->first(); !items->done(); items->next()) {
+ 		XtCreateManagedWidget(items->cur()->getstr(),
+@@ -255,18 +255,18 @@
+ 	// only setting the label of option button does not work.
+ 	Widget *wlist;
+ 	int numc;
+-	XtVaGetValues(pane, XmNchildren, &wlist, 0);
+-	XtVaGetValues(pane, XmNnumChildren, &numc, 0);
++	XtVaGetValues(pane, XmNchildren, &wlist, NULL);
++	XtVaGetValues(pane, XmNnumChildren, &numc, NULL);
+ 	XmString s1 = CreateXmString(s->getstr());
+ 	for (int i=0; i<numc; i++) {
+ 		XmString s2 = CreateXmString("");
+-		XtVaGetValues(wlist[i], XmNlabelString, &s2, 0);
++		XtVaGetValues(wlist[i], XmNlabelString, &s2, NULL);
+ 		char *str;
+ 		if (XmStringGetLtoR(s2, XmFONTLIST_DEFAULT_TAG, &str)) {
+ 			if (strstr(str, s->getstr())) {
+-				XtVaSetValues(pane, XmNmenuHistory, wlist[i], 0);
++				XtVaSetValues(pane, XmNmenuHistory, wlist[i], NULL);
+ 				Widget l = XmOptionButtonGadget(menu);
+-				XtVaSetValues(l, XmNlabelString, s1, 0);
++				XtVaSetValues(l, XmNlabelString, s1, NULL);
+ 				XmStringFree(s1);
+ 				XmStringFree(s2);
+ 				XtFree(str);
+@@ -285,7 +285,7 @@
+ 		char *str;
+ 		XmString xs = CreateXmString("");
+ 		Widget l = XmOptionButtonGadget(menu);
+-		XtVaGetValues(l, XmNlabelString, &xs, 0);
++		XtVaGetValues(l, XmNlabelString, &xs, NULL);
+ 		if (XmStringGetLtoR(xs, XmFONTLIST_DEFAULT_TAG, &str)) {
+ 			*item = str;
+ 			XtFree(str);
+diff -Nur tcm-2.20+TSQD.orig/src/ui/finddialog.c tcm-2.20+TSQD/src/ui/finddialog.c
+--- tcm-2.20+TSQD.orig/src/ui/finddialog.c	2004-07-21 19:48:24.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/finddialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -60,30 +60,30 @@
+ 	ManageSelectionLabel(False);
+ 
+ 	form = XtVaCreateWidget("form",
+-		xmFormWidgetClass, GetWidget(), 0);
++		xmFormWidgetClass, GetWidget(), NULL);
+ 	SetSelectionLabel(XtVaCreateManagedWidget("String to Find",
+ 		xmLabelWidgetClass, form, 
+ 		XmNleftAttachment, XmATTACH_FORM,
+-		XmNtopAttachment, XmATTACH_FORM, 0));
++		XmNtopAttachment, XmATTACH_FORM, NULL));
+ 	SetText(XtVaCreateManagedWidget("find_text",
+ 		xmTextFieldWidgetClass, form,
+ 		XmNleftAttachment, XmATTACH_FORM,
+ 		XmNrightAttachment, XmATTACH_FORM,
+ 		XmNtopAttachment, XmATTACH_WIDGET,
+-		XmNtopWidget, GetSelectionLabel(), 0));
++		XmNtopWidget, GetSelectionLabel(), NULL));
+ 	toggleRC = XtVaCreateManagedWidget("toggleRC",
+ 		xmRowColumnWidgetClass, form,
+ 		XmNorientation, XmHORIZONTAL, 
+-		XmNleftAttachment, XmATTACH_FORM, 0);
++		XmNleftAttachment, XmATTACH_FORM, NULL);
+ 	sensitiveToggle = XtVaCreateManagedWidget("case sensitive", 
+ 		xmToggleButtonWidgetClass, toggleRC, 
+-		XmNset, False, 0);
++		XmNset, False, NULL);
+ 	substringToggle = XtVaCreateWidget("substring", 
+ 		xmToggleButtonWidgetClass, toggleRC,
+-		XmNset, True, 0);
++		XmNset, True, NULL);
+ 	nameOnlyToggle = XtVaCreateWidget("name only", 
+ 		xmToggleButtonWidgetClass, toggleRC,
+-		XmNset, False, 0);
++		XmNset, False, NULL);
+ 	AttachToggles();
+ 	XtManageChild(form);
+ }
+@@ -91,7 +91,7 @@
+ void FindDialog::AttachToggles() {
+ 	XtVaSetValues(toggleRC, 
+ 		XmNtopAttachment, XmATTACH_WIDGET,
+-		XmNtopWidget, GetText(), 0);
++		XmNtopWidget, GetText(), NULL);
+ }
+ 
+ void FindDialog::ManageSensitiveToggle(bool b) {
+diff -Nur tcm-2.20+TSQD.orig/src/ui/fontchooserdialog.c tcm-2.20+TSQD/src/ui/fontchooserdialog.c
+--- tcm-2.20+TSQD.orig/src/ui/fontchooserdialog.c	2004-07-21 19:48:43.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/fontchooserdialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -105,7 +105,7 @@
+ 	SetHelpButtonLabel("Default");
+ 	// underlinedToggle = XtVaCreateManagedWidget("underlined",
+           //       xmToggleButtonWidgetClass, GetWidget(),
+-            //     XmNset, False, 0);
++            //     XmNset, False, NULL);
+ 	ChooseDefault();
+ 	SetToggleChangedCallback(0, ShowExampleCB, this);
+ 	SetToggleChangedCallback(1, ShowExampleCB, this);
+@@ -137,7 +137,7 @@
+ 		XFontStruct *fs = exampleFont->GetXFontStruct();
+ 		XmFontList fl = XmFontListCreate(fs, 
+ 				XmSTRING_DEFAULT_CHARSET);
+-		XtVaSetValues(GetText(), XmNfontList, fl, 0);
++		XtVaSetValues(GetText(), XmNfontList, fl, NULL);
+ 		XmFontListFree(fl);
+ 	}
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/ui/lineenddialog.c tcm-2.20+TSQD/src/ui/lineenddialog.c
+--- tcm-2.20+TSQD.orig/src/ui/lineenddialog.c	2004-07-21 19:48:40.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/lineenddialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -163,9 +163,9 @@
+ 	List<Widget> *tl1 = (*GetToggleList())[0];
+ 	List<Widget> *tl2 = (*GetToggleList())[1];
+ 	XtVaSetValues(XtParent((*tl1)[0]), 
+-		XmNnumColumns, 4, XmNorientation, XmHORIZONTAL, 0);
++		XmNnumColumns, 4, XmNorientation, XmHORIZONTAL, NULL);
+ 	XtVaSetValues(XtParent((*tl2)[0]), 
+-		XmNnumColumns, 4, XmNorientation, XmHORIZONTAL, 0);
++		XmNnumColumns, 4, XmNorientation, XmHORIZONTAL, NULL);
+ 	for (int k=1; k<=LineEnd::NUMTYPES; k++) {
+ 		LineEnd::Type t = (LineEnd::Type)k;
+ 		string s1;
+diff -Nur tcm-2.20+TSQD.orig/src/ui/linestyledialog.c tcm-2.20+TSQD/src/ui/linestyledialog.c
+--- tcm-2.20+TSQD.orig/src/ui/linestyledialog.c	2004-07-21 19:48:23.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/linestyledialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -94,5 +94,5 @@
+ 	List<Widget> *tl = (*GetToggleList())[0];
+ 	Widget rc = XtParent((*tl)[0]);
+ 	XtVaSetValues(rc, XmNnumColumns, 3, 
+-			  XmNorientation, XmHORIZONTAL, 0);
++			  XmNorientation, XmHORIZONTAL, NULL);
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/ui/linestylesidedialog.c tcm-2.20+TSQD/src/ui/linestylesidedialog.c
+--- tcm-2.20+TSQD.orig/src/ui/linestylesidedialog.c	2004-07-21 19:48:48.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/linestylesidedialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -82,5 +82,5 @@
+ 	Widget rc = XtParent((*tl)[1]);
+ 	XtVaSetValues(rc, XmNnumColumns, 3, 
+ 			  XmNorientation, 
+-			  XmHORIZONTAL, 0);
++			  XmHORIZONTAL, NULL);
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/ui/linewidthdialog.c tcm-2.20+TSQD/src/ui/linewidthdialog.c
+--- tcm-2.20+TSQD.orig/src/ui/linewidthdialog.c	2004-07-21 19:48:04.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/linewidthdialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -106,5 +106,5 @@
+ 	List<Widget> *tl = (*GetToggleList())[0];
+ 	Widget rc = XtParent((*tl)[0]);
+ 	XtVaSetValues(rc, XmNnumColumns, 3, 
+-			  XmNorientation, XmHORIZONTAL, 0);
++			  XmNorientation, XmHORIZONTAL, NULL);
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/ui/linewidthsidedialog.c tcm-2.20+TSQD/src/ui/linewidthsidedialog.c
+--- tcm-2.20+TSQD.orig/src/ui/linewidthsidedialog.c	2004-07-21 19:48:08.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/linewidthsidedialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -82,5 +82,5 @@
+ 	Widget rc = XtParent((*tl)[1]);
+ 	XtVaSetValues(rc, XmNnumColumns, 3, 
+ 			  XmNorientation, 
+-			  XmHORIZONTAL, 0);
++			  XmHORIZONTAL, NULL);
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/ui/mainwindow.c tcm-2.20+TSQD/src/ui/mainwindow.c
+--- tcm-2.20+TSQD.orig/src/ui/mainwindow.c	2004-07-21 19:48:10.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/mainwindow.c	2006-04-02 15:13:09.000000000 +0200
+@@ -40,7 +40,7 @@
+ 	SetWidget(XtCreatePopupShell(GetName()->getstr(), 
+ 	 	topLevelShellWidgetClass, theApplication->GetWidget(), 0, 0));
+ 	XtVaSetValues(GetWidget(), XmNkeyboardFocusPolicy, XmPOINTER, 
+-		XmNmappedWhenManaged, False, 0);
++		XmNmappedWhenManaged, False, NULL);
+ 	InstallDestroyHandler();
+ 	// Use a Motif XmMainWindow widget to handle window layout
+ 	main = XtCreateManagedWidget(GetName()->getstr(), xmMainWindowWidgetClass, 
+@@ -50,7 +50,7 @@
+ 	config = c;
+ 	workarea = CreateWorkArea(main, argc, argv);  
+ 	if(check(workarea)) {
+-		XtVaSetValues(main, XmNworkWindow, workarea, 0);
++		XtVaSetValues(main, XmNworkWindow, workarea, NULL);
+ 		if(!XtIsManaged(workarea))
+ 			XtManageChild(workarea);
+ 	}
+@@ -82,7 +82,7 @@
+ }
+ 
+ void MainWindow::ManageUnmapped() {
+-	XtVaSetValues(GetWidget(), XmNmappedWhenManaged, False, 0);
++	XtVaSetValues(GetWidget(), XmNmappedWhenManaged, False, NULL);
+ 	MWidget::Manage();
+ }
+ 
+@@ -91,7 +91,7 @@
+ 		return;
+ 	// Set the widget to have an initial iconic state
+ 	// in case the base widget has not yet been realized
+-	XtVaSetValues(GetWidget(), XmNiconic, TRUE, 0);
++	XtVaSetValues(GetWidget(), XmNiconic, TRUE, NULL);
+ 	// If the widget has already been realized, iconify the window
+ 	if (XtIsRealized(GetWidget()))
+ 		XIconifyWindow(GetDisplay(), GetWindow(), 0);
+@@ -103,7 +103,7 @@
+ 
+ void MainWindow::SetTitle(const char *title) {
+ 	if (check(GetWidget()))
+-		XtVaSetValues(GetWidget(), XmNtitle, title, 0);
++		XtVaSetValues(GetWidget(), XmNtitle, title, NULL);
+ }
+ 
+ void MainWindow::SetTitle(const string *title) {
+@@ -112,13 +112,13 @@
+ 
+ void MainWindow::SetIconName(const char *iconname) {
+ 	if (check(GetWidget()))
+-		XtVaSetValues(GetWidget(), XmNiconName, iconname, 0);
++		XtVaSetValues(GetWidget(), XmNiconName, iconname, NULL);
+ }
+ 
+ void MainWindow::SetIconPixmap(Pixmap px) {
+ 	if (!check(GetWidget()))
+ 		return;
+-	XtVaSetValues(GetWidget(), XmNiconPixmap, px, 0);
++	XtVaSetValues(GetWidget(), XmNiconPixmap, px, NULL);
+ }
+ 
+ PrinterOptions *MainWindow::GetPrinterOptions() {
+diff -Nur tcm-2.20+TSQD.orig/src/ui/menu.c tcm-2.20+TSQD/src/ui/menu.c
+--- tcm-2.20+TSQD.orig/src/ui/menu.c	2006-04-02 15:12:45.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/menu.c	2006-04-02 15:14:26.000000000 +0200
+@@ -43,13 +43,13 @@
+ 	Widget submenu;
+ 	WidgetList wlist; int numc;
+ 	if (type == PULLDOWN)
+-		XtVaGetValues(w, XmNsubMenuId, &submenu, 0);
++		XtVaGetValues(w, XmNsubMenuId, &submenu, NULL);
+ 	else
+ 		submenu = w;
+ 	if (!check(submenu))
+ 		return 0;
+-	XtVaGetValues(submenu, XmNchildren, &wlist, 0);
+-	XtVaGetValues(submenu, XmNnumChildren, &numc, 0);
++	XtVaGetValues(submenu, XmNchildren, &wlist, NULL);
++	XtVaGetValues(submenu, XmNnumChildren, &numc, NULL);
+ 	if (n <= numc)
+ 		return wlist[n-1];
+ 	else
+@@ -67,7 +67,7 @@
+ 		bool state) {
+ 	Widget child = GetNthChild(w, type, n);
+ 	if (check(child))
+-		XtVaSetValues(child, XmNsensitive, state, 0);
++		XtVaSetValues(child, XmNsensitive, state, NULL);
+ }
+ 
+ Widget Menu::GetMenuItem(const char *label) {
+@@ -78,17 +78,17 @@
+ 	Widget submenu;
+ 	WidgetList wlist; int numc;
+ 	if (menuType == PULLDOWN)
+-		XtVaGetValues(w, XmNsubMenuId, &submenu, 0);
++		XtVaGetValues(w, XmNsubMenuId, &submenu, NULL);
+ 	else
+ 		submenu = w;
+ 	if (!check(submenu))
+ 		return 0;
+-	XtVaGetValues(submenu, XmNchildren, &wlist, 0);
+-	XtVaGetValues(submenu, XmNnumChildren, &numc, 0);
++	XtVaGetValues(submenu, XmNchildren, &wlist, NULL);
++	XtVaGetValues(submenu, XmNnumChildren, &numc, NULL);
+ 	XmString s2;
+ 	for (int i=0; i < numc; i++) {
+ 		s2 = CreateXmString("");
+-		XtVaGetValues(wlist[i], XmNlabelString, &s2, 0); 
++		XtVaGetValues(wlist[i], XmNlabelString, &s2, NULL); 
+ 		char *str;
+ 		if (XmStringGetLtoR(s2, XmFONTLIST_DEFAULT_TAG, &str)) {
+ 			// std::cout << str << std::endl;
+@@ -116,7 +116,7 @@
+ 		const char *label, bool state) {
+ 	Widget child = GetChild(w, type, label);
+ 	if (check(child))
+-		XtVaSetValues(child, XmNsensitive, state, 0);
++		XtVaSetValues(child, XmNsensitive, state, NULL);
+ }
+ 
+ // Build popup, option and pulldown menus, depending on the menu type.
+@@ -152,7 +152,7 @@
+ 			xmCascadeButtonWidgetClass, parent,
+ 			XmNsubMenuId, menu,
+ 			XmNlabelString, str,
+-			XmNmnemonic, mnemonic, 0);
++			XmNmnemonic, mnemonic, NULL);
+ 		XmStringFree(str);
+ 	} else if (type == OPTION) {
+ 		// Option menus are a special case, but not hard to handle
+@@ -199,7 +199,7 @@
+ 			else
+ 				wc = &xmPushButtonWidgetClass;
+ 			submenu = XtVaCreateManagedWidget(items[i].label,
+-				*wc, menu, 0);
++				*wc, menu, NULL);
+ 		}
+ 		// toggle buttons are always visible as such
+ 		if (items[i].itemType == MenuItem::RADIOBUTTON || 
+@@ -208,13 +208,13 @@
+ 			XtVaSetValues(submenu, XmNindicatorOn, True,
+ 				XmNvisibleWhenOff, True,
+ 				XmNindicatorSize, 12, 
+-				0);
++				NULL);
+ 			// box or diamond ?
+ 			if (items[i].itemType == MenuItem::RADIOBUTTON) {
+ 				XtVaSetValues(menu, 
+-					XmNradioBehavior, True, 0);
++					XmNradioBehavior, True, NULL);
+ 				XtVaSetValues(submenu, 
+-					XmNindicatorType, XmONE_OF_MANY, 0);
++					XmNindicatorType, XmONE_OF_MANY, NULL);
+ 			}
+ 			// selected or not ?
+ 			if ((long)items[i].userData & 0x1)
+@@ -223,22 +223,22 @@
+ 		}
+ 		if (items[i].userData)
+ 			XtVaSetValues(submenu, XmNuserData, 
+-					items[i].userData, 0);
++					items[i].userData, NULL);
+ 
+ 		// Whether the item is a real item or a cascade button with a
+ 		// menu, it can still have a mnemonic.
+ 		//
+ 		if (items[i].mnemonic)
+ 			XtVaSetValues(submenu, XmNmnemonic, 
+-				items[i].mnemonic, 0);
++				items[i].mnemonic, NULL);
+ 		// any item can have an accelerator, except cascade menus. But,
+ 		// we don't worry about that; we know better in our 
+ 		// declarations.
+ 		if (items[i].accelerator) {
+ 			str = CreateXmString(items[i].accelText);
+-			XtVaSetValues(submenu, XmNacceleratorText, str, 0);
++			XtVaSetValues(submenu, XmNacceleratorText, str, NULL);
+ 			XtVaSetValues(submenu, XmNaccelerator, 
+-					items[i].accelerator, 0);
++					items[i].accelerator, NULL);
+ 			XmStringFree(str);
+ 		}
+ 
+@@ -252,7 +252,7 @@
+ 				items[i].callback, items[i].callbackData);
+ 
+ 		// set if item is selectable
+-		XtVaSetValues(submenu, XmNsensitive, items[i].sensitive, 0);
++		XtVaSetValues(submenu, XmNsensitive, items[i].sensitive, NULL);
+ 
+ 		if (items[i].showBitmap) {
+ 			Bitmap b = items[i].bitmap;
+@@ -261,7 +261,7 @@
+ 					XtDisplay(menu));
+ 			 	XtVaSetValues(submenu,
+                           		XmNlabelType, XmPIXMAP,
+-                          		XmNlabelPixmap, px, 0);
++                          		XmNlabelPixmap, px, NULL);
+ 			}
+ 		}
+ 	}
+Binary files tcm-2.20+TSQD.orig/src/ui/.menu.c.rej.swp and tcm-2.20+TSQD/src/ui/.menu.c.rej.swp differ
+diff -Nur tcm-2.20+TSQD.orig/src/ui/messagedialog.c tcm-2.20+TSQD/src/ui/messagedialog.c
+--- tcm-2.20+TSQD.orig/src/ui/messagedialog.c	2004-07-21 19:47:54.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/messagedialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -39,7 +39,7 @@
+ 
+ void MessageDialog::SetMessageString(const char *s) {
+ 	XmString msg = CreateXmString(s);
+-	XtVaSetValues(GetWidget(), XmNmessageString, msg, 0);
++	XtVaSetValues(GetWidget(), XmNmessageString, msg, NULL);
+ 	XmStringFree(msg);
+ }
+ 
+diff -Nur tcm-2.20+TSQD.orig/src/ui/messagelogdialog.c tcm-2.20+TSQD/src/ui/messagelogdialog.c
+--- tcm-2.20+TSQD.orig/src/ui/messagelogdialog.c	2004-07-21 19:47:57.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/messagelogdialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -36,7 +36,7 @@
+ 		XmNscrollHorizontal, False,
+ 		XmNcolumns, 80,
+ 		XmNblinkRate, 0,
+-		XmNautoShowCursorPosition, True, 0);
++		XmNautoShowCursorPosition, True, NULL);
+ }
+ 
+ void MessageLogDialog::InsertText(const string *txt) {
+@@ -55,6 +55,6 @@
+ 	wprPosition += tmp.length();
+ 	XmTextInsert(GetTextWidget(), wprPosition, (char *)txt);
+ 	wprPosition += strlen(txt);
+-	XtVaSetValues(GetTextWidget(), XmNcursorPosition, wprPosition, 0);
++	XtVaSetValues(GetTextWidget(), XmNcursorPosition, wprPosition, NULL);
+ 	XmTextShowPosition(GetTextWidget(), wprPosition);
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/ui/modelcheckdialog.c tcm-2.20+TSQD/src/ui/modelcheckdialog.c
+--- tcm-2.20+TSQD.orig/src/ui/modelcheckdialog.c	2004-07-21 19:48:30.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/modelcheckdialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -45,39 +45,39 @@
+ 	ManageSelectionLabel(False);
+ 
+ 	form = XtVaCreateWidget("form",
+-		xmFormWidgetClass, GetWidget(), 0);
++		xmFormWidgetClass, GetWidget(), NULL);
+ 	SetSelectionLabel(XtVaCreateManagedWidget("Kronos formula to be checked",
+ 		xmLabelWidgetClass, form,
+ 		XmNleftAttachment, XmATTACH_FORM,
+-		XmNtopAttachment, XmATTACH_FORM, 0));
++		XmNtopAttachment, XmATTACH_FORM, NULL));
+ 	SetText(XtVaCreateManagedWidget("formula",
+ 		xmTextFieldWidgetClass, form,
+ 		XmNleftAttachment, XmATTACH_FORM,
+ 		XmNrightAttachment, XmATTACH_FORM,
+ 		XmNtopAttachment, XmATTACH_WIDGET,
+-		XmNtopWidget, GetSelectionLabel(), 0));
++		XmNtopWidget, GetSelectionLabel(), NULL));
+ 	internLabel = XtVaCreateManagedWidget("Internal events",
+ 		xmLabelWidgetClass, GetForm(),
+ 		XmNleftAttachment, XmATTACH_FORM, 
+ 		XmNtopAttachment, XmATTACH_WIDGET, 
+-		XmNtopWidget, GetText(), 0);
++		XmNtopWidget, GetText(), NULL);
+ 	internText = XtVaCreateManagedWidget("intern",
+ 		xmTextFieldWidgetClass, GetForm(), 
+ 		XmNleftAttachment, XmATTACH_FORM, 
+ 		XmNrightAttachment, XmATTACH_FORM, 
+ 		XmNtopAttachment, XmATTACH_WIDGET, 
+-		XmNtopWidget, internLabel, 0);
++		XmNtopWidget, internLabel, NULL);
+ 	clockLabel = XtVaCreateManagedWidget("Clocks",
+ 		xmLabelWidgetClass, GetForm(),
+ 		XmNleftAttachment, XmATTACH_FORM, 
+ 		XmNtopAttachment, XmATTACH_WIDGET, 
+-		XmNtopWidget, internText, 0);
++		XmNtopWidget, internText, NULL);
+ 	clockText = XtVaCreateManagedWidget("clock",
+ 		xmTextFieldWidgetClass, GetForm(), 
+ 		XmNleftAttachment, XmATTACH_FORM, 
+ 		XmNrightAttachment, XmATTACH_FORM, 
+ 		XmNtopAttachment, XmATTACH_WIDGET, 
+-		XmNtopWidget, clockLabel, 0);
++		XmNtopWidget, clockLabel, NULL);
+ 	XtManageChild(form);
+ }
+ 
+diff -Nur tcm-2.20+TSQD.orig/src/ui/mwidget.c tcm-2.20+TSQD/src/ui/mwidget.c
+--- tcm-2.20+TSQD.orig/src/ui/mwidget.c	2004-07-21 19:48:02.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/mwidget.c	2006-04-02 15:13:09.000000000 +0200
+@@ -67,7 +67,7 @@
+ 		liteClue = XtVaCreatePopupShell("LiteClueShell",
+                         xcgLiteClueWidgetClass, GetWidget(),
+                         XgcNwaitPeriod, 700,
+-                        XgcNcancelWaitPeriod, 1000, 0);
++                        XgcNcancelWaitPeriod, 1000, NULL);
+ }
+ 
+ bool MWidget::IsRealized() {
+@@ -85,7 +85,7 @@
+ }
+ 
+ void MWidget::SetColormap(Colormap cmap) {
+-	XtVaSetValues(GetWidget(), XmNcolormap, cmap, 0);
++	XtVaSetValues(GetWidget(), XmNcolormap, cmap, NULL);
+ 	XSetWindowColormap(GetDisplay(), XtWindow(GetWidget()), cmap);
+ }
+ 
+diff -Nur tcm-2.20+TSQD.orig/src/ui/nodealignmentdialog.c tcm-2.20+TSQD/src/ui/nodealignmentdialog.c
+--- tcm-2.20+TSQD.orig/src/ui/nodealignmentdialog.c	2004-07-21 19:48:18.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/nodealignmentdialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -79,5 +79,5 @@
+ 	AddLiteClue((*tl)[4], "Align vertical");
+ 	AddLiteClue((*tl)[5], "Align right");
+ 	XtVaSetValues(rc, XmNnumColumns, 2, 
+-			  XmNorientation, XmHORIZONTAL, 0);
++			  XmNorientation, XmHORIZONTAL, NULL);
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/ui/nodeshapedialog.c tcm-2.20+TSQD/src/ui/nodeshapedialog.c
+--- tcm-2.20+TSQD.orig/src/ui/nodeshapedialog.c	2004-07-21 19:48:24.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/nodeshapedialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -185,5 +185,5 @@
+ 	AddLiteClue((*tl)[24], "Disk");
+ 	AddLiteClue((*tl)[25], "Entity class");
+ 	XtVaSetValues(rc, XmNnumColumns, 3, 
+-			  XmNorientation, XmVERTICAL, 0);
++			  XmNorientation, XmVERTICAL, NULL);
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/ui/ntogglelistdialog.c tcm-2.20+TSQD/src/ui/ntogglelistdialog.c
+--- tcm-2.20+TSQD.orig/src/ui/ntogglelistdialog.c	2004-07-21 19:48:41.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/ntogglelistdialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -83,10 +83,10 @@
+ 	for (unsigned j=0; j<labels->count(); j++) {
+ 		Widget rc2 = XmCreateRowColumn(rc, wname, 0, 0);
+ 		Widget frame = XtVaCreateManagedWidget(wname,
+-			xmFrameWidgetClass, rc2, 0);
++			xmFrameWidgetClass, rc2, NULL);
+ 		XtVaCreateManagedWidget((*labels)[j]->getstr(),
+ 			xmLabelWidgetClass, frame,
+-			XmNchildType, XmFRAME_TITLE_CHILD, 0);
++			XmNchildType, XmFRAME_TITLE_CHILD, NULL);
+ 		Widget box = XmCreateRadioBox(frame, wname, 0, 0);
+ 		List<string *> *t = (*items)[j];
+ 		int i = 0;
+@@ -98,7 +98,7 @@
+ 	 			xmToggleButtonWidgetClass, box,
+ 	 			XmNuserData, i,
+ 	 			XmNhighlightThickness, 0,
+-	 			XmNset, i==0, 0);
++	 			XmNset, i==0, NULL);
+ 	 		toggles->add(w);
+ 		}
+ 		toggleList.add(toggles);
+@@ -108,7 +108,7 @@
+ 			Widget w = XtVaCreateManagedWidget(s,
+ 	 			xmToggleButtonWidgetClass, rc2,
+ 	 			XmNhighlightThickness, 0,
+-	 			XmNset, 0, 0);
++	 			XmNset, 0, NULL);
+ 			optionList.add(w);
+ 		}
+ 		XtManageChild(rc2);
+@@ -124,7 +124,7 @@
+                 	Pixmap pixmap = bitmap->CreatePixmap(tb, GetDisplay());
+                 	XtVaSetValues(tb,
+                         	XmNlabelType, XmPIXMAP,
+-                        	XmNlabelPixmap, pixmap, 0);
++                        	XmNlabelPixmap, pixmap, NULL);
+ 		}
+         }
+ }
+@@ -135,7 +135,7 @@
+ 		List<Widget> *toggles = toggleList[n];
+  		if (check(i < toggles->count())) {
+ 			XmString s = CreateXmString(txt->getstr());
+-			XtVaSetValues((*toggles)[i], XmNlabelString, s, 0);
++			XtVaSetValues((*toggles)[i], XmNlabelString, s, NULL);
+ 			XmStringFree(s);
+ 		}
+ 	}
+@@ -146,7 +146,7 @@
+ 		List<Widget> *toggles = toggleList[n];
+ 		if (check(i < toggles->count())) {
+ 			XmString s = CreateXmString("");
+-			XtVaGetValues((*toggles)[i], XmNlabelString, &s, 0);
++			XtVaGetValues((*toggles)[i], XmNlabelString, &s, NULL);
+ 			char *str;
+ 			if (XmStringGetLtoR(s, XmFONTLIST_DEFAULT_TAG, &str)) {
+ 				*txt = str;
+@@ -170,7 +170,7 @@
+ 		List<Widget> *toggles = toggleList[n];
+ 		for (unsigned i=0; i<toggles->count(); i++) {
+ 			XmString s = CreateXmString("");
+-			XtVaGetValues((*toggles)[i], XmNlabelString, &s, 0);
++			XtVaGetValues((*toggles)[i], XmNlabelString, &s, NULL);
+ 			char *str;
+ 			if (XmStringGetLtoR(s, XmFONTLIST_DEFAULT_TAG, &str)) {
+ 				if (*t == str) {
+diff -Nur tcm-2.20+TSQD.orig/src/ui/replacedialog.c tcm-2.20+TSQD/src/ui/replacedialog.c
+--- tcm-2.20+TSQD.orig/src/ui/replacedialog.c	2004-07-21 19:48:17.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/replacedialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -37,24 +37,24 @@
+ 	SetOKButtonLabel("Find\nNext");
+ 	SetApplyButtonLabel("Replace\nAll");
+ 	replaceButton = XtVaCreateManagedWidget("Replace",
+-		xmPushButtonWidgetClass, GetWidget(), 0);
++		xmPushButtonWidgetClass, GetWidget(), NULL);
+ 	XmString t = CreateXmString("Replace\nNext");
+-	XtVaSetValues(replaceButton, XmNlabelString, t, 0);
++	XtVaSetValues(replaceButton, XmNlabelString, t, NULL);
+ 	SetHelpCallback(ReplaceClearCB, this);
+ 	replaceLabel = XtVaCreateManagedWidget("Replace with",
+ 		xmLabelWidgetClass, GetForm(),
+ 		XmNleftAttachment, XmATTACH_FORM, 
+ 		XmNtopAttachment, XmATTACH_WIDGET, 
+-		XmNtopWidget, GetText(), 0);
++		XmNtopWidget, GetText(), NULL);
+ 	replaceText = XtVaCreateManagedWidget("replace_text",
+ 		xmTextFieldWidgetClass, GetForm(), 
+ 		XmNleftAttachment, XmATTACH_FORM, 
+ 		XmNrightAttachment, XmATTACH_FORM, 
+ 		XmNtopAttachment, XmATTACH_WIDGET, 
+-		XmNtopWidget, replaceLabel, 0);
++		XmNtopWidget, replaceLabel, NULL);
+ 	XtVaSetValues(GetToggleRC(), 
+ 		XmNtopAttachment, XmATTACH_WIDGET, 
+-		XmNtopWidget, replaceText, 0);
++		XmNtopWidget, replaceText, NULL);
+ 	XmStringFree(t);
+ }
+ 
+diff -Nur tcm-2.20+TSQD.orig/src/ui/scaledialog.c tcm-2.20+TSQD/src/ui/scaledialog.c
+--- tcm-2.20+TSQD.orig/src/ui/scaledialog.c	2004-07-21 19:48:16.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/scaledialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -37,7 +37,7 @@
+ 	scale = XtVaCreateManagedWidget("scale",
+ 			xmScaleWidgetClass, GetWidget(),
+ 			XmNorientation, XmHORIZONTAL,
+-			XmNshowValue, True, 0);
++			XmNshowValue, True, NULL);
+ }
+ 
+ void ScaleDialog::Configure() {
+@@ -54,7 +54,7 @@
+ 		XmNmaximum, max,
+ 		XmNminimum, min,
+ 		XmNvalue, init,
+-		XmNdecimalPoints, decimal, 0);
++		XmNdecimalPoints, decimal, NULL);
+ 	initValue = init;
+ 	defaultValue = def;
+ }
+@@ -64,7 +64,7 @@
+ 		return;
+ 	XmString text_string = CreateXmString(text);
+ 	// XtVaTypedArg, XmNtitleString, XmRString, text, strlen(text),
+-	XtVaSetValues(scale, XmNtitleString, text_string, 0);
++	XtVaSetValues(scale, XmNtitleString, text_string, NULL);
+ 	XmStringFree(text_string);
+ }
+ 
+diff -Nur tcm-2.20+TSQD.orig/src/ui/selectiondialog.c tcm-2.20+TSQD/src/ui/selectiondialog.c
+--- tcm-2.20+TSQD.orig/src/ui/selectiondialog.c	2004-07-21 19:48:45.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/selectiondialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -76,7 +76,7 @@
+ 	if (!check(GetWidget()))
+ 		return;
+ 	XmString t = CreateXmString(v);
+-	XtVaSetValues(GetWidget(), XmNselectionLabelString, t, 0);
++	XtVaSetValues(GetWidget(), XmNselectionLabelString, t, NULL);
+ 	XmStringFree(t);
+ }
+ 
+@@ -106,7 +106,7 @@
+ 	if (!check(GetWidget()))
+ 		return;
+ 	XmString t = CreateXmString(txt);
+-	XtVaSetValues(GetWidget(), XmNapplyLabelString, t, 0);
++	XtVaSetValues(GetWidget(), XmNapplyLabelString, t, NULL);
+ 	XmStringFree(t);
+ }
+ 
+diff -Nur tcm-2.20+TSQD.orig/src/ui/temporalpropertydialog.c tcm-2.20+TSQD/src/ui/temporalpropertydialog.c
+--- tcm-2.20+TSQD.orig/src/ui/temporalpropertydialog.c	2004-07-21 19:48:13.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/temporalpropertydialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -61,30 +61,30 @@
+ 	//ManageSensitiveToggle(False);
+ 
+ 	form = XtVaCreateWidget("form",
+-		xmFormWidgetClass, GetWidget(), 0);
++		xmFormWidgetClass, GetWidget(), NULL);
+ 	SetSelectionLabel(XtVaCreateManagedWidget("LTL property",
+ 		xmLabelWidgetClass, form, 
+ 		XmNleftAttachment, XmATTACH_FORM,
+-		XmNtopAttachment, XmATTACH_FORM, 0));
++		XmNtopAttachment, XmATTACH_FORM, NULL));
+ 	SetText(XtVaCreateManagedWidget("find_text",
+ 		xmTextFieldWidgetClass, form,
+ 		XmNleftAttachment, XmATTACH_FORM,
+ 		XmNrightAttachment, XmATTACH_FORM,
+ 		XmNtopAttachment, XmATTACH_WIDGET,
+-		XmNtopWidget, GetSelectionLabel(), 0));
++		XmNtopWidget, GetSelectionLabel(), NULL));
+ 	toggleRC = XtVaCreateManagedWidget("toggleRC",
+ 		xmRowColumnWidgetClass, form,
+ 		XmNorientation, XmHORIZONTAL, 
+-		XmNleftAttachment, XmATTACH_FORM, 0);
++		XmNleftAttachment, XmATTACH_FORM, NULL);
+ 	sensitiveToggle = XtVaCreateManagedWidget("syntactic encoding", 
+ 		xmToggleButtonWidgetClass, toggleRC, 
+-		XmNset, False, 0);
++		XmNset, False, NULL);
+ 	substringToggle = XtVaCreateWidget("reduction", 
+ 		xmToggleButtonWidgetClass, toggleRC,
+-		XmNset, False, 0);
++		XmNset, False, NULL);
+ 	nameOnlyToggle = XtVaCreateWidget("strong fairness", 
+ 		xmToggleButtonWidgetClass, toggleRC,
+-		XmNset, True, 0);
++		XmNset, True, NULL);
+ 	AttachToggles();
+ 
+ 	XtManageChild(form);
+@@ -94,7 +94,7 @@
+ void TPDialog::AttachToggles() {
+ 	XtVaSetValues(toggleRC, 
+ 		XmNtopAttachment, XmATTACH_WIDGET,
+-		XmNtopWidget, GetText(), 0);
++		XmNtopWidget, GetText(), NULL);
+ }
+ 
+ void TPDialog::ManageSensitiveToggle(bool b) {
+diff -Nur tcm-2.20+TSQD.orig/src/ui/textalignmentdialog.c tcm-2.20+TSQD/src/ui/textalignmentdialog.c
+--- tcm-2.20+TSQD.orig/src/ui/textalignmentdialog.c	2004-07-21 19:48:05.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/textalignmentdialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -92,5 +92,5 @@
+ 		AddLiteClue((*tl)[1], "Center");
+ 		AddLiteClue((*tl)[2], "Bottom");
+ 	}
+-        XtVaSetValues(rc, XmNnumColumns, 3, 0);
++        XtVaSetValues(rc, XmNnumColumns, 3, NULL);
+ }
+diff -Nur tcm-2.20+TSQD.orig/src/ui/texteditdialog.c tcm-2.20+TSQD/src/ui/texteditdialog.c
+--- tcm-2.20+TSQD.orig/src/ui/texteditdialog.c	2004-07-21 19:48:13.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/texteditdialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -35,7 +35,7 @@
+ 	if (check(GetWidget())) {
+ 		XtVaSetValues(GetTextWidget(), 
+ 			XmNeditable, True,
+-			XmNcursorPositionVisible, True, 0);
++			XmNcursorPositionVisible, True, NULL);
+ 		ManageCancelButton(True);
+ 		SetOKButtonLabel("Ok");
+ 		XtManageChild(GetTextWidget());
+diff -Nur tcm-2.20+TSQD.orig/src/ui/textfieldlistdialog.c tcm-2.20+TSQD/src/ui/textfieldlistdialog.c
+--- tcm-2.20+TSQD.orig/src/ui/textfieldlistdialog.c	2004-07-21 19:48:11.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/textfieldlistdialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -60,18 +60,18 @@
+ 		xmRowColumnWidgetClass, GetWidget(),
+ 		XmNnumColumns, 2,
+ 		XmNpacking, XmPACK_COLUMN,
+-		XmNorientation, XmVERTICAL, 0);
++		XmNorientation, XmVERTICAL, NULL);
+ 	labels = new Widget[names->count()];
+ 	for (names->first(); !names->done(); names->next()) {
+ 		Widget w1 = XtVaCreateManagedWidget(names->cur()->getstr(), 
+-			xmLabelWidgetClass, rc, 0);
++			xmLabelWidgetClass, rc, NULL);
+ 		labels[numLabels] = w1;
+ 		numLabels++;
+ 	}
+ 	textFields = new Widget[values->count()];
+ 	for (values->first(); !values->done(); values->next()) {
+ 		Widget w2 = XtVaCreateManagedWidget("field",
+-			xmTextFieldWidgetClass, rc, 0);
++			xmTextFieldWidgetClass, rc, NULL);
+ 		XmTextSetString(w2, (char *)values->cur()->getstr());
+ 		textFields[numTextFields] = w2;
+ 		numTextFields++;
+@@ -83,7 +83,7 @@
+ void TextFieldListDialog::SetFieldWidth(unsigned n) {
+ 	fieldWidth = n;
+ 	for (unsigned i=0; i<numTextFields; i++)
+-		XtVaSetValues(textFields[i], XmNcolumns, n, 0);
++		XtVaSetValues(textFields[i], XmNcolumns, n, NULL);
+ }
+ 
+ unsigned TextFieldListDialog::NumFields() {
+@@ -92,13 +92,13 @@
+ 
+ void TextFieldListDialog::SetLabel(unsigned i, const string *n) {
+ 	if (check(i < numLabels))
+-		XtVaSetValues(labels[i], XmNvalue, n->getstr(), 0);
++		XtVaSetValues(labels[i], XmNvalue, n->getstr(), NULL);
+ }
+ 
+ void TextFieldListDialog::GetLabel(unsigned i, string *n) {
+ 	if (check(i < numLabels)) {
+ 		char *s;
+-		XtVaGetValues(labels[i], XmNvalue, &s, 0);
++		XtVaGetValues(labels[i], XmNvalue, &s, NULL);
+ 		*n = s;
+ 		XtFree(s);
+ 	}
+diff -Nur tcm-2.20+TSQD.orig/src/ui/textviewdialog.c tcm-2.20+TSQD/src/ui/textviewdialog.c
+--- tcm-2.20+TSQD.orig/src/ui/textviewdialog.c	2004-07-21 19:48:24.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/textviewdialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -71,7 +71,7 @@
+ 	Arg args[24]; int i = 0;
+ 	XtSetArg(args[i], XmNautoUnmanage, GetAutoUnmanage()); i++;
+ 	SetWidget(XmCreateMessageDialog(GetParent(), (char *)GetClassName(), args, i));
+-	XtVaSetValues(XtParent(GetWidget()), XmNallowShellResize, True, 0);
++	XtVaSetValues(XtParent(GetWidget()), XmNallowShellResize, True, NULL);
+ }
+ 
+ void TextViewDialog::Configure() {
+@@ -89,7 +89,7 @@
+ 	XtVaSetValues(menuBar,
+ 	 	XmNtopAttachment, XmATTACH_FORM,
+ 	 	XmNleftAttachment, XmATTACH_FORM,
+-	 	XmNrightAttachment, XmATTACH_FORM, 0);
++	 	XmNrightAttachment, XmATTACH_FORM, NULL);
+ 	fileMenu = new Menu(menuBar, Menu::PULLDOWN, "File", 0, fileItems);
+ 	editMenu = new Menu(menuBar, Menu::PULLDOWN, "Edit", 0, editItems);
+ 	searchMenu = new Menu(menuBar, Menu::PULLDOWN, "Search", 0, 
+@@ -97,7 +97,7 @@
+ 	// create a manager widget as a child of the dialog, to be used
+ 	// as the work area of the dialog, replacing the label and the icon.
+ 	Widget form = XtVaCreateWidget("form1", xmFormWidgetClass, 
+-					GetWidget(), 0);
++					GetWidget(), NULL);
+ 	XtVaSetValues(form, 
+ 		XmNtopAttachment, XmATTACH_WIDGET,
+ 		XmNtopWidget, menuBar,
+@@ -105,7 +105,7 @@
+ 		XmNbottomAttachment, XmATTACH_WIDGET,
+ 		XmNbottomWidget, XmMessageBoxGetChild(GetWidget(), 
+ 			XmDIALOG_SEPARATOR),
+-		XmNrightAttachment, XmATTACH_FORM, 0);
++		XmNrightAttachment, XmATTACH_FORM, NULL);
+ 	// create text field.
+ 	i = 0;
+ 	XtSetArg(args[i], XmNeditable, False); i++;
+@@ -116,7 +116,7 @@
+ 	XtVaSetValues(textStatus,
+ 	 	XmNtopAttachment, XmATTACH_FORM,
+ 	 	XmNleftAttachment, XmATTACH_FORM,
+-	 	XmNrightAttachment, XmATTACH_FORM, 0);
++	 	XmNrightAttachment, XmATTACH_FORM, NULL);
+ 	i = 0;
+ 	XtSetArg(args[i], XmNscrollVertical, True); i++;
+ 	XtSetArg(args[i], XmNrows, 6); i++;
+@@ -135,7 +135,7 @@
+ 		XmNtopWidget, textStatus,
+ 	 	XmNrightAttachment, XmATTACH_FORM,
+ 	 	XmNbottomAttachment, XmATTACH_FORM,
+-	 	XmNleftAttachment, XmATTACH_FORM, 0);
++	 	XmNleftAttachment, XmATTACH_FORM, NULL);
+ 	XtManageChild(menuBar);
+ 	XtManageChild(textStatus);
+ 	XtManageChild(textWidget);
+@@ -361,14 +361,14 @@
+ 	if (!check(textWidget))
+ 		return;
+ 	if (nrOfRows <= maxRows)
+-		XtVaSetValues(textWidget, XmNrows, nrOfRows, 0);
++		XtVaSetValues(textWidget, XmNrows, nrOfRows, NULL);
+ }
+ 
+ void TextViewDialog::SetTextColumns(int nrOfColumns) {
+ 	if (!check(textWidget))
+ 		return;
+ 	if (nrOfColumns <= maxColumns)
+-		XtVaSetValues(textWidget, XmNcolumns, nrOfColumns, 0);
++		XtVaSetValues(textWidget, XmNcolumns, nrOfColumns, NULL);
+ }
+ 
+ void TextViewDialog::SetTextSize(int nrOfRows, int nrOfColumns) {
+@@ -382,11 +382,11 @@
+ 	if (!check(textWidget))
+ 		return;
+ 	short rows, columns;
+-	XtVaGetValues(textWidget, XmNrows, &rows, XmNcolumns, &columns, 0);
++	XtVaGetValues(textWidget, XmNrows, &rows, XmNcolumns, &columns, NULL);
+ 	if (rows > maxRows)
+-		XtVaSetValues(textWidget, XmNrows, &maxRows, 0);
++		XtVaSetValues(textWidget, XmNrows, &maxRows, NULL);
+ 	if (columns > maxColumns)
+-		XtVaSetValues(textWidget, XmNcolumns, &maxColumns, 0);
++		XtVaSetValues(textWidget, XmNcolumns, &maxColumns, NULL);
+ }
+ 
+ void TextViewDialog::Print() {
+@@ -469,7 +469,7 @@
+ 		char *s = (char *)text.getstr();
+ 		XmTextSetString(textWidget, s);
+ 		short c;
+-		XtVaGetValues(textWidget, XmNcolumns, &c, 0);
++		XtVaGetValues(textWidget, XmNcolumns, &c, NULL);
+ 		SetStatus("Load succeeded");
+ 		return True;
+ 	}
+diff -Nur tcm-2.20+TSQD.orig/src/ui/togglelistdialog.c tcm-2.20+TSQD/src/ui/togglelistdialog.c
+--- tcm-2.20+TSQD.orig/src/ui/togglelistdialog.c	2004-07-21 19:48:44.000000000 +0200
++++ tcm-2.20+TSQD/src/ui/togglelistdialog.c	2006-04-02 15:13:09.000000000 +0200
+@@ -71,10 +71,10 @@
+ 	toggleList = new Widget[items->count()];
+ 	if (*label != "") {
+ 		Widget frame = XtVaCreateManagedWidget("frame",
+-			xmFrameWidgetClass, toggleBox, 0);
++			xmFrameWidgetClass, toggleBox, NULL);
+ 		XtVaCreateManagedWidget(label->getstr(),
+ 			xmLabelWidgetClass, frame,
+-			XmNchildType, XmFRAME_TITLE_CHILD, 0);
++			XmNchildType, XmFRAME_TITLE_CHILD, NULL);
+ 	}
+ 	for (items->first(); !items->done(); items->next()) {
+ 		const char *s = items->cur()->getstr();
+@@ -83,7 +83,7 @@
+ 				xmToggleButtonWidgetClass, toggleBox,
+ 				XmNuserData, i,
+ 				XmNhighlightThickness, 0,
+-				XmNset, i==0, 0);
++				XmNset, i==0, NULL);
+ 		toggleList[numToggles] = w;
+ 		numToggles++;
+ 		i++;
+@@ -106,14 +106,14 @@
+ 		Pixmap pixmap = bitmap->CreatePixmap(tb, GetDisplay());
+ 		XtVaSetValues(tb, 
+ 			XmNlabelType, XmPIXMAP,
+-                        XmNlabelPixmap, pixmap, 0);
++                        XmNlabelPixmap, pixmap, NULL);
+ 	}
+ }
+ 
+ void ToggleListDialog::SetToggleText(unsigned i, const string *txt) {
+  	if (check(i < numToggles)) {
+ 		XmString s = CreateXmString(txt->getstr());
+-		XtVaSetValues(toggleList[i], XmNlabelString, s, 0);
++		XtVaSetValues(toggleList[i], XmNlabelString, s, NULL);
+ 		XmStringFree(s);
+ 	}
+ }
+@@ -121,7 +121,7 @@
+ void ToggleListDialog::GetToggleText(unsigned i, string *txt) {
+ 	if (check(i < numToggles)) {
+ 		XmString s = CreateXmString("");
+-		XtVaGetValues(toggleList[i], XmNlabelString, &s, 0);
++		XtVaGetValues(toggleList[i], XmNlabelString, &s, NULL);
+ 		char *str;
+ 		if (XmStringGetLtoR(s, XmFONTLIST_DEFAULT_TAG, &str)) {
+ 			*txt = str;

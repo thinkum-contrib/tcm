@@ -1,0 +1,752 @@
+#!/bin/sh -e
+## 02_export_png.dpatch.dpatch by Otavio Salvador <otavio@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Fix the export png function (#183588)
+
+if [ $# -ne 1 ]; then
+    echo >&2 "`basename $0`: script expects -patch|-unpatch as argument"
+    exit 1
+fi
+
+[ -f debian/patches/00patch-opts ] && . debian/patches/00patch-opts
+patch_opts="${patch_opts:--f --no-backup-if-mismatch}"
+
+case "$1" in
+       -patch) patch $patch_opts -p1 < $0;;
+       -unpatch) patch $patch_opts -p1 -R < $0;;
+        *)
+                echo >&2 "`basename $0`: script expects -patch|-unpatch as argument"
+                exit 1;;
+esac
+
+exit 0
+
+@DPATCH@
+diff -urNad /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/figgrafport.c tcm-2.20/src/ui/figgrafport.c
+--- /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/figgrafport.c	2002-05-28 05:33:05.000000000 -0300
++++ tcm-2.20/src/ui/figgrafport.c	2003-05-19 18:43:19.000000000 -0300
+@@ -150,56 +150,69 @@
+ 	SetTexFont();
+ }
+ 
+-void FigGrafport::DrawFigEllipse(double center_x, double center_y,
+-	double radius_x, double radius_y, int sub_type)
+-{
+-	int object_code = 1;  // Ellipse
+ 
+-	int line_style = 0;  // Solid
+-	if (GetLineStyle()==LineStyle::DASHED)
+-	 	line_style = 1;
+-	if (GetLineStyle()==LineStyle::DOTTED ||
+-	    GetLineStyle()==LineStyle::WIDE_DOTTED)
+-	 	line_style = 2;
++void FigGrafport::FillFigEllipse(double topleft_x, double topleft_y,
++	double diameter_x, double diameter_y)
++{
++	topleft_x = Zoom(topleft_x * F);
++	topleft_y = Zoom(topleft_y * F);
++	double radius_x = Zoom(diameter_x * (0.5 * F));
++	double radius_y = Zoom(diameter_y * (0.5 * F));
++	double center_x = topleft_x + radius_x;
++	double center_y = topleft_y + radius_y;
+ 
+-	int thickness = GetLineWidth();  // 1/80 inch
+-	if (GetLineStyle()==LineStyle::INVISIBLE &&
+-	    GetFillStyle()==FillStyle::UNFILLED)
+-		return; // don't draw
++	// 1 = object_code: Ellipse, 1 = sub_type: ellipse specified by radii,
++	// 0 = line_style: solid,
++	// 0 = thickness: 0, 0 = pen color: default, 50 = depth,
++	// 0 = pen_style (not used), 20 = area_fill: full saturation
++	fprintf(fd, "1 1 0 0 0 %d 50 0 20 ", fillColor);
++	// 0.0 = style_val (normal), 1 = direction , 0.0 = angle
++	fprintf(fd, "0.0 1 0.0 %.0f %.0f %.0f %.0f %.0f %.0f %.0f %.0f\n",
++		center_x, center_y, radius_x,
++		radius_y, center_x, center_y, topleft_x, topleft_y);
++}
+ 
+-	int pen_color = penColor;
+-	int fill_color = 7; // 7 = white
+-	int depth = 0;
+-	int pen_style = 0;  // not used.
+-	int area_fill = -1; // no fill.
+-	if (GetFillStyle()==FillStyle::FILLED) {
+-		fill_color = fillColor;
+-		area_fill = 20;// full saturation.
+-		if (GetLineStyle()==LineStyle::INVISIBLE)
+-			pen_color = fill_color;
+-	} 
+ 
++void FigGrafport::DrawFigEllipse(double topleft_x, double topleft_y,
++	double diameter_x, double diameter_y)
++{
++	int line_style = 0;  // Solid
+ 	float style_val = 0;// 1/80 inch
+-	if (GetLineStyle()==LineStyle::DASHED)
++	switch ( GetLineStyle() ) {
++	case LineStyle::DASHED:
++		line_style = 1;
+ 	 	style_val = 4.0;
+-	if (GetLineStyle()==LineStyle::DOTTED)
++		break;
++	case LineStyle::DOTTED:
++		line_style = 2;
+ 	 	style_val = 1.0;
+-	if (GetLineStyle()==LineStyle::WIDE_DOTTED)
++		break;
++	case LineStyle::WIDE_DOTTED:
++		line_style = 2;
+ 	 	style_val = 2.0;
++		break;
++	case LineStyle::INVISIBLE:
++		return;
++	default:
++		line_style = 0;
++		style_val = 0.0;
++		break;
++	}
+ 
+-	int direction = 1; // always 1
+-	float angle = 0;   // angle with x-axis.
+-	double start_x = center_x;
+-	double start_y = center_y;
+-	double end_x = start_x + radius_x;
+-	double end_y = start_y + radius_y;
++	topleft_x = Zoom(topleft_x * F);
++	topleft_y = Zoom(topleft_y * F);
++	double radius_x = Zoom(diameter_x * (0.5 * F));
++	double radius_y = Zoom(diameter_y * (0.5 * F));
++	double center_x = topleft_x + radius_x;
++	double center_y = topleft_y + radius_y;
+ 
+-	fprintf(fd, "%d %d %d %d %d %d %d %d %d ", object_code, sub_type,
+-		line_style, thickness, pen_color, fill_color, depth,
+-		pen_style, area_fill);
+-	fprintf(fd, "%f %d %f %.0f %.0f %.0f %.0f %.0f %.0f %.0f %.0f\n",
+-		style_val, direction, angle, center_x, center_y, radius_x,
+-		radius_y, start_x, start_y, end_x, end_y);
++	// 1 = object code: ellipse, 1 = subtype: ellipse specified by radii,
++	// 7 = fill color: white, 0 = depth, 0 = pen style, -1 = no fill
++	fprintf(fd, "1 1 %d %d %d 7 0 0 -1 ", line_style, GetLineWidth(), penColor);
++	// 1 = direction, 0.0 = angle
++	fprintf(fd, "%f 1 0.0 %.0f %.0f %.0f %.0f %.0f %.0f %.0f %.0f\n",
++		style_val, center_x, center_y, radius_x,
++		radius_y, center_x, center_y, topleft_x, topleft_y);
+ }
+ 
+ 
+@@ -308,41 +321,6 @@
+ 	SetFillColor();
+ }
+ 
+-//void FigGrafport::DrawRoundedRectangle(double x, double y, double wd, double ht, double rd) {
+-//	DrawFigRectangle(x, y, wd, ht, 4, rd);
+-//	SetFillStyle(FillStyle::UNFILLED);
+-//}
+-//
+-//void FigGrafport::FillRoundedRectangle(double, double, double, double, double) {
+-//	SetFillStyle(FillStyle::FILLED);
+-//	SetFillColor();
+-//}
+-//
+-//void FigGrafport::DrawEllipsedRectangle(double x, double y, double wd, double ht, double rd) {
+-//	DrawRoundedRectangle(x, y, wd, ht, rd);
+-//}
+-//
+-//void FigGrafport::FillEllipsedRectangle(double, double, double, double, double) {
+-//	SetFillStyle(FillStyle::FILLED);
+-//	SetFillColor();
+-//}
+-//
+-//void FigGrafport::DrawDisk(double x, double y, double wd, double ht, double el) {
+-//	// draw two lines (without the corner points).
+-//        double ah = el/2;
+-//        DrawLine(x, y+ah+1, x, y+ht-ah-1);
+-//        DrawLine(x+wd, y+ah+1, x+wd, y+ht-ah-1);
+-//        // draw 1st ellipse.
+-//        DrawEllipse(x, y, wd, el+1);
+-//        // draw bottom arc (in two parts)
+-//	DrawArc(x, y + ht - el - 1, wd, el + 1, 180, 270);
+-//	DrawArc(x, y + ht - el - 1, wd, el + 1, 270, 360);
+-//}
+-//
+-//void FigGrafport::FillDisk(double, double, double, double, double) {
+-//	SetFillStyle(FillStyle::FILLED);
+-//	SetFillColor();
+-//}
+ 
+ void FigGrafport::DrawFigText(double px, double py, const char *str, int sub_type) {
+ 	px = Zoom(px);
+@@ -441,45 +419,6 @@
+ 	SetLineStyle(save);			// and restore
+ }
+ 
+-//void FigGrafport::DrawLine(double _x1, double _y1, double _x2, double _y2) {
+-//	if (_x1 == _x2 && _y1 == _y2)
+-//		return;
+-//
+-//	double x1 = Zoom(_x1); 
+-//	double y1 = Zoom(_y1);
+-//	double x2 = Zoom(_x2);
+-//	double y2 = Zoom(_y2);
+-//
+-//	List<DPoint *> points;
+-//	int sub_type = 1;
+-//
+-//	DPoint p1(F*x1, F*y1);
+-//	DPoint p2(F*x2, F*y2);
+-//	points.add(&p1);
+-//	points.add(&p2);
+-//
+-//	DrawFigPolyLine(&points, sub_type);
+-//
+-//	if (GetLineStyle()==LineStyle::DUAL) {
+-//		SetLineStyle(LineStyle::SOLID);
+-//		int n = GetLineWidth();
+-//		if (y1 == y2) {  // horizontal
+-//			DrawLine(_x1, _y1+n, _x2, _y2+n);
+-//			DrawLine(_x1, _y1-n, _x2, _y2-n);
+-//		}
+-//		else if (x1 == x2) {  // vertical
+-//			DrawLine(_x1+n, _y1, _x2+n, _y2);
+-//			DrawLine(_x1-n, _y1, _x2-n, _y2);
+-//		}
+-//		else {
+-//			DrawLine(_x1, _y1, _x2, _y2);
+-//			DrawLine(_x1, _y1+2*n, _x2, _y2+2*n);
+-//		}
+-//		SetLineStyle(LineStyle::DUAL);
+-//	}
+-//	SetFillStyle(FillStyle::UNFILLED);
+-//}
+-
+ 
+ void FigGrafport::DrawUnzoomedLine(double x1, double y1, double x2, double y2) {
+ 	DrawLine(ZoomCorrect(x1), ZoomCorrect(y1), 
+@@ -487,66 +426,6 @@
+ }
+ 
+ 
+-//void FigGrafport::DrawCurve(const Point *p1, const Point *p2, 
+-//			   const Point *p3, const Point *p4) {
+-//	int object_code = 3;  // Spline
+-//	int sub_type = 0;     // Open Aproximated Spline
+-//
+-//	double x1 = Zoom(p1->x*F);
+-//	double y1 = Zoom(p1->y*F);
+-//	double x2 = Zoom(p2->x*F);
+-//	double y2 = Zoom(p2->y*F);
+-//	double x3 = Zoom(p3->x*F);
+-//	double y3 = Zoom(p3->y*F);
+-//	double x4 = Zoom(p4->x*F);
+-//	double y4 = Zoom(p4->y*F);
+-//
+-//	int line_style = 0;  // Solid
+-//	if (GetLineStyle()==LineStyle::DASHED)
+-//	 	line_style = 1;
+-//	if (GetLineStyle()==LineStyle::DOTTED ||
+-//	    GetLineStyle()==LineStyle::WIDE_DOTTED)
+-//	 	line_style = 2;
+-//
+-//	int thickness = GetLineWidth();  // 1/80 inch
+-//	if (GetLineStyle()==LineStyle::INVISIBLE)
+-//		return;
+-//	 	// thickness = 0;
+-//
+-//	int pen_color = penColor;
+-//	int fill_color = 7; // 7 = white
+-//	int depth = 0;
+-//	int pen_style = 0;  // not used.
+-//	int area_fill = -1; // no fill.
+-//	if (GetFillStyle()==FillStyle::FILLED) {
+-//		fill_color = fillColor;
+-//		area_fill = 20;// full saturation.
+-//	} 
+-//
+-//	float style_val = 0;// 1/80 inch
+-//	if (GetLineStyle()==LineStyle::DASHED)
+-//	 	style_val = 4.0;
+-//	if (GetLineStyle()==LineStyle::DOTTED)
+-//	 	style_val = 1.0;
+-//	if (GetLineStyle()==LineStyle::WIDE_DOTTED)
+-//	 	style_val = 2.0;
+-//
+-//	int cap_style = 0;  // Butt
+-//	int forward_arrow = 0;
+-//	int backward_arrow = 0;
+-//	int npoints = 4;
+-//
+-//	fprintf(fd, "%d %d %d %d %d %d %d %d %d %.1f %d %d %d %d\n",
+-//		object_code, sub_type, line_style, thickness, pen_color,
+-//		fill_color, depth, pen_style, area_fill, style_val,
+-//		cap_style, forward_arrow, backward_arrow,
+-//		npoints);
+-//	fprintf(fd, "%f %f %f %f %f %f %f %f\n",
+-//		x1, y1, x2, y2, x3, y3, x4, y4);
+-//	SetFillStyle(FillStyle::UNFILLED);
+-//}
+-
+-
+ void FigGrafport::FillCurve(const DPoint *p) {
+ 	// 3 = object code: spline, 0 = subtype: open approximated, 0 = line
+ 	// style: solid, 0 = thickness, 0 = pen color: default, 50 = depth, 0 =
+@@ -636,6 +515,10 @@
+ void FigGrafport::DrawSimpleArc(double x, double y,
+ 	double wd, double ht, int a1, int a2)
+ {
++	if ( 0 == (a2 - a1) % 360 ) {
++		DrawFigEllipse(x, y, wd, ht);
++		return;
++	}
+ 	if ( ! (int) (F * Zoom(wd - ht) + 0.5) ) {
+ 		/* (almost) circular arc */
+ 		int line_style;
+@@ -673,25 +556,36 @@
+ 		fprintf(fd, " %f %f", centre.x, centre.y);
+ 		double arc1 = a1 * deg2rad;
+ 		fprintf(fd, " %.0f %.0f", centre.x + radius * cos(arc1),
+-					 centre.y - radius * sin(arc1));
++					centre.y - radius * sin(arc1));
+ 		double arc3 = (deg2rad / 2.0) * (a1 + a2);
+ 		fprintf(fd, " %.0f %.0f", centre.x + radius * cos(arc3),
+-					 centre.y - radius * sin(arc3));
++					centre.y - radius * sin(arc3));
+ 		double arc2 = a2 * deg2rad;
+ 		fprintf(fd, " %.0f %.0f\n", centre.x+radius * cos(arc2),
+-					 centre.y - radius * sin(arc2));
+-	} else {
+-		/* elliptic arc: approximate by a curve */
+-		DPoint p[4];
+-		CalcCurvePoints(p, x, y, wd, ht, a1);
+-		DrawSimpleCurve(p);
++					centre.y - radius * sin(arc2));
++		return;
++	}
++	if ( 180 == (a2 - a1) % 360 ) {
++		DrawSimpleArc(x, y, wd, ht, a1, a1 + 90);
++		a1 += 90;
++	} else if ( 270 == (a2 - a1) % 360 ) {
++		DrawSimpleArc(x, y, wd, ht, a1, a1 + 180);
++		a1 += 180;
+ 	}
++	/* elliptic arc: approximate by a curve */
++	DPoint p[4];
++	CalcCurvePoints(p, x, y, wd, ht, a1);
++	DrawSimpleCurve(p);
+ }
+ 
+ 
+ void FigGrafport::FillSegment(double x, double y, double wd, double ht,
+ 	int a1, int a2)
+ {
++	if ( 0 == (a2 - a1) % 360 ) {
++		FillFigEllipse(x, y, wd, ht);
++		return;
++	}
+ 	if ( ! (int) (F * Zoom(wd - ht) + 0.5) ) {
+ 		/* (almost) circular arc */
+ 		double radius = Zoom((wd + ht) * (F / 4.0));
+@@ -714,47 +608,14 @@
+ 		double arc2 = a2 * deg2rad;
+ 		fprintf(fd, " %.0f %.0f\n", centre.x+radius * cos(arc2),
+ 					 centre.y - radius * sin(arc2));
+-	} else {
+-		/* elliptic arc: approximate by a curve */
+-		DPoint p[4];
+-		CalcCurvePoints(p, x, y, wd, ht, a1);
+-		FillCurve(p);
+-	}
+-}
+-
+-
+-//void FigGrafport::FillArc(double, double, double, double, int, int) {
+-//	/* Actually, this procedure is not implemented correctly; arcs
+-//	   are never filled as pie slices, but always as segments. dj */
+-//	SetFillStyle(FillStyle::FILLED);
+-//	SetFillColor();
+-//}
+-
+-void FigGrafport::DrawEllipse(double x, double y, double wd, double ht) {
+-	int sub_type;
+-	if (wd == ht)
+-		sub_type = 3; // circle def. by radius.
+-	else
+-		sub_type = 1; // ellipse def. by radius.
+-	double radius_x = (wd*F)/2;
+-	double radius_y = (ht*F)/2;
+-	double center_x = x*F + radius_x;
+-	double center_y = y*F + radius_y;
+-	DrawFigEllipse(center_x, center_y, radius_x, radius_y, sub_type);
+-	if (GetLineStyle()==LineStyle::DUAL) {
+-		SetLineStyle(LineStyle::SOLID); // avoid recursion
+-	 	int n = 2*GetLineWidth();
+-		if (ht > 2*n && wd > 2*n)
+-	 		DrawEllipse(x+n, y+n, wd-2*n, ht-2*n);
+-		SetLineStyle(LineStyle::DUAL);
++		return;
+ 	}
+-	SetFillStyle(FillStyle::UNFILLED);
++	/* elliptic arc: approximate by a curve */
++	DPoint p[4];
++	CalcCurvePoints(p, x, y, wd, ht, a1);
++	FillCurve(p);
+ }
+ 
+-void FigGrafport::FillEllipse(double, double, double, double) {
+-	SetFillStyle(FillStyle::FILLED);
+-	SetFillColor();
+-}
+ 
+ void FigGrafport::DrawPolygon(const Point *p, int n) {
+ 	if (n < 1)
+@@ -886,6 +747,7 @@
+ 	*str = newstr;
+ }
+ 
++
+ void FigGrafport::SetFillColor() {
+ 	Color *color = LookupColor(GetForegroundColor());
+         if (color)
+diff -urNad /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/figgrafport.h tcm-2.20/src/ui/figgrafport.h
+--- /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/figgrafport.h	2002-05-28 05:33:06.000000000 -0300
++++ tcm-2.20/src/ui/figgrafport.h	2003-05-19 18:43:19.000000000 -0300
+@@ -93,12 +93,6 @@
+ 	///
+ 	void DrawPoint(double x, double y);
+ 
+-// Drawing Ellipses.
+-	///
+-	void DrawEllipse(double x, double y, double wd, double ht);
+-	///
+-	void FillEllipse(double x, double y, double wd, double ht);
+-
+ // Drawing Arcs.
+ 	///
+ 	/* virtual */ void FillSegment(double x, double y, double wd, double ht,
+@@ -180,7 +174,9 @@
+ 	void DrawFigRectangle(double x, double y, double wd, double ht, 
+ 			int sub_type, double radius = -1);
+ 	///
+-	void DrawFigEllipse(double x, double y, double rd_x, double rd_y, int sub_type);
++	void DrawFigEllipse(double x, double y, double rd_x, double rd_y);
++	///
++	void FillFigEllipse(double x, double y, double rd_x, double rd_y);
+ 	///
+ 	void DrawFigText(double x, double y, const char *text, int sub_type); 
+ 
+diff -urNad /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/grafport.c tcm-2.20/src/ui/grafport.c
+--- /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/grafport.c	2003-01-20 20:49:21.000000000 -0200
++++ tcm-2.20/src/ui/grafport.c	2003-05-19 18:43:19.000000000 -0300
+@@ -314,6 +314,8 @@
+ void Grafport::DrawArc(double x, double y, double w, double h,
+ 	int arc1, int arc2)
+ {
++	if ( arc1 == arc2 )
++		return;
+ 	if ( GetLineStyle() != LineStyle::DUAL ) {
+ 		DrawSimpleArc(x, y, w, h, arc1, arc2);
+ 		return;
+diff -urNad /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/grafport.h tcm-2.20/src/ui/grafport.h
+--- /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/grafport.h	2002-05-28 05:33:08.000000000 -0300
++++ tcm-2.20/src/ui/grafport.h	2003-05-19 18:43:19.000000000 -0300
+@@ -210,11 +210,11 @@
+ // Drawing Ellipses
+ 	// used in lineend.c
+ 	///
+-	virtual void DrawEllipse(double x, double y,
+-		double wd, double ht)=0;
+-	/// 
+-	virtual void FillEllipse(double x, double y,
+-		double wd, double ht)=0;
++	void DrawEllipse(double x, double y,
++		double wd, double ht) { DrawArc(x, y, wd, ht, 0, 360); }
++	///
++	void FillEllipse(double x, double y,
++		double wd, double ht) { FillSegment(x, y, wd, ht, 0, 360); }
+ 
+ // Drawing Arcs
+ 	/// Draw an arc. (x,y) = top left of the corresponding ellipse,
+diff -urNad /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/psgrafport.c tcm-2.20/src/ui/psgrafport.c
+--- /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/psgrafport.c	2002-05-28 05:33:10.000000000 -0300
++++ tcm-2.20/src/ui/psgrafport.c	2003-05-19 18:43:19.000000000 -0300
+@@ -585,13 +585,6 @@
+ 	DrawLine(x, y, x, y);
+ }
+ 
+-void PSGrafport::DrawEllipse(double x, double y, double wd, double ht) {
+-	DrawArc(x, y, wd, ht, 0, 360);
+-}
+-
+-void PSGrafport::FillEllipse(double x, double y, double wd, double ht) {
+-	FillSegment(x, y, wd, ht, 0, 360);
+-}
+ 
+ /* virtual */ void PSGrafport::DrawSimpleArc(double x, double y,
+ 	double wd, double ht, int arc1, int arc2)
+diff -urNad /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/psgrafport.h tcm-2.20/src/ui/psgrafport.h
+--- /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/psgrafport.h	2002-05-28 05:33:10.000000000 -0300
++++ tcm-2.20/src/ui/psgrafport.h	2003-05-19 18:43:19.000000000 -0300
+@@ -95,12 +95,6 @@
+ 	///
+ 	void DrawPoint(double x, double y);
+ 
+-// Drawing Ellipses.
+-	///
+-	void DrawEllipse(double x, double y, double wd, double ht);
+-	///
+-	void FillEllipse(double x, double y, double wd, double ht);
+-
+ // Drawing Arcs.
+ 	///								
+ 	/* virtual */ void FillSegment(double x, double y,	
+diff -urNad /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/xgrafport.c tcm-2.20/src/ui/xgrafport.c
+--- /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/xgrafport.c	2002-05-28 05:33:11.000000000 -0300
++++ tcm-2.20/src/ui/xgrafport.c	2003-05-19 18:43:19.000000000 -0300
+@@ -837,230 +837,3 @@
+ 	XFillPolygon(display, rdPixmap, xorGC, points, 4, Convex, 
+ 		CoordModePrevious);
+ }
+-
+-
+-//void XGrafport::DrawRoundedRectangle(double x, double y,
+-//	double wd, double ht, double rd)
+-//{
+-//	if (GetLineStyle() == LineStyle::SOLID)
+-//		DrawXRoundedRectangle(xorGC, x, y, wd, ht, rd);
+-//	else if (GetLineStyle() == LineStyle::DASHED)
+-//		DrawXRoundedRectangle(dashGC, x, y, wd, ht, rd);
+-//	else if (GetLineStyle() == LineStyle::DOTTED)
+-//		DrawXRoundedRectangle(dotGC, x, y, wd, ht, rd);
+-//	else if (GetLineStyle() == LineStyle::WIDE_DOTTED)
+-//		DrawXRoundedRectangle(wideDotGC, x, y, wd, ht, rd);
+-//	else if (GetLineStyle() == LineStyle::DUAL) {
+-//		DrawXRoundedRectangle(xorGC, x, y, wd, ht, rd);
+-//		int n = 2*GetLineWidth();
+-//		if (ht > 2*n && wd > 2*n)  
+-//			DrawXRoundedRectangle(xorGC, x+n, y+n, wd-2*n, ht-2*n, rd);
+-//	}
+-//}
+-//
+-//void XGrafport::FillRoundedRectangle(double x, double y,
+-//	double wd, double ht, double rd)
+-//{
+-//	FillXRoundedRectangle(xorGC, x, y, wd, ht, rd);
+-//}
+-//
+-//void XGrafport::DrawEllipsedRectangle(double x, double y,
+-//	double wd, double ht, double rd)
+-//{
+-//        if (GetLineStyle() == LineStyle::SOLID)
+-//                DrawXEllipsedRectangle(xorGC, x, y, wd, ht, rd);
+-//        else if (GetLineStyle() == LineStyle::DASHED)
+-//                DrawXEllipsedRectangle(dashGC, x, y, wd, ht, rd);
+-//        else if (GetLineStyle() == LineStyle::DOTTED)
+-//                DrawXEllipsedRectangle(dotGC, x, y, wd, ht, rd);
+-//        else if (GetLineStyle() == LineStyle::WIDE_DOTTED)
+-//                DrawXEllipsedRectangle(wideDotGC, x, y, wd, ht, rd);
+-//        else if (GetLineStyle() == LineStyle::DUAL) {
+-//                DrawXEllipsedRectangle(xorGC, x, y, wd, ht, rd);
+-//                int n = 2*GetLineWidth();
+-//		if (ht > 2*n && wd > 2*n)  
+-//                	DrawXEllipsedRectangle(xorGC, x+n, y+n, wd-2*n, ht-2*n, rd-n);
+-//        }
+-//}
+-//
+-//void XGrafport::DrawDisk(double x, double y,
+-//	double wd, double ht, double el)
+-//{
+-//        if (GetLineStyle() == LineStyle::SOLID)
+-//                DrawXDisk(xorGC, x, y, wd, ht, el);
+-//        else if (GetLineStyle() == LineStyle::DASHED)
+-//                DrawXDisk(dashGC, x, y, wd, ht, el);
+-//        else if (GetLineStyle() == LineStyle::DOTTED)
+-//                DrawXDisk(dotGC, x, y, wd, ht, el);
+-//        else if (GetLineStyle() == LineStyle::WIDE_DOTTED)
+-//                DrawXDisk(wideDotGC, x, y, wd, ht, el);
+-//        else if (GetLineStyle() == LineStyle::DUAL) {
+-//                DrawXDisk(xorGC, x, y, wd, ht, el);
+-//                int n = 2*GetLineWidth();
+-//		if (ht > 2*n && wd > 2*n)  
+-//                	DrawXDisk(xorGC, x+n, y+n, wd-2*n, ht-2*n, el-2*n);
+-//        }
+-//}
+-// 
+-//void XGrafport::FillEllipsedRectangle(double x, double y,
+-//	double wd, double ht, double rd)
+-//{
+-//        FillXEllipsedRectangle(xorGC, x, y, wd, ht, rd);
+-//}
+-//
+-//void XGrafport::FillDisk(double x, double y,
+-//	double wd, double ht, double el)
+-//{
+-//        FillXDisk(xorGC, x, y, wd, ht, el);
+-//}
+-//
+-//void XGrafport::DrawXRoundedRectangle(GC gc, double x_, double y_,
+-//	double wd_, double ht_, double rd_)
+-//{
+-//	int x = round(Zoom(x_)); int y = round(Zoom(y_));
+-//	int wd = round(Zoom(wd_)); int ht = round(Zoom(ht_)); int rd = round(Zoom(rd_));
+-//	// draw four lines (widthout the corner parts).
+-//	XDrawLine(display, window, gc, x, y+rd+1, x, y+ht-rd-1);
+-//	XDrawLine(display, window, gc, x+rd+1, y+ht, x+wd-rd-1, y+ht);
+-//	XDrawLine(display, window, gc, x+wd, y+ht-rd-1, x+wd, y+rd+1);
+-//	XDrawLine(display, window, gc, x+wd-rd-1, y, x+rd+1, y);
+-//	XDrawLine(display, rdPixmap, gc, x, y+rd+1, x, y+ht-rd-1);
+-//	XDrawLine(display, rdPixmap, gc, x+rd+1, y+ht, x+wd-rd-1, y+ht);
+-//	XDrawLine(display, rdPixmap, gc, x+wd, y+ht-rd-1, x+wd, y+rd+1);
+-//	XDrawLine(display, rdPixmap, gc, x+wd-rd-1, y, x+rd+1, y);
+-//	// draw four corner arcs.
+-//	int diam = 2*rd;
+-//	XDrawArc(display, window, gc, x, y, diam, diam, 90*64, 90*64);
+-//	XDrawArc(display, window, gc, x, y+ht-diam, diam, diam, 180*64, 90*64);
+-//	XDrawArc(display, window, gc, x+wd-diam, y+ht-diam, diam, diam, 
+-//			270*64, 90*64);
+-//	XDrawArc(display, window, gc, x+wd-diam, y, diam, diam, 0*64, 90*64);
+-//	XDrawArc(display, rdPixmap, gc, x, y, diam, diam, 90*64, 90*64);
+-//	XDrawArc(display, rdPixmap, gc, x, y+ht-diam, diam, diam, 
+-//			180*64, 90*64);
+-//	XDrawArc(display, rdPixmap, gc, x+wd-diam, y+ht-diam, diam, diam, 
+-//			270*64, 90*64);
+-//	XDrawArc(display, rdPixmap, gc, x+wd-diam, y, diam, diam, 0*64, 90*64);
+-//}
+-//
+-//void XGrafport::FillXRoundedRectangle(GC gc, double x_, double y_,
+-//	double wd_, double ht_, double rd_)
+-//{
+-//	int x = round(Zoom(x_)); int y = round(Zoom(y_));
+-//	int wd = round(Zoom(wd_)); int ht = round(Zoom(ht_)); int rd = round(Zoom(rd_));
+-//	// fill rectangle parts.
+-//	XFillRectangle(display, window, gc, x, y+rd, wd, ht-2*rd);
+-//	XFillRectangle(display, window, gc, x+rd, y, wd-2*rd, rd);
+-//	XFillRectangle(display, window, gc, x+rd, y+ht-rd, wd-2*rd, rd);
+-//	XFillRectangle(display, rdPixmap, gc, x, y+rd, wd, ht-2*rd);
+-//	XFillRectangle(display, rdPixmap, gc, x+rd, y, wd-2*rd, rd);
+-//	XFillRectangle(display, rdPixmap, gc, x+rd, y+ht-rd, wd-2*rd, rd);
+-//	// fill four corner arcs.
+-//	int diam = 2*rd;
+-//	XFillArc(display, window, gc, x, y, diam, diam, 90*64, 90*64);
+-//	XFillArc(display, window, gc, x, y+ht-diam, diam, diam, 180*64, 90*64);
+-//	XFillArc(display, window, gc, x+wd-diam, y+ht-diam, diam, diam, 
+-//			270*64, 90*64);
+-//	XFillArc(display, window, gc, x+wd-diam, y, diam, diam, 0*64, 90*64);
+-//	XFillArc(display, rdPixmap, gc, x, y, diam, diam, 90*64, 90*64);
+-//	XFillArc(display, rdPixmap, gc, x, y+ht-diam, diam, diam, 
+-//			180*64, 90*64);
+-//	XFillArc(display, rdPixmap, gc, x+wd-diam, y+ht-diam, diam, diam, 
+-//			270*64, 90*64);
+-//	XFillArc(display, rdPixmap, gc, x+wd-diam, y, diam, diam, 
+-//			0*64, 90*64);
+-//}
+-//
+-//void XGrafport::DrawXEllipsedRectangle(GC gc, double x_, double y_,
+-//	double wd_, double ht_, double rd_)
+-//{
+-//        int x = round(Zoom(x_)); int y = round(Zoom(y_));
+-//        int wd = round(Zoom(wd_)); int ht = round(Zoom(ht_)); int rd = round(Zoom(rd_));
+-//        // draw two lines (without the corner parts).
+-//        XDrawLine(display, window, gc, x+rd+1, y, x+wd-rd-1, y);
+-//        XDrawLine(display, window, gc, x+rd+1, y+ht, x+wd-rd-1, y+ht);
+-//        XDrawLine(display, rdPixmap, gc, x+rd+1, y, x+wd-rd-1, y);
+-//        XDrawLine(display, rdPixmap, gc, x+rd+1, y+ht, x+wd-rd-1, y+ht);
+-//        // draw two half circle parts.
+-//        int diam = 2*rd;        // (== ht)
+-//        XDrawArc(display, window, gc, x, y, diam, ht, 
+-//		90*64, 180*64);
+-//        XDrawArc(display, window, gc, x+wd-diam, y, diam, ht, 
+-//		270*64, 180*64);
+-//        XDrawArc(display, rdPixmap, gc, x, y, diam, ht, 
+-//		90*64, 180*64);
+-//        XDrawArc(display, rdPixmap, gc, x+wd-diam, y, diam, ht, 
+-//		270*64, 180*64);
+-//}
+-// 
+-//void XGrafport::FillXEllipsedRectangle(GC gc, double x_, double y_,
+-//	double wd_, double ht_, double rd_)
+-//{
+-//        int x = round(Zoom(x_)); int y = round(Zoom(y_));
+-//        int wd = round(Zoom(wd_)); int ht = round(Zoom(ht_)); int rd = round(Zoom(rd_));
+-//        // fill rectangle part.
+-//        XFillRectangle(display, window, gc, x+rd, y, wd-2*rd, ht);
+-//        XFillRectangle(display, rdPixmap, gc, x+rd, y, wd-2*rd, ht);
+-//        // fill two half circle parts.
+-//        int diam = 2*rd;        // (== ht)
+-//        XFillArc(display, window, gc, x, y, diam, ht, 
+-//		 90*64, 180*64);
+-//        XFillArc(display, window, gc, x+wd-diam, y, diam, ht, 
+-//		 270*64, 180*64);
+-//        XFillArc(display, rdPixmap, gc, x, y, diam, ht, 
+-//		 90*64, 180*64);
+-//        XFillArc(display, rdPixmap, gc, x+wd-diam, y, diam, ht, 
+-//		270*64, 180*64);
+-//}
+-//
+-//void XGrafport::DrawXDisk(GC gc, double x_, double y_, 
+-//	double wd_, double ht_, double el_)
+-//{
+-//        int x = round(Zoom(x_)); int y = round(Zoom(y_));
+-//        int wd = round(Zoom(wd_)); int ht = round(Zoom(ht_)); int el = round(Zoom(el_));
+-//	int ah = el/2; // arc height
+-//        // draw two lines (without the corner points).
+-//        XDrawLine(display, window, gc, x, y+ah+1, x, y+ht-ah-1);
+-//        XDrawLine(display, window, gc, x+wd, y+ah+1, x+wd, y+ht-ah-1);
+-//        XDrawLine(display, rdPixmap, gc, x, y+ah+1, x, y+ht-ah-1);
+-//        XDrawLine(display, rdPixmap, gc, x+wd, y+ah+1, x+wd, y+ht-ah-1);
+-//        // draw whole ellipse (arc) and half ellipse
+-//        XDrawArc(display, window, gc, x, y, wd, el, 0*64, 360*64);
+-//        XDrawArc(display, window, gc, x, y+ht-el, wd, el, 0*64, -180*64);
+-//        XDrawArc(display, rdPixmap, gc, x, y, wd, el, 0*64, 360*64);
+-//        XDrawArc(display, rdPixmap, gc, x, y+ht-el, wd, el, 0*64, -180*64);
+-//}
+-// 
+-//void XGrafport::FillXDisk(GC gc, double x_, double y_, 
+-//	double wd_, double ht_, double el_)
+-//{
+-//        int x = round(Zoom(x_)); int y = round(Zoom(y_));
+-//        int wd = round(Zoom(wd_)); int ht = round(Zoom(ht_)); int el = round(Zoom(el_));
+-//	int ah = el/2; // arc height
+-//	XFillRectangle(display, window, gc, x, y+ah+1, wd, ht-2*ah-1); 
+-//	XFillRectangle(display, rdPixmap, gc, x, y+ah+1, wd, ht-2*ah-1); 
+-//	// fill ellipse parts
+-//        XFillArc(display, window, gc, x, y, wd, el, 0*64, 180*64);
+-//        XFillArc(display, window, gc, x, y+ht-el, wd, el, 0*64, -180*64);
+-//        XFillArc(display, rdPixmap, gc, x, y, wd, el, 0*64, 180*64);
+-//        XFillArc(display, rdPixmap, gc, x, y+ht-el, wd, el, 0*64, -180*64);
+-//}
+-
+-void XGrafport::DrawEllipse(double x, double y,
+-	double wd, double ht)
+-{
+-	DrawArc(x, y, wd, ht, 0, 360);
+-}
+-
+-void XGrafport::FillEllipse(double x, double y,
+-	double wd, double ht)
+-{
+-	FillSegment(x, y, wd, ht, 0, 360);
+-}
+-
+-//void XGrafport::FillArc(double x, double y,
+-//	double wd, double ht, int arc1, int arc2)
+-//{
+-//	XSetArcMode(display, xorGC, ArcPieSlice);
+-//	FillXArc(xorGC, x, y, wd, ht, arc1, arc2);
+-//}
+diff -urNad /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/xgrafport.h tcm-2.20/src/ui/xgrafport.h
+--- /home/otavio/devel/debian/tcm/tcm-2.20/src/ui/xgrafport.h	2002-05-28 05:33:11.000000000 -0300
++++ tcm-2.20/src/ui/xgrafport.h	2003-05-19 18:43:19.000000000 -0300
+@@ -126,12 +126,6 @@
+ 	///
+ 	void DrawPoint(double x, double y);
+ 
+-// Drawing Ellipses
+-	///
+-	void DrawEllipse(double x, double y, double wd, double ht);
+-	///
+-	void FillEllipse(double x, double y, double wd, double ht);
+-
+ // Drawing Arcs
+ 	///
+ 	/* virtual */ void FillSegment(double x, double y,	

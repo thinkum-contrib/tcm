@@ -1,0 +1,58 @@
+#!/bin/sh -e
+## 13_fix_flex_compile.dpatch by Otavio Salvador <otavio@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: This should fix the problem with newest version of flex
+
+if [ $# -ne 1 ]; then
+    echo >&2 "`basename $0`: script expects -patch|-unpatch as argument"
+    exit 1
+fi
+
+[ -f debian/patches/00patch-opts ] && . debian/patches/00patch-opts
+patch_opts="${patch_opts:--f --no-backup-if-mismatch}"
+
+case "$1" in
+       -patch) patch $patch_opts -p1 < $0;;
+       -unpatch) patch $patch_opts -p1 -R < $0;;
+        *)
+                echo >&2 "`basename $0`: script expects -patch|-unpatch as argument"
+                exit 1;;
+esac
+
+exit 0
+
+@DPATCH@
+diff -urNad /home/otavio/devel/debian/tcm/tcm-2.20/src/sd/bv/adsedgelabel.l tcm-2.20/src/sd/bv/adsedgelabel.l
+--- /home/otavio/devel/debian/tcm/tcm-2.20/src/sd/bv/adsedgelabel.l	2003-07-03 19:46:07.000000000 -0300
++++ tcm-2.20/src/sd/bv/adsedgelabel.l	2003-07-03 19:47:11.000000000 -0300
+@@ -7,7 +7,6 @@
+ char adsedgelabel_errormsg[1024] = "";
+ char adsedgelabel_constraint[1024] = "";
+ %}
+-%option noyywrap
+ 
+ integer   [0-9]+
+ string    [A-Za-z](([ _][A-Za-z0-9])|([A-Za-z0-9]))*
+diff -urNad /home/otavio/devel/debian/tcm/tcm-2.20/src/sd/bv/adsltlformula.l tcm-2.20/src/sd/bv/adsltlformula.l
+--- /home/otavio/devel/debian/tcm/tcm-2.20/src/sd/bv/adsltlformula.l	2003-07-03 19:46:07.000000000 -0300
++++ tcm-2.20/src/sd/bv/adsltlformula.l	2003-07-03 19:47:03.000000000 -0300
+@@ -7,7 +7,6 @@
+ char adsltlformula_errormsg[1024] = "";
+ char adsltlformula_constraint[1024] = "";
+ %}
+-%option noyywrap
+ 
+ integer   [0-9]+    
+ string1   [A-Za-z][A-Za-z][A-Za-z0-9]([ \-_][A-Za-z0-9]|[A-Za-z0-9])*
+diff -urNad /home/otavio/devel/debian/tcm/tcm-2.20/src/sd/bv/adsmcoutput.l tcm-2.20/src/sd/bv/adsmcoutput.l
+--- /home/otavio/devel/debian/tcm/tcm-2.20/src/sd/bv/adsmcoutput.l	2003-07-03 19:46:07.000000000 -0300
++++ tcm-2.20/src/sd/bv/adsmcoutput.l	2003-07-03 19:47:21.000000000 -0300
+@@ -7,7 +7,6 @@
+ char adsmcoutput_errormsg[1024] = "";
+ char adsmcoutput_constraint[1024] = "";
+ %}
+-%option noyywrap
+ 
+ 
+ string    [A-Za-z0-9.:,/@\|!()<>=&_*+]+ 

@@ -1,0 +1,6 @@
+# This watch file is mangled to match the upstream page, but it isn't
+# really useful, since the ftp site is currently dead.
+version=3
+opts=dversionmangle=s/\+TSQD$// \
+http://wwwhome.cs.utwente.nl/~tcm/software.html \
+h?[tf]tp://.+/tcm-([\d\.]*).src.tar.gz

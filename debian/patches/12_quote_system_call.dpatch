@@ -1,0 +1,37 @@
+#!/bin/sh -e
+## 12_quote_system_call.dpatch by Otavio Salvador <otavio@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Ensure that the argument is ocrrectly quoted (#198001)
+
+if [ $# -ne 1 ]; then
+    echo >&2 "`basename $0`: script expects -patch|-unpatch as argument"
+    exit 1
+fi
+
+[ -f debian/patches/00patch-opts ] && . debian/patches/00patch-opts
+patch_opts="${patch_opts:--f --no-backup-if-mismatch}"
+
+case "$1" in
+       -patch) patch $patch_opts -p1 < $0;;
+       -unpatch) patch $patch_opts -p1 -R < $0;;
+        *)
+                echo >&2 "`basename $0`: script expects -patch|-unpatch as argument"
+                exit 1;;
+esac
+
+exit 0
+
+@DPATCH@
+diff -urNad /home/otavio/devel/debian/tcm/tcm-2.20/src/ed/startupwindow.c tcm-2.20/src/ed/startupwindow.c
+--- /home/otavio/devel/debian/tcm/tcm-2.20/src/ed/startupwindow.c	2003-07-03 19:29:00.000000000 -0300
++++ tcm-2.20/src/ed/startupwindow.c	2003-07-03 19:30:31.000000000 -0300
+@@ -429,7 +429,7 @@
+ }
+ 
+ void StartupWindow::AppendProjDir(string *command) {
+-	*command += " -projdir " + projDir;
++	*command += " -projdir \"" + projDir + "\"";
+ }
+ 
+ void StartupWindow::AppendDrawingArea(string *command) {

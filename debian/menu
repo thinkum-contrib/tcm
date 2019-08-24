@@ -1,0 +1,161 @@
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics"\
+  hints="Vector"\
+  title="TCM Control Panel"\
+  longtitle="TCM Control Panel"\
+  command="/usr/bin/tcm"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM Generic Editors"\
+  hints="Vector"\
+  title="TGD - Tool for Generic Diagrams"\
+  longtitle="TGD - Tool for Generic Diagrams"\
+  command="/usr/bin/tgd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM Generic Editors"\
+  hints="Vector"\
+  title="TGT - Tool for Generic Tables"\
+  longtitle="TGT - Tool for Generic Diagrms"\
+  command="/usr/bin/tgt"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM Generic Editors"\
+  hints="Vector"\
+  title="TGTT - Tool for Generic Textual Trees"\
+  longtitle="TGTT - Tool for Generic Textual Trees"\
+  command="/usr/bin/tgtt"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM Structured Analysis Editors"\
+  hints="Vector"\
+  title="TESD - Tool for Entity Relationship Diagrams"\
+  longtitle="TESD - Tool for Entity Relationship Diagrams"\
+  command="/usr/bin/tesd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM Structured Analysis Editors"\
+  hints="Vector"\
+  title="TEFD - Tool for Data and Event Flow Diagrams"\
+  longtitle="TEFD - Tool for Data and Event Flow Diagrams"\
+  command="/usr/bin/tefd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM Structured Analysis Editors"\
+  hints="Vector"\
+  title="TSTD - Tool for State Trasition Diagrams (Mealy)"\
+  longtitle="TSTD - Tool for State Trasition Diagrams (Mealy)"\
+  command="/usr/bin/tstd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM Structured Analysis Editors"\
+  hints="Vector"\
+  title="TTUT - Tool for Transaction Use Tables"\
+  longtitle="TTUT - Tool for Transaction Use Tables"\
+  command="/usr/bin/ttut"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM UML Editors"\
+  hints="Vector"\
+  title="TUCD - Tool for Use Case Diagrams"\
+  longtitle="TUCD - Tool for Use Case Diagrams"\
+  command="/usr/bin/tucd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM UML Editors"\
+  hints="Vector"\
+  title="TSSD - Tool for Static Structure Diagrams"\
+  longtitle="TSSD - Tool for Static Structure Diagrams"\
+  command="/usr/bin/tssd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM UML Editors"\
+  hints="Vector"\
+  title="TATD - Tool for Activity Diagrams"\
+  longtitle="TATD - Tool for Activity Diagrams"\
+  command="/usr/bin/tatd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM UML Editors"\
+  hints="Vector"\
+  title="TSCD - Tool for Statechart Diagrams"\
+  longtitle="TSCD - Tool for Statechart Diagrams"\
+  command="/usr/bin/tscd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM UML Editors"\
+  hints="Vector"\
+  title="TSQD - Tool for Sequence Diagrams"\
+  longtitle="TSQD - Tool for Sequence Diagrams"\
+  command="/usr/bin/tsqd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM UML Editors"\
+  hints="Vector"\
+  title="TCBD - Tool for Collaboration Diagrams"\
+  longtitle="TCBD - Tool for Collaboration Diagrams"\
+  command="/usr/bin/tcbd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM UML Editors"\
+  hints="Vector"\
+  title="TCPD - Tool for Component Diagrams"\
+  longtitle="TCPD - Tool for Component Diagrams"\
+  command="/usr/bin/tcpd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM UML Editors"\
+  hints="Vector"\
+  title="TDPD - Tool for Deployment Diagrams"\
+  longtitle="TDPD - Tool for Deployment Diagrams"\
+  command="/usr/bin/tdpd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM Miscellaneous Editors"\
+  hints="Vector"\
+  title="TERD - Tool for Entity Relationship Diagrams (classic)"\
+  longtitle="TERD - Tool for Entity Relationship Diagrams (classic)"\
+  command="/usr/bin/terd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM Miscellaneous Editors"\
+  hints="Vector"\
+  title="TCRD - Tool for Class Relationship Diagrams (obsolete)"\
+  longtitle="TERD - Tool for Class Relationship Diagrams (obsolete)"\
+  command="/usr/bin/tcrd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM Miscellaneous Editors"\
+  hints="Vector"\
+  title="TDFD - Tool for Data Flow Diagrams (subset of TEFD)"\
+  longtitle="TDFD - Tool for Data Flow Diagrams (subset of TEFD)"\
+  command="/usr/bin/tdfd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM Miscellaneous Editors"\
+  hints="Vector"\
+  title="TPSD - Tool for Process Structure Diagrams (JSD)"\
+  longtitle="TPSD - Tool for Process Structure Diagrams (JSD)"\
+  command="/usr/bin/tpsd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM Miscellaneous Editors"\
+  hints="Vector"\
+  title="TSND - Tool for System Network Diagrams (JSD)"\
+  longtitle="TPSD - Tool for System Network Diagrams (JSD)"\
+  command="/usr/bin/tsnd"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM Miscellaneous Editors"\
+  hints="Vector"\
+  title="TRPG - Tool for Recursive Process Graphs"\
+  longtitle="TRPG - Tool for Recursive Process Graphs"\
+  command="/usr/bin/trpg"
+?package(tcm):\
+  needs="X11"\
+  section="Applications/Graphics/TCM Miscellaneous Editors"\
+  hints="Vector"\
+  title="TTDT - Tool for Transaction Decomposition Tables"\
+  longtitle="TTDT - Tool for Transaction Decomposition Tables"\
+  command="/usr/bin/ttdt"

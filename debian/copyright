@@ -1,0 +1,29 @@
+This package was debianized by Otavio Real Salvador <otavio@freedom.ind.br> on
+Thu, 14 Feb 2002 20:58:23 -0200.
+
+It was downloaded from http://wwwhome.cs.utwente.nl/~tcm/
+
+Upstream Authors: Rik Eshuis <eshuis@cs.utwente.nl>,
+                  David Jansen <dnjansen@cs.utwente.nl>,
+                  Roel Wieringa <roelw@cs.utwente.nl>,
+                  Henk van de Zandschulp <henkz@cs.utwente.nl>
+
+Copyright: © Copyright 2001, Universiteit Twente.
+
+Licence:
+
+   This package is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; version 2 dated June, 1991.
+
+   This package is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this package; if not, write to the Free Software Foundation,
+   Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.

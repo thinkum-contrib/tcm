@@ -1,0 +1,19 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 20_fix_doc.dpatch by Otavio Salvador <otavio@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad --exclude=CVS --exclude=.svn ./doc/index.html /tmp/dpep-work.vCjNjE/tcm-2.20+TSQD/doc/index.html
+--- ./doc/index.html	2004-07-21 14:41:33.000000000 -0300
++++ /tmp/dpep-work.vCjNjE/tcm-2.20+TSQD/doc/index.html	2005-09-14 20:43:23.851685128 -0300
+@@ -7,8 +7,6 @@
+ <h1> Local TCM Documentation </h1>
+  
+ <ul>
+-<li> <a href="../README"> TCM README </a>
+-<li> <a href="../INSTALL"> (Short) TCM Installation </a>
+ <li> <a href="usersguide/index.html"> TCM user's guide </a>
+ <li> <a href="wishlist/WishList.html"> TCM wish list </a>
+ <li> <a href="wishlist/FutureDevelopments.html"> TCM's future developments </a>

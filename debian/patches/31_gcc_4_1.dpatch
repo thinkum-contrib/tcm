@@ -1,0 +1,114 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 31_gcc_4_1.dpatch by Otavio Salvador <otavio@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+--- ./src/sd/dv/relationshipnode.h~	2006-03-18 05:39:16.000000000 +0000
++++ ./src/sd/dv/relationshipnode.h	2006-03-18 05:39:29.000000000 +0000
+@@ -26,6 +26,9 @@
+ class ERGraph;
+ 
+ /// relationship (ER) node class.
++
++int CompareComponent(string *c1, string *c2);
++
+ class RelationshipNode: public Node {
+ /*@Doc: {\large {\bf scope:} TERD} */
+ public:
+--- ./src/sd/dv/sqobjectnode.h~	2006-03-18 05:41:20.000000000 +0000
++++ ./src/sd/dv/sqobjectnode.h	2006-03-18 05:41:37.000000000 +0000
+@@ -28,6 +28,9 @@
+ class SQGraph;
+ 
+ /// object class (TSQD) node class.
++
++int CompareAnchor(Point *p1, Point *p2);
++
+ class SQObjectNode: public Node {
+ /*@Doc: {\large {\bf scope:} TSQD} */
+ public:
+--- ./src/sd/bv/adsactivity.h~	2006-03-18 05:43:12.000000000 +0000
++++ ./src/sd/bv/adsactivity.h	2006-03-18 06:00:48.000000000 +0000
+@@ -23,7 +23,7 @@
+ 
+ #include "llist.h"
+ #include "lstring.h"
+-;
++
+ class ADSVar;
+ class OutputFile;
+ 
+--- ./src/sd/bv/bvinstances.h~	2006-03-18 06:03:19.000000000 +0000
++++ ./src/sd/bv/bvinstances.h	2006-03-18 06:03:34.000000000 +0000
+@@ -49,7 +49,7 @@
+ #include "../sd/bv/scdtransitionedge.h"
+ 
+ template class List<SCNode *>;
+-template class List <SCDTransitionEdge *>
++template class List <SCDTransitionEdge *>;
+ 
+ 
+ #ifdef MODELCHECK
+--- ./src/sd/bv/adshyperedge.c~	2006-03-18 06:04:20.000000000 +0000
++++ ./src/sd/bv/adshyperedge.c	2006-03-18 06:04:31.000000000 +0000
+@@ -33,7 +33,7 @@
+   cc=NULL;
+   edgelist.add(e);
+   sendevent=NULL;
+-};
++}
+ 
+ bool ADSHyperEdge::AddProp(Prop *p){
+   for (propl.first();!propl.done();propl.next()){
+--- ./src/tb/cellcolumn.h~	2006-03-18 05:20:22.000000000 +0000
++++ ./src/tb/cellcolumn.h	2006-03-18 05:20:39.000000000 +0000
+@@ -26,6 +26,9 @@
+ #include "tableviewer.h"
+ 
+ /// (table) column class.
++
++int Compare(CellColumn *c1, CellColumn *c2);
++
+ class CellColumn: public CellVector {	
+ /*@Doc: {\large {\bf scope:} table} */
+ public:
+--- ./src/tb/cellrow.h~	2006-03-18 05:33:59.000000000 +0000
++++ ./src/tb/cellrow.h	2006-03-18 05:34:19.000000000 +0000
+@@ -26,6 +26,9 @@
+ #include "tableviewer.h"
+ 
+ /// (table) row class.
++
++int Compare(CellRow *r1, CellRow *r2);
++
+ class CellRow: public CellVector {
+ /*@Doc: {\large {\bf scope:} table} */
+ public:
+--- ./src/tb/celltext.h~	2006-03-18 05:34:02.000000000 +0000
++++ ./src/tb/celltext.h	2006-03-18 05:37:08.000000000 +0000
+@@ -31,6 +31,10 @@
+ class OutputFile;
+ 
+ /// cell text class.
++
++class CellText;
++int Compare(CellText *r1, CellText *r2);
++
+ class CellText: public SimpleLabel {
+ /*@Doc: {\large {\bf scope:} table} */
+ public:
+--- ./src/tb/cellvector.h~	2006-03-18 05:34:05.000000000 +0000
++++ ./src/tb/cellvector.h	2006-03-18 05:37:19.000000000 +0000
+@@ -34,6 +34,10 @@
+ class OutputFile;
+ 
+ /// abstract base class of table rows and columns.
++
++class CellVector;
++int Compare(CellVector *c1, CellVector *c2);
++
+ class CellVector {
+ /*@Doc: {\large {\bf scope:} table} */
+ public:

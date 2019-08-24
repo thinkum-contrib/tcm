@@ -1,0 +1,229 @@
+tcm (2.20+TSQD-5) unstable; urgency=medium
+
+  [ Andreas Beckmann ]
+  * QA upload.  (Closes: #722943)
+  * Set Maintainer to Debian QA Group.  (See: #847248)
+  * Switch to debhelper compat level 9.  (Closes: #817686)
+
+  [ Santiago Vila ]
+  * Add missing build-arch/build-indep targets.  (Closes: #822031)
+
+  [ Nicolas Sévelin-Radiguet ]
+  * Fix FTBFS with clang.  (Closes: #745652)
+
+ -- Andreas Beckmann <anbe@debian.org>  Mon, 12 Dec 2016 11:29:13 +0100
+
+tcm (2.20+TSQD-4.4) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Build depend on libxt-dev (Closes: #707923).
+  * Transition from lesstif2 to motif (Closes: #714668).
+
+ -- Luk Claes <luk@debian.org>  Sat, 14 Sep 2013 17:55:28 +0200
+
+tcm (2.20+TSQD-4.3) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Refresh Makefile patch (Closes: #718156).
+
+ -- Margarita Manterola <marga@debian.org>  Fri, 09 Aug 2013 09:48:38 +0000
+
+tcm (2.20+TSQD-4.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * debian/rules:
+    + Fix bashism (Closes: #478629). Patch by Chris Lamb.
+
+ -- Marco Rodrigues <gothicx@sapo.pt>  Mon, 16 Jun 2008 09:42:17 +0100
+
+tcm (2.20+TSQD-4.1) unstable; urgency=low
+
+  * Non-maintainer upload to fix Failure To Build From Source.
+
+  [ Barry deFreese ]
+  * Remove src/Config.tmpl symlink before copying debian/Config.tmpl.
+    (Closes: #464288).
+
+  [ Margarita Manterola ]
+  * Fix watch file (Closes: #449836).
+  * Fix debian/menu to use "Applications" instead of "Apps".
+  * Fix debian/copyright to include the proper copyright notice.
+
+ -- Margarita Manterola <marga@debian.org>  Sun, 09 Mar 2008 01:04:17 +0000
+
+tcm (2.20+TSQD-4) unstable; urgency=low
+
+  * debian/Config.tmpl: Remove useless libraries from LDFLAGS.
+  * debian/rules: Remove executable bit from /etc files.
+  * debian/copyright: Update FSF address.
+  * debian/control: Update standards-version to 3.7.2.
+  * debian/menu: Remove tert and teft entries since them are not being
+    built anymore.
+
+ -- Otavio Salvador <otavio@debian.org>  Fri,  4 May 2007 20:58:44 -0300
+
+tcm (2.20+TSQD-3) unstable; urgency=medium
+
+  * Ack previous NMUs.
+    - Added 30_amd64_null.dpatch from Adrian Knoth to fix segfaults on amd64.
+      (Closes: #339040) (Thanks Norbert Tretkowski <nobse@debian.org>)
+    - debian/Config.tmpl: Fix conditional syntax. (Closes: #355985)
+      (Thanks Matej Vela <vela@debian.org>)
+  * Add 31_fix_gcc_4_1.dpatch: fix ugly C++ programming. Thanks to Martin
+    Michlmayr <tbm@cyrius.com> for the patch.
+  
+ -- Otavio Salvador <otavio@debian.org>  Sat,  8 Apr 2006 10:03:43 -0300
+
+tcm (2.20+TSQD-2) unstable; urgency=low
+
+  * Ack previous NMU. (Closes: #327362, #320336)
+  * Add build-depends of libxau-dev. Fix FTBFS on arm.
+  * Fix a spelling error no menu file. (Closes: #305111)
+  * Bumb Standards-Version to 3.6.2. No changes need.
+  * Convert previous patches to:
+    - 15_fix_gcc_4_0.dpatch: fix issues while building with gcc 4.0;
+    - 16_gv_preview.dpatch: fix gv params;
+  * Remove 14_fix_gcc_3_4.dpatch since 15_fix_gcc_4_0.dpatch replace it;
+  * Add 20_fix_doc.dpatch: Remove wrong links from docs. (Closes: #322336)
+
+ -- Otavio Salvador <otavio@debian.org>  Wed, 14 Sep 2005 20:17:10 -0300
+
+tcm (2.20+TSQD-1.1) unstable; urgency=medium
+
+  * NMU.
+  * Fix build failure with gcc 4.0.  Thanks to Andreas Jochens for the patch.
+    Closes: #327362.
+  * Call gv with `--media=<a4|letter> --orientation=<portrait|landscape>'
+    rather than `-<a4|letter> -<portrait|landscape>'.  Closes: #320336.
+
+ -- Matej Vela <vela@debian.org>  Mon, 12 Sep 2005 16:23:26 +0200
+
+tcm (2.20+TSQD-1) unstable; urgency=low
+
+  * New upstream release
+    - Don't use obsolete function anymore (Closes: #234512).
+  * debian/menu: add TSQD diagram item.
+
+ -- Otavio Salvador <otavio@debian.org>  Thu, 26 Aug 2004 12:34:24 -0300
+
+tcm (2.20-7) unstable; urgency=low
+
+  * Update packaging, now conforming to policy version 3.6.1.
+  * Change the build-depends: remove the depends of gcc versions bellow of
+    3.3 since all previous bugs are fixed.
+  * Fix FTBFS with gcc-3.4. Thanks to Andreas Jochens (closes: #263761).
+    - Included debian/patches/14_fix_gcc_3_4.dpatch.
+
+ -- Otavio Salvador <otavio@debian.org>  Sat,  7 Aug 2004 16:02:20 -0300
+
+tcm (2.20-6) unstable; urgency=low
+
+  * Change the build-depends:
+    - included the need of one version lowest then 2.5.31 for flex;
+    - updated the gcc depends to gcc (<< 3.3) | gcc-3.3 (>= 3.3.1-0pre0):
+      - droped debian/patches/10_change_gcc_default.dpatch.
+    - updated the flex depends:
+      - added debian/patches/13_fix_flex_compile.dpatch.
+    since the last version (3.3.1-0pre0) solve the previous build problem.
+  * Fix the FTBFS bug in mipsel (closes: #198519):
+    - updated the 01_makefile.dpatch.
+  * Fix the quoting of project directory in TCM loading tool 
+    (closes: #198001):
+    - added debian/patches/12_quote_system_call.dpatch.
+
+ -- Otavio Salvador <otavio@debian.org>  Thu,  3 Jul 2003 20:08:21 -0300
+
+tcm (2.20-5) unstable; urgency=low
+
+  * Update packaging, now conforming to policy version 3.5.10.
+  * Fix the sed expression to work with older sed versions 
+    (closes: #192920).
+  * Change the build-depends:
+    - 'flex' to 'flex-old | flex';
+    - 'lesstif-dev' to 'lesstif2-dev | lesstif-dev' (closes: #192941);
+    - added 'g++-3.2' because the current (3:3.3-1) doesn't work;
+    - added 'dpatch';
+  * Change the support of build-time patches to use dpatch:
+    - debian/control: include a build-depend of dpatch;
+    - debian/rules: changes needed to use dpatch;
+    - debian/paches/*: converted to dpatch format;
+
+ -- Otavio Salvador <otavio@debian.org>  Tue, 20 May 2003 13:40:12 -0300
+
+tcm (2.20-4) unstable; urgency=low
+
+  * debian/control: included suggests of xfonts-scalable in tcm package.
+  * /etc/tcm/tcm.conf: changed FontFamily from Helvetica to Courier
+    (closes: #183609).
+  * debian/rules: 
+    - include support to apply patches at build time;
+    - removed DH_COMPAT variable.
+  * debian/compat: included on package and set to 4.
+  * debian/patches/:
+    - ported 01_makefile.diff (about #178762).
+    - added 02_export_png.diff (closes: #183588);
+
+ -- Otavio Salvador <otavio@debian.org>  Thu, 13 Mar 2003 22:22:48 -0300
+
+tcm (2.20-3) unstable; urgency=low
+
+  * debian/rules: included support to DEB_BUILD_OPTIONS.
+  * debian/control: included dependence of transfig (closes: #183454).
+
+ -- Otavio Salvador <otavio@debian.org>  Tue,  4 Mar 2003 21:45:10 -0300
+
+tcm (2.20-2) unstable; urgency=low
+
+  * Fixed the clean target to allow compilation like regular
+    user (closes: #178762).
+
+ -- Otavio Salvador <otavio@debian.org>  Tue, 28 Jan 2003 10:19:50 -0200
+
+tcm (2.20-1) unstable; urgency=low
+
+  * New upstream release (closes: #164378).
+  * Update packaging, now conforming to policy version 3.5.8.
+  * Changed the debhelper compatablity level to 4.
+  * debian/control:
+    - Changed the Standards-Version to 3.5.8;
+    - Updated the Build-Depends to depends of debhelper >= 4.
+  * debian/menu: included TSCD (Tool for Statechart Diagrams) entry.
+
+ -- Otavio Salvador <otavio@debian.org>  Fri, 24 Jan 2003 13:17:22 -0200
+
+tcm (2.10-4) unstable; urgency=low
+
+  * Fixed some issues about bison 1.75. (closes: #169315)
+
+ -- Otavio Salvador <otavio@debian.org>  Sat, 16 Nov 2002 10:28:31 -0200
+
+tcm (2.10-3) unstable; urgency=low
+
+  * Update packaging, now conforming to policy version 3.5.7
+  * Rebuild to remove the /usr/doc link
+
+ -- Otavio Salvador <otavio@debian.org>  Thu, 14 Nov 2002 15:14:54 -0200
+
+tcm (2.10-2) unstable; urgency=low
+
+  * improve menus
+
+ -- Otavio Salvador <otavio@debian.org>  Sun, 28 Apr 2002 15:36:37 -0300
+
+tcm (2.10-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Otavio Salvador <otavio@debian.org>  Thu, 25 Apr 2002 10:27:16 -0300
+
+tcm (2.1-2) unstable; urgency=low
+
+  * fix a compile problem in HPPA. (closes: #144290)
+
+ -- Otavio Salvador <otavio@debian.org>  Wed, 24 Apr 2002 12:34:18 -0300
+
+tcm (2.1-1) unstable; urgency=low
+
+  * Initial Release. (closes: #139236)
+
+ -- Otavio Salvador <otavio@debian.org>  Fri, 19 Apr 2002 17:44:58 -0300

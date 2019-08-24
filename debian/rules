@@ -1,0 +1,132 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode. 
+#export DH_VERBOSE=1
+
+CFLAGS = -Wall -g
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+        CFLAGS += -O0
+else
+        CFLAGS += -O2
+endif
+
+include /usr/share/dpatch/dpatch.make
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+
+	-$(MAKE) config
+	rm -f src/Config.tmpl
+	cp debian/Config.tmpl src/
+	touch configure-stamp
+
+build-arch: build
+build-indep: build
+build: build-stamp
+build-stamp: configure-stamp patch-stamp
+	dh_testdir
+
+	$(MAKE) CFLAGS='$(CFLAGS) -DCONFIG_INSTALL=\"/etc/tcm/\" -DTCM_INSTALL_DIR=\"/usr\" -DTCM_INSTALL_LIB=\"/usr/lib/\" -DTCM_INSTALL_SHARE=\"/usr/share/doc/tcm-doc/\" -DCONFIG_FILE=\"tcm.conf\" -DHELP_DIR=\"/usr/share/doc/tcm-doc/help/\" -DCOLOR_FILE=\"colorrgb.txt\" -DBANNER_FILE=\"banner.ps\"' \
+		TCM_INSTALL_DIR=/usr \
+		CONFIG_INSTALL=/etc/tcm/ \
+		TCM_INSTALL_DOC=/usr/share/doc/tcm-doc \
+		TCM_INSTALL_SHARE=/usr/share/doc/tcm-doc/ \
+		TCM_INSTALL_MAN=/usr/share/man \
+		execs
+#
+	touch build-stamp
+
+clean: unpatch
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp configure-stamp
+
+	$(MAKE) clean
+	(cd src; rm Makefile -f; ln -s Makefile.gcc Makefile) #fix the diff
+	rm -f src/Config.tmpl_linux src/gl/instances.h
+
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installdirs
+
+	$(MAKE) TCM_INSTALL_DIR=$(CURDIR)/debian/tcm/usr \
+			      CONFIG_INSTALL=$(CURDIR)/debian/tcm/etc/tcm/ \
+			      TCM_INSTALL_DOC=$(CURDIR)/debian/tcm-doc/usr/share/doc/tcm-doc \
+			      TCM_INSTALL_SHARE=$(CURDIR)/debian/tcm-doc/usr/share/doc/tcm-doc/ \
+			      TCM_INSTALL_MAN=$(CURDIR)/debian/tcm/usr/share/man/ \
+			      install
+
+	-rm $(CURDIR)/debian/tcm/usr/*
+	-rm $(CURDIR)/debian/tcm/usr/share/man/windex
+	-rm $(CURDIR)/debian/tcm/usr/man -r
+
+	find $(CURDIR)/debian/tcm/etc -type f -exec chmod -x {} \;
+
+	sed 's/{ FontFamily Helvetica }/{ FontFamily Courier }/g' < lib/tcm.conf > debian/tcm/etc/tcm/tcm.conf
+
+binary-indep: build install
+	rm $(CURDIR)/debian/tcm-doc/usr/share/doc/tcm-doc/help/CHANGELOG
+	printf "You can see all changes using:\n  $: zless /usr/share/doc/tcm-doc/changelog.gz\n" > $(CURDIR)/debian/tcm-doc/usr/share/doc/tcm-doc/help/CHANGELOG
+
+	dh_testdir -i
+	dh_testroot -i
+#	dh_installdebconf -i
+	dh_installdocs -i
+#	dh_installexamples -i
+	dh_installmenu -i
+#	dh_installlogrotate -i
+#	dh_installemacsen -i
+#	dh_installpam -i
+#	dh_installmime -i
+#	dh_installinit -i
+#	dh_installcron -i
+#	dh_installman -i
+#	dh_installinfo -i
+#	dh_undocumented -i
+	dh_installchangelogs CHANGELOG -i
+	dh_link -i
+	dh_compress -i -Xhelp/
+	dh_fixperms -i
+	dh_installdeb -i
+#	dh_perl -i
+	dh_gencontrol -i
+	dh_md5sums -i
+	dh_builddeb -i
+
+binary-arch: build install
+	dh_testdir -a
+	dh_testroot -a
+#	dh_installdebconf -a
+	dh_installdocs -a
+	dh_installexamples -a
+	dh_installmenu -a
+#	dh_installlogrotate -a
+#	dh_installemacsen -a
+#	dh_installpam -a
+#	dh_installmime -a
+#	dh_installinit -a
+	dh_installcron -a
+#	dh_installman -a
+	dh_installinfo -a
+#	dh_undocumented -a
+	dh_installchangelogs CHANGELOG -a
+	dh_strip -a
+	dh_link -a
+	dh_compress -a
+	dh_fixperms -a
+#	dh_makeshlibs -a
+	dh_installdeb -a
+#	dh_perl -a
+	dh_shlibdeps -a
+	dh_gencontrol -a
+	dh_md5sums -a
+	dh_builddeb -a
+
+binary: binary-indep binary-arch
+.PHONY: build build-arch build-indep clean binary-indep binary-arch binary install configure

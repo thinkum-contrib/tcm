@@ -1,0 +1,71 @@
+#! /bin/sh -e
+## 15_fix_gcc_4_0.dpatch by Otavio Salvador <otavio@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Fix FTBFS with GCC 4.0.
+
+if [ $# -lt 1 ]; then
+    echo "`basename $0`: script expects -patch|-unpatch as argument" >&2
+    exit 1
+fi
+
+[ -f debian/patches/00patch-opts ] && . debian/patches/00patch-opts
+patch_opts="${patch_opts:--f --no-backup-if-mismatch} ${2:+-d $2}"
+
+case "$1" in
+    -patch) patch -p1 ${patch_opts} < $0;;
+    -unpatch) patch -R -p1 ${patch_opts} < $0;;
+    *)
+        echo "`basename $0`: script expects -patch|-unpatch as argument" >&2
+        exit 1;;
+esac
+
+exit 0
+
+@DPATCH@
+--- tcm-2.20+TSQD.orig/src/sd/dv/erdiagram.c
++++ tcm-2.20+TSQD/src/sd/dv/erdiagram.c
+@@ -43,6 +43,9 @@
+ #include "replacedialog.h"
+ #include "erdiagram.h"
+ #include "menu.h"
++
++class Edge;
++class C1Edge;
+  
+ ERDiagram::ERDiagram(Config *c, ERWindow *d, ERViewer *v, ERGraph *g): 
+ 		Diagram(c,d,v,g) {
+--- tcm-2.20+TSQD.orig/src/sd/dv/function.h
++++ tcm-2.20+TSQD/src/sd/dv/function.h
+@@ -19,8 +19,8 @@
+ // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ // 02111-1307, USA.
+ //-----------------------------------------------------------------------------
+-#ifndef _FUNCTION_H
+-#define _FUNCTION_H
++#ifndef _FUNCTION_CLASS_H
++#define _FUNCTION_CLASS_H
+ 
+ #include "c1edge.h"
+ class ERGraph;
+--- tcm-2.20+TSQD.orig/src/ui/menu.c
++++ tcm-2.20+TSQD/src/ui/menu.c
+@@ -217,7 +217,7 @@
+ 					XmNindicatorType, XmONE_OF_MANY, 0);
+ 			}
+ 			// selected or not ?
+-			if ((int)items[i].userData & 0x1)
++			if ((long)items[i].userData & 0x1)
+ 				XtVaSetValues(submenu, XmNset, True, 0);
+ 
+ 		}
+--- tcm-2.20+TSQD.orig/src/ui/application.h
++++ tcm-2.20+TSQD/src/ui/application.h
+@@ -28,6 +28,7 @@
+ class PrinterOptions;
+ class Color;
+ class Config;
++class MainWindow;
+ 
+ /// generic window-based application class. See: MWidget.
+ class Application: public MWidget {
