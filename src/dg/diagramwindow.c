@@ -135,15 +135,15 @@ void DiagramWindow::CreateComponents(Widget parent) {
 	SetScaleValue(CreateScaleValue(parent));
 	XtVaSetValues(GetStatusArea(),
 		XmNleftAttachment, XmATTACH_OPPOSITE_WIDGET,
-		XmNleftWidget, GetScrolledWindow(), 0);
+		XmNleftWidget, GetScrolledWindow(), NULL);
 	XtVaSetValues(GetScrolledWindow(),
 		XmNleftAttachment, XmATTACH_WIDGET,
 		XmNleftWidget, tiles,
 		XmNbottomAttachment, XmATTACH_WIDGET,
-		XmNbottomWidget, GetArrowButtons(), 0);
+		XmNbottomWidget, GetArrowButtons(), NULL);
 	// XtVaSetValues(tiles,
 	// 	XmNbottomAttachment, XmATTACH_WIDGET,
-	// 	XmNbottomWidget, GetArrowButtons(), 0);
+	// 	XmNbottomWidget, GetArrowButtons(), NULL);
 }
 
 Widget DiagramWindow::CreateTiles(Widget parent) {
@@ -157,7 +157,7 @@ Widget DiagramWindow::CreateTiles(Widget parent) {
 		XmNtopWidget, GetDocumentArea(),
 		XmNleftAttachment, XmATTACH_FORM,
 		XmNadjustLast, True,
-		0);
+		NULL);
 	CalcIconColumns();
 	CreateNodeIcons(t);
 	CreateEdgeIcons(t);
@@ -202,12 +202,12 @@ void DiagramWindow::CreateNodeIcons(Widget t) {
 	// create a frame: for nodes
 	Widget frame = XtVaCreateWidget("TilesFrame1",
 		xmFrameWidgetClass, t,
-		XmNshadowType, XmSHADOW_ETCHED_IN, 0);
+		XmNshadowType, XmSHADOW_ETCHED_IN, NULL);
 
 	// create a rowcolumn for nodes
 	nodeIconsRC = XtVaCreateWidget("NodeIconsRC", xmRowColumnWidgetClass, 
 		frame, XmNentryAlignment, 
-		XmALIGNMENT_CENTER, 0);
+		XmALIGNMENT_CENTER, NULL);
 
 	// make scrollbars when there are many icons.
 	if (iconColumns > 2) {
@@ -220,16 +220,16 @@ void DiagramWindow::CreateNodeIcons(Widget t) {
                 	XmNheight, 
 				GetIconsScrollHeight((nrNodes-1)/iconColumns + 1),
                 	XmNscrollingPolicy, XmAUTOMATIC,
-                	XmNscrollBarDisplayPolicy, XmAS_NEEDED, 0);
+                	XmNscrollBarDisplayPolicy, XmAS_NEEDED, NULL);
 
 		Widget clipWindow;
-		XtVaGetValues(scrolledWin, XmNclipWindow, &clipWindow, 0);
-		XtVaSetValues(clipWindow, XmNborderWidth, 0, 0);
+		XtVaGetValues(scrolledWin, XmNclipWindow, &clipWindow, NULL);
+		XtVaSetValues(clipWindow, XmNborderWidth, NULL, NULL);
 	}
 
         XtVaCreateManagedWidget("nodes",
                         xmLabelWidgetClass, frame,
-                        XmNchildType, XmFRAME_TITLE_CHILD, 0);
+                        XmNchildType, XmFRAME_TITLE_CHILD, NULL);
 	XtSetArg(args[i], XmNradioAlwaysOne, True); i++;
 	XtSetArg(args[i], XmNnumColumns, iconColumns); i++;
         XtSetArg(args[i], XmNadjustLast, False); i++;
@@ -246,7 +246,7 @@ void DiagramWindow::CreateNodeIcons(Widget t) {
 			   // the first button is set by default
 			XmNset, i == 0? True: False, 
 			XmNhighlightThickness, 0,
-			XmNalignment, XmALIGNMENT_CENTER, 0);
+			XmNalignment, XmALIGNMENT_CENTER, NULL);
 		pixmap = nodeIcons[i].CreatePixmap(pb, GetDisplay());
 		XtVaSetValues(pb,
 			XmNlabelType, XmPIXMAP,
@@ -254,7 +254,7 @@ void DiagramWindow::CreateNodeIcons(Widget t) {
 			XmNuserData, (XtPointer)(i+1),
 					// determines widget for which the
 					// callback is involved.
-			0);
+			NULL);
 		XtAddCallback(pb, XmNvalueChangedCallback, 
 			DiagramStubs::SetNodeCB, (XtPointer)GetDocument());
 		AddLiteClue(pb, (char *)nodeNames[i]);
@@ -275,15 +275,15 @@ void DiagramWindow::CreateEdgeIcons(Widget t) {
 	// create a frame: for edges
 	Widget frame = XtVaCreateWidget("TilesFrame2",
 		xmFrameWidgetClass, t,
-		XmNshadowType, XmSHADOW_ETCHED_IN, 0);
+		XmNshadowType, XmSHADOW_ETCHED_IN, NULL);
 	// create a rowcolumn of edges
 	edgeIconsRC = XtVaCreateWidget("EdgeIconsRC", xmRowColumnWidgetClass, 
 		frame, XmNentryAlignment, XmALIGNMENT_CENTER,
-		0);
+		NULL);
 	// create a label for edges
         XtVaCreateManagedWidget("edges",
                         xmLabelWidgetClass, frame,
-                        XmNchildType, XmFRAME_TITLE_CHILD, 0);
+                        XmNchildType, XmFRAME_TITLE_CHILD, NULL);
 	
 	XtSetArg(args[i], XmNradioAlwaysOne, True); i++;
 	XtSetArg(args[i], XmNnumColumns, iconColumns); i++;
@@ -298,13 +298,13 @@ void DiagramWindow::CreateEdgeIcons(Widget t) {
 			xmToggleButtonWidgetClass, rb,
 			XmNset, i == 0? True: False,
 			XmNhighlightThickness, 0,
-			XmNalignment, XmALIGNMENT_CENTER, 0);
+			XmNalignment, XmALIGNMENT_CENTER, NULL);
 		pixmap = edgeIcons[i].CreatePixmap(pb, GetDisplay());
 		XtVaSetValues(pb,
 			XmNlabelType, XmPIXMAP,
 			XmNlabelPixmap, pixmap, 
 			XmNuserData, (XtPointer)(i+1),
-			0);
+			NULL);
 		XtAddCallback(pb, XmNvalueChangedCallback, 
 			DiagramStubs::SetEdgeCB, (XtPointer)GetDocument());
 		AddLiteClue(pb, (char *)edgeNames[i]);
@@ -318,7 +318,7 @@ void DiagramWindow::CreateEdgeIcons(Widget t) {
 		// create a button for the curve toggle
 		pb = XtVaCreateWidget("create curve", xmToggleButtonWidgetClass, rb,
 			XmNhighlightThickness, 0,
-			XmNalignment, XmALIGNMENT_CENTER, 0);
+			XmNalignment, XmALIGNMENT_CENTER, NULL);
 		XtAddCallback(pb, XmNvalueChangedCallback, 
 			DiagramStubs::SetCurveCB, (XtPointer)GetDocument());
 		AddLiteClue(pb, "When on, curved edges are created");
@@ -333,7 +333,7 @@ void DiagramWindow::CreateEdgeIcons(Widget t) {
 void DiagramWindow::CreateLineStyleOptionMenu(Widget w, bool nodes, 
 						bool minimize) {
 	Widget frame1 = XtVaCreateManagedWidget("LineStyleFrame",
-                        xmFrameWidgetClass, w, 0);
+                        xmFrameWidgetClass, w, NULL);
 	Menu *menu;
 	string label;
 
@@ -348,7 +348,7 @@ void DiagramWindow::CreateLineStyleOptionMenu(Widget w, bool nodes,
 			label = "line style";
 			XtVaCreateManagedWidget(label.getstr(),
 				xmLabelWidgetClass, frame1,
-				XmNchildType, XmFRAME_TITLE_CHILD, 0);
+				XmNchildType, XmFRAME_TITLE_CHILD, NULL);
 		}
 	}
 	else {	// edges
@@ -362,7 +362,7 @@ void DiagramWindow::CreateLineStyleOptionMenu(Widget w, bool nodes,
 			label = "line style";
 			XtVaCreateManagedWidget(label.getstr(),
 				xmLabelWidgetClass, frame1,
-				XmNchildType, XmFRAME_TITLE_CHILD, 0);
+				XmNchildType, XmFRAME_TITLE_CHILD, NULL);
 		}
 	}
 	XtManageChild(menu->GetWidget());
@@ -399,7 +399,7 @@ Widget DiagramWindow::CreateMenuBar(Widget parent) {
 		documentItems);
 	helpMenu = new Menu(bar, Menu::PULLDOWN, "Help", 0, helpItems);
 	// tell bar which bar which button is the help menu
-	XtVaSetValues(bar, XmNmenuHelpWidget, helpMenu->GetWidget(), 0);
+	XtVaSetValues(bar, XmNmenuHelpWidget, helpMenu->GetWidget(), NULL);
 	// Bar is done -- manage it
 	XtManageChild(bar);
 	return bar;
@@ -760,7 +760,7 @@ void DiagramWindow::CreateIndexToggle(Widget parent) {
 					xmToggleButtonWidgetClass, rb,
 		XmNhighlightThickness, 0,
 		XmNset, viewer->IsShowIndexes(),
-		XmNalignment, XmALIGNMENT_CENTER, 0);
+		XmNalignment, XmALIGNMENT_CENTER, NULL);
 	XtAddCallback(pb, XmNvalueChangedCallback,
 			DiagramStubs::ShowIndexesCB, (XtPointer)viewer);
 	AddLiteClue(pb, "When on, new nodes get an index");
@@ -795,6 +795,6 @@ int DiagramWindow::GetIconsScrollHeight(int rows) {
 	DrawWindow::SetHierarchic(s);
 	Widget w1 = editMenu->GetMenuItem("Duplicate");
 	if ( w1 )
-		XtVaSetValues(w1, XmNsensitive, ! s, 0);
+		XtVaSetValues(w1, XmNsensitive, ! s, NULL);
 	GetDrawingArea()->Enable("Duplicate", ! s);
 }

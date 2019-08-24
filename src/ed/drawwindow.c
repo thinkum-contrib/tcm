@@ -118,28 +118,28 @@ Widget DrawWindow::CreateScrolledWindow(Widget parent) {
 		XmNwidth, scrollWidth,
 		XmNscrollingPolicy, XmAUTOMATIC,
 		XmNscrollBarDisplayPolicy, XmAS_NEEDED,
-		XmNrightAttachment, XmATTACH_FORM, 0);
+		XmNrightAttachment, XmATTACH_FORM, NULL);
 	if (GetDocumentArea())
 		XtVaSetValues(sw, 
 			XmNtopAttachment, XmATTACH_WIDGET,
-			XmNtopWidget, GetDocumentArea(), 0);
+			XmNtopWidget, GetDocumentArea(), NULL);
 	if (GetLogo())
 		XtVaSetValues(sw, 
 			XmNtopAttachment, XmATTACH_WIDGET,
-			XmNtopWidget, GetLogo(), 0);
+			XmNtopWidget, GetLogo(), NULL);
 	if (GetStatusArea())
 		XtVaSetValues(GetStatusArea(),
 			XmNtopAttachment, XmATTACH_WIDGET,
-			XmNtopWidget, sw, 0);
+			XmNtopWidget, sw, NULL);
 	else if (GetControlArea())
 		XtVaSetValues(sw, 
 			XmNbottomAttachment, XmATTACH_WIDGET,
-			XmNbottomWidget, GetControlArea(), 0);
+			XmNbottomWidget, GetControlArea(), NULL);
 	else
 		XtVaSetValues(sw, 
-			XmNbottomAttachment, XmATTACH_FORM, 0);
-	XtVaGetValues(sw, XmNverticalScrollBar, &verticalScrollBar, 0);
-	XtVaGetValues(sw, XmNhorizontalScrollBar, &horizontalScrollBar, 0);
+			XmNbottomAttachment, XmATTACH_FORM, NULL);
+	XtVaGetValues(sw, XmNverticalScrollBar, &verticalScrollBar, NULL);
+	XtVaGetValues(sw, XmNhorizontalScrollBar, &horizontalScrollBar, NULL);
 	return sw;
 }
 
@@ -156,14 +156,14 @@ void DrawWindow::ShowPosition(int x, int y) {
 		XmNminimum, &vminimum,
 		XmNpageIncrement, &vpage_incr,
 		XmNsliderSize, &vslider_size,
-		XmNvalue, &vvalue, 0);
+		XmNvalue, &vvalue, NULL);
 	XtVaGetValues(horizontalScrollBar,
 		XmNincrement, &hincrement,
 		XmNmaximum, &hmaximum,
 		XmNminimum, &hminimum,
 		XmNpageIncrement, &hpage_incr,
 		XmNsliderSize, &hslider_size,
-		XmNvalue, &hvalue, 0);
+		XmNvalue, &hvalue, NULL);
 	hvalue = min(hmaximum-hslider_size, max(0, (x - hslider_size/2)));
 	XmScrollBarSetValues(horizontalScrollBar, hvalue, hslider_size,
 			hincrement, hpage_incr, True);
@@ -182,7 +182,7 @@ void DrawWindow::ShowPosition(int x, int y) {
 //		XmNminimum, &minimum,
 //		XmNpageIncrement, &page_incr,
 //		XmNsliderSize, &slider_size,
-//		XmNvalue, &value, 0);
+//		XmNvalue, &value, NULL);
 //}
 //
 
@@ -193,7 +193,7 @@ Widget DrawWindow::CreateScaleValue(Widget parent) {
 		xmLabelWidgetClass, parent,
 		XmNtopAttachment, XmATTACH_WIDGET,
 		XmNtopWidget, scrolledWindow,
-		XmNrightAttachment, XmATTACH_FORM, 0);
+		XmNrightAttachment, XmATTACH_FORM, NULL);
 	// XtAddCallback(z, XmNactivateCallback, get_sb, verticalScrollBar);
 	AddLiteClue(z, 
 		"Current scale percentage (Alt+L = larger, Alt+S = smaller)");
@@ -205,7 +205,7 @@ void DrawWindow::SetScaleValue(const char *s) {
 		string text = "Scale: ";
 		text += s;
 		XmString label = CreateXmString(text.getstr());
-		XtVaSetValues(scaleValue, XmNlabelString, label, 0);
+		XtVaSetValues(scaleValue, XmNlabelString, label, NULL);
 		XmStringFree(label);
 	}
 }
@@ -217,7 +217,7 @@ Widget DrawWindow::CreateControlArea(Widget parent) {
 	if (arrowButtons)
 		XtVaSetValues(rc, XmNleftAttachment, XmATTACH_WIDGET,
 			XmNleftOffset, 20,
-			XmNleftWidget, arrowButtons, 0);
+			XmNleftWidget, arrowButtons, NULL);
 	autoResizeToggle = CreateToggle(rc, "autoresizing", 
 			GetConfig()->GetAutoResizing(), 
 			EditStubs::SetAutoResizeCB, 
@@ -241,20 +241,20 @@ Widget DrawWindow::CreateControlArea(Widget parent) {
 		hierarchicToggle = 0;
 	XtVaCreateManagedWidget("   Directory: ",
 		xmLabelWidgetClass, rc,
-		XmNalignment, XmALIGNMENT_BEGINNING, 0);
+		XmNalignment, XmALIGNMENT_BEGINNING, NULL);
 	Widget dn = XtVaCreateManagedWidget("DirectoryName",
 		xmTextFieldWidgetClass, rc,
 		XmNeditable, True,
-		XmNcursorPositionVisible, True, 0);
+		XmNcursorPositionVisible, True, NULL);
 	SetDirName(dn);
 	AddLiteClue(dn, "Current project directory. Can be changed "
 		"(apply with <enter>)");
 	if (GetScreenType() <= SVGA)
-		XtVaSetValues(dn, XmNcolumns, 28, 0);
+		XtVaSetValues(dn, XmNcolumns, 28, NULL);
 	else if (GetScreenType() == XVGA)
-		XtVaSetValues(dn, XmNcolumns, 34, 0);
+		XtVaSetValues(dn, XmNcolumns, 34, NULL);
 	else
-		XtVaSetValues(dn, XmNcolumns, 40, 0);
+		XtVaSetValues(dn, XmNcolumns, 40, NULL);
 	XtAddCallback(dn, XmNactivateCallback,
 		EditStubs::ChangeDirCB, (XtPointer)GetDocument());
 	XtManageChild(rc);
@@ -265,10 +265,10 @@ Widget DrawWindow::CreateArrowButtonSquare(Widget parent) {
 	Widget frame = XtVaCreateManagedWidget("ArrowsFrame",
 		xmFrameWidgetClass, parent, 
 		XmNbottomAttachment, XmATTACH_FORM,
-		XmNleftAttachment, XmATTACH_FORM, 0);
+		XmNleftAttachment, XmATTACH_FORM, NULL);
 	Widget form = XtVaCreateManagedWidget("ArrowsForm", 
 		xmFormWidgetClass, frame, 
-		XmNfractionBase, 3, 0);
+		XmNfractionBase, 3, NULL);
 	Widget a1 = XtVaCreateManagedWidget(
 		"arrow1", xmArrowButtonWidgetClass, form,
 		XmNtopPosition, 0,
@@ -280,7 +280,7 @@ Widget DrawWindow::CreateArrowButtonSquare(Widget parent) {
 		XmNrightAttachment, XmATTACH_POSITION,
 		XmNleftAttachment, XmATTACH_POSITION,
 		XmNarrowDirection, XmARROW_UP,
-		XmNuserData, Document::UP, 0);
+		XmNuserData, Document::UP, NULL);
 	Widget a2 = XtVaCreateManagedWidget(
 		"arrow2", xmArrowButtonWidgetClass, form,
 		XmNtopPosition, 1,
@@ -292,7 +292,7 @@ Widget DrawWindow::CreateArrowButtonSquare(Widget parent) {
 		XmNrightAttachment, XmATTACH_POSITION,
 		XmNleftAttachment, XmATTACH_POSITION,
 		XmNarrowDirection, XmARROW_LEFT,
-		XmNuserData, (XtPointer)Document::LEFT, 0);
+		XmNuserData, (XtPointer)Document::LEFT, NULL);
 	Widget a3 = XtVaCreateManagedWidget(
 		"arrow3", xmArrowButtonWidgetClass, form,
 		XmNtopPosition, 1,
@@ -304,7 +304,7 @@ Widget DrawWindow::CreateArrowButtonSquare(Widget parent) {
 		XmNrightAttachment, XmATTACH_POSITION,
 		XmNleftAttachment, XmATTACH_POSITION,
 		XmNarrowDirection, XmARROW_RIGHT,
-		XmNuserData, (XtPointer)Document::RIGHT, 0);
+		XmNuserData, (XtPointer)Document::RIGHT, NULL);
 	Widget a4 = XtVaCreateManagedWidget(
 		"arrow4", xmArrowButtonWidgetClass, form,
 		XmNtopPosition, 2,
@@ -316,7 +316,7 @@ Widget DrawWindow::CreateArrowButtonSquare(Widget parent) {
 		XmNrightAttachment, XmATTACH_POSITION,
 		XmNleftAttachment, XmATTACH_POSITION,
 		XmNarrowDirection, XmARROW_DOWN,
-		XmNuserData, (XtPointer)Document::DOWN, 0);
+		XmNuserData, (XtPointer)Document::DOWN, NULL);
 	XmString c = CreateXmString("C");
 	Widget a5 = XtVaCreateManagedWidget(
 		"arrow5", xmPushButtonWidgetClass, form,
@@ -329,7 +329,7 @@ Widget DrawWindow::CreateArrowButtonSquare(Widget parent) {
 		XmNbottomAttachment, XmATTACH_POSITION,
 		XmNrightAttachment, XmATTACH_POSITION,
 		XmNleftAttachment, XmATTACH_POSITION,
-		XmNuserData, (XtPointer)Document::CENTER, 0);
+		XmNuserData, (XtPointer)Document::CENTER, NULL);
 	XmStringFree(c);
 	AddLiteClue(a1, "Move the document one step up");
 	AddLiteClue(a2, "Move the document one step left");
@@ -415,18 +415,18 @@ void DrawWindow::DetermineScrollSize(ScreenType s) {
 
 void DrawWindow::SetAutoResize(bool set) {
 	if (autoResizeToggle)
-		XtVaSetValues(autoResizeToggle, XmNset, set, 0);
+		XtVaSetValues(autoResizeToggle, XmNset, set, NULL);
 }
 
 void DrawWindow::SetInlineEdit(bool set) {
 	if (inlineEditToggle)
-		XtVaSetValues(inlineEditToggle, XmNset, set, 0); 
+		XtVaSetValues(inlineEditToggle, XmNset, set, NULL); 
 }
 
 
 /* virtual */ void DrawWindow::SetHierarchic(bool set) {
 	if ( hierarchicToggle )
-		XtVaSetValues(hierarchicToggle, XmNset, set, 0);
+		XtVaSetValues(hierarchicToggle, XmNset, set, NULL);
 }
 
 
@@ -771,5 +771,5 @@ void DrawWindow::EnableDocumentSource(bool flag) {
                 return;
         Widget docMenuItem = documentMenu->GetMenuItem("Document Source...");
         if (docMenuItem)
-                XtVaSetValues(docMenuItem, XmNsensitive, flag, 0);
+                XtVaSetValues(docMenuItem, XmNsensitive, flag, NULL);
 }

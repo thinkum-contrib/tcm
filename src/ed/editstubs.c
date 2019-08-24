@@ -41,7 +41,7 @@
 
 void EditStubs::HelpCB(Widget w, XtPointer cd, XtPointer) {
 	Helper::HelpTopicType tp;
-	XtVaGetValues(w, XmNuserData, &tp, 0);
+	XtVaGetValues(w, XmNuserData, &tp, NULL);
 	((Helper *)cd)->Help(tp);
 }
 
@@ -207,7 +207,7 @@ void EditStubs::ClearTraceCB(Widget, XtPointer cd, XtPointer) {
 
 void EditStubs::MoveCB(Widget w, XtPointer cd, XtPointer) {
 	int num;
-	XtVaGetValues(w, XmNuserData, &num, 0);
+	XtVaGetValues(w, XmNuserData, &num, NULL);
 	((Document *)cd)->Move((Document::MoveType)num);
 }
 
@@ -351,7 +351,7 @@ void EditStubs::ShowPageBoundaryCB(Widget w, XtPointer cd, XtPointer) {
 void EditStubs::PageOrientationCB(Widget w, XtPointer cd, XtPointer) {
 	if (XmToggleButtonGetState(w)) {
 		int num;
-		XtVaGetValues(w, XmNuserData, &num, 0);
+		XtVaGetValues(w, XmNuserData, &num, NULL);
 		((Printer *)cd)->SetPageOrientation(num/2);
 	}
 }
@@ -359,7 +359,7 @@ void EditStubs::PageOrientationCB(Widget w, XtPointer cd, XtPointer) {
 void EditStubs::ShowDocumentInfoCB(Widget w, XtPointer cd, XtPointer) {
 	if (XmToggleButtonGetState(w)) {
 		int num;
-		XtVaGetValues(w, XmNuserData, &num, 0);
+		XtVaGetValues(w, XmNuserData, &num, NULL);
 		((Printer *)cd)->ShowInfo(num/2);
 	}
 }
@@ -423,7 +423,7 @@ void EditStubs::SetTumbleCB(Widget w, XtPointer cd, XtPointer) {
 void EditStubs::BannerPageCB(Widget w, XtPointer cd, XtPointer) {
 	if (XmToggleButtonGetState(w)) {
 		int num;
-		XtVaGetValues(w, XmNuserData, &num, 0);
+		XtVaGetValues(w, XmNuserData, &num, NULL);
 		((Printer *)cd)->SetBannerPage(num/2);
 	}
 }
@@ -434,7 +434,7 @@ void EditStubs::PageSizeCB(Widget w, XtPointer cd, XtPointer) {
 		// it corresponds
 		XmString xms;
                 xms = CreateXmString("");
-                XtVaGetValues(w, XmNlabelString, &xms, 0);
+                XtVaGetValues(w, XmNlabelString, &xms, NULL);
                 char *txt;
                 if (XmStringGetLtoR(xms, XmFONTLIST_DEFAULT_TAG, &txt)) {
 			string s = txt;

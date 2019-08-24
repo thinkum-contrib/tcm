@@ -357,7 +357,7 @@ char **argv;
 	exit(errors);
 }
 
-print_file(f)
+int print_file(f)
 FILE *f;
 {
 	int i;
@@ -461,7 +461,7 @@ FILE *f;
 			linectr++;
 			if ((c = getc(f)) == EOF) {
 				finish_column();
-				return;
+				return 0;
 			}
 			ungetc(c, f);
 			if (lines == 0 ? ypos <= bottom_edge : linectr == lines) {
@@ -545,7 +545,7 @@ finish_column()
 		finish_page();
 }
 
-draw_border()
+int draw_border()
 {
 	int tx1, ty1, tx2, ty2;
 	register int i;
@@ -553,7 +553,7 @@ draw_border()
 	static char move[] = "moveto";
 
 	if (!border)
-		return;
+		return 0;
 	
 	printf("gsave\n");
 	if (rotate) {
@@ -604,7 +604,7 @@ draw_border()
 	printf("stroke\ngrestore\n");
 }
 
-draw_title()
+int draw_title()
 {
 	register int set_font = 0;
 	register struct fonts **fnt;
@@ -612,7 +612,7 @@ draw_title()
 	register int tx;
 
 	if ((t = title) == 0 && (!print_file_name || (t = current_file) == 0))
-		return;
+		return 0;
 	tx = (rotate ? right_edge : top_edge) + top_margin/2 + 50;
 	printf("gsave\n");
 	if (title_ps != point_size || strcmp(title_font, font_name) != 0) {

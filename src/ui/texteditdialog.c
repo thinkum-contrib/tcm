@@ -35,7 +35,7 @@ void TextEditDialog::Configure() {
 	if (check(GetWidget())) {
 		XtVaSetValues(GetTextWidget(), 
 			XmNeditable, True,
-			XmNcursorPositionVisible, True, 0);
+			XmNcursorPositionVisible, True, NULL);
 		ManageCancelButton(True);
 		SetOKButtonLabel("Ok");
 		XtManageChild(GetTextWidget());

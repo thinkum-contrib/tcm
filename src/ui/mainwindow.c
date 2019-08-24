@@ -40,7 +40,7 @@ void MainWindow::Initialize(int argc, char **argv, Config *c) {
 	SetWidget(XtCreatePopupShell(GetName()->getstr(), 
 	 	topLevelShellWidgetClass, theApplication->GetWidget(), 0, 0));
 	XtVaSetValues(GetWidget(), XmNkeyboardFocusPolicy, XmPOINTER, 
-		XmNmappedWhenManaged, False, 0);
+		XmNmappedWhenManaged, False, NULL);
 	InstallDestroyHandler();
 	// Use a Motif XmMainWindow widget to handle window layout
 	main = XtCreateManagedWidget(GetName()->getstr(), xmMainWindowWidgetClass, 
@@ -50,7 +50,7 @@ void MainWindow::Initialize(int argc, char **argv, Config *c) {
 	config = c;
 	workarea = CreateWorkArea(main, argc, argv);  
 	if(check(workarea)) {
-		XtVaSetValues(main, XmNworkWindow, workarea, 0);
+		XtVaSetValues(main, XmNworkWindow, workarea, NULL);
 		if(!XtIsManaged(workarea))
 			XtManageChild(workarea);
 	}
@@ -82,7 +82,7 @@ void MainWindow::Unmanage() {
 }
 
 void MainWindow::ManageUnmapped() {
-	XtVaSetValues(GetWidget(), XmNmappedWhenManaged, False, 0);
+	XtVaSetValues(GetWidget(), XmNmappedWhenManaged, False, NULL);
 	MWidget::Manage();
 }
 
@@ -91,7 +91,7 @@ void MainWindow::Iconify() {
 		return;
 	// Set the widget to have an initial iconic state
 	// in case the base widget has not yet been realized
-	XtVaSetValues(GetWidget(), XmNiconic, TRUE, 0);
+	XtVaSetValues(GetWidget(), XmNiconic, TRUE, NULL);
 	// If the widget has already been realized, iconify the window
 	if (XtIsRealized(GetWidget()))
 		XIconifyWindow(GetDisplay(), GetWindow(), 0);
@@ -103,7 +103,7 @@ void MainWindow::Close() {
 
 void MainWindow::SetTitle(const char *title) {
 	if (check(GetWidget()))
-		XtVaSetValues(GetWidget(), XmNtitle, title, 0);
+		XtVaSetValues(GetWidget(), XmNtitle, title, NULL);
 }
 
 void MainWindow::SetTitle(const string *title) {
@@ -112,13 +112,13 @@ void MainWindow::SetTitle(const string *title) {
 
 void MainWindow::SetIconName(const char *iconname) {
 	if (check(GetWidget()))
-		XtVaSetValues(GetWidget(), XmNiconName, iconname, 0);
+		XtVaSetValues(GetWidget(), XmNiconName, iconname, NULL);
 }
 
 void MainWindow::SetIconPixmap(Pixmap px) {
 	if (!check(GetWidget()))
 		return;
-	XtVaSetValues(GetWidget(), XmNiconPixmap, px, 0);
+	XtVaSetValues(GetWidget(), XmNiconPixmap, px, NULL);
 }
 
 PrinterOptions *MainWindow::GetPrinterOptions() {

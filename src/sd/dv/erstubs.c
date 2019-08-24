@@ -36,7 +36,7 @@ void ERStubs::UpdateReadDirectionCB(Widget w, XtPointer cd, XtPointer) {
         // get menu item label and look to which dir it corresponds
         XmString xms;
         xms = CreateXmString("");
-        XtVaGetValues(w, XmNlabelString, &xms, 0);
+        XtVaGetValues(w, XmNlabelString, &xms, NULL);
         char *txt;
         ReadDirection::Type dir;
         if (XmStringGetLtoR(xms, XmFONTLIST_DEFAULT_TAG, &txt)) {

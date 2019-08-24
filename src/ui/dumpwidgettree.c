@@ -51,7 +51,7 @@ void DumpWidgetTree::Dump(Widget w) {
 	}
 	XtVaGetValues(w,
 		XmNchildren, &list,
-		XmNnumChildren, &num_children, 0);
+		XmNnumChildren, &num_children, NULL);
 	printf("%s> %s has %d %s:\n", tmp,
 			XtName(w), num_children, 
 			num_children == 1 ? "child" : "children");

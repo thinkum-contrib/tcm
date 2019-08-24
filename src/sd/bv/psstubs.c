@@ -25,6 +25,6 @@
 
 void PSStubs::ShowSequenceCB(Widget w, XtPointer cd, XtPointer) {
 	int num;
-	XtVaGetValues(w, XmNuserData, &num, 0);
+	XtVaGetValues(w, XmNuserData, &num, NULL);
 	((PSViewer *)cd)->SetShowSequences(num);
 }

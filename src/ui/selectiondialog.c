@@ -76,7 +76,7 @@ void SelectionDialog::SetSelectionLabel(const char *v) {
 	if (!check(GetWidget()))
 		return;
 	XmString t = CreateXmString(v);
-	XtVaSetValues(GetWidget(), XmNselectionLabelString, t, 0);
+	XtVaSetValues(GetWidget(), XmNselectionLabelString, t, NULL);
 	XmStringFree(t);
 }
 
@@ -106,7 +106,7 @@ void SelectionDialog::SetApplyButtonLabel(const char *txt) {
 	if (!check(GetWidget()))
 		return;
 	XmString t = CreateXmString(txt);
-	XtVaSetValues(GetWidget(), XmNapplyLabelString, t, 0);
+	XtVaSetValues(GetWidget(), XmNapplyLabelString, t, NULL);
 	XmStringFree(t);
 }
 

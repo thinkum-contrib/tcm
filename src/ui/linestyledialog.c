@@ -94,5 +94,5 @@ void LineStyleDialog::Configure() {
 	List<Widget> *tl = (*GetToggleList())[0];
 	Widget rc = XtParent((*tl)[0]);
 	XtVaSetValues(rc, XmNnumColumns, 3, 
-			  XmNorientation, XmHORIZONTAL, 0);
+			  XmNorientation, XmHORIZONTAL, NULL);
 }

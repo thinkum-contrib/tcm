@@ -37,7 +37,7 @@ void ScaleDialog::CreateWidget() {
 	scale = XtVaCreateManagedWidget("scale",
 			xmScaleWidgetClass, GetWidget(),
 			XmNorientation, XmHORIZONTAL,
-			XmNshowValue, True, 0);
+			XmNshowValue, True, NULL);
 }
 
 void ScaleDialog::Configure() {
@@ -54,7 +54,7 @@ void ScaleDialog::SetScaleValues(int min, int max, int init, int decimal,
 		XmNmaximum, max,
 		XmNminimum, min,
 		XmNvalue, init,
-		XmNdecimalPoints, decimal, 0);
+		XmNdecimalPoints, decimal, NULL);
 	initValue = init;
 	defaultValue = def;
 }
@@ -64,7 +64,7 @@ void ScaleDialog::SetScaleLabel(const char *text) {
 		return;
 	XmString text_string = CreateXmString(text);
 	// XtVaTypedArg, XmNtitleString, XmRString, text, strlen(text),
-	XtVaSetValues(scale, XmNtitleString, text_string, 0);
+	XtVaSetValues(scale, XmNtitleString, text_string, NULL);
 	XmStringFree(text_string);
 }
 

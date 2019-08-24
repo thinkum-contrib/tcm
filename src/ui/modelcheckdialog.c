@@ -45,39 +45,39 @@ void ModelCheckDialog::Configure() {
 	ManageSelectionLabel(False);
 
 	form = XtVaCreateWidget("form",
-		xmFormWidgetClass, GetWidget(), 0);
+		xmFormWidgetClass, GetWidget(), NULL);
 	SetSelectionLabel(XtVaCreateManagedWidget("Kronos formula to be checked",
 		xmLabelWidgetClass, form,
 		XmNleftAttachment, XmATTACH_FORM,
-		XmNtopAttachment, XmATTACH_FORM, 0));
+		XmNtopAttachment, XmATTACH_FORM, NULL));
 	SetText(XtVaCreateManagedWidget("formula",
 		xmTextFieldWidgetClass, form,
 		XmNleftAttachment, XmATTACH_FORM,
 		XmNrightAttachment, XmATTACH_FORM,
 		XmNtopAttachment, XmATTACH_WIDGET,
-		XmNtopWidget, GetSelectionLabel(), 0));
+		XmNtopWidget, GetSelectionLabel(), NULL));
 	internLabel = XtVaCreateManagedWidget("Internal events",
 		xmLabelWidgetClass, GetForm(),
 		XmNleftAttachment, XmATTACH_FORM, 
 		XmNtopAttachment, XmATTACH_WIDGET, 
-		XmNtopWidget, GetText(), 0);
+		XmNtopWidget, GetText(), NULL);
 	internText = XtVaCreateManagedWidget("intern",
 		xmTextFieldWidgetClass, GetForm(), 
 		XmNleftAttachment, XmATTACH_FORM, 
 		XmNrightAttachment, XmATTACH_FORM, 
 		XmNtopAttachment, XmATTACH_WIDGET, 
-		XmNtopWidget, internLabel, 0);
+		XmNtopWidget, internLabel, NULL);
 	clockLabel = XtVaCreateManagedWidget("Clocks",
 		xmLabelWidgetClass, GetForm(),
 		XmNleftAttachment, XmATTACH_FORM, 
 		XmNtopAttachment, XmATTACH_WIDGET, 
-		XmNtopWidget, internText, 0);
+		XmNtopWidget, internText, NULL);
 	clockText = XtVaCreateManagedWidget("clock",
 		xmTextFieldWidgetClass, GetForm(), 
 		XmNleftAttachment, XmATTACH_FORM, 
 		XmNrightAttachment, XmATTACH_FORM, 
 		XmNtopAttachment, XmATTACH_WIDGET, 
-		XmNtopWidget, clockLabel, 0);
+		XmNtopWidget, clockLabel, NULL);
 	XtManageChild(form);
 }
 

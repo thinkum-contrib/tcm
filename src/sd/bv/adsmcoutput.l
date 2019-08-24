@@ -7,7 +7,6 @@
 char adsmcoutput_errormsg[1024] = "";
 char adsmcoutput_constraint[1024] = "";
 %}
-%option noyywrap
 
 
 string    [A-Za-z0-9.:,/@\|!()<>=&_*+]+ 

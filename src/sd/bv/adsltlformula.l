@@ -7,7 +7,6 @@
 char adsltlformula_errormsg[1024] = "";
 char adsltlformula_constraint[1024] = "";
 %}
-%option noyywrap
 
 integer   [0-9]+    
 string1   [A-Za-z][A-Za-z][A-Za-z0-9]([ \-_][A-Za-z0-9]|[A-Za-z0-9])*

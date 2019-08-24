@@ -33,7 +33,7 @@ ADSHyperEdge::ADSHyperEdge(ADSHyperGraph *a, Edge *e): HyperEdge(a,e){
   cc=NULL;
   edgelist.add(e);
   sendevent=NULL;
-};
+}
 
 bool ADSHyperEdge::AddProp(Prop *p){
   for (propl.first();!propl.done();propl.next()){

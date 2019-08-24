@@ -71,7 +71,7 @@ void TextViewDialog::CreateWidget() {
 	Arg args[24]; int i = 0;
 	XtSetArg(args[i], XmNautoUnmanage, GetAutoUnmanage()); i++;
 	SetWidget(XmCreateMessageDialog(GetParent(), (char *)GetClassName(), args, i));
-	XtVaSetValues(XtParent(GetWidget()), XmNallowShellResize, True, 0);
+	XtVaSetValues(XtParent(GetWidget()), XmNallowShellResize, True, NULL);
 }
 
 void TextViewDialog::Configure() {
@@ -89,7 +89,7 @@ void TextViewDialog::Configure() {
 	XtVaSetValues(menuBar,
 	 	XmNtopAttachment, XmATTACH_FORM,
 	 	XmNleftAttachment, XmATTACH_FORM,
-	 	XmNrightAttachment, XmATTACH_FORM, 0);
+	 	XmNrightAttachment, XmATTACH_FORM, NULL);
 	fileMenu = new Menu(menuBar, Menu::PULLDOWN, "File", 0, fileItems);
 	editMenu = new Menu(menuBar, Menu::PULLDOWN, "Edit", 0, editItems);
 	searchMenu = new Menu(menuBar, Menu::PULLDOWN, "Search", 0, 
@@ -97,7 +97,7 @@ void TextViewDialog::Configure() {
 	// create a manager widget as a child of the dialog, to be used
 	// as the work area of the dialog, replacing the label and the icon.
 	Widget form = XtVaCreateWidget("form1", xmFormWidgetClass, 
-					GetWidget(), 0);
+					GetWidget(), NULL);
 	XtVaSetValues(form, 
 		XmNtopAttachment, XmATTACH_WIDGET,
 		XmNtopWidget, menuBar,
@@ -105,7 +105,7 @@ void TextViewDialog::Configure() {
 		XmNbottomAttachment, XmATTACH_WIDGET,
 		XmNbottomWidget, XmMessageBoxGetChild(GetWidget(), 
 			XmDIALOG_SEPARATOR),
-		XmNrightAttachment, XmATTACH_FORM, 0);
+		XmNrightAttachment, XmATTACH_FORM, NULL);
 	// create text field.
 	i = 0;
 	XtSetArg(args[i], XmNeditable, False); i++;
@@ -116,7 +116,7 @@ void TextViewDialog::Configure() {
 	XtVaSetValues(textStatus,
 	 	XmNtopAttachment, XmATTACH_FORM,
 	 	XmNleftAttachment, XmATTACH_FORM,
-	 	XmNrightAttachment, XmATTACH_FORM, 0);
+	 	XmNrightAttachment, XmATTACH_FORM, NULL);
 	i = 0;
 	XtSetArg(args[i], XmNscrollVertical, True); i++;
 	XtSetArg(args[i], XmNrows, 6); i++;
@@ -135,7 +135,7 @@ void TextViewDialog::Configure() {
 		XmNtopWidget, textStatus,
 	 	XmNrightAttachment, XmATTACH_FORM,
 	 	XmNbottomAttachment, XmATTACH_FORM,
-	 	XmNleftAttachment, XmATTACH_FORM, 0);
+	 	XmNleftAttachment, XmATTACH_FORM, NULL);
 	XtManageChild(menuBar);
 	XtManageChild(textStatus);
 	XtManageChild(textWidget);
@@ -361,14 +361,14 @@ void TextViewDialog::SetTextRows(int nrOfRows) {
 	if (!check(textWidget))
 		return;
 	if (nrOfRows <= maxRows)
-		XtVaSetValues(textWidget, XmNrows, nrOfRows, 0);
+		XtVaSetValues(textWidget, XmNrows, nrOfRows, NULL);
 }
 
 void TextViewDialog::SetTextColumns(int nrOfColumns) {
 	if (!check(textWidget))
 		return;
 	if (nrOfColumns <= maxColumns)
-		XtVaSetValues(textWidget, XmNcolumns, nrOfColumns, 0);
+		XtVaSetValues(textWidget, XmNcolumns, nrOfColumns, NULL);
 }
 
 void TextViewDialog::SetTextSize(int nrOfRows, int nrOfColumns) {
@@ -382,11 +382,11 @@ void TextViewDialog::SetTextMaxSize(int nrOfRows, int nrOfColumns) {
 	if (!check(textWidget))
 		return;
 	short rows, columns;
-	XtVaGetValues(textWidget, XmNrows, &rows, XmNcolumns, &columns, 0);
+	XtVaGetValues(textWidget, XmNrows, &rows, XmNcolumns, &columns, NULL);
 	if (rows > maxRows)
-		XtVaSetValues(textWidget, XmNrows, &maxRows, 0);
+		XtVaSetValues(textWidget, XmNrows, &maxRows, NULL);
 	if (columns > maxColumns)
-		XtVaSetValues(textWidget, XmNcolumns, &maxColumns, 0);
+		XtVaSetValues(textWidget, XmNcolumns, &maxColumns, NULL);
 }
 
 void TextViewDialog::Print() {
@@ -469,7 +469,7 @@ bool TextViewDialog::LoadFile(const char *file) {
 		char *s = (char *)text.getstr();
 		XmTextSetString(textWidget, s);
 		short c;
-		XtVaGetValues(textWidget, XmNcolumns, &c, 0);
+		XtVaGetValues(textWidget, XmNcolumns, &c, NULL);
 		SetStatus("Load succeeded");
 		return True;
 	}

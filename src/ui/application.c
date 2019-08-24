@@ -109,7 +109,7 @@ void Application::Initialize (int argc, char **argv) {
 				(char **)XResources::classicColorResources :
 		 		(char **)XResources::modernColorResources) :
 		 		(char **)XResources::monoResources,
-		    XmNmappedWhenManaged, False, 0));
+		    XmNmappedWhenManaged, False, NULL));
 	// The Application class is less likely to need to handle
 	// "surprise" widget destruction than other classes, but
 	// we might as well install a callback to be safe and consistent
@@ -132,7 +132,7 @@ void Application::Initialize (int argc, char **argv) {
 	LoadColorFile();
 
 	// lesstif cannot accept a window of 0 width and height.
-	XtVaSetValues(GetWidget(), XmNwidth, 10, XmNheight, 10, 0);
+	XtVaSetValues(GetWidget(), XmNwidth, 10, XmNheight, 10, NULL);
 
 	// Force the shell window to exist so dialogs popped up from
 	// this shell behave correctly
@@ -179,7 +179,7 @@ void Application::CreatePrivateColormap() {
 	if (!privateCmap) {
 		Colormap cmap = DefaultColormapOfScreen(XtScreen(GetWidget()));
 		cmap = XCopyColormapAndFree(display, cmap);
-		XtVaSetValues(GetWidget(), XmNcolormap, cmap, 0);
+		XtVaSetValues(GetWidget(), XmNcolormap, cmap, NULL);
 	}
 	privateCmap = True;
 }

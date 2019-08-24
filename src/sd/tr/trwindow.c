@@ -72,7 +72,7 @@ Widget TRWindow::CreateMenuBar(Widget parent) {
 	// make the duplicate item insensitive.
 	Widget w1 = editMenu->GetMenuItem("Duplicate");
 	if (w1)
-		XtVaSetValues(w1, XmNsensitive, False, 0);
+		XtVaSetValues(w1, XmNsensitive, False, NULL);
 	return bar;
 }
 
@@ -89,14 +89,14 @@ Widget TRWindow::CreateLayoutTiles(Widget parent) {
 	// create a frame
 	Widget frame = XtVaCreateManagedWidget("layout_tiles_frame1",
 		xmFrameWidgetClass, parent,
-		XmNshadowType, XmSHADOW_ETCHED_IN, 0);
+		XmNshadowType, XmSHADOW_ETCHED_IN, NULL);
 	// create the label
 	XtVaCreateManagedWidget("Layout",
                         xmLabelWidgetClass, frame,
-                        XmNchildType, XmFRAME_TITLE_CHILD, 0);
+                        XmNchildType, XmFRAME_TITLE_CHILD, NULL);
 	// create a rowcolumn
 	Widget rc = XtVaCreateWidget("rc1", xmRowColumnWidgetClass, frame,
-		XmNentryAlignment, XmALIGNMENT_CENTER, 0);
+		XmNentryAlignment, XmALIGNMENT_CENTER, NULL);
 	// create a radiobox for the tiles
 	XtSetArg(args[i], XmNradioAlwaysOne, True); i++;
 	char wname[8] = "Layout";
@@ -112,7 +112,7 @@ Widget TRWindow::CreateLayoutTiles(Widget parent) {
 			XmNlabelType, XmSTRING,
 			XmNlabelString, lb1,
 			XmNuserData, (XtPointer)0,
-			XmNalignment, XmALIGNMENT_CENTER, 0);
+			XmNalignment, XmALIGNMENT_CENTER, NULL);
 	XtAddCallback(editButton, XmNvalueChangedCallback,
 			TRWindow::LayoutCB, (XtPointer)this);
 	AddLiteClue(editButton, "Edit mode in which document is drawn as a graph");
@@ -123,7 +123,7 @@ Widget TRWindow::CreateLayoutTiles(Widget parent) {
 			XmNlabelType, XmSTRING,
 			XmNhighlightThickness, 0,
 			XmNuserData, (XtPointer)1,
-			XmNalignment, XmALIGNMENT_CENTER, 0);
+			XmNalignment, XmALIGNMENT_CENTER, NULL);
 	XtAddCallback(treeButton, XmNvalueChangedCallback,
 			TRWindow::LayoutCB, (XtPointer)this);
 	AddLiteClue(treeButton, "View mode in which document has a forked tree layout");
@@ -179,13 +179,13 @@ void TRWindow::SetLayout(bool b) {
 void TRWindow::SetSensitive(Menu *menu, const char *label, bool b) {
 	Widget w = menu->GetMenuItem(label);
 	if (w)
-		XtVaSetValues(w, XmNsensitive, b, 0);
+		XtVaSetValues(w, XmNsensitive, b, NULL);
 }
 
 void TRWindow::LayoutCB(Widget w, XtPointer cd, XtPointer) {
 	if (XmToggleButtonGetState(w)) {
 		int num;
-		XtVaGetValues(w, XmNuserData, &num, 0);
+		XtVaGetValues(w, XmNuserData, &num, NULL);
 		((TRWindow *)cd)->SetLayout(num);
 	}
 }

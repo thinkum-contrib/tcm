@@ -37,7 +37,7 @@ Pixmap Bitmap::GetBitmap(Widget w, Display *display) const {
 
 Pixmap Bitmap::CreatePixmap(Widget w, Display *display) const {
 	Pixel fg, bg;
-	XtVaGetValues(w, XmNforeground, &fg, XmNbackground, &bg, 0);
+	XtVaGetValues(w, XmNforeground, &fg, XmNbackground, &bg, NULL);
 	Screen *screen = XtScreen(w);
 	return XCreatePixmapFromBitmapData(display,
 			RootWindowOfScreen(screen),

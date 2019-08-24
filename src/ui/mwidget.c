@@ -67,7 +67,7 @@ void MWidget::CreateLiteClue() {
 		liteClue = XtVaCreatePopupShell("LiteClueShell",
                         xcgLiteClueWidgetClass, GetWidget(),
                         XgcNwaitPeriod, 700,
-                        XgcNcancelWaitPeriod, 1000, 0);
+                        XgcNcancelWaitPeriod, 1000, NULL);
 }
 
 bool MWidget::IsRealized() {
@@ -85,7 +85,7 @@ void MWidget::Manage() {
 }
 
 void MWidget::SetColormap(Colormap cmap) {
-	XtVaSetValues(GetWidget(), XmNcolormap, cmap, 0);
+	XtVaSetValues(GetWidget(), XmNcolormap, cmap, NULL);
 	XSetWindowColormap(GetDisplay(), XtWindow(GetWidget()), cmap);
 }
 

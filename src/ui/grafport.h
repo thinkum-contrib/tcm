@@ -210,11 +210,11 @@ public:
 // Drawing Ellipses
 	// used in lineend.c
 	///
-	virtual void DrawEllipse(double x, double y,
-		double wd, double ht)=0;
-	/// 
-	virtual void FillEllipse(double x, double y,
-		double wd, double ht)=0;
+	void DrawEllipse(double x, double y,
+		double wd, double ht) { DrawArc(x, y, wd, ht, 0, 360); }
+	///
+	void FillEllipse(double x, double y,
+		double wd, double ht) { FillSegment(x, y, wd, ht, 0, 360); }
 
 // Drawing Arcs
 	/// Draw an arc. (x,y) = top left of the corresponding ellipse,

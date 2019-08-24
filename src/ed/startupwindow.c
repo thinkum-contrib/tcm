@@ -91,7 +91,7 @@ Widget StartupWindow::CreateWorkArea(Widget parent, int ac, char **av) {
 	if (!check(parent))
 		return 0;
 	Widget startupForm = XtVaCreateWidget("StartupWindow", xmFormWidgetClass,
-		parent, 0);
+		parent, NULL);
 	initDrawingWidth = config->GetDrawingWidth();
 	initDrawingHeight = config->GetDrawingHeight();
 	maxDrawingWidth = max(initDrawingWidth, config->GetDrawingMaxWidth());
@@ -188,27 +188,27 @@ void StartupWindow::CreateComponents(Widget parent) {
 		XmNtopWidget, menuBar,
 		XmNleftAttachment, XmATTACH_FORM, 
 		XmNbottomAttachment, XmATTACH_FORM, 
-		XmNrightAttachment, XmATTACH_FORM, 0);
+		XmNrightAttachment, XmATTACH_FORM, NULL);
 	mainForm = XtVaCreateWidget("form",
-		xmFormWidgetClass, scrolledWindow, 0);
+		xmFormWidgetClass, scrolledWindow, NULL);
 	// *** GEN *** //
 	Widget frameGEN = XtVaCreateManagedWidget("frameGEN", 
 				xmFrameWidgetClass, mainForm,
 				XmNleftAttachment, XmATTACH_FORM, 
 				XmNrightAttachment, XmATTACH_FORM,
-				0);
+				NULL);
 	XtVaCreateManagedWidget("Generic Editors", 
 			xmLabelWidgetClass, frameGEN,
-			XmNchildType, XmFRAME_TITLE_CHILD, 0);
+			XmNchildType, XmFRAME_TITLE_CHILD, NULL);
 	Widget rowcolGEN = XtVaCreateManagedWidget("rowcolGEN", 
-				xmRowColumnWidgetClass, frameGEN, 0);
+				xmRowColumnWidgetClass, frameGEN, NULL);
 	AddToolEntry(rowcolGEN, 0); // TGD. 
 	AddToolEntry(rowcolGEN, 9); // TGT. 
 	AddToolEntry(rowcolGEN, 13); // TGTT. 
 	XtVaCreateManagedWidget("separator", 
 			xmSeparatorWidgetClass, mainForm,
 			XmNmargin, 8, 
-			XmNseparatorType, XmNO_LINE, 0);
+			XmNseparatorType, XmNO_LINE, NULL);
 	// *** SA (YSM) *** //
 	Widget frameSA = XtVaCreateManagedWidget("frameSA", 
 				xmFrameWidgetClass, mainForm,
@@ -216,13 +216,13 @@ void StartupWindow::CreateComponents(Widget parent) {
 				XmNtopWidget, frameGEN,
 				XmNleftAttachment, XmATTACH_FORM, 
 				XmNrightAttachment, XmATTACH_FORM,
-				0);
+				NULL);
 	XtVaCreateManagedWidget("Structured Analysis Editors", 
 			xmLabelWidgetClass, frameSA, 
-			XmNchildType, XmFRAME_TITLE_CHILD, 0);
+			XmNchildType, XmFRAME_TITLE_CHILD, NULL);
 	Widget rowcolSA = XtVaCreateManagedWidget("rowcolSA", 
 			xmRowColumnWidgetClass, frameSA, 
-			XmNspacing, 4, 0);
+			XmNspacing, 4, NULL);
 	AddToolEntry(rowcolSA, 26);	// ERD. 
 	AddToolEntry(rowcolSA, 7);	// EFD
 	AddToolEntry(rowcolSA, 3);	// MST. 
@@ -232,7 +232,7 @@ void StartupWindow::CreateComponents(Widget parent) {
 	XtVaCreateManagedWidget("separator", 
 			xmSeparatorWidgetClass, mainForm,
  			XmNmargin, 8, 
-			XmNseparatorType, XmNO_LINE, 0);
+			XmNseparatorType, XmNO_LINE, NULL);
 	// *** UML *** //
 	Widget frameUML = XtVaCreateManagedWidget("frameUML", 
 				xmFrameWidgetClass, mainForm,
@@ -240,13 +240,13 @@ void StartupWindow::CreateComponents(Widget parent) {
 				XmNtopWidget, frameSA,
 				XmNleftAttachment, XmATTACH_FORM, 
 				XmNrightAttachment, XmATTACH_FORM,
-				0);
+				NULL);
 	XtVaCreateManagedWidget("UML Editors", 
 			xmLabelWidgetClass, frameUML, 
-			XmNchildType, XmFRAME_TITLE_CHILD, 0);
+			XmNchildType, XmFRAME_TITLE_CHILD, NULL);
 	Widget rowcolUML = XtVaCreateManagedWidget("rowcolUML", 
 			xmRowColumnWidgetClass, frameUML, 
-			XmNspacing, 4, 0);
+			XmNspacing, 4, NULL);
 	AddToolEntry(rowcolUML, 23);	// TUCD. 
 	AddToolEntry(rowcolUML, 18);	// TSSD. 
 	AddToolEntry(rowcolUML, 25);	// TATD. 
@@ -258,7 +258,7 @@ void StartupWindow::CreateComponents(Widget parent) {
 	XtVaCreateManagedWidget("separator", 
 			xmSeparatorWidgetClass, mainForm,
 			XmNmargin, 8, 
-			XmNseparatorType, XmNO_LINE, 0);
+			XmNseparatorType, XmNO_LINE, NULL);
 	// *** MISC *** //
 	Widget frameMISC = XtVaCreateManagedWidget("frameMISC", 
 				xmFrameWidgetClass, mainForm,
@@ -266,12 +266,12 @@ void StartupWindow::CreateComponents(Widget parent) {
 				XmNtopWidget, frameUML,
 				XmNleftAttachment, XmATTACH_FORM, 
 				XmNrightAttachment, XmATTACH_FORM,
-				0);
+				NULL);
 	XtVaCreateManagedWidget("Miscellaneous Editors", 
 			xmLabelWidgetClass, frameMISC,
-			XmNchildType, XmFRAME_TITLE_CHILD, 0);
+			XmNchildType, XmFRAME_TITLE_CHILD, NULL);
 	Widget rowcolMISC = XtVaCreateManagedWidget("rowcolMISC", 
-			xmRowColumnWidgetClass, frameMISC, 0);
+			xmRowColumnWidgetClass, frameMISC, NULL);
 	AddToolEntry(rowcolMISC, 1);	// ERD 
 	AddToolEntry(rowcolMISC, 2);	// CRD 
 	AddToolEntry(rowcolMISC, 6);	// DFD
@@ -282,14 +282,14 @@ void StartupWindow::CreateComponents(Widget parent) {
 	XtVaCreateManagedWidget("separator", 
 			xmSeparatorWidgetClass, mainForm,
 			XmNmargin, 8, 
-			XmNseparatorType, XmNO_LINE, 0);
+			XmNseparatorType, XmNO_LINE, NULL);
 	Widget formSTATUS =  XtVaCreateManagedWidget("formSTATUS",
 				xmFormWidgetClass, mainForm,
 				XmNtopAttachment, XmATTACH_WIDGET,
 				XmNtopWidget, frameMISC,
 				XmNleftAttachment, XmATTACH_FORM,
 				XmNrightAttachment, XmATTACH_FORM,
-				0);
+				NULL);
 	int stColumns = 42;
 	if (WidthOfScreen(XtScreen(parent)) <= 1024)
 		// <= SVGA
@@ -302,7 +302,7 @@ void StartupWindow::CreateComponents(Widget parent) {
 			XmNcolumns, stColumns, 
 			XmNtopAttachment, XmATTACH_FORM,
 			XmNrightAttachment, XmATTACH_FORM,
-			XmNleftAttachment, XmATTACH_FORM, 0);
+			XmNleftAttachment, XmATTACH_FORM, NULL);
 	XtManageChild(mainForm);
 	XtManageChild(scrolledWindow);
 	XtManageChild(parent);
@@ -357,7 +357,7 @@ Widget StartupWindow::CreateMenuBar(Widget parent) {
 	viewMenu = new Menu(bar, Menu::PULLDOWN, "View", 0, viewItems);
 	helpMenu = new Menu(bar, Menu::PULLDOWN, "Help", 0, helpItems);
 	// tell bar which bar which button is the help menu
-	XtVaSetValues(bar, XmNmenuHelpWidget, helpMenu->GetWidget(), 0);
+	XtVaSetValues(bar, XmNmenuHelpWidget, helpMenu->GetWidget(), NULL);
 	// Bar is done -- manage it
 	XtManageChild(bar);
 	return bar;
@@ -366,7 +366,7 @@ Widget StartupWindow::CreateMenuBar(Widget parent) {
 void StartupWindow::AddToolEntry(Widget parent, int i) {
 	XmString xmtt; char tt[MAXNAME]; char ttinfo[MAXNAME];
 	Widget form = XtVaCreateWidget("form", 
-		xmFormWidgetClass, parent, 0);
+		xmFormWidgetClass, parent, NULL);
 	Widget button = XtVaCreateManagedWidget(Toolkit::TOOL_NAMES[i], 
 		xmPushButtonWidgetClass, form, XmNwidth, 50, 
 		XmNheight, 22,
@@ -374,7 +374,7 @@ void StartupWindow::AddToolEntry(Widget parent, int i) {
 		XmNbottomAttachment, XmATTACH_FORM,
 		XmNleftAttachment, XmATTACH_FORM, 
 		XmNuserData, i,
-		0);
+		NULL);
 	strcpy(tt, Toolkit::DOCUMENT_TYPES[i]);
 	xmtt = CreateXmString(tt);
 	strcpy(ttinfo, Toolkit::DOCUMENT_TYPES_INFO[i]);
@@ -386,7 +386,7 @@ void StartupWindow::AddToolEntry(Widget parent, int i) {
 		XmNtopAttachment, XmATTACH_FORM,
 		XmNbottomAttachment, XmATTACH_FORM,
 		XmNleftOffset, 6,
-		0);
+		NULL);
 	XtAddCallback(button, XmNactivateCallback, StartEditorCB, 
 			(XtPointer *)this);
 	XmStringFree(xmtt);
@@ -429,7 +429,7 @@ void StartupWindow::AppendExec(string *command, int editor) {
 }
 
 void StartupWindow::AppendProjDir(string *command) {
-	*command += " -projdir " + projDir;
+	*command += " -projdir \"" + projDir + "\"";
 }
 
 void StartupWindow::AppendDrawingArea(string *command) {
@@ -600,7 +600,7 @@ void StartupWindow::OpenDocument(const string *filename) {
 
 void StartupWindow::SetStatus(const char *s) {
 	if (statusBar)
-		XtVaSetValues(statusBar, XmNvalue, s, 0);
+		XtVaSetValues(statusBar, XmNvalue, s, NULL);
 }
 
 void StartupWindow::SetStatus(const string *s) {
@@ -661,7 +661,7 @@ void StartupWindow::InitMenuItems() {
 void StartupWindow::StartEditorCB(Widget w, XtPointer clientData, XtPointer) {
 	StartupWindow *s = (StartupWindow *)clientData;
 	int num;
-	XtVaGetValues(w, XmNuserData, &num, 0);
+	XtVaGetValues(w, XmNuserData, &num, NULL);
 	s->StartEditor(num);
 }
 
@@ -735,13 +735,13 @@ void StartupWindow::HelpCB(Widget w, XtPointer cd, XtPointer) {
 	Helper *hp = (Helper *)cd;
 	hp->SetStatus("action: help");
 	Helper::HelpTopicType tp;
-	XtVaGetValues(w, XmNuserData, &tp, 0);
+	XtVaGetValues(w, XmNuserData, &tp, NULL);
 	hp->Help(tp);
 }
 
 void StartupWindow::Finalize() {
 	Dimension fwd, fht;
-	XtVaGetValues(mainForm, XmNwidth, &fwd, XmNheight, &fht, 0);
+	XtVaGetValues(mainForm, XmNwidth, &fwd, XmNheight, &fht, NULL);
 	// std::cout << "mainForm width = " << fwd << std::endl;
 	// std::cout << "mainForm height = " << fht << std::endl;
 	Screen *screen = XtScreen(GetWidget());
@@ -752,6 +752,6 @@ void StartupWindow::Finalize() {
 	Dimension ht = min(sht*9/10, fht+39);  // experimentally
 	// std::cout << "win width = " << wd << std::endl;
 	// std::cout << "win height = " << ht << std::endl;
-	XtVaSetValues(GetWidget(), XmNwidth, wd, 0);
-	XtVaSetValues(GetWidget(), XmNheight, ht, 0);
+	XtVaSetValues(GetWidget(), XmNwidth, wd, NULL);
+	XtVaSetValues(GetWidget(), XmNheight, ht, NULL);
 }

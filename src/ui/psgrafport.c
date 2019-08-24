@@ -585,13 +585,6 @@ void PSGrafport::DrawPoint(double x, double y) {
 	DrawLine(x, y, x, y);
 }
 
-void PSGrafport::DrawEllipse(double x, double y, double wd, double ht) {
-	DrawArc(x, y, wd, ht, 0, 360);
-}
-
-void PSGrafport::FillEllipse(double x, double y, double wd, double ht) {
-	FillSegment(x, y, wd, ht, 0, 360);
-}
 
 /* virtual */ void PSGrafport::DrawSimpleArc(double x, double y,
 	double wd, double ht, int arc1, int arc2)

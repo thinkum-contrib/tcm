@@ -60,18 +60,18 @@ void TextFieldListDialog::CreateFields(List<string *> *names,
 		xmRowColumnWidgetClass, GetWidget(),
 		XmNnumColumns, 2,
 		XmNpacking, XmPACK_COLUMN,
-		XmNorientation, XmVERTICAL, 0);
+		XmNorientation, XmVERTICAL, NULL);
 	labels = new Widget[names->count()];
 	for (names->first(); !names->done(); names->next()) {
 		Widget w1 = XtVaCreateManagedWidget(names->cur()->getstr(), 
-			xmLabelWidgetClass, rc, 0);
+			xmLabelWidgetClass, rc, NULL);
 		labels[numLabels] = w1;
 		numLabels++;
 	}
 	textFields = new Widget[values->count()];
 	for (values->first(); !values->done(); values->next()) {
 		Widget w2 = XtVaCreateManagedWidget("field",
-			xmTextFieldWidgetClass, rc, 0);
+			xmTextFieldWidgetClass, rc, NULL);
 		XmTextSetString(w2, (char *)values->cur()->getstr());
 		textFields[numTextFields] = w2;
 		numTextFields++;
@@ -83,7 +83,7 @@ void TextFieldListDialog::CreateFields(List<string *> *names,
 void TextFieldListDialog::SetFieldWidth(unsigned n) {
 	fieldWidth = n;
 	for (unsigned i=0; i<numTextFields; i++)
-		XtVaSetValues(textFields[i], XmNcolumns, n, 0);
+		XtVaSetValues(textFields[i], XmNcolumns, n, NULL);
 }
 
 unsigned TextFieldListDialog::NumFields() {
@@ -92,13 +92,13 @@ unsigned TextFieldListDialog::NumFields() {
 
 void TextFieldListDialog::SetLabel(unsigned i, const string *n) {
 	if (check(i < numLabels))
-		XtVaSetValues(labels[i], XmNvalue, n->getstr(), 0);
+		XtVaSetValues(labels[i], XmNvalue, n->getstr(), NULL);
 }
 
 void TextFieldListDialog::GetLabel(unsigned i, string *n) {
 	if (check(i < numLabels)) {
 		char *s;
-		XtVaGetValues(labels[i], XmNvalue, &s, 0);
+		XtVaGetValues(labels[i], XmNvalue, &s, NULL);
 		*n = s;
 		XtFree(s);
 	}

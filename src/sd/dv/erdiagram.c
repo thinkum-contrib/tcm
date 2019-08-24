@@ -43,6 +43,9 @@
 #include "replacedialog.h"
 #include "erdiagram.h"
 #include "menu.h"
+
+class Edge;
+class C1Edge;
  
 ERDiagram::ERDiagram(Config *c, ERWindow *d, ERViewer *v, ERGraph *g): 
 		Diagram(c,d,v,g) {

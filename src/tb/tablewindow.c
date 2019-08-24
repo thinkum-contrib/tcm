@@ -169,11 +169,11 @@ void TableWindow::CreateComponents(Widget parent) {
 	SetScaleValue(CreateScaleValue(parent));
 	XtVaSetValues(GetStatusArea(), XmNleftAttachment, XmATTACH_WIDGET,
 		XmNleftOffset, 20,
-		XmNleftWidget, GetArrowButtons(), 0);
+		XmNleftWidget, GetArrowButtons(), NULL);
 	XtVaSetValues(GetScrolledWindow(), XmNleftAttachment, XmATTACH_FORM,
 		XmNleftOffset, 20,
 		XmNbottomAttachment, XmATTACH_WIDGET,
-		XmNbottomWidget, GetArrowButtons(), 0);
+		XmNbottomWidget, GetArrowButtons(), NULL);
 }
 
 Widget TableWindow::CreateMenuBar(Widget parent) {
@@ -206,7 +206,7 @@ Widget TableWindow::CreateMenuBar(Widget parent) {
 				 documentItems);
 	helpMenu = new Menu(bar, Menu::PULLDOWN, "Help", 0, helpItems);
 	// tell bar which bar which button is the help menu
-	XtVaSetValues(bar, XmNmenuHelpWidget, helpMenu->GetWidget(), 0);
+	XtVaSetValues(bar, XmNmenuHelpWidget, helpMenu->GetWidget(), NULL);
 	// Bar is done -- manage it
 	XtManageChild(bar);
 	return bar;

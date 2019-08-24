@@ -163,9 +163,9 @@ void LineEndDialog::Configure() {
 	List<Widget> *tl1 = (*GetToggleList())[0];
 	List<Widget> *tl2 = (*GetToggleList())[1];
 	XtVaSetValues(XtParent((*tl1)[0]), 
-		XmNnumColumns, 4, XmNorientation, XmHORIZONTAL, 0);
+		XmNnumColumns, 4, XmNorientation, XmHORIZONTAL, NULL);
 	XtVaSetValues(XtParent((*tl2)[0]), 
-		XmNnumColumns, 4, XmNorientation, XmHORIZONTAL, 0);
+		XmNnumColumns, 4, XmNorientation, XmHORIZONTAL, NULL);
 	for (int k=1; k<=LineEnd::NUMTYPES; k++) {
 		LineEnd::Type t = (LineEnd::Type)k;
 		string s1;

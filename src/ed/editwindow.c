@@ -125,7 +125,7 @@ Widget EditWindow::CreateWorkArea(Widget parent, int argc, char **argv) {
 	logoBitmap.xbm_bits = (unsigned char *)Teapot2a_bits;
 	logoPixmap = logoBitmap.CreatePixmap(parent, GetDisplay());
 	Widget form = XtVaCreateManagedWidget(GetName()->getstr(), 
-		xmFormWidgetClass, parent, 0);
+		xmFormWidgetClass, parent, NULL);
 	// find type of document tool 
 	int tool = GetTool();
 	// parse command line options
@@ -275,7 +275,7 @@ Widget EditWindow::CreateLogo(Widget parent) {
 	Pixel fg, bg;
 	// get the foreground and background colors of the parent
 	// to make the pixmaps appear using a consistent color
-	XtVaGetValues(parent, XmNforeground, &fg, XmNbackground, &bg, 0);
+	XtVaGetValues(parent, XmNforeground, &fg, XmNbackground, &bg, NULL);
 	// the pixmap is loaded from a X11 bitmap, called DEFAULT_ICON.
 	Pixmap px = logoBitmap.CreatePixmap(parent, GetDisplay()); 
 	Widget button = XtVaCreateManagedWidget(
@@ -283,7 +283,7 @@ Widget EditWindow::CreateLogo(Widget parent) {
 			XmNlabelPixmap, px,
 			XmNlabelType, XmPIXMAP,
 			XmNtopAttachment, XmATTACH_FORM,
-			XmNrightAttachment, XmATTACH_FORM, 0);
+			XmNrightAttachment, XmATTACH_FORM, NULL);
 	XtAddCallback(button, XmNactivateCallback, AboutCB, (XtPointer)this);
 	AddLiteClue(button, "TCM logo");
 	return button;
@@ -298,31 +298,31 @@ Widget EditWindow::CreateDocumentArea(Widget parent) {
 		xmRowColumnWidgetClass, parent, 
 		XmNadjustLast, True,
 		XmNorientation, XmHORIZONTAL,
-		XmNleftAttachment, XmATTACH_FORM, 0);
+		XmNleftAttachment, XmATTACH_FORM, NULL);
 	if (menubar)
 		XtVaSetValues(rc, XmNtopAttachment, XmATTACH_WIDGET,
-			XmNtopWidget, menubar, 0);
+			XmNtopWidget, menubar, NULL);
 	if (logo)
 		XtVaSetValues(rc, XmNrightAttachment, XmATTACH_WIDGET,
-			XmNrightWidget, logo, 0);
+			XmNrightWidget, logo, NULL);
 	XtVaCreateManagedWidget("Document Type: ",
 		xmLabelWidgetClass, rc,
-		XmNalignment, XmALIGNMENT_BEGINNING, 0);
+		XmNalignment, XmALIGNMENT_BEGINNING, NULL);
 	documentType = XtVaCreateManagedWidget("DocumentType",
 		xmTextFieldWidgetClass, rc, 
 		XmNcolumns, 15,
 		XmNeditable, False,
-		XmNcursorPositionVisible, False, 0);
+		XmNcursorPositionVisible, False, NULL);
 	AddLiteClue(documentType, 
 		"The type of document that is edited by this editor (fixed)");
 	XtVaCreateManagedWidget("Name: ",
 		xmLabelWidgetClass, rc, 
-		XmNalignment, XmALIGNMENT_BEGINNING, 0);
+		XmNalignment, XmALIGNMENT_BEGINNING, NULL);
 	documentName = XtVaCreateManagedWidget("DocumentName",
 		xmTextFieldWidgetClass, rc, 
 		XmNeditable, True,
 		XmNcolumns, 10,
-		XmNcursorPositionVisible, True, 0);
+		XmNcursorPositionVisible, True, NULL);
 	AddLiteClue(documentName, 
 	 	"The document name. Can be changed (apply with <enter>)");
 	if (check(document))
@@ -331,11 +331,11 @@ Widget EditWindow::CreateDocumentArea(Widget parent) {
 	if (Toolkit::HierarchicEditor(GetTool())) {
 //		XtVaCreateManagedWidget("Level: ",
 //			xmLabelWidgetClass, rc,
-//			XmNalignment, XmALIGNMENT_BEGINNING, 0);
+//			XmNalignment, XmALIGNMENT_BEGINNING, NULL);
 //		documentLevel = XtVaCreateManagedWidget("DocumentLevel",
 //			xmTextFieldWidgetClass, rc,
 //			XmNeditable, False,
-//			XmNcursorPositionVisible, False, 0);
+//			XmNcursorPositionVisible, False, NULL);
 //		AddLiteClue(documentLevel,
 //			"The current level in the document (fixed)");
 	}
@@ -352,11 +352,11 @@ Widget EditWindow::CreateControlArea(Widget parent) {
 		return 0;
 	Widget rc = XtVaCreateWidget("ControlArea", 
 		xmRowColumnWidgetClass, parent, 
-		XmNorientation, XmHORIZONTAL, 0);
+		XmNorientation, XmHORIZONTAL, NULL);
 	if (statusArea) 
 		XtVaSetValues(rc, XmNtopWidget, statusArea, 
-			XmNtopAttachment, XmATTACH_WIDGET, 0);
-	XtVaSetValues(rc, XmNbottomAttachment, XmATTACH_FORM, 0);
+			XmNtopAttachment, XmATTACH_WIDGET, NULL);
+	XtVaSetValues(rc, XmNbottomAttachment, XmATTACH_FORM, NULL);
 	XtManageChild(rc);
 	return rc;
 }
@@ -368,20 +368,20 @@ Widget EditWindow::CreateStatusArea(Widget parent) {
 		return 0;
 	Widget rc = XtVaCreateWidget("StatusArea", 
 		xmRowColumnWidgetClass, parent, 
-		XmNorientation, XmHORIZONTAL, 0);
+		XmNorientation, XmHORIZONTAL, NULL);
 	if (controlArea) 
 		XtVaSetValues(rc, XmNbottomWidget, controlArea, 
-			XmNbottomAttachment, XmATTACH_WIDGET, 0);
+			XmNbottomAttachment, XmATTACH_WIDGET, NULL);
 	statusText = XtVaCreateManagedWidget("StatusText",
 		xmTextFieldWidgetClass, rc, 
 		XmNeditable, False,
 		XmNcursorPositionVisible, False,
 		XmNshadowThickness, 0,
-		XmNvalue, "...", 0);
+		XmNvalue, "...", NULL);
 	if (screenType <= SVGA)
-		XtVaSetValues(statusText, XmNcolumns, 40, 0);
+		XtVaSetValues(statusText, XmNcolumns, 40, NULL);
 	else
-		XtVaSetValues(statusText, XmNcolumns, 50, 0);
+		XtVaSetValues(statusText, XmNcolumns, 50, NULL);
 	XtManageChild(rc);
 	return rc;
 }
@@ -394,7 +394,7 @@ Widget EditWindow::CreateToggle(Widget parent, const char *label, bool Init,
 	Widget toggle = XtVaCreateManagedWidget(label, 
 		xmToggleButtonWidgetClass, parent,
 		XmNlabelString, text,
-		XmNset, Init, 0);
+		XmNset, Init, NULL);
 	XtAddCallback(toggle, XmNvalueChangedCallback, fun, clientData);
 	XmStringFree(text);
 	return toggle;
@@ -406,7 +406,7 @@ void EditWindow::EnableUndo(bool flag) {
 		return;
 	Widget undoMenuItem = editMenu->GetMenuItem("Undo");
 	if (undoMenuItem) {
-		XtVaSetValues(undoMenuItem, XmNsensitive, flag, 0);
+		XtVaSetValues(undoMenuItem, XmNsensitive, flag, NULL);
 	}
 }
 
@@ -416,7 +416,7 @@ void EditWindow::EnableRedo(bool flag) {
 		return;
 	Widget redoMenuItem = editMenu->GetMenuItem("Redo");
 	if (redoMenuItem)
-		XtVaSetValues(redoMenuItem, XmNsensitive, flag, 0);
+		XtVaSetValues(redoMenuItem, XmNsensitive, flag, NULL);
 }
 
 void EditWindow::SetUndoName(const char *uname) {
@@ -426,7 +426,7 @@ void EditWindow::SetUndoName(const char *uname) {
 	XmString s = CreateXmString(uname);
 	Widget undoMenuItem = editMenu->GetMenuItem("Undo");
 	if (undoMenuItem)
-		XtVaSetValues(undoMenuItem, XmNlabelString, s, 0);
+		XtVaSetValues(undoMenuItem, XmNlabelString, s, NULL);
 	XmStringFree(s);
 }
 
@@ -437,7 +437,7 @@ void EditWindow::SetRedoName(const char *uname) {
 	XmString s = CreateXmString(uname);
 	Widget redoMenuItem = editMenu->GetMenuItem("Redo");
 	if (redoMenuItem)
-		XtVaSetValues(redoMenuItem, XmNlabelString, s, 0);
+		XtVaSetValues(redoMenuItem, XmNlabelString, s, NULL);
 	XmStringFree(s);
 }
 
@@ -523,7 +523,7 @@ void EditWindow::Finalize() {
 
 void EditWindow::SetStatus(const char *message) {
 	if (statusText)
-		XtVaSetValues(statusText, XmNvalue, message, 0); 
+		XtVaSetValues(statusText, XmNvalue, message, NULL); 
 }
 
 void EditWindow::SetStatus(const string *message) {
@@ -534,7 +534,7 @@ void EditWindow::SetDocumentName(const char *s) {
 	if (documentName) {
 		int columns = min(30, max(10, strlen(s)+2));
 		XtVaSetValues(documentName, XmNvalue, s, 
-                              XmNcolumns, columns, 0); 
+                              XmNcolumns, columns, NULL); 
 		// show document name also in the icon.
 		SetIconName(s); 
 	}
@@ -548,7 +548,7 @@ void EditWindow::SetDocumentType(const char *s) {
 	if (documentType) {
 		int columns = min(30, max(10, strlen(s)+2));
 		XtVaSetValues(documentType, XmNvalue, s,
-				    XmNcolumns, columns, 0); 
+				    XmNcolumns, columns, NULL); 
 	}
 }
 
@@ -560,7 +560,7 @@ void EditWindow::SetDirName(const char *s) {
 	if (dirName) {
 		int columns = min(30, max(10, strlen(s)+4));
 		XtVaSetValues(dirName, XmNvalue, s,
-				XmNcolumns, columns, 0); 
+				XmNcolumns, columns, NULL); 
 	}
 }
 
@@ -570,7 +570,7 @@ void EditWindow::SetDirName(const string *s) {
 
 void EditWindow::SetModified(bool set) {
 	if (modifiedToggle)
-		XtVaSetValues(modifiedToggle, XmNset, set, 0); 
+		XtVaSetValues(modifiedToggle, XmNset, set, NULL); 
 }
 
 void EditWindow::AboutCB(Widget w, XtPointer, XtPointer) {
@@ -581,7 +581,7 @@ void EditWindow::AboutCB(Widget w, XtPointer, XtPointer) {
 void EditWindow::SetDocumentLevel(const char *s) {
 	if (documentLevel)
 		XtVaSetValues(documentLevel, XmNvalue, s,
-					    XmNcolumns, strlen(s)+1, 0);
+					    XmNcolumns, strlen(s)+1, NULL);
 }
 
 void EditWindow::SetDocumentLevel(const string *s) {

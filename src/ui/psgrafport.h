@@ -95,12 +95,6 @@ public:
 	///
 	void DrawPoint(double x, double y);
 
-// Drawing Ellipses.
-	///
-	void DrawEllipse(double x, double y, double wd, double ht);
-	///
-	void FillEllipse(double x, double y, double wd, double ht);
-
 // Drawing Arcs.
 	///								
 	/* virtual */ void FillSegment(double x, double y,	

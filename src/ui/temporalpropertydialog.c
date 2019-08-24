@@ -61,30 +61,30 @@ void TPDialog::Configure() {
 	//ManageSensitiveToggle(False);
 
 	form = XtVaCreateWidget("form",
-		xmFormWidgetClass, GetWidget(), 0);
+		xmFormWidgetClass, GetWidget(), NULL);
 	SetSelectionLabel(XtVaCreateManagedWidget("LTL property",
 		xmLabelWidgetClass, form, 
 		XmNleftAttachment, XmATTACH_FORM,
-		XmNtopAttachment, XmATTACH_FORM, 0));
+		XmNtopAttachment, XmATTACH_FORM, NULL));
 	SetText(XtVaCreateManagedWidget("find_text",
 		xmTextFieldWidgetClass, form,
 		XmNleftAttachment, XmATTACH_FORM,
 		XmNrightAttachment, XmATTACH_FORM,
 		XmNtopAttachment, XmATTACH_WIDGET,
-		XmNtopWidget, GetSelectionLabel(), 0));
+		XmNtopWidget, GetSelectionLabel(), NULL));
 	toggleRC = XtVaCreateManagedWidget("toggleRC",
 		xmRowColumnWidgetClass, form,
 		XmNorientation, XmHORIZONTAL, 
-		XmNleftAttachment, XmATTACH_FORM, 0);
+		XmNleftAttachment, XmATTACH_FORM, NULL);
 	sensitiveToggle = XtVaCreateManagedWidget("syntactic encoding", 
 		xmToggleButtonWidgetClass, toggleRC, 
-		XmNset, False, 0);
+		XmNset, False, NULL);
 	substringToggle = XtVaCreateWidget("reduction", 
 		xmToggleButtonWidgetClass, toggleRC,
-		XmNset, False, 0);
+		XmNset, False, NULL);
 	nameOnlyToggle = XtVaCreateWidget("strong fairness", 
 		xmToggleButtonWidgetClass, toggleRC,
-		XmNset, True, 0);
+		XmNset, True, NULL);
 	AttachToggles();
 
 	XtManageChild(form);
@@ -94,7 +94,7 @@ void TPDialog::Configure() {
 void TPDialog::AttachToggles() {
 	XtVaSetValues(toggleRC, 
 		XmNtopAttachment, XmATTACH_WIDGET,
-		XmNtopWidget, GetText(), 0);
+		XmNtopWidget, GetText(), NULL);
 }
 
 void TPDialog::ManageSensitiveToggle(bool b) {

@@ -35,7 +35,7 @@ void DiagramStubs::SetNodeCB(Widget w, XtPointer cd, XtPointer) {
 	// 'unset' event of a toggle button should be discarded.
 	if (XmToggleButtonGetState(w)) {
 		int num;
-		XtVaGetValues(w, XmNuserData, &num, 0);
+		XtVaGetValues(w, XmNuserData, &num, NULL);
 		((Diagram *)cd)->UpdateNodeType((int)num);
 	}
 }
@@ -44,7 +44,7 @@ void DiagramStubs::SetEdgeCB(Widget w, XtPointer cd, XtPointer) {
 	// 'unset' event of a toggle button should be discarded.
 	if (XmToggleButtonGetState(w)) {
 		int num;
-		XtVaGetValues(w, XmNuserData, &num, 0);
+		XtVaGetValues(w, XmNuserData, &num, NULL);
 		((Diagram *)cd)->UpdateEdgeType((int)num);
 	}
 }
@@ -131,7 +131,7 @@ void DiagramStubs::TopLevelCB(Widget, XtPointer cd, XtPointer) {
 void DiagramStubs::DefaultNodeLineStyleCB(Widget w, XtPointer cd, XtPointer) {
 	if (XmToggleButtonGetState(w)) {
 		int n;
-		XtVaGetValues(w, XmNuserData, &n, 0);
+		XtVaGetValues(w, XmNuserData, &n, NULL);
 		n = n/2;
 		LineStyle::Type i = LineStyle::SOLID;
 		if (n == 1)
@@ -147,7 +147,7 @@ void DiagramStubs::DefaultNodeLineStyleCB(Widget w, XtPointer cd, XtPointer) {
 void DiagramStubs::DefaultEdgeLineStyleCB(Widget w, XtPointer cd, XtPointer) {
 	if (XmToggleButtonGetState(w)) {
 		int n;
-		XtVaGetValues(w, XmNuserData, &n, 0);
+		XtVaGetValues(w, XmNuserData, &n, NULL);
 		n = n/2;
 		LineStyle::Type i = LineStyle::SOLID;
 		if (n == 1)
@@ -170,7 +170,7 @@ void DiagramStubs::ReindexCB(Widget, XtPointer cd, XtPointer) {
 
 void DiagramStubs::UpdateNodeShapeTypeCB(Widget w, XtPointer cd, XtPointer) {
         int num;
-        XtVaGetValues(w, XmNuserData, &num, 0);
+        XtVaGetValues(w, XmNuserData, &num, NULL);
         ((DiagramViewer *)cd)->UpdateNodeShapeType(num);
 }
 

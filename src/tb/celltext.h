@@ -31,6 +31,10 @@ class InputFile;
 class OutputFile;
 
 /// cell text class.
+
+class CellText;
+int Compare(CellText *r1, CellText *r2);
+
 class CellText: public SimpleLabel {
 /*@Doc: {\large {\bf scope:} table} */
 public:

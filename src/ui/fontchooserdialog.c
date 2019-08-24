@@ -105,7 +105,7 @@ void FontChooserDialog::Configure() {
 	SetHelpButtonLabel("Default");
 	// underlinedToggle = XtVaCreateManagedWidget("underlined",
           //       xmToggleButtonWidgetClass, GetWidget(),
-            //     XmNset, False, 0);
+            //     XmNset, False, NULL);
 	ChooseDefault();
 	SetToggleChangedCallback(0, ShowExampleCB, this);
 	SetToggleChangedCallback(1, ShowExampleCB, this);
@@ -137,7 +137,7 @@ void FontChooserDialog::ShowExample() {
 		XFontStruct *fs = exampleFont->GetXFontStruct();
 		XmFontList fl = XmFontListCreate(fs, 
 				XmSTRING_DEFAULT_CHARSET);
-		XtVaSetValues(GetText(), XmNfontList, fl, 0);
+		XtVaSetValues(GetText(), XmNfontList, fl, NULL);
 		XmFontListFree(fl);
 	}
 }

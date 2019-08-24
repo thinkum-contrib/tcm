@@ -93,12 +93,6 @@ public:
 	///
 	void DrawPoint(double x, double y);
 
-// Drawing Ellipses.
-	///
-	void DrawEllipse(double x, double y, double wd, double ht);
-	///
-	void FillEllipse(double x, double y, double wd, double ht);
-
 // Drawing Arcs.
 	///
 	/* virtual */ void FillSegment(double x, double y, double wd, double ht,
@@ -180,7 +174,9 @@ private:
 	void DrawFigRectangle(double x, double y, double wd, double ht, 
 			int sub_type, double radius = -1);
 	///
-	void DrawFigEllipse(double x, double y, double rd_x, double rd_y, int sub_type);
+	void DrawFigEllipse(double x, double y, double rd_x, double rd_y);
+	///
+	void FillFigEllipse(double x, double y, double rd_x, double rd_y);
 	///
 	void DrawFigText(double x, double y, const char *text, int sub_type); 
 

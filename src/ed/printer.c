@@ -170,7 +170,7 @@ void Printer::ShowPrintPreview() {
 	char tmp[MAXNAME];
 	System::GiveFile(previewCommand.getstr(), tmp);
 	string command = tmp;
-	if (command == "ghostview" || command == "gv") {
+	if (command == "ghostview") {
 		string pgs = "-";
 		string sz;
 		PageSize::Type2String(pageSize, &sz);
@@ -179,6 +179,15 @@ void Printer::ShowPrintPreview() {
 		sprintf(tmp, "%s %s %s %s 2>&1\n", previewCommand.getstr(), 
 				pgs.getstr(), pageOrientation==Config::PORTRAIT?
 					"-portrait":"-landscape", 
+				psFileName.getstr());
+	}
+	else if (command == "gv") {
+		string sz;
+		PageSize::Type2String(pageSize, &sz);
+		sprintf(tmp, "%s --media=%s --orientation=%s %s 2>&1\n",
+				previewCommand.getstr(), sz.getstr(),
+				pageOrientation==Config::PORTRAIT?
+					"portrait":"landscape", 
 				psFileName.getstr());
 	}
 	else	// simplistic previewing ...

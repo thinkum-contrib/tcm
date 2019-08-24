@@ -185,5 +185,5 @@ void NodeShapeDialog::Configure() {
 	AddLiteClue((*tl)[24], "Disk");
 	AddLiteClue((*tl)[25], "Entity class");
 	XtVaSetValues(rc, XmNnumColumns, 3, 
-			  XmNorientation, XmVERTICAL, 0);
+			  XmNorientation, XmVERTICAL, NULL);
 }

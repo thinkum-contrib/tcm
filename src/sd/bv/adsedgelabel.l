@@ -7,7 +7,6 @@
 char adsedgelabel_errormsg[1024] = "";
 char adsedgelabel_constraint[1024] = "";
 %}
-%option noyywrap
 
 integer   [0-9]+
 string    [A-Za-z](([ _][A-Za-z0-9])|([A-Za-z0-9]))*

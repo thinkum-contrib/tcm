@@ -75,11 +75,11 @@ DrawingArea::DrawingArea(Config *config, Widget parent, const char *n,
 		XmNheight, height,
 		XmNwidth, width,
 		XmNresizePolicy, XmNONE, // remain this a fixed size
-		0));
+		NULL));
 	// set up destruction handler.
 	InstallDestroyHandler();
 	// convert drawing area back to pixels to get its width and height
-	XtVaSetValues(GetWidget(), XmNunitType, XmPIXELS, 0);
+	XtVaSetValues(GetWidget(), XmNunitType, XmPIXELS, NULL);
 	XtAddCallback(GetWidget(), XmNexposeCallback, DrawCB, this);
 	XtAddCallback(GetWidget(), XmNresizeCallback, DrawCB, this);
 	XtAddCallback(GetWidget(), XmNinputCallback, DrawCB, this);
@@ -107,13 +107,13 @@ void DrawingArea::SetViewer(Viewer *v) {
 
 Pixel DrawingArea::GetBackgroundColor() {
 	Pixel p;
-	XtVaGetValues(GetWidget(), XmNbackground, &p, 0);
+	XtVaGetValues(GetWidget(), XmNbackground, &p, NULL);
 	return p;
 }
 
 Pixel DrawingArea::GetForegroundColor() {
 	Pixel p;
-	XtVaGetValues(GetWidget(), XmNforeground, &p, 0);
+	XtVaGetValues(GetWidget(), XmNforeground, &p, NULL);
 	return p;
 }
 
@@ -162,7 +162,7 @@ void DrawingArea::CreatePopupMenu(int tool) {
 //		// make "Duplicate" command insensitive.
 //		Widget w1 = popupMenu->GetMenuItem("Duplicate");
 //		if (w1)
-//			XtVaSetValues(w1, XmNsensitive, False, 0);
+//			XtVaSetValues(w1, XmNsensitive, False, NULL);
 //	}
 }
 
@@ -374,26 +374,26 @@ void DrawingArea::PopupMenu(XEvent *e) {
 void DrawingArea::EnableUndo(bool flag) {
 	Widget undoMenuItem = popupMenu->GetMenuItem("Undo");
 	if (undoMenuItem)
-		XtVaSetValues(undoMenuItem, XmNsensitive, flag, 0);
+		XtVaSetValues(undoMenuItem, XmNsensitive, flag, NULL);
 }
 
 void DrawingArea::EnableRedo(bool flag) {
 	Widget redoMenuItem = popupMenu->GetMenuItem("Redo");
 	if (redoMenuItem)
-		XtVaSetValues(redoMenuItem, XmNsensitive, flag, 0);
+		XtVaSetValues(redoMenuItem, XmNsensitive, flag, NULL);
 }
 
 void DrawingArea::Enable(const char *label, bool flag) {
 	Widget menuItem = popupMenu->GetMenuItem(label);
 	if (menuItem)
-		XtVaSetValues(menuItem, XmNsensitive, flag, 0);
+		XtVaSetValues(menuItem, XmNsensitive, flag, NULL);
 }
 
 void DrawingArea::SetUndoName(const char *undoname) {
 	XmString s = CreateXmString(undoname);
 	Widget undoMenuItem = popupMenu->GetMenuItem("Undo");
 	if (undoMenuItem)
-		XtVaSetValues(undoMenuItem, XmNlabelString, s, 0);
+		XtVaSetValues(undoMenuItem, XmNlabelString, s, NULL);
 	XmStringFree(s);
 }
 
@@ -401,7 +401,7 @@ void DrawingArea::SetRedoName(const char *redoname) {
 	XmString s = CreateXmString(redoname);
 	Widget redoMenuItem = popupMenu->GetMenuItem("Redo");
 	if (redoMenuItem)
-		XtVaSetValues(redoMenuItem, XmNlabelString, s, 0);
+		XtVaSetValues(redoMenuItem, XmNlabelString, s, NULL);
 	XmStringFree(s);
 }
 

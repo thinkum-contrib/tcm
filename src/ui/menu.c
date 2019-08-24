@@ -43,13 +43,13 @@ Widget Menu::GetNthChild(Widget w, MenuType type, int n) {
 	Widget submenu;
 	WidgetList wlist; int numc;
 	if (type == PULLDOWN)
-		XtVaGetValues(w, XmNsubMenuId, &submenu, 0);
+		XtVaGetValues(w, XmNsubMenuId, &submenu, NULL);
 	else
 		submenu = w;
 	if (!check(submenu))
 		return 0;
-	XtVaGetValues(submenu, XmNchildren, &wlist, 0);
-	XtVaGetValues(submenu, XmNnumChildren, &numc, 0);
+	XtVaGetValues(submenu, XmNchildren, &wlist, NULL);
+	XtVaGetValues(submenu, XmNnumChildren, &numc, NULL);
 	if (n <= numc)
 		return wlist[n-1];
 	else
@@ -67,7 +67,7 @@ void Menu::SetNthChildSensitive(Widget w, MenuType type, int n,
 		bool state) {
 	Widget child = GetNthChild(w, type, n);
 	if (check(child))
-		XtVaSetValues(child, XmNsensitive, state, 0);
+		XtVaSetValues(child, XmNsensitive, state, NULL);
 }
 
 Widget Menu::GetMenuItem(const char *label) {
@@ -78,17 +78,17 @@ Widget Menu::GetChild(Widget w, MenuType menuType, const char *label) {
 	Widget submenu;
 	WidgetList wlist; int numc;
 	if (menuType == PULLDOWN)
-		XtVaGetValues(w, XmNsubMenuId, &submenu, 0);
+		XtVaGetValues(w, XmNsubMenuId, &submenu, NULL);
 	else
 		submenu = w;
 	if (!check(submenu))
 		return 0;
-	XtVaGetValues(submenu, XmNchildren, &wlist, 0);
-	XtVaGetValues(submenu, XmNnumChildren, &numc, 0);
+	XtVaGetValues(submenu, XmNchildren, &wlist, NULL);
+	XtVaGetValues(submenu, XmNnumChildren, &numc, NULL);
 	XmString s2;
 	for (int i=0; i < numc; i++) {
 		s2 = CreateXmString("");
-		XtVaGetValues(wlist[i], XmNlabelString, &s2, 0); 
+		XtVaGetValues(wlist[i], XmNlabelString, &s2, NULL); 
 		char *str;
 		if (XmStringGetLtoR(s2, XmFONTLIST_DEFAULT_TAG, &str)) {
 			// std::cout << str << std::endl;
@@ -116,7 +116,7 @@ void Menu::SetChildSensitive(Widget w, MenuType type,
 		const char *label, bool state) {
 	Widget child = GetChild(w, type, label);
 	if (check(child))
-		XtVaSetValues(child, XmNsensitive, state, 0);
+		XtVaSetValues(child, XmNsensitive, state, NULL);
 }
 
 // Build popup, option and pulldown menus, depending on the menu type.
@@ -152,7 +152,7 @@ Widget Menu::BuildMenu(Widget parent, MenuType type, const char *label,
 			xmCascadeButtonWidgetClass, parent,
 			XmNsubMenuId, menu,
 			XmNlabelString, str,
-			XmNmnemonic, mnemonic, 0);
+			XmNmnemonic, mnemonic, NULL);
 		XmStringFree(str);
 	} else if (type == OPTION) {
 		// Option menus are a special case, but not hard to handle
@@ -199,7 +199,7 @@ Widget Menu::BuildMenu(Widget parent, MenuType type, const char *label,
 			else
 				wc = &xmPushButtonWidgetClass;
 			submenu = XtVaCreateManagedWidget(items[i].label,
-				*wc, menu, 0);
+				*wc, menu, NULL);
 		}
 		// toggle buttons are always visible as such
 		if (items[i].itemType == MenuItem::RADIOBUTTON || 
@@ -208,37 +208,37 @@ Widget Menu::BuildMenu(Widget parent, MenuType type, const char *label,
 			XtVaSetValues(submenu, XmNindicatorOn, True,
 				XmNvisibleWhenOff, True,
 				XmNindicatorSize, 12, 
-				0);
+				NULL);
 			// box or diamond ?
 			if (items[i].itemType == MenuItem::RADIOBUTTON) {
 				XtVaSetValues(menu, 
-					XmNradioBehavior, True, 0);
+					XmNradioBehavior, True, NULL);
 				XtVaSetValues(submenu, 
-					XmNindicatorType, XmONE_OF_MANY, 0);
+					XmNindicatorType, XmONE_OF_MANY, NULL);
 			}
 			// selected or not ?
-			if ((int)items[i].userData & 0x1)
+			if ((long)items[i].userData & 0x1)
 				XtVaSetValues(submenu, XmNset, True, 0);
 
 		}
 		if (items[i].userData)
 			XtVaSetValues(submenu, XmNuserData, 
-					items[i].userData, 0);
+					items[i].userData, NULL);
 
 		// Whether the item is a real item or a cascade button with a
 		// menu, it can still have a mnemonic.
 		//
 		if (items[i].mnemonic)
 			XtVaSetValues(submenu, XmNmnemonic, 
-				items[i].mnemonic, 0);
+				items[i].mnemonic, NULL);
 		// any item can have an accelerator, except cascade menus. But,
 		// we don't worry about that; we know better in our 
 		// declarations.
 		if (items[i].accelerator) {
 			str = CreateXmString(items[i].accelText);
-			XtVaSetValues(submenu, XmNacceleratorText, str, 0);
+			XtVaSetValues(submenu, XmNacceleratorText, str, NULL);
 			XtVaSetValues(submenu, XmNaccelerator, 
-					items[i].accelerator, 0);
+					items[i].accelerator, NULL);
 			XmStringFree(str);
 		}
 
@@ -252,7 +252,7 @@ Widget Menu::BuildMenu(Widget parent, MenuType type, const char *label,
 				items[i].callback, items[i].callbackData);
 
 		// set if item is selectable
-		XtVaSetValues(submenu, XmNsensitive, items[i].sensitive, 0);
+		XtVaSetValues(submenu, XmNsensitive, items[i].sensitive, NULL);
 
 		if (items[i].showBitmap) {
 			Bitmap b = items[i].bitmap;
@@ -261,7 +261,7 @@ Widget Menu::BuildMenu(Widget parent, MenuType type, const char *label,
 					XtDisplay(menu));
 			 	XtVaSetValues(submenu,
                           		XmNlabelType, XmPIXMAP,
-                          		XmNlabelPixmap, px, 0);
+                          		XmNlabelPixmap, px, NULL);
 			}
 		}
 	}

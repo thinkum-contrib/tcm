@@ -92,5 +92,5 @@ void TextAlignmentDialog::Configure() {
 		AddLiteClue((*tl)[1], "Center");
 		AddLiteClue((*tl)[2], "Bottom");
 	}
-        XtVaSetValues(rc, XmNnumColumns, 3, 0);
+        XtVaSetValues(rc, XmNnumColumns, 3, NULL);
 }

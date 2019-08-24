@@ -39,7 +39,7 @@ void MessageDialog::SetMessageString(const string *s) {
 
 void MessageDialog::SetMessageString(const char *s) {
 	XmString msg = CreateXmString(s);
-	XtVaSetValues(GetWidget(), XmNmessageString, msg, 0);
+	XtVaSetValues(GetWidget(), XmNmessageString, msg, NULL);
 	XmStringFree(msg);
 }
 

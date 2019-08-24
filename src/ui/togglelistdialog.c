@@ -71,10 +71,10 @@ void ToggleListDialog::CreateToggles(const string *label,
 	toggleList = new Widget[items->count()];
 	if (*label != "") {
 		Widget frame = XtVaCreateManagedWidget("frame",
-			xmFrameWidgetClass, toggleBox, 0);
+			xmFrameWidgetClass, toggleBox, NULL);
 		XtVaCreateManagedWidget(label->getstr(),
 			xmLabelWidgetClass, frame,
-			XmNchildType, XmFRAME_TITLE_CHILD, 0);
+			XmNchildType, XmFRAME_TITLE_CHILD, NULL);
 	}
 	for (items->first(); !items->done(); items->next()) {
 		const char *s = items->cur()->getstr();
@@ -83,7 +83,7 @@ void ToggleListDialog::CreateToggles(const string *label,
 				xmToggleButtonWidgetClass, toggleBox,
 				XmNuserData, i,
 				XmNhighlightThickness, 0,
-				XmNset, i==0, 0);
+				XmNset, i==0, NULL);
 		toggleList[numToggles] = w;
 		numToggles++;
 		i++;
@@ -106,14 +106,14 @@ void ToggleListDialog::SetToggleBitmap(unsigned i, Bitmap *bitmap) {
 		Pixmap pixmap = bitmap->CreatePixmap(tb, GetDisplay());
 		XtVaSetValues(tb, 
 			XmNlabelType, XmPIXMAP,
-                        XmNlabelPixmap, pixmap, 0);
+                        XmNlabelPixmap, pixmap, NULL);
 	}
 }
 
 void ToggleListDialog::SetToggleText(unsigned i, const string *txt) {
  	if (check(i < numToggles)) {
 		XmString s = CreateXmString(txt->getstr());
-		XtVaSetValues(toggleList[i], XmNlabelString, s, 0);
+		XtVaSetValues(toggleList[i], XmNlabelString, s, NULL);
 		XmStringFree(s);
 	}
 }
@@ -121,7 +121,7 @@ void ToggleListDialog::SetToggleText(unsigned i, const string *txt) {
 void ToggleListDialog::GetToggleText(unsigned i, string *txt) {
 	if (check(i < numToggles)) {
 		XmString s = CreateXmString("");
-		XtVaGetValues(toggleList[i], XmNlabelString, &s, 0);
+		XtVaGetValues(toggleList[i], XmNlabelString, &s, NULL);
 		char *str;
 		if (XmStringGetLtoR(s, XmFONTLIST_DEFAULT_TAG, &str)) {
 			*txt = str;

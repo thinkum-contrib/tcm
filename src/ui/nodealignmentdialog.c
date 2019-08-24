@@ -79,5 +79,5 @@ void NodeAlignmentDialog::Configure() {
 	AddLiteClue((*tl)[4], "Align vertical");
 	AddLiteClue((*tl)[5], "Align right");
 	XtVaSetValues(rc, XmNnumColumns, 2, 
-			  XmNorientation, XmHORIZONTAL, 0);
+			  XmNorientation, XmHORIZONTAL, NULL);
 }

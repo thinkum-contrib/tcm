@@ -37,24 +37,24 @@ void ReplaceDialog::Configure() {
 	SetOKButtonLabel("Find\nNext");
 	SetApplyButtonLabel("Replace\nAll");
 	replaceButton = XtVaCreateManagedWidget("Replace",
-		xmPushButtonWidgetClass, GetWidget(), 0);
+		xmPushButtonWidgetClass, GetWidget(), NULL);
 	XmString t = CreateXmString("Replace\nNext");
-	XtVaSetValues(replaceButton, XmNlabelString, t, 0);
+	XtVaSetValues(replaceButton, XmNlabelString, t, NULL);
 	SetHelpCallback(ReplaceClearCB, this);
 	replaceLabel = XtVaCreateManagedWidget("Replace with",
 		xmLabelWidgetClass, GetForm(),
 		XmNleftAttachment, XmATTACH_FORM, 
 		XmNtopAttachment, XmATTACH_WIDGET, 
-		XmNtopWidget, GetText(), 0);
+		XmNtopWidget, GetText(), NULL);
 	replaceText = XtVaCreateManagedWidget("replace_text",
 		xmTextFieldWidgetClass, GetForm(), 
 		XmNleftAttachment, XmATTACH_FORM, 
 		XmNrightAttachment, XmATTACH_FORM, 
 		XmNtopAttachment, XmATTACH_WIDGET, 
-		XmNtopWidget, replaceLabel, 0);
+		XmNtopWidget, replaceLabel, NULL);
 	XtVaSetValues(GetToggleRC(), 
 		XmNtopAttachment, XmATTACH_WIDGET, 
-		XmNtopWidget, replaceText, 0);
+		XmNtopWidget, replaceText, NULL);
 	XmStringFree(t);
 }
 

@@ -26,6 +26,9 @@
 #include "tableviewer.h"
 
 /// (table) row class.
+
+int Compare(CellRow *r1, CellRow *r2);
+
 class CellRow: public CellVector {
 /*@Doc: {\large {\bf scope:} table} */
 public:

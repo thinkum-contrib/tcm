@@ -75,7 +75,7 @@ void PSWindow::DetermineIcons() {
 //	// make the duplicate item insensitive.
 //	Widget w1 = editMenu->GetMenuItem("Duplicate");
 //	if (w1)
-//		XtVaSetValues(w1, XmNsensitive, False, 0);
+//		XtVaSetValues(w1, XmNsensitive, False, NULL);
 //	return bar;
 //}
 

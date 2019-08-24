@@ -28,6 +28,9 @@
 class SQGraph;
 
 /// object class (TSQD) node class.
+
+int CompareAnchor(Point *p1, Point *p2);
+
 class SQObjectNode: public Node {
 /*@Doc: {\large {\bf scope:} TSQD} */
 public:

@@ -314,6 +314,8 @@ void Grafport::RecalcPolygon(const Point *points, int nrPoints, Point *newPoints
 void Grafport::DrawArc(double x, double y, double w, double h,
 	int arc1, int arc2)
 {
+	if ( arc1 == arc2 )
+		return;
 	if ( GetLineStyle() != LineStyle::DUAL ) {
 		DrawSimpleArc(x, y, w, h, arc1, arc2);
 		return;

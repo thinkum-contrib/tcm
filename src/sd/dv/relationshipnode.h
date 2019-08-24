@@ -26,6 +26,9 @@
 class ERGraph;
 
 /// relationship (ER) node class.
+
+int CompareComponent(string *c1, string *c2);
+
 class RelationshipNode: public Node {
 /*@Doc: {\large {\bf scope:} TERD} */
 public:

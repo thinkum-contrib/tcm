@@ -87,7 +87,7 @@ void DFWindow::DetermineIcons() {
 
 void DFWindow::SetDiagram(const char *s) {
 	if (dfDiagram)
-		XtVaSetValues(dfDiagram, XmNvalue, s, 0); 
+		XtVaSetValues(dfDiagram, XmNvalue, s, NULL); 
 }
  
 void DFWindow::SetDiagram(const string *s) {
@@ -108,9 +108,9 @@ Widget DFWindow::CreateTiles(Widget parent) {
 		XmNtopAttachment, XmATTACH_WIDGET,
 		XmNtopWidget, GetDocumentArea(),
 		XmNleftAttachment, XmATTACH_FORM,
-		XmNorientation, XmVERTICAL, 0);
-	Widget t1 = XtVaCreateWidget("tiles1", xmRowColumnWidgetClass, t, 0);
-	Widget t2 = XtVaCreateWidget("tiles2", xmRowColumnWidgetClass, t, 0);
+		XmNorientation, XmVERTICAL, NULL);
+	Widget t1 = XtVaCreateWidget("tiles1", xmRowColumnWidgetClass, t, NULL);
+	Widget t2 = XtVaCreateWidget("tiles2", xmRowColumnWidgetClass, t, NULL);
 	CreateNodeIcons(t1);
 	CreateEdgeIcons(t1);
 	CreateDiagramField(t2);
@@ -124,15 +124,15 @@ Widget DFWindow::CreateTiles(Widget parent) {
 void DFWindow::CreateDiagramField(Widget parent) {
 	Widget frame = XtVaCreateManagedWidget("tiles_frame3",
 		xmFrameWidgetClass, parent,
-		XmNshadowType, XmSHADOW_ETCHED_IN, 0);
+		XmNshadowType, XmSHADOW_ETCHED_IN, NULL);
 	Widget rc = XtVaCreateWidget("rc3", xmRowColumnWidgetClass, frame,
-			XmNentryAlignment, XmALIGNMENT_CENTER, 0);
-	XtVaCreateManagedWidget("Diagram", xmLabelWidgetClass, rc, 0);
+			XmNentryAlignment, XmALIGNMENT_CENTER, NULL);
+	XtVaCreateManagedWidget("Diagram", xmLabelWidgetClass, rc, NULL);
 	dfDiagram = XtVaCreateManagedWidget("DFDiagram",
 			xmTextFieldWidgetClass, rc,
 			XmNcolumns, 5,
 			XmNeditable, True,
-			XmNcursorPositionVisible, True, 0);
+			XmNcursorPositionVisible, True, NULL);
 	XtAddCallback(dfDiagram, XmNactivateCallback, 
 	 		DFStubs::ChangeDiagramCB, (XtPointer)GetDocument());
 	AddLiteClue(dfDiagram, "Set diagram index (apply with <return>)");

@@ -71,7 +71,7 @@ void FileSelectionDialog::SetExtension(const char *extension) {
 		XmNfileTypeMask, fileTypeMask,
 		XmNdirListLabelString, dirLabel,
 		XmNfileListLabelString, fileLabel,
-		XmNpattern, pattern, 0);
+		XmNpattern, pattern, NULL);
 	if (fileLabel)
 		XmStringFree(fileLabel);
 	if (dirLabel)
@@ -87,7 +87,7 @@ void FileSelectionDialog::SetDirectory(const char *d) {
 	if (!check(GetWidget()))
 		return;
 	XmString dir = CreateXmString(d);
-	XtVaSetValues(GetWidget(), XmNdirectory, dir, 0);
+	XtVaSetValues(GetWidget(), XmNdirectory, dir, NULL);
 	XmStringFree(dir);
 }
 
@@ -102,8 +102,8 @@ void FileSelectionDialog::SetDefaultFile(const char *f) {
 	// Update the file list in the dialog
 	XmString pattern = CreateXmString("");
 	XmString dir = CreateXmString("");
-	XtVaGetValues(GetWidget(), XmNpattern, &pattern, 0);
-	XtVaGetValues(GetWidget(), XmNdirectory, &dir, 0);
+	XtVaGetValues(GetWidget(), XmNpattern, &pattern, NULL);
+	XtVaGetValues(GetWidget(), XmNdirectory, &dir, NULL);
 	char *str1, *str2;
 	XmStringGetLtoR(dir, XmFONTLIST_DEFAULT_TAG, &str1);
 	XmStringGetLtoR(pattern, XmFONTLIST_DEFAULT_TAG, &str2);
@@ -129,7 +129,7 @@ void FileSelectionDialog::SetDefaultFile(const char *f) {
 
 	// Force the default name in the text entry field.
 	dirSpec = CreateXmString(f);
-	XtVaSetValues(GetWidget(), XmNtextString, dirSpec, 0);
+	XtVaSetValues(GetWidget(), XmNtextString, dirSpec, NULL);
 	string f1 = f;
 	System::GiveFile(&f1, &defaultFile);
 	if (dirSpec)
@@ -145,9 +145,9 @@ void FileSelectionDialog::Popup() {
 	DeselectAllItems();
 	// make sure file selection box has an acceptable minimal width.
 	short w;
-	XtVaGetValues(GetText(), XmNcolumns, &w, 0);
+	XtVaGetValues(GetText(), XmNcolumns, &w, NULL);
 	if (w < 40)
-		XtVaSetValues(GetText(), XmNcolumns, 40, 0);
+		XtVaSetValues(GetText(), XmNcolumns, 40, NULL);
 	Dialog::Popup();
 }
 
@@ -170,7 +170,7 @@ void FileSelectionDialog::GetDirectory(char *dir) {
 		return;
 	XmString d = CreateXmString("");
 	char *str;
-	XtVaGetValues(GetWidget(), XmNdirectory, &d, 0);
+	XtVaGetValues(GetWidget(), XmNdirectory, &d, NULL);
 	if (XmStringGetLtoR(d, XmFONTLIST_DEFAULT_TAG, &str)) {
 		strcpy(dir, str);
 		XtFree(str);
@@ -201,14 +201,14 @@ void FileSelectionDialog::CreateOptionMenu(string *l, List<string *> *items) {
 	char wname[MAXNAME] = "frame";
 	menuFrame = XmCreateFrame(GetWidget(), wname, args, i);
 	Widget rc = XtVaCreateWidget("rc", xmRowColumnWidgetClass, menuFrame, 
-			XmNorientation, XmHORIZONTAL, 0);
+			XmNorientation, XmHORIZONTAL, NULL);
 	XtVaCreateManagedWidget("label", xmLabelWidgetClass, 
-		rc, XmNlabelString, ls, 0);
+		rc, XmNlabelString, ls, NULL);
 	strcpy(wname, "menu");
 	menu = XmCreateOptionMenu(rc, wname, 0, 0);
 	strcpy(wname, "pane");
 	pane = XmCreatePulldownMenu(rc, wname, 0, 0);
-	XtVaSetValues(menu, XmNsubMenuId, pane, 0);
+	XtVaSetValues(menu, XmNsubMenuId, pane, NULL);
 	XtAddCallback(pane, XmNentryCallback, OptionChangedCB, this);
 	for (items->first(); !items->done(); items->next()) {
 		XtCreateManagedWidget(items->cur()->getstr(),
@@ -255,18 +255,18 @@ void FileSelectionDialog::SetOption(const string *s) {
 	// only setting the label of option button does not work.
 	Widget *wlist;
 	int numc;
-	XtVaGetValues(pane, XmNchildren, &wlist, 0);
-	XtVaGetValues(pane, XmNnumChildren, &numc, 0);
+	XtVaGetValues(pane, XmNchildren, &wlist, NULL);
+	XtVaGetValues(pane, XmNnumChildren, &numc, NULL);
 	XmString s1 = CreateXmString(s->getstr());
 	for (int i=0; i<numc; i++) {
 		XmString s2 = CreateXmString("");
-		XtVaGetValues(wlist[i], XmNlabelString, &s2, 0);
+		XtVaGetValues(wlist[i], XmNlabelString, &s2, NULL);
 		char *str;
 		if (XmStringGetLtoR(s2, XmFONTLIST_DEFAULT_TAG, &str)) {
 			if (strstr(str, s->getstr())) {
-				XtVaSetValues(pane, XmNmenuHistory, wlist[i], 0);
+				XtVaSetValues(pane, XmNmenuHistory, wlist[i], NULL);
 				Widget l = XmOptionButtonGadget(menu);
-				XtVaSetValues(l, XmNlabelString, s1, 0);
+				XtVaSetValues(l, XmNlabelString, s1, NULL);
 				XmStringFree(s1);
 				XmStringFree(s2);
 				XtFree(str);
@@ -285,7 +285,7 @@ void FileSelectionDialog::GetOption(string *item) {
 		char *str;
 		XmString xs = CreateXmString("");
 		Widget l = XmOptionButtonGadget(menu);
-		XtVaGetValues(l, XmNlabelString, &xs, 0);
+		XtVaGetValues(l, XmNlabelString, &xs, NULL);
 		if (XmStringGetLtoR(xs, XmFONTLIST_DEFAULT_TAG, &str)) {
 			*item = str;
 			XtFree(str);

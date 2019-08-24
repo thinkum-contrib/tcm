@@ -60,19 +60,19 @@ void ColorChooserDialog::Configure() {
 	XtAddCallback(GetList(), XmNbrowseSelectionCallback, 
 		      UpdateColorCB, this);
 	Widget rc = XtVaCreateManagedWidget("rc", 
-		xmRowColumnWidgetClass, GetWidget(), 0);
+		xmRowColumnWidgetClass, GetWidget(), NULL);
 	fillToggle = XtVaCreateManagedWidget("fill them",
                 xmToggleButtonWidgetClass, rc,
-                XmNset, True, 0);
+                XmNset, True, NULL);
 	Widget rc2 = XtVaCreateManagedWidget("rc2",
                 xmRowColumnWidgetClass, rc,
-                XmNorientation, XmHORIZONTAL, 0);
-	XtVaCreateManagedWidget("preview: ", xmLabelWidgetClass, rc2, 0);
+                XmNorientation, XmHORIZONTAL, NULL);
+	XtVaCreateManagedWidget("preview: ", xmLabelWidgetClass, rc2, NULL);
 	colorLabel = XtVaCreateManagedWidget(
 		"", xmTextFieldWidgetClass, rc2, 
 		XmNeditable, False, 
-		XmNcursorPositionVisible, False, 0);
-	XtVaGetValues(GetWidget(), XmNcolormap, &colormap, 0);
+		XmNcursorPositionVisible, False, NULL);
+	XtVaGetValues(GetWidget(), XmNcolormap, &colormap, NULL);
 }
 
 void ColorChooserDialog::UpdateColorCB(Widget, XtPointer p, XtPointer cbs) {
@@ -113,7 +113,7 @@ void ColorChooserDialog::ShowColor(unsigned pos) {
 				return;
 			}
                 }
-		XtVaSetValues(colorLabel, XmNbackground, pixel, 0);
+		XtVaSetValues(colorLabel, XmNbackground, pixel, NULL);
 	}
 }
 
@@ -145,7 +145,7 @@ void ColorChooserDialog::SetFillToggleLabel(const char *txt) {
         if (!check(fillToggle))
                 return;
         XmString text_string = CreateXmString(txt);
-        XtVaSetValues(fillToggle, XmNlabelString, text_string, 0);
+        XtVaSetValues(fillToggle, XmNlabelString, text_string, NULL);
         XmStringFree(text_string);
 }
 

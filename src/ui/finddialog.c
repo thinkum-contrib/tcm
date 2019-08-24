@@ -60,30 +60,30 @@ void FindDialog::Configure() {
 	ManageSelectionLabel(False);
 
 	form = XtVaCreateWidget("form",
-		xmFormWidgetClass, GetWidget(), 0);
+		xmFormWidgetClass, GetWidget(), NULL);
 	SetSelectionLabel(XtVaCreateManagedWidget("String to Find",
 		xmLabelWidgetClass, form, 
 		XmNleftAttachment, XmATTACH_FORM,
-		XmNtopAttachment, XmATTACH_FORM, 0));
+		XmNtopAttachment, XmATTACH_FORM, NULL));
 	SetText(XtVaCreateManagedWidget("find_text",
 		xmTextFieldWidgetClass, form,
 		XmNleftAttachment, XmATTACH_FORM,
 		XmNrightAttachment, XmATTACH_FORM,
 		XmNtopAttachment, XmATTACH_WIDGET,
-		XmNtopWidget, GetSelectionLabel(), 0));
+		XmNtopWidget, GetSelectionLabel(), NULL));
 	toggleRC = XtVaCreateManagedWidget("toggleRC",
 		xmRowColumnWidgetClass, form,
 		XmNorientation, XmHORIZONTAL, 
-		XmNleftAttachment, XmATTACH_FORM, 0);
+		XmNleftAttachment, XmATTACH_FORM, NULL);
 	sensitiveToggle = XtVaCreateManagedWidget("case sensitive", 
 		xmToggleButtonWidgetClass, toggleRC, 
-		XmNset, False, 0);
+		XmNset, False, NULL);
 	substringToggle = XtVaCreateWidget("substring", 
 		xmToggleButtonWidgetClass, toggleRC,
-		XmNset, True, 0);
+		XmNset, True, NULL);
 	nameOnlyToggle = XtVaCreateWidget("name only", 
 		xmToggleButtonWidgetClass, toggleRC,
-		XmNset, False, 0);
+		XmNset, False, NULL);
 	AttachToggles();
 	XtManageChild(form);
 }
@@ -91,7 +91,7 @@ void FindDialog::Configure() {
 void FindDialog::AttachToggles() {
 	XtVaSetValues(toggleRC, 
 		XmNtopAttachment, XmATTACH_WIDGET,
-		XmNtopWidget, GetText(), 0);
+		XmNtopWidget, GetText(), NULL);
 }
 
 void FindDialog::ManageSensitiveToggle(bool b) {

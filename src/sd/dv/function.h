@@ -19,8 +19,8 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
 // 02111-1307, USA.
 //-----------------------------------------------------------------------------
-#ifndef _FUNCTION_H
-#define _FUNCTION_H
+#ifndef _FUNCTION_CLASS_H
+#define _FUNCTION_CLASS_H
 
 #include "c1edge.h"
 class ERGraph;

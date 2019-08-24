@@ -56,8 +56,7 @@ libglobal.so: $(OBJECTS)
 clean: xclean
 
 xclean::
-	$(RM) instances.h
-	touch instances.h 
+	echo > instances.h
 
 depend: xdepend
 

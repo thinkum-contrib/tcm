@@ -82,5 +82,5 @@ void LineWidthSideDialog::Configure() {
 	Widget rc = XtParent((*tl)[1]);
 	XtVaSetValues(rc, XmNnumColumns, 3, 
 			  XmNorientation, 
-			  XmHORIZONTAL, 0);
+			  XmHORIZONTAL, NULL);
 }

@@ -72,14 +72,14 @@ libeditor.a:
 # the touchy thing is necessary that the right template
 # instances are linked in the static lib.
 libdiagram.a:
-	( cp dg/dginstances.h gl/instances.h )
+	( cat dg/dginstances.h > gl/instances.h )
 	( cd ./gl ; touch llist.c )
 	( $(MAKE) libglobal.a )
 	( cd ./dg ; $(MAKE) libdiagram.a)
 	( cd $(LIB_DIR) ; $(RANLIB) libdiagram.a)
 
 libtable.a:
-	( cp tb/tbinstances.h gl/instances.h )
+	( cat tb/tbinstances.h > gl/instances.h )
 	( cd ./gl ; touch llist.c )
 	( $(MAKE) libglobal.a )
 	( cd ./tb ; $(MAKE) libtable.a)

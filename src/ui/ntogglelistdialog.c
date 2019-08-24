@@ -83,10 +83,10 @@ void NToggleListDialog::CreateToggleLists(
 	for (unsigned j=0; j<labels->count(); j++) {
 		Widget rc2 = XmCreateRowColumn(rc, wname, 0, 0);
 		Widget frame = XtVaCreateManagedWidget(wname,
-			xmFrameWidgetClass, rc2, 0);
+			xmFrameWidgetClass, rc2, NULL);
 		XtVaCreateManagedWidget((*labels)[j]->getstr(),
 			xmLabelWidgetClass, frame,
-			XmNchildType, XmFRAME_TITLE_CHILD, 0);
+			XmNchildType, XmFRAME_TITLE_CHILD, NULL);
 		Widget box = XmCreateRadioBox(frame, wname, 0, 0);
 		List<string *> *t = (*items)[j];
 		int i = 0;
@@ -98,7 +98,7 @@ void NToggleListDialog::CreateToggleLists(
 	 			xmToggleButtonWidgetClass, box,
 	 			XmNuserData, i,
 	 			XmNhighlightThickness, 0,
-	 			XmNset, i==0, 0);
+	 			XmNset, i==0, NULL);
 	 		toggles->add(w);
 		}
 		toggleList.add(toggles);
@@ -108,7 +108,7 @@ void NToggleListDialog::CreateToggleLists(
 			Widget w = XtVaCreateManagedWidget(s,
 	 			xmToggleButtonWidgetClass, rc2,
 	 			XmNhighlightThickness, 0,
-	 			XmNset, 0, 0);
+	 			XmNset, 0, NULL);
 			optionList.add(w);
 		}
 		XtManageChild(rc2);
@@ -124,7 +124,7 @@ void NToggleListDialog::SetItemBitmap(unsigned n, unsigned i, Bitmap *bitmap) {
                 	Pixmap pixmap = bitmap->CreatePixmap(tb, GetDisplay());
                 	XtVaSetValues(tb,
                         	XmNlabelType, XmPIXMAP,
-                        	XmNlabelPixmap, pixmap, 0);
+                        	XmNlabelPixmap, pixmap, NULL);
 		}
         }
 }
@@ -135,7 +135,7 @@ void NToggleListDialog::SetItem(unsigned n, unsigned i, const string *txt) {
 		List<Widget> *toggles = toggleList[n];
  		if (check(i < toggles->count())) {
 			XmString s = CreateXmString(txt->getstr());
-			XtVaSetValues((*toggles)[i], XmNlabelString, s, 0);
+			XtVaSetValues((*toggles)[i], XmNlabelString, s, NULL);
 			XmStringFree(s);
 		}
 	}
@@ -146,7 +146,7 @@ void NToggleListDialog::GetItem(unsigned n, unsigned i, string *txt) {
 		List<Widget> *toggles = toggleList[n];
 		if (check(i < toggles->count())) {
 			XmString s = CreateXmString("");
-			XtVaGetValues((*toggles)[i], XmNlabelString, &s, 0);
+			XtVaGetValues((*toggles)[i], XmNlabelString, &s, NULL);
 			char *str;
 			if (XmStringGetLtoR(s, XmFONTLIST_DEFAULT_TAG, &str)) {
 				*txt = str;
@@ -170,7 +170,7 @@ void NToggleListDialog::SetValueOfText(unsigned n, const string *t) {
 		List<Widget> *toggles = toggleList[n];
 		for (unsigned i=0; i<toggles->count(); i++) {
 			XmString s = CreateXmString("");
-			XtVaGetValues((*toggles)[i], XmNlabelString, &s, 0);
+			XtVaGetValues((*toggles)[i], XmNlabelString, &s, NULL);
 			char *str;
 			if (XmStringGetLtoR(s, XmFONTLIST_DEFAULT_TAG, &str)) {
 				if (*t == str) {

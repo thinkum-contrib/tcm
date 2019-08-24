@@ -23,7 +23,7 @@
 
 #include "llist.h"
 #include "lstring.h"
-;
+
 class ADSVar;
 class OutputFile;
 

@@ -28,6 +28,7 @@ class MessageLogDialog;
 class PrinterOptions;
 class Color;
 class Config;
+class MainWindow;
 
 /// generic window-based application class. See: MWidget.
 class Application: public MWidget {

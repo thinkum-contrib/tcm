@@ -49,7 +49,7 @@ template class List<Transition *>;
 #include "../sd/bv/scdtransitionedge.h"
 
 template class List<SCNode *>;
-template class List <SCDTransitionEdge *>
+template class List <SCDTransitionEdge *>;
 
 
 #ifdef MODELCHECK

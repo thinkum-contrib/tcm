@@ -49,7 +49,7 @@ void Dialog::SetTitle(const char *title) {
 	strncpy(t, title, MAXTITLE-1);
 	t[MAXTITLE-1] = '\0';
 	XmString s = CreateXmString(t);
-	XtVaSetValues(GetWidget(), XmNdialogTitle, s, 0);
+	XtVaSetValues(GetWidget(), XmNdialogTitle, s, NULL);
 	XmStringFree(s);
 }
 
@@ -61,7 +61,7 @@ void Dialog::GetTitle(char *title) {
 	if (!check(GetWidget()))
 		return;
 	XmString s = CreateXmString("");
-	XtVaGetValues(GetWidget(), XmNdialogTitle, &s, 0);
+	XtVaGetValues(GetWidget(), XmNdialogTitle, &s, NULL);
 	char *str;
 	if (XmStringGetLtoR(s, XmFONTLIST_DEFAULT_TAG, &str)) {
 		strncpy(title, str, MAXTITLE-1);
@@ -84,13 +84,13 @@ void Dialog::SetModal(bool b) {
 	XtVaSetValues(GetWidget(), 
 		XmNdialogStyle, 
 		(b?XmDIALOG_FULL_APPLICATION_MODAL:XmDIALOG_MODELESS), 
-		0);
+		NULL);
 }
 
 void Dialog::SetAutoUnmanage(bool b) {
 	autoUnmanage = b;
 	if (GetWidget())
-		XtVaSetValues(GetWidget(), XmNautoUnmanage, b, 0);
+		XtVaSetValues(GetWidget(), XmNautoUnmanage, b, NULL);
 }
 
 void Dialog::SetOKCallback(XtCallbackProc fun, XtPointer clientData) {
@@ -127,7 +127,7 @@ void Dialog::SetOKButtonLabel(const char *txt) {
 	if (!check(GetWidget()))
 		return;
 	XmString t = CreateXmString(txt);
-	XtVaSetValues(GetWidget(), XmNokLabelString, t, 0);
+	XtVaSetValues(GetWidget(), XmNokLabelString, t, NULL);
 	XmStringFree(t);
 }
 
@@ -135,7 +135,7 @@ void Dialog::SetCancelButtonLabel(const char *txt) {
 	if (!check(GetWidget()))
 		return;
 	XmString t = CreateXmString(txt);
-	XtVaSetValues(GetWidget(), XmNcancelLabelString, t, 0);
+	XtVaSetValues(GetWidget(), XmNcancelLabelString, t, NULL);
 	XmStringFree(t);
 }
 
@@ -143,7 +143,7 @@ void Dialog::SetHelpButtonLabel(const char *txt) {
 	if (!check(GetWidget()))
 		return;
 	XmString t = CreateXmString(txt);
-	XtVaSetValues(GetWidget(), XmNhelpLabelString, t, 0);
+	XtVaSetValues(GetWidget(), XmNhelpLabelString, t, NULL);
 	XmStringFree(t);
 }
 
@@ -214,7 +214,7 @@ void Dialog::SetAutoDestroy(bool b) {
 			&Dialog::DestroyWidgetCB, 0);
 		XtAddCallback(GetWidget(), XmNdestroyCallback,
 			&Dialog::DestroyCB, (XtPointer)this);
-		XtVaSetValues(GetWidget(), XmNdeleteResponse, XmDESTROY, 0);
+		XtVaSetValues(GetWidget(), XmNdeleteResponse, XmDESTROY, NULL);
 	}
 	else {
 		XtRemoveCallback(GetWidget(), XmNokCallback,
@@ -223,7 +223,7 @@ void Dialog::SetAutoDestroy(bool b) {
 			&Dialog::DestroyWidgetCB, 0);
 		XtRemoveCallback(GetWidget(), XmNdestroyCallback,
 			&Dialog::DestroyCB, (XtPointer)this);
-		XtVaSetValues(GetWidget(), XmNdeleteResponse, XmUNMAP, 0);
+		XtVaSetValues(GetWidget(), XmNdeleteResponse, XmUNMAP, NULL);
 	}
 }
 
@@ -269,8 +269,8 @@ void Dialog::ManageCenteredOnPointer() {
 	// Temporarily set value of XmNmappedWhenManaged
 	//   to stop the dialog from popping up right away
 	bool mappedWhenManaged = False;
-	XtVaGetValues(shell, XmNmappedWhenManaged, &mappedWhenManaged, 0);
-	XtVaSetValues(shell, XmNmappedWhenManaged, False, 0);
+	XtVaGetValues(shell, XmNmappedWhenManaged, &mappedWhenManaged, NULL);
+	XtVaSetValues(shell, XmNmappedWhenManaged, False, NULL);
 	// Manage the dialog
 	XtManageChild(GetWidget());
 	// Get the pointer position (x, y)
@@ -300,9 +300,9 @@ void Dialog::ManageCenteredOnPointer() {
 	if (y > maxY) 
 		y = maxY;
 	// Set desired window position in the DialogShell.
-	XtVaSetValues(shell, XmNx, x, XmNy, y, 0);
+	XtVaSetValues(shell, XmNx, x, XmNy, y, NULL);
 	// Map the widget
 	XtMapWidget(shell);
 	// Restore the value of XmNmappedWhenManaged
-	XtVaSetValues(shell, XmNmappedWhenManaged, mappedWhenManaged, 0);
+	XtVaSetValues(shell, XmNmappedWhenManaged, mappedWhenManaged, NULL);
 }

@@ -36,7 +36,7 @@ void MessageLogDialog::Configure() {
 		XmNscrollHorizontal, False,
 		XmNcolumns, 80,
 		XmNblinkRate, 0,
-		XmNautoShowCursorPosition, True, 0);
+		XmNautoShowCursorPosition, True, NULL);
 }
 
 void MessageLogDialog::InsertText(const string *txt) {
@@ -55,6 +55,6 @@ void MessageLogDialog::InsertText(const char *txt) {
 	wprPosition += tmp.length();
 	XmTextInsert(GetTextWidget(), wprPosition, (char *)txt);
 	wprPosition += strlen(txt);
-	XtVaSetValues(GetTextWidget(), XmNcursorPosition, wprPosition, 0);
+	XtVaSetValues(GetTextWidget(), XmNcursorPosition, wprPosition, NULL);
 	XmTextShowPosition(GetTextWidget(), wprPosition);
 }

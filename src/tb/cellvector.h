@@ -34,6 +34,10 @@ class InputFile;
 class OutputFile;
 
 /// abstract base class of table rows and columns.
+
+class CellVector;
+int Compare(CellVector *c1, CellVector *c2);
+
 class CellVector {
 /*@Doc: {\large {\bf scope:} table} */
 public:
